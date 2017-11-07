@@ -7,18 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4583ED591FB1841100AED27D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4583ED581FB1841100AED27D /* AppDelegate.swift */; };
 		4583ED5B1FB1841100AED27D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4583ED5A1FB1841100AED27D /* Assets.xcassets */; };
-		4583ED5E1FB1841100AED27D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4583ED5C1FB1841100AED27D /* MainMenu.xib */; };
+		4583ED671FB1845B00AED27D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583ED661FB1845B00AED27D /* main.cpp */; };
+		4583ED6D1FB1859500AED27D /* libSimpleton Engine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4583ED691FB1859500AED27D /* libSimpleton Engine.dylib */; };
+		4583ED6E1FB1859500AED27D /* libyaml-cpp.0.5.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4583ED6A1FB1859500AED27D /* libyaml-cpp.0.5.3.dylib */; };
+		4583ED6F1FB1859500AED27D /* libGLEW.2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4583ED6B1FB1859500AED27D /* libGLEW.2.1.0.dylib */; };
+		4583ED701FB1859500AED27D /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4583ED6C1FB1859500AED27D /* libSDL2-2.0.0.dylib */; };
+		4583ED721FB185AD00AED27D /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4583ED711FB185AD00AED27D /* OpenGL.framework */; };
+		4583ED741FB185B700AED27D /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4583ED731FB185B700AED27D /* IOKit.framework */; };
+		4583ED761FB185C100AED27D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4583ED751FB185C100AED27D /* Cocoa.framework */; };
+		4583ED781FB185CC00AED27D /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4583ED771FB185CC00AED27D /* CoreVideo.framework */; };
+		4583ED7A1FB1860300AED27D /* libnanovg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4583ED791FB1860300AED27D /* libnanovg.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4583ED551FB1841100AED27D /* Buttons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Buttons.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4583ED581FB1841100AED27D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4583ED5A1FB1841100AED27D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4583ED5D1FB1841100AED27D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		4583ED5F1FB1841100AED27D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4583ED601FB1841100AED27D /* Buttons.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Buttons.entitlements; sourceTree = "<group>"; };
+		4583ED661FB1845B00AED27D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		4583ED691FB1859500AED27D /* libSimpleton Engine.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSimpleton Engine.dylib"; path = "../../../../../../../usr/local/lib/libSimpleton Engine.dylib"; sourceTree = "<group>"; };
+		4583ED6A1FB1859500AED27D /* libyaml-cpp.0.5.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libyaml-cpp.0.5.3.dylib"; path = "../../../../../../../usr/local/Cellar/yaml-cpp/0.5.3/lib/libyaml-cpp.0.5.3.dylib"; sourceTree = "<group>"; };
+		4583ED6B1FB1859500AED27D /* libGLEW.2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.1.0.dylib; path = ../../../../../../../usr/local/Cellar/glew/2.1.0/lib/libGLEW.2.1.0.dylib; sourceTree = "<group>"; };
+		4583ED6C1FB1859500AED27D /* libSDL2-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2-2.0.0.dylib"; path = "../../../../../../../usr/local/Cellar/sdl2/2.0.7/lib/libSDL2-2.0.0.dylib"; sourceTree = "<group>"; };
+		4583ED711FB185AD00AED27D /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		4583ED731FB185B700AED27D /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		4583ED751FB185C100AED27D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		4583ED771FB185CC00AED27D /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		4583ED791FB1860300AED27D /* libnanovg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libnanovg.a; path = ../../../../../../../usr/local/lib/libnanovg.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +41,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4583ED7A1FB1860300AED27D /* libnanovg.a in Frameworks */,
+				4583ED781FB185CC00AED27D /* CoreVideo.framework in Frameworks */,
+				4583ED761FB185C100AED27D /* Cocoa.framework in Frameworks */,
+				4583ED741FB185B700AED27D /* IOKit.framework in Frameworks */,
+				4583ED721FB185AD00AED27D /* OpenGL.framework in Frameworks */,
+				4583ED6D1FB1859500AED27D /* libSimpleton Engine.dylib in Frameworks */,
+				4583ED6E1FB1859500AED27D /* libyaml-cpp.0.5.3.dylib in Frameworks */,
+				4583ED6F1FB1859500AED27D /* libGLEW.2.1.0.dylib in Frameworks */,
+				4583ED701FB1859500AED27D /* libSDL2-2.0.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +61,7 @@
 			children = (
 				4583ED571FB1841100AED27D /* Buttons */,
 				4583ED561FB1841100AED27D /* Products */,
+				4583ED681FB1859400AED27D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,13 +76,27 @@
 		4583ED571FB1841100AED27D /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				4583ED581FB1841100AED27D /* AppDelegate.swift */,
 				4583ED5A1FB1841100AED27D /* Assets.xcassets */,
-				4583ED5C1FB1841100AED27D /* MainMenu.xib */,
 				4583ED5F1FB1841100AED27D /* Info.plist */,
-				4583ED601FB1841100AED27D /* Buttons.entitlements */,
+				4583ED661FB1845B00AED27D /* main.cpp */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		4583ED681FB1859400AED27D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4583ED791FB1860300AED27D /* libnanovg.a */,
+				4583ED771FB185CC00AED27D /* CoreVideo.framework */,
+				4583ED751FB185C100AED27D /* Cocoa.framework */,
+				4583ED731FB185B700AED27D /* IOKit.framework */,
+				4583ED711FB185AD00AED27D /* OpenGL.framework */,
+				4583ED6B1FB1859500AED27D /* libGLEW.2.1.0.dylib */,
+				4583ED6C1FB1859500AED27D /* libSDL2-2.0.0.dylib */,
+				4583ED691FB1859500AED27D /* libSimpleton Engine.dylib */,
+				4583ED6A1FB1859500AED27D /* libyaml-cpp.0.5.3.dylib */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -92,6 +131,7 @@
 				TargetAttributes = {
 					4583ED541FB1841100AED27D = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -120,7 +160,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4583ED5B1FB1841100AED27D /* Assets.xcassets in Resources */,
-				4583ED5E1FB1841100AED27D /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,22 +170,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4583ED591FB1841100AED27D /* AppDelegate.swift in Sources */,
+				4583ED671FB1845B00AED27D /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		4583ED5C1FB1841100AED27D /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4583ED5D1FB1841100AED27D /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4583ED611FB1841100AED27D /* Debug */ = {
@@ -259,14 +287,28 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Buttons/Buttons.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = QY44MADGVC;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/Cellar/sdl2/2.0.7/include/,
+					/usr/local/include/,
+					"/usr/local/Cellar/yaml-cpp/0.5.3/include",
+				);
 				INFOPLIST_FILE = Buttons/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/usr/local/Cellar/yaml-cpp/0.5.3/lib",
+					/usr/local/Cellar/glew/2.1.0/lib,
+					/usr/local/Cellar/sdl2/2.0.7/lib,
+					/usr/local/lib,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Indi-Kernick.Buttons";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -275,12 +317,25 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Buttons/Buttons.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = QY44MADGVC;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/Cellar/sdl2/2.0.7/include/,
+					/usr/local/include/,
+					"/usr/local/Cellar/yaml-cpp/0.5.3/include",
+				);
 				INFOPLIST_FILE = Buttons/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/usr/local/Cellar/yaml-cpp/0.5.3/lib",
+					/usr/local/Cellar/glew/2.1.0/lib,
+					/usr/local/Cellar/sdl2/2.0.7/lib,
+					/usr/local/lib,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Indi-Kernick.Buttons";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
