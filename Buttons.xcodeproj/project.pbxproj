@@ -84,6 +84,7 @@
 		4583EE971FB1A2AE00AED27D /* physics file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE951FB1A2AD00AED27D /* physics file.cpp */; };
 		4583EE9D1FB1AC1600AED27D /* power system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE9B1FB1AC1600AED27D /* power system.cpp */; };
 		4583EEA01FB1AE3100AED27D /* power input activation system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE9E1FB1AE3100AED27D /* power input activation system.cpp */; };
+		4583EEA31FB1AFCF00AED27D /* activate power output system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EEA11FB1AFCF00AED27D /* activate power output system.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -247,6 +248,8 @@
 		4583EE9C1FB1AC1600AED27D /* power system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "power system.hpp"; sourceTree = "<group>"; };
 		4583EE9E1FB1AE3100AED27D /* power input activation system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "power input activation system.cpp"; sourceTree = "<group>"; };
 		4583EE9F1FB1AE3100AED27D /* power input activation system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "power input activation system.hpp"; sourceTree = "<group>"; };
+		4583EEA11FB1AFCF00AED27D /* activate power output system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "activate power output system.cpp"; sourceTree = "<group>"; };
+		4583EEA21FB1AFCF00AED27D /* activate power output system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "activate power output system.hpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -570,6 +573,8 @@
 				4583EE9C1FB1AC1600AED27D /* power system.hpp */,
 				4583EE9E1FB1AE3100AED27D /* power input activation system.cpp */,
 				4583EE9F1FB1AE3100AED27D /* power input activation system.hpp */,
+				4583EEA11FB1AFCF00AED27D /* activate power output system.cpp */,
+				4583EEA21FB1AFCF00AED27D /* activate power output system.hpp */,
 			);
 			name = Systems;
 			sourceTree = "<group>";
@@ -700,6 +705,7 @@
 				4583EE0F1FB18F7A00AED27D /* b2ContactSolver.cpp in Sources */,
 				4583EE101FB18F7A00AED27D /* b2CircleContact.cpp in Sources */,
 				4583EE111FB18F7A00AED27D /* b2EdgeAndCircleContact.cpp in Sources */,
+				4583EEA31FB1AFCF00AED27D /* activate power output system.cpp in Sources */,
 				4583EE121FB18F7A00AED27D /* b2Contact.cpp in Sources */,
 				4583EE131FB18F7A00AED27D /* b2WorldCallbacks.cpp in Sources */,
 				4583EE921FB19DE600AED27D /* collision categories.cpp in Sources */,

@@ -12,7 +12,7 @@
 #include "entity constants.hpp"
 #include <entt/entity/registry.hpp>
 
-///Activates an entity when it is receiving input.
+///Activates an entity when it is receiving input. (Laser, Door)
 void powerInputActivationSystem(entt::Registry<EntityID> &);
 
 #endif
