@@ -25,7 +25,6 @@ public:
   void quit();
   
   void update(float);
-  void iterate();
 
 private:
   entt::Registry<EntityID> *registry = nullptr;

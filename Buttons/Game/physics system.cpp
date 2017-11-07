@@ -30,10 +30,6 @@ void PhysicsSystem::update(const float delta) {
   world->Step(delta, VELOCITY_ITER, POSITION_ITER);
 }
 
-void PhysicsSystem::iterate() {
-  
-}
-
 //This system will fail when more than one object of the same type collides with
 //another object. I'm pretty sure that won't happen during the game. The button
 //top can only every collide with one other button base. This system will fail
