@@ -10,7 +10,7 @@
 
 #include "physics constants.hpp"
 
-void PhysicsSystem::init(entt::Registry<EntityID> &newRegistry) {
+void PhysicsSystem::init(Registry &newRegistry) {
   world.emplace(GRAVITY);
   contactListener.emplace();
   world->SetContactListener(&(*contactListener));

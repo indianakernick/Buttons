@@ -86,6 +86,7 @@
 		4583EEA01FB1AE3100AED27D /* power input activation system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE9E1FB1AE3100AED27D /* power input activation system.cpp */; };
 		4583EEA31FB1AFCF00AED27D /* activate power output system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EEA11FB1AFCF00AED27D /* activate power output system.cpp */; };
 		4583EEA61FB1B1E800AED27D /* button system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EEA41FB1B1E800AED27D /* button system.cpp */; };
+		4583EEAA1FB1B6E100AED27D /* physics transform system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EEA81FB1B6E100AED27D /* physics transform system.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -253,6 +254,10 @@
 		4583EEA21FB1AFCF00AED27D /* activate power output system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "activate power output system.hpp"; sourceTree = "<group>"; };
 		4583EEA41FB1B1E800AED27D /* button system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "button system.cpp"; sourceTree = "<group>"; };
 		4583EEA51FB1B1E800AED27D /* button system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "button system.hpp"; sourceTree = "<group>"; };
+		4583EEA71FB1B67000AED27D /* transform component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "transform component.hpp"; sourceTree = "<group>"; };
+		4583EEA81FB1B6E100AED27D /* physics transform system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "physics transform system.cpp"; sourceTree = "<group>"; };
+		4583EEA91FB1B6E100AED27D /* physics transform system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "physics transform system.hpp"; sourceTree = "<group>"; };
+		4583EEAB1FB1B6F800AED27D /* entity registry.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "entity registry.hpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -563,6 +568,7 @@
 				4583EE941FB1A25300AED27D /* collision component.hpp */,
 				4583EE991FB1AADD00AED27D /* power component.hpp */,
 				4583EE9A1FB1AB0600AED27D /* activation component.hpp */,
+				4583EEA71FB1B67000AED27D /* transform component.hpp */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -580,6 +586,8 @@
 				4583EEA21FB1AFCF00AED27D /* activate power output system.hpp */,
 				4583EEA41FB1B1E800AED27D /* button system.cpp */,
 				4583EEA51FB1B1E800AED27D /* button system.hpp */,
+				4583EEA81FB1B6E100AED27D /* physics transform system.cpp */,
+				4583EEA91FB1B6E100AED27D /* physics transform system.hpp */,
 			);
 			name = Systems;
 			sourceTree = "<group>";
@@ -589,6 +597,7 @@
 			children = (
 				4583EE8B1FB199E100AED27D /* physics constants.hpp */,
 				4583EE931FB19F2B00AED27D /* entity constants.hpp */,
+				4583EEAB1FB1B6F800AED27D /* entity registry.hpp */,
 			);
 			name = Constants;
 			sourceTree = "<group>";
@@ -745,6 +754,7 @@
 				4583EE2C1FB18F7A00AED27D /* b2DynamicTree.cpp in Sources */,
 				4583EE2D1FB18F7A00AED27D /* b2ChainShape.cpp in Sources */,
 				4583EE2E1FB18F7A00AED27D /* b2EdgeShape.cpp in Sources */,
+				4583EEAA1FB1B6E100AED27D /* physics transform system.cpp in Sources */,
 				4583EE2F1FB18F7A00AED27D /* b2CircleShape.cpp in Sources */,
 				4583EE301FB18F7A00AED27D /* b2PolygonShape.cpp in Sources */,
 				4583EEA01FB1AE3100AED27D /* power input activation system.cpp in Sources */,

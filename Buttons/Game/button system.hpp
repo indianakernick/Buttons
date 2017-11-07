@@ -9,10 +9,9 @@
 #ifndef button_system_hpp
 #define button_system_hpp
 
-#include "entity constants.hpp"
-#include <entt/entity/registry.hpp>
+#include "entity registry.hpp"
 
 ///Activates an entity when a button base is colliding with a button top. (Button base)
-void buttonSystem(entt::Registry<EntityID> &);
+void buttonSystem(Registry &);
 
 #endif

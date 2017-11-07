@@ -9,10 +9,9 @@
 #ifndef activate_power_output_system_hpp
 #define activate_power_output_system_hpp
 
-#include "entity constants.hpp"
-#include <entt/entity/registry.hpp>
+#include "entity registry.hpp"
 
 ///Outputs power when the entity is active. (Button, Switch, Laser Sensor)
-void activatePowerOutputSystem(entt::Registry<EntityID> &);
+void activatePowerOutputSystem(Registry &);
 
 #endif

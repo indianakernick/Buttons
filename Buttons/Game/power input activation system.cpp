@@ -11,7 +11,7 @@
 #include "power component.hpp"
 #include "activation component.hpp"
 
-void powerInputActivationSystem(entt::Registry<EntityID> &registry) {
+void powerInputActivationSystem(Registry &registry) {
   auto view = registry.view<Activation, PowerInput>();
   for (EntityID entity : view) {
     view.get<Activation>(entity).active = view.get<PowerInput>(entity).on;

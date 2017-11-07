@@ -9,10 +9,9 @@
 #ifndef power_input_activation_system_hpp
 #define power_input_activation_system_hpp
 
-#include "entity constants.hpp"
-#include <entt/entity/registry.hpp>
+#include "entity registry.hpp"
 
 ///Activates an entity when it is receiving input. (Laser, Door)
-void powerInputActivationSystem(entt::Registry<EntityID> &);
+void powerInputActivationSystem(Registry &);
 
 #endif

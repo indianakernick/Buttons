@@ -9,10 +9,9 @@
 #ifndef power_system_hpp
 #define power_system_hpp
 
-#include "entity constants.hpp"
-#include <entt/entity/registry.hpp>
+#include "entity registry.hpp"
 
 ///Moves power from outputs to inputs
-void powerSystem(entt::Registry<EntityID> &);
+void powerSystem(Registry &);
 
 #endif

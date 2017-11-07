@@ -12,7 +12,7 @@
 #include "collision categories.hpp"
 #include "activation component.hpp"
 
-void buttonSystem(entt::Registry<EntityID> &registry) {
+void buttonSystem(Registry &registry) {
   auto view = registry.view<Collision, Activation>();
   for (EntityID entity : view) {
     const auto &collision = view.get<Collision>(entity);

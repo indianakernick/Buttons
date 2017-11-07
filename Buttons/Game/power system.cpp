@@ -10,7 +10,7 @@
 
 #include "power component.hpp"
 
-void powerSystem(entt::Registry<EntityID> &registry) {
+void powerSystem(Registry &registry) {
   const auto powerOutput = registry.view<PowerOutput>();
   auto powerInput = registry.view<PowerInput>();
   for (EntityID entity : powerOutput) {
