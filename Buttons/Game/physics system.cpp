@@ -42,10 +42,10 @@ void PhysicsSystem::beginContact(
   const uint16_t catB
 ) {
   if (registry->has<Collision>(entityA)) {
-    registry->get<Collision>(entityA).category |= catB;
+    registry->get<Collision>(entityA).collidingCategory |= catB;
   }
   if (registry->has<Collision>(entityB)) {
-    registry->get<Collision>(entityB).category |= catA;
+    registry->get<Collision>(entityB).collidingCategory |= catA;
   }
 }
 
@@ -56,9 +56,9 @@ void PhysicsSystem::endContact(
   const uint16_t catB
 ) {
   if (registry->has<Collision>(entityA)) {
-    registry->get<Collision>(entityA).category &= ~catB;
+    registry->get<Collision>(entityA).collidingCategory &= ~catB;
   }
   if (registry->has<Collision>(entityB)) {
-    registry->get<Collision>(entityB).category &= ~catA;
+    registry->get<Collision>(entityB).collidingCategory &= ~catA;
   }
 }

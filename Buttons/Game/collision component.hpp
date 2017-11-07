@@ -13,6 +13,7 @@
 
 struct Collision {
   uint16_t category = 0;
+  uint16_t collidingCategory = 0;
 };
 
 #endif
