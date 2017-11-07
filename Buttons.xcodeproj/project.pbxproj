@@ -77,6 +77,7 @@
 		4583EE7D1FB190F300AED27D /* rendering resources.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE451FB1906E00AED27D /* rendering resources.cpp */; };
 		4583EE7E1FB1914000AED27D /* stb_image_write.c in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE001FB18EFF00AED27D /* stb_image_write.c */; };
 		4583EE7F1FB1914000AED27D /* tinyfiledialogs.c in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE011FB18EFF00AED27D /* tinyfiledialogs.c */; };
+		4583EE851FB1967700AED27D /* app.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE831FB1967700AED27D /* app.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -220,6 +221,8 @@
 		4583EE701FB190D300AED27D /* tinyfiledialogs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tinyfiledialogs.h; sourceTree = "<group>"; };
 		4583EE711FB190D300AED27D /* nanovg.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = nanovg.hpp; sourceTree = "<group>"; };
 		4583EE721FB190D300AED27D /* stb_image_write.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stb_image_write.h; sourceTree = "<group>"; };
+		4583EE831FB1967700AED27D /* app.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = app.cpp; sourceTree = "<group>"; };
+		4583EE841FB1967700AED27D /* app.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = app.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,9 +293,13 @@
 		4583ED7B1FB18DCA00AED27D /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				4583EE821FB1965A00AED27D /* Systems */,
+				4583EE801FB195CD00AED27D /* Components */,
 				4583EE6F1FB190C400AED27D /* Libraries */,
 				4583EE5D1FB190AC00AED27D /* Utils */,
 				4583EE401FB1905200AED27D /* Rendering */,
+				4583EE831FB1967700AED27D /* app.cpp */,
+				4583EE841FB1967700AED27D /* app.hpp */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -516,6 +523,20 @@
 			name = Libraries;
 			sourceTree = "<group>";
 		};
+		4583EE801FB195CD00AED27D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		4583EE821FB1965A00AED27D /* Systems */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Systems;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -593,6 +614,7 @@
 				4583EE741FB190F300AED27D /* framebuffer to png.cpp in Sources */,
 				4583EE751FB190F300AED27D /* nvg helper.cpp in Sources */,
 				4583EE761FB190F300AED27D /* screenshot.cpp in Sources */,
+				4583EE851FB1967700AED27D /* app.cpp in Sources */,
 				4583EE771FB190F300AED27D /* transform.cpp in Sources */,
 				4583EE781FB190F300AED27D /* yaml helper.cpp in Sources */,
 				4583EE791FB190F300AED27D /* layer names.cpp in Sources */,
