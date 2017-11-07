@@ -22,19 +22,28 @@ namespace {
       )
     };
   }
+  
+  std::pair<uint16_t, uint16_t> getCategoryPair(b2Contact *const contact) {
+    return {
+      contact->GetFixtureA()->GetFilterData().categoryBits,
+      contact->GetFixtureB()->GetFilterData().categoryBits
+    };
+  }
 }
 
 void ContactListener::BeginContact(b2Contact *const contact) {
   if (beginListener) {
     const auto [entityA, entityB] = getEntityPair(contact);
-    beginListener(entityA, entityB);
+    const auto [catA, catB] = getCategoryPair(contact);
+    beginListener(entityA, entityB, catA, catB);
   }
 }
 
 void ContactListener::EndContact(b2Contact *const contact) {
   if (endListener) {
     const auto [entityA, entityB] = getEntityPair(contact);
-    endListener(entityA, entityB);
+    const auto [catA, catB] = getCategoryPair(contact);
+    endListener(entityA, entityB, catA, catB);
   }
 }
 

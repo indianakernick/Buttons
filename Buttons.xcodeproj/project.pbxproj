@@ -81,6 +81,7 @@
 		4583EE891FB197C200AED27D /* physics system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE871FB197C200AED27D /* physics system.cpp */; };
 		4583EE8F1FB19C0300AED27D /* contact listener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE8D1FB19C0300AED27D /* contact listener.cpp */; };
 		4583EE921FB19DE600AED27D /* collision categories.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE901FB19DE600AED27D /* collision categories.cpp */; };
+		4583EE971FB1A2AE00AED27D /* physics file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE951FB1A2AD00AED27D /* physics file.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -235,6 +236,9 @@
 		4583EE901FB19DE600AED27D /* collision categories.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "collision categories.cpp"; sourceTree = "<group>"; };
 		4583EE911FB19DE600AED27D /* collision categories.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "collision categories.hpp"; sourceTree = "<group>"; };
 		4583EE931FB19F2B00AED27D /* entity constants.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "entity constants.hpp"; sourceTree = "<group>"; };
+		4583EE941FB1A25300AED27D /* collision component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "collision component.hpp"; sourceTree = "<group>"; };
+		4583EE951FB1A2AD00AED27D /* physics file.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "physics file.cpp"; sourceTree = "<group>"; };
+		4583EE961FB1A2AE00AED27D /* physics file.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "physics file.hpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -541,6 +545,7 @@
 			isa = PBXGroup;
 			children = (
 				4583EE861FB1978500AED27D /* physics body component.hpp */,
+				4583EE941FB1A25300AED27D /* collision component.hpp */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -570,6 +575,8 @@
 				4583EE8E1FB19C0300AED27D /* contact listener.hpp */,
 				4583EE901FB19DE600AED27D /* collision categories.cpp */,
 				4583EE911FB19DE600AED27D /* collision categories.hpp */,
+				4583EE951FB1A2AD00AED27D /* physics file.cpp */,
+				4583EE961FB1A2AE00AED27D /* physics file.hpp */,
 			);
 			name = Physics;
 			sourceTree = "<group>";
@@ -645,6 +652,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4583EE971FB1A2AE00AED27D /* physics file.cpp in Sources */,
 				4583EE7E1FB1914000AED27D /* stb_image_write.c in Sources */,
 				4583EE7F1FB1914000AED27D /* tinyfiledialogs.c in Sources */,
 				4583EE731FB190F300AED27D /* b2 helper.cpp in Sources */,

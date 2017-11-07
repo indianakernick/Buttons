@@ -15,7 +15,7 @@
 
 class ContactListener final : public b2ContactListener {
 public:
-  using Listener = std::function<void (EntityID, EntityID)>;
+  using Listener = std::function<void (EntityID, EntityID, uint16_t, uint16_t)>;
 
   ContactListener() = default;
   
