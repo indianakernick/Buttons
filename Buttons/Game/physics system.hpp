@@ -9,6 +9,8 @@
 #ifndef physics_system_hpp
 #define physics_system_hpp
 
+#include "entity constants.hpp"
+#include "contact listener.hpp"
 #include <experimental/optional>
 #include <entt/entity/registry.hpp>
 #include "physics body component.hpp"
@@ -22,10 +24,11 @@ public:
   void quit();
   
   void update(float);
-  void iterate(entt::DefaultRegistry &);
+  void iterate(entt::Registry<EntityID> &);
 
 private:
   std::experimental::optional<b2World> world;
+  std::experimental::optional<ContactListener> contactListener;
 };
 
 #endif

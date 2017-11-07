@@ -12,9 +12,13 @@
 
 void PhysicsSystem::init() {
   world.emplace(GRAVITY);
+  contactListener.emplace();
+  world->SetContactListener(&(*contactListener));
 }
 
 void PhysicsSystem::quit() {
+  world->SetContactListener(nullptr);
+  contactListener = std::experimental::nullopt;
   world = std::experimental::nullopt;
 }
 
@@ -22,6 +26,6 @@ void PhysicsSystem::update(const float delta) {
   world->Step(delta, VELOCITY_ITER, POSITION_ITER);
 }
 
-void PhysicsSystem::iterate(entt::DefaultRegistry &registry) {
+void PhysicsSystem::iterate(entt::Registry<EntityID> &registry) {
   
 }
