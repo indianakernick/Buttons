@@ -82,6 +82,7 @@
 		4583EE8F1FB19C0300AED27D /* contact listener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE8D1FB19C0300AED27D /* contact listener.cpp */; };
 		4583EE921FB19DE600AED27D /* collision categories.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE901FB19DE600AED27D /* collision categories.cpp */; };
 		4583EE971FB1A2AE00AED27D /* physics file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE951FB1A2AD00AED27D /* physics file.cpp */; };
+		4583EE9D1FB1AC1600AED27D /* power system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE9B1FB1AC1600AED27D /* power system.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -241,6 +242,8 @@
 		4583EE961FB1A2AE00AED27D /* physics file.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "physics file.hpp"; sourceTree = "<group>"; };
 		4583EE991FB1AADD00AED27D /* power component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "power component.hpp"; sourceTree = "<group>"; };
 		4583EE9A1FB1AB0600AED27D /* activation component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "activation component.hpp"; sourceTree = "<group>"; };
+		4583EE9B1FB1AC1600AED27D /* power system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "power system.cpp"; sourceTree = "<group>"; };
+		4583EE9C1FB1AC1600AED27D /* power system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "power system.hpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -560,6 +563,8 @@
 			children = (
 				4583EE871FB197C200AED27D /* physics system.cpp */,
 				4583EE881FB197C200AED27D /* physics system.hpp */,
+				4583EE9B1FB1AC1600AED27D /* power system.cpp */,
+				4583EE9C1FB1AC1600AED27D /* power system.hpp */,
 			);
 			name = Systems;
 			sourceTree = "<group>";
@@ -717,6 +722,7 @@
 				4583EE8F1FB19C0300AED27D /* contact listener.cpp in Sources */,
 				4583EE291FB18F7A00AED27D /* b2Distance.cpp in Sources */,
 				4583EE891FB197C200AED27D /* physics system.cpp in Sources */,
+				4583EE9D1FB1AC1600AED27D /* power system.cpp in Sources */,
 				4583EE2A1FB18F7A00AED27D /* b2CollideCircle.cpp in Sources */,
 				4583EE2B1FB18F7A00AED27D /* b2CollidePolygon.cpp in Sources */,
 				4583EE2C1FB18F7A00AED27D /* b2DynamicTree.cpp in Sources */,
