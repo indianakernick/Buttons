@@ -12,6 +12,7 @@
 #include "entity constants.hpp"
 #include <entt/entity/registry.hpp>
 
+///Moves power from outputs to inputs
 void powerSystem(entt::Registry<EntityID> &);
 
 #endif

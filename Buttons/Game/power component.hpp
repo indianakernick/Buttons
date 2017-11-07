@@ -9,7 +9,7 @@
 #ifndef power_component_hpp
 #define power_component_hpp
 
-#include <limit>
+#include <limits>
 #include "entity constants.hpp"
 
 struct PowerInput {
