@@ -15,8 +15,6 @@
 #define CATEGORIES                                                              \
   CAT(Default)                                                                  \
   CAT(PlayerBody)                                                               \
-  CAT(ButtonTop)                                                                \
-  CAT(ButtonBase)                                                               \
   LAST_CAT(Switch)
 
 namespace Category {

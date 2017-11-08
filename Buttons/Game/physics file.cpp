@@ -10,6 +10,7 @@
 
 #include "b2 glm cast.hpp"
 #include "yaml helper.hpp"
+#include "object types.hpp"
 #include "collision categories.hpp"
 #include <Simpleton/Platform/system info.hpp>
 
@@ -239,6 +240,9 @@ namespace {
     getOptional(fixtureDef.density, fixtureNode, "density");
     getOptional(fixtureDef.isSensor, fixtureNode, "is sensor");
     
+    if (const YAML::Node &userData = fixtureNode["user data"]) {
+      fixtureDef.userData = getUserData(userData.Scalar());
+    }
     if (const YAML::Node &filter = fixtureNode["filter"]) {
       fixtureDef.filter = readFilter(filter);
     }
