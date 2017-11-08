@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		452E10891FB2D27D0063114B /* collision pairs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452E10871FB2D27D0063114B /* collision pairs.cpp */; };
+		452E108C1FB2D8BA0063114B /* object types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452E108A1FB2D8BA0063114B /* object types.cpp */; };
 		4583ED5B1FB1841100AED27D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4583ED5A1FB1841100AED27D /* Assets.xcassets */; };
 		4583ED671FB1845B00AED27D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583ED661FB1845B00AED27D /* main.cpp */; };
 		4583ED6D1FB1859500AED27D /* libSimpleton Engine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4583ED691FB1859500AED27D /* libSimpleton Engine.dylib */; };
@@ -90,6 +92,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		452E10871FB2D27D0063114B /* collision pairs.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "collision pairs.cpp"; sourceTree = "<group>"; };
+		452E10881FB2D27D0063114B /* collision pairs.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "collision pairs.hpp"; sourceTree = "<group>"; };
+		452E108A1FB2D8BA0063114B /* object types.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "object types.cpp"; sourceTree = "<group>"; };
+		452E108B1FB2D8BA0063114B /* object types.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "object types.hpp"; sourceTree = "<group>"; };
 		4583ED551FB1841100AED27D /* Buttons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Buttons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4583ED5A1FB1841100AED27D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4583ED5F1FB1841100AED27D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -607,10 +613,14 @@
 			children = (
 				4583EE8D1FB19C0300AED27D /* contact listener.cpp */,
 				4583EE8E1FB19C0300AED27D /* contact listener.hpp */,
-				4583EE901FB19DE600AED27D /* collision categories.cpp */,
-				4583EE911FB19DE600AED27D /* collision categories.hpp */,
 				4583EE951FB1A2AD00AED27D /* physics file.cpp */,
 				4583EE961FB1A2AE00AED27D /* physics file.hpp */,
+				452E108A1FB2D8BA0063114B /* object types.cpp */,
+				452E108B1FB2D8BA0063114B /* object types.hpp */,
+				4583EE901FB19DE600AED27D /* collision categories.cpp */,
+				4583EE911FB19DE600AED27D /* collision categories.hpp */,
+				452E10871FB2D27D0063114B /* collision pairs.cpp */,
+				452E10881FB2D27D0063114B /* collision pairs.hpp */,
 			);
 			name = Physics;
 			sourceTree = "<group>";
@@ -699,6 +709,7 @@
 				4583EE731FB190F300AED27D /* b2 helper.cpp in Sources */,
 				4583EE741FB190F300AED27D /* framebuffer to png.cpp in Sources */,
 				4583EE751FB190F300AED27D /* nvg helper.cpp in Sources */,
+				452E10891FB2D27D0063114B /* collision pairs.cpp in Sources */,
 				4583EE761FB190F300AED27D /* screenshot.cpp in Sources */,
 				4583EE851FB1967700AED27D /* app.cpp in Sources */,
 				4583EE771FB190F300AED27D /* transform.cpp in Sources */,
@@ -737,6 +748,7 @@
 				4583EE1E1FB18F7A00AED27D /* b2PulleyJoint.cpp in Sources */,
 				4583EE1F1FB18F7A00AED27D /* b2RopeJoint.cpp in Sources */,
 				4583EE201FB18F7A00AED27D /* b2Island.cpp in Sources */,
+				452E108C1FB2D8BA0063114B /* object types.cpp in Sources */,
 				4583EE211FB18F7A00AED27D /* b2ContactManager.cpp in Sources */,
 				4583EE221FB18F7A00AED27D /* b2Rope.cpp in Sources */,
 				4583EE231FB18F7A00AED27D /* b2Draw.cpp in Sources */,

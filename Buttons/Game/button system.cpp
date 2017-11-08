@@ -15,11 +15,8 @@
 void buttonSystem(Registry &registry) {
   auto view = registry.view<Collision, Activation>();
   for (EntityID entity : view) {
-    const auto &collision = view.get<Collision>(entity);
-    if (collision.category == getCategoryBit<Category::ButtonBase>()) {
-      view.get<Activation>(entity).active = (
-        collision.collidingCategory == getCategoryBit<Category::ButtonTop>()
-      );
-    }
+    const auto &collisionPairs = view.get<Collision>(entity).collisionPairs;
+    view.get<Activation>(entity).active
+    = collisionPairs.hasPair<ObjectType::ButtonBase, ObjectType::ButtonTop>();
   }
 }

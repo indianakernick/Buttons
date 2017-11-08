@@ -15,18 +15,18 @@ namespace {
   std::pair<EntityID, EntityID> getEntityPair(b2Contact *const contact) {
     return {
       static_cast<EntityID>(
-        reinterpret_cast<uintptr_t>(contact->GetFixtureA()->GetUserData())
+        reinterpret_cast<uintptr_t>(contact->GetFixtureA()->GetBody()->GetUserData())
       ),
       static_cast<EntityID>(
-        reinterpret_cast<uintptr_t>(contact->GetFixtureB()->GetUserData())
+        reinterpret_cast<uintptr_t>(contact->GetFixtureB()->GetBody()->GetUserData())
       )
     };
   }
   
-  std::pair<uint16_t, uint16_t> getCategoryPair(b2Contact *const contact) {
+  CollisionPair getCollisionPair(b2Contact *const contact) {
     return {
-      contact->GetFixtureA()->GetFilterData().categoryBits,
-      contact->GetFixtureB()->GetFilterData().categoryBits
+      reinterpret_cast<ObjectTypeID>(contact->GetFixtureA()->GetUserData()),
+      reinterpret_cast<ObjectTypeID>(contact->GetFixtureB()->GetUserData())
     };
   }
 }
@@ -34,16 +34,14 @@ namespace {
 void ContactListener::BeginContact(b2Contact *const contact) {
   if (beginListener) {
     const auto [entityA, entityB] = getEntityPair(contact);
-    const auto [catA, catB] = getCategoryPair(contact);
-    beginListener(entityA, entityB, catA, catB);
+    beginListener(entityA, entityB, getCollisionPair(contact));
   }
 }
 
 void ContactListener::EndContact(b2Contact *const contact) {
   if (endListener) {
     const auto [entityA, entityB] = getEntityPair(contact);
-    const auto [catA, catB] = getCategoryPair(contact);
-    endListener(entityA, entityB, catA, catB);
+    endListener(entityA, entityB, getCollisionPair(contact));
   }
 }
 

@@ -8,6 +8,7 @@
 
 #include "physics system.hpp"
 
+#include <algorithm>
 #include "physics constants.hpp"
 
 void PhysicsSystem::init(Registry &newRegistry) {
@@ -26,39 +27,36 @@ void PhysicsSystem::quit() {
   world = std::experimental::nullopt;
 }
 
-void PhysicsSystem::update(const float delta) {
-  world->Step(delta, VELOCITY_ITER, POSITION_ITER);
+b2World *PhysicsSystem::getWorld() {
+  return &(*world);
 }
 
-//This system will fail when more than one object of the same type collides with
-//another object. I'm pretty sure that won't happen during the game. The button
-//top can only every collide with one other button base. This system will fail
-//if a button base collides with more than one button top but this won't happen.
+void PhysicsSystem::step(const float delta) {
+  world->Step(delta, VELOCITY_ITER, POSITION_ITER);
+}
 
 void PhysicsSystem::beginContact(
   const EntityID entityA,
   const EntityID entityB,
-  const uint16_t catA,
-  const uint16_t catB
+  const CollisionPair pair
 ) {
   if (registry->has<Collision>(entityA)) {
-    registry->get<Collision>(entityA).collidingCategory |= catB;
+    registry->get<Collision>(entityA).collisionPairs.addPair(pair);
   }
   if (registry->has<Collision>(entityB)) {
-    registry->get<Collision>(entityB).collidingCategory |= catA;
+    registry->get<Collision>(entityB).collisionPairs.addPair(pair);
   }
 }
 
 void PhysicsSystem::endContact(
   const EntityID entityA,
   const EntityID entityB,
-  const uint16_t catA,
-  const uint16_t catB
+  const CollisionPair pair
 ) {
   if (registry->has<Collision>(entityA)) {
-    registry->get<Collision>(entityA).collidingCategory &= ~catB;
+    registry->get<Collision>(entityA).collisionPairs.remPair(pair);
   }
   if (registry->has<Collision>(entityB)) {
-    registry->get<Collision>(entityB).collidingCategory &= ~catA;
+    registry->get<Collision>(entityB).collisionPairs.remPair(pair);
   }
 }

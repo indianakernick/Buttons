@@ -10,12 +10,13 @@
 #define contact_listener_hpp
 
 #include <functional>
+#include "object types.hpp"
 #include "entity constants.hpp"
 #include "../Libraries/Box2D/Dynamics/b2WorldCallbacks.h"
 
 class ContactListener final : public b2ContactListener {
 public:
-  using Listener = std::function<void (EntityID, EntityID, uint16_t, uint16_t)>;
+  using Listener = std::function<void (EntityID, EntityID, CollisionPair)>;
 
   ContactListener() = default;
   

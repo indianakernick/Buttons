@@ -22,15 +22,17 @@ public:
   void init(Registry &);
   void quit();
   
-  void update(float);
+  b2World *getWorld();
+  
+  void step(float);
 
 private:
   entt::Registry<EntityID> *registry = nullptr;
   std::experimental::optional<b2World> world;
   std::experimental::optional<ContactListener> contactListener;
   
-  void beginContact(EntityID, EntityID, uint16_t, uint16_t);
-  void endContact(EntityID, EntityID, uint16_t, uint16_t);
+  void beginContact(EntityID, EntityID, CollisionPair);
+  void endContact(EntityID, EntityID, CollisionPair);
 };
 
 #endif

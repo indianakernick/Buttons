@@ -9,11 +9,10 @@
 #ifndef collision_component_hpp
 #define collision_component_hpp
 
-#include <cstdint>
+#include "collision pairs.hpp"
 
 struct Collision {
-  uint16_t category = 0;
-  uint16_t collidingCategory = 0;
+  CollisionPairs collisionPairs;
 };
 
 #endif
