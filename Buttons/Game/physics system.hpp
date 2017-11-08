@@ -13,7 +13,6 @@
 #include "contact listener.hpp"
 #include <experimental/optional>
 #include "collision component.hpp"
-#include "physics body component.hpp"
 #include "../Libraries/Box2D/Box2D.h"
 
 class PhysicsSystem {

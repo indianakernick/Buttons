@@ -232,7 +232,7 @@
 		4583EE721FB190D300AED27D /* stb_image_write.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stb_image_write.h; sourceTree = "<group>"; };
 		4583EE831FB1967700AED27D /* app.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = app.cpp; sourceTree = "<group>"; };
 		4583EE841FB1967700AED27D /* app.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = app.hpp; sourceTree = "<group>"; };
-		4583EE861FB1978500AED27D /* physics body component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "physics body component.hpp"; sourceTree = "<group>"; };
+		4583EE861FB1978500AED27D /* physics component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "physics component.hpp"; sourceTree = "<group>"; };
 		4583EE871FB197C200AED27D /* physics system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "physics system.cpp"; sourceTree = "<group>"; };
 		4583EE881FB197C200AED27D /* physics system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "physics system.hpp"; sourceTree = "<group>"; };
 		4583EE8B1FB199E100AED27D /* physics constants.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "physics constants.hpp"; sourceTree = "<group>"; };
@@ -564,7 +564,7 @@
 		4583EE801FB195CD00AED27D /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				4583EE861FB1978500AED27D /* physics body component.hpp */,
+				4583EE861FB1978500AED27D /* physics component.hpp */,
 				4583EE941FB1A25300AED27D /* collision component.hpp */,
 				4583EE991FB1AADD00AED27D /* power component.hpp */,
 				4583EE9A1FB1AB0600AED27D /* activation component.hpp */,

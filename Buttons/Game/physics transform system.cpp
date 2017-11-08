@@ -9,8 +9,8 @@
 #include "physics transform system.hpp"
 
 #include "b2 glm cast.hpp"
+#include "physics component.hpp"
 #include "transform component.hpp"
-#include "physics body component.hpp"
 
 void physicsTransformSystem(Registry &registry) {
   auto view = registry.view<PhysicsBody, Transform>();
