@@ -39,9 +39,4 @@ static_assert(Utils::listSize<Categories> <= 16);
 
 uint16_t getCategoryBit(const std::string &);
 
-template <typename Cat>
-uint16_t getCategoryBit() {
-  return 1 << Utils::indexOf<Categories, Cat>;
-}
-
 #endif
