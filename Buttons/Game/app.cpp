@@ -79,7 +79,7 @@ bool App::input(float) {
   while (SDL_PollEvent(&e)) {
     if (e.type == SDL_QUIT) {
       return false;
-    } else {
+    } else if (!screenshot.handleEvent(e)) {
       
     }
   }
@@ -97,7 +97,7 @@ bool App::update(const float delta) {
   return true;
 }
 
-bool App::render(const float delta) {
+bool App::render(const float) {
   renderingContext.preRender({});
   renderingManager.render();
   screenshot.postRender(renderingContext, true);

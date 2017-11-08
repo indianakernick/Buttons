@@ -78,8 +78,8 @@
 		4583EE7B1FB190F300AED27D /* rendering job.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE4A1FB1906F00AED27D /* rendering job.cpp */; };
 		4583EE7C1FB190F300AED27D /* rendering manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE481FB1906E00AED27D /* rendering manager.cpp */; };
 		4583EE7D1FB190F300AED27D /* rendering resources.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE451FB1906E00AED27D /* rendering resources.cpp */; };
-		4583EE7E1FB1914000AED27D /* stb_image_write.c in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE001FB18EFF00AED27D /* stb_image_write.c */; };
-		4583EE7F1FB1914000AED27D /* tinyfiledialogs.c in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE011FB18EFF00AED27D /* tinyfiledialogs.c */; };
+		4583EE7E1FB1914000AED27D /* stb_image_write.c in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE001FB18EFF00AED27D /* stb_image_write.c */; settings = {COMPILER_FLAGS = "-Wno-comma"; }; };
+		4583EE7F1FB1914000AED27D /* tinyfiledialogs.c in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE011FB18EFF00AED27D /* tinyfiledialogs.c */; settings = {COMPILER_FLAGS = "-Wno-shorten-64-to-32"; }; };
 		4583EE851FB1967700AED27D /* app.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE831FB1967700AED27D /* app.cpp */; };
 		4583EE891FB197C200AED27D /* physics system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE871FB197C200AED27D /* physics system.cpp */; };
 		4583EE8F1FB19C0300AED27D /* contact listener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE8D1FB19C0300AED27D /* contact listener.cpp */; };
@@ -346,14 +346,14 @@
 		4583ED7B1FB18DCA00AED27D /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				4583EE981FB1AA1C00AED27D /* Entity */,
-				4583EE8C1FB19BEE00AED27D /* Physics */,
-				4583EE8A1FB199BF00AED27D /* Constants */,
-				4583EE821FB1965A00AED27D /* Systems */,
-				4583EE801FB195CD00AED27D /* Components */,
 				4583EE6F1FB190C400AED27D /* Libraries */,
 				4583EE5D1FB190AC00AED27D /* Utils */,
+				4583EE8A1FB199BF00AED27D /* Constants */,
 				4583EE401FB1905200AED27D /* Rendering */,
+				4583EE981FB1AA1C00AED27D /* Entity */,
+				4583EE8C1FB19BEE00AED27D /* Physics */,
+				4583EE821FB1965A00AED27D /* Systems */,
+				4583EE801FB195CD00AED27D /* Components */,
 				4583EE831FB1967700AED27D /* app.cpp */,
 				4583EE841FB1967700AED27D /* app.hpp */,
 			);
