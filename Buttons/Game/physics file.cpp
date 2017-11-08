@@ -92,39 +92,44 @@ namespace {
     return scalar * (scale.x + scale.y) * 0.5f;
   }
   
-  std::unique_ptr<b2CircleShape> readCircle(
+  b2CircleShape *readCircle(
     const YAML::Node &circleNode,
     const glm::vec2 scale
   ) {
-    auto circle = std::make_unique<b2CircleShape>();
-    circle->m_p = readVec(getChild(circleNode, "pos"), scale);
-    circle->m_radius = mul(getChild(circleNode, "radius").as<float32>(), scale);
-    return circle;
+    static b2CircleShape circle;
+    circle = {};
+    
+    circle.m_p = readVec(getChild(circleNode, "pos"), scale);
+    circle.m_radius = mul(getChild(circleNode, "radius").as<float32>(), scale);
+    return &circle;
   }
   
-  std::unique_ptr<b2EdgeShape> readEdge(
+  b2EdgeShape *readEdge(
     const YAML::Node &edgeNode,
     const glm::vec2 scale
   ) {
-    auto edge = std::make_unique<b2EdgeShape>();
+    static b2EdgeShape edge;
+    edge = {};
+    
     if (const YAML::Node &vert0 = edgeNode["vert 0"]) {
-      edge->m_vertex0 = readVec(vert0, scale);
-      edge->m_hasVertex0 = true;
+      edge.m_vertex0 = readVec(vert0, scale);
+      edge.m_hasVertex0 = true;
     }
-    edge->m_vertex1 = readVec(getChild(edgeNode, "vert 1"), scale);
-    edge->m_vertex2 = readVec(getChild(edgeNode, "vert 2"), scale);
+    edge.m_vertex1 = readVec(getChild(edgeNode, "vert 1"), scale);
+    edge.m_vertex2 = readVec(getChild(edgeNode, "vert 2"), scale);
     if (const YAML::Node &vert3 = edgeNode["vert 3"]) {
-      edge->m_vertex3 = readVec(vert3, scale);
-      edge->m_hasVertex3 = true;
+      edge.m_vertex3 = readVec(vert3, scale);
+      edge.m_hasVertex3 = true;
     }
-    return edge;
+    return &edge;
   }
   
-  std::unique_ptr<b2PolygonShape> readPolygon(
+  b2PolygonShape *readPolygon(
     const YAML::Node &polygonNode,
     const glm::vec2 scale
   ) {
-    auto polygon = std::make_unique<b2PolygonShape>();
+    static b2PolygonShape polygon;
+    polygon = {};
     
     if (const YAML::Node &vertsNode = polygonNode["verts"]) {
       const std::vector<b2Vec2> verts = readVecs(vertsNode, scale);
@@ -135,7 +140,7 @@ namespace {
         );
       }
     
-      polygon->Set(verts.data(), static_cast<int32>(verts.size()));
+      polygon.Set(verts.data(), static_cast<int32>(verts.size()));
     } else {
       const YAML::Node &halfWidth = getChild(polygonNode, "half width");
       const YAML::Node &halfHeight = getChild(polygonNode, "half height");
@@ -143,39 +148,41 @@ namespace {
       glm::tvec2<float32> vec = {halfWidth.as<float32>(), halfHeight.as<float32>()};
       vec = vec * scale;
       
-      polygon->SetAsBox(std::abs(vec.x), std::abs(vec.y));
+      polygon.SetAsBox(std::abs(vec.x), std::abs(vec.y));
     }
     
-    return polygon;
+    return &polygon;
   }
   
-  std::unique_ptr<b2ChainShape> readChain(const YAML::Node &chainNode, const glm::vec2 scale) {
+  b2ChainShape *readChain(const YAML::Node &chainNode, const glm::vec2 scale) {
+    static b2ChainShape chain;
+    chain = {};
+    
     bool isLoop = false;
     if (const YAML::Node &isLoopNode = chainNode["is loop"]) {
       isLoop = isLoopNode.as<bool>();
     }
     const std::vector<b2Vec2> verts = readVecs(getChild(chainNode, "verts"), scale);
     
-    auto chain = std::make_unique<b2ChainShape>();
     if (isLoop) {
-      chain->CreateLoop(verts.data(), static_cast<int32>(verts.size()));
+      chain.CreateLoop(verts.data(), static_cast<int32>(verts.size()));
     } else {
-      chain->CreateChain(verts.data(), static_cast<int32>(verts.size()));
+      chain.CreateChain(verts.data(), static_cast<int32>(verts.size()));
       
       if (const YAML::Node &prevVert = chainNode["prev vert"]) {
-        chain->m_prevVertex = readVec(prevVert, scale);
-        chain->m_hasPrevVertex = true;
+        chain.m_prevVertex = readVec(prevVert, scale);
+        chain.m_hasPrevVertex = true;
       }
       
       if (const YAML::Node &nextVert = chainNode["next vert"]) {
-        chain->m_nextVertex = readVec(nextVert, scale);
-        chain->m_hasNextVertex = true;
+        chain.m_nextVertex = readVec(nextVert, scale);
+        chain.m_hasNextVertex = true;
       }
     }
-    return chain;
+    return &chain;
   }
   
-  std::unique_ptr<b2Shape> readShape(const YAML::Node &shapeNode, const glm::vec2 scale) {
+  b2Shape *readShape(const YAML::Node &shapeNode, const glm::vec2 scale) {
     checkType(shapeNode, YAML::NodeType::Map);
     
     const std::string &typeName = getChild(shapeNode, "type").Scalar();
@@ -229,11 +236,11 @@ namespace {
   ) {
     const std::string &shapeName = getChild(fixtureNode, "shape").Scalar();
     const YAML::Node &shapeNode = getChild(shapesNode, shapeName.c_str());
-    std::unique_ptr<b2Shape> shape = readShape(shapeNode, scale);
+    b2Shape *const shape = readShape(shapeNode, scale);
     
     b2FixtureDef fixtureDef;
     //CreateFixture copies the shape
-    fixtureDef.shape = shape.get();
+    fixtureDef.shape = shape;
     
     getOptional(fixtureDef.friction, fixtureNode, "friction");
     getOptional(fixtureDef.restitution, fixtureNode, "restitution");
