@@ -9,6 +9,8 @@
 #include "app.hpp"
 
 #include "systems.hpp"
+#include "global flags.hpp"
+#include "window constants.hpp"
 #include <Simpleton/Time/get.hpp>
 
 void App::mainloop() {
@@ -50,13 +52,6 @@ void App::mainloop() {
 }
 
 void App::init() {
-  const Platform::Window::Desc WINDOW_DESC = {
-    "Buttons",
-    {1280, 720},
-    true,
-    true
-  };
-
   windowLibrary.emplace(SDL_INIT_EVENTS);
   window = Platform::makeWindow(WINDOW_DESC);
   renderingContext.init(window.get());
@@ -97,9 +92,10 @@ bool App::update(const float delta) {
   return true;
 }
 
-bool App::render(const float) {
-  renderingContext.preRender({});
+bool App::render(const float delta) {
+  camera.update(window.size(), delta);
+  renderingContext.preRender(camera.transform.toPixels());
   renderingManager.render();
-  screenshot.postRender(renderingContext, true);
+  screenshot.postRender(renderingContext, ENABLE_FPS_RENDER);
   return true;
 }

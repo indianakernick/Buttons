@@ -9,6 +9,7 @@
 #ifndef app_hpp
 #define app_hpp
 
+#include "camera.hpp"
 #include "screenshot.hpp"
 #include "physics system.hpp"
 #include "entity registry.hpp"
@@ -31,6 +32,7 @@ private:
   Platform::Window window;
   RenderingContext renderingContext;
   RenderingManager renderingManager;
+  Camera camera;
   Screenshot screenshot;
   Registry registry;
   PhysicsSystem physics;
