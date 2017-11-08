@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		452E10891FB2D27D0063114B /* collision pairs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452E10871FB2D27D0063114B /* collision pairs.cpp */; };
 		452E108C1FB2D8BA0063114B /* object types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452E108A1FB2D8BA0063114B /* object types.cpp */; };
+		452E10941FB2F4930063114B /* Consolas.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 452E10931FB2F4700063114B /* Consolas.ttf */; };
 		4583ED5B1FB1841100AED27D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4583ED5A1FB1841100AED27D /* Assets.xcassets */; };
 		4583ED671FB1845B00AED27D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583ED661FB1845B00AED27D /* main.cpp */; };
 		4583ED6D1FB1859500AED27D /* libSimpleton Engine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4583ED691FB1859500AED27D /* libSimpleton Engine.dylib */; };
@@ -96,6 +97,8 @@
 		452E10881FB2D27D0063114B /* collision pairs.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "collision pairs.hpp"; sourceTree = "<group>"; };
 		452E108A1FB2D8BA0063114B /* object types.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "object types.cpp"; sourceTree = "<group>"; };
 		452E108B1FB2D8BA0063114B /* object types.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "object types.hpp"; sourceTree = "<group>"; };
+		452E10911FB2F2EE0063114B /* systems.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = systems.hpp; sourceTree = "<group>"; };
+		452E10931FB2F4700063114B /* Consolas.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Consolas.ttf; sourceTree = "<group>"; };
 		4583ED551FB1841100AED27D /* Buttons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Buttons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4583ED5A1FB1841100AED27D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4583ED5F1FB1841100AED27D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -286,6 +289,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		452E10921FB2F4550063114B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				452E10931FB2F4700063114B /* Consolas.ttf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		4583ED4C1FB1841000AED27D = {
 			isa = PBXGroup;
 			children = (
@@ -306,6 +317,7 @@
 		4583ED571FB1841100AED27D /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				452E10921FB2F4550063114B /* Resources */,
 				4583ED991FB18E9C00AED27D /* Libraries */,
 				4583ED7B1FB18DCA00AED27D /* Game */,
 				4583ED5A1FB1841100AED27D /* Assets.xcassets */,
@@ -582,6 +594,7 @@
 		4583EE821FB1965A00AED27D /* Systems */ = {
 			isa = PBXGroup;
 			children = (
+				452E10911FB2F2EE0063114B /* systems.hpp */,
 				4583EE871FB197C200AED27D /* physics system.cpp */,
 				4583EE881FB197C200AED27D /* physics system.hpp */,
 				4583EE9B1FB1AC1600AED27D /* power system.cpp */,
@@ -692,6 +705,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				452E10941FB2F4930063114B /* Consolas.ttf in Resources */,
 				4583ED5B1FB1841100AED27D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

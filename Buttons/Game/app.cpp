@@ -8,30 +8,98 @@
 
 #include "app.hpp"
 
-#include <SDL2/SDL.h>
+#include "systems.hpp"
+#include <Simpleton/Time/get.hpp>
 
 void App::mainloop() {
-  SDL_Init(SDL_INIT_EVERYTHING);
+  init();
   
-  SDL_Window *window = SDL_CreateWindow(
-    "Title",
-    SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-    1280, 720,
-    SDL_WINDOW_SHOWN
-  );
+  //Time::Mainloop::fixedWithVarPrePost isn't perfect
   
-  bool done = false;
-  while (!done) {
-    SDL_Event e;
-    while (SDL_PollEvent(&e)) {
-      if (e.type == SDL_QUIT) {
-        done = true;
-        break;
-      }
+  //the application cannot control the mainloop properly so I'll have to
+  //find another way of implementing the interface to Time::Mainloop
+  
+  static const float step = 1.0f/60.0f;
+  static const uint32_t maxSteps = 16;
+  
+  Rep lag = 0;
+  Time::Point<Duration> last = Time::getPoint<Duration>();
+  bool ok = true;
+
+  while (ok) {
+    const Time::Point<Duration> now = Time::getPoint<Duration>();
+    const Duration elapsed = now - last;
+    last = now;
+    lag += elapsed.count();
+    
+    uint32_t numSteps = lag < 0 ? 0 : std::min(static_cast<uint32_t>(lag / step), maxSteps);
+    const Rep stepSize = step * numSteps;
+    lag -= stepSize;
+    
+    ok = input(stepSize);
+    
+    while (numSteps) {
+      ok = ok && update(step);
+      numSteps--;
     }
+    
+    ok = ok && render(stepSize);
   }
   
-  SDL_DestroyWindow(window);
+  quit();
+}
+
+void App::init() {
+  const Platform::Window::Desc WINDOW_DESC = {
+    "Buttons",
+    {1280, 720},
+    true,
+    true
+  };
+
+  windowLibrary.emplace(SDL_INIT_EVENTS);
+  window = Platform::makeWindow(WINDOW_DESC);
+  renderingContext.init(window.get());
+  renderingManager.init(renderingContext);
   
-  SDL_Quit();
+  physics.init(registry);
+}
+
+void App::quit() {
+  physics.quit();
+
+  renderingManager.quit();
+  renderingContext.quit();
+  window.reset();
+  windowLibrary = std::experimental::nullopt;
+}
+
+bool App::input(float) {
+  SDL_Event e;
+  while (SDL_PollEvent(&e)) {
+    if (e.type == SDL_QUIT) {
+      return false;
+    } else {
+      
+    }
+  }
+  return true;
+}
+
+bool App::update(const float delta) {
+  physics.step(delta);
+  physicsTransformSystem(registry);
+  powerInputActivationSystem(registry);
+  activatePowerOutputSystem(registry);
+  powerSystem(registry);
+  buttonSystem(registry);
+  
+  return true;
+}
+
+bool App::render(const float delta) {
+  renderingContext.preRender({});
+  renderingManager.render();
+  screenshot.postRender(renderingContext, true);
+  return true;
 }
