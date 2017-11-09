@@ -11,10 +11,10 @@
 
 #include "nanovg.hpp"
 #include <glm/vec2.hpp>
-#include "transform.hpp"
 #include "b2 glm cast.hpp"
 #include <yaml-cpp/yaml.h>
 #include <glm/trigonometric.hpp>
+#include "transform component.hpp"
 
 template <>
 struct YAML::convert<glm::vec2> {
@@ -67,7 +67,7 @@ struct YAML::convert<Transform> {
     Node node(YAML::NodeType::Map);
     node.force_insert("pos", transform.pos);
     node.force_insert("scale", transform.scale);
-    node.force_insert("rotation", angleToFile(transform.rotation));
+    node.force_insert("rotation", angleToFile(transform.angle));
     return node;
   }
 
@@ -86,7 +86,7 @@ struct YAML::convert<Transform> {
       }
     }
     if (const YAML::Node &rotationNode = node["rotation"]) {
-      transform.rotation = angleFromFile(rotationNode.as<float>());
+      transform.angle = angleFromFile(rotationNode.as<float>());
     }
     return true;
   }

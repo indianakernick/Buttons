@@ -9,8 +9,8 @@
 #ifndef physics_file_hpp
 #define physics_file_hpp
 
-#include "transform.hpp"
 #include <yaml-cpp/node/node.h>
+#include "transform component.hpp"
 #include "../Libraries/Box2D/Box2D.h"
 
 b2Body *loadBody(const std::string &, b2World &, Transform);
