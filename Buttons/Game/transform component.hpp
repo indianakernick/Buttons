@@ -11,10 +11,17 @@
 
 #include <glm/vec2.hpp>
 
+namespace YAML {
+  class Node;
+}
+class EntityIDmap;
+
 struct Transform {
-  glm::vec2 pos;
-  glm::vec2 scale;
-  float rotation;
+  Transform(const YAML::Node &, const EntityIDmap &);
+
+  glm::vec2 pos = {0.0f, 0.0f};
+  glm::vec2 scale = {0.0f, 0.0f};
+  float rotation = 0.0f;
 };
 
 #endif

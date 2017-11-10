@@ -11,12 +11,19 @@
 
 #include "entity constants.hpp"
 
+namespace YAML {
+  class Node;
+}
+class EntityIDmap;
+
 struct PowerInput {
   bool on = false;
 };
 
 struct PowerOutput {
-  bool on;
+  PowerOutput(const YAML::Node &, const EntityIDmap &);
+
+  bool on = false;
   EntityID out;
 };
 

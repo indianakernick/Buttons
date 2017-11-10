@@ -8,12 +8,9 @@
 
 #include "power component.hpp"
 
-#include "component init.hpp"
+#include "yaml helper.hpp"
+#include "entity id map.hpp"
 
-template <>
-struct ComponentInit<PowerOutput> {
-  static void init(PowerOutput &comp, const YAML::Node &node) {
-    comp.on = false;
-    
-  }
-};
+PowerOutput::PowerOutput(const YAML::Node &node, const EntityIDmap &idMap) {
+  out = idMap.getEntityFromUserID(getChild(node, "out").as<UserID>());
+}

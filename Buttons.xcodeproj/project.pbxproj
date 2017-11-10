@@ -97,7 +97,6 @@
 		459796101FB2FCA0007A7432 /* camera zoom track.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459796061FB2FC80007A7432 /* camera zoom track.cpp */; };
 		459796111FB2FCA0007A7432 /* camera zoom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459796081FB2FC80007A7432 /* camera zoom.cpp */; };
 		459796121FB2FCA0007A7432 /* camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459795FE1FB2FC7D007A7432 /* camera.cpp */; };
-		459796181FB41B3F007A7432 /* component init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459796161FB41B3F007A7432 /* component init.cpp */; };
 		4597961A1FB41BF1007A7432 /* physics component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459796191FB41BF1007A7432 /* physics component.cpp */; };
 		4597961C1FB41BFE007A7432 /* collision component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597961B1FB41BFE007A7432 /* collision component.cpp */; };
 		4597961E1FB41C0C007A7432 /* power component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597961D1FB41C0C007A7432 /* power component.cpp */; };
@@ -301,8 +300,6 @@
 		459796131FB2FD2C007A7432 /* camera constants.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "camera constants.hpp"; sourceTree = "<group>"; };
 		459796141FB2FD47007A7432 /* window constants.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "window constants.hpp"; sourceTree = "<group>"; };
 		459796151FB2FD6F007A7432 /* global flags.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "global flags.hpp"; sourceTree = "<group>"; };
-		459796161FB41B3F007A7432 /* component init.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "component init.cpp"; sourceTree = "<group>"; };
-		459796171FB41B3F007A7432 /* component init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "component init.hpp"; sourceTree = "<group>"; };
 		459796191FB41BF1007A7432 /* physics component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "physics component.cpp"; sourceTree = "<group>"; };
 		4597961B1FB41BFE007A7432 /* collision component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "collision component.cpp"; sourceTree = "<group>"; };
 		4597961D1FB41C0C007A7432 /* power component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "power component.cpp"; sourceTree = "<group>"; };
@@ -630,8 +627,6 @@
 		4583EE801FB195CD00AED27D /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				459796161FB41B3F007A7432 /* component init.cpp */,
-				459796171FB41B3F007A7432 /* component init.hpp */,
 				4597962C1FB65BBB007A7432 /* component list.cpp */,
 				4597962D1FB65BBB007A7432 /* component list.hpp */,
 				459796191FB41BF1007A7432 /* physics component.cpp */,
@@ -825,7 +820,6 @@
 				4583EE761FB190F300AED27D /* screenshot.cpp in Sources */,
 				4583EE851FB1967700AED27D /* app.cpp in Sources */,
 				459796201FB41C1A007A7432 /* activation component.cpp in Sources */,
-				459796181FB41B3F007A7432 /* component init.cpp in Sources */,
 				4583EE781FB190F300AED27D /* yaml helper.cpp in Sources */,
 				4597962B1FB59C1A007A7432 /* entity file.cpp in Sources */,
 				4583EEA61FB1B1E800AED27D /* button system.cpp in Sources */,

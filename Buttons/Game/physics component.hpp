@@ -12,11 +12,21 @@
 #include "../Libraries/Box2D/Dynamics/b2Body.h"
 #include "../Libraries/Box2D/Dynamics/Joints/b2Joint.h"
 
+namespace YAML {
+  class Node;
+}
+class EntityIDmap;
+
 struct PhysicsBody {
+  PhysicsBody(const YAML::Node &, const EntityIDmap &, b2World &);
+  ~PhysicsBody();
+  
   b2Body *body = nullptr;
 };
 
 struct PhysicsJoint {
+  PhysicsJoint(const YAML::Node &, const EntityIDmap &, b2World &);
+
   b2Joint *joint = nullptr;
 };
 

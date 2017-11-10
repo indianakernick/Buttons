@@ -8,31 +8,22 @@
 
 #include "physics component.hpp"
 
+#include "yaml helper.hpp"
 #include "physics file.hpp"
-#include "component init.hpp"
+#include "entity id map.hpp"
 #include "../Libraries/Box2D/Dynamics/b2World.h"
 
-template <>
-struct ComponentInit<PhysicsBody> {
-  static void init(PhysicsBody &comp, const YAML::Node &node, b2World &world) {
-    Transform transform;
-    ComponentInit<Transform>::init(transform, node);
-    comp.body = loadBody(getChild(node, "body").Scalar(), world, transform);
-  }
-};
+PhysicsBody::PhysicsBody(const YAML::Node &node, const EntityIDmap &idMap, b2World &world) {
+  Transform transform(node, idMap);
+  body = loadBody(getChild(node, "body").Scalar(), world, transform);
+}
 
-template <>
-struct ComponentQuit<PhysicsBody> {
-  static void quit(PhysicsBody &comp, b2World &world) {
-    if (b2Body *const body = comp.body) {
-      world.DestroyBody(body);
-    }
+PhysicsBody::~PhysicsBody() {
+  if (body && body->GetWorld()) {
+    body->GetWorld()->DestroyBody(body);
   }
-};
+}
 
-template <>
-struct ComponentInit<PhysicsJoint> {
-  static void init(PhysicsJoint &comp, const YAML::Node &node, b2World &world) {
-    
-  }
-};
+PhysicsJoint::PhysicsJoint(const YAML::Node &node, const EntityIDmap &idMap, b2World &world) {
+  
+}
