@@ -103,6 +103,7 @@
 		4597961E1FB41C0C007A7432 /* power component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597961D1FB41C0C007A7432 /* power component.cpp */; };
 		459796201FB41C1A007A7432 /* activation component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597961F1FB41C1A007A7432 /* activation component.cpp */; };
 		459796221FB41C24007A7432 /* transform component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459796211FB41C24007A7432 /* transform component.cpp */; };
+		459796251FB56F0D007A7432 /* level file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459796231FB56F0D007A7432 /* level file.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -304,6 +305,8 @@
 		4597961D1FB41C0C007A7432 /* power component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "power component.cpp"; sourceTree = "<group>"; };
 		4597961F1FB41C1A007A7432 /* activation component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "activation component.cpp"; sourceTree = "<group>"; };
 		459796211FB41C24007A7432 /* transform component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "transform component.cpp"; sourceTree = "<group>"; };
+		459796231FB56F0D007A7432 /* level file.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "level file.cpp"; sourceTree = "<group>"; };
+		459796241FB56F0D007A7432 /* level file.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "level file.hpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -687,6 +690,8 @@
 		4583EE981FB1AA1C00AED27D /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				459796231FB56F0D007A7432 /* level file.cpp */,
+				459796241FB56F0D007A7432 /* level file.hpp */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -861,6 +866,7 @@
 				4583EE2B1FB18F7A00AED27D /* b2CollidePolygon.cpp in Sources */,
 				4583EE2C1FB18F7A00AED27D /* b2DynamicTree.cpp in Sources */,
 				4583EE2D1FB18F7A00AED27D /* b2ChainShape.cpp in Sources */,
+				459796251FB56F0D007A7432 /* level file.cpp in Sources */,
 				4583EE2E1FB18F7A00AED27D /* b2EdgeShape.cpp in Sources */,
 				4583EEAA1FB1B6E100AED27D /* physics transform system.cpp in Sources */,
 				4583EE2F1FB18F7A00AED27D /* b2CircleShape.cpp in Sources */,
