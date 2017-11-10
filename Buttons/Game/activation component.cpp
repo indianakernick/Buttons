@@ -6,4 +6,4 @@
 //  Copyright © 2017 Indi Kernick. All rights reserved.
 //
 
-#include <stdio.h>
+#include "activation component.hpp"

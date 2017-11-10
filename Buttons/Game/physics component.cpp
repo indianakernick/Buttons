@@ -15,7 +15,9 @@
 template <>
 struct ComponentInit<PhysicsBody> {
   static void init(PhysicsBody &comp, const YAML::Node &node, b2World &world) {
-    comp.body = loadBody(getChild(node, "body").Scalar(), world, node.as<Transform>());
+    Transform transform;
+    ComponentInit<Transform>::init(transform, node);
+    comp.body = loadBody(getChild(node, "body").Scalar(), world, transform);
   }
 };
 

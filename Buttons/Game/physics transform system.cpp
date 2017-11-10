@@ -18,6 +18,6 @@ void physicsTransformSystem(Registry &registry) {
     b2Body *const body = view.get<PhysicsBody>(entity).body;
     Transform &transform = view.get<Transform>(entity);
     transform.pos = castToGLM(body->GetPosition());
-    transform.angle = body->GetAngle();
+    transform.rotation = body->GetAngle();
   }
 }

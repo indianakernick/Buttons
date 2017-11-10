@@ -9,7 +9,6 @@
 #ifndef power_component_hpp
 #define power_component_hpp
 
-#include <limits>
 #include "entity constants.hpp"
 
 struct PowerInput {
@@ -17,8 +16,8 @@ struct PowerInput {
 };
 
 struct PowerOutput {
-  bool on = false;
-  EntityID out = std::numeric_limits<EntityID>::max();
+  bool on;
+  EntityID out;
 };
 
 #endif

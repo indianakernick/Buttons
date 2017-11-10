@@ -14,7 +14,7 @@
 struct Transform {
   glm::vec2 pos;
   glm::vec2 scale;
-  float angle;
+  float rotation;
 };
 
 #endif

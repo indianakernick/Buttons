@@ -6,4 +6,14 @@
 //  Copyright © 2017 Indi Kernick. All rights reserved.
 //
 
-#include <stdio.h>
+#include "power component.hpp"
+
+#include "component init.hpp"
+
+template <>
+struct ComponentInit<PowerOutput> {
+  static void init(PowerOutput &comp, const YAML::Node &node) {
+    comp.on = false;
+    
+  }
+};

@@ -13,7 +13,6 @@
 #include <glm/vec2.hpp>
 #include "b2 glm cast.hpp"
 #include <yaml-cpp/yaml.h>
-#include <glm/trigonometric.hpp>
 #include "transform component.hpp"
 
 template <>
@@ -50,45 +49,6 @@ struct YAML::convert<b2Vec2> {
     } else {
       return false;
     }
-  }
-};
-
-inline float angleToFile(const float angle) {
-  return -glm::degrees(angle);
-}
-
-inline float angleFromFile(const float angle) {
-  return -glm::radians(angle);
-}
-
-template <>
-struct YAML::convert<Transform> {
-  static YAML::Node encode(const Transform transform) {
-    Node node(YAML::NodeType::Map);
-    node.force_insert("pos", transform.pos);
-    node.force_insert("scale", transform.scale);
-    node.force_insert("rotation", angleToFile(transform.angle));
-    return node;
-  }
-
-  static bool decode(const YAML::Node &node, Transform &transform) {
-    if (!node.IsMap()) {
-      return false;
-    }
-    if (const YAML::Node &posNode = node["pos"]) {
-      if (!convert<glm::vec2>::decode(posNode, transform.pos)) {
-        return false;
-      }
-    }
-    if (const YAML::Node &scaleNode = node["scale"]) {
-      if (!convert<glm::vec2>::decode(scaleNode, transform.scale)) {
-        return false;
-      }
-    }
-    if (const YAML::Node &rotationNode = node["rotation"]) {
-      transform.angle = angleFromFile(rotationNode.as<float>());
-    }
-    return true;
   }
 };
 
