@@ -13,6 +13,6 @@
 #include "entity id map.hpp"
 #include "entity registry.hpp"
 
-void loadEntity(const std::string &, const YAML::Node &, EntityIDmap &, Registry &);
+void loadEntity(EntityID, const std::string &, const YAML::Node &, const EntityIDmap &, Registry &);
 
 #endif

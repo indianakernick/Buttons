@@ -19,10 +19,10 @@ void loadLevel(const std::string &fileName, Registry &registry) {
   EntityIDmap idMap;
   idMap.insertIDs(root, registry);
   
-  for (auto n = root.begin(); n != root.end(); ++n) {
-    //need to get the EntityID of this node
-  
-    const std::string &entityFile = getChild(*n, "file").Scalar();
-    loadEntity(entityFile, (*n)["components"], idMap, registry);
+  for (size_t i = 0; i != root.size(); ++i) {
+    const YAML::Node &node = root[i];
+    const std::string &entityFile = getChild(node, "file").Scalar();
+    const YAML::Node &comps = node["components"];
+    loadEntity(idMap.getEntityFromIndex(i), entityFile, comps, idMap, registry);
   }
 }
