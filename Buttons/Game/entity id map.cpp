@@ -18,6 +18,15 @@ void EntityIDmap::insertIDs(const YAML::Node &root, Registry &registry) {
   insertAbsentIDs(root, registry);
 }
 
+EntityID EntityIDmap::getEntityID(const UserID id) const {
+  auto iter = map.find(id);
+  if (iter == map.cend()) {
+    throw std::runtime_error("Invalid user ID");
+  } else {
+    return iter->second;
+  }
+}
+
 void EntityIDmap::insertDefinedIDs(const YAML::Node &root, Registry &registry) {
   for (auto n = root.begin(); n != root.end(); ++n) {
     if (const YAML::Node &idNode = (*n)["id"]) {
@@ -61,9 +70,20 @@ void EntityIDmap::genAbsentIDsHigh(const UserID absentUserIDs, Registry &registr
   }
 }
 
+namespace {
+  constexpr size_t maxUserIDs() {
+    static_assert(std::is_integral_v<UserID>);
+    if constexpr (std::is_signed_v<UserID>) {
+      return (size_t(1) << Utils::bits<UserID>) - 1;
+    } else {
+      return std::numeric_limits<UserID>::max();
+    }
+  }
+}
+
 void EntityIDmap::genAbsentIDsBrute(const UserID absentUserIDs, Registry &registry) {
   const size_t totalIDs = static_cast<size_t>(absentUserIDs) + map.size();
-  const size_t maxIDs = (size_t(1) << Utils::bits<UserID>) - 1;
+  const size_t maxIDs = maxUserIDs();
   if (totalIDs > maxIDs) {
     throw std::runtime_error("Too many entities");
   }

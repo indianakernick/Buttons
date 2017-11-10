@@ -105,6 +105,7 @@
 		459796221FB41C24007A7432 /* transform component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459796211FB41C24007A7432 /* transform component.cpp */; };
 		459796251FB56F0D007A7432 /* level file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459796231FB56F0D007A7432 /* level file.cpp */; };
 		459796281FB58752007A7432 /* entity id map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459796261FB58752007A7432 /* entity id map.cpp */; };
+		4597962B1FB59C1A007A7432 /* entity file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459796291FB59C1A007A7432 /* entity file.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -310,6 +311,8 @@
 		459796241FB56F0D007A7432 /* level file.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "level file.hpp"; sourceTree = "<group>"; };
 		459796261FB58752007A7432 /* entity id map.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "entity id map.cpp"; sourceTree = "<group>"; };
 		459796271FB58752007A7432 /* entity id map.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "entity id map.hpp"; sourceTree = "<group>"; };
+		459796291FB59C1A007A7432 /* entity file.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "entity file.cpp"; sourceTree = "<group>"; };
+		4597962A1FB59C1A007A7432 /* entity file.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "entity file.hpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -693,10 +696,12 @@
 		4583EE981FB1AA1C00AED27D /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				459796231FB56F0D007A7432 /* level file.cpp */,
-				459796241FB56F0D007A7432 /* level file.hpp */,
 				459796261FB58752007A7432 /* entity id map.cpp */,
 				459796271FB58752007A7432 /* entity id map.hpp */,
+				459796231FB56F0D007A7432 /* level file.cpp */,
+				459796241FB56F0D007A7432 /* level file.hpp */,
+				459796291FB59C1A007A7432 /* entity file.cpp */,
+				4597962A1FB59C1A007A7432 /* entity file.hpp */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -817,6 +822,7 @@
 				459796201FB41C1A007A7432 /* activation component.cpp in Sources */,
 				459796181FB41B3F007A7432 /* component init.cpp in Sources */,
 				4583EE781FB190F300AED27D /* yaml helper.cpp in Sources */,
+				4597962B1FB59C1A007A7432 /* entity file.cpp in Sources */,
 				4583EEA61FB1B1E800AED27D /* button system.cpp in Sources */,
 				4583EE791FB190F300AED27D /* layer names.cpp in Sources */,
 				4597961A1FB41BF1007A7432 /* physics component.cpp in Sources */,
