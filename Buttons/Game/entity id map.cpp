@@ -8,9 +8,12 @@
 
 #include "entity id map.hpp"
 
+#include <cassert>
 #include <Simpleton/Utils/bits.hpp>
 
 void EntityIDmap::insertIDs(const YAML::Node &root, Registry &registry) {
+  assert(!insertedIDs);
+  insertedIDs = true;
   insertDefinedIDs(root, registry);
   insertAbsentIDs(root, registry);
 }
@@ -46,17 +49,15 @@ void EntityIDmap::insertAbsentIDs(const YAML::Node &root, Registry &registry) {
 
 void EntityIDmap::genAbsentIDsLow(const UserID absentUserIDs, Registry &registry) {
   const UserID lastUserID = minUserID - absentUserIDs;
-  --minUserID;
-  for (; minUserID >= lastUserID; --minUserID) {
+  for (UserID id = minUserID - 1; id >= lastUserID; --id) {
     map.emplace(minUserID, registry.create());
   }
 }
 
 void EntityIDmap::genAbsentIDsHigh(const UserID absentUserIDs, Registry &registry) {
   const UserID lastUserID = maxUserID + absentUserIDs;
-  ++maxUserID;
-  for (; maxUserID <= lastUserID; ++maxUserID) {
-    map.emplace(maxUserID, registry.create());
+  for (UserID id = maxUserID + 1; id <= lastUserID; ++id) {
+    map.emplace(id, registry.create());
   }
 }
 
@@ -69,14 +70,6 @@ void EntityIDmap::genAbsentIDsBrute(const UserID absentUserIDs, Registry &regist
   
   UserID numInserted = 0;
   for (UserID id = 0; numInserted != absentUserIDs; ++id) {
-    if (map.emplace(id, registry.create()).second) {
-      if (numInserted == 0) {
-        minUserID = id;
-      }
-      if (numInserted == absentUserIDs - 1) {
-        maxUserID = id;
-      }
-      ++numInserted;
-    }
+    numInserted += map.emplace(id, registry.create()).second;
   }
 }

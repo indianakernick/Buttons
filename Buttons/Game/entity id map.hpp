@@ -29,6 +29,7 @@ private:
   std::unordered_map<UserID, EntityID> map;
   UserID minUserID = MAX_USER_ID;
   UserID maxUserID = MIN_USER_ID;
+  bool insertedIDs = false;
   
   void insertDefinedIDs(const YAML::Node &, Registry &);
   void insertAbsentIDs(const YAML::Node &, Registry &);
