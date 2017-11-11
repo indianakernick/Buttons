@@ -15,9 +15,11 @@
 void physicsTransformSystem(Registry &registry) {
   auto view = registry.view<PhysicsBody, Transform>();
   for (EntityID entity : view) {
-    b2Body *const body = view.get<PhysicsBody>(entity).body;
+    const PhysicsBody &physics = view.get<PhysicsBody>(entity);
+    b2Body *const body = physics.body;
     Transform &transform = view.get<Transform>(entity);
     transform.pos = castToGLM(body->GetPosition());
+    transform.scale = physics.scale;
     transform.rotation = body->GetAngle();
   }
 }

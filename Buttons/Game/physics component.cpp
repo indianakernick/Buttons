@@ -16,13 +16,15 @@
 PhysicsBody::PhysicsBody(const YAML::Node &node, const EntityIDmap &idMap, b2World &world) {
   Transform transform(node, idMap);
   body = loadBody(getChild(node, "body").Scalar(), world, transform);
+  scale = transform.scale;
 }
 
 PhysicsBody::PhysicsBody(PhysicsBody &&other)
-  : body(std::exchange(other.body, nullptr)) {}
+  : body(std::exchange(other.body, nullptr)), scale(other.scale) {}
 
 PhysicsBody &PhysicsBody::operator=(PhysicsBody &&other) {
   body = std::exchange(other.body, nullptr);
+  scale = other.scale;
   return *this;
 }
 
