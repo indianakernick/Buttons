@@ -11,7 +11,7 @@
 
 #include "window constants.hpp"
 
-constexpr float DEFAULT_PIXELS_PER_METER = 64.0f;
+constexpr float DEFAULT_PIXELS_PER_METER = 32.0f;
 
 const glm::vec2 DEFAULT_TRACKING_BOUNDS_CENTER = {0.0f, 0.0f};
 const glm::vec2 DEFAULT_TRACKING_BOUNDS_SIZE = glm::vec2(1.0f) / 6.0f;

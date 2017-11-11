@@ -2,5 +2,12 @@
   components:
     PhysicsBody:
       pos: [0, 0]
-      scale: [2, 2]
+      scale: [1, 1]
       body: box body.yaml
+
+- file: platform entity.yaml
+  components:
+    PhysicsBody:
+      pos: [0, -10]
+      scale: [10, 1]
+      body: platform body.yaml

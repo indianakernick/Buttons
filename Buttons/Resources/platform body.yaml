@@ -1,5 +1,5 @@
 body:
-  type: dynamic
+  type: kinematic
 
 shapes:
   main:
@@ -9,5 +9,4 @@ shapes:
 
 fixtures:
 - shape: main
-  density: 10
   user data: Ground
