@@ -40,9 +40,9 @@ void playerMovementSystem(Registry &registry, const float delta) {
     b2Body *const body = view.get<PhysicsBody>(entity).body;
     const bool onGround = isOnGround(view.get<Collision>(entity));
     
-    if (input.left) {
+    if (input.left && !input.right) {
       move(body, -1.0f, onGround);
-    } else if (input.right) {
+    } else if (input.right && !input.left) {
       move(body, 1.0f, onGround);
     }
     
