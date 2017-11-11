@@ -16,5 +16,6 @@
 #include "activate power output system.hpp"
 #include "button system.hpp"
 #include "physics transform system.hpp"
+#include "player input system.hpp"
 
 #endif

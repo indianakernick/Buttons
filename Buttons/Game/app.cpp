@@ -80,7 +80,7 @@ bool App::input(float) {
     if (e.type == SDL_QUIT) {
       return false;
     } else if (!screenshot.handleEvent(e)) {
-      
+      playerInputSystem(registry, e);
     }
   }
   return true;

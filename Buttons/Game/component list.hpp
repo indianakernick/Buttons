@@ -14,6 +14,7 @@
 #include "transform component.hpp"
 #include "collision component.hpp"
 #include "activation component.hpp"
+#include "player input component.hpp"
 #include "box rendering component.hpp"
 #include <Simpleton/Utils/type list.hpp>
 
@@ -25,7 +26,8 @@ using CompList = Utils::TypeList<
   Transform,
   Collision,
   Activation,
-  BoxRendering
+  BoxRendering,
+  PlayerInput
 >;
 
 #endif

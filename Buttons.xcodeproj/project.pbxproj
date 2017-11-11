@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		450ED5C31FB69D31008F2902 /* player input component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5C11FB69D31008F2902 /* player input component.cpp */; };
+		450ED5C61FB69ED3008F2902 /* player input system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5C41FB69ED3008F2902 /* player input system.cpp */; };
 		452E10891FB2D27D0063114B /* collision pairs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452E10871FB2D27D0063114B /* collision pairs.cpp */; };
 		452E108C1FB2D8BA0063114B /* object types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452E108A1FB2D8BA0063114B /* object types.cpp */; };
 		452E10941FB2F4930063114B /* Consolas.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 452E10931FB2F4700063114B /* Consolas.ttf */; };
@@ -114,6 +116,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		450ED5C11FB69D31008F2902 /* player input component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "player input component.cpp"; sourceTree = "<group>"; };
+		450ED5C21FB69D31008F2902 /* player input component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "player input component.hpp"; sourceTree = "<group>"; };
+		450ED5C41FB69ED3008F2902 /* player input system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "player input system.cpp"; sourceTree = "<group>"; };
+		450ED5C51FB69ED3008F2902 /* player input system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "player input system.hpp"; sourceTree = "<group>"; };
 		452E10871FB2D27D0063114B /* collision pairs.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "collision pairs.cpp"; sourceTree = "<group>"; };
 		452E10881FB2D27D0063114B /* collision pairs.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "collision pairs.hpp"; sourceTree = "<group>"; };
 		452E108A1FB2D8BA0063114B /* object types.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "object types.cpp"; sourceTree = "<group>"; };
@@ -656,6 +662,8 @@
 				4583EE9A1FB1AB0600AED27D /* activation component.hpp */,
 				459796211FB41C24007A7432 /* transform component.cpp */,
 				4583EEA71FB1B67000AED27D /* transform component.hpp */,
+				450ED5C11FB69D31008F2902 /* player input component.cpp */,
+				450ED5C21FB69D31008F2902 /* player input component.hpp */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -677,6 +685,8 @@
 				4583EEA51FB1B1E800AED27D /* button system.hpp */,
 				4583EEA81FB1B6E100AED27D /* physics transform system.cpp */,
 				4583EEA91FB1B6E100AED27D /* physics transform system.hpp */,
+				450ED5C41FB69ED3008F2902 /* player input system.cpp */,
+				450ED5C51FB69ED3008F2902 /* player input system.hpp */,
 			);
 			name = Systems;
 			sourceTree = "<group>";
@@ -872,6 +882,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4597960B1FB2FCA0007A7432 /* camera debug render.cpp in Sources */,
+				450ED5C31FB69D31008F2902 /* player input component.cpp in Sources */,
 				4597960C1FB2FCA0007A7432 /* camera motion track.cpp in Sources */,
 				4597960D1FB2FCA0007A7432 /* camera pos.cpp in Sources */,
 				4597960E1FB2FCA0007A7432 /* camera props.cpp in Sources */,
@@ -912,6 +923,7 @@
 				4583EE101FB18F7A00AED27D /* b2CircleContact.cpp in Sources */,
 				4583EE111FB18F7A00AED27D /* b2EdgeAndCircleContact.cpp in Sources */,
 				4583EEA31FB1AFCF00AED27D /* activate power output system.cpp in Sources */,
+				450ED5C61FB69ED3008F2902 /* player input system.cpp in Sources */,
 				459796401FB687AC007A7432 /* box rendering system.cpp in Sources */,
 				4583EE121FB18F7A00AED27D /* b2Contact.cpp in Sources */,
 				4597963C1FB6870A007A7432 /* box rendering component.cpp in Sources */,
