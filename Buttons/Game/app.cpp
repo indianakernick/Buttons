@@ -100,6 +100,10 @@ bool App::update(const float delta) {
 bool App::render(const float delta) {
   camera.update(window.size(), delta);
   renderingContext.preRender(camera.transform.toPixels());
+  
+  NVGcontext *const ctx = renderingContext.getContext();
+  boxRenderingSystem(registry, ctx);
+  
   renderingManager.render();
   screenshot.postRender(renderingContext, ENABLE_FPS_RENDER);
   return true;

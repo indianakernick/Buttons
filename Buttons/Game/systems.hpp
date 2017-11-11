@@ -9,6 +9,7 @@
 #ifndef systems_hpp
 #define systems_hpp
 
+#include "box rendering system.hpp"
 #include "physics system.hpp"
 #include "power system.hpp"
 #include "power input activation system.hpp"

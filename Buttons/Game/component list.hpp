@@ -14,6 +14,7 @@
 #include "transform component.hpp"
 #include "collision component.hpp"
 #include "activation component.hpp"
+#include "box rendering component.hpp"
 #include <Simpleton/Utils/type list.hpp>
 
 using CompList = Utils::TypeList<
@@ -23,7 +24,8 @@ using CompList = Utils::TypeList<
   PhysicsJoint,
   Transform,
   Collision,
-  Activation
+  Activation,
+  BoxRendering
 >;
 
 #endif

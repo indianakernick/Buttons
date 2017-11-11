@@ -9,8 +9,8 @@
 #ifndef nvg_helper_hpp
 #define nvg_helper_hpp
 
-#include <glm/mat3x3.hpp>
 #include "nanovg.hpp"
+#include <glm/mat3x3.hpp>
 #include "rendering resources.hpp"
 
 inline void nvgTransform(NVGcontext *const ctx, const glm::mat3 &m) noexcept {

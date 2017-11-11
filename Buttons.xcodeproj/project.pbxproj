@@ -109,6 +109,8 @@
 		459796301FB67FE7007A7432 /* level 0.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 4597962F1FB67FE7007A7432 /* level 0.yaml */; };
 		459796361FB681FA007A7432 /* box entity.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 459796351FB681FA007A7432 /* box entity.yaml */; };
 		459796381FB68209007A7432 /* box body.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 459796371FB68209007A7432 /* box body.yaml */; };
+		4597963C1FB6870A007A7432 /* box rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597963A1FB6870A007A7432 /* box rendering component.cpp */; };
+		459796401FB687AC007A7432 /* box rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597963E1FB687AC007A7432 /* box rendering system.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -319,6 +321,10 @@
 		4597962F1FB67FE7007A7432 /* level 0.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 0.yaml"; sourceTree = "<group>"; };
 		459796351FB681FA007A7432 /* box entity.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "box entity.yaml"; sourceTree = "<group>"; };
 		459796371FB68209007A7432 /* box body.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "box body.yaml"; sourceTree = "<group>"; };
+		4597963A1FB6870A007A7432 /* box rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "box rendering component.cpp"; sourceTree = "<group>"; };
+		4597963B1FB6870A007A7432 /* box rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "box rendering component.hpp"; sourceTree = "<group>"; };
+		4597963E1FB687AC007A7432 /* box rendering system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "box rendering system.cpp"; sourceTree = "<group>"; };
+		4597963F1FB687AC007A7432 /* box rendering system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "box rendering system.hpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -637,6 +643,7 @@
 		4583EE801FB195CD00AED27D /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				459796391FB686EA007A7432 /* Rendering */,
 				4597962C1FB65BBB007A7432 /* component list.cpp */,
 				4597962D1FB65BBB007A7432 /* component list.hpp */,
 				459796191FB41BF1007A7432 /* physics component.cpp */,
@@ -656,6 +663,7 @@
 		4583EE821FB1965A00AED27D /* Systems */ = {
 			isa = PBXGroup;
 			children = (
+				4597963D1FB6879B007A7432 /* Rendering */,
 				452E10911FB2F2EE0063114B /* systems.hpp */,
 				4583EE871FB197C200AED27D /* physics system.cpp */,
 				4583EE881FB197C200AED27D /* physics system.hpp */,
@@ -768,6 +776,24 @@
 			children = (
 			);
 			name = Joints;
+			sourceTree = "<group>";
+		};
+		459796391FB686EA007A7432 /* Rendering */ = {
+			isa = PBXGroup;
+			children = (
+				4597963A1FB6870A007A7432 /* box rendering component.cpp */,
+				4597963B1FB6870A007A7432 /* box rendering component.hpp */,
+			);
+			name = Rendering;
+			sourceTree = "<group>";
+		};
+		4597963D1FB6879B007A7432 /* Rendering */ = {
+			isa = PBXGroup;
+			children = (
+				4597963E1FB687AC007A7432 /* box rendering system.cpp */,
+				4597963F1FB687AC007A7432 /* box rendering system.hpp */,
+			);
+			name = Rendering;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -886,7 +912,9 @@
 				4583EE101FB18F7A00AED27D /* b2CircleContact.cpp in Sources */,
 				4583EE111FB18F7A00AED27D /* b2EdgeAndCircleContact.cpp in Sources */,
 				4583EEA31FB1AFCF00AED27D /* activate power output system.cpp in Sources */,
+				459796401FB687AC007A7432 /* box rendering system.cpp in Sources */,
 				4583EE121FB18F7A00AED27D /* b2Contact.cpp in Sources */,
+				4597963C1FB6870A007A7432 /* box rendering component.cpp in Sources */,
 				4583EE131FB18F7A00AED27D /* b2WorldCallbacks.cpp in Sources */,
 				4583EE921FB19DE600AED27D /* collision categories.cpp in Sources */,
 				4583EE141FB18F7A00AED27D /* b2WeldJoint.cpp in Sources */,
