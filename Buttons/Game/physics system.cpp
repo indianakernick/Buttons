@@ -10,11 +10,14 @@
 
 #include <algorithm>
 #include "physics constants.hpp"
+#include <Simpleton/Utils/member function.hpp>
 
 void PhysicsSystem::init(Registry &newRegistry) {
   world.emplace(GRAVITY);
   contactListener.emplace();
   world->SetContactListener(&(*contactListener));
+  contactListener->setBeginListener(Utils::memFun(this, &PhysicsSystem::beginContact));
+  contactListener->setEndListener(Utils::memFun(this, &PhysicsSystem::endContact));
   
   registry = &newRegistry;
 }
@@ -22,6 +25,8 @@ void PhysicsSystem::init(Registry &newRegistry) {
 void PhysicsSystem::quit() {
   registry = nullptr;
   
+  contactListener->setEndListener(nullptr);
+  contactListener->setBeginListener(nullptr);
   world->SetContactListener(nullptr);
   contactListener = std::experimental::nullopt;
   world = std::experimental::nullopt;

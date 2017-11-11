@@ -10,6 +10,7 @@
 #define physics_body_component_hpp
 
 #include <glm/vec2.hpp>
+#include "entity constants.hpp"
 #include "../Libraries/Box2D/Dynamics/b2Body.h"
 #include "../Libraries/Box2D/Dynamics/Joints/b2Joint.h"
 
@@ -19,7 +20,7 @@ namespace YAML {
 class EntityIDmap;
 
 struct PhysicsBody {
-  PhysicsBody(const YAML::Node &, const EntityIDmap &, b2World &);
+  PhysicsBody(const YAML::Node &, const EntityIDmap &, b2World &, EntityID);
   PhysicsBody(PhysicsBody &&);
   PhysicsBody &operator=(PhysicsBody &&);
   ~PhysicsBody();
@@ -29,7 +30,7 @@ struct PhysicsBody {
 };
 
 struct PhysicsJoint {
-  PhysicsJoint(const YAML::Node &, const EntityIDmap &, b2World &);
+  PhysicsJoint(const YAML::Node &, const EntityIDmap &, b2World &, EntityID);
 
   b2Joint *joint = nullptr;
 };

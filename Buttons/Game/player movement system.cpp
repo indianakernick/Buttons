@@ -8,6 +8,7 @@
 
 #include "player movement system.hpp"
 
+#include "object types.hpp"
 #include "limit velocity.hpp"
 #include "physics component.hpp"
 #include "collision component.hpp"
@@ -16,6 +17,20 @@
 
 namespace {
   constexpr float MOVE_FORCE = 100.0f;
+  constexpr float AIR_MOVE_FORCE = 50.0f;
+  constexpr float JUMP_FORCE = 160.0f;
+  constexpr float MAX_JUMP_DUR = 0.2f;
+  constexpr float MAX_MOVE_VEL = 4.0f;
+  
+  bool isOnGround(const Collision &collision) {
+    const CollisionPairs &pairs = collision.collisionPairs;
+    return pairs.hasPair<ObjectType::PlayerFoot, ObjectType::Ground>();
+  }
+  
+  void move(b2Body *const body, const float dir, const bool onGround) {
+    const float forceMag = onGround ? MOVE_FORCE : AIR_MOVE_FORCE;
+    body->ApplyForceToCenter({forceMag * dir, 0.0f}, true);
+  }
 }
 
 void playerMovementSystem(Registry &registry, const float delta) {
@@ -23,10 +38,28 @@ void playerMovementSystem(Registry &registry, const float delta) {
   for (EntityID entity : view) {
     const PlayerInput input = view.get<PlayerInput>(entity);
     b2Body *const body = view.get<PhysicsBody>(entity).body;
+    const bool onGround = isOnGround(view.get<Collision>(entity));
+    
     if (input.left) {
-      body->ApplyForceToCenter({-MOVE_FORCE, 0.0f}, true);
+      move(body, -1.0f, onGround);
     } else if (input.right) {
-      body->ApplyForceToCenter({MOVE_FORCE, 0.0f}, true);
+      move(body, 1.0f, onGround);
+    }
+    
+    //@TODO this should happen after the physics world is stepped, not before
+    body->SetLinearVelocity(limitVelX(body->GetLinearVelocity(), {0.0f, 0.0f}, MAX_MOVE_VEL));
+    
+    PlayerJump &jump = view.get<PlayerJump>(entity);
+    if (input.jump) {
+      if (onGround && jump.timeTillEnd == 0.0f) {
+        jump.timeTillEnd = MAX_JUMP_DUR;
+      }
+      if (jump.timeTillEnd > 0.0f) {
+        body->ApplyForceToCenter({0.0f, JUMP_FORCE}, true);
+        jump.timeTillEnd = std::max(jump.timeTillEnd - delta, 0.0f);
+      }
+    } else {
+      jump.timeTillEnd = 0.0f;
     }
   }
 }

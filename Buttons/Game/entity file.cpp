@@ -26,9 +26,9 @@ void loadComps(
     Utils::getByName<CompList>(compName, [id, &idMap, &registry, &physics, props] (auto t) {
       using Comp = UTILS_TYPE(t);
       if constexpr (std::is_same_v<Comp, PhysicsBody>) {
-        registry.accomodate<PhysicsBody>(id, props, idMap, *physics.getWorld());
+        registry.accomodate<PhysicsBody>(id, props, idMap, *physics.getWorld(), id);
       } else if constexpr (std::is_same_v<Comp, PhysicsJoint>) {
-        registry.accomodate<PhysicsJoint>(id, props, idMap, *physics.getWorld());
+        registry.accomodate<PhysicsJoint>(id, props, idMap, *physics.getWorld(), id);
       } else if constexpr (std::is_default_constructible_v<Comp>) {
         registry.accomodate<Comp>(id);
       } else {

@@ -1,5 +1,6 @@
 body:
   type: dynamic
+  linear damping: 0
 
 shapes:
   main:

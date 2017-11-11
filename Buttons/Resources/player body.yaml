@@ -1,7 +1,7 @@
 body:
   type: dynamic
   fixed rotation: YES
-  linear damping: 0.9
+  linear damping: 0.0
 
 shapes:
   body:
@@ -11,7 +11,7 @@ shapes:
 
   foot:
     type: circle
-    pos: [0, 0.1]
+    pos: [0, -0.1]
     radius: 0.45
 
 fixtures:

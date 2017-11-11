@@ -13,9 +13,15 @@
 #include "entity id map.hpp"
 #include "../Libraries/Box2D/Dynamics/b2World.h"
 
-PhysicsBody::PhysicsBody(const YAML::Node &node, const EntityIDmap &idMap, b2World &world) {
+PhysicsBody::PhysicsBody(
+  const YAML::Node &node,
+  const EntityIDmap &idMap,
+  b2World &world,
+  const EntityID entity
+) {
   Transform transform(node, idMap);
   body = loadBody(getChild(node, "body").Scalar(), world, transform);
+  body->SetUserData(reinterpret_cast<void *>(entity));
   scale = transform.scale;
 }
 
@@ -34,6 +40,6 @@ PhysicsBody::~PhysicsBody() {
   }
 }
 
-PhysicsJoint::PhysicsJoint(const YAML::Node &node, const EntityIDmap &idMap, b2World &world) {
+PhysicsJoint::PhysicsJoint(const YAML::Node &node, const EntityIDmap &idMap, b2World &world, EntityID) {
   
 }

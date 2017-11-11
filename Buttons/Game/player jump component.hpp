@@ -10,7 +10,6 @@
 #define player_jump_component_hpp
 
 struct PlayerJump {
-  bool jumping = false;
   float timeTillEnd = 0.0f;
 };
 
