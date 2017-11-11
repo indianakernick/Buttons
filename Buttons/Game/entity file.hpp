@@ -15,6 +15,7 @@
 
 class PhysicsSystem;
 
+//@TODO too many parameters
 void loadEntity(
   EntityID,
   const std::string &,

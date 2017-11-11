@@ -40,6 +40,27 @@ PhysicsBody::~PhysicsBody() {
   }
 }
 
-PhysicsJoint::PhysicsJoint(const YAML::Node &node, const EntityIDmap &idMap, b2World &world, EntityID) {
+PhysicsJoint::PhysicsJoint(
+  const YAML::Node &node,
+  const EntityIDmap &idMap,
+  b2World &world,
+  const EntityID entity,
+  Registry &registry
+) {
+  //read the joint file
+  b2JointDef *const def = loadJoint(getChild(node, "joint").Scalar());
+  //read the level file
+  readJoint(def, node);
   
+  const UserID bodyAuserID = getChild(node, "body A").as<UserID>();
+  const EntityID bodyAentityID = idMap.getEntityFromUserID(bodyAuserID);
+  def->bodyA = registry.get<PhysicsBody>(bodyAentityID).body;
+  
+  const UserID bodyBuserID = getChild(node, "body B").as<UserID>();
+  const EntityID bodyBentityID = idMap.getEntityFromUserID(bodyBuserID);
+  def->bodyB = registry.get<PhysicsBody>(bodyBentityID).body;
+  
+  def->userData = reinterpret_cast<void *>(entity);
+  
+  joint = world.CreateJoint(def);
 }

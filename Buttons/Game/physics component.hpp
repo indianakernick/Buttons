@@ -10,7 +10,7 @@
 #define physics_body_component_hpp
 
 #include <glm/vec2.hpp>
-#include "entity constants.hpp"
+#include "entity registry.hpp"
 #include "../Libraries/Box2D/Dynamics/b2Body.h"
 #include "../Libraries/Box2D/Dynamics/Joints/b2Joint.h"
 
@@ -20,6 +20,7 @@ namespace YAML {
 class EntityIDmap;
 
 struct PhysicsBody {
+  //@TODO too many parameters
   PhysicsBody(const YAML::Node &, const EntityIDmap &, b2World &, EntityID);
   PhysicsBody(PhysicsBody &&);
   PhysicsBody &operator=(PhysicsBody &&);
@@ -30,7 +31,8 @@ struct PhysicsBody {
 };
 
 struct PhysicsJoint {
-  PhysicsJoint(const YAML::Node &, const EntityIDmap &, b2World &, EntityID);
+  //@TODO too many parameters
+  PhysicsJoint(const YAML::Node &, const EntityIDmap &, b2World &, EntityID, Registry &);
 
   b2Joint *joint = nullptr;
 };
