@@ -19,6 +19,8 @@ class EntityIDmap;
 
 struct PhysicsBody {
   PhysicsBody(const YAML::Node &, const EntityIDmap &, b2World &);
+  PhysicsBody(PhysicsBody &&);
+  PhysicsBody &operator=(PhysicsBody &&);
   ~PhysicsBody();
   
   b2Body *body = nullptr;

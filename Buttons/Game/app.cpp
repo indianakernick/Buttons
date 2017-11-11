@@ -9,6 +9,7 @@
 #include "app.hpp"
 
 #include "systems.hpp"
+#include "level file.hpp"
 #include "global flags.hpp"
 #include "window constants.hpp"
 #include <Simpleton/Time/get.hpp>
@@ -58,9 +59,13 @@ void App::init() {
   renderingManager.init(renderingContext);
   
   physics.init(registry);
+  
+  loadLevel("level 0.yaml", registry, physics);
 }
 
 void App::quit() {
+  registry.reset();
+
   physics.quit();
 
   renderingManager.quit();

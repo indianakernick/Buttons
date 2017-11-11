@@ -1,0 +1,6 @@
+- file: box entity.yaml
+  components:
+    PhysicsBody:
+      pos: [0, 0]
+      scale: [2, 2]
+      body: box body.yaml

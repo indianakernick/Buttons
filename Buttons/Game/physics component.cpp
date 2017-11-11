@@ -18,6 +18,14 @@ PhysicsBody::PhysicsBody(const YAML::Node &node, const EntityIDmap &idMap, b2Wor
   body = loadBody(getChild(node, "body").Scalar(), world, transform);
 }
 
+PhysicsBody::PhysicsBody(PhysicsBody &&other)
+  : body(std::exchange(other.body, nullptr)) {}
+
+PhysicsBody &PhysicsBody::operator=(PhysicsBody &&other) {
+  body = std::exchange(other.body, nullptr);
+  return *this;
+}
+
 PhysicsBody::~PhysicsBody() {
   if (body && body->GetWorld()) {
     body->GetWorld()->DestroyBody(body);
