@@ -24,7 +24,7 @@ public:
   
   b2World *getWorld();
   
-  void step(float);
+  void update(float);
 
 private:
   entt::Registry<EntityID> *registry = nullptr;

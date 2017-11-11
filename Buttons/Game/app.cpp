@@ -82,7 +82,7 @@ bool App::input(float) {
 }
 
 bool App::update(const float delta) {
-  physics.step(delta);
+  physics.update(delta);
   physicsTransformSystem(registry);
   powerInputActivationSystem(registry);
   activatePowerOutputSystem(registry);

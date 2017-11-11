@@ -31,7 +31,7 @@ b2World *PhysicsSystem::getWorld() {
   return &(*world);
 }
 
-void PhysicsSystem::step(const float delta) {
+void PhysicsSystem::update(const float delta) {
   world->Step(delta, VELOCITY_ITER, POSITION_ITER);
 }
 

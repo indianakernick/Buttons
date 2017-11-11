@@ -11,9 +11,10 @@
 #include "entity file.hpp"
 #include "yaml helper.hpp"
 #include "entity id map.hpp"
+#include "physics system.hpp"
 #include <Simpleton/Platform/system info.hpp>
 
-void loadLevel(const std::string &fileName, Registry &registry) {
+void loadLevel(const std::string &fileName, Registry &registry, PhysicsSystem &physics) {
   const YAML::Node root = YAML::LoadFile(Platform::getResDir() + fileName);
   checkType(root, YAML::NodeType::Sequence);
   EntityIDmap idMap;
@@ -23,6 +24,6 @@ void loadLevel(const std::string &fileName, Registry &registry) {
     const YAML::Node &node = root[i];
     const std::string &entityFile = getChild(node, "file").Scalar();
     const YAML::Node &comps = node["components"];
-    loadEntity(idMap.getEntityFromIndex(i), entityFile, comps, idMap, registry);
+    loadEntity(idMap.getEntityFromIndex(i), entityFile, comps, idMap, registry, physics);
   }
 }
