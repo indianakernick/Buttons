@@ -18,6 +18,7 @@
 #include "player input component.hpp"
 #include "box rendering component.hpp"
 #include <Simpleton/Utils/type list.hpp>
+#include "player rendering component.hpp"
 
 using CompList = Utils::TypeList<
   PowerInput,
@@ -29,7 +30,8 @@ using CompList = Utils::TypeList<
   Activation,
   BoxRendering,
   PlayerInput,
-  PlayerJump
+  PlayerJump,
+  PlayerRendering
 >;
 
 #endif

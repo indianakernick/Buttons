@@ -104,6 +104,7 @@ bool App::render(const float delta) {
   
   NVGcontext *const ctx = renderingContext.getContext();
   boxRenderingSystem(registry, ctx);
+  playerRenderingSystem(registry, ctx);
   
   renderingManager.render();
   screenshot.postRender(renderingContext, ENABLE_FPS_RENDER);

@@ -16,6 +16,8 @@
 		450ED5D11FB6AB96008F2902 /* player movement system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5CF1FB6AB96008F2902 /* player movement system.cpp */; };
 		450ED5D41FB6AC6E008F2902 /* player jump component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5D21FB6AC6E008F2902 /* player jump component.cpp */; };
 		450ED5D71FB6B0A0008F2902 /* limit velocity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5D51FB6B0A0008F2902 /* limit velocity.cpp */; };
+		450ED5DA1FB6B3E3008F2902 /* player rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5D81FB6B3E3008F2902 /* player rendering system.cpp */; };
+		450ED5DD1FB6B409008F2902 /* player rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5DB1FB6B409008F2902 /* player rendering component.cpp */; };
 		452E10891FB2D27D0063114B /* collision pairs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452E10871FB2D27D0063114B /* collision pairs.cpp */; };
 		452E108C1FB2D8BA0063114B /* object types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452E108A1FB2D8BA0063114B /* object types.cpp */; };
 		452E10941FB2F4930063114B /* Consolas.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 452E10931FB2F4700063114B /* Consolas.ttf */; };
@@ -137,6 +139,10 @@
 		450ED5D31FB6AC6E008F2902 /* player jump component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "player jump component.hpp"; sourceTree = "<group>"; };
 		450ED5D51FB6B0A0008F2902 /* limit velocity.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "limit velocity.cpp"; sourceTree = "<group>"; };
 		450ED5D61FB6B0A0008F2902 /* limit velocity.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "limit velocity.hpp"; sourceTree = "<group>"; };
+		450ED5D81FB6B3E3008F2902 /* player rendering system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "player rendering system.cpp"; sourceTree = "<group>"; };
+		450ED5D91FB6B3E3008F2902 /* player rendering system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "player rendering system.hpp"; sourceTree = "<group>"; };
+		450ED5DB1FB6B409008F2902 /* player rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "player rendering component.cpp"; sourceTree = "<group>"; };
+		450ED5DC1FB6B409008F2902 /* player rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "player rendering component.hpp"; sourceTree = "<group>"; };
 		452E10871FB2D27D0063114B /* collision pairs.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "collision pairs.cpp"; sourceTree = "<group>"; };
 		452E10881FB2D27D0063114B /* collision pairs.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "collision pairs.hpp"; sourceTree = "<group>"; };
 		452E108A1FB2D8BA0063114B /* object types.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "object types.cpp"; sourceTree = "<group>"; };
@@ -820,6 +826,8 @@
 			children = (
 				4597963A1FB6870A007A7432 /* box rendering component.cpp */,
 				4597963B1FB6870A007A7432 /* box rendering component.hpp */,
+				450ED5DB1FB6B409008F2902 /* player rendering component.cpp */,
+				450ED5DC1FB6B409008F2902 /* player rendering component.hpp */,
 			);
 			name = Rendering;
 			sourceTree = "<group>";
@@ -829,6 +837,8 @@
 			children = (
 				4597963E1FB687AC007A7432 /* box rendering system.cpp */,
 				4597963F1FB687AC007A7432 /* box rendering system.hpp */,
+				450ED5D81FB6B3E3008F2902 /* player rendering system.cpp */,
+				450ED5D91FB6B3E3008F2902 /* player rendering system.hpp */,
 			);
 			name = Rendering;
 			sourceTree = "<group>";
@@ -972,6 +982,7 @@
 				4583EE1A1FB18F7A00AED27D /* b2RevoluteJoint.cpp in Sources */,
 				4583EE1B1FB18F7A00AED27D /* b2GearJoint.cpp in Sources */,
 				4583EE1C1FB18F7A00AED27D /* b2Joint.cpp in Sources */,
+				450ED5DA1FB6B3E3008F2902 /* player rendering system.cpp in Sources */,
 				4583EE1D1FB18F7A00AED27D /* b2PrismaticJoint.cpp in Sources */,
 				4597961C1FB41BFE007A7432 /* collision component.cpp in Sources */,
 				4583EE1E1FB18F7A00AED27D /* b2PulleyJoint.cpp in Sources */,
@@ -1002,6 +1013,7 @@
 				4583EE2F1FB18F7A00AED27D /* b2CircleShape.cpp in Sources */,
 				4583EE301FB18F7A00AED27D /* b2PolygonShape.cpp in Sources */,
 				4583EEA01FB1AE3100AED27D /* power input activation system.cpp in Sources */,
+				450ED5DD1FB6B409008F2902 /* player rendering component.cpp in Sources */,
 				4583EE311FB18F7A00AED27D /* b2TimeOfImpact.cpp in Sources */,
 				4583EE321FB18F7A00AED27D /* b2BroadPhase.cpp in Sources */,
 				4583EE331FB18F7A00AED27D /* b2CollideEdge.cpp in Sources */,

@@ -1,5 +1,5 @@
 PlayerInput: {}
 PlayerJump: {}
 Transform: {}
-BoxRendering: {}
+PlayerRendering: {}
 Collision: {}

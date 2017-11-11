@@ -9,8 +9,6 @@
 #ifndef box_rendering_component_hpp
 #define box_rendering_component_hpp
 
-struct BoxRendering {
-  
-};
+struct BoxRendering {};
 
 #endif
