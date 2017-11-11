@@ -17,5 +17,6 @@
 #include "button system.hpp"
 #include "physics transform system.hpp"
 #include "player input system.hpp"
+#include "player movement system.hpp"
 
 #endif

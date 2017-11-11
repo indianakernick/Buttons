@@ -87,6 +87,7 @@ bool App::input(float) {
 }
 
 bool App::update(const float delta) {
+  playerMovementSystem(registry, delta);
   physics.update(delta);
   physicsTransformSystem(registry);
   powerInputActivationSystem(registry);

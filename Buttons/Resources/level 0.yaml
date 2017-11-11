@@ -11,3 +11,9 @@
       pos: [0, -10]
       scale: [10, 1]
       body: platform body.yaml
+
+- file: player entity.yaml
+  components:
+    PhysicsBody:
+      pos: [-5, 0]
+      body: player body.yaml

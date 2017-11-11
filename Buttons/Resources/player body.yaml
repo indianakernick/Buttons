@@ -1,0 +1,26 @@
+body:
+  type: dynamic
+  fixed rotation: YES
+  linear damping: 0.9
+
+shapes:
+  body:
+    type: circle
+    pos: [0, 0]
+    radius: 0.5
+
+  foot:
+    type: circle
+    pos: [0, 0.1]
+    radius: 0.45
+
+fixtures:
+- shape: body
+  density: 6
+  friction: 0.5
+  user data: PlayerBody
+
+- shape: foot
+  density: 0
+  is sensor: YES
+  user data: PlayerFoot

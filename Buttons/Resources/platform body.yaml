@@ -9,4 +9,5 @@ shapes:
 
 fixtures:
 - shape: main
+  friction: 1.0
   user data: Ground

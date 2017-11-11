@@ -11,6 +11,11 @@
 		450ED5C61FB69ED3008F2902 /* player input system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5C41FB69ED3008F2902 /* player input system.cpp */; };
 		450ED5C81FB6A6B7008F2902 /* platform entity.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 450ED5C71FB6A6B7008F2902 /* platform entity.yaml */; };
 		450ED5CA1FB6A6C6008F2902 /* platform body.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 450ED5C91FB6A6C6008F2902 /* platform body.yaml */; };
+		450ED5CC1FB6A927008F2902 /* player body.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 450ED5CB1FB6A927008F2902 /* player body.yaml */; };
+		450ED5CE1FB6AA31008F2902 /* player entity.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 450ED5CD1FB6AA31008F2902 /* player entity.yaml */; };
+		450ED5D11FB6AB96008F2902 /* player movement system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5CF1FB6AB96008F2902 /* player movement system.cpp */; };
+		450ED5D41FB6AC6E008F2902 /* player jump component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5D21FB6AC6E008F2902 /* player jump component.cpp */; };
+		450ED5D71FB6B0A0008F2902 /* limit velocity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5D51FB6B0A0008F2902 /* limit velocity.cpp */; };
 		452E10891FB2D27D0063114B /* collision pairs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452E10871FB2D27D0063114B /* collision pairs.cpp */; };
 		452E108C1FB2D8BA0063114B /* object types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452E108A1FB2D8BA0063114B /* object types.cpp */; };
 		452E10941FB2F4930063114B /* Consolas.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 452E10931FB2F4700063114B /* Consolas.ttf */; };
@@ -124,6 +129,14 @@
 		450ED5C51FB69ED3008F2902 /* player input system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "player input system.hpp"; sourceTree = "<group>"; };
 		450ED5C71FB6A6B7008F2902 /* platform entity.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "platform entity.yaml"; sourceTree = "<group>"; };
 		450ED5C91FB6A6C6008F2902 /* platform body.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "platform body.yaml"; sourceTree = "<group>"; };
+		450ED5CB1FB6A927008F2902 /* player body.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "player body.yaml"; sourceTree = "<group>"; };
+		450ED5CD1FB6AA31008F2902 /* player entity.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "player entity.yaml"; sourceTree = "<group>"; };
+		450ED5CF1FB6AB96008F2902 /* player movement system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "player movement system.cpp"; sourceTree = "<group>"; };
+		450ED5D01FB6AB96008F2902 /* player movement system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "player movement system.hpp"; sourceTree = "<group>"; };
+		450ED5D21FB6AC6E008F2902 /* player jump component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "player jump component.cpp"; sourceTree = "<group>"; };
+		450ED5D31FB6AC6E008F2902 /* player jump component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "player jump component.hpp"; sourceTree = "<group>"; };
+		450ED5D51FB6B0A0008F2902 /* limit velocity.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "limit velocity.cpp"; sourceTree = "<group>"; };
+		450ED5D61FB6B0A0008F2902 /* limit velocity.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "limit velocity.hpp"; sourceTree = "<group>"; };
 		452E10871FB2D27D0063114B /* collision pairs.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "collision pairs.cpp"; sourceTree = "<group>"; };
 		452E10881FB2D27D0063114B /* collision pairs.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "collision pairs.hpp"; sourceTree = "<group>"; };
 		452E108A1FB2D8BA0063114B /* object types.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "object types.cpp"; sourceTree = "<group>"; };
@@ -668,6 +681,8 @@
 				4583EEA71FB1B67000AED27D /* transform component.hpp */,
 				450ED5C11FB69D31008F2902 /* player input component.cpp */,
 				450ED5C21FB69D31008F2902 /* player input component.hpp */,
+				450ED5D21FB6AC6E008F2902 /* player jump component.cpp */,
+				450ED5D31FB6AC6E008F2902 /* player jump component.hpp */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -691,6 +706,8 @@
 				4583EEA91FB1B6E100AED27D /* physics transform system.hpp */,
 				450ED5C41FB69ED3008F2902 /* player input system.cpp */,
 				450ED5C51FB69ED3008F2902 /* player input system.hpp */,
+				450ED5CF1FB6AB96008F2902 /* player movement system.cpp */,
+				450ED5D01FB6AB96008F2902 /* player movement system.hpp */,
 			);
 			name = Systems;
 			sourceTree = "<group>";
@@ -721,6 +738,8 @@
 				4583EE911FB19DE600AED27D /* collision categories.hpp */,
 				452E10871FB2D27D0063114B /* collision pairs.cpp */,
 				452E10881FB2D27D0063114B /* collision pairs.hpp */,
+				450ED5D51FB6B0A0008F2902 /* limit velocity.cpp */,
+				450ED5D61FB6B0A0008F2902 /* limit velocity.hpp */,
 			);
 			name = Physics;
 			sourceTree = "<group>";
@@ -774,6 +793,7 @@
 			children = (
 				459796351FB681FA007A7432 /* box entity.yaml */,
 				450ED5C71FB6A6B7008F2902 /* platform entity.yaml */,
+				450ED5CD1FB6AA31008F2902 /* player entity.yaml */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -783,6 +803,7 @@
 			children = (
 				459796371FB68209007A7432 /* box body.yaml */,
 				450ED5C91FB6A6C6008F2902 /* platform body.yaml */,
+				450ED5CB1FB6A927008F2902 /* player body.yaml */,
 			);
 			name = Bodies;
 			sourceTree = "<group>";
@@ -876,7 +897,9 @@
 				450ED5CA1FB6A6C6008F2902 /* platform body.yaml in Resources */,
 				450ED5C81FB6A6B7008F2902 /* platform entity.yaml in Resources */,
 				4583ED5B1FB1841100AED27D /* Assets.xcassets in Resources */,
+				450ED5CC1FB6A927008F2902 /* player body.yaml in Resources */,
 				459796361FB681FA007A7432 /* box entity.yaml in Resources */,
+				450ED5CE1FB6AA31008F2902 /* player entity.yaml in Resources */,
 				459796301FB67FE7007A7432 /* level 0.yaml in Resources */,
 				459796381FB68209007A7432 /* box body.yaml in Resources */,
 			);
@@ -915,7 +938,10 @@
 				4583EE791FB190F300AED27D /* layer names.cpp in Sources */,
 				4597961A1FB41BF1007A7432 /* physics component.cpp in Sources */,
 				4583EE7A1FB190F300AED27D /* rendering context.cpp in Sources */,
+				450ED5D11FB6AB96008F2902 /* player movement system.cpp in Sources */,
 				4583EE7B1FB190F300AED27D /* rendering job.cpp in Sources */,
+				450ED5D41FB6AC6E008F2902 /* player jump component.cpp in Sources */,
+				450ED5D71FB6B0A0008F2902 /* limit velocity.cpp in Sources */,
 				4583EE7C1FB190F300AED27D /* rendering manager.cpp in Sources */,
 				4583EE7D1FB190F300AED27D /* rendering resources.cpp in Sources */,
 				4583EE071FB18F7A00AED27D /* b2Body.cpp in Sources */,
