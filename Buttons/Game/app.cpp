@@ -115,6 +115,7 @@ bool App::render(const float delta) {
     boxRenderingSystem(registry, ctx);
     playerRenderingSystem(registry, ctx);
     platformRenderingSystem(registry, ctx);
+    buttonRenderingSystem(registry, ctx);
   }
   
   renderingManager.render();
