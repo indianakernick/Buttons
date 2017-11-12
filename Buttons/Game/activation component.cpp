@@ -7,3 +7,11 @@
 //
 
 #include "activation component.hpp"
+
+#include "yaml helper.hpp"
+
+Activation::Activation(const YAML::Node &node, const EntityIDmap &) {
+  if (const YAML::Node &speedNode = node["speed"]) {
+    speed = speedNode.as<float>();
+  }
+}

@@ -91,6 +91,8 @@ bool App::update(const float delta) {
   physics.update(delta);
   physicsTransformSystem(registry);
   
+  activationSystem(registry, delta);
+  
   //Set outputs
   activatePowerOutputSystem(registry);
   buttonSystem(registry);
@@ -112,10 +114,10 @@ bool App::render(const float delta) {
   
   if constexpr (ENABLE_GAME_RENDER) {
     NVGcontext *const ctx = renderingContext.getContext();
-    boxRenderingSystem(registry, ctx);
-    playerRenderingSystem(registry, ctx);
     platformRenderingSystem(registry, ctx);
     buttonRenderingSystem(registry, ctx);
+    boxRenderingSystem(registry, ctx);
+    playerRenderingSystem(registry, ctx);
   }
   
   renderingManager.render();

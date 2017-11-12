@@ -14,6 +14,8 @@
 void activatePowerOutputSystem(Registry &registry) {
   auto view = registry.view<PowerOutput, Activation>();
   for (EntityID entity : view) {
-    view.get<PowerOutput>(entity).on = view.get<Activation>(entity).active;
+    view.get<PowerOutput>(entity).on = (
+      view.get<Activation>(entity).state == Activation::State::ACTIVE
+    );
   }
 }

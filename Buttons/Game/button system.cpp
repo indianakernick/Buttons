@@ -17,6 +17,10 @@ void buttonSystem(Registry &registry) {
   auto view = registry.view<Collision, Activation, Button>();
   for (EntityID entity : view) {
     const auto &collisions = view.get<Collision>(entity).collisionPairs;
-    view.get<Activation>(entity).active = collisions.hasAny();
+    if (collisions.hasAny()) {
+      view.get<Activation>(entity).state = Activation::State::ACTIVATING;
+    } else {
+      view.get<Activation>(entity).state = Activation::State::DEACTIVATING;
+    }
   }
 }

@@ -14,6 +14,10 @@
 void powerInputActivationSystem(Registry &registry) {
   auto view = registry.view<Activation, PowerInput>();
   for (EntityID entity : view) {
-    view.get<Activation>(entity).active = view.get<PowerInput>(entity).on;
+    if (view.get<PowerInput>(entity).on) {
+      view.get<Activation>(entity).state = Activation::State::ACTIVATING;
+    } else {
+      view.get<Activation>(entity).state = Activation::State::DEACTIVATING;
+    }
   }
 }

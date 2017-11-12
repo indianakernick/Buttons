@@ -1,5 +1,6 @@
 Collision: {}
-Activation: {}
+Activation:
+  speed: 4
 Button: {}
 Transform: {}
 ButtonRendering: {}

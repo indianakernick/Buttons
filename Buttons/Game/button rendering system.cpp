@@ -19,16 +19,11 @@ void buttonRenderingSystem(Registry &registry, NVGcontext *const ctx) {
     nvgSave(ctx);
     
     nvgTransform(ctx, getMat3(view.get<Transform>(entity)));
+    nvgScale(ctx, 1.0f, 1.0f - view.get<Activation>(entity).activity);
     
     nvgBeginPath(ctx);
     nvgFillColor(ctx, nvgRGBf(1.0f, 0.0f, 0.0f));
-    
-    if (view.get<Activation>(entity).active) {
-      nvgScale(ctx, 1.0f, 0.125f);
-    }
-    
     nvgRect(ctx, -0.5f, 0.0f, 1.0f, 0.5f);
-    
     nvgFill(ctx);
     
     nvgRestore(ctx);
