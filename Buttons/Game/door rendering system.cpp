@@ -12,6 +12,7 @@
 #include "transform component.hpp"
 #include "activation component.hpp"
 #include "door rendering component.hpp"
+#include <Simpleton/Math/interpolate.hpp>
 
 void doorRenderingSystem(Registry &registry, NVGcontext *const ctx) {
   auto view = registry.view<DoorRendering, Transform, Activation>();
@@ -22,9 +23,14 @@ void doorRenderingSystem(Registry &registry, NVGcontext *const ctx) {
     
     using ToVec = Math::ToVec<float, Math::Dir::RIGHT, Math::Dir::UP>;
     const Math::Dir closeDir = view.get<DoorRendering>(entity).closeDir;
-    const glm::vec2 activity(view.get<Activation>(entity).activity);
-    //Hmm...
-    nvgScale(ctx, 1.0f, 1.0f - view.get<Activation>(entity).activity);
+    const glm::vec2 closeVec = ToVec::conv(closeDir);
+    const glm::vec2 closeAxis = Math::isHori(closeDir)
+                              ? glm::vec2(1.0f, 0.0f)
+                              : glm::vec2(0.0f, 1.0f);
+    const glm::vec2 activity(Math::cubicInOut(view.get<Activation>(entity).activity));
+    nvgTranslate(ctx, closeVec * -0.5f);
+    nvgScale(ctx, glm::vec2(1.0f) - closeAxis * activity);
+    nvgTranslate(ctx, closeVec * 0.5f);
     
     nvgBeginPath(ctx);
     nvgFillColor(ctx, nvgRGBf(0.0f, 0.0f, 1.0f));

@@ -8,6 +8,7 @@
 
 #include "door system.hpp"
 
+#include "object types.hpp"
 #include "door component.hpp"
 #include "physics component.hpp"
 #include "activation component.hpp"
@@ -16,8 +17,14 @@
 void doorSystem(Registry &registry) {
   auto view = registry.view<Door, PhysicsBody, Activation>();
   for (EntityID entity : view) {
-    view.get<PhysicsBody>(entity).body->GetFixtureList()->SetSensor(
-      view.get<Activation>(entity).state == Activation::State::ACTIVE
+    const bool active = view.get<Activation>(entity).state == Activation::State::ACTIVE;
+    b2Body *const body = view.get<PhysicsBody>(entity).body;
+    b2Fixture *const fixture = body->GetFixtureList();
+    fixture->SetSensor(active);
+    fixture->SetUserData(
+      active
+      ? getUserData<ObjectType::Sensor>()
+      : getUserData<ObjectType::Ground>()
     );
   }
 }
