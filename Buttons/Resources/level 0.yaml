@@ -22,5 +22,6 @@
   components:
     PhysicsBody:
       pos: [5, -9.5]
+      scale: [1, 0.5]
       body: button body.yaml
     PowerOutput: {}
