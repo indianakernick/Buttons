@@ -19,6 +19,11 @@ fixtures:
   density: 6
   friction: 0.5
   user data: PlayerBody
+  filter:
+    category: PlayerBody
+    collide with:
+    - ButtonTop
+    - Default
 
 - shape: foot
   density: 0

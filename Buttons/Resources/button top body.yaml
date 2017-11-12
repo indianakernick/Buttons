@@ -1,0 +1,20 @@
+body:
+  type: dynamic
+  linear damping: 0
+  fixed rotation: YES
+
+shapes:
+  main:
+    type: polygon
+    half width: 0.5
+    half height: 0.5
+
+fixtures:
+- shape: main
+  density: 10
+  user data: Ground
+  filter:
+    category: ButtonTop
+    collide with:
+    - ButtonBase
+    - PlayerBody

@@ -10,6 +10,7 @@
 #define component_list_hpp
 
 #include "power component.hpp"
+#include "button component.hpp"
 #include "physics component.hpp"
 #include "transform component.hpp"
 #include "collision component.hpp"
@@ -33,7 +34,8 @@ using CompList = Utils::TypeList<
   PlayerInput,
   PlayerJump,
   PlayerRendering,
-  PlatformRendering
+  PlatformRendering,
+  Button
 >;
 
 #endif

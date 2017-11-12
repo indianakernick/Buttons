@@ -20,6 +20,13 @@
 		450ED5DD1FB6B409008F2902 /* player rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5DB1FB6B409008F2902 /* player rendering component.cpp */; };
 		450ED5E01FB6B7F3008F2902 /* platform rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5DE1FB6B7F3008F2902 /* platform rendering system.cpp */; };
 		450ED5E31FB6B8EF008F2902 /* platform rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5E11FB6B8EF008F2902 /* platform rendering component.cpp */; };
+		450ED5E51FB6CCAE008F2902 /* button top body.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 450ED5E41FB6CCAE008F2902 /* button top body.yaml */; };
+		450ED5E71FB6CDBC008F2902 /* button base body.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 450ED5E61FB6CDBC008F2902 /* button base body.yaml */; };
+		450ED5E91FB6D0A9008F2902 /* button joint.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 450ED5E81FB6D0A9008F2902 /* button joint.yaml */; };
+		450ED5EC1FB7C052008F2902 /* button component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5EA1FB7C052008F2902 /* button component.cpp */; };
+		450ED5EE1FB7C11B008F2902 /* button base entity.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 450ED5ED1FB7C11B008F2902 /* button base entity.yaml */; };
+		450ED5F01FB7C1EC008F2902 /* button top entity.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 450ED5EF1FB7C1EC008F2902 /* button top entity.yaml */; };
+		450ED5F21FB7C223008F2902 /* button joint entity.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 450ED5F11FB7C223008F2902 /* button joint entity.yaml */; };
 		452E10891FB2D27D0063114B /* collision pairs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452E10871FB2D27D0063114B /* collision pairs.cpp */; };
 		452E108C1FB2D8BA0063114B /* object types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452E108A1FB2D8BA0063114B /* object types.cpp */; };
 		452E10941FB2F4930063114B /* Consolas.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 452E10931FB2F4700063114B /* Consolas.ttf */; };
@@ -149,6 +156,14 @@
 		450ED5DF1FB6B7F3008F2902 /* platform rendering system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "platform rendering system.hpp"; sourceTree = "<group>"; };
 		450ED5E11FB6B8EF008F2902 /* platform rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "platform rendering component.cpp"; sourceTree = "<group>"; };
 		450ED5E21FB6B8EF008F2902 /* platform rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "platform rendering component.hpp"; sourceTree = "<group>"; };
+		450ED5E41FB6CCAE008F2902 /* button top body.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "button top body.yaml"; sourceTree = "<group>"; };
+		450ED5E61FB6CDBC008F2902 /* button base body.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "button base body.yaml"; sourceTree = "<group>"; };
+		450ED5E81FB6D0A9008F2902 /* button joint.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "button joint.yaml"; sourceTree = "<group>"; };
+		450ED5EA1FB7C052008F2902 /* button component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "button component.cpp"; sourceTree = "<group>"; };
+		450ED5EB1FB7C052008F2902 /* button component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "button component.hpp"; sourceTree = "<group>"; };
+		450ED5ED1FB7C11B008F2902 /* button base entity.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "button base entity.yaml"; sourceTree = "<group>"; };
+		450ED5EF1FB7C1EC008F2902 /* button top entity.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "button top entity.yaml"; sourceTree = "<group>"; };
+		450ED5F11FB7C223008F2902 /* button joint entity.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "button joint entity.yaml"; sourceTree = "<group>"; };
 		452E10871FB2D27D0063114B /* collision pairs.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "collision pairs.cpp"; sourceTree = "<group>"; };
 		452E10881FB2D27D0063114B /* collision pairs.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "collision pairs.hpp"; sourceTree = "<group>"; };
 		452E108A1FB2D8BA0063114B /* object types.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "object types.cpp"; sourceTree = "<group>"; };
@@ -695,6 +710,8 @@
 				450ED5C21FB69D31008F2902 /* player input component.hpp */,
 				450ED5D21FB6AC6E008F2902 /* player jump component.cpp */,
 				450ED5D31FB6AC6E008F2902 /* player jump component.hpp */,
+				450ED5EA1FB7C052008F2902 /* button component.cpp */,
+				450ED5EB1FB7C052008F2902 /* button component.hpp */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -806,6 +823,9 @@
 				459796351FB681FA007A7432 /* box entity.yaml */,
 				450ED5C71FB6A6B7008F2902 /* platform entity.yaml */,
 				450ED5CD1FB6AA31008F2902 /* player entity.yaml */,
+				450ED5ED1FB7C11B008F2902 /* button base entity.yaml */,
+				450ED5EF1FB7C1EC008F2902 /* button top entity.yaml */,
+				450ED5F11FB7C223008F2902 /* button joint entity.yaml */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -816,6 +836,8 @@
 				459796371FB68209007A7432 /* box body.yaml */,
 				450ED5C91FB6A6C6008F2902 /* platform body.yaml */,
 				450ED5CB1FB6A927008F2902 /* player body.yaml */,
+				450ED5E41FB6CCAE008F2902 /* button top body.yaml */,
+				450ED5E61FB6CDBC008F2902 /* button base body.yaml */,
 			);
 			name = Bodies;
 			sourceTree = "<group>";
@@ -823,6 +845,7 @@
 		459796341FB6801C007A7432 /* Joints */ = {
 			isa = PBXGroup;
 			children = (
+				450ED5E81FB6D0A9008F2902 /* button joint.yaml */,
 			);
 			name = Joints;
 			sourceTree = "<group>";
@@ -917,10 +940,16 @@
 				450ED5CA1FB6A6C6008F2902 /* platform body.yaml in Resources */,
 				450ED5C81FB6A6B7008F2902 /* platform entity.yaml in Resources */,
 				4583ED5B1FB1841100AED27D /* Assets.xcassets in Resources */,
+				450ED5E51FB6CCAE008F2902 /* button top body.yaml in Resources */,
+				450ED5F01FB7C1EC008F2902 /* button top entity.yaml in Resources */,
 				450ED5CC1FB6A927008F2902 /* player body.yaml in Resources */,
+				450ED5EE1FB7C11B008F2902 /* button base entity.yaml in Resources */,
+				450ED5E91FB6D0A9008F2902 /* button joint.yaml in Resources */,
 				459796361FB681FA007A7432 /* box entity.yaml in Resources */,
 				450ED5CE1FB6AA31008F2902 /* player entity.yaml in Resources */,
+				450ED5E71FB6CDBC008F2902 /* button base body.yaml in Resources */,
 				459796301FB67FE7007A7432 /* level 0.yaml in Resources */,
+				450ED5F21FB7C223008F2902 /* button joint entity.yaml in Resources */,
 				459796381FB68209007A7432 /* box body.yaml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1000,6 +1029,7 @@
 				4583EE1F1FB18F7A00AED27D /* b2RopeJoint.cpp in Sources */,
 				4583EE201FB18F7A00AED27D /* b2Island.cpp in Sources */,
 				452E108C1FB2D8BA0063114B /* object types.cpp in Sources */,
+				450ED5EC1FB7C052008F2902 /* button component.cpp in Sources */,
 				4583EE211FB18F7A00AED27D /* b2ContactManager.cpp in Sources */,
 				4583EE221FB18F7A00AED27D /* b2Rope.cpp in Sources */,
 				4583EE231FB18F7A00AED27D /* b2Draw.cpp in Sources */,

@@ -17,3 +17,26 @@
     PhysicsBody:
       pos: [-5, 0]
       body: player body.yaml
+
+- id: 0
+  file: button base entity.yaml
+  components:
+    PhysicsBody:
+      pos: [5, -10]
+      body: button base body.yaml
+
+- id: 1
+  file: button top entity.yaml
+  components:
+    PhysicsBody:
+      pos: [5, -8]
+      scale: [1, 0.5]
+      body: button top body.yaml
+
+- file: button joint entity.yaml
+  components:
+    PhysicsJoint:
+      length: 0.25
+      body A: 0
+      body B: 1
+      joint: button joint.yaml

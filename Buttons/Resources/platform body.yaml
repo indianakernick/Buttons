@@ -11,3 +11,6 @@ fixtures:
 - shape: main
   friction: 1.0
   user data: Ground
+  filter:
+    category: Default
+    no collide with: PassThrough

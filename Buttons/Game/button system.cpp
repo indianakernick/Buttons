@@ -8,15 +8,17 @@
 
 #include "button system.hpp"
 
+#include "button component.hpp"
 #include "collision component.hpp"
 #include "collision categories.hpp"
 #include "activation component.hpp"
 
 void buttonSystem(Registry &registry) {
-  auto view = registry.view<Collision, Activation>();
+  using namespace ObjectType;
+
+  auto view = registry.view<Collision, Activation, Button>();
   for (EntityID entity : view) {
     const auto &collisionPairs = view.get<Collision>(entity).collisionPairs;
-    view.get<Activation>(entity).active
-    = collisionPairs.hasPair<ObjectType::ButtonBase, ObjectType::ButtonTop>();
+    view.get<Activation>(entity).active = collisionPairs.hasPair<ButtonBase, ButtonTop>();
   }
 }

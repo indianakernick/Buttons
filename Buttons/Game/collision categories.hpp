@@ -15,7 +15,9 @@
 #define CATEGORIES                                                              \
   CAT(Default)                                                                  \
   CAT(PlayerBody)                                                               \
-  LAST_CAT(Switch)
+  CAT(ButtonTop)                                                                \
+  CAT(ButtonBase)                                                               \
+  LAST_CAT(PassThrough)
 
 namespace Category {
   #define CAT(NAME) MAKE_SYMBOL(NAME);
