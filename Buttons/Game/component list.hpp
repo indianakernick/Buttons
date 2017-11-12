@@ -22,6 +22,7 @@
 #include "box rendering component.hpp"
 #include "door rendering component.hpp"
 #include <Simpleton/Utils/type list.hpp>
+#include "switch rendering component.hpp"
 #include "button rendering component.hpp"
 #include "player rendering component.hpp"
 #include "platform rendering component.hpp"
@@ -43,7 +44,8 @@ using CompList = Utils::TypeList<
   ButtonRendering,
   DoorRendering,
   Door,
-  Switch
+  Switch,
+  SwitchRendering
 >;
 
 #endif

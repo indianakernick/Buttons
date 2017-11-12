@@ -20,6 +20,7 @@
 #include "door rendering system.hpp"
 #include "player movement system.hpp"
 #include "player rendering system.hpp"
+#include "switch rendering system.hpp"
 #include "button rendering system.hpp"
 #include "physics transform system.hpp"
 #include "platform rendering system.hpp"
