@@ -24,4 +24,15 @@
       pos: [5, -9.5]
       scale: [1, 0.5]
       body: button body.yaml
-    PowerOutput: {}
+    PowerOutput:
+      out: 0
+
+- id: 0
+  file: door entity.yaml
+  components:
+    PhysicsBody:
+      pos: [7.5, -8.5]
+      scale: [0.2, 2]
+      body: door body.yaml
+    DoorRendering:
+      close dir: down

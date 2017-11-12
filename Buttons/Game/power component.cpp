@@ -12,5 +12,5 @@
 #include "entity id map.hpp"
 
 PowerOutput::PowerOutput(const YAML::Node &node, const EntityIDmap &idMap) {
-  //out = idMap.getEntityFromUserID(getChild(node, "out").as<UserID>());
+  out = idMap.getEntityFromUserID(getChild(node, "out").as<UserID>());
 }

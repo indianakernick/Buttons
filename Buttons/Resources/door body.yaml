@@ -1,0 +1,12 @@
+body:
+  type: static
+
+shapes:
+  main:
+    type: polygon
+    half width: 0.5
+    half height: 0.5
+
+fixtures:
+- shape: main
+  friction: 0

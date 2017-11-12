@@ -18,6 +18,7 @@
 #include "player jump component.hpp"
 #include "player input component.hpp"
 #include "box rendering component.hpp"
+#include "door rendering component.hpp"
 #include <Simpleton/Utils/type list.hpp>
 #include "button rendering component.hpp"
 #include "player rendering component.hpp"
@@ -37,7 +38,8 @@ using CompList = Utils::TypeList<
   PlayerRendering,
   PlatformRendering,
   Button,
-  ButtonRendering
+  ButtonRendering,
+  DoorRendering
 >;
 
 #endif

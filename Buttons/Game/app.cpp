@@ -118,6 +118,7 @@ bool App::render(const float delta) {
     buttonRenderingSystem(registry, ctx);
     boxRenderingSystem(registry, ctx);
     playerRenderingSystem(registry, ctx);
+    doorRenderingSystem(registry, ctx);
   }
   
   renderingManager.render();
