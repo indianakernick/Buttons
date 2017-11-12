@@ -9,6 +9,7 @@
 #ifndef component_list_hpp
 #define component_list_hpp
 
+#include "door component.hpp"
 #include "power component.hpp"
 #include "button component.hpp"
 #include "physics component.hpp"
@@ -39,7 +40,8 @@ using CompList = Utils::TypeList<
   PlatformRendering,
   Button,
   ButtonRendering,
-  DoorRendering
+  DoorRendering,
+  Door
 >;
 
 #endif

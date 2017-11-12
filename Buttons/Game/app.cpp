@@ -92,6 +92,7 @@ bool App::update(const float delta) {
   physicsTransformSystem(registry);
   
   activationSystem(registry, delta);
+  doorSystem(registry);
   
   //Set outputs
   activatePowerOutputSystem(registry);

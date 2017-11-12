@@ -9,6 +9,7 @@
 #ifndef systems_hpp
 #define systems_hpp
 
+#include "door system.hpp"
 #include "power system.hpp"
 #include "button system.hpp"
 #include "physics system.hpp"

@@ -31,6 +31,8 @@
 		450ED6021FB7EA23008F2902 /* door entity.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 450ED6011FB7EA23008F2902 /* door entity.yaml */; };
 		450ED6081FB7F4F6008F2902 /* door rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED6061FB7F4F6008F2902 /* door rendering component.cpp */; };
 		450ED60B1FB7F633008F2902 /* door rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED6091FB7F633008F2902 /* door rendering system.cpp */; };
+		450ED6111FB7FB55008F2902 /* door component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED60F1FB7FB55008F2902 /* door component.cpp */; };
+		450ED6141FB7FBA4008F2902 /* door system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED6121FB7FBA4008F2902 /* door system.cpp */; };
 		452E10891FB2D27D0063114B /* collision pairs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452E10871FB2D27D0063114B /* collision pairs.cpp */; };
 		452E108C1FB2D8BA0063114B /* object types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452E108A1FB2D8BA0063114B /* object types.cpp */; };
 		452E10941FB2F4930063114B /* Consolas.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 452E10931FB2F4700063114B /* Consolas.ttf */; };
@@ -178,6 +180,10 @@
 		450ED6071FB7F4F6008F2902 /* door rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "door rendering component.hpp"; sourceTree = "<group>"; };
 		450ED6091FB7F633008F2902 /* door rendering system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "door rendering system.cpp"; sourceTree = "<group>"; };
 		450ED60A1FB7F633008F2902 /* door rendering system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "door rendering system.hpp"; sourceTree = "<group>"; };
+		450ED60F1FB7FB55008F2902 /* door component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "door component.cpp"; sourceTree = "<group>"; };
+		450ED6101FB7FB55008F2902 /* door component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "door component.hpp"; sourceTree = "<group>"; };
+		450ED6121FB7FBA4008F2902 /* door system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "door system.cpp"; sourceTree = "<group>"; };
+		450ED6131FB7FBA4008F2902 /* door system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "door system.hpp"; sourceTree = "<group>"; };
 		452E10871FB2D27D0063114B /* collision pairs.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "collision pairs.cpp"; sourceTree = "<group>"; };
 		452E10881FB2D27D0063114B /* collision pairs.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "collision pairs.hpp"; sourceTree = "<group>"; };
 		452E108A1FB2D8BA0063114B /* object types.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "object types.cpp"; sourceTree = "<group>"; };
@@ -726,6 +732,8 @@
 				450ED5D31FB6AC6E008F2902 /* player jump component.hpp */,
 				450ED5EA1FB7C052008F2902 /* button component.cpp */,
 				450ED5EB1FB7C052008F2902 /* button component.hpp */,
+				450ED60F1FB7FB55008F2902 /* door component.cpp */,
+				450ED6101FB7FB55008F2902 /* door component.hpp */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -753,6 +761,8 @@
 				450ED5D01FB6AB96008F2902 /* player movement system.hpp */,
 				450ED5FC1FB7DDA5008F2902 /* activation system.cpp */,
 				450ED5FD1FB7DDA5008F2902 /* activation system.hpp */,
+				450ED6121FB7FBA4008F2902 /* door system.cpp */,
+				450ED6131FB7FBA4008F2902 /* door system.hpp */,
 			);
 			name = Systems;
 			sourceTree = "<group>";
@@ -1039,6 +1049,7 @@
 				4597963C1FB6870A007A7432 /* box rendering component.cpp in Sources */,
 				4583EE131FB18F7A00AED27D /* b2WorldCallbacks.cpp in Sources */,
 				4583EE921FB19DE600AED27D /* collision categories.cpp in Sources */,
+				450ED6111FB7FB55008F2902 /* door component.cpp in Sources */,
 				4583EE141FB18F7A00AED27D /* b2WeldJoint.cpp in Sources */,
 				4583EE151FB18F7A00AED27D /* b2MouseJoint.cpp in Sources */,
 				4583EE161FB18F7A00AED27D /* b2FrictionJoint.cpp in Sources */,
@@ -1055,6 +1066,7 @@
 				4583EE1E1FB18F7A00AED27D /* b2PulleyJoint.cpp in Sources */,
 				450ED5FB1FB7D740008F2902 /* button rendering system.cpp in Sources */,
 				4583EE1F1FB18F7A00AED27D /* b2RopeJoint.cpp in Sources */,
+				450ED6141FB7FBA4008F2902 /* door system.cpp in Sources */,
 				4583EE201FB18F7A00AED27D /* b2Island.cpp in Sources */,
 				452E108C1FB2D8BA0063114B /* object types.cpp in Sources */,
 				450ED5EC1FB7C052008F2902 /* button component.cpp in Sources */,
