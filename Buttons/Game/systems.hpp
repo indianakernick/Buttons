@@ -11,6 +11,7 @@
 
 #include "door system.hpp"
 #include "power system.hpp"
+#include "switch system.hpp"
 #include "button system.hpp"
 #include "physics system.hpp"
 #include "activation system.hpp"

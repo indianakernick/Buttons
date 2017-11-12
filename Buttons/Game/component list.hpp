@@ -11,6 +11,7 @@
 
 #include "door component.hpp"
 #include "power component.hpp"
+#include "switch component.hpp"
 #include "button component.hpp"
 #include "physics component.hpp"
 #include "transform component.hpp"
@@ -41,7 +42,8 @@ using CompList = Utils::TypeList<
   Button,
   ButtonRendering,
   DoorRendering,
-  Door
+  Door,
+  Switch
 >;
 
 #endif

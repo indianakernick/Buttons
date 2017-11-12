@@ -33,6 +33,10 @@
 		450ED60B1FB7F633008F2902 /* door rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED6091FB7F633008F2902 /* door rendering system.cpp */; };
 		450ED6111FB7FB55008F2902 /* door component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED60F1FB7FB55008F2902 /* door component.cpp */; };
 		450ED6141FB7FBA4008F2902 /* door system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED6121FB7FBA4008F2902 /* door system.cpp */; };
+		450ED6191FB8089C008F2902 /* switch body.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 450ED6181FB8089C008F2902 /* switch body.yaml */; };
+		450ED61B1FB80932008F2902 /* switch entity.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 450ED61A1FB80932008F2902 /* switch entity.yaml */; };
+		450ED61E1FB80B0F008F2902 /* switch component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED61C1FB80B0F008F2902 /* switch component.cpp */; };
+		450ED6211FB80CB4008F2902 /* switch system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED61F1FB80CB4008F2902 /* switch system.cpp */; };
 		452E10891FB2D27D0063114B /* collision pairs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452E10871FB2D27D0063114B /* collision pairs.cpp */; };
 		452E108C1FB2D8BA0063114B /* object types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452E108A1FB2D8BA0063114B /* object types.cpp */; };
 		452E10941FB2F4930063114B /* Consolas.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 452E10931FB2F4700063114B /* Consolas.ttf */; };
@@ -184,6 +188,12 @@
 		450ED6101FB7FB55008F2902 /* door component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "door component.hpp"; sourceTree = "<group>"; };
 		450ED6121FB7FBA4008F2902 /* door system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "door system.cpp"; sourceTree = "<group>"; };
 		450ED6131FB7FBA4008F2902 /* door system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "door system.hpp"; sourceTree = "<group>"; };
+		450ED6181FB8089C008F2902 /* switch body.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "switch body.yaml"; sourceTree = "<group>"; };
+		450ED61A1FB80932008F2902 /* switch entity.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "switch entity.yaml"; sourceTree = "<group>"; };
+		450ED61C1FB80B0F008F2902 /* switch component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "switch component.cpp"; sourceTree = "<group>"; };
+		450ED61D1FB80B0F008F2902 /* switch component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "switch component.hpp"; sourceTree = "<group>"; };
+		450ED61F1FB80CB4008F2902 /* switch system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "switch system.cpp"; sourceTree = "<group>"; };
+		450ED6201FB80CB4008F2902 /* switch system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "switch system.hpp"; sourceTree = "<group>"; };
 		452E10871FB2D27D0063114B /* collision pairs.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "collision pairs.cpp"; sourceTree = "<group>"; };
 		452E10881FB2D27D0063114B /* collision pairs.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "collision pairs.hpp"; sourceTree = "<group>"; };
 		452E108A1FB2D8BA0063114B /* object types.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "object types.cpp"; sourceTree = "<group>"; };
@@ -734,6 +744,8 @@
 				450ED5EB1FB7C052008F2902 /* button component.hpp */,
 				450ED60F1FB7FB55008F2902 /* door component.cpp */,
 				450ED6101FB7FB55008F2902 /* door component.hpp */,
+				450ED61C1FB80B0F008F2902 /* switch component.cpp */,
+				450ED61D1FB80B0F008F2902 /* switch component.hpp */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -763,6 +775,8 @@
 				450ED5FD1FB7DDA5008F2902 /* activation system.hpp */,
 				450ED6121FB7FBA4008F2902 /* door system.cpp */,
 				450ED6131FB7FBA4008F2902 /* door system.hpp */,
+				450ED61F1FB80CB4008F2902 /* switch system.cpp */,
+				450ED6201FB80CB4008F2902 /* switch system.hpp */,
 			);
 			name = Systems;
 			sourceTree = "<group>";
@@ -853,6 +867,7 @@
 				450ED5CD1FB6AA31008F2902 /* player entity.yaml */,
 				450ED5ED1FB7C11B008F2902 /* button entity.yaml */,
 				450ED6011FB7EA23008F2902 /* door entity.yaml */,
+				450ED61A1FB80932008F2902 /* switch entity.yaml */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -865,6 +880,7 @@
 				450ED5CB1FB6A927008F2902 /* player body.yaml */,
 				450ED5E41FB6CCAE008F2902 /* button body.yaml */,
 				450ED5FF1FB7E8D3008F2902 /* door body.yaml */,
+				450ED6181FB8089C008F2902 /* switch body.yaml */,
 			);
 			name = Bodies;
 			sourceTree = "<group>";
@@ -979,9 +995,11 @@
 				450ED5EE1FB7C11B008F2902 /* button entity.yaml in Resources */,
 				459796361FB681FA007A7432 /* box entity.yaml in Resources */,
 				450ED5CE1FB6AA31008F2902 /* player entity.yaml in Resources */,
+				450ED6191FB8089C008F2902 /* switch body.yaml in Resources */,
 				450ED6001FB7E8D3008F2902 /* door body.yaml in Resources */,
 				459796301FB67FE7007A7432 /* level 0.yaml in Resources */,
 				459796381FB68209007A7432 /* box body.yaml in Resources */,
+				450ED61B1FB80932008F2902 /* switch entity.yaml in Resources */,
 				450ED6021FB7EA23008F2902 /* door entity.yaml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1024,6 +1042,7 @@
 				4597961A1FB41BF1007A7432 /* physics component.cpp in Sources */,
 				4583EE7A1FB190F300AED27D /* rendering context.cpp in Sources */,
 				450ED5D11FB6AB96008F2902 /* player movement system.cpp in Sources */,
+				450ED6211FB80CB4008F2902 /* switch system.cpp in Sources */,
 				4583EE7B1FB190F300AED27D /* rendering job.cpp in Sources */,
 				450ED5D41FB6AC6E008F2902 /* player jump component.cpp in Sources */,
 				450ED5D71FB6B0A0008F2902 /* limit velocity.cpp in Sources */,
@@ -1090,6 +1109,7 @@
 				4583EE2D1FB18F7A00AED27D /* b2ChainShape.cpp in Sources */,
 				459796251FB56F0D007A7432 /* level file.cpp in Sources */,
 				4583EE2E1FB18F7A00AED27D /* b2EdgeShape.cpp in Sources */,
+				450ED61E1FB80B0F008F2902 /* switch component.cpp in Sources */,
 				459796281FB58752007A7432 /* entity id map.cpp in Sources */,
 				4583EEAA1FB1B6E100AED27D /* physics transform system.cpp in Sources */,
 				4583EE2F1FB18F7A00AED27D /* b2CircleShape.cpp in Sources */,

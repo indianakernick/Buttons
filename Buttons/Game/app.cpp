@@ -97,6 +97,7 @@ bool App::update(const float delta) {
   //Set outputs
   activatePowerOutputSystem(registry);
   buttonSystem(registry);
+  switchSystem(registry);
   //Set inputs
   powerSystem(registry);
   //Respond to inputs
