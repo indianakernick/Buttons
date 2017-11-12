@@ -14,11 +14,9 @@
 #include "activation component.hpp"
 
 void buttonSystem(Registry &registry) {
-  using namespace ObjectType;
-
   auto view = registry.view<Collision, Activation, Button>();
   for (EntityID entity : view) {
-    const auto &collisionPairs = view.get<Collision>(entity).collisionPairs;
-    view.get<Activation>(entity).active = collisionPairs.hasPair<ButtonBase, ButtonTop>();
+    const auto &collisions = view.get<Collision>(entity).collisionPairs;
+    view.get<Activation>(entity).active = collisions.hasAny();
   }
 }

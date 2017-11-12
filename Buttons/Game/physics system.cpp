@@ -12,12 +12,17 @@
 #include "physics constants.hpp"
 #include <Simpleton/Utils/member function.hpp>
 
-void PhysicsSystem::init(Registry &newRegistry) {
+void PhysicsSystem::init(Registry &newRegistry, NVGcontext *const ctx) {
   world.emplace(GRAVITY);
+  
   contactListener.emplace();
   world->SetContactListener(&(*contactListener));
   contactListener->setBeginListener(Utils::memFun(this, &PhysicsSystem::beginContact));
   contactListener->setEndListener(Utils::memFun(this, &PhysicsSystem::endContact));
+  
+  debugDraw.emplace();
+  world->SetDebugDraw(&(*debugDraw));
+  debugDraw->setContext(ctx);
   
   registry = &newRegistry;
 }
@@ -25,10 +30,15 @@ void PhysicsSystem::init(Registry &newRegistry) {
 void PhysicsSystem::quit() {
   registry = nullptr;
   
+  debugDraw->setContext(nullptr);
+  world->SetDebugDraw(nullptr);
+  debugDraw = std::experimental::nullopt;
+  
   contactListener->setEndListener(nullptr);
   contactListener->setBeginListener(nullptr);
   world->SetContactListener(nullptr);
   contactListener = std::experimental::nullopt;
+  
   world = std::experimental::nullopt;
 }
 
@@ -38,6 +48,10 @@ b2World *PhysicsSystem::getWorld() {
 
 void PhysicsSystem::update(const float delta) {
   world->Step(delta, VELOCITY_ITER, POSITION_ITER);
+}
+
+void PhysicsSystem::render() {
+  world->DrawDebugData();
 }
 
 void PhysicsSystem::beginContact(

@@ -26,6 +26,16 @@ bool CollisionPairs::hasPair(const CollisionPair pair) const {
   return std::find(pairs.cbegin(), pairs.cend(), sort(pair)) != pairs.cend();
 }
 
+bool CollisionPairs::hasHalfPair(const ObjectTypeID typeID) const {
+  return std::any_of(pairs.cbegin(), pairs.cend(), [typeID] (const auto pair) {
+    return pair.first == typeID || pair.second == typeID;
+  });
+}
+
+bool CollisionPairs::hasAny() const {
+  return !pairs.empty();
+}
+
 CollisionPair CollisionPairs::sort(const CollisionPair pair) {
   if (pair.first < pair.second) {
     return pair;

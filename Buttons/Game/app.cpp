@@ -58,7 +58,7 @@ void App::init() {
   renderingContext.init(window.get());
   renderingManager.init(renderingContext);
   
-  physics.init(registry);
+  physics.init(registry, renderingContext.getContext());
   
   loadLevel("level 0.yaml", registry, physics);
 }
@@ -90,10 +90,14 @@ bool App::update(const float delta) {
   playerMovementSystem(registry, delta);
   physics.update(delta);
   physicsTransformSystem(registry);
-  powerInputActivationSystem(registry);
+  
+  //Set outputs
   activatePowerOutputSystem(registry);
-  powerSystem(registry);
   buttonSystem(registry);
+  //Set inputs
+  powerSystem(registry);
+  //Respond to inputs
+  powerInputActivationSystem(registry);
   
   return true;
 }
@@ -102,10 +106,16 @@ bool App::render(const float delta) {
   camera.update(window.size(), delta);
   renderingContext.preRender(camera.transform.toPixels());
   
-  NVGcontext *const ctx = renderingContext.getContext();
-  boxRenderingSystem(registry, ctx);
-  playerRenderingSystem(registry, ctx);
-  platformRenderingSystem(registry, ctx);
+  if constexpr (ENABLE_DEBUG_PHYSICS_RENDER) {
+    physics.render();
+  }
+  
+  if constexpr (ENABLE_GAME_RENDER) {
+    NVGcontext *const ctx = renderingContext.getContext();
+    boxRenderingSystem(registry, ctx);
+    playerRenderingSystem(registry, ctx);
+    platformRenderingSystem(registry, ctx);
+  }
   
   renderingManager.render();
   screenshot.postRender(renderingContext, ENABLE_FPS_RENDER);

@@ -30,8 +30,7 @@ ObjectTypeID getObjectTypeID() {
   OBJECT_TYPE(PlayerBody)                                                       \
   OBJECT_TYPE(PlayerFoot)                                                       \
   OBJECT_TYPE(Ground)                                                           \
-  OBJECT_TYPE(ButtonTop)                                                        \
-  LAST_OBJECT_TYPE(ButtonBase)
+  LAST_OBJECT_TYPE(Button)
 
 namespace ObjectType {
   #define OBJECT_TYPE(NAME) MAKE_SYMBOL(NAME);

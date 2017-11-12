@@ -13,11 +13,6 @@
 #include <Simpleton/Utils/instance limiter.hpp>
 
 #define CATEGORIES                                                              \
-  CAT(Default)                                                                  \
-  CAT(PlayerBody)                                                               \
-  CAT(ButtonTop)                                                                \
-  CAT(ButtonBase)                                                               \
-  LAST_CAT(PassThrough)
 
 namespace Category {
   #define CAT(NAME) MAKE_SYMBOL(NAME);

@@ -9,6 +9,7 @@
 #ifndef physics_system_hpp
 #define physics_system_hpp
 
+#include "debug draw.hpp"
 #include "entity registry.hpp"
 #include "contact listener.hpp"
 #include <experimental/optional>
@@ -19,17 +20,19 @@ class PhysicsSystem {
 public:
   PhysicsSystem() = default;
 
-  void init(Registry &);
+  void init(Registry &, NVGcontext *);
   void quit();
   
   b2World *getWorld();
   
   void update(float);
+  void render();
 
 private:
   entt::Registry<EntityID> *registry = nullptr;
   std::experimental::optional<b2World> world;
   std::experimental::optional<ContactListener> contactListener;
+  std::experimental::optional<DebugDraw> debugDraw;
   
   void beginContact(EntityID, EntityID, CollisionPair);
   void endContact(EntityID, EntityID, CollisionPair);

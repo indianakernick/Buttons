@@ -15,9 +15,13 @@
 
 class CollisionPairs {
 public:
+  CollisionPairs() = default;
+
   void addPair(CollisionPair);
   void remPair(CollisionPair);
   bool hasPair(CollisionPair) const;
+  bool hasHalfPair(ObjectTypeID) const;
+  bool hasAny() const;
   
   template <typename Type>
   bool hasPair(const ObjectTypeID typeID) const {
@@ -27,6 +31,11 @@ public:
   template <typename Type0, typename Type1>
   bool hasPair() const {
     return hasPair({getObjectTypeID<Type0>(), getObjectTypeID<Type1>()});
+  }
+  
+  template <typename Type>
+  bool hasHalfPair() const {
+    return hasHalfPair(getObjectTypeID<Type>());
   }
   
 private:
