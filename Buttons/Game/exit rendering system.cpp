@@ -17,7 +17,12 @@ namespace {
   const NVGcolor FIRST_COLOR = nvgRGBf(0.25f, 0.25f, 1.0f);
   const NVGcolor SECOND_COLOR = nvgRGBf(0.0f, 0.0f, 0.75f);
   
-  void square(NVGcontext *const ctx, const NVGcolor color, const float size) {
+  void square(
+    NVGcontext *const ctx,
+    const NVGcolor color,
+    const float thickness,
+    const float size
+  ) {
     static const glm::vec2 CENTER = {0.0f, 0.25f};
     static const glm::vec2 SQUARE_SIZE = {1.0f, 0.5f};
     
@@ -25,17 +30,25 @@ namespace {
       return glm::vec2(x, y) * SQUARE_SIZE + CENTER;
     };
     
-    const float halfSize = size / 2.0f;
+    const float outer = size / 2.0f;
+    const float inner = outer - thickness;
     
     nvgBeginPath(ctx);
-    nvgStrokeColor(ctx, color);
-    nvgStrokeWidth(ctx, 0.1f);
-    nvgMoveTo(ctx, transform(-halfSize, -halfSize));
-    nvgLineTo(ctx, transform(-halfSize, halfSize));
-    nvgLineTo(ctx, transform(halfSize, halfSize));
-    nvgLineTo(ctx, transform(halfSize, -halfSize));
+    nvgFillColor(ctx, color);
+    
+    nvgMoveTo(ctx, transform(-outer, -outer));
+    nvgLineTo(ctx, transform(-outer, outer));
+    nvgLineTo(ctx, transform(outer, outer));
+    nvgLineTo(ctx, transform(outer, -outer));
+    nvgLineTo(ctx, transform(-inner, -outer));
+    nvgLineTo(ctx, transform(-inner, -inner));
+    nvgLineTo(ctx, transform(inner, -inner));
+    nvgLineTo(ctx, transform(inner, inner));
+    nvgLineTo(ctx, transform(-inner, inner));
+    nvgLineTo(ctx, transform(-inner, -outer));
     nvgClosePath(ctx);
-    nvgStroke(ctx);
+    
+    nvgFill(ctx);
   }
 }
 
@@ -46,14 +59,33 @@ void exitRenderingSystem(Registry &registry, NVGcontext *const ctx) {
     
     nvgTransform(ctx, getMat3(view.get<Transform>(entity)));
     
-    const float prog = view.get<Animation>(entity).progress;
+    float prog = 1.0f - view.get<Animation>(entity).progress;
     
-    square(ctx, FIRST_COLOR, 1.0f);
-    square(ctx, SECOND_COLOR, std::fmod(1.0f - prog + 0.8f, 1.0f));
-    square(ctx, FIRST_COLOR, std::fmod(1.0f - prog + 0.6f, 1.0f));
-    square(ctx, SECOND_COLOR, std::fmod(1.0f - prog + 0.4f, 1.0f));
-    square(ctx, FIRST_COLOR, std::fmod(1.0f - prog + 0.2f, 1.0f));
-    square(ctx, SECOND_COLOR, std::fmod(1.0f - prog + 0.0f, 1.0f));
+    if (prog > 0.5f) {
+      prog = (prog - 0.5f) * 2.0f;
+      
+      nvgBeginPath(ctx);
+      nvgFillColor(ctx, SECOND_COLOR);
+      nvgRect(ctx, -0.5f, 0.0f, 1.0f, 0.5f);
+      nvgFill(ctx);
+      square(ctx, FIRST_COLOR, 0.1f, prog * 0.2f + 0.8f);
+      square(ctx, SECOND_COLOR, 0.1f, prog * 0.2f + 0.6f);
+      square(ctx, FIRST_COLOR, 0.1f, prog * 0.2f + 0.4f);
+      square(ctx, SECOND_COLOR, 0.1f, prog * 0.2f + 0.2f);
+      square(ctx, FIRST_COLOR, 0.1f, prog * 0.2f);
+    } else {
+      prog = prog * 2.0f;
+      
+      nvgBeginPath(ctx);
+      nvgFillColor(ctx, FIRST_COLOR);
+      nvgRect(ctx, -0.5f, 0.0f, 1.0f, 0.5f);
+      nvgFill(ctx);
+      square(ctx, SECOND_COLOR, 0.1f, prog * 0.2f + 0.8f);
+      square(ctx, FIRST_COLOR, 0.1f, prog * 0.2f + 0.6f);
+      square(ctx, SECOND_COLOR, 0.1f, prog * 0.2f + 0.4f);
+      square(ctx, FIRST_COLOR, 0.1f, prog * 0.2f + 0.2f);
+      square(ctx, SECOND_COLOR, 0.1f, prog * 0.2f);
+    }
     
     nvgRestore(ctx);
   }
