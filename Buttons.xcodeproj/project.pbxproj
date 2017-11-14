@@ -39,6 +39,8 @@
 		450ED6211FB80CB4008F2902 /* switch system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED61F1FB80CB4008F2902 /* switch system.cpp */; };
 		450ED6241FB81316008F2902 /* switch rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED6221FB81316008F2902 /* switch rendering component.cpp */; };
 		450ED6271FB81395008F2902 /* switch rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED6251FB81395008F2902 /* switch rendering system.cpp */; };
+		450ED62A1FB84633008F2902 /* animation component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED6281FB84633008F2902 /* animation component.cpp */; };
+		450ED62D1FB8620D008F2902 /* animation system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED62B1FB8620D008F2902 /* animation system.cpp */; };
 		452E10891FB2D27D0063114B /* collision pairs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452E10871FB2D27D0063114B /* collision pairs.cpp */; };
 		452E108C1FB2D8BA0063114B /* object types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452E108A1FB2D8BA0063114B /* object types.cpp */; };
 		452E10941FB2F4930063114B /* Consolas.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 452E10931FB2F4700063114B /* Consolas.ttf */; };
@@ -200,6 +202,10 @@
 		450ED6231FB81316008F2902 /* switch rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "switch rendering component.hpp"; sourceTree = "<group>"; };
 		450ED6251FB81395008F2902 /* switch rendering system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "switch rendering system.cpp"; sourceTree = "<group>"; };
 		450ED6261FB81395008F2902 /* switch rendering system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "switch rendering system.hpp"; sourceTree = "<group>"; };
+		450ED6281FB84633008F2902 /* animation component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "animation component.cpp"; sourceTree = "<group>"; };
+		450ED6291FB84633008F2902 /* animation component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "animation component.hpp"; sourceTree = "<group>"; };
+		450ED62B1FB8620D008F2902 /* animation system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "animation system.cpp"; sourceTree = "<group>"; };
+		450ED62C1FB8620D008F2902 /* animation system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "animation system.hpp"; sourceTree = "<group>"; };
 		452E10871FB2D27D0063114B /* collision pairs.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "collision pairs.cpp"; sourceTree = "<group>"; };
 		452E10881FB2D27D0063114B /* collision pairs.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "collision pairs.hpp"; sourceTree = "<group>"; };
 		452E108A1FB2D8BA0063114B /* object types.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "object types.cpp"; sourceTree = "<group>"; };
@@ -752,6 +758,8 @@
 				450ED6101FB7FB55008F2902 /* door component.hpp */,
 				450ED61C1FB80B0F008F2902 /* switch component.cpp */,
 				450ED61D1FB80B0F008F2902 /* switch component.hpp */,
+				450ED6281FB84633008F2902 /* animation component.cpp */,
+				450ED6291FB84633008F2902 /* animation component.hpp */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -783,6 +791,8 @@
 				450ED6131FB7FBA4008F2902 /* door system.hpp */,
 				450ED61F1FB80CB4008F2902 /* switch system.cpp */,
 				450ED6201FB80CB4008F2902 /* switch system.hpp */,
+				450ED62B1FB8620D008F2902 /* animation system.cpp */,
+				450ED62C1FB8620D008F2902 /* animation system.hpp */,
 			);
 			name = Systems;
 			sourceTree = "<group>";
@@ -1029,6 +1039,7 @@
 				4597960E1FB2FCA0007A7432 /* camera props.cpp in Sources */,
 				4597960F1FB2FCA0007A7432 /* camera transform.cpp in Sources */,
 				459796101FB2FCA0007A7432 /* camera zoom track.cpp in Sources */,
+				450ED62D1FB8620D008F2902 /* animation system.cpp in Sources */,
 				459796111FB2FCA0007A7432 /* camera zoom.cpp in Sources */,
 				459796221FB41C24007A7432 /* transform component.cpp in Sources */,
 				459796121FB2FCA0007A7432 /* camera.cpp in Sources */,
@@ -1108,6 +1119,7 @@
 				4583EE251FB18F7A00AED27D /* b2Settings.cpp in Sources */,
 				4583EE261FB18F7A00AED27D /* b2Timer.cpp in Sources */,
 				4583EE271FB18F7A00AED27D /* b2StackAllocator.cpp in Sources */,
+				450ED62A1FB84633008F2902 /* animation component.cpp in Sources */,
 				4583EE281FB18F7A00AED27D /* b2Math.cpp in Sources */,
 				4583EE8F1FB19C0300AED27D /* contact listener.cpp in Sources */,
 				4583EE291FB18F7A00AED27D /* b2Distance.cpp in Sources */,
