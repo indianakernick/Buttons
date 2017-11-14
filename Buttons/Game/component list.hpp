@@ -16,11 +16,13 @@
 #include "physics component.hpp"
 #include "transform component.hpp"
 #include "collision component.hpp"
+#include "animation component.hpp"
 #include "activation component.hpp"
 #include "player jump component.hpp"
 #include "player input component.hpp"
 #include "box rendering component.hpp"
 #include "door rendering component.hpp"
+#include "exit rendering component.hpp"
 #include <Simpleton/Utils/type list.hpp>
 #include "switch rendering component.hpp"
 #include "button rendering component.hpp"
@@ -45,7 +47,9 @@ using CompList = Utils::TypeList<
   DoorRendering,
   Door,
   Switch,
-  SwitchRendering
+  SwitchRendering,
+  Animation,
+  ExitRendering
 >;
 
 #endif

@@ -58,3 +58,10 @@
       body: door body.yaml
     DoorRendering:
       close dir: up
+
+- file: exit entity.yaml
+  components:
+    PhysicsBody:
+      pos: [14.5, -9.5]
+      scale: [1, 2]
+      body: switch body.yaml

@@ -115,10 +115,13 @@ bool App::render(const float delta) {
   }
   
   if constexpr (ENABLE_GAME_RENDER) {
+    animationSystem(registry, delta);
+  
     NVGcontext *const ctx = renderingContext.getContext();
     platformRenderingSystem(registry, ctx);
     buttonRenderingSystem(registry, ctx);
     boxRenderingSystem(registry, ctx);
+    exitRenderingSystem(registry, ctx);
     playerRenderingSystem(registry, ctx);
     switchRenderingSystem(registry, ctx);
     doorRenderingSystem(registry, ctx);
