@@ -12,7 +12,9 @@
 #include "level file.hpp"
 #include "global flags.hpp"
 #include "window constants.hpp"
+#include "camera constants.hpp"
 #include <Simpleton/Time/get.hpp>
+#include <Simpleton/Camera 2D/zoom to fit.hpp>
 
 void App::mainloop() {
   init();
@@ -57,6 +59,7 @@ void App::init() {
   window = Platform::makeWindow(WINDOW_DESC);
   renderingContext.init(window.get());
   renderingManager.init(renderingContext);
+  camera.targetScale = std::make_unique<Cam2D::ZoomToFit>(LEVEL_SIZE);
   
   physics.init(registry, renderingContext.getContext());
   

@@ -9,13 +9,13 @@
 #ifndef app_hpp
 #define app_hpp
 
-#include "camera.hpp"
 #include "screenshot.hpp"
 #include "physics system.hpp"
 #include "entity registry.hpp"
 #include "rendering manager.hpp"
 #include "rendering context.hpp"
 #include <experimental/optional>
+#include <Simpleton/Camera 2D/camera.hpp>
 #include <Simpleton/Platform/window library.hpp>
 
 class App {
@@ -32,7 +32,7 @@ private:
   Platform::Window window;
   RenderingContext renderingContext;
   RenderingManager renderingManager;
-  Camera camera;
+  Cam2D::Camera camera;
   Screenshot screenshot;
   Registry registry;
   PhysicsSystem physics;

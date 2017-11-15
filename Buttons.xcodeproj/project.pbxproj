@@ -126,14 +126,6 @@
 		4583EEA31FB1AFCF00AED27D /* activate power output system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EEA11FB1AFCF00AED27D /* activate power output system.cpp */; };
 		4583EEA61FB1B1E800AED27D /* button system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EEA41FB1B1E800AED27D /* button system.cpp */; };
 		4583EEAA1FB1B6E100AED27D /* physics transform system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EEA81FB1B6E100AED27D /* physics transform system.cpp */; };
-		4597960B1FB2FCA0007A7432 /* camera debug render.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459796041FB2FC7F007A7432 /* camera debug render.cpp */; };
-		4597960C1FB2FCA0007A7432 /* camera motion track.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459796011FB2FC7E007A7432 /* camera motion track.cpp */; };
-		4597960D1FB2FCA0007A7432 /* camera pos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459796031FB2FC7F007A7432 /* camera pos.cpp */; };
-		4597960E1FB2FCA0007A7432 /* camera props.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459795FD1FB2FC7C007A7432 /* camera props.cpp */; };
-		4597960F1FB2FCA0007A7432 /* camera transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459796051FB2FC7F007A7432 /* camera transform.cpp */; };
-		459796101FB2FCA0007A7432 /* camera zoom track.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459796061FB2FC80007A7432 /* camera zoom track.cpp */; };
-		459796111FB2FCA0007A7432 /* camera zoom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459796081FB2FC80007A7432 /* camera zoom.cpp */; };
-		459796121FB2FCA0007A7432 /* camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459795FE1FB2FC7D007A7432 /* camera.cpp */; };
 		4597961A1FB41BF1007A7432 /* physics component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459796191FB41BF1007A7432 /* physics component.cpp */; };
 		4597961C1FB41BFE007A7432 /* collision component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597961B1FB41BFE007A7432 /* collision component.cpp */; };
 		4597961E1FB41C0C007A7432 /* power component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597961D1FB41C0C007A7432 /* power component.cpp */; };
@@ -386,22 +378,6 @@
 		4583EEA81FB1B6E100AED27D /* physics transform system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "physics transform system.cpp"; sourceTree = "<group>"; };
 		4583EEA91FB1B6E100AED27D /* physics transform system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "physics transform system.hpp"; sourceTree = "<group>"; };
 		4583EEAB1FB1B6F800AED27D /* entity registry.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "entity registry.hpp"; sourceTree = "<group>"; };
-		459795FB1FB2FC7C007A7432 /* camera.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = camera.hpp; sourceTree = "<group>"; };
-		459795FC1FB2FC7C007A7432 /* camera zoom.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "camera zoom.hpp"; sourceTree = "<group>"; };
-		459795FD1FB2FC7C007A7432 /* camera props.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "camera props.cpp"; sourceTree = "<group>"; };
-		459795FE1FB2FC7D007A7432 /* camera.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = camera.cpp; sourceTree = "<group>"; };
-		459795FF1FB2FC7D007A7432 /* camera transform.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "camera transform.hpp"; sourceTree = "<group>"; };
-		459796001FB2FC7E007A7432 /* camera debug render.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "camera debug render.hpp"; sourceTree = "<group>"; };
-		459796011FB2FC7E007A7432 /* camera motion track.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "camera motion track.cpp"; sourceTree = "<group>"; };
-		459796021FB2FC7E007A7432 /* camera pos.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "camera pos.hpp"; sourceTree = "<group>"; };
-		459796031FB2FC7F007A7432 /* camera pos.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "camera pos.cpp"; sourceTree = "<group>"; };
-		459796041FB2FC7F007A7432 /* camera debug render.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "camera debug render.cpp"; sourceTree = "<group>"; };
-		459796051FB2FC7F007A7432 /* camera transform.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "camera transform.cpp"; sourceTree = "<group>"; };
-		459796061FB2FC80007A7432 /* camera zoom track.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "camera zoom track.cpp"; sourceTree = "<group>"; };
-		459796071FB2FC80007A7432 /* camera motion track.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "camera motion track.hpp"; sourceTree = "<group>"; };
-		459796081FB2FC80007A7432 /* camera zoom.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "camera zoom.cpp"; sourceTree = "<group>"; };
-		459796091FB2FC80007A7432 /* camera props.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "camera props.hpp"; sourceTree = "<group>"; };
-		4597960A1FB2FC80007A7432 /* camera zoom track.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "camera zoom track.hpp"; sourceTree = "<group>"; };
 		459796131FB2FD2C007A7432 /* camera constants.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "camera constants.hpp"; sourceTree = "<group>"; };
 		459796141FB2FD47007A7432 /* window constants.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "window constants.hpp"; sourceTree = "<group>"; };
 		459796151FB2FD6F007A7432 /* global flags.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "global flags.hpp"; sourceTree = "<group>"; };
@@ -693,7 +669,6 @@
 		4583EE401FB1905200AED27D /* Rendering */ = {
 			isa = PBXGroup;
 			children = (
-				459795FA1FB2FC65007A7432 /* Camera */,
 				4583EE491FB1906F00AED27D /* layer names.cpp */,
 				4583EE411FB1906D00AED27D /* layer names.hpp */,
 				4583EE421FB1906D00AED27D /* rendering context.cpp */,
@@ -850,29 +825,6 @@
 				4597962A1FB59C1A007A7432 /* entity file.hpp */,
 			);
 			name = Entity;
-			sourceTree = "<group>";
-		};
-		459795FA1FB2FC65007A7432 /* Camera */ = {
-			isa = PBXGroup;
-			children = (
-				459795FE1FB2FC7D007A7432 /* camera.cpp */,
-				459795FB1FB2FC7C007A7432 /* camera.hpp */,
-				459795FD1FB2FC7C007A7432 /* camera props.cpp */,
-				459796091FB2FC80007A7432 /* camera props.hpp */,
-				459796051FB2FC7F007A7432 /* camera transform.cpp */,
-				459795FF1FB2FC7D007A7432 /* camera transform.hpp */,
-				459796031FB2FC7F007A7432 /* camera pos.cpp */,
-				459796021FB2FC7E007A7432 /* camera pos.hpp */,
-				459796011FB2FC7E007A7432 /* camera motion track.cpp */,
-				459796071FB2FC80007A7432 /* camera motion track.hpp */,
-				459796081FB2FC80007A7432 /* camera zoom.cpp */,
-				459795FC1FB2FC7C007A7432 /* camera zoom.hpp */,
-				459796061FB2FC80007A7432 /* camera zoom track.cpp */,
-				4597960A1FB2FC80007A7432 /* camera zoom track.hpp */,
-				459796041FB2FC7F007A7432 /* camera debug render.cpp */,
-				459796001FB2FC7E007A7432 /* camera debug render.hpp */,
-			);
-			name = Camera;
 			sourceTree = "<group>";
 		};
 		459796311FB67FEC007A7432 /* Levels */ = {
@@ -1045,18 +997,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4597960B1FB2FCA0007A7432 /* camera debug render.cpp in Sources */,
 				450ED5F51FB7C945008F2902 /* debug draw.cpp in Sources */,
 				450ED5C31FB69D31008F2902 /* player input component.cpp in Sources */,
-				4597960C1FB2FCA0007A7432 /* camera motion track.cpp in Sources */,
-				4597960D1FB2FCA0007A7432 /* camera pos.cpp in Sources */,
-				4597960E1FB2FCA0007A7432 /* camera props.cpp in Sources */,
-				4597960F1FB2FCA0007A7432 /* camera transform.cpp in Sources */,
-				459796101FB2FCA0007A7432 /* camera zoom track.cpp in Sources */,
 				450ED62D1FB8620D008F2902 /* animation system.cpp in Sources */,
-				459796111FB2FCA0007A7432 /* camera zoom.cpp in Sources */,
 				459796221FB41C24007A7432 /* transform component.cpp in Sources */,
-				459796121FB2FCA0007A7432 /* camera.cpp in Sources */,
 				4583EE971FB1A2AE00AED27D /* physics file.cpp in Sources */,
 				4583EE7E1FB1914000AED27D /* stb_image_write.c in Sources */,
 				4583EE7F1FB1914000AED27D /* tinyfiledialogs.c in Sources */,
