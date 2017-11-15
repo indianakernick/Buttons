@@ -69,9 +69,7 @@ void exitRenderingSystem(Registry &registry, NVGcontext *const ctx) {
       nvgRect(ctx, -0.5f, 0.0f, 1.0f, 0.5f);
       nvgFill(ctx);
       square(ctx, FIRST_COLOR, 0.1f, prog * 0.2f + 0.8f);
-      square(ctx, SECOND_COLOR, 0.1f, prog * 0.2f + 0.6f);
       square(ctx, FIRST_COLOR, 0.1f, prog * 0.2f + 0.4f);
-      square(ctx, SECOND_COLOR, 0.1f, prog * 0.2f + 0.2f);
       square(ctx, FIRST_COLOR, 0.1f, prog * 0.2f);
     } else {
       prog = prog * 2.0f;
@@ -81,9 +79,7 @@ void exitRenderingSystem(Registry &registry, NVGcontext *const ctx) {
       nvgRect(ctx, -0.5f, 0.0f, 1.0f, 0.5f);
       nvgFill(ctx);
       square(ctx, SECOND_COLOR, 0.1f, prog * 0.2f + 0.8f);
-      square(ctx, FIRST_COLOR, 0.1f, prog * 0.2f + 0.6f);
       square(ctx, SECOND_COLOR, 0.1f, prog * 0.2f + 0.4f);
-      square(ctx, FIRST_COLOR, 0.1f, prog * 0.2f + 0.2f);
       square(ctx, SECOND_COLOR, 0.1f, prog * 0.2f);
     }
     

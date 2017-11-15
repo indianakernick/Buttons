@@ -855,22 +855,22 @@
 		459795FA1FB2FC65007A7432 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
-				459796041FB2FC7F007A7432 /* camera debug render.cpp */,
-				459796001FB2FC7E007A7432 /* camera debug render.hpp */,
-				459796011FB2FC7E007A7432 /* camera motion track.cpp */,
-				459796071FB2FC80007A7432 /* camera motion track.hpp */,
-				459796031FB2FC7F007A7432 /* camera pos.cpp */,
-				459796021FB2FC7E007A7432 /* camera pos.hpp */,
+				459795FE1FB2FC7D007A7432 /* camera.cpp */,
+				459795FB1FB2FC7C007A7432 /* camera.hpp */,
 				459795FD1FB2FC7C007A7432 /* camera props.cpp */,
 				459796091FB2FC80007A7432 /* camera props.hpp */,
 				459796051FB2FC7F007A7432 /* camera transform.cpp */,
 				459795FF1FB2FC7D007A7432 /* camera transform.hpp */,
-				459796061FB2FC80007A7432 /* camera zoom track.cpp */,
-				4597960A1FB2FC80007A7432 /* camera zoom track.hpp */,
+				459796031FB2FC7F007A7432 /* camera pos.cpp */,
+				459796021FB2FC7E007A7432 /* camera pos.hpp */,
+				459796011FB2FC7E007A7432 /* camera motion track.cpp */,
+				459796071FB2FC80007A7432 /* camera motion track.hpp */,
 				459796081FB2FC80007A7432 /* camera zoom.cpp */,
 				459795FC1FB2FC7C007A7432 /* camera zoom.hpp */,
-				459795FE1FB2FC7D007A7432 /* camera.cpp */,
-				459795FB1FB2FC7C007A7432 /* camera.hpp */,
+				459796061FB2FC80007A7432 /* camera zoom track.cpp */,
+				4597960A1FB2FC80007A7432 /* camera zoom track.hpp */,
+				459796041FB2FC7F007A7432 /* camera debug render.cpp */,
+				459796001FB2FC7E007A7432 /* camera debug render.hpp */,
 			);
 			name = Camera;
 			sourceTree = "<group>";
