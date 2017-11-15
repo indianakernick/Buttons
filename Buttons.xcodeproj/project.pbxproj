@@ -135,7 +135,7 @@
 		459796281FB58752007A7432 /* entity id map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459796261FB58752007A7432 /* entity id map.cpp */; };
 		4597962B1FB59C1A007A7432 /* entity file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459796291FB59C1A007A7432 /* entity file.cpp */; };
 		4597962E1FB65BBB007A7432 /* component list.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597962C1FB65BBB007A7432 /* component list.cpp */; };
-		459796301FB67FE7007A7432 /* level 0.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 4597962F1FB67FE7007A7432 /* level 0.yaml */; };
+		459796301FB67FE7007A7432 /* test level.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 4597962F1FB67FE7007A7432 /* test level.yaml */; };
 		459796361FB681FA007A7432 /* box entity.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 459796351FB681FA007A7432 /* box entity.yaml */; };
 		459796381FB68209007A7432 /* box body.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 459796371FB68209007A7432 /* box body.yaml */; };
 		4597963C1FB6870A007A7432 /* box rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597963A1FB6870A007A7432 /* box rendering component.cpp */; };
@@ -394,7 +394,7 @@
 		4597962A1FB59C1A007A7432 /* entity file.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "entity file.hpp"; sourceTree = "<group>"; };
 		4597962C1FB65BBB007A7432 /* component list.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "component list.cpp"; sourceTree = "<group>"; };
 		4597962D1FB65BBB007A7432 /* component list.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "component list.hpp"; sourceTree = "<group>"; };
-		4597962F1FB67FE7007A7432 /* level 0.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 0.yaml"; sourceTree = "<group>"; };
+		4597962F1FB67FE7007A7432 /* test level.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "test level.yaml"; sourceTree = "<group>"; };
 		459796351FB681FA007A7432 /* box entity.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "box entity.yaml"; sourceTree = "<group>"; };
 		459796371FB68209007A7432 /* box body.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "box body.yaml"; sourceTree = "<group>"; };
 		4597963A1FB6870A007A7432 /* box rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "box rendering component.cpp"; sourceTree = "<group>"; };
@@ -830,7 +830,7 @@
 		459796311FB67FEC007A7432 /* Levels */ = {
 			isa = PBXGroup;
 			children = (
-				4597962F1FB67FE7007A7432 /* level 0.yaml */,
+				4597962F1FB67FE7007A7432 /* test level.yaml */,
 			);
 			name = Levels;
 			sourceTree = "<group>";
@@ -983,7 +983,7 @@
 				450ED5CE1FB6AA31008F2902 /* player entity.yaml in Resources */,
 				450ED6191FB8089C008F2902 /* switch body.yaml in Resources */,
 				450ED6001FB7E8D3008F2902 /* door body.yaml in Resources */,
-				459796301FB67FE7007A7432 /* level 0.yaml in Resources */,
+				459796301FB67FE7007A7432 /* test level.yaml in Resources */,
 				459796381FB68209007A7432 /* box body.yaml in Resources */,
 				450ED61B1FB80932008F2902 /* switch entity.yaml in Resources */,
 				450ED6021FB7EA23008F2902 /* door entity.yaml in Resources */,

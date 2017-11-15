@@ -63,7 +63,7 @@ void App::init() {
   
   physics.init(registry, renderingContext.getContext());
   
-  loadLevel("level 0.yaml", registry, physics);
+  loadLevel("test level.yaml", registry, physics);
 }
 
 void App::quit() {
