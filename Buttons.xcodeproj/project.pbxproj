@@ -47,6 +47,9 @@
 		452E10891FB2D27D0063114B /* collision pairs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452E10871FB2D27D0063114B /* collision pairs.cpp */; };
 		452E108C1FB2D8BA0063114B /* object types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452E108A1FB2D8BA0063114B /* object types.cpp */; };
 		452E10941FB2F4930063114B /* Consolas.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 452E10931FB2F4700063114B /* Consolas.ttf */; };
+		456DF0BA1FBD31BB003B3FD1 /* moving platform entity.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 456DF0B91FBD31BB003B3FD1 /* moving platform entity.yaml */; };
+		456DF0BD1FBD32E7003B3FD1 /* moving platform rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0BB1FBD32E7003B3FD1 /* moving platform rendering component.cpp */; };
+		456DF0C01FBD336A003B3FD1 /* moving platform rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0BE1FBD336A003B3FD1 /* moving platform rendering system.cpp */; };
 		4583ED5B1FB1841100AED27D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4583ED5A1FB1841100AED27D /* Assets.xcassets */; };
 		4583ED671FB1845B00AED27D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583ED661FB1845B00AED27D /* main.cpp */; };
 		4583ED6D1FB1859500AED27D /* libSimpleton Engine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4583ED691FB1859500AED27D /* libSimpleton Engine.dylib */; };
@@ -212,6 +215,11 @@
 		452E108B1FB2D8BA0063114B /* object types.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "object types.hpp"; sourceTree = "<group>"; };
 		452E10911FB2F2EE0063114B /* systems.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = systems.hpp; sourceTree = "<group>"; };
 		452E10931FB2F4700063114B /* Consolas.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Consolas.ttf; sourceTree = "<group>"; };
+		456DF0B91FBD31BB003B3FD1 /* moving platform entity.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "moving platform entity.yaml"; sourceTree = "<group>"; };
+		456DF0BB1FBD32E7003B3FD1 /* moving platform rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "moving platform rendering component.cpp"; sourceTree = "<group>"; };
+		456DF0BC1FBD32E7003B3FD1 /* moving platform rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "moving platform rendering component.hpp"; sourceTree = "<group>"; };
+		456DF0BE1FBD336A003B3FD1 /* moving platform rendering system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "moving platform rendering system.cpp"; sourceTree = "<group>"; };
+		456DF0BF1FBD336A003B3FD1 /* moving platform rendering system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "moving platform rendering system.hpp"; sourceTree = "<group>"; };
 		4583ED551FB1841100AED27D /* Buttons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Buttons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4583ED5A1FB1841100AED27D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4583ED5F1FB1841100AED27D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -845,6 +853,7 @@
 				450ED6011FB7EA23008F2902 /* door entity.yaml */,
 				450ED61A1FB80932008F2902 /* switch entity.yaml */,
 				450ED6311FBA7EFE008F2902 /* exit entity.yaml */,
+				456DF0B91FBD31BB003B3FD1 /* moving platform entity.yaml */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -886,6 +895,8 @@
 				450ED6231FB81316008F2902 /* switch rendering component.hpp */,
 				450ED6361FBA89C1008F2902 /* exit rendering component.cpp */,
 				450ED6371FBA89C1008F2902 /* exit rendering component.hpp */,
+				456DF0BB1FBD32E7003B3FD1 /* moving platform rendering component.cpp */,
+				456DF0BC1FBD32E7003B3FD1 /* moving platform rendering component.hpp */,
 			);
 			name = Rendering;
 			sourceTree = "<group>";
@@ -907,6 +918,8 @@
 				450ED6261FB81395008F2902 /* switch rendering system.hpp */,
 				450ED6331FBA89B0008F2902 /* exit rendering system.cpp */,
 				450ED6341FBA89B0008F2902 /* exit rendering system.hpp */,
+				456DF0BE1FBD336A003B3FD1 /* moving platform rendering system.cpp */,
+				456DF0BF1FBD336A003B3FD1 /* moving platform rendering system.hpp */,
 			);
 			name = Rendering;
 			sourceTree = "<group>";
@@ -984,6 +997,7 @@
 				450ED6191FB8089C008F2902 /* switch body.yaml in Resources */,
 				450ED6001FB7E8D3008F2902 /* door body.yaml in Resources */,
 				459796301FB67FE7007A7432 /* test level.yaml in Resources */,
+				456DF0BA1FBD31BB003B3FD1 /* moving platform entity.yaml in Resources */,
 				459796381FB68209007A7432 /* box body.yaml in Resources */,
 				450ED61B1FB80932008F2902 /* switch entity.yaml in Resources */,
 				450ED6021FB7EA23008F2902 /* door entity.yaml in Resources */,
@@ -1006,6 +1020,7 @@
 				4583EE7F1FB1914000AED27D /* tinyfiledialogs.c in Sources */,
 				4583EE731FB190F300AED27D /* b2 helper.cpp in Sources */,
 				4583EE741FB190F300AED27D /* framebuffer to png.cpp in Sources */,
+				456DF0C01FBD336A003B3FD1 /* moving platform rendering system.cpp in Sources */,
 				450ED5E31FB6B8EF008F2902 /* platform rendering component.cpp in Sources */,
 				4583EE751FB190F300AED27D /* nvg helper.cpp in Sources */,
 				452E10891FB2D27D0063114B /* collision pairs.cpp in Sources */,
@@ -1013,6 +1028,7 @@
 				4583EE851FB1967700AED27D /* app.cpp in Sources */,
 				459796201FB41C1A007A7432 /* activation component.cpp in Sources */,
 				450ED5F81FB7D6E6008F2902 /* button rendering component.cpp in Sources */,
+				456DF0BD1FBD32E7003B3FD1 /* moving platform rendering component.cpp in Sources */,
 				4583EE781FB190F300AED27D /* yaml helper.cpp in Sources */,
 				4597962B1FB59C1A007A7432 /* entity file.cpp in Sources */,
 				450ED6081FB7F4F6008F2902 /* door rendering component.cpp in Sources */,

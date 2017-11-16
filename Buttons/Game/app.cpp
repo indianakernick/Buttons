@@ -121,6 +121,7 @@ bool App::render(const float delta) {
     animationSystem(registry, delta);
   
     NVGcontext *const ctx = renderingContext.getContext();
+    movingPlatformRenderingSystem(registry, ctx);
     platformRenderingSystem(registry, ctx);
     buttonRenderingSystem(registry, ctx);
     boxRenderingSystem(registry, ctx);

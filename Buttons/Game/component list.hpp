@@ -28,6 +28,7 @@
 #include "button rendering component.hpp"
 #include "player rendering component.hpp"
 #include "platform rendering component.hpp"
+#include "moving platform rendering component.hpp"
 
 using CompList = Utils::TypeList<
   PowerInput,
@@ -49,7 +50,8 @@ using CompList = Utils::TypeList<
   Switch,
   SwitchRendering,
   Animation,
-  ExitRendering
+  ExitRendering,
+  MovingPlatformRendering
 >;
 
 #endif

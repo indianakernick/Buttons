@@ -61,3 +61,10 @@
       pos: [14.5, -8.0]
       scale: [1, 1]
       body: switch body.yaml
+
+- file: moving platform entity.yaml
+  components:
+    PhysicsBody:
+      pos: [-14, -6]
+      scale: [4, 1]
+      body: platform body.yaml
