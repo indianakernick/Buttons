@@ -9,17 +9,6 @@
 #ifndef door_rendering_component_hpp
 #define door_rendering_component_hpp
 
-#include <Simpleton/Math/dir.hpp>
-
-namespace YAML {
-  class Node;
-}
-class EntityIDmap;
-
-struct DoorRendering {
-  DoorRendering(const YAML::Node &, const EntityIDmap &);
-  
-  Math::Dir closeDir;
-};
+struct DoorRendering {};
 
 #endif

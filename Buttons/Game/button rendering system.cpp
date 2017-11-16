@@ -15,7 +15,7 @@
 
 namespace {
   constexpr float BASE_WIDTH = 1.4f;
-  constexpr float BASE_HEIGHT = 0.3f;
+  constexpr float BASE_HEIGHT = 0.6f;
 }
 
 void buttonRenderingSystem(Registry &registry, NVGcontext *const ctx) {
@@ -31,7 +31,7 @@ void buttonRenderingSystem(Registry &registry, NVGcontext *const ctx) {
     
     nvgBeginPath(ctx);
     nvgFillColor(ctx, nvgRGBf(1.0f, 0.0f, 0.0f));
-    nvgRect(ctx, -0.5f, 0.0f, 1.0f, 0.5f);
+    nvgRect(ctx, -0.5f, 0.0f, 1.0f, 1.0f);
     nvgFill(ctx);
     
     nvgRestore(ctx);

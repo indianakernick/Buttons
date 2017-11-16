@@ -23,7 +23,7 @@
   components:
     PhysicsBody:
       pos: [5, -8.0]
-      scale: [1, 0.5]
+      scale: [1, 0.25]
       body: button body.yaml
     PowerOutput:
       out: 1
@@ -32,11 +32,9 @@
   file: door entity.yaml
   components:
     PhysicsBody:
-      pos: [7.5, -6.0]
-      scale: [0.2, 4]
+      pos: [7.5, -8.0]
+      scale: [0.4, 4]
       body: door body.yaml
-    DoorRendering:
-      close dir: up
 
 - file: switch entity.yaml
   components:
@@ -53,15 +51,13 @@
   file: door entity.yaml
   components:
     PhysicsBody:
-      pos: [8.5, -6.0]
-      scale: [0.2, 4]
+      pos: [8.5, -8.0]
+      scale: [0.4, 4]
       body: door body.yaml
-    DoorRendering:
-      close dir: up
 
 - file: exit entity.yaml
   components:
     PhysicsBody:
       pos: [14.5, -8.0]
-      scale: [1, 2]
+      scale: [1, 1]
       body: switch body.yaml
