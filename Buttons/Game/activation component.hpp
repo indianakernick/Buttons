@@ -9,6 +9,8 @@
 #ifndef activation_component_hpp
 #define activation_component_hpp
 
+#include <limits>
+
 namespace YAML {
   class Node;
 }
@@ -21,8 +23,7 @@ struct Activation {
   // 1.0f is active
   float activity = 0.0f;
   // How quickly the activity changes
-  // 0.0f means instantly
-  float speed = 0.0f;
+  float speed = std::numeric_limits<float>::max();
   
   enum class State {
     ACTIVATING,

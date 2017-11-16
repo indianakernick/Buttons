@@ -50,6 +50,8 @@
 		456DF0BA1FBD31BB003B3FD1 /* moving platform entity.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 456DF0B91FBD31BB003B3FD1 /* moving platform entity.yaml */; };
 		456DF0BD1FBD32E7003B3FD1 /* moving platform rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0BB1FBD32E7003B3FD1 /* moving platform rendering component.cpp */; };
 		456DF0C01FBD336A003B3FD1 /* moving platform rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0BE1FBD336A003B3FD1 /* moving platform rendering system.cpp */; };
+		456DF0C31FBD625C003B3FD1 /* moving platform component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0C11FBD625C003B3FD1 /* moving platform component.cpp */; };
+		456DF0C61FBD633C003B3FD1 /* moving platform system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0C41FBD633C003B3FD1 /* moving platform system.cpp */; };
 		4583ED5B1FB1841100AED27D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4583ED5A1FB1841100AED27D /* Assets.xcassets */; };
 		4583ED671FB1845B00AED27D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583ED661FB1845B00AED27D /* main.cpp */; };
 		4583ED6D1FB1859500AED27D /* libSimpleton Engine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4583ED691FB1859500AED27D /* libSimpleton Engine.dylib */; };
@@ -220,6 +222,10 @@
 		456DF0BC1FBD32E7003B3FD1 /* moving platform rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "moving platform rendering component.hpp"; sourceTree = "<group>"; };
 		456DF0BE1FBD336A003B3FD1 /* moving platform rendering system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "moving platform rendering system.cpp"; sourceTree = "<group>"; };
 		456DF0BF1FBD336A003B3FD1 /* moving platform rendering system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "moving platform rendering system.hpp"; sourceTree = "<group>"; };
+		456DF0C11FBD625C003B3FD1 /* moving platform component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "moving platform component.cpp"; sourceTree = "<group>"; };
+		456DF0C21FBD625C003B3FD1 /* moving platform component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "moving platform component.hpp"; sourceTree = "<group>"; };
+		456DF0C41FBD633C003B3FD1 /* moving platform system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "moving platform system.cpp"; sourceTree = "<group>"; };
+		456DF0C51FBD633C003B3FD1 /* moving platform system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "moving platform system.hpp"; sourceTree = "<group>"; };
 		4583ED551FB1841100AED27D /* Buttons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Buttons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4583ED5A1FB1841100AED27D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4583ED5F1FB1841100AED27D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -751,6 +757,8 @@
 				450ED61D1FB80B0F008F2902 /* switch component.hpp */,
 				450ED6281FB84633008F2902 /* animation component.cpp */,
 				450ED6291FB84633008F2902 /* animation component.hpp */,
+				456DF0C11FBD625C003B3FD1 /* moving platform component.cpp */,
+				456DF0C21FBD625C003B3FD1 /* moving platform component.hpp */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -784,6 +792,8 @@
 				450ED6201FB80CB4008F2902 /* switch system.hpp */,
 				450ED62B1FB8620D008F2902 /* animation system.cpp */,
 				450ED62C1FB8620D008F2902 /* animation system.hpp */,
+				456DF0C41FBD633C003B3FD1 /* moving platform system.cpp */,
+				456DF0C51FBD633C003B3FD1 /* moving platform system.hpp */,
 			);
 			name = Systems;
 			sourceTree = "<group>";
@@ -1019,6 +1029,7 @@
 				4583EE7E1FB1914000AED27D /* stb_image_write.c in Sources */,
 				4583EE7F1FB1914000AED27D /* tinyfiledialogs.c in Sources */,
 				4583EE731FB190F300AED27D /* b2 helper.cpp in Sources */,
+				456DF0C31FBD625C003B3FD1 /* moving platform component.cpp in Sources */,
 				4583EE741FB190F300AED27D /* framebuffer to png.cpp in Sources */,
 				456DF0C01FBD336A003B3FD1 /* moving platform rendering system.cpp in Sources */,
 				450ED5E31FB6B8EF008F2902 /* platform rendering component.cpp in Sources */,
@@ -1079,6 +1090,7 @@
 				450ED6241FB81316008F2902 /* switch rendering component.cpp in Sources */,
 				450ED60B1FB7F633008F2902 /* door rendering system.cpp in Sources */,
 				450ED5DA1FB6B3E3008F2902 /* player rendering system.cpp in Sources */,
+				456DF0C61FBD633C003B3FD1 /* moving platform system.cpp in Sources */,
 				4583EE1D1FB18F7A00AED27D /* b2PrismaticJoint.cpp in Sources */,
 				4597961C1FB41BFE007A7432 /* collision component.cpp in Sources */,
 				4583EE1E1FB18F7A00AED27D /* b2PulleyJoint.cpp in Sources */,

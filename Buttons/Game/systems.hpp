@@ -20,6 +20,7 @@
 #include "box rendering system.hpp"
 #include "door rendering system.hpp"
 #include "exit rendering system.hpp"
+#include "moving platform system.hpp"
 #include "player movement system.hpp"
 #include "player rendering system.hpp"
 #include "switch rendering system.hpp"

@@ -23,6 +23,7 @@
 #include "box rendering component.hpp"
 #include "door rendering component.hpp"
 #include "exit rendering component.hpp"
+#include "moving platform component.hpp"
 #include <Simpleton/Utils/type list.hpp>
 #include "switch rendering component.hpp"
 #include "button rendering component.hpp"
@@ -51,7 +52,8 @@ using CompList = Utils::TypeList<
   SwitchRendering,
   Animation,
   ExitRendering,
-  MovingPlatformRendering
+  MovingPlatformRendering,
+  MovingPlatform
 >;
 
 #endif

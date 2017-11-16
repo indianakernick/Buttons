@@ -62,9 +62,25 @@
       scale: [1, 1]
       body: switch body.yaml
 
-- file: moving platform entity.yaml
+- file: switch entity.yaml
   components:
     PhysicsBody:
-      pos: [-14, -6]
+      pos: [-2, -8.0]
+      scale: [1, 1]
+      body: switch body.yaml
+    Switch:
+      player: 0
+    PowerOutput:
+      out: 3
+
+- id: 3
+  file: moving platform entity.yaml
+  components:
+    PhysicsBody:
+      pos: [-14, -8.5]
       scale: [4, 1]
       body: platform body.yaml
+    MovingPlatform:
+      start: [-14, -8.5]
+      end: [-14, 0]
+      speed: 0.1

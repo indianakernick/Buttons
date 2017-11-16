@@ -96,6 +96,7 @@ bool App::update(const float delta) {
   
   activationSystem(registry, delta);
   doorSystem(registry);
+  movingPlatformSystem(registry, delta);
   
   //Set outputs
   activatePowerOutputSystem(registry);
