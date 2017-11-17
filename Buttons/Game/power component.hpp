@@ -17,14 +17,14 @@ namespace YAML {
 class EntityIDmap;
 
 struct PowerInput {
+  PowerInput(const YAML::Node &, const EntityIDmap &);
+
   bool on = false;
+  EntityID in;
 };
 
 struct PowerOutput {
-  PowerOutput(const YAML::Node &, const EntityIDmap &);
-
   bool on = false;
-  EntityID out;
 };
 
 #endif

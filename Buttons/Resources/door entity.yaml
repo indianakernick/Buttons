@@ -1,6 +1,5 @@
 Activation:
   speed: 4
 Transform: {}
-PowerInput: {}
 Door: {}
 DoorRendering: {}

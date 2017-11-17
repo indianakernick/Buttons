@@ -13,8 +13,8 @@
 void powerSystem(Registry &registry) {
   const auto powerOutput = registry.view<PowerOutput>();
   auto powerInput = registry.view<PowerInput>();
-  for (EntityID entity : powerOutput) {
-    const PowerOutput &outputComp = powerOutput.get(entity);
-    powerInput.get(outputComp.out).on = outputComp.on;
+  for (EntityID entity : powerInput) {
+    PowerInput &input = powerInput.get(entity);
+    input.on = powerOutput.get(input.in).on;
   }
 }

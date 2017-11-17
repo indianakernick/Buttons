@@ -4,3 +4,4 @@ Activation:
 Button: {}
 Transform: {}
 ButtonRendering: {}
+PowerOutput: {}
