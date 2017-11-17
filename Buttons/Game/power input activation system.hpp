@@ -11,7 +11,7 @@
 
 #include "entity registry.hpp"
 
-///Activates an entity when it is receiving input. (Laser, Door)
+///Activates an entity when it is receiving input. (Laser, Door, Moving Platform)
 void powerInputActivationSystem(Registry &);
 
 #endif
