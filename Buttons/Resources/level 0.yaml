@@ -1,0 +1,39 @@
+- file: platform entity.yaml
+  components:
+    PhysicsBody:
+      pos: [-16, -9]
+      scale: [32, 8]
+      body: platform body.yaml
+
+- file: platform entity.yaml
+  components:
+    PhysicsBody:
+      pos: [-16, 1]
+      scale: [32, 8]
+      body: platform body.yaml
+
+- file: platform entity.yaml
+  components:
+    PhysicsBody:
+      pos: [-16, -1]
+      scale: [1, 2]
+      body: platform body.yaml
+
+- file: platform entity.yaml
+  components:
+    PhysicsBody:
+      pos: [15, -1]
+      scale: [1, 2]
+      body: platform body.yaml
+
+- file: player entity.yaml
+  components:
+    PhysicsBody:
+      pos: [-14.5, -0.5]
+      body: player body.yaml
+      
+- file: exit entity.yaml
+  components:
+    PhysicsBody:
+      pos: [14.5, -1]
+      body: switch body.yaml
