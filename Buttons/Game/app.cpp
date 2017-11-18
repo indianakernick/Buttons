@@ -97,6 +97,8 @@ bool App::input(float) {
   while (SDL_PollEvent(&e)) {
     if (e.type == SDL_QUIT) {
       return false;
+    } else if (e.type == SDL_KEYDOWN && e.key.keysym.scancode == SDL_SCANCODE_R) {
+      levelManager.reload();
     } else if (!screenshot.handleEvent(e)) {
       playerInputSystem(registry, e);
     }
