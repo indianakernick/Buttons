@@ -419,6 +419,7 @@
 		4591F06F1FBFE7500075000D /* animation init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "animation init.hpp"; sourceTree = "<group>"; };
 		4591F0711FBFE8640075000D /* moving platform init.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "moving platform init.cpp"; sourceTree = "<group>"; };
 		4591F0721FBFE8640075000D /* moving platform init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "moving platform init.hpp"; sourceTree = "<group>"; };
+		4591F0741FBFEF4B0075000D /* component inits.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "component inits.hpp"; sourceTree = "<group>"; };
 		459796131FB2FD2C007A7432 /* camera constants.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "camera constants.hpp"; sourceTree = "<group>"; };
 		459796141FB2FD47007A7432 /* window constants.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "window constants.hpp"; sourceTree = "<group>"; };
 		459796151FB2FD6F007A7432 /* global flags.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "global flags.hpp"; sourceTree = "<group>"; };
@@ -479,6 +480,7 @@
 		456DF0CA1FBFB496003B3FD1 /* Component initializers */ = {
 			isa = PBXGroup;
 			children = (
+				4591F0741FBFEF4B0075000D /* component inits.hpp */,
 				456DF0CE1FBFB6C3003B3FD1 /* comp inits.hpp */,
 				456DF0CF1FBFB753003B3FD1 /* comp init.hpp */,
 				456DF0CB1FBFB519003B3FD1 /* physics init.cpp */,

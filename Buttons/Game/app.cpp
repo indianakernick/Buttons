@@ -11,6 +11,7 @@
 #include "systems.hpp"
 #include "level file.hpp"
 #include "global flags.hpp"
+#include "component inits.hpp"
 #include "window constants.hpp"
 #include "camera constants.hpp"
 #include <Simpleton/Time/get.hpp>
@@ -63,11 +64,23 @@ void App::init() {
   
   physics.init(registry, renderingContext.getContext());
   
+  compInits.construct<PhysicsBodyInit>(physics.getWorld());
+  compInits.construct<PhysicsJointInit>(physics.getWorld(), &registry);
+  compInits.construct<PowerInputInit>();
+  compInits.construct<ActivationInit>();
+  compInits.construct<TransformInit>();
+  compInits.construct<SwitchInit>();
+  compInits.construct<AnimationInit>();
+  compInits.construct<MovingPlatformInit>();
+  compInits.setDefaults();
+  
   loadLevel("test level.yaml", registry, physics);
 }
 
 void App::quit() {
   registry.reset();
+  
+  compInits.destroyAll();
 
   physics.quit();
 

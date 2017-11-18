@@ -9,6 +9,7 @@
 #ifndef app_hpp
 #define app_hpp
 
+#include "comp inits.hpp"
 #include "screenshot.hpp"
 #include "physics system.hpp"
 #include "entity registry.hpp"
@@ -36,6 +37,7 @@ private:
   Screenshot screenshot;
   Registry registry;
   PhysicsSystem physics;
+  CompInits compInits;
   
   void init();
   void quit();

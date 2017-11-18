@@ -12,7 +12,7 @@
 #include "comp init.hpp"
 #include "activation component.hpp"
 
-class ActivationInit : CompInit<Activation> {
+class ActivationInit final : public CompInit<Activation> {
 public:
   void init(Activation &, const YAML::Node &) override;
 };

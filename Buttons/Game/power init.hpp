@@ -14,8 +14,6 @@
 
 class PowerInputInit final : public CompInit<PowerInput> {
 public:
-  PowerInputInit() = default;
-  
   void init(PowerInput &, const YAML::Node &, const EntityIDmap &) override;
 };
 

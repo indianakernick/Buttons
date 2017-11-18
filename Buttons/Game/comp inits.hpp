@@ -47,6 +47,13 @@ public:
     });
   }
   
+  ///Destroys all component initializers
+  void destroyAll() {
+    Utils::forEach(inits, [] (auto &init) {
+      init.reset();
+    });
+  }
+  
 private:
   #define COMP(NAME, ID_NAME) std::unique_ptr<CompInit<NAME>>,
   #define LAST_COMP(NAME, ID_NAME) std::unique_ptr<CompInit<NAME>>
@@ -55,7 +62,7 @@ private:
   #undef COMP
   
   template <typename Comp>
-  auto getInit() {
+  auto &getInit() {
     return std::get<Utils::indexOf<CompList, Comp>>(inits);
   }
 };
