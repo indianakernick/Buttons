@@ -16,7 +16,7 @@ Transform::Transform(const YAML::Node &node, const EntityIDmap &) {
   getOptional(pos, node, "pos");
   getOptional(scale, node, "scale");
   getOptional(rotation, node, "rotation");
-  rotation = -glm::radians((rotation));
+  rotation = glm::radians(rotation);
 }
 
 glm::mat3 getMat3(const Transform t) {

@@ -400,6 +400,7 @@
 		4583EEA81FB1B6E100AED27D /* physics transform system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "physics transform system.cpp"; sourceTree = "<group>"; };
 		4583EEA91FB1B6E100AED27D /* physics transform system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "physics transform system.hpp"; sourceTree = "<group>"; };
 		4583EEAB1FB1B6F800AED27D /* entity registry.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "entity registry.hpp"; sourceTree = "<group>"; };
+		4591F0611FBFD0FD0075000D /* physics body entity id.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "physics body entity id.hpp"; sourceTree = "<group>"; };
 		459796131FB2FD2C007A7432 /* camera constants.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "camera constants.hpp"; sourceTree = "<group>"; };
 		459796141FB2FD47007A7432 /* window constants.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "window constants.hpp"; sourceTree = "<group>"; };
 		459796151FB2FD6F007A7432 /* global flags.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "global flags.hpp"; sourceTree = "<group>"; };
@@ -848,6 +849,7 @@
 				450ED5D61FB6B0A0008F2902 /* limit velocity.hpp */,
 				450ED5F31FB7C945008F2902 /* debug draw.cpp */,
 				450ED5F41FB7C945008F2902 /* debug draw.hpp */,
+				4591F0611FBFD0FD0075000D /* physics body entity id.hpp */,
 			);
 			name = Physics;
 			sourceTree = "<group>";

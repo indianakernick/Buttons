@@ -12,8 +12,14 @@
 #include "comp init.hpp"
 #include "physics component.hpp"
 
-class PhysicsBodyInit : public CompInit<PhysicsBodyInit, PhysicsBody> {
+class PhysicsBodyInit : CompInit<PhysicsBody> {
+public:
+  explicit PhysicsBodyInit(b2World *);
+  
+  void init(PhysicsBody &, const YAML::Node &, const EntityIDmap &, EntityID);
 
+private:
+  b2World *world;
 };
 
 #endif

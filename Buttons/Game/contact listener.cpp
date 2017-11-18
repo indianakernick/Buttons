@@ -9,24 +9,21 @@
 #include "contact listener.hpp"
 
 #include <utility>
+#include "physics body entity id.hpp"
 #include "../Libraries/Box2D/Dynamics/Contacts/b2Contact.h"
 
 namespace {
   std::pair<EntityID, EntityID> getEntityPair(b2Contact *const contact) {
     return {
-      static_cast<EntityID>(
-        reinterpret_cast<uintptr_t>(contact->GetFixtureA()->GetBody()->GetUserData())
-      ),
-      static_cast<EntityID>(
-        reinterpret_cast<uintptr_t>(contact->GetFixtureB()->GetBody()->GetUserData())
-      )
+      getEntity(contact->GetFixtureA()->GetBody()->GetUserData()),
+      getEntity(contact->GetFixtureB()->GetBody()->GetUserData())
     };
   }
   
   CollisionPair getCollisionPair(b2Contact *const contact) {
     return {
-      reinterpret_cast<ObjectTypeID>(contact->GetFixtureA()->GetUserData()),
-      reinterpret_cast<ObjectTypeID>(contact->GetFixtureB()->GetUserData())
+      getObjectTypeID(contact->GetFixtureA()->GetUserData()),
+      getObjectTypeID(contact->GetFixtureB()->GetUserData())
     };
   }
 }

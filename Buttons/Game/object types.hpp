@@ -21,6 +21,10 @@ void *getUserData() {
   return reinterpret_cast<void *>(Utils::typeHash<ObjectType>());
 }
 
+inline ObjectTypeID getObjectTypeID(const void *const userData) {
+  return reinterpret_cast<ObjectTypeID>(userData);
+}
+
 template <typename ObjectType>
 ObjectTypeID getObjectTypeID() {
   return Utils::typeHash<ObjectType>();
