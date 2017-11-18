@@ -1,6 +1,5 @@
 Collision: {}
-Activation:
-  speed: 0.5
+Activation: {}
 Transform: {}
 Animation:
   speed: 1.5

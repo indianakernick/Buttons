@@ -52,6 +52,7 @@
 		456DF0C01FBD336A003B3FD1 /* moving platform rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0BE1FBD336A003B3FD1 /* moving platform rendering system.cpp */; };
 		456DF0C31FBD625C003B3FD1 /* moving platform component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0C11FBD625C003B3FD1 /* moving platform component.cpp */; };
 		456DF0C61FBD633C003B3FD1 /* moving platform system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0C41FBD633C003B3FD1 /* moving platform system.cpp */; };
+		456DF0C91FBEB610003B3FD1 /* level manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0C71FBEB610003B3FD1 /* level manager.cpp */; };
 		4583ED5B1FB1841100AED27D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4583ED5A1FB1841100AED27D /* Assets.xcassets */; };
 		4583ED671FB1845B00AED27D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583ED661FB1845B00AED27D /* main.cpp */; };
 		4583ED6D1FB1859500AED27D /* libSimpleton Engine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4583ED691FB1859500AED27D /* libSimpleton Engine.dylib */; };
@@ -226,6 +227,8 @@
 		456DF0C21FBD625C003B3FD1 /* moving platform component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "moving platform component.hpp"; sourceTree = "<group>"; };
 		456DF0C41FBD633C003B3FD1 /* moving platform system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "moving platform system.cpp"; sourceTree = "<group>"; };
 		456DF0C51FBD633C003B3FD1 /* moving platform system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "moving platform system.hpp"; sourceTree = "<group>"; };
+		456DF0C71FBEB610003B3FD1 /* level manager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "level manager.cpp"; sourceTree = "<group>"; };
+		456DF0C81FBEB610003B3FD1 /* level manager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "level manager.hpp"; sourceTree = "<group>"; };
 		4583ED551FB1841100AED27D /* Buttons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Buttons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4583ED5A1FB1841100AED27D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4583ED5F1FB1841100AED27D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -841,6 +844,8 @@
 				459796241FB56F0D007A7432 /* level file.hpp */,
 				459796291FB59C1A007A7432 /* entity file.cpp */,
 				4597962A1FB59C1A007A7432 /* entity file.hpp */,
+				456DF0C71FBEB610003B3FD1 /* level manager.cpp */,
+				456DF0C81FBEB610003B3FD1 /* level manager.hpp */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -1123,6 +1128,7 @@
 				4583EE2E1FB18F7A00AED27D /* b2EdgeShape.cpp in Sources */,
 				450ED61E1FB80B0F008F2902 /* switch component.cpp in Sources */,
 				459796281FB58752007A7432 /* entity id map.cpp in Sources */,
+				456DF0C91FBEB610003B3FD1 /* level manager.cpp in Sources */,
 				4583EEAA1FB1B6E100AED27D /* physics transform system.cpp in Sources */,
 				4583EE2F1FB18F7A00AED27D /* b2CircleShape.cpp in Sources */,
 				4583EE301FB18F7A00AED27D /* b2PolygonShape.cpp in Sources */,
