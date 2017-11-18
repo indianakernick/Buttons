@@ -53,6 +53,7 @@
 		456DF0C31FBD625C003B3FD1 /* moving platform component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0C11FBD625C003B3FD1 /* moving platform component.cpp */; };
 		456DF0C61FBD633C003B3FD1 /* moving platform system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0C41FBD633C003B3FD1 /* moving platform system.cpp */; };
 		456DF0C91FBEB610003B3FD1 /* level manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0C71FBEB610003B3FD1 /* level manager.cpp */; };
+		456DF0CD1FBFB519003B3FD1 /* physics init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0CB1FBFB519003B3FD1 /* physics init.cpp */; };
 		4583ED5B1FB1841100AED27D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4583ED5A1FB1841100AED27D /* Assets.xcassets */; };
 		4583ED671FB1845B00AED27D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583ED661FB1845B00AED27D /* main.cpp */; };
 		4583ED6D1FB1859500AED27D /* libSimpleton Engine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4583ED691FB1859500AED27D /* libSimpleton Engine.dylib */; };
@@ -229,6 +230,10 @@
 		456DF0C51FBD633C003B3FD1 /* moving platform system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "moving platform system.hpp"; sourceTree = "<group>"; };
 		456DF0C71FBEB610003B3FD1 /* level manager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "level manager.cpp"; sourceTree = "<group>"; };
 		456DF0C81FBEB610003B3FD1 /* level manager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "level manager.hpp"; sourceTree = "<group>"; };
+		456DF0CB1FBFB519003B3FD1 /* physics init.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "physics init.cpp"; sourceTree = "<group>"; };
+		456DF0CC1FBFB519003B3FD1 /* physics init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "physics init.hpp"; sourceTree = "<group>"; };
+		456DF0CE1FBFB6C3003B3FD1 /* comp inits.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "comp inits.hpp"; sourceTree = "<group>"; };
+		456DF0CF1FBFB753003B3FD1 /* comp init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "comp init.hpp"; sourceTree = "<group>"; };
 		4583ED551FB1841100AED27D /* Buttons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Buttons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4583ED5A1FB1841100AED27D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4583ED5F1FB1841100AED27D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -452,6 +457,17 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		456DF0CA1FBFB496003B3FD1 /* Component initializers */ = {
+			isa = PBXGroup;
+			children = (
+				456DF0CE1FBFB6C3003B3FD1 /* comp inits.hpp */,
+				456DF0CF1FBFB753003B3FD1 /* comp init.hpp */,
+				456DF0CB1FBFB519003B3FD1 /* physics init.cpp */,
+				456DF0CC1FBFB519003B3FD1 /* physics init.hpp */,
+			);
+			name = "Component initializers";
+			sourceTree = "<group>";
+		};
 		4583ED4C1FB1841000AED27D = {
 			isa = PBXGroup;
 			children = (
@@ -509,6 +525,7 @@
 				4583EE8C1FB19BEE00AED27D /* Physics */,
 				4583EE821FB1965A00AED27D /* Systems */,
 				4583EE801FB195CD00AED27D /* Components */,
+				456DF0CA1FBFB496003B3FD1 /* Component initializers */,
 				4583EE831FB1967700AED27D /* app.cpp */,
 				4583EE841FB1967700AED27D /* app.hpp */,
 			);
@@ -1064,6 +1081,7 @@
 				4597961E1FB41C0C007A7432 /* power component.cpp in Sources */,
 				4583EE081FB18F7A00AED27D /* b2World.cpp in Sources */,
 				4583EE091FB18F7A00AED27D /* b2Fixture.cpp in Sources */,
+				456DF0CD1FBFB519003B3FD1 /* physics init.cpp in Sources */,
 				4583EE0A1FB18F7A00AED27D /* b2ChainAndPolygonContact.cpp in Sources */,
 				4583EE0B1FB18F7A00AED27D /* b2EdgeAndPolygonContact.cpp in Sources */,
 				4583EE0C1FB18F7A00AED27D /* b2ChainAndCircleContact.cpp in Sources */,

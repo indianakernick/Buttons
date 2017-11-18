@@ -31,29 +31,36 @@
 #include "platform rendering component.hpp"
 #include "moving platform rendering component.hpp"
 
+#define COMPS                                                                   \
+  COMP(PowerInput, powerInput)                                                  \
+  COMP(PowerOutput, powerOutput)                                                \
+  COMP(PhysicsBody, physicsBody)                                                \
+  COMP(PhysicsJoint, physicsJoint)                                              \
+  COMP(Transform, transform)                                                    \
+  COMP(Collision, collision)                                                    \
+  COMP(Activation, activation)                                                  \
+  COMP(BoxRendering, boxRendering)                                              \
+  COMP(PlayerInput, playerInput)                                                \
+  COMP(PlayerJump, playerJump)                                                  \
+  COMP(PlayerRendering, playerRendering)                                        \
+  COMP(PlatformRendering, platformRendering)                                    \
+  COMP(Button, button)                                                          \
+  COMP(ButtonRendering, buttonRendering)                                        \
+  COMP(DoorRendering, doorRendering)                                            \
+  COMP(Door, door)                                                              \
+  COMP(Switch, switch)                                                          \
+  COMP(SwitchRendering, switchRendering)                                        \
+  COMP(Animation, animation)                                                    \
+  COMP(ExitRendering, exitRendering)                                            \
+  COMP(MovingPlatformRendering, movingPlatformRendering)                        \
+  LAST_COMP(MovingPlatform, movingPlatform)
+
+#define COMP(NAME, ID_NAME) NAME,
+#define LAST_COMP(NAME, ID_NAME) NAME
 using CompList = Utils::TypeList<
-  PowerInput,
-  PowerOutput,
-  PhysicsBody,
-  PhysicsJoint,
-  Transform,
-  Collision,
-  Activation,
-  BoxRendering,
-  PlayerInput,
-  PlayerJump,
-  PlayerRendering,
-  PlatformRendering,
-  Button,
-  ButtonRendering,
-  DoorRendering,
-  Door,
-  Switch,
-  SwitchRendering,
-  Animation,
-  ExitRendering,
-  MovingPlatformRendering,
-  MovingPlatform
+  COMPS
 >;
+#undef LAST_COMP
+#undef COMP
 
 #endif
