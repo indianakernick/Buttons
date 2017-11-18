@@ -77,7 +77,7 @@ void App::init() {
   compInits.setDefaults();
   
   levelManager.init(registry, compInits);
-  levelManager.loadLevel(2);
+  levelManager.loadLevel(0);
 }
 
 void App::quit() {
@@ -109,6 +109,10 @@ bool App::input(float) {
 }
 
 bool App::update(const float delta) {
+  if (exitSystem(registry)) {
+    levelManager.nextLevel();
+  }
+
   playerMovementSystem(registry, delta);
   physics.update(delta);
   physicsTransformSystem(registry);
