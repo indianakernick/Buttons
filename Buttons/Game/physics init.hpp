@@ -10,6 +10,7 @@
 #define physics_init_hpp
 
 #include "comp init.hpp"
+#include "entity registry.hpp"
 #include "physics component.hpp"
 
 class PhysicsBodyInit : CompInit<PhysicsBody> {
@@ -20,6 +21,17 @@ public:
 
 private:
   b2World *world;
+};
+
+class PhysicsJointInit : CompInit<PhysicsJoint> {
+public:
+  PhysicsJointInit(b2World *, Registry *);
+  
+  void init(PhysicsJoint &, const YAML::Node &, const EntityIDmap &, EntityID);
+
+private:
+  b2World *world;
+  Registry *registry;
 };
 
 #endif
