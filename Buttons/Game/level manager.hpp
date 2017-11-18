@@ -12,22 +12,26 @@
 #include <limits>
 #include "entity registry.hpp"
 
+class CompInits;
+using Level = unsigned;
+
 class LevelManager {
 public:
   LevelManager() = default;
   
-  void init(Registry &);
+  void init(Registry &, const CompInits &);
   void quit();
   
-  void loadLevel(unsigned);
+  bool loadLevel(Level);
   bool nextLevel();
-  void reload();
+  bool reload();
 
 private:
-  static constexpr unsigned NONE_LOADED = std::numeric_limits<unsigned>::max();
+  static constexpr Level NONE_LOADED = std::numeric_limits<Level>::max();
   
   Registry *registry = nullptr;
-  unsigned current = NONE_LOADED;
+  const CompInits *compInits = nullptr;
+  Level current = NONE_LOADED;
 };
 
 #endif

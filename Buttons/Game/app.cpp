@@ -74,11 +74,13 @@ void App::init() {
   compInits.construct<MovingPlatformInit>();
   compInits.setDefaults();
   
-  loadLevel("test level.yaml", registry, compInits);
+  levelManager.init(registry, compInits);
+  levelManager.loadLevel(42);
 }
 
 void App::quit() {
   registry.reset();
+  levelManager.quit();
   
   compInits.destroyAll();
 

@@ -8,6 +8,7 @@
 
 #include "level file.hpp"
 
+#include <fstream>
 #include "comp inits.hpp"
 #include "yaml helper.hpp"
 #include "entity id map.hpp"
@@ -45,8 +46,12 @@ void loadEntity(
   loadComps(id, levelComps, idMap, registry, compInits);
 }
 
-void loadLevel(const std::string &fileName, Registry &registry, const CompInits &compInits) {
-  const YAML::Node root = YAML::LoadFile(Platform::getResDir() + fileName);
+bool loadLevel(const std::string &fileName, Registry &registry, const CompInits &compInits) {
+  std::ifstream file(Platform::getResDir() + fileName);
+  if (!file.is_open()) {
+    return false;
+  }
+  const YAML::Node root = YAML::Load(file);
   checkType(root, YAML::NodeType::Sequence);
   EntityIDmap idMap;
   idMap.insertIDs(root, registry);
@@ -57,4 +62,6 @@ void loadLevel(const std::string &fileName, Registry &registry, const CompInits 
     const YAML::Node &comps = node["components"];
     loadEntity(idMap.getEntityFromIndex(i), entityFile, comps, idMap, registry, compInits);
   }
+  
+  return true;
 }

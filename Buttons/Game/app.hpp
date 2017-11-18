@@ -11,6 +11,7 @@
 
 #include "comp inits.hpp"
 #include "screenshot.hpp"
+#include "level manager.hpp"
 #include "physics system.hpp"
 #include "entity registry.hpp"
 #include "rendering manager.hpp"
@@ -38,6 +39,7 @@ private:
   Registry registry;
   PhysicsSystem physics;
   CompInits compInits;
+  LevelManager levelManager;
   
   void init();
   void quit();

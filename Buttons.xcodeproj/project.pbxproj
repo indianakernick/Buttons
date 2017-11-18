@@ -147,7 +147,7 @@
 		459796251FB56F0D007A7432 /* level file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459796231FB56F0D007A7432 /* level file.cpp */; };
 		459796281FB58752007A7432 /* entity id map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459796261FB58752007A7432 /* entity id map.cpp */; };
 		4597962E1FB65BBB007A7432 /* component list.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597962C1FB65BBB007A7432 /* component list.cpp */; };
-		459796301FB67FE7007A7432 /* test level.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 4597962F1FB67FE7007A7432 /* test level.yaml */; };
+		459796301FB67FE7007A7432 /* level 42.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 4597962F1FB67FE7007A7432 /* level 42.yaml */; };
 		459796361FB681FA007A7432 /* box entity.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 459796351FB681FA007A7432 /* box entity.yaml */; };
 		459796381FB68209007A7432 /* box body.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 459796371FB68209007A7432 /* box body.yaml */; };
 		4597963C1FB6870A007A7432 /* box rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597963A1FB6870A007A7432 /* box rendering component.cpp */; };
@@ -433,7 +433,7 @@
 		459796271FB58752007A7432 /* entity id map.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "entity id map.hpp"; sourceTree = "<group>"; };
 		4597962C1FB65BBB007A7432 /* component list.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "component list.cpp"; sourceTree = "<group>"; };
 		4597962D1FB65BBB007A7432 /* component list.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "component list.hpp"; sourceTree = "<group>"; };
-		4597962F1FB67FE7007A7432 /* test level.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "test level.yaml"; sourceTree = "<group>"; };
+		4597962F1FB67FE7007A7432 /* level 42.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 42.yaml"; sourceTree = "<group>"; };
 		459796351FB681FA007A7432 /* box entity.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "box entity.yaml"; sourceTree = "<group>"; };
 		459796371FB68209007A7432 /* box body.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "box body.yaml"; sourceTree = "<group>"; };
 		4597963A1FB6870A007A7432 /* box rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "box rendering component.cpp"; sourceTree = "<group>"; };
@@ -899,7 +899,7 @@
 		459796311FB67FEC007A7432 /* Levels */ = {
 			isa = PBXGroup;
 			children = (
-				4597962F1FB67FE7007A7432 /* test level.yaml */,
+				4597962F1FB67FE7007A7432 /* level 42.yaml */,
 			);
 			name = Levels;
 			sourceTree = "<group>";
@@ -1057,7 +1057,7 @@
 				450ED5CE1FB6AA31008F2902 /* player entity.yaml in Resources */,
 				450ED6191FB8089C008F2902 /* switch body.yaml in Resources */,
 				450ED6001FB7E8D3008F2902 /* door body.yaml in Resources */,
-				459796301FB67FE7007A7432 /* test level.yaml in Resources */,
+				459796301FB67FE7007A7432 /* level 42.yaml in Resources */,
 				456DF0BA1FBD31BB003B3FD1 /* moving platform entity.yaml in Resources */,
 				459796381FB68209007A7432 /* box body.yaml in Resources */,
 				450ED61B1FB80932008F2902 /* switch entity.yaml in Resources */,

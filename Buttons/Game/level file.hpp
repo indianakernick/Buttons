@@ -14,6 +14,6 @@
 
 class CompInits;
 
-void loadLevel(const std::string &, Registry &, const CompInits &);
+bool loadLevel(const std::string &, Registry &, const CompInits &);
 
 #endif
