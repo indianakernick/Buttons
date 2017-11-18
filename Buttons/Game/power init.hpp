@@ -12,13 +12,11 @@
 #include "comp init.hpp"
 #include "power component.hpp"
 
-class PowerInputInit : CompInit<PowerInput> {
+class PowerInputInit final : public CompInit<PowerInput> {
 public:
   PowerInputInit() = default;
   
-  void init(PowerInput &, const YAML::Node &, const EntityIDmap &, EntityID);
+  void init(PowerInput &, const YAML::Node &, const EntityIDmap &) override;
 };
-
-class PowerOutputInit : CompInit<PowerOutput> {};
 
 #endif

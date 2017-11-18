@@ -12,9 +12,9 @@
 #include "comp init.hpp"
 #include "animation component.hpp"
 
-class AnimationInit : CompInit<Animation> {
+class AnimationInit final : public CompInit<Animation> {
 public:
-  void init(Animation &, const YAML::Node &, const EntityIDmap &, EntityID);
+  void init(Animation &, const YAML::Node &) override;
 };
 
 #endif

@@ -12,9 +12,9 @@
 #include "comp init.hpp"
 #include "moving platform component.hpp"
 
-class MovingPlatformInit : CompInit<MovingPlatform> {
+class MovingPlatformInit final : public CompInit<MovingPlatform> {
 public:
-  void init(MovingPlatform &, const YAML::Node &, const EntityIDmap &, EntityID);
+  void init(MovingPlatform &, const YAML::Node &) override;
 };
 
 #endif

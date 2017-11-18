@@ -10,7 +10,7 @@
 
 #include "yaml helper.hpp"
 
-void AnimationInit::init(Animation &comp, const YAML::Node &node, const EntityIDmap &, EntityID) {
+void AnimationInit::init(Animation &comp, const YAML::Node &node) {
   getOptional(comp.progress, node, "progress");
   getOptional(comp.speed, node, "speed");
   

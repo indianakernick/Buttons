@@ -11,6 +11,6 @@
 #include "yaml helper.hpp"
 #include "entity id map.hpp"
 
-void SwitchInit::init(Switch &comp, const YAML::Node &node, const EntityIDmap &idMap, EntityID) {
+void SwitchInit::init(Switch &comp, const YAML::Node &node, const EntityIDmap &idMap) {
   comp.player = idMap.getEntityFromUserID(getChild(node, "player").as<UserID>());
 }

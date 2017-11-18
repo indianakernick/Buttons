@@ -14,7 +14,7 @@
 
 class ActivationInit : CompInit<Activation> {
 public:
-  void init(Activation &, const YAML::Node &, const EntityIDmap &, EntityID);
+  void init(Activation &, const YAML::Node &) override;
 };
 
 #endif

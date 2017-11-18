@@ -10,7 +10,7 @@
 
 #include "yaml helper.hpp"
 
-void MovingPlatformInit::init(MovingPlatform &comp, const YAML::Node &node, const EntityIDmap &, EntityID) {
+void MovingPlatformInit::init(MovingPlatform &comp, const YAML::Node &node) {
   comp.start = getChild(node, "start").as<b2Vec2>();
   comp.end = getChild(node, "end").as<b2Vec2>();
   getOptional(comp.waitingTime, node, "waiting time");

@@ -10,6 +10,6 @@
 
 #include "yaml helper.hpp"
 
-void ActivationInit::init(Activation &comp, const YAML::Node &node, const EntityIDmap &, EntityID) {
+void ActivationInit::init(Activation &comp, const YAML::Node &node) {
   getOptional(comp.speed, node, "speed");
 }

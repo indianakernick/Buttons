@@ -23,17 +23,17 @@ PhysicsBodyInit::PhysicsBodyInit(b2World *const world)
 void PhysicsBodyInit::init(
   PhysicsBody &comp,
   const YAML::Node &node,
-  const EntityIDmap &idMap,
+  const EntityIDmap &,
   const EntityID entity
 ) {
-  /*Transform transform;
+  Transform transform;
   getOptional(transform.pos, node, "pos");
   getOptional(transform.scale, node, "scale");
   getOptional(transform.rotation, node, "rotation");
   transform.rotation = glm::radians(transform.rotation);
   comp.body = loadBody(getChild(node, "body").Scalar(), *world, transform);
   comp.body->SetUserData(getUserData(entity));
-  comp.scale = transform.scale;*/
+  comp.scale = transform.scale;
 }
 
 PhysicsJointInit::PhysicsJointInit(b2World *const world, Registry *const registry)

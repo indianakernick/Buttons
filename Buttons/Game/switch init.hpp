@@ -12,9 +12,9 @@
 #include "comp init.hpp"
 #include "switch component.hpp"
 
-class SwitchInit : CompInit<Switch> {
+class SwitchInit final : public CompInit<Switch> {
 public:
-  void init(Switch &, const YAML::Node &, const EntityIDmap &, EntityID);
+  void init(Switch &, const YAML::Node &, const EntityIDmap &) override;
 };
 
 #endif

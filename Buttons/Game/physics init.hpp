@@ -13,21 +13,21 @@
 #include "entity registry.hpp"
 #include "physics component.hpp"
 
-class PhysicsBodyInit : CompInit<PhysicsBody> {
+class PhysicsBodyInit final : public CompInit<PhysicsBody> {
 public:
   explicit PhysicsBodyInit(b2World *);
   
-  void init(PhysicsBody &, const YAML::Node &, const EntityIDmap &, EntityID);
+  void init(PhysicsBody &, const YAML::Node &, const EntityIDmap &, EntityID) override;
 
 private:
   b2World *world;
 };
 
-class PhysicsJointInit : CompInit<PhysicsJoint> {
+class PhysicsJointInit final : public CompInit<PhysicsJoint> {
 public:
   PhysicsJointInit(b2World *, Registry *);
   
-  void init(PhysicsJoint &, const YAML::Node &, const EntityIDmap &, EntityID);
+  void init(PhysicsJoint &, const YAML::Node &, const EntityIDmap &, EntityID) override;
 
 private:
   b2World *world;

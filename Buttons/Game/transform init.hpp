@@ -12,9 +12,9 @@
 #include "comp init.hpp"
 #include "transform component.hpp"
 
-class TransformInit : CompInit<Transform> {
+class TransformInit final : public CompInit<Transform> {
 public:
-  void init(Transform &, const YAML::Node &, const EntityIDmap &, EntityID);
+  void init(Transform &, const YAML::Node &) override;
 };
 
 #endif

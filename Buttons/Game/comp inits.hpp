@@ -9,9 +9,10 @@
 #ifndef comp_inits_hpp
 #define comp_inits_hpp
 
+#include <memory>
 #include "comp init.hpp"
 #include "component list.hpp"
-#include <experimental/optional>
+#include <Simpleton/Utils/tuple.hpp>
 
 class CompInits {
 public:
@@ -25,27 +26,30 @@ public:
     const EntityIDmap &idMap,
     const EntityID entity
   ) {
-    getInit<Comp>().value().init(comp, node, idMap, entity);
+    assert(getInit<Comp>());
+    getInit<Comp>()->initialize(comp, node, idMap, entity);
   }
   
   ///Constructs the initializer for the given component
-  template <typename Comp, typename ...Args>
+  template <typename CompInit, typename ...Args>
   void construct(Args &&... args) {
-    getInit<Comp>().emplace(std::forward<Args>(args)...);
+    using Comp = typename CompInit::Comp;
+    getInit<Comp>() = std::make_unique<CompInit>(std::forward<Args>(args)...);
   }
   
-  ///Default constructs all initializers that haven't been constructed
-  void defaultConstructAll() {
-    Utils::forEach(init, [] (auto &init) {
+  ///Creates default initializers for components that don't have initializers
+  void setDefaults() {
+    Utils::forEach(inits, [] (auto &init) {
       if (!init) {
-        init.emplace();
+        using UniquePtr = std::remove_reference_t<decltype(init)>;
+        init = std::make_unique<typename UniquePtr::element_type>();
       }
     });
   }
   
 private:
-  #define COMP(NAME, ID_NAME) std::experimental::optional<NAME##Init>,
-  #define LAST_COMP(NAME, ID_NAME) std::experimental::optional<NAME##Init>
+  #define COMP(NAME, ID_NAME) std::unique_ptr<CompInit<NAME>>,
+  #define LAST_COMP(NAME, ID_NAME) std::unique_ptr<CompInit<NAME>>
   std::tuple<COMPS> inits;
   #undef LAST_COMP
   #undef COMP

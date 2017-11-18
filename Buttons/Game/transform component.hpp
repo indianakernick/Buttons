@@ -18,6 +18,7 @@ namespace YAML {
 class EntityIDmap;
 
 struct Transform {
+  Transform() = default;
   Transform(const YAML::Node &, const EntityIDmap &);
 
   glm::vec2 pos = {0.0f, 0.0f};

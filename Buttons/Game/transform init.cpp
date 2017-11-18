@@ -11,7 +11,7 @@
 #include "yaml helper.hpp"
 #include <glm/trigonometric.hpp>
 
-void TransformInit::init(Transform &comp, const YAML::Node &node, const EntityIDmap &, EntityID) {
+void TransformInit::init(Transform &comp, const YAML::Node &node) {
   getOptional(comp.pos, node, "pos");
   getOptional(comp.scale, node, "scale");
   getOptional(comp.rotation, node, "rotation");
