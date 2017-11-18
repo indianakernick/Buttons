@@ -12,5 +12,6 @@
 #include <glm/vec2.hpp>
 
 const glm::vec2 LEVEL_SIZE = {32.0f, 18.0f};
+constexpr float ZOOM_SPEED = 1.0f;
 
 #endif

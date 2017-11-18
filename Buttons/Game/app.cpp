@@ -15,6 +15,7 @@
 #include "window constants.hpp"
 #include "camera constants.hpp"
 #include <Simpleton/Time/get.hpp>
+#include <Simpleton/Camera 2D/linear zoom.hpp>
 #include <Simpleton/Camera 2D/zoom to fit.hpp>
 
 void App::mainloop() {
@@ -61,6 +62,7 @@ void App::init() {
   renderingContext.init(window.get());
   renderingManager.init(renderingContext);
   camera.targetScale = std::make_unique<Cam2D::ZoomToFit>(LEVEL_SIZE);
+  camera.zoom = std::make_unique<Cam2D::LinearZoom>(ZOOM_SPEED);
   
   physics.init(registry, renderingContext.getContext());
   
@@ -75,7 +77,7 @@ void App::init() {
   compInits.setDefaults();
   
   levelManager.init(registry, compInits);
-  levelManager.loadLevel(0);
+  levelManager.loadLevel(1);
 }
 
 void App::quit() {
