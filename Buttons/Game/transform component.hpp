@@ -12,15 +12,7 @@
 #include <glm/vec2.hpp>
 #include <glm/mat3x3.hpp>
 
-namespace YAML {
-  class Node;
-}
-class EntityIDmap;
-
 struct Transform {
-  Transform() = default;
-  Transform(const YAML::Node &, const EntityIDmap &);
-
   glm::vec2 pos = {0.0f, 0.0f};
   glm::vec2 scale = {1.0f, 1.0f};
   float rotation = 0.0f;

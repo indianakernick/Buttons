@@ -25,7 +25,7 @@ public:
     const YAML::Node &node,
     const EntityIDmap &idMap,
     const EntityID entity
-  ) {
+  ) const {
     assert(getInit<Comp>());
     getInit<Comp>()->initialize(comp, node, idMap, entity);
   }
@@ -63,6 +63,11 @@ private:
   
   template <typename Comp>
   auto &getInit() {
+    return std::get<Utils::indexOf<CompList, Comp>>(inits);
+  }
+  
+  template <typename Comp>
+  auto &getInit() const {
     return std::get<Utils::indexOf<CompList, Comp>>(inits);
   }
 };

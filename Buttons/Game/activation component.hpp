@@ -11,14 +11,7 @@
 
 #include <limits>
 
-namespace YAML {
-  class Node;
-}
-class EntityIDmap;
-
 struct Activation {
-  Activation(const YAML::Node &, const EntityIDmap &);
-
   // 0.0f is inactive
   // 1.0f is active
   float activity = 0.0f;

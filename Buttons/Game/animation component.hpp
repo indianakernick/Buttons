@@ -9,14 +9,7 @@
 #ifndef animation_component_hpp
 #define animation_component_hpp
 
-namespace YAML {
-  class Node;
-}
-class EntityIDmap;
-
 struct Animation {
-  Animation(const YAML::Node &, const EntityIDmap &);
-  
   float progress = 0.0f;
   float speed = 1.0f;
   

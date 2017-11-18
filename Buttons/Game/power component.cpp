@@ -8,9 +8,3 @@
 
 #include "power component.hpp"
 
-#include "yaml helper.hpp"
-#include "entity id map.hpp"
-
-PowerInput::PowerInput(const YAML::Node &node, const EntityIDmap &idMap) {
-  in = idMap.getEntityFromUserID(getChild(node, "in").as<UserID>());
-}

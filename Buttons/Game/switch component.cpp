@@ -8,8 +8,3 @@
 
 #include "switch component.hpp"
 
-#include "yaml helper.hpp"
-#include "entity id map.hpp"
-
-Switch::Switch(const YAML::Node &node, const EntityIDmap &idMap)
-  : player(idMap.getEntityFromUserID(getChild(node, "player").as<UserID>())) {}

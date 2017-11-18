@@ -11,14 +11,7 @@
 
 #include "entity constants.hpp"
 
-namespace YAML {
-  class Node;
-}
-class EntityIDmap;
-
 struct Switch {
-  Switch(const YAML::Node &, const EntityIDmap &);
-  
   EntityID player;
 };
 

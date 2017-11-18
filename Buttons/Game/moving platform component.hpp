@@ -11,14 +11,7 @@
 
 #include "../Libraries/Box2D/Common/b2Math.h"
 
-namespace YAML {
-  class Node;
-}
-class EntityIDmap;
-
 struct MovingPlatform {
-  MovingPlatform(const YAML::Node &, const EntityIDmap &);
-  
   b2Vec2 start;
   b2Vec2 end;
   float waitingTime = 1.0f;

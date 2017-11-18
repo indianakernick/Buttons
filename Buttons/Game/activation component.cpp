@@ -8,8 +8,3 @@
 
 #include "activation component.hpp"
 
-#include "yaml helper.hpp"
-
-Activation::Activation(const YAML::Node &node, const EntityIDmap &) {
-  getOptional(speed, node, "speed");
-}

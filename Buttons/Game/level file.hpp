@@ -12,8 +12,8 @@
 #include <string>
 #include "entity registry.hpp"
 
-class PhysicsSystem;
+class CompInits;
 
-void loadLevel(const std::string &, Registry &, PhysicsSystem &);
+void loadLevel(const std::string &, Registry &, const CompInits &);
 
 #endif

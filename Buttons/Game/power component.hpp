@@ -11,14 +11,7 @@
 
 #include "entity constants.hpp"
 
-namespace YAML {
-  class Node;
-}
-class EntityIDmap;
-
 struct PowerInput {
-  PowerInput(const YAML::Node &, const EntityIDmap &);
-
   bool on = false;
   EntityID in;
 };

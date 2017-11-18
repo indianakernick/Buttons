@@ -74,7 +74,7 @@ void App::init() {
   compInits.construct<MovingPlatformInit>();
   compInits.setDefaults();
   
-  loadLevel("test level.yaml", registry, physics);
+  loadLevel("test level.yaml", registry, compInits);
 }
 
 void App::quit() {
