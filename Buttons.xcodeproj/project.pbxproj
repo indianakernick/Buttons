@@ -138,6 +138,7 @@
 		4591F06A1FBFE51E0075000D /* transform init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0681FBFE51E0075000D /* transform init.cpp */; };
 		4591F06D1FBFE6710075000D /* switch init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F06B1FBFE6710075000D /* switch init.cpp */; };
 		4591F0701FBFE7500075000D /* animation init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F06E1FBFE7500075000D /* animation init.cpp */; };
+		4591F0731FBFE8640075000D /* moving platform init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0711FBFE8640075000D /* moving platform init.cpp */; };
 		4597961A1FB41BF1007A7432 /* physics component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459796191FB41BF1007A7432 /* physics component.cpp */; };
 		4597961C1FB41BFE007A7432 /* collision component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597961B1FB41BFE007A7432 /* collision component.cpp */; };
 		4597961E1FB41C0C007A7432 /* power component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597961D1FB41C0C007A7432 /* power component.cpp */; };
@@ -416,6 +417,8 @@
 		4591F06C1FBFE6710075000D /* switch init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "switch init.hpp"; sourceTree = "<group>"; };
 		4591F06E1FBFE7500075000D /* animation init.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "animation init.cpp"; sourceTree = "<group>"; };
 		4591F06F1FBFE7500075000D /* animation init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "animation init.hpp"; sourceTree = "<group>"; };
+		4591F0711FBFE8640075000D /* moving platform init.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "moving platform init.cpp"; sourceTree = "<group>"; };
+		4591F0721FBFE8640075000D /* moving platform init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "moving platform init.hpp"; sourceTree = "<group>"; };
 		459796131FB2FD2C007A7432 /* camera constants.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "camera constants.hpp"; sourceTree = "<group>"; };
 		459796141FB2FD47007A7432 /* window constants.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "window constants.hpp"; sourceTree = "<group>"; };
 		459796151FB2FD6F007A7432 /* global flags.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "global flags.hpp"; sourceTree = "<group>"; };
@@ -490,6 +493,8 @@
 				4591F06C1FBFE6710075000D /* switch init.hpp */,
 				4591F06E1FBFE7500075000D /* animation init.cpp */,
 				4591F06F1FBFE7500075000D /* animation init.hpp */,
+				4591F0711FBFE8640075000D /* moving platform init.cpp */,
+				4591F0721FBFE8640075000D /* moving platform init.hpp */,
 			);
 			name = "Component initializers";
 			sourceTree = "<group>";
@@ -1072,6 +1077,7 @@
 			files = (
 				450ED5F51FB7C945008F2902 /* debug draw.cpp in Sources */,
 				450ED5C31FB69D31008F2902 /* player input component.cpp in Sources */,
+				4591F0731FBFE8640075000D /* moving platform init.cpp in Sources */,
 				450ED62D1FB8620D008F2902 /* animation system.cpp in Sources */,
 				459796221FB41C24007A7432 /* transform component.cpp in Sources */,
 				4583EE971FB1A2AE00AED27D /* physics file.cpp in Sources */,
