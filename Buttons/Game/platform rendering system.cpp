@@ -21,7 +21,7 @@ void platformRenderingSystem(Registry &registry, NVGcontext *const ctx) {
     
     nvgBeginPath(ctx);
     nvgFillColor(ctx, nvgRGBf(0.2f, 0.2f, 0.2f));
-    nvgRect(ctx, -0.5f, -0.5f, 1.0f, 1.0f);
+    nvgRect(ctx, 0.0f, 0.0f, 1.0f, 1.0f);
     nvgFill(ctx);
     
     nvgRestore(ctx);

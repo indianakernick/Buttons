@@ -8,7 +8,7 @@
 - file: platform entity.yaml
   components:
     PhysicsBody:
-      pos: [0, -8.5]
+      pos: [-16, -9]
       scale: [32, 1]
       body: platform body.yaml
 
@@ -65,12 +65,12 @@
 - file: moving platform entity.yaml
   components:
     PhysicsBody:
-      pos: [-14, -8.5]
+      pos: [-16, -9]
       scale: [4, 1]
       body: platform body.yaml
     MovingPlatform:
-      start: [-14, -8.5]
-      end: [-14, 0]
+      start: [-16, -9]
+      end: [-16, 0]
       speed: 0.1
     PowerInput:
       in: 3

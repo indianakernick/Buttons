@@ -4,8 +4,11 @@ body:
 shapes:
   main:
     type: polygon
-    half width: 0.5
-    half height: 0.5
+    verts:
+    - [0, 0]
+    - [1, 0]
+    - [1, 1]
+    - [0, 1]
 
 fixtures:
 - shape: main
