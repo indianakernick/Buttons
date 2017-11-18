@@ -9,6 +9,7 @@
 #ifndef component_list_hpp
 #define component_list_hpp
 
+#include "exit component.hpp"
 #include "door component.hpp"
 #include "power component.hpp"
 #include "switch component.hpp"
@@ -52,6 +53,7 @@
   COMP(SwitchRendering, switchRendering)                                        \
   COMP(Animation, animation)                                                    \
   COMP(ExitRendering, exitRendering)                                            \
+  COMP(Exit, exit)                                                              \
   COMP(MovingPlatformRendering, movingPlatformRendering)                        \
   LAST_COMP(MovingPlatform, movingPlatform)
 

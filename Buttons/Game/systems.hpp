@@ -9,6 +9,7 @@
 #ifndef systems_hpp
 #define systems_hpp
 
+#include "exit system.hpp"
 #include "door system.hpp"
 #include "power system.hpp"
 #include "switch system.hpp"
