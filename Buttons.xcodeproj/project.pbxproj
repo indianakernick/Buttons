@@ -135,6 +135,7 @@
 		4583EEAA1FB1B6E100AED27D /* physics transform system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EEA81FB1B6E100AED27D /* physics transform system.cpp */; };
 		4591F0641FBFE1420075000D /* power init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0621FBFE1420075000D /* power init.cpp */; };
 		4591F0671FBFE44B0075000D /* activation init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0651FBFE44B0075000D /* activation init.cpp */; };
+		4591F06A1FBFE51E0075000D /* transform init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0681FBFE51E0075000D /* transform init.cpp */; };
 		4597961A1FB41BF1007A7432 /* physics component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459796191FB41BF1007A7432 /* physics component.cpp */; };
 		4597961C1FB41BFE007A7432 /* collision component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597961B1FB41BFE007A7432 /* collision component.cpp */; };
 		4597961E1FB41C0C007A7432 /* power component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597961D1FB41C0C007A7432 /* power component.cpp */; };
@@ -407,6 +408,8 @@
 		4591F0631FBFE1420075000D /* power init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "power init.hpp"; sourceTree = "<group>"; };
 		4591F0651FBFE44B0075000D /* activation init.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "activation init.cpp"; sourceTree = "<group>"; };
 		4591F0661FBFE44B0075000D /* activation init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "activation init.hpp"; sourceTree = "<group>"; };
+		4591F0681FBFE51E0075000D /* transform init.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "transform init.cpp"; sourceTree = "<group>"; };
+		4591F0691FBFE51E0075000D /* transform init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "transform init.hpp"; sourceTree = "<group>"; };
 		459796131FB2FD2C007A7432 /* camera constants.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "camera constants.hpp"; sourceTree = "<group>"; };
 		459796141FB2FD47007A7432 /* window constants.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "window constants.hpp"; sourceTree = "<group>"; };
 		459796151FB2FD6F007A7432 /* global flags.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "global flags.hpp"; sourceTree = "<group>"; };
@@ -475,6 +478,8 @@
 				4591F0631FBFE1420075000D /* power init.hpp */,
 				4591F0651FBFE44B0075000D /* activation init.cpp */,
 				4591F0661FBFE44B0075000D /* activation init.hpp */,
+				4591F0681FBFE51E0075000D /* transform init.cpp */,
+				4591F0691FBFE51E0075000D /* transform init.hpp */,
 			);
 			name = "Component initializers";
 			sourceTree = "<group>";
@@ -1075,6 +1080,7 @@
 				450ED5F81FB7D6E6008F2902 /* button rendering component.cpp in Sources */,
 				456DF0BD1FBD32E7003B3FD1 /* moving platform rendering component.cpp in Sources */,
 				4583EE781FB190F300AED27D /* yaml helper.cpp in Sources */,
+				4591F06A1FBFE51E0075000D /* transform init.cpp in Sources */,
 				4597962B1FB59C1A007A7432 /* entity file.cpp in Sources */,
 				450ED6081FB7F4F6008F2902 /* door rendering component.cpp in Sources */,
 				4583EEA61FB1B1E800AED27D /* button system.cpp in Sources */,
