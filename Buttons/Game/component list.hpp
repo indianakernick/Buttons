@@ -24,6 +24,7 @@
 #include "box rendering component.hpp"
 #include "door rendering component.hpp"
 #include "exit rendering component.hpp"
+#include "laser detector component.hpp"
 #include "moving platform component.hpp"
 #include <Simpleton/Utils/type list.hpp>
 #include "switch rendering component.hpp"
@@ -55,6 +56,7 @@
   COMP(Animation, animation)                                                    \
   COMP(ExitRendering, exitRendering)                                            \
   COMP(Exit, exit)                                                              \
+  COMP(LaserDetector, laserDetector)                                            \
   COMP(MovingPlatformRendering, movingPlatformRendering)                        \
   LAST_COMP(MovingPlatform, movingPlatform)
 

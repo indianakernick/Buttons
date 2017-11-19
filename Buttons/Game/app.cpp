@@ -68,12 +68,14 @@ void App::init() {
   
   compInits.construct<PhysicsBodyInit>(physics.getWorld());
   compInits.construct<PhysicsJointInit>(physics.getWorld(), &registry);
+  compInits.construct<PhysicsRayCastInit>();
   compInits.construct<PowerInputInit>();
   compInits.construct<ActivationInit>();
   compInits.construct<TransformInit>();
   compInits.construct<SwitchInit>();
   compInits.construct<AnimationInit>();
   compInits.construct<MovingPlatformInit>();
+  compInits.construct<LaserDetectorInit>();
   compInits.setDefaults();
   
   levelManager.init(registry, compInits);

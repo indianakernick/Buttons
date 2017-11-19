@@ -15,6 +15,7 @@
 #include "transform init.hpp"
 #include "animation init.hpp"
 #include "activation init.hpp"
+#include "laser detector init.hpp"
 #include "moving platform init.hpp"
 
 #endif

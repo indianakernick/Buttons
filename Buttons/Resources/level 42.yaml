@@ -84,3 +84,22 @@
       body: switch body.yaml
     Switch:
       player: 0
+
+- id: 4
+  file: laser emitter entity.yaml
+  components:
+    PhysicsRayCast:
+      start: [-16, 4]
+      end: [16, 4]
+    Transform:
+      pos: [-16, 4]
+    PowerInput:
+      on: YES
+
+- file: laser detector entity.yaml
+  components:
+    Transform:
+      pos: [16, 4]
+      rotation: 180
+    LaserDetector:
+      emitter: 4
