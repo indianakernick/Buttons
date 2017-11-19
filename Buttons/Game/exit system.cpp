@@ -13,7 +13,7 @@
 
 bool exitSystem(Registry &registry) {
   const auto view = registry.view<Exit, Collision>();
-  for (EntityID entity : view) {
+  for (const EntityID entity : view) {
     const CollisionPairs &pairs = view.get<Collision>(entity).collisionPairs;
     if (pairs.hasPair<ObjectType::Sensor, ObjectType::PlayerBody>()) {
       return true;

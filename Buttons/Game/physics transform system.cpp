@@ -14,7 +14,7 @@
 
 void physicsTransformSystem(Registry &registry) {
   auto view = registry.view<PhysicsBody, Transform>();
-  for (EntityID entity : view) {
+  for (const EntityID entity : view) {
     const PhysicsBody &physics = view.get<PhysicsBody>(entity);
     b2Body *const body = physics.body;
     Transform &transform = view.get<Transform>(entity);

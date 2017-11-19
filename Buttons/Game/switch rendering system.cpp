@@ -16,7 +16,7 @@
 
 void switchRenderingSystem(Registry &registry, NVGcontext *const ctx) {
   const auto view = registry.view<Transform, Activation, SwitchRendering>();
-  for (EntityID entity : view) {
+  for (const EntityID entity : view) {
     nvgSave(ctx);
     
     nvgTransform(ctx, getMat3(view.get<Transform>(entity)));

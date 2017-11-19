@@ -71,7 +71,7 @@ namespace {
 void PhysicsSystem::update(const float delta) {
   world->Step(delta, VELOCITY_ITER, POSITION_ITER);
   auto view = registry->view<PhysicsRayCast>();
-  for (EntityID entity : view) {
+  for (const EntityID entity : view) {
     PhysicsRayCast &comp = view.get(entity);
     FindClosest callback;
     world->RayCast(&callback, comp.start, comp.end);

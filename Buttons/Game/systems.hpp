@@ -30,6 +30,7 @@
 #include "platform rendering system.hpp"
 #include "activate power output system.hpp"
 #include "power input activation system.hpp"
+#include "laser emitter rendering system.hpp"
 #include "moving platform rendering system.hpp"
 
 #endif

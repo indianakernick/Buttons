@@ -23,7 +23,7 @@ void boxRenderingSystem(Registry &registry, NVGcontext *const ctx) {
   nvgFillColor(ctx, nvgRGB(193, 154, 107));
 
   auto view = registry.view<BoxRendering, Transform>();
-  for (EntityID entity : view) {
+  for (const EntityID entity : view) {
     nvgSave(ctx);
     
     nvgTransform(ctx, getMat3(view.get<Transform>(entity)));

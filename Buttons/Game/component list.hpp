@@ -31,6 +31,7 @@
 #include "button rendering component.hpp"
 #include "player rendering component.hpp"
 #include "platform rendering component.hpp"
+#include "laser emitter rendering component.hpp"
 #include "moving platform rendering component.hpp"
 
 #define COMPS                                                                   \
@@ -57,6 +58,7 @@
   COMP(ExitRendering, exitRendering)                                            \
   COMP(Exit, exit)                                                              \
   COMP(LaserDetector, laserDetector)                                            \
+  COMP(LaserEmitterRendering, laserEmitterRendering)                            \
   COMP(MovingPlatformRendering, movingPlatformRendering)                        \
   LAST_COMP(MovingPlatform, movingPlatform)
 

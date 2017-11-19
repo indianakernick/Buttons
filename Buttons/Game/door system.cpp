@@ -16,7 +16,7 @@
 
 void doorSystem(Registry &registry) {
   auto view = registry.view<Door, PhysicsBody, Activation>();
-  for (EntityID entity : view) {
+  for (const EntityID entity : view) {
     const bool active = view.get<Activation>(entity).state == Activation::State::ACTIVE;
     b2Body *const body = view.get<PhysicsBody>(entity).body;
     b2Fixture *const fixture = body->GetFixtureList();

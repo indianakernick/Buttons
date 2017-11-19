@@ -14,7 +14,7 @@
 
 void movingPlatformRenderingSystem(Registry &registry, NVGcontext *const ctx) {
   auto view = registry.view<MovingPlatformRendering, Transform>();
-  for (EntityID entity : view) {
+  for (const EntityID entity : view) {
     nvgSave(ctx);
     
     nvgTransform(ctx, getMat3(view.get<Transform>(entity)));

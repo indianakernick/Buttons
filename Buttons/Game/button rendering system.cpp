@@ -20,7 +20,7 @@ namespace {
 
 void buttonRenderingSystem(Registry &registry, NVGcontext *const ctx) {
   const auto view = registry.view<Activation, Transform, ButtonRendering>();
-  for (EntityID entity : view) {
+  for (const EntityID entity : view) {
     nvgSave(ctx);
     
     nvgTransform(ctx, getMat3(view.get<Transform>(entity)));

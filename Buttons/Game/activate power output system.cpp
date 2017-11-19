@@ -13,7 +13,7 @@
 
 void activatePowerOutputSystem(Registry &registry) {
   auto view = registry.view<PowerOutput, Activation>();
-  for (EntityID entity : view) {
+  for (const EntityID entity : view) {
     using State = Activation::State;
     const State state = view.get<Activation>(entity).state;
     view.get<PowerOutput>(entity).on = (

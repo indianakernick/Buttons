@@ -53,7 +53,7 @@ namespace {
 
 void exitRenderingSystem(Registry &registry, NVGcontext *const ctx) {
   const auto view = registry.view<Transform, Animation, ExitRendering>();
-  for (EntityID entity : view) {
+  for (const EntityID entity : view) {
     nvgSave(ctx);
     
     nvgTransform(ctx, getMat3(view.get<Transform>(entity)));

@@ -16,7 +16,7 @@
 
 void switchSystem(Registry &registry) {
   auto view = registry.view<Switch, Collision, Activation>();
-  for (EntityID entity : view) {
+  for (const EntityID entity : view) {
     const EntityID player = view.get<Switch>(entity).player;
     const bool action = registry.get<const PlayerInput>(player).action;
     const CollisionPairs &pairs = view.get<Collision>(entity).collisionPairs;

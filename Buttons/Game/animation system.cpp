@@ -13,7 +13,7 @@
 
 void animationSystem(Registry &registry, const float delta) {
   auto view = registry.view<Animation>();
-  for (EntityID entity : view) {
+  for (const EntityID entity : view) {
     Animation &comp = view.get(entity);
     Time::ProgSpeedAnim<float> anim(comp.progress, comp.speed);
     anim.advance(delta);

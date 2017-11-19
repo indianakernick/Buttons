@@ -149,6 +149,7 @@ bool App::render(const float delta) {
     NVGcontext *const ctx = renderingContext.getContext();
     movingPlatformRenderingSystem(registry, ctx);
     platformRenderingSystem(registry, ctx);
+    laserEmitterRenderingSystem(registry, ctx);
     buttonRenderingSystem(registry, ctx);
     boxRenderingSystem(registry, ctx);
     exitRenderingSystem(registry, ctx);

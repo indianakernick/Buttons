@@ -99,7 +99,7 @@ namespace {
 
 void movingPlatformSystem(Registry &registry, const float delta) {
   auto view = registry.view<PhysicsBody, Activation, MovingPlatform>();
-  for (EntityID entity : view) {
+  for (const EntityID entity : view) {
     MovingPlatform &platform = view.get<MovingPlatform>(entity);
     b2Body *const body = view.get<PhysicsBody>(entity).body;
     if (view.get<Activation>(entity).state == Activation::State::ACTIVE) {
