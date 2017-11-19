@@ -119,6 +119,11 @@ bool App::update(const float delta) {
   physics.update(delta);
   physicsTransformSystem(registry);
   
+  //Set inputs
+  powerSystem(registry);
+  //Respond to inputs
+  powerInputActivationSystem(registry);
+  
   activationSystem(registry, delta);
   doorSystem(registry);
   movingPlatformSystem(registry, delta);
@@ -127,10 +132,6 @@ bool App::update(const float delta) {
   activatePowerOutputSystem(registry);
   buttonSystem(registry);
   switchSystem(registry);
-  //Set inputs
-  powerSystem(registry);
-  //Respond to inputs
-  powerInputActivationSystem(registry);//@TODO put this before activationSystem. This is causing a bug
   
   return true;
 }

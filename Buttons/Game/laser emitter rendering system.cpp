@@ -36,7 +36,7 @@ void laserEmitterRenderingSystem(Registry &registry, NVGcontext *const ctx) {
     
     nvgRestore(ctx);
     
-    if (view.get<Activation>(entity).activity == 1.0f) {
+    if (view.get<Activation>(entity).state == Activation::State::ACTIVE) {
       const PhysicsRayCast &rayCast = view.get<PhysicsRayCast>(entity);
       const glm::vec2 start = castToGLM(rayCast.start);
       const glm::vec2 end = castToGLM(rayCast.start + rayCast.closestFraction * (rayCast.end - rayCast.start));

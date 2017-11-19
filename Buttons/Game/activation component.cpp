@@ -12,11 +12,11 @@ namespace {
   using State = Activation::State;
 }
 
-bool active(const State state) {
+bool isActive(const State state) {
   return state == State::ACTIVE || state == State::ACTIVATING;
 }
 
-bool inactive(const State state) {
+bool isInactive(const State state) {
   return state == State::INACTIVE || state == State::DEACTIVATING;
 }
 
