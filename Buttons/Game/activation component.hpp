@@ -28,4 +28,9 @@ struct Activation {
   State state = State::INACTIVE;
 };
 
+bool active(Activation::State);
+bool inactive(Activation::State);
+void activate(Activation::State &);
+void deactivate(Activation::State &);
+
 #endif

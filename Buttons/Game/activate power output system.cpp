@@ -14,10 +14,6 @@
 void activatePowerOutputSystem(Registry &registry) {
   auto view = registry.view<PowerOutput, Activation>();
   for (const EntityID entity : view) {
-    using State = Activation::State;
-    const State state = view.get<Activation>(entity).state;
-    view.get<PowerOutput>(entity).on = (
-      state == State::ACTIVE || state == State::ACTIVATING
-    );
+    view.get<PowerOutput>(entity).on = active(view.get<Activation>(entity).state);
   }
 }

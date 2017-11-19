@@ -18,9 +18,9 @@ void buttonSystem(Registry &registry) {
   for (const EntityID entity : view) {
     const auto &collisions = view.get<Collision>(entity).collisionPairs;
     if (collisions.hasAny()) {
-      view.get<Activation>(entity).state = Activation::State::ACTIVATING;
+      activate(view.get<Activation>(entity).state);
     } else {
-      view.get<Activation>(entity).state = Activation::State::DEACTIVATING;
+      deactivate(view.get<Activation>(entity).state);
     }
   }
 }

@@ -130,7 +130,7 @@ bool App::update(const float delta) {
   //Set inputs
   powerSystem(registry);
   //Respond to inputs
-  powerInputActivationSystem(registry);
+  powerInputActivationSystem(registry);//@TODO put this before activationSystem. This is causing a bug
   
   return true;
 }
