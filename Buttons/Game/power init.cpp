@@ -12,5 +12,10 @@
 #include "entity id map.hpp"
 
 void PowerInputInit::init(PowerInput &comp, const YAML::Node &node, const EntityIDmap &idMap) {
-  comp.in = idMap.getEntityFromUserID(getChild(node, "in").as<UserID>());
+  if (const YAML::Node &inNode = getChild(node, "in")) {
+    comp.in = idMap.getEntityFromUserID(inNode.as<UserID>());
+  } else {
+    comp.in = NULL_ENTITY;
+  }
+  getOptional(comp.on, node, "on");
 }

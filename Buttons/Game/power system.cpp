@@ -15,6 +15,8 @@ void powerSystem(Registry &registry) {
   auto powerInput = registry.view<PowerInput>();
   for (EntityID entity : powerInput) {
     PowerInput &input = powerInput.get(entity);
-    input.on = powerOutput.get(input.in).on;
+    if (input.in != NULL_ENTITY) {
+      input.on = powerOutput.get(input.in).on;
+    }
   }
 }

@@ -12,8 +12,8 @@
 #include "entity constants.hpp"
 
 struct PowerInput {
-  bool on = false;
   EntityID in;
+  bool on = false;
 };
 
 struct PowerOutput {
