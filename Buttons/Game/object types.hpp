@@ -13,21 +13,25 @@
 #include <Simpleton/Utils/type list.hpp>
 #include <Simpleton/Utils/instance limiter.hpp>
 
-using ObjectTypeID = size_t;
+using ObjectTypeID = uint32_t;
 using CollisionPair = std::pair<ObjectTypeID, ObjectTypeID>;
 
 template <typename ObjectType>
-void *getUserData() {
-  return reinterpret_cast<void *>(Utils::typeHash<ObjectType>());
-}
-
-inline ObjectTypeID getObjectTypeID(const void *const userData) {
-  return reinterpret_cast<ObjectTypeID>(userData);
+ObjectTypeID getObjectTypeID() {
+  return static_cast<ObjectTypeID>(Utils::typeHash<ObjectType>());
 }
 
 template <typename ObjectType>
-ObjectTypeID getObjectTypeID() {
-  return Utils::typeHash<ObjectType>();
+void *getUserData() {
+  return reinterpret_cast<void *>(
+    static_cast<uintptr_t>(getObjectTypeID<ObjectType>())
+  );
+}
+
+inline ObjectTypeID getObjectTypeID(const void *const userData) {
+  return static_cast<ObjectTypeID>(
+    reinterpret_cast<uintptr_t>(userData)
+  );
 }
 
 #define OBJECT_TYPES                                                            \
