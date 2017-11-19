@@ -67,3 +67,8 @@ void PhysicsJointInit::init(
   
   comp.joint = world->CreateJoint(def);
 }
+
+void PhysicsRayCastInit::init(PhysicsRayCast &comp, const YAML::Node &node) {
+  comp.start = getChild(node, "start").as<b2Vec2>();
+  comp.end = getChild(node, "end").as<b2Vec2>();
+}

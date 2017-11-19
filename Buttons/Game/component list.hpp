@@ -37,6 +37,7 @@
   COMP(PowerOutput, powerOutput)                                                \
   COMP(PhysicsBody, physicsBody)                                                \
   COMP(PhysicsJoint, physicsJoint)                                              \
+  COMP(PhysicsRayCast, physicsRayCast)                                          \
   COMP(Transform, transform)                                                    \
   COMP(Collision, collision)                                                    \
   COMP(Activation, activation)                                                  \

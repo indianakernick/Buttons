@@ -28,4 +28,12 @@ struct PhysicsJoint {
   b2Joint *joint = nullptr;
 };
 
+struct PhysicsRayCast {
+  //The ray cast is only used for the laser sensor so there is no need to
+  //clutter this struct with data for other types of raycasts.
+  b2Vec2 start;
+  b2Vec2 end;
+  float32 closestFraction = 1.0f;
+};
+
 #endif

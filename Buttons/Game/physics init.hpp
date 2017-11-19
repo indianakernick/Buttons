@@ -34,4 +34,9 @@ private:
   Registry *registry;
 };
 
+class PhysicsRayCastInit final : public CompInit<PhysicsRayCast> {
+public:
+  void init(PhysicsRayCast &, const YAML::Node &) override;
+};
+
 #endif
