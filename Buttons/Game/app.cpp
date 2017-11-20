@@ -119,6 +119,7 @@ bool App::update(const float delta) {
   physics.update(delta);
   physicsTransformSystem(registry);
   
+  laserDetectorSystem(registry);
   activationSystem(registry, delta);
   doorSystem(registry);
   movingPlatformSystem(registry, delta);

@@ -21,6 +21,7 @@
 #include "box rendering system.hpp"
 #include "door rendering system.hpp"
 #include "exit rendering system.hpp"
+#include "laser detector system.hpp"
 #include "moving platform system.hpp"
 #include "player movement system.hpp"
 #include "player rendering system.hpp"

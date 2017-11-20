@@ -152,6 +152,7 @@
 		4591F0961FC155BA0075000D /* laser emitter rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0941FC155BA0075000D /* laser emitter rendering system.cpp */; };
 		4591F0991FC2B0650075000D /* laser detector rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0971FC2B0650075000D /* laser detector rendering component.cpp */; };
 		4591F09C1FC2B0E00075000D /* laser detector rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F09A1FC2B0E00075000D /* laser detector rendering system.cpp */; };
+		4591F09F1FC2B40E0075000D /* laser detector system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F09D1FC2B40E0075000D /* laser detector system.cpp */; };
 		4597961A1FB41BF1007A7432 /* physics component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459796191FB41BF1007A7432 /* physics component.cpp */; };
 		4597961C1FB41BFE007A7432 /* collision component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597961B1FB41BFE007A7432 /* collision component.cpp */; };
 		4597961E1FB41C0C007A7432 /* power component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597961D1FB41C0C007A7432 /* power component.cpp */; };
@@ -453,6 +454,8 @@
 		4591F0981FC2B0650075000D /* laser detector rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "laser detector rendering component.hpp"; sourceTree = "<group>"; };
 		4591F09A1FC2B0E00075000D /* laser detector rendering system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "laser detector rendering system.cpp"; sourceTree = "<group>"; };
 		4591F09B1FC2B0E00075000D /* laser detector rendering system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "laser detector rendering system.hpp"; sourceTree = "<group>"; };
+		4591F09D1FC2B40E0075000D /* laser detector system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "laser detector system.cpp"; sourceTree = "<group>"; };
+		4591F09E1FC2B40E0075000D /* laser detector system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "laser detector system.hpp"; sourceTree = "<group>"; };
 		459796131FB2FD2C007A7432 /* camera constants.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "camera constants.hpp"; sourceTree = "<group>"; };
 		459796141FB2FD47007A7432 /* window constants.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "window constants.hpp"; sourceTree = "<group>"; };
 		459796151FB2FD6F007A7432 /* global flags.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "global flags.hpp"; sourceTree = "<group>"; };
@@ -886,6 +889,8 @@
 				456DF0C51FBD633C003B3FD1 /* moving platform system.hpp */,
 				4591F07E1FC011E50075000D /* exit system.cpp */,
 				4591F07F1FC011E50075000D /* exit system.hpp */,
+				4591F09D1FC2B40E0075000D /* laser detector system.cpp */,
+				4591F09E1FC2B40E0075000D /* laser detector system.hpp */,
 			);
 			name = Systems;
 			sourceTree = "<group>";
@@ -1228,6 +1233,7 @@
 				4583EE251FB18F7A00AED27D /* b2Settings.cpp in Sources */,
 				4583EE261FB18F7A00AED27D /* b2Timer.cpp in Sources */,
 				4583EE271FB18F7A00AED27D /* b2StackAllocator.cpp in Sources */,
+				4591F09F1FC2B40E0075000D /* laser detector system.cpp in Sources */,
 				450ED62A1FB84633008F2902 /* animation component.cpp in Sources */,
 				4583EE281FB18F7A00AED27D /* b2Math.cpp in Sources */,
 				4583EE8F1FB19C0300AED27D /* contact listener.cpp in Sources */,
