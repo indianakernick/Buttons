@@ -150,6 +150,7 @@ bool App::render(const float delta) {
     movingPlatformRenderingSystem(registry, ctx);
     platformRenderingSystem(registry, ctx);
     laserEmitterRenderingSystem(registry, ctx);
+    laserDetectorRenderingSystem(registry, ctx);
     buttonRenderingSystem(registry, ctx);
     boxRenderingSystem(registry, ctx);
     exitRenderingSystem(registry, ctx);

@@ -101,6 +101,6 @@
   components:
     Transform:
       pos: [16, 4]
-      rotation: 180
+      rotation: 90
     LaserDetector:
       emitter: 4
