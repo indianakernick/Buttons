@@ -39,10 +39,12 @@ void loadEntity(
   Registry &registry,
   const CompInits &compInits
 ) {
-  const YAML::Node comps = YAML::LoadFile(Platform::getResDir() + entityFileName);
-  checkType(comps, YAML::NodeType::Map);
+  if (!entityFileName.empty()) {
+    const YAML::Node comps = YAML::LoadFile(Platform::getResDir() + entityFileName);
+    checkType(comps, YAML::NodeType::Map);
+    loadComps(id, comps, idMap, registry, compInits);
+  }
   checkType(levelComps, YAML::NodeType::Map);
-  loadComps(id, comps, idMap, registry, compInits);
   loadComps(id, levelComps, idMap, registry, compInits);
 }
 
@@ -58,7 +60,7 @@ bool loadLevel(const std::string &fileName, Registry &registry, const CompInits 
   
   for (size_t i = 0; i != root.size(); ++i) {
     const YAML::Node &node = root[i];
-    const std::string &entityFile = getChild(node, "file").Scalar();
+    const std::string &entityFile = node["file"] ? node["file"].Scalar() : "";
     const YAML::Node &comps = node["components"];
     loadEntity(idMap.getEntityFromIndex(i), entityFile, comps, idMap, registry, compInits);
   }
