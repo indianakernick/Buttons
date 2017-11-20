@@ -21,9 +21,13 @@ bool isInactive(const State state) {
 }
 
 void activate(State &state) {
-  state = State::ACTIVATING;
+  if (state != State::ACTIVE) {
+    state = State::ACTIVATING;
+  }
 }
 
 void deactivate(State &state) {
-  state = State::DEACTIVATING;
+  if (state != State::INACTIVE) {
+    state = State::DEACTIVATING;
+  }
 }
