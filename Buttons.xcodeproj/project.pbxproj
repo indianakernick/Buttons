@@ -153,6 +153,9 @@
 		4591F0991FC2B0650075000D /* laser detector rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0971FC2B0650075000D /* laser detector rendering component.cpp */; };
 		4591F09C1FC2B0E00075000D /* laser detector rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F09A1FC2B0E00075000D /* laser detector rendering system.cpp */; };
 		4591F09F1FC2B40E0075000D /* laser detector system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F09D1FC2B40E0075000D /* laser detector system.cpp */; };
+		4591F0A21FC2B72E0075000D /* text rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0A01FC2B72E0075000D /* text rendering system.cpp */; };
+		4591F0A51FC2B73E0075000D /* text rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0A31FC2B73E0075000D /* text rendering component.cpp */; };
+		4591F0A81FC2BAD10075000D /* text rendering init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0A61FC2BAD10075000D /* text rendering init.cpp */; };
 		4597961A1FB41BF1007A7432 /* physics component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459796191FB41BF1007A7432 /* physics component.cpp */; };
 		4597961C1FB41BFE007A7432 /* collision component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597961B1FB41BFE007A7432 /* collision component.cpp */; };
 		4597961E1FB41C0C007A7432 /* power component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597961D1FB41C0C007A7432 /* power component.cpp */; };
@@ -456,6 +459,12 @@
 		4591F09B1FC2B0E00075000D /* laser detector rendering system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "laser detector rendering system.hpp"; sourceTree = "<group>"; };
 		4591F09D1FC2B40E0075000D /* laser detector system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "laser detector system.cpp"; sourceTree = "<group>"; };
 		4591F09E1FC2B40E0075000D /* laser detector system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "laser detector system.hpp"; sourceTree = "<group>"; };
+		4591F0A01FC2B72E0075000D /* text rendering system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "text rendering system.cpp"; sourceTree = "<group>"; };
+		4591F0A11FC2B72E0075000D /* text rendering system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "text rendering system.hpp"; sourceTree = "<group>"; };
+		4591F0A31FC2B73E0075000D /* text rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "text rendering component.cpp"; sourceTree = "<group>"; };
+		4591F0A41FC2B73E0075000D /* text rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "text rendering component.hpp"; sourceTree = "<group>"; };
+		4591F0A61FC2BAD10075000D /* text rendering init.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "text rendering init.cpp"; sourceTree = "<group>"; };
+		4591F0A71FC2BAD10075000D /* text rendering init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "text rendering init.hpp"; sourceTree = "<group>"; };
 		459796131FB2FD2C007A7432 /* camera constants.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "camera constants.hpp"; sourceTree = "<group>"; };
 		459796141FB2FD47007A7432 /* window constants.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "window constants.hpp"; sourceTree = "<group>"; };
 		459796151FB2FD6F007A7432 /* global flags.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "global flags.hpp"; sourceTree = "<group>"; };
@@ -533,6 +542,8 @@
 				4591F0721FBFE8640075000D /* moving platform init.hpp */,
 				4591F08E1FC1534D0075000D /* laser detector init.cpp */,
 				4591F08F1FC1534D0075000D /* laser detector init.hpp */,
+				4591F0A61FC2BAD10075000D /* text rendering init.cpp */,
+				4591F0A71FC2BAD10075000D /* text rendering init.hpp */,
 			);
 			name = "Component initializers";
 			sourceTree = "<group>";
@@ -1014,6 +1025,8 @@
 				4591F0921FC1554A0075000D /* laser emitter rendering component.hpp */,
 				4591F0971FC2B0650075000D /* laser detector rendering component.cpp */,
 				4591F0981FC2B0650075000D /* laser detector rendering component.hpp */,
+				4591F0A31FC2B73E0075000D /* text rendering component.cpp */,
+				4591F0A41FC2B73E0075000D /* text rendering component.hpp */,
 			);
 			name = Rendering;
 			sourceTree = "<group>";
@@ -1041,6 +1054,8 @@
 				4591F0951FC155BA0075000D /* laser emitter rendering system.hpp */,
 				4591F09A1FC2B0E00075000D /* laser detector rendering system.cpp */,
 				4591F09B1FC2B0E00075000D /* laser detector rendering system.hpp */,
+				4591F0A01FC2B72E0075000D /* text rendering system.cpp */,
+				4591F0A11FC2B72E0075000D /* text rendering system.hpp */,
 			);
 			name = Rendering;
 			sourceTree = "<group>";
@@ -1182,6 +1197,7 @@
 				4583EE0A1FB18F7A00AED27D /* b2ChainAndPolygonContact.cpp in Sources */,
 				4583EE0B1FB18F7A00AED27D /* b2EdgeAndPolygonContact.cpp in Sources */,
 				4583EE0C1FB18F7A00AED27D /* b2ChainAndCircleContact.cpp in Sources */,
+				4591F0A81FC2BAD10075000D /* text rendering init.cpp in Sources */,
 				4583EE0D1FB18F7A00AED27D /* b2PolygonAndCircleContact.cpp in Sources */,
 				4583EE0E1FB18F7A00AED27D /* b2PolygonContact.cpp in Sources */,
 				450ED6351FBA89B0008F2902 /* exit rendering system.cpp in Sources */,
@@ -1228,6 +1244,7 @@
 				450ED5EC1FB7C052008F2902 /* button component.cpp in Sources */,
 				4583EE211FB18F7A00AED27D /* b2ContactManager.cpp in Sources */,
 				4583EE221FB18F7A00AED27D /* b2Rope.cpp in Sources */,
+				4591F0A21FC2B72E0075000D /* text rendering system.cpp in Sources */,
 				4583EE231FB18F7A00AED27D /* b2Draw.cpp in Sources */,
 				4583EE241FB18F7A00AED27D /* b2BlockAllocator.cpp in Sources */,
 				4583EE251FB18F7A00AED27D /* b2Settings.cpp in Sources */,
@@ -1261,6 +1278,7 @@
 				4583EEA01FB1AE3100AED27D /* power input activation system.cpp in Sources */,
 				450ED5DD1FB6B409008F2902 /* player rendering component.cpp in Sources */,
 				4583EE311FB18F7A00AED27D /* b2TimeOfImpact.cpp in Sources */,
+				4591F0A51FC2B73E0075000D /* text rendering component.cpp in Sources */,
 				4583EE321FB18F7A00AED27D /* b2BroadPhase.cpp in Sources */,
 				4583EE331FB18F7A00AED27D /* b2CollideEdge.cpp in Sources */,
 				4583EE341FB18F7A00AED27D /* b2Collision.cpp in Sources */,
