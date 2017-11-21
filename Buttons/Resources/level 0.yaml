@@ -38,13 +38,10 @@
       pos: [14.5, -1]
       body: switch body.yaml
 
-- components:
+- file: text entity.yaml
+  components:
     Transform:
       pos: [0, 2]
       scale: [0.05, 0.05]
-    TextRendering:
+    Text:
       text: Press A and D or left and right to move
-      font: Arial.ttf
-      hori align: center
-      vert align: middle
-      size: 16

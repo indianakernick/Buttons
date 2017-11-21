@@ -9,6 +9,7 @@
 #ifndef component_list_hpp
 #define component_list_hpp
 
+#include "text component.hpp"
 #include "exit component.hpp"
 #include "door component.hpp"
 #include "power component.hpp"
@@ -63,6 +64,7 @@
   COMP(LaserEmitterRendering, laserEmitterRendering)                            \
   COMP(LaserDetectorRendering, laserDetectorRendering)                          \
   COMP(TextRendering, textRendering)                                            \
+  COMP(Text, text)                                                              \
   COMP(MovingPlatformRendering, movingPlatformRendering)                        \
   LAST_COMP(MovingPlatform, movingPlatform)
 

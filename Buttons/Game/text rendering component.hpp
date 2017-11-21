@@ -13,7 +13,6 @@
 #include "rendering resources.hpp"
 
 struct TextRendering {
-  std::string text;
   FontHandle font;
   NVGcolor color;
   int align;

@@ -14,7 +14,6 @@ TextRenderingInit::TextRenderingInit(RenderingResources &newResources)
   : resources(&newResources) {}
 
 void TextRenderingInit::init(TextRendering &comp, const YAML::Node &node) {
-  comp.text = getChild(node, "text").Scalar();
   comp.font = resources->getFont(getChild(node, "font").Scalar());
   comp.color = nvgRGBf(1.0f, 1.0f, 1.0f);
   getOptional(comp.color, node, "color");

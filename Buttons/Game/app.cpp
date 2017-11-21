@@ -77,6 +77,7 @@ void App::init() {
   compInits.construct<MovingPlatformInit>();
   compInits.construct<LaserDetectorInit>();
   compInits.construct<TextRenderingInit>(renderingContext.getResources());
+  compInits.construct<TextInit>();
   compInits.setDefaults();
   
   levelManager.init(registry, compInits);

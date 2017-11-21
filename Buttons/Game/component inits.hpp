@@ -9,6 +9,7 @@
 #ifndef component_inits_hpp
 #define component_inits_hpp
 
+#include "text init.hpp"
 #include "power init.hpp"
 #include "switch init.hpp"
 #include "physics init.hpp"
