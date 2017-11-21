@@ -113,8 +113,8 @@ bool App::input(float) {
 }
 
 bool App::update(const float delta) {
-  if (exitSystem(registry)) {
-    levelManager.nextLevel();
+  if (exitSystem(registry) && levelManager.nextLevel()) {
+    camera.setScale(1.0f);
   }
 
   playerMovementSystem(registry, delta);
