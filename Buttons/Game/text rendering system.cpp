@@ -26,7 +26,7 @@ void textRenderingSystem(Registry &registry, NVGcontext *const ctx) {
     const TextRendering &format = view.get<TextRendering>(entity);
     const std::string &text = view.get<Text>(entity).text;
 
-    nvgFontFaceId(ctx, 0);
+    nvgFontFaceId(ctx, format.font->id);
     nvgFillColor(ctx, format.color);
     nvgTextAlign(ctx, format.align);
     nvgFontSize(ctx, format.size);

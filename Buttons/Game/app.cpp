@@ -130,6 +130,7 @@ bool App::update(const float delta) {
   activatePowerOutputSystem(registry);
   buttonSystem(registry);
   switchSystem(registry);
+  inverterSystem(registry);
   //Set inputs
   powerSystem(registry);
   //Respond to inputs
