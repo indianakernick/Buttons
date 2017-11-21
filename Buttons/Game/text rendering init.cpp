@@ -49,6 +49,6 @@ void TextRenderingInit::init(TextRendering &comp, const YAML::Node &node) {
   
   comp.size = 12.0f;
   getOptional(comp.size, node, "size");
-  comp.boxWidth = 1.0f;
+  comp.boxWidth = std::numeric_limits<float>::max();
   getOptional(comp.boxWidth, node, "box width");
 }

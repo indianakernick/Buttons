@@ -156,6 +156,7 @@
 		4591F0A21FC2B72E0075000D /* text rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0A01FC2B72E0075000D /* text rendering system.cpp */; };
 		4591F0A51FC2B73E0075000D /* text rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0A31FC2B73E0075000D /* text rendering component.cpp */; };
 		4591F0A81FC2BAD10075000D /* text rendering init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0A61FC2BAD10075000D /* text rendering init.cpp */; };
+		4591F0AB1FC3F0F80075000D /* Arial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4591F0A91FC3EED00075000D /* Arial.ttf */; };
 		4597961A1FB41BF1007A7432 /* physics component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459796191FB41BF1007A7432 /* physics component.cpp */; };
 		4597961C1FB41BFE007A7432 /* collision component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597961B1FB41BFE007A7432 /* collision component.cpp */; };
 		4597961E1FB41C0C007A7432 /* power component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597961D1FB41C0C007A7432 /* power component.cpp */; };
@@ -465,6 +466,7 @@
 		4591F0A41FC2B73E0075000D /* text rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "text rendering component.hpp"; sourceTree = "<group>"; };
 		4591F0A61FC2BAD10075000D /* text rendering init.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "text rendering init.cpp"; sourceTree = "<group>"; };
 		4591F0A71FC2BAD10075000D /* text rendering init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "text rendering init.hpp"; sourceTree = "<group>"; };
+		4591F0A91FC3EED00075000D /* Arial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Arial.ttf; sourceTree = "<group>"; };
 		459796131FB2FD2C007A7432 /* camera constants.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "camera constants.hpp"; sourceTree = "<group>"; };
 		459796141FB2FD47007A7432 /* window constants.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "window constants.hpp"; sourceTree = "<group>"; };
 		459796151FB2FD6F007A7432 /* global flags.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "global flags.hpp"; sourceTree = "<group>"; };
@@ -511,11 +513,11 @@
 		452E10921FB2F4550063114B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4591F0AA1FC3EEDB0075000D /* Fonts */,
 				459796341FB6801C007A7432 /* Joints */,
 				459796331FB68003007A7432 /* Bodies */,
 				459796321FB67FF7007A7432 /* Entities */,
 				459796311FB67FEC007A7432 /* Levels */,
-				452E10931FB2F4700063114B /* Consolas.ttf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -954,6 +956,15 @@
 			name = Entity;
 			sourceTree = "<group>";
 		};
+		4591F0AA1FC3EEDB0075000D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4591F0A91FC3EED00075000D /* Arial.ttf */,
+				452E10931FB2F4700063114B /* Consolas.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		459796311FB67FEC007A7432 /* Levels */ = {
 			isa = PBXGroup;
 			children = (
@@ -1120,6 +1131,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4591F0AB1FC3F0F80075000D /* Arial.ttf in Resources */,
 				452E10941FB2F4930063114B /* Consolas.ttf in Resources */,
 				450ED5CA1FB6A6C6008F2902 /* platform body.yaml in Resources */,
 				450ED5C81FB6A6B7008F2902 /* platform entity.yaml in Resources */,

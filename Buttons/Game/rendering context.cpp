@@ -153,7 +153,6 @@ glm::ivec2 RenderingContext::getFramebufferSize() const {
 
 void RenderingContext::renderFPS() {
   PROFILE(RenderingContext renderFPS);
-
   //@TODO use to_chars
   const std::string fpsStr = "FPS: " + std::to_string(fpsCounter.get());
   nvgResetTransform(context);

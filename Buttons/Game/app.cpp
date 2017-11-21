@@ -76,10 +76,11 @@ void App::init() {
   compInits.construct<AnimationInit>();
   compInits.construct<MovingPlatformInit>();
   compInits.construct<LaserDetectorInit>();
+  compInits.construct<TextRenderingInit>(renderingContext.getResources());
   compInits.setDefaults();
   
   levelManager.init(registry, compInits);
-  levelManager.loadLevel(42);
+  levelManager.loadLevel(0);
 }
 
 void App::quit() {
@@ -158,6 +159,7 @@ bool App::render(const float delta) {
     playerRenderingSystem(registry, ctx);
     switchRenderingSystem(registry, ctx);
     doorRenderingSystem(registry, ctx);
+    textRenderingSystem(registry, ctx);
   }
   
   renderingManager.render();

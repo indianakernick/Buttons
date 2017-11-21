@@ -22,6 +22,7 @@
 #include "player jump component.hpp"
 #include "player input component.hpp"
 #include "box rendering component.hpp"
+#include "text rendering component.hpp"
 #include "door rendering component.hpp"
 #include "exit rendering component.hpp"
 #include "laser detector component.hpp"
@@ -61,6 +62,7 @@
   COMP(LaserDetector, laserDetector)                                            \
   COMP(LaserEmitterRendering, laserEmitterRendering)                            \
   COMP(LaserDetectorRendering, laserDetectorRendering)                          \
+  COMP(TextRendering, textRendering)                                            \
   COMP(MovingPlatformRendering, movingPlatformRendering)                        \
   LAST_COMP(MovingPlatform, movingPlatform)
 
