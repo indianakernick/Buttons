@@ -53,25 +53,24 @@ EntityID CollisionPairs::getHalfPair(const ObjectTypeID type) const {
   }
 }
 
-CollisionPairs::Pairs::iterator CollisionPairs::find(const ObjectTypePair type) {
-  const auto pred = [type = sort(type)] (const CollisionPair pair) {
+auto CollisionPairs::searchPred(const ObjectTypePair type) {
+  return [type = sort(type)] (const CollisionPair pair) {
     return pair.type == type;
   };
-  return std::find_if(pairs.begin(), pairs.end(), pred);
 }
 
-CollisionPairs::Pairs::const_iterator CollisionPairs::find(const ObjectTypePair type) const {
-  const auto pred = [type = sort(type)] (const CollisionPair pair) {
-    return pair.type == type;
-  };
-  return std::find_if(pairs.cbegin(), pairs.cend(), pred);
-}
-
-CollisionPairs::Pairs::const_iterator CollisionPairs::find(const ObjectTypeID type) const {
-  const auto pred = [type] (const CollisionPair pair) {
+auto CollisionPairs::searchPred(const ObjectTypeID type) {
+  return [type] (const CollisionPair pair) {
     return pair.type.first == type || pair.type.second == type;
   };
-  return std::find_if(pairs.cbegin(), pairs.cend(), pred);
+}
+
+CollisionPairs::Iter CollisionPairs::find(const ObjectTypePair type) const {
+  return std::find_if(pairs.cbegin(), pairs.cend(), searchPred(type));
+}
+
+CollisionPairs::Iter CollisionPairs::find(const ObjectTypeID type) const {
+  return std::find_if(pairs.cbegin(), pairs.cend(), searchPred(type));
 }
 
 ObjectTypePair CollisionPairs::sort(const ObjectTypePair pair) {

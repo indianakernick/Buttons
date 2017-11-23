@@ -64,11 +64,14 @@ public:
   
 private:
   using Pairs = std::vector<CollisionPair>;
+  using Iter = Pairs::const_iterator;
   Pairs pairs;
   
-  Pairs::iterator find(ObjectTypePair);
-  Pairs::const_iterator find(ObjectTypePair) const;
-  Pairs::const_iterator find(ObjectTypeID) const;
+  static auto searchPred(ObjectTypePair);
+  static auto searchPred(ObjectTypeID);
+  
+  Iter find(ObjectTypePair) const;
+  Iter find(ObjectTypeID) const;
   
   static ObjectTypePair sort(ObjectTypePair);
   static CollisionPair sort(CollisionPair);
