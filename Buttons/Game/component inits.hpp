@@ -11,7 +11,6 @@
 
 #include "text init.hpp"
 #include "power init.hpp"
-#include "switch init.hpp"
 #include "physics init.hpp"
 #include "transform init.hpp"
 #include "animation init.hpp"

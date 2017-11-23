@@ -83,28 +83,20 @@ void PhysicsSystem::render() {
   world->DrawDebugData();
 }
 
-void PhysicsSystem::beginContact(
-  const EntityID entityA,
-  const EntityID entityB,
-  const CollisionPair pair
-) {
-  if (registry->has<Collision>(entityA)) {
-    registry->get<Collision>(entityA).collisionPairs.addPair(pair);
+void PhysicsSystem::beginContact(const CollisionPair pair) {
+  if (registry->has<Collision>(pair.entity.first)) {
+    registry->get<Collision>(pair.entity.first).collisionPairs.addPair(pair);
   }
-  if (registry->has<Collision>(entityB)) {
-    registry->get<Collision>(entityB).collisionPairs.addPair(pair);
+  if (registry->has<Collision>(pair.entity.second)) {
+    registry->get<Collision>(pair.entity.second).collisionPairs.addPair(pair);
   }
 }
 
-void PhysicsSystem::endContact(
-  const EntityID entityA,
-  const EntityID entityB,
-  const CollisionPair pair
-) {
-  if (registry->has<Collision>(entityA)) {
-    registry->get<Collision>(entityA).collisionPairs.remPair(pair);
+void PhysicsSystem::endContact(const CollisionPair pair) {
+  if (registry->has<Collision>(pair.entity.first)) {
+    registry->get<Collision>(pair.entity.first).collisionPairs.remPair(pair);
   }
-  if (registry->has<Collision>(entityB)) {
-    registry->get<Collision>(entityB).collisionPairs.remPair(pair);
+  if (registry->has<Collision>(pair.entity.second)) {
+    registry->get<Collision>(pair.entity.second).collisionPairs.remPair(pair);
   }
 }

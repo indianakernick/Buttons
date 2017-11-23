@@ -13,8 +13,7 @@
 #include <Simpleton/Utils/type list.hpp>
 #include <Simpleton/Utils/instance limiter.hpp>
 
-using ObjectTypeID = uint32_t;
-using CollisionPair = std::pair<ObjectTypeID, ObjectTypeID>;
+using ObjectTypeID = uint16_t;
 
 template <typename ObjectType>
 ObjectTypeID getObjectTypeID() {

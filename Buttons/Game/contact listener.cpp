@@ -13,7 +13,14 @@
 #include "../Libraries/Box2D/Dynamics/Contacts/b2Contact.h"
 
 namespace {
-  std::pair<EntityID, EntityID> getEntityPair(b2Contact *const contact) {
+  ObjectTypePair getTypePair(b2Contact *const contact) {
+    return {
+      getObjectTypeID(contact->GetFixtureA()->GetUserData()),
+      getObjectTypeID(contact->GetFixtureB()->GetUserData())
+    };
+  }
+  
+  EntityPair getEntityPair(b2Contact *const contact) {
     return {
       getEntity(contact->GetFixtureA()->GetBody()->GetUserData()),
       getEntity(contact->GetFixtureB()->GetBody()->GetUserData())
@@ -21,24 +28,19 @@ namespace {
   }
   
   CollisionPair getCollisionPair(b2Contact *const contact) {
-    return {
-      getObjectTypeID(contact->GetFixtureA()->GetUserData()),
-      getObjectTypeID(contact->GetFixtureB()->GetUserData())
-    };
+    return {getTypePair(contact), getEntityPair(contact)};
   }
 }
 
 void ContactListener::BeginContact(b2Contact *const contact) {
   if (beginListener) {
-    const auto [entityA, entityB] = getEntityPair(contact);
-    beginListener(entityA, entityB, getCollisionPair(contact));
+    beginListener(getCollisionPair(contact));
   }
 }
 
 void ContactListener::EndContact(b2Contact *const contact) {
   if (endListener) {
-    const auto [entityA, entityB] = getEntityPair(contact);
-    endListener(entityA, entityB, getCollisionPair(contact));
+    endListener(getCollisionPair(contact));
   }
 }
 

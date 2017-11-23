@@ -9,10 +9,6 @@
 #ifndef switch_component_hpp
 #define switch_component_hpp
 
-#include "entity constants.hpp"
-
-struct Switch {
-  EntityID player;
-};
+struct Switch {};
 
 #endif

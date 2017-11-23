@@ -14,19 +14,25 @@
 #include "activation component.hpp"
 #include "player input component.hpp"
 
+namespace {
+  using State = Activation::State;
+  
+  void toggle(State &state) {
+    if (state == State::ACTIVE) {
+      state = State::DEACTIVATING;
+    } else if (state == State::INACTIVE) {
+      state = State::ACTIVATING;
+    }
+  }
+}
+
 void switchSystem(Registry &registry) {
   auto view = registry.view<Switch, Collision, Activation>();
   for (const EntityID entity : view) {
-    const EntityID player = view.get<Switch>(entity).player;
-    const bool action = registry.get<const PlayerInput>(player).action;
     const CollisionPairs &pairs = view.get<Collision>(entity).collisionPairs;
-    if (pairs.hasHalfPair<ObjectType::PlayerBody>() && action) {
-      Activation &active = view.get<Activation>(entity);
-      if (active.state == Activation::State::ACTIVE) {
-        active.state = Activation::State::DEACTIVATING;
-      } else if (active.state == Activation::State::INACTIVE) {
-        active.state = Activation::State::ACTIVATING;
-      }
+    const EntityID player = pairs.getHalfPair<ObjectType::PlayerBody>();
+    if (player != NULL_ENTITY && registry.get<PlayerInput>(player).action) {
+      toggle(view.get<Activation>(entity).state);
     }
   }
 }

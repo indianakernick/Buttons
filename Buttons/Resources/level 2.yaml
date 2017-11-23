@@ -26,8 +26,7 @@
       scale: [1, 2]
       body: platform body.yaml
 
-- id: 0
-  file: player entity.yaml
+- file: player entity.yaml
   components:
     PhysicsBody:
       pos: [-14.5, -0.5]
@@ -39,15 +38,6 @@
       pos: [14.5, -1]
       body: switch body.yaml
 
-- id: 1
-  file: switch entity.yaml
-  components:
-    PhysicsBody:
-      pos: [-4.5, -1]
-      body: switch body.yaml
-    Switch:
-      player: 0
-
 - file: door entity.yaml
   components:
     PhysicsBody:
@@ -56,7 +46,14 @@
       rotation: 180
       body: door body.yaml
     PowerInput:
-      in: 1
+      in: 0
+
+- id: 0
+  file: switch entity.yaml
+  components:
+    PhysicsBody:
+      pos: [-4.5, -1]
+      body: switch body.yaml
 
 - file: text entity.yaml
   components:

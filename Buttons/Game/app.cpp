@@ -72,7 +72,6 @@ void App::init() {
   compInits.construct<PowerInputInit>();
   compInits.construct<ActivationInit>();
   compInits.construct<TransformInit>();
-  compInits.construct<SwitchInit>();
   compInits.construct<AnimationInit>();
   compInits.construct<MovingPlatformInit>();
   compInits.construct<LaserDetectorInit>();
@@ -81,7 +80,7 @@ void App::init() {
   compInits.setDefaults();
   
   levelManager.init(registry, compInits);
-  levelManager.loadLevel(0);
+  levelManager.loadLevel(42);
 }
 
 void App::quit() {
@@ -113,8 +112,12 @@ bool App::input(float) {
 }
 
 bool App::update(const float delta) {
-  if (exitSystem(registry) && levelManager.nextLevel()) {
-    camera.setScale(1.0f);
+  if (exitSystem(registry)) {
+    if (levelManager.nextLevel()) {
+      camera.setScale(1.0f);
+    } else {
+      /* Player just finished the last level */
+    }
   }
 
   playerMovementSystem(registry, delta);

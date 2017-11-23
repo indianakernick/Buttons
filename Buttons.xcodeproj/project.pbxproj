@@ -136,7 +136,6 @@
 		4591F0641FBFE1420075000D /* power init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0621FBFE1420075000D /* power init.cpp */; };
 		4591F0671FBFE44B0075000D /* activation init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0651FBFE44B0075000D /* activation init.cpp */; };
 		4591F06A1FBFE51E0075000D /* transform init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0681FBFE51E0075000D /* transform init.cpp */; };
-		4591F06D1FBFE6710075000D /* switch init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F06B1FBFE6710075000D /* switch init.cpp */; };
 		4591F0701FBFE7500075000D /* animation init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F06E1FBFE7500075000D /* animation init.cpp */; };
 		4591F0731FBFE8640075000D /* moving platform init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0711FBFE8640075000D /* moving platform init.cpp */; };
 		4591F0761FC000020075000D /* level 0.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 4591F0751FC000020075000D /* level 0.yaml */; };
@@ -163,6 +162,7 @@
 		4591F0B61FC404C90075000D /* inverter component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0B41FC404C90075000D /* inverter component.cpp */; };
 		4591F0B91FC405190075000D /* inverter system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0B71FC405180075000D /* inverter system.cpp */; };
 		4591F0BB1FC4069F0075000D /* inverter entity.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 4591F0BA1FC4069F0075000D /* inverter entity.yaml */; };
+		4591F0BD1FC40F370075000D /* level 3.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 4591F0BC1FC40F370075000D /* level 3.yaml */; };
 		4597961A1FB41BF1007A7432 /* physics component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459796191FB41BF1007A7432 /* physics component.cpp */; };
 		4597961C1FB41BFE007A7432 /* collision component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597961B1FB41BFE007A7432 /* collision component.cpp */; };
 		4597961E1FB41C0C007A7432 /* power component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597961D1FB41C0C007A7432 /* power component.cpp */; };
@@ -436,8 +436,6 @@
 		4591F0661FBFE44B0075000D /* activation init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "activation init.hpp"; sourceTree = "<group>"; };
 		4591F0681FBFE51E0075000D /* transform init.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "transform init.cpp"; sourceTree = "<group>"; };
 		4591F0691FBFE51E0075000D /* transform init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "transform init.hpp"; sourceTree = "<group>"; };
-		4591F06B1FBFE6710075000D /* switch init.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "switch init.cpp"; sourceTree = "<group>"; };
-		4591F06C1FBFE6710075000D /* switch init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "switch init.hpp"; sourceTree = "<group>"; };
 		4591F06E1FBFE7500075000D /* animation init.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "animation init.cpp"; sourceTree = "<group>"; };
 		4591F06F1FBFE7500075000D /* animation init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "animation init.hpp"; sourceTree = "<group>"; };
 		4591F0711FBFE8640075000D /* moving platform init.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "moving platform init.cpp"; sourceTree = "<group>"; };
@@ -483,6 +481,7 @@
 		4591F0B71FC405180075000D /* inverter system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "inverter system.cpp"; sourceTree = "<group>"; };
 		4591F0B81FC405190075000D /* inverter system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "inverter system.hpp"; sourceTree = "<group>"; };
 		4591F0BA1FC4069F0075000D /* inverter entity.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "inverter entity.yaml"; sourceTree = "<group>"; };
+		4591F0BC1FC40F370075000D /* level 3.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 3.yaml"; sourceTree = "<group>"; };
 		459796131FB2FD2C007A7432 /* camera constants.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "camera constants.hpp"; sourceTree = "<group>"; };
 		459796141FB2FD47007A7432 /* window constants.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "window constants.hpp"; sourceTree = "<group>"; };
 		459796151FB2FD6F007A7432 /* global flags.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "global flags.hpp"; sourceTree = "<group>"; };
@@ -552,8 +551,6 @@
 				4591F0661FBFE44B0075000D /* activation init.hpp */,
 				4591F0681FBFE51E0075000D /* transform init.cpp */,
 				4591F0691FBFE51E0075000D /* transform init.hpp */,
-				4591F06B1FBFE6710075000D /* switch init.cpp */,
-				4591F06C1FBFE6710075000D /* switch init.hpp */,
 				4591F06E1FBFE7500075000D /* animation init.cpp */,
 				4591F06F1FBFE7500075000D /* animation init.hpp */,
 				4591F0711FBFE8640075000D /* moving platform init.cpp */,
@@ -996,6 +993,7 @@
 				4591F0751FC000020075000D /* level 0.yaml */,
 				4591F0771FC008120075000D /* level 1.yaml */,
 				4591F0791FC00F930075000D /* level 2.yaml */,
+				4591F0BC1FC40F370075000D /* level 3.yaml */,
 			);
 			name = Levels;
 			sourceTree = "<group>";
@@ -1177,6 +1175,7 @@
 				459796301FB67FE7007A7432 /* level 42.yaml in Resources */,
 				456DF0BA1FBD31BB003B3FD1 /* moving platform entity.yaml in Resources */,
 				459796381FB68209007A7432 /* box body.yaml in Resources */,
+				4591F0BD1FC40F370075000D /* level 3.yaml in Resources */,
 				4591F08A1FC145CC0075000D /* laser detector entity.yaml in Resources */,
 				4591F0BB1FC4069F0075000D /* inverter entity.yaml in Resources */,
 				450ED61B1FB80932008F2902 /* switch entity.yaml in Resources */,
@@ -1280,7 +1279,6 @@
 				4583EE1F1FB18F7A00AED27D /* b2RopeJoint.cpp in Sources */,
 				450ED6141FB7FBA4008F2902 /* door system.cpp in Sources */,
 				4583EE201FB18F7A00AED27D /* b2Island.cpp in Sources */,
-				4591F06D1FBFE6710075000D /* switch init.cpp in Sources */,
 				4591F0701FBFE7500075000D /* animation init.cpp in Sources */,
 				4591F0B61FC404C90075000D /* inverter component.cpp in Sources */,
 				452E108C1FB2D8BA0063114B /* object types.cpp in Sources */,

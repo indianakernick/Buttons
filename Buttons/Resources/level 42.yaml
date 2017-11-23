@@ -12,8 +12,7 @@
       scale: [32, 1]
       body: platform body.yaml
 
-- id: 0
-  file: player entity.yaml
+- file: player entity.yaml
   components:
     PhysicsBody:
       pos: [0, 0]
@@ -26,9 +25,9 @@
       scale: [0.4, 4]
       body: door body.yaml
     PowerInput:
-      in: 1
+      in: 0
 
-- id: 1
+- id: 0
   file: button entity.yaml
   components:
     PhysicsBody:
@@ -43,17 +42,15 @@
       scale: [0.4, 4]
       body: door body.yaml
     PowerInput:
-      in: 2
+      in: 1
 
-- id: 2
+- id: 1
   file: switch entity.yaml
   components:
     PhysicsBody:
       pos: [-7.5, -8.0]
       scale: [1, 1]
       body: switch body.yaml
-    Switch:
-      player: 0
 
 - file: exit entity.yaml
   components:
@@ -73,19 +70,25 @@
       end: [-16, 0]
       speed: 0.1
     PowerInput:
-      in: 3
+      in: 2
 
-- id: 3
+- id: 2
   file: switch entity.yaml
   components:
     PhysicsBody:
       pos: [-2, -8.0]
       scale: [1, 1]
       body: switch body.yaml
-    Switch:
-      player: 0
 
-- id: 4
+- file: laser detector entity.yaml
+  components:
+    Transform:
+      pos: [16, 4]
+      rotation: 90
+    LaserDetector:
+      emitter: 3
+
+- id: 3
   file: laser emitter entity.yaml
   components:
     PhysicsRayCast:
@@ -96,11 +99,3 @@
       rotation: -90
     PowerInput:
       on: YES
-
-- file: laser detector entity.yaml
-  components:
-    Transform:
-      pos: [16, 4]
-      rotation: 90
-    LaserDetector:
-      emitter: 4
