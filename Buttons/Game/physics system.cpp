@@ -51,12 +51,16 @@ namespace {
   class FindClosest final : public b2RayCastCallback {
   public:
     float32 ReportFixture(
-      b2Fixture *,
+      b2Fixture *const fixture,
       const b2Vec2 &,
       const b2Vec2 &,
       const float32 fraction
     ) override {
-      return closest = fraction;
+      if (fixture->IsSensor()) {
+        return -1.0f;
+      } else {
+        return closest = fraction;
+      }
     }
     
     float32 getClosest() const {
