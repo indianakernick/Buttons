@@ -109,8 +109,9 @@
       pos: [-10.5, 1]
       scale: [0.4, 4]
       body: door body.yaml
-    PowerInput:
-      in: 0
+    MultiPowerInput:
+      in: [0, 1]
+      operator: or
 
 - file: door entity.yaml
   components:
@@ -118,8 +119,9 @@
       pos: [-3.5, 1]
       scale: [0.4, 4]
       body: door body.yaml
-    PowerInput:
-      in: 1
+    MultiPowerInput:
+      in: [0, 2]
+      operator: xor
 
 - file: door entity.yaml
   components:
@@ -138,3 +140,4 @@
       body: door body.yaml
     PowerInput:
       in: 3
+      invert: YES
