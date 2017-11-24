@@ -17,4 +17,9 @@ public:
   void init(PowerInput &, const YAML::Node &, const EntityIDmap &) override;
 };
 
+class MultiPowerInputInit final : public CompInit<MultiPowerInput> {
+public:
+  void init(MultiPowerInput &, const YAML::Node &, const EntityIDmap &) override;
+};
+
 #endif

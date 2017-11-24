@@ -9,10 +9,27 @@
 #ifndef power_component_hpp
 #define power_component_hpp
 
+#include <vector>
 #include "entity constants.hpp"
 
 struct PowerInput {
-  EntityID in;
+  EntityID input;
+  bool invert = false;
+  bool on = false;
+};
+
+struct MultiPowerInput {
+  enum class LogicOp {
+    AND,
+    OR,
+    XOR,
+    NAND,
+    NOR,
+    XNOR
+  };
+
+  std::vector<EntityID> inputs;
+  LogicOp op;
   bool on = false;
 };
 

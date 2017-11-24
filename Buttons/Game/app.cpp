@@ -70,6 +70,7 @@ void App::init() {
   compInits.construct<PhysicsJointInit>(physics.getWorld(), &registry);
   compInits.construct<PhysicsRayCastInit>();
   compInits.construct<PowerInputInit>();
+  compInits.construct<MultiPowerInputInit>();
   compInits.construct<ActivationInit>();
   compInits.construct<TransformInit>();
   compInits.construct<AnimationInit>();
