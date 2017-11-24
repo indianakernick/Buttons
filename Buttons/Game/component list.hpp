@@ -40,6 +40,7 @@
 
 #define COMPS                                                                   \
   COMP(PowerInput, powerInput)                                                  \
+  COMP(MultiPowerInput, multiPowerInput)                                        \
   COMP(PowerOutput, powerOutput)                                                \
   COMP(PhysicsBody, physicsBody)                                                \
   COMP(PhysicsJoint, physicsJoint)                                              \
