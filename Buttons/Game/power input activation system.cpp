@@ -12,12 +12,23 @@
 #include "activation component.hpp"
 
 void powerInputActivationSystem(Registry &registry) {
-  auto view = registry.view<Activation, PowerInput>();
-  for (const EntityID entity : view) {
-    if (view.get<PowerInput>(entity).on) {
-      activate(view.get<Activation>(entity).state);
+  auto singleInput = registry.view<Activation, PowerInput>();
+  for (const EntityID entity : singleInput) {
+    Activation::State &state = singleInput.get<Activation>(entity).state;
+    if (singleInput.get<PowerInput>(entity).on) {
+      activate(state);
     } else {
-      deactivate(view.get<Activation>(entity).state);
+      deactivate(state);
+    }
+  }
+  
+  auto multiInput = registry.view<Activation, MultiPowerInput>();
+  for (const EntityID entity : multiInput) {
+    Activation::State &state = multiInput.get<Activation>(entity).state;
+    if (multiInput.get<MultiPowerInput>(entity).on) {
+      activate(state);
+    } else {
+      deactivate(state);
     }
   }
 }
