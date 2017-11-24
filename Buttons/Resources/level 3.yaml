@@ -1,1 +1,80 @@
-{}
+- file: platform entity.yaml
+  components:
+    PhysicsBody:
+      pos: [-16, -9]
+      scale: [32, 7]
+      body: platform body.yaml
+
+- file: platform entity.yaml
+  components:
+    PhysicsBody:
+      pos: [-16, 2]
+      scale: [32, 7]
+      body: platform body.yaml
+
+- file: platform entity.yaml
+  components:
+    PhysicsBody:
+      pos: [-16, -2]
+      scale: [1, 4]
+      body: platform body.yaml
+
+- file: platform entity.yaml
+  components:
+    PhysicsBody:
+      pos: [15, -2]
+      scale: [1, 4]
+      body: platform body.yaml
+
+- file: player entity.yaml
+  components:
+    PhysicsBody:
+      pos: [-9.5, -1.5]
+      body: player body.yaml
+
+- file: exit entity.yaml
+  components:
+    PhysicsBody:
+      pos: [14.5, -2]
+      body: switch body.yaml
+
+- file: box entity.yaml
+  components:
+    PhysicsBody:
+      pos: [-12.5, -1.5]
+      body: box body.yaml
+
+- id: 0
+  file: button entity.yaml
+  components:
+    PhysicsBody:
+      pos: [-0.5, -2]
+      scale: [1, 0.25]
+      body: button body.yaml
+
+- id: 1
+  file: switch entity.yaml
+  components:
+    PhysicsBody:
+      pos: [2.5, -2]
+      body: switch body.yaml
+
+- file: door entity.yaml
+  components:
+    PhysicsBody:
+      pos: [6.5, 2]
+      scale: [0.4, 4]
+      rotation: 180
+      body: door body.yaml
+    PowerInput:
+      in: 1
+
+- file: door entity.yaml
+  components:
+    PhysicsBody:
+      pos: [8.5, 2]
+      scale: [0.4, 4]
+      rotation: 180
+      body: door body.yaml
+    PowerInput:
+      in: 0
