@@ -82,7 +82,7 @@ void App::init() {
   compInits.setDefaults();
   
   levelManager.init(registry, compInits);
-  levelManager.loadLevel(0);
+  levelManager.loadLevel(4);
 }
 
 void App::quit() {

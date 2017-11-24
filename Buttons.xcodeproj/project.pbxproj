@@ -164,6 +164,7 @@
 		4591F0BB1FC4069F0075000D /* inverter entity.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 4591F0BA1FC4069F0075000D /* inverter entity.yaml */; };
 		4591F0BD1FC40F370075000D /* level 3.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 4591F0BC1FC40F370075000D /* level 3.yaml */; };
 		4591F0C31FC8036D0075000D /* render grid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0C11FC8036D0075000D /* render grid.cpp */; };
+		4591F0C51FC806390075000D /* level 4.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 4591F0C41FC806390075000D /* level 4.yaml */; };
 		4597961A1FB41BF1007A7432 /* physics component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459796191FB41BF1007A7432 /* physics component.cpp */; };
 		4597961C1FB41BFE007A7432 /* collision component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597961B1FB41BFE007A7432 /* collision component.cpp */; };
 		4597961E1FB41C0C007A7432 /* power component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597961D1FB41C0C007A7432 /* power component.cpp */; };
@@ -485,6 +486,7 @@
 		4591F0BC1FC40F370075000D /* level 3.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 3.yaml"; sourceTree = "<group>"; };
 		4591F0C11FC8036D0075000D /* render grid.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "render grid.cpp"; sourceTree = "<group>"; };
 		4591F0C21FC8036D0075000D /* render grid.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "render grid.hpp"; sourceTree = "<group>"; };
+		4591F0C41FC806390075000D /* level 4.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 4.yaml"; sourceTree = "<group>"; };
 		459796131FB2FD2C007A7432 /* camera constants.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "camera constants.hpp"; sourceTree = "<group>"; };
 		459796141FB2FD47007A7432 /* window constants.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "window constants.hpp"; sourceTree = "<group>"; };
 		459796151FB2FD6F007A7432 /* global flags.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "global flags.hpp"; sourceTree = "<group>"; };
@@ -999,6 +1001,7 @@
 				4591F0771FC008120075000D /* level 1.yaml */,
 				4591F0791FC00F930075000D /* level 2.yaml */,
 				4591F0BC1FC40F370075000D /* level 3.yaml */,
+				4591F0C41FC806390075000D /* level 4.yaml */,
 			);
 			name = Levels;
 			sourceTree = "<group>";
@@ -1165,6 +1168,7 @@
 				450ED5CA1FB6A6C6008F2902 /* platform body.yaml in Resources */,
 				4591F0B31FC3FCB10075000D /* text entity.yaml in Resources */,
 				450ED5C81FB6A6B7008F2902 /* platform entity.yaml in Resources */,
+				4591F0C51FC806390075000D /* level 4.yaml in Resources */,
 				4583ED5B1FB1841100AED27D /* Assets.xcassets in Resources */,
 				450ED5E51FB6CCAE008F2902 /* button body.yaml in Resources */,
 				4591F0761FC000020075000D /* level 0.yaml in Resources */,
