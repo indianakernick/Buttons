@@ -12,6 +12,6 @@
 constexpr bool ENABLE_DEBUG_PHYSICS_RENDER = false;
 constexpr bool ENABLE_GAME_RENDER = true;
 constexpr bool ENABLE_FPS_RENDER = true;
-constexpr bool ENABLE_GRID_RENDER = true;
+constexpr bool ENABLE_GRID_RENDER = false;
 
 #endif

@@ -22,7 +22,7 @@
   components:
     PhysicsBody:
       pos: [7.5, -8.0]
-      scale: [0.4, 4]
+      scale: [1, 4]
       body: door body.yaml
     PowerInput:
       in: 0
@@ -32,14 +32,13 @@
   components:
     PhysicsBody:
       pos: [5, -8.0]
-      scale: [1, 0.25]
       body: button body.yaml
 
 - file: door entity.yaml
   components:
     PhysicsBody:
       pos: [8.5, -8.0]
-      scale: [0.4, 4]
+      scale: [1, 4]
       body: door body.yaml
     PowerInput:
       in: 1

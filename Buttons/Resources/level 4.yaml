@@ -49,7 +49,7 @@
   components:
     PhysicsBody:
       pos: [9.5, -5]
-      scale: [0.4, 4]
+      scale: [1, 4]
       body: door body.yaml
     PowerInput:
       in: 5
@@ -107,7 +107,7 @@
   components:
     PhysicsBody:
       pos: [-10.5, 1]
-      scale: [0.4, 4]
+      scale: [1, 4]
       body: door body.yaml
     MultiPowerInput:
       in: [0, 1]
@@ -117,7 +117,7 @@
   components:
     PhysicsBody:
       pos: [-3.5, 1]
-      scale: [0.4, 4]
+      scale: [1, 4]
       body: door body.yaml
     MultiPowerInput:
       in: [0, 2]
@@ -127,7 +127,7 @@
   components:
     PhysicsBody:
       pos: [3.5, 1]
-      scale: [0.4, 4]
+      scale: [1, 4]
       body: door body.yaml
     PowerInput:
       in: 2
@@ -136,7 +136,7 @@
   components:
     PhysicsBody:
       pos: [10.5, 1]
-      scale: [0.4, 4]
+      scale: [1, 4]
       body: door body.yaml
     PowerInput:
       in: 3

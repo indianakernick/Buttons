@@ -49,7 +49,6 @@
   components:
     PhysicsBody:
       pos: [-1.5, -2]
-      scale: [1, 0.25]
       body: button body.yaml
 
 - id: 1
@@ -63,7 +62,7 @@
   components:
     PhysicsBody:
       pos: [5.5, 2]
-      scale: [0.4, 4]
+      scale: [1, 4]
       rotation: 180
       body: door body.yaml
     PowerInput:
@@ -73,7 +72,7 @@
   components:
     PhysicsBody:
       pos: [8.5, 2]
-      scale: [0.4, 4]
+      scale: [1, 4]
       rotation: 180
       body: door body.yaml
     PowerInput:
