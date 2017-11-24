@@ -16,7 +16,6 @@
 #include "switch component.hpp"
 #include "button component.hpp"
 #include "physics component.hpp"
-#include "inverter component.hpp"
 #include "transform component.hpp"
 #include "collision component.hpp"
 #include "animation component.hpp"
@@ -67,7 +66,6 @@
   COMP(LaserDetectorRendering, laserDetectorRendering)                          \
   COMP(TextRendering, textRendering)                                            \
   COMP(Text, text)                                                              \
-  COMP(Inverter, inverter)                                                      \
   COMP(MovingPlatformRendering, movingPlatformRendering)                        \
   LAST_COMP(MovingPlatform, movingPlatform)
 
