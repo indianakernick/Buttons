@@ -10,6 +10,7 @@
 
 #include "systems.hpp"
 #include "level file.hpp"
+#include "render grid.hpp"
 #include "global flags.hpp"
 #include "component inits.hpp"
 #include "window constants.hpp"
@@ -166,6 +167,10 @@ bool App::render(const float delta) {
     switchRenderingSystem(registry, ctx);
     doorRenderingSystem(registry, ctx);
     textRenderingSystem(registry, ctx);
+  }
+  
+  if constexpr (ENABLE_GRID_RENDER) {
+    renderGrid(renderingContext.getContext());
   }
   
   renderingManager.render();

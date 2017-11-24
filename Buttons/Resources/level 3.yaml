@@ -48,7 +48,7 @@
   file: button entity.yaml
   components:
     PhysicsBody:
-      pos: [-0.5, -2]
+      pos: [-1.5, -2]
       scale: [1, 0.25]
       body: button body.yaml
 
@@ -56,13 +56,13 @@
   file: switch entity.yaml
   components:
     PhysicsBody:
-      pos: [2.5, -2]
+      pos: [1.5, -2]
       body: switch body.yaml
 
 - file: door entity.yaml
   components:
     PhysicsBody:
-      pos: [6.5, 2]
+      pos: [5.5, 2]
       scale: [0.4, 4]
       rotation: 180
       body: door body.yaml
