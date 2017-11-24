@@ -248,6 +248,7 @@
 		452E10911FB2F2EE0063114B /* systems.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = systems.hpp; sourceTree = "<group>"; };
 		452E10931FB2F4700063114B /* Consolas.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Consolas.ttf; sourceTree = "<group>"; };
 		4533A8A11FC8E2200027B0FB /* state.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = state.hpp; sourceTree = "<group>"; };
+		4533A8A41FC8E32A0027B0FB /* input dispatcher.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "input dispatcher.hpp"; sourceTree = "<group>"; };
 		456DF0B91FBD31BB003B3FD1 /* moving platform entity.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "moving platform entity.yaml"; sourceTree = "<group>"; };
 		456DF0BB1FBD32E7003B3FD1 /* moving platform rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "moving platform rendering component.cpp"; sourceTree = "<group>"; };
 		456DF0BC1FBD32E7003B3FD1 /* moving platform rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "moving platform rendering component.hpp"; sourceTree = "<group>"; };
@@ -543,6 +544,14 @@
 			name = UI;
 			sourceTree = "<group>";
 		};
+		4533A8A21FC8E3100027B0FB /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				4533A8A41FC8E32A0027B0FB /* input dispatcher.hpp */,
+			);
+			name = Input;
+			sourceTree = "<group>";
+		};
 		456DF0CA1FBFB496003B3FD1 /* Component initializers */ = {
 			isa = PBXGroup;
 			children = (
@@ -620,6 +629,7 @@
 		4583ED7B1FB18DCA00AED27D /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				4533A8A21FC8E3100027B0FB /* Input */,
 				4533A8A01FC8E1D00027B0FB /* UI */,
 				4583EE6F1FB190C400AED27D /* Libraries */,
 				4583EE5D1FB190AC00AED27D /* Utils */,
