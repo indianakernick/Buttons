@@ -9,6 +9,8 @@
 #ifndef component_list_hpp
 #define component_list_hpp
 
+#include "key component.hpp"
+#include "lock component.hpp"
 #include "text component.hpp"
 #include "exit component.hpp"
 #include "door component.hpp"
@@ -20,6 +22,7 @@
 #include "collision component.hpp"
 #include "animation component.hpp"
 #include "activation component.hpp"
+#include "player keys component.hpp"
 #include "player jump component.hpp"
 #include "player input component.hpp"
 #include "box rendering component.hpp"
@@ -66,6 +69,9 @@
   COMP(LaserDetectorRendering, laserDetectorRendering)                          \
   COMP(TextRendering, textRendering)                                            \
   COMP(Text, text)                                                              \
+  COMP(Key, key)                                                                \
+  COMP(Lock, lock)                                                              \
+  COMP(PlayerKeys, playerKeys)                                                  \
   COMP(MovingPlatformRendering, movingPlatformRendering)                        \
   LAST_COMP(MovingPlatform, movingPlatform)
 

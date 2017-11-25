@@ -78,6 +78,8 @@ void App::init() {
   compInits.construct<LaserDetectorInit>();
   compInits.construct<TextRenderingInit>(renderingContext.getResources());
   compInits.construct<TextInit>();
+  compInits.construct<KeyInit>();
+  compInits.construct<LockInit>();
   compInits.setDefaults();
   
   levelManager.init(registry, compInits);

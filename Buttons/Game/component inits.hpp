@@ -9,6 +9,8 @@
 #ifndef component_inits_hpp
 #define component_inits_hpp
 
+#include "key init.hpp"
+#include "lock init.hpp"
 #include "text init.hpp"
 #include "power init.hpp"
 #include "physics init.hpp"
