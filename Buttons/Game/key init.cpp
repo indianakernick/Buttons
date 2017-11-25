@@ -12,7 +12,7 @@
 #include "player keys component.hpp"
 
 void KeyInit::init(Key &key, const YAML::Node &node) {
-  key.index = getChild(node, "index").as<uint8_t>();
+  key.index = getChild(node, "index").as<uint16_t>();
   if (key.index >= MAX_KEYS) {
     throw std::runtime_error("Key index out of range");
   }

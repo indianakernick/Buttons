@@ -12,7 +12,7 @@
 #include "player keys component.hpp"
 
 void LockInit::init(Lock &lock, const YAML::Node &node) {
-  lock.index = getChild(node, "index").as<uint8_t>();
+  lock.index = getChild(node, "index").as<uint16_t>();
   if (lock.index >= MAX_KEYS) {
     throw std::runtime_error("Lock index out of range");
   }
