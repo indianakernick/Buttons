@@ -13,6 +13,6 @@
 
 extern "C" union SDL_Event;
 
-using InputDispatcher = Utils::Handlable<uint32_t, SDL_Event>;
+using InputDispatcher = Utils::Handlable<uint32_t, const SDL_Event &>;
 
 #endif

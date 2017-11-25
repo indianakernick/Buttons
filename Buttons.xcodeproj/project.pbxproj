@@ -808,6 +808,10 @@
 		4583EE401FB1905200AED27D /* Rendering */ = {
 			isa = PBXGroup;
 			children = (
+				4583EE611FB190BB00AED27D /* framebuffer to png.cpp */,
+				4583EE621FB190BB00AED27D /* framebuffer to png.hpp */,
+				4583EE691FB190BD00AED27D /* screenshot.cpp */,
+				4583EE651FB190BC00AED27D /* screenshot.hpp */,
 				4583EE421FB1906D00AED27D /* rendering context.cpp */,
 				4583EE461FB1906E00AED27D /* rendering context.hpp */,
 				4583EE451FB1906E00AED27D /* rendering resources.cpp */,
@@ -825,13 +829,9 @@
 				4583EE6D1FB190BE00AED27D /* b2 glm cast.hpp */,
 				4583EE6B1FB190BE00AED27D /* b2 helper.cpp */,
 				4583EE6C1FB190BE00AED27D /* b2 helper.hpp */,
-				4583EE611FB190BB00AED27D /* framebuffer to png.cpp */,
-				4583EE621FB190BB00AED27D /* framebuffer to png.hpp */,
 				4583EE631FB190BC00AED27D /* matrix mul.hpp */,
 				4583EE661FB190BD00AED27D /* nvg helper.cpp */,
 				4583EE641FB190BC00AED27D /* nvg helper.hpp */,
-				4583EE691FB190BD00AED27D /* screenshot.cpp */,
-				4583EE651FB190BC00AED27D /* screenshot.hpp */,
 				4583EE5E1FB190BB00AED27D /* string view literal.hpp */,
 				4583EE601FB190BB00AED27D /* yaml convert.hpp */,
 				4583EE681FB190BD00AED27D /* yaml helper.cpp */,

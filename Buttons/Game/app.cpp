@@ -82,9 +82,35 @@ void App::init() {
   
   levelManager.init(registry, compInits);
   levelManager.loadLevel(0);
+  
+  inputDispatcher.addListener([this] (const SDL_Event &e) {
+    if (e.type == SDL_KEYDOWN && e.key.keysym.scancode == SDL_SCANCODE_R) {
+      levelManager.reload();
+      return true;
+    } else {
+      return false;
+    }
+  });
+  inputDispatcher.addListener([this] (const SDL_Event &e) {
+    if (
+      e.type == SDL_KEYDOWN &&
+      e.key.repeat == 0 &&
+      e.key.keysym.scancode == SDL_SCANCODE_P
+    ) {
+      screenshot.takeScreenshot();
+      return true;
+    } else {
+      return false;
+    }
+  });
+  inputDispatcher.addListener([this] (const SDL_Event &e) {
+    return playerInputSystem(registry, e);
+  });
 }
 
 void App::quit() {
+  inputDispatcher.clearListeners();
+
   registry.reset();
   levelManager.quit();
   
@@ -102,10 +128,8 @@ bool App::input(float) {
   while (SDL_PollEvent(&e)) {
     if (e.type == SDL_QUIT) {
       return false;
-    } else if (e.type == SDL_KEYDOWN && e.key.keysym.scancode == SDL_SCANCODE_R) {
-      levelManager.reload();
-    } else if (!screenshot.handleEvent(e)) {
-      playerInputSystem(registry, e);
+    } else {
+      inputDispatcher.dispatch(e);
     }
   }
   return true;

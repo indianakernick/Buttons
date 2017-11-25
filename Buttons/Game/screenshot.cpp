@@ -16,22 +16,9 @@
 Screenshot::Screenshot()
   : framebuffer(std::make_unique<uint8_t []>(MAX_FRAMEBUFFER_SIZE)) {}
 
-bool Screenshot::handleEvent(const SDL_Event &e) {
-  if (
-    e.type == SDL_KEYDOWN
-    && e.key.repeat == 0
-    && e.key.keysym.scancode == SDL_SCANCODE_P
-  ) {
-    takeScreenshot = true;
-    return true;
-  } else {
-    return false;
-  }
-}
-
 void Screenshot::postRender(RenderingContext &renderer, const bool renderFPS) {
-  if (takeScreenshot) {
-    takeScreenshot = false;
+  if (willTakeScreenshot) {
+    willTakeScreenshot = false;
     renderer.postRender(
       false,
       framebuffer.get(),
@@ -55,4 +42,8 @@ void Screenshot::postRender(RenderingContext &renderer, const bool renderFPS) {
   } else {
     renderer.postRender(renderFPS);
   }
+}
+
+void Screenshot::takeScreenshot() {
+  willTakeScreenshot = true;
 }

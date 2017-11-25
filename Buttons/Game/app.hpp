@@ -14,6 +14,7 @@
 #include "level manager.hpp"
 #include "physics system.hpp"
 #include "entity registry.hpp"
+#include "input dispatcher.hpp"
 #include "rendering context.hpp"
 #include <experimental/optional>
 #include <Simpleton/Camera 2D/camera.hpp>
@@ -38,6 +39,7 @@ private:
   PhysicsSystem physics;
   CompInits compInits;
   LevelManager levelManager;
+  InputDispatcher inputDispatcher;
   
   void init();
   void quit();
