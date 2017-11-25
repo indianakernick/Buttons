@@ -15,6 +15,7 @@
 #include "switch system.hpp"
 #include "button system.hpp"
 #include "physics system.hpp"
+#include "take key system.hpp"
 #include "animation system.hpp"
 #include "activation system.hpp"
 #include "player input system.hpp"

@@ -149,6 +149,7 @@ bool App::update(const float delta) {
   playerMovementSystem(registry, delta);
   physics.update(delta);
   physicsTransformSystem(registry);
+  takeKeySystem(registry);
   
   laserDetectorSystem(registry);
   activationSystem(registry, delta);
