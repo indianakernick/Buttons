@@ -188,10 +188,11 @@ bool App::render(const float delta) {
     buttonRenderingSystem(registry, ctx);
     boxRenderingSystem(registry, ctx);
     exitRenderingSystem(registry, ctx);
+    keyRenderingSystem(registry, ctx);
+    lockRenderingSystem(registry, ctx);
     playerRenderingSystem(registry, ctx);
     switchRenderingSystem(registry, ctx);
     doorRenderingSystem(registry, ctx);
-    keyRenderingSystem(registry, ctx);
     textRenderingSystem(registry, ctx);
   }
   

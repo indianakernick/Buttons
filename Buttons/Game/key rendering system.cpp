@@ -28,7 +28,7 @@ void keyRenderingSystem(Registry &registry, NVGcontext *const ctx) {
     
     nvgBeginPath(ctx);
     nvgFillColor(ctx, nvgRGBf(0.0f, 1.0f, 0.0));
-    renderPolygon(ctx, view.get<Key>(entity).index + 3, 0.3f, NVG_PI / 2.0f);
+    renderPolygon(ctx, view.get<Key>(entity).index + 3, 0.4f, NVG_PI / 2.0f);
     nvgFill(ctx);
     
     nvgRestore(ctx);
