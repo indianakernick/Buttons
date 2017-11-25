@@ -150,6 +150,7 @@ bool App::update(const float delta) {
   physics.update(delta);
   physicsTransformSystem(registry);
   takeKeySystem(registry);
+  activateLockSystem(registry);
   
   laserDetectorSystem(registry);
   activationSystem(registry, delta);

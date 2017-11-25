@@ -53,6 +53,7 @@
 		4533A8B71FC90AFC0027B0FB /* lock init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8B51FC90AFC0027B0FB /* lock init.cpp */; };
 		4533A8BA1FC90C390027B0FB /* player keys component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8B81FC90C390027B0FB /* player keys component.cpp */; };
 		4533A8BD1FC90EF50027B0FB /* take key system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8BB1FC90EF50027B0FB /* take key system.cpp */; };
+		4533A8C01FC912B10027B0FB /* activate lock system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8BE1FC912B10027B0FB /* activate lock system.cpp */; };
 		456DF0BA1FBD31BB003B3FD1 /* moving platform entity.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 456DF0B91FBD31BB003B3FD1 /* moving platform entity.yaml */; };
 		456DF0BD1FBD32E7003B3FD1 /* moving platform rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0BB1FBD32E7003B3FD1 /* moving platform rendering component.cpp */; };
 		456DF0C01FBD336A003B3FD1 /* moving platform rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0BE1FBD336A003B3FD1 /* moving platform rendering system.cpp */; };
@@ -263,6 +264,8 @@
 		4533A8B91FC90C390027B0FB /* player keys component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "player keys component.hpp"; sourceTree = "<group>"; };
 		4533A8BB1FC90EF50027B0FB /* take key system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "take key system.cpp"; sourceTree = "<group>"; };
 		4533A8BC1FC90EF50027B0FB /* take key system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "take key system.hpp"; sourceTree = "<group>"; };
+		4533A8BE1FC912B10027B0FB /* activate lock system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "activate lock system.cpp"; sourceTree = "<group>"; };
+		4533A8BF1FC912B10027B0FB /* activate lock system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "activate lock system.hpp"; sourceTree = "<group>"; };
 		456DF0B91FBD31BB003B3FD1 /* moving platform entity.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "moving platform entity.yaml"; sourceTree = "<group>"; };
 		456DF0BB1FBD32E7003B3FD1 /* moving platform rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "moving platform rendering component.cpp"; sourceTree = "<group>"; };
 		456DF0BC1FBD32E7003B3FD1 /* moving platform rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "moving platform rendering component.hpp"; sourceTree = "<group>"; };
@@ -944,6 +947,8 @@
 				4591F09E1FC2B40E0075000D /* laser detector system.hpp */,
 				4533A8BB1FC90EF50027B0FB /* take key system.cpp */,
 				4533A8BC1FC90EF50027B0FB /* take key system.hpp */,
+				4533A8BE1FC912B10027B0FB /* activate lock system.cpp */,
+				4533A8BF1FC912B10027B0FB /* activate lock system.hpp */,
 			);
 			name = Systems;
 			sourceTree = "<group>";
@@ -1274,6 +1279,7 @@
 				4583EE131FB18F7A00AED27D /* b2WorldCallbacks.cpp in Sources */,
 				4583EE921FB19DE600AED27D /* collision categories.cpp in Sources */,
 				4533A8AB1FC908CC0027B0FB /* key component.cpp in Sources */,
+				4533A8C01FC912B10027B0FB /* activate lock system.cpp in Sources */,
 				450ED6111FB7FB55008F2902 /* door component.cpp in Sources */,
 				4583EE141FB18F7A00AED27D /* b2WeldJoint.cpp in Sources */,
 				4583EE151FB18F7A00AED27D /* b2MouseJoint.cpp in Sources */,

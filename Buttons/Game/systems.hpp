@@ -19,6 +19,7 @@
 #include "animation system.hpp"
 #include "activation system.hpp"
 #include "player input system.hpp"
+#include "activate lock system.hpp"
 #include "box rendering system.hpp"
 #include "text rendering system.hpp"
 #include "door rendering system.hpp"
