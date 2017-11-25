@@ -191,6 +191,7 @@ bool App::render(const float delta) {
     playerRenderingSystem(registry, ctx);
     switchRenderingSystem(registry, ctx);
     doorRenderingSystem(registry, ctx);
+    keyRenderingSystem(registry, ctx);
     textRenderingSystem(registry, ctx);
   }
   

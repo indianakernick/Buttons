@@ -74,6 +74,8 @@
   COMP(Key, key)                                                                \
   COMP(Lock, lock)                                                              \
   COMP(PlayerKeys, playerKeys)                                                  \
+  COMP(KeyRendering, keyRendering)                                              \
+  COMP(LockRendering, lockRendering)                                            \
   COMP(MovingPlatformRendering, movingPlatformRendering)                        \
   LAST_COMP(MovingPlatform, movingPlatform)
 

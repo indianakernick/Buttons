@@ -58,6 +58,8 @@
 		4533A8C41FC916740027B0FB /* lock entity.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 4533A8C31FC916740027B0FB /* lock entity.yaml */; };
 		4533A8C71FC918580027B0FB /* key rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8C51FC918580027B0FB /* key rendering component.cpp */; };
 		4533A8CA1FC918920027B0FB /* lock rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8C81FC918920027B0FB /* lock rendering component.cpp */; };
+		4533A8CD1FC919750027B0FB /* render polygon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8CB1FC919750027B0FB /* render polygon.cpp */; };
+		4533A8D01FC91BB60027B0FB /* key rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8CE1FC91BB60027B0FB /* key rendering system.cpp */; };
 		456DF0BA1FBD31BB003B3FD1 /* moving platform entity.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 456DF0B91FBD31BB003B3FD1 /* moving platform entity.yaml */; };
 		456DF0BD1FBD32E7003B3FD1 /* moving platform rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0BB1FBD32E7003B3FD1 /* moving platform rendering component.cpp */; };
 		456DF0C01FBD336A003B3FD1 /* moving platform rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0BE1FBD336A003B3FD1 /* moving platform rendering system.cpp */; };
@@ -276,6 +278,10 @@
 		4533A8C61FC918580027B0FB /* key rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "key rendering component.hpp"; sourceTree = "<group>"; };
 		4533A8C81FC918920027B0FB /* lock rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "lock rendering component.cpp"; sourceTree = "<group>"; };
 		4533A8C91FC918920027B0FB /* lock rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "lock rendering component.hpp"; sourceTree = "<group>"; };
+		4533A8CB1FC919750027B0FB /* render polygon.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "render polygon.cpp"; sourceTree = "<group>"; };
+		4533A8CC1FC919750027B0FB /* render polygon.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "render polygon.hpp"; sourceTree = "<group>"; };
+		4533A8CE1FC91BB60027B0FB /* key rendering system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "key rendering system.cpp"; sourceTree = "<group>"; };
+		4533A8CF1FC91BB60027B0FB /* key rendering system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "key rendering system.hpp"; sourceTree = "<group>"; };
 		456DF0B91FBD31BB003B3FD1 /* moving platform entity.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "moving platform entity.yaml"; sourceTree = "<group>"; };
 		456DF0BB1FBD32E7003B3FD1 /* moving platform rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "moving platform rendering component.cpp"; sourceTree = "<group>"; };
 		456DF0BC1FBD32E7003B3FD1 /* moving platform rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "moving platform rendering component.hpp"; sourceTree = "<group>"; };
@@ -837,6 +843,8 @@
 		4583EE401FB1905200AED27D /* Rendering */ = {
 			isa = PBXGroup;
 			children = (
+				4583EE661FB190BD00AED27D /* nvg helper.cpp */,
+				4583EE641FB190BC00AED27D /* nvg helper.hpp */,
 				4583EE611FB190BB00AED27D /* framebuffer to png.cpp */,
 				4583EE621FB190BB00AED27D /* framebuffer to png.hpp */,
 				4583EE691FB190BD00AED27D /* screenshot.cpp */,
@@ -847,6 +855,8 @@
 				4583EE471FB1906E00AED27D /* rendering resources.hpp */,
 				4591F0C11FC8036D0075000D /* render grid.cpp */,
 				4591F0C21FC8036D0075000D /* render grid.hpp */,
+				4533A8CB1FC919750027B0FB /* render polygon.cpp */,
+				4533A8CC1FC919750027B0FB /* render polygon.hpp */,
 			);
 			name = Rendering;
 			sourceTree = "<group>";
@@ -855,8 +865,6 @@
 			isa = PBXGroup;
 			children = (
 				4583EE6D1FB190BE00AED27D /* b2 glm cast.hpp */,
-				4583EE661FB190BD00AED27D /* nvg helper.cpp */,
-				4583EE641FB190BC00AED27D /* nvg helper.hpp */,
 				4583EE601FB190BB00AED27D /* yaml convert.hpp */,
 				4583EE681FB190BD00AED27D /* yaml helper.cpp */,
 				4583EE671FB190BD00AED27D /* yaml helper.hpp */,
@@ -1131,6 +1139,8 @@
 				4591F09B1FC2B0E00075000D /* laser detector rendering system.hpp */,
 				4591F0A01FC2B72E0075000D /* text rendering system.cpp */,
 				4591F0A11FC2B72E0075000D /* text rendering system.hpp */,
+				4533A8CE1FC91BB60027B0FB /* key rendering system.cpp */,
+				4533A8CF1FC91BB60027B0FB /* key rendering system.hpp */,
 			);
 			name = Rendering;
 			sourceTree = "<group>";
@@ -1312,6 +1322,7 @@
 				4583EE1B1FB18F7A00AED27D /* b2GearJoint.cpp in Sources */,
 				4583EE1C1FB18F7A00AED27D /* b2Joint.cpp in Sources */,
 				450ED6241FB81316008F2902 /* switch rendering component.cpp in Sources */,
+				4533A8CD1FC919750027B0FB /* render polygon.cpp in Sources */,
 				450ED60B1FB7F633008F2902 /* door rendering system.cpp in Sources */,
 				450ED5DA1FB6B3E3008F2902 /* player rendering system.cpp in Sources */,
 				456DF0C61FBD633C003B3FD1 /* moving platform system.cpp in Sources */,
@@ -1337,6 +1348,7 @@
 				4583EE261FB18F7A00AED27D /* b2Timer.cpp in Sources */,
 				4583EE271FB18F7A00AED27D /* b2StackAllocator.cpp in Sources */,
 				4591F09F1FC2B40E0075000D /* laser detector system.cpp in Sources */,
+				4533A8D01FC91BB60027B0FB /* key rendering system.cpp in Sources */,
 				450ED62A1FB84633008F2902 /* animation component.cpp in Sources */,
 				4533A8B11FC909F90027B0FB /* lock component.cpp in Sources */,
 				4583EE281FB18F7A00AED27D /* b2Math.cpp in Sources */,
