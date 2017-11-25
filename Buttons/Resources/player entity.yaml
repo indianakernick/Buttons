@@ -3,3 +3,4 @@ PlayerJump: {}
 Transform: {}
 PlayerRendering: {}
 Collision: {}
+PlayerKeys: {}
