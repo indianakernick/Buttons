@@ -25,9 +25,17 @@ void loadComps(
   for (auto &pair : comps) {
     const std::string &compName = pair.first.Scalar();
     const YAML::Node &props = pair.second;
-    Utils::getByName<CompList>(compName, [id, &idMap, &registry, &compInits, props] (auto t) {
+    const bool gotComp = Utils::getByName<CompList>(compName, [id, &idMap, &registry, &compInits, props] (auto t) {
       compInits.init(registry.accomodate<UTILS_TYPE(t)>(id), props, idMap, id);
     });
+    if (!gotComp) {
+      throw std::runtime_error(
+        "Unknown component name \""
+        + compName
+        + "\" at line "
+        + std::to_string(pair.first.Mark().line)
+      );
+    }
   }
 }
 
