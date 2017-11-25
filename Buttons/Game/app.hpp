@@ -14,7 +14,6 @@
 #include "level manager.hpp"
 #include "physics system.hpp"
 #include "entity registry.hpp"
-#include "rendering manager.hpp"
 #include "rendering context.hpp"
 #include <experimental/optional>
 #include <Simpleton/Camera 2D/camera.hpp>
@@ -33,7 +32,6 @@ private:
   std::experimental::optional<Platform::WindowLibrary> windowLibrary;
   Platform::Window window;
   RenderingContext renderingContext;
-  RenderingManager renderingManager;
   Cam2D::Camera camera;
   Screenshot screenshot;
   Registry registry;

@@ -61,7 +61,6 @@ void App::init() {
   windowLibrary.emplace(SDL_INIT_EVENTS);
   window = Platform::makeWindow(WINDOW_DESC);
   renderingContext.init(window.get());
-  renderingManager.init(renderingContext);
   camera.targetScale = std::make_unique<Cam2D::ZoomToFit>(LEVEL_SIZE);
   camera.zoom = std::make_unique<Cam2D::LinearZoom>(ZOOM_SPEED);
   
@@ -93,7 +92,6 @@ void App::quit() {
 
   physics.quit();
 
-  renderingManager.quit();
   renderingContext.quit();
   window.reset();
   windowLibrary = std::experimental::nullopt;
@@ -172,7 +170,6 @@ bool App::render(const float delta) {
     renderGrid(renderingContext.getContext());
   }
   
-  renderingManager.render();
   screenshot.postRender(renderingContext, ENABLE_FPS_RENDER);
   return true;
 }

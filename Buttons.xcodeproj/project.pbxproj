@@ -116,10 +116,7 @@
 		4583EE751FB190F300AED27D /* nvg helper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE661FB190BD00AED27D /* nvg helper.cpp */; };
 		4583EE761FB190F300AED27D /* screenshot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE691FB190BD00AED27D /* screenshot.cpp */; };
 		4583EE781FB190F300AED27D /* yaml helper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE681FB190BD00AED27D /* yaml helper.cpp */; };
-		4583EE791FB190F300AED27D /* layer names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE491FB1906F00AED27D /* layer names.cpp */; };
 		4583EE7A1FB190F300AED27D /* rendering context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE421FB1906D00AED27D /* rendering context.cpp */; };
-		4583EE7B1FB190F300AED27D /* rendering job.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE4A1FB1906F00AED27D /* rendering job.cpp */; };
-		4583EE7C1FB190F300AED27D /* rendering manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE481FB1906E00AED27D /* rendering manager.cpp */; };
 		4583EE7D1FB190F300AED27D /* rendering resources.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE451FB1906E00AED27D /* rendering resources.cpp */; };
 		4583EE7E1FB1914000AED27D /* stb_image_write.c in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE001FB18EFF00AED27D /* stb_image_write.c */; settings = {COMPILER_FLAGS = "-Wno-comma"; }; };
 		4583EE7F1FB1914000AED27D /* tinyfiledialogs.c in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE011FB18EFF00AED27D /* tinyfiledialogs.c */; settings = {COMPILER_FLAGS = "-Wno-shorten-64-to-32"; }; };
@@ -374,16 +371,10 @@
 		4583EE001FB18EFF00AED27D /* stb_image_write.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = stb_image_write.c; sourceTree = "<group>"; };
 		4583EE011FB18EFF00AED27D /* tinyfiledialogs.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = tinyfiledialogs.c; sourceTree = "<group>"; };
 		4583EE021FB18EFF00AED27D /* stb_image_write.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stb_image_write.h; sourceTree = "<group>"; };
-		4583EE411FB1906D00AED27D /* layer names.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "layer names.hpp"; sourceTree = "<group>"; };
 		4583EE421FB1906D00AED27D /* rendering context.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "rendering context.cpp"; sourceTree = "<group>"; };
-		4583EE431FB1906D00AED27D /* rendering job.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "rendering job.hpp"; sourceTree = "<group>"; };
-		4583EE441FB1906E00AED27D /* rendering manager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "rendering manager.hpp"; sourceTree = "<group>"; };
 		4583EE451FB1906E00AED27D /* rendering resources.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "rendering resources.cpp"; sourceTree = "<group>"; };
 		4583EE461FB1906E00AED27D /* rendering context.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "rendering context.hpp"; sourceTree = "<group>"; };
 		4583EE471FB1906E00AED27D /* rendering resources.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "rendering resources.hpp"; sourceTree = "<group>"; };
-		4583EE481FB1906E00AED27D /* rendering manager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "rendering manager.cpp"; sourceTree = "<group>"; };
-		4583EE491FB1906F00AED27D /* layer names.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "layer names.cpp"; sourceTree = "<group>"; };
-		4583EE4A1FB1906F00AED27D /* rendering job.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "rendering job.cpp"; sourceTree = "<group>"; };
 		4583EE5E1FB190BB00AED27D /* string view literal.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "string view literal.hpp"; sourceTree = "<group>"; };
 		4583EE601FB190BB00AED27D /* yaml convert.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "yaml convert.hpp"; sourceTree = "<group>"; };
 		4583EE611FB190BB00AED27D /* framebuffer to png.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "framebuffer to png.cpp"; sourceTree = "<group>"; };
@@ -817,14 +808,8 @@
 		4583EE401FB1905200AED27D /* Rendering */ = {
 			isa = PBXGroup;
 			children = (
-				4583EE491FB1906F00AED27D /* layer names.cpp */,
-				4583EE411FB1906D00AED27D /* layer names.hpp */,
 				4583EE421FB1906D00AED27D /* rendering context.cpp */,
 				4583EE461FB1906E00AED27D /* rendering context.hpp */,
-				4583EE4A1FB1906F00AED27D /* rendering job.cpp */,
-				4583EE431FB1906D00AED27D /* rendering job.hpp */,
-				4583EE481FB1906E00AED27D /* rendering manager.cpp */,
-				4583EE441FB1906E00AED27D /* rendering manager.hpp */,
 				4583EE451FB1906E00AED27D /* rendering resources.cpp */,
 				4583EE471FB1906E00AED27D /* rendering resources.hpp */,
 				4591F0C11FC8036D0075000D /* render grid.cpp */,
@@ -1231,16 +1216,13 @@
 				4591F06A1FBFE51E0075000D /* transform init.cpp in Sources */,
 				450ED6081FB7F4F6008F2902 /* door rendering component.cpp in Sources */,
 				4583EEA61FB1B1E800AED27D /* button system.cpp in Sources */,
-				4583EE791FB190F300AED27D /* layer names.cpp in Sources */,
 				4597961A1FB41BF1007A7432 /* physics component.cpp in Sources */,
 				4583EE7A1FB190F300AED27D /* rendering context.cpp in Sources */,
 				450ED5D11FB6AB96008F2902 /* player movement system.cpp in Sources */,
 				450ED6211FB80CB4008F2902 /* switch system.cpp in Sources */,
-				4583EE7B1FB190F300AED27D /* rendering job.cpp in Sources */,
 				450ED6271FB81395008F2902 /* switch rendering system.cpp in Sources */,
 				450ED5D41FB6AC6E008F2902 /* player jump component.cpp in Sources */,
 				450ED5D71FB6B0A0008F2902 /* limit velocity.cpp in Sources */,
-				4583EE7C1FB190F300AED27D /* rendering manager.cpp in Sources */,
 				4583EE7D1FB190F300AED27D /* rendering resources.cpp in Sources */,
 				4583EE071FB18F7A00AED27D /* b2Body.cpp in Sources */,
 				4597961E1FB41C0C007A7432 /* power component.cpp in Sources */,
