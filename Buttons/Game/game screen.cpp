@@ -23,9 +23,7 @@ void GameScreen::enter() {
   camera.setZoom(1.0f);
 }
 
-void GameScreen::leave() {
-  
-}
+void GameScreen::leave() {}
 
 void GameScreen::init(RenderingContext &renderingContext) {
   camera.targetZoom = std::make_unique<Cam2D::ZoomToFit>(LEVEL_SIZE);
@@ -50,7 +48,7 @@ void GameScreen::init(RenderingContext &renderingContext) {
   compInits.setDefaults();
   
   levelManager.init(registry, compInits);
-  levelManager.loadLevel(0);
+  levelManager.loadLevel(progressManager.getCurrentLevel());
   
   inputDispatcher.addListener([this] (const SDL_Event &e) {
     if (e.type == SDL_KEYDOWN && e.key.keysym.scancode == SDL_SCANCODE_R) {
@@ -83,6 +81,7 @@ void GameScreen::input(const SDL_Event event) {
 void GameScreen::update(const float delta) {
   if (exitSystem(registry)) {
     if (levelManager.nextLevel()) {
+      progressManager.finishLevel();
       camera.setZoom(1.0f);
     } else {
       /* Player just finished the last level */

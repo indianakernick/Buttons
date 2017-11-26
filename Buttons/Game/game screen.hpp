@@ -14,6 +14,7 @@
 #include "physics system.hpp"
 #include "entity registry.hpp"
 #include "input dispatcher.hpp"
+#include "progress manager.hpp"
 #include <Simpleton/Camera 2D/camera.hpp>
 
 class RenderingContext;
@@ -21,6 +22,7 @@ extern "C" union SDL_Event;
 
 class GameScreen {
 public:
+  GameScreen() = default;
   
   void enter();
   void leave();
@@ -37,6 +39,7 @@ private:
   PhysicsSystem physics;
   CompInits compInits;
   LevelManager levelManager;
+  ProgressManager progressManager;
   InputDispatcher inputDispatcher;
   Cam2D::Camera camera;
 };
