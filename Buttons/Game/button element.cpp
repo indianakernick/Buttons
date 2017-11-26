@@ -1,12 +1,12 @@
 //
-//  button.cpp
+//  button element.cpp
 //  Buttons
 //
 //  Created by Indi Kernick on 26/11/17.
 //  Copyright © 2017 Indi Kernick. All rights reserved.
 //
 
-#include "button.hpp"
+#include "button element.hpp"
 
 #include "nvg helper.hpp"
 #include <glm/gtx/matrix_transform_2d.hpp>

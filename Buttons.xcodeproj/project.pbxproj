@@ -68,7 +68,7 @@
 		4533A9011FCA91DD0027B0FB /* progress manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8FF1FCA91DC0027B0FB /* progress manager.cpp */; };
 		4533A9051FCA93780027B0FB /* dir.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A9031FCA93780027B0FB /* dir.cpp */; };
 		4533A9081FCAA2520027B0FB /* start menu screen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A9061FCAA2520027B0FB /* start menu screen.cpp */; };
-		4533A90B1FCAB1E40027B0FB /* button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A9091FCAB1E40027B0FB /* button.cpp */; };
+		4533A90B1FCAB1E40027B0FB /* button element.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A9091FCAB1E40027B0FB /* button element.cpp */; };
 		456DF0BA1FBD31BB003B3FD1 /* moving platform entity.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 456DF0B91FBD31BB003B3FD1 /* moving platform entity.yaml */; };
 		456DF0BD1FBD32E7003B3FD1 /* moving platform rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0BB1FBD32E7003B3FD1 /* moving platform rendering component.cpp */; };
 		456DF0C01FBD336A003B3FD1 /* moving platform rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0BE1FBD336A003B3FD1 /* moving platform rendering system.cpp */; };
@@ -307,8 +307,8 @@
 		4533A9041FCA93780027B0FB /* dir.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = dir.hpp; sourceTree = "<group>"; };
 		4533A9061FCAA2520027B0FB /* start menu screen.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "start menu screen.cpp"; sourceTree = "<group>"; };
 		4533A9071FCAA2520027B0FB /* start menu screen.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "start menu screen.hpp"; sourceTree = "<group>"; };
-		4533A9091FCAB1E40027B0FB /* button.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = button.cpp; sourceTree = "<group>"; };
-		4533A90A1FCAB1E40027B0FB /* button.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = button.hpp; sourceTree = "<group>"; };
+		4533A9091FCAB1E40027B0FB /* button element.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "button element.cpp"; sourceTree = "<group>"; };
+		4533A90A1FCAB1E40027B0FB /* button element.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "button element.hpp"; sourceTree = "<group>"; };
 		456DF0B91FBD31BB003B3FD1 /* moving platform entity.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "moving platform entity.yaml"; sourceTree = "<group>"; };
 		456DF0BB1FBD32E7003B3FD1 /* moving platform rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "moving platform rendering component.cpp"; sourceTree = "<group>"; };
 		456DF0BC1FBD32E7003B3FD1 /* moving platform rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "moving platform rendering component.hpp"; sourceTree = "<group>"; };
@@ -593,8 +593,8 @@
 				4533A8FD1FCA69440027B0FB /* game screen.hpp */,
 				4533A9061FCAA2520027B0FB /* start menu screen.cpp */,
 				4533A9071FCAA2520027B0FB /* start menu screen.hpp */,
-				4533A9091FCAB1E40027B0FB /* button.cpp */,
-				4533A90A1FCAB1E40027B0FB /* button.hpp */,
+				4533A9091FCAB1E40027B0FB /* button element.cpp */,
+				4533A90A1FCAB1E40027B0FB /* button element.hpp */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -1340,7 +1340,7 @@
 				4591F0C31FC8036D0075000D /* render grid.cpp in Sources */,
 				4583EE0C1FB18F7A00AED27D /* b2ChainAndCircleContact.cpp in Sources */,
 				4591F0A81FC2BAD10075000D /* text rendering init.cpp in Sources */,
-				4533A90B1FCAB1E40027B0FB /* button.cpp in Sources */,
+				4533A90B1FCAB1E40027B0FB /* button element.cpp in Sources */,
 				4583EE0D1FB18F7A00AED27D /* b2PolygonAndCircleContact.cpp in Sources */,
 				4583EE0E1FB18F7A00AED27D /* b2PolygonContact.cpp in Sources */,
 				450ED6351FBA89B0008F2902 /* exit rendering system.cpp in Sources */,

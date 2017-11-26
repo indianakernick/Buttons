@@ -1,13 +1,13 @@
 //
-//  button.hpp
+//  button element.hpp
 //  Buttons
 //
 //  Created by Indi Kernick on 26/11/17.
 //  Copyright © 2017 Indi Kernick. All rights reserved.
 //
 
-#ifndef button_hpp
-#define button_hpp
+#ifndef button_element_hpp
+#define button_element_hpp
 
 #include <string>
 #include "nanovg.hpp"
