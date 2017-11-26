@@ -17,7 +17,6 @@ struct TextRendering {
   NVGcolor color;
   int align;
   float size;
-  float boxWidth;
 };
 
 #endif
