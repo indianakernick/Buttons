@@ -16,8 +16,8 @@
 #include "window constants.hpp"
 #include "camera constants.hpp"
 #include <Simpleton/Time/get.hpp>
-#include <Simpleton/Camera 2D/linear zoom.hpp>
 #include <Simpleton/Camera 2D/zoom to fit.hpp>
+#include <Simpleton/Camera 2D/constant speed.hpp>
 
 void App::mainloop() {
   init();
@@ -61,8 +61,8 @@ void App::init() {
   windowLibrary.emplace(SDL_INIT_EVENTS);
   window = Platform::makeWindow(WINDOW_DESC);
   renderingContext.init(window.get());
-  camera.targetScale = std::make_unique<Cam2D::ZoomToFit>(LEVEL_SIZE);
-  camera.zoom = std::make_unique<Cam2D::LinearZoom>(ZOOM_SPEED);
+  camera.targetZoom = std::make_unique<Cam2D::ZoomToFit>(LEVEL_SIZE);
+  camera.animateZoom = std::make_unique<Cam2D::ZoomConstantSpeed>(ZOOM_SPEED);
   
   physics.init(registry, renderingContext.getContext());
   
@@ -140,7 +140,7 @@ bool App::input(float) {
 bool App::update(const float delta) {
   if (exitSystem(registry)) {
     if (levelManager.nextLevel()) {
-      camera.setScale(1.0f);
+      camera.setZoom(1.0f);
     } else {
       /* Player just finished the last level */
     }
