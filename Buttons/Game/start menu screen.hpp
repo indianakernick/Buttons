@@ -9,6 +9,7 @@
 #ifndef start_menu_screen_hpp
 #define start_menu_screen_hpp
 
+#include "button.hpp"
 #include "input dispatcher.hpp"
 #include "rendering resources.hpp"
 #include <Simpleton/Camera 2D/camera.hpp>
@@ -34,6 +35,7 @@ private:
   InputDispatcher inputDispatcher;
   Cam2D::Camera camera;
   FontHandle font;
+  Button startButton;
 };
 
 #endif

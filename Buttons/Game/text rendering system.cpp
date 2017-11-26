@@ -13,8 +13,6 @@
 #include "transform component.hpp"
 #include "text rendering component.hpp"
 
-#include <iostream>
-
 void textRenderingSystem(Registry &registry, NVGcontext *const ctx) {
   const auto view = registry.view<Transform, Text, TextRendering>();
   for (const EntityID entity : view) {

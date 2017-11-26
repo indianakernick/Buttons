@@ -16,11 +16,14 @@
 
 class Button {
 public:
-  Button(glm::vec2, glm::vec2);
+  Button();
+  
+  void setBounds(glm::vec2, glm::vec2);
   
   void setText(const std::string &);
   void setFont(FontHandle);
   void setFontSize(float);
+  void setTextColor(NVGcolor);
   
   void setTopColor(NVGcolor);
   void setBottomColor(NVGcolor);
@@ -30,12 +33,13 @@ public:
   bool hit(glm::vec2) const;
 
   void render(NVGcontext *);
-
+  
 private:
   std::string text;
   FontHandle font;
   NVGcolor top;
   NVGcolor bottom;
+  NVGcolor textColor;
   Math::RectPP<float> bounds;
   float cornerRadius = 0.0f;
   float fontSize = 0.0f;

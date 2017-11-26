@@ -11,10 +11,15 @@
 #include "nvg helper.hpp"
 #include <glm/gtx/matrix_transform_2d.hpp>
 
-Button::Button(const glm::vec2 min, const glm::vec2 max)
+Button::Button()
   : top(nvgRGBf(0.0f, 0.0f, 0.0f)),
     bottom(nvgRGBf(0.0f, 0.0f, 0.0f)),
-    bounds(min, max) {}
+    textColor(nvgRGBf(1.0f, 1.0f, 1.0f)) {}
+
+void Button::setBounds(const glm::vec2 min, const glm::vec2 max) {
+  bounds.min = min;
+  bounds.max = max;
+}
 
 void Button::setText(const std::string &newText) {
   text = newText;
@@ -26,6 +31,10 @@ void Button::setFont(const FontHandle newFont) {
 
 void Button::setFontSize(const float newFontSize) {
   fontSize = newFontSize;
+}
+
+void Button::setTextColor(const NVGcolor color) {
+  textColor = color;
 }
 
 void Button::setTopColor(const NVGcolor color) {
@@ -77,7 +86,7 @@ void Button::render(NVGcontext *const ctx) {
   nvgFill(ctx);
   
   nvgFontFaceId(ctx, font->id);
-  nvgFillColor(ctx, nvgRGBf(1.0f, 1.0f, 1.0f));
+  nvgFillColor(ctx, textColor);
   nvgTextAlign(ctx, NVG_ALIGN_CENTER | NVG_ALIGN_MIDDLE);
   nvgFontSize(ctx, fontSize);
   nvgText(ctx, 0.0f, 0.0f, text.c_str(), text.c_str() + text.size());

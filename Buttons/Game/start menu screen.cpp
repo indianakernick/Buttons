@@ -19,10 +19,15 @@ void StartMenuScreen::init(RenderingContext &renderingContext) {
   camera.targetZoom = std::make_unique<Cam2D::ZoomToFit>(glm::vec2(16, 9));
   font = renderingContext.getResources().getFont("Arial.ttf");
   
+  startButton.setBounds({-4.0f, -1.0f}, {4.0f, 1.0f});
+  
   inputDispatcher.addListener([this] (const SDL_Event &e) {
-    if (e.type == SDL_MOUSEMOTION) {
+    if (e.type == SDL_MOUSEBUTTONDOWN) {
       const glm::vec2 posPx = {e.motion.x, e.motion.y};
       const glm::vec2 posM = Cam2D::mulPos(camera.transform.toMeters(), posPx);
+      if (startButton.hit(posM)) {
+        
+      }
     }
     return false;
   });
@@ -45,6 +50,6 @@ glm::mat3 StartMenuScreen::preRender(const glm::ivec2 windowSize, const float de
   return camera.transform.toPixels();
 }
 
-void StartMenuScreen::render(NVGcontext *const ctx, const float delta) {
-  
+void StartMenuScreen::render(NVGcontext *const ctx, const float) {
+  startButton.render(ctx);
 }
