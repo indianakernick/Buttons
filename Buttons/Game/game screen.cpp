@@ -26,6 +26,8 @@ void GameScreen::enter() {
 void GameScreen::leave() {}
 
 void GameScreen::init(RenderingContext &renderingContext) {
+  camera.transform.setInvertY(true);
+  camera.transform.setOrigin(Cam2D::Origin::CENTER);
   camera.targetZoom = std::make_unique<Cam2D::ZoomToFit>(LEVEL_SIZE);
   camera.animateZoom = std::make_unique<Cam2D::ZoomConstantSpeed>(ZOOM_SPEED);
 
