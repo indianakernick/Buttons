@@ -1,28 +1,24 @@
 //
-//  game screen.hpp
+//  start menu screen.hpp
 //  Buttons
 //
 //  Created by Indi Kernick on 26/11/17.
 //  Copyright © 2017 Indi Kernick. All rights reserved.
 //
 
-#ifndef game_screen_hpp
-#define game_screen_hpp
+#ifndef start_menu_screen_hpp
+#define start_menu_screen_hpp
 
-#include "comp inits.hpp"
-#include "level manager.hpp"
-#include "physics system.hpp"
-#include "entity registry.hpp"
 #include "input dispatcher.hpp"
-#include "progress manager.hpp"
+#include "rendering resources.hpp"
 #include <Simpleton/Camera 2D/camera.hpp>
 
 class RenderingContext;
 extern "C" union SDL_Event;
 
-class GameScreen {
+class StartMenuScreen {
 public:
-  GameScreen() = default;
+  StartMenuScreen() = default;
   
   void enter();
   void leave();
@@ -35,13 +31,9 @@ public:
   void render(NVGcontext *, float);
 
 private:
-  Registry registry;
-  PhysicsSystem physics;
-  CompInits compInits;
-  LevelManager levelManager;
-  ProgressManager progressManager;
   InputDispatcher inputDispatcher;
   Cam2D::Camera camera;
+  FontHandle font;
 };
 
 #endif

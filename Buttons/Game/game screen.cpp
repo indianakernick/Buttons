@@ -76,7 +76,7 @@ void GameScreen::quit() {
   physics.quit();
 }
 
-void GameScreen::input(const SDL_Event event) {
+void GameScreen::input(const SDL_Event &event) {
   inputDispatcher.dispatch(event);
 }
 
