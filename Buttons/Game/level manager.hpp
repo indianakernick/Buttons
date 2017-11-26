@@ -10,10 +10,10 @@
 #define level_manager_hpp
 
 #include <limits>
+#include "level.hpp"
 #include "entity registry.hpp"
 
 class CompInits;
-using Level = unsigned;
 
 class LevelManager {
 public:

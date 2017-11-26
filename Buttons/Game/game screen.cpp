@@ -18,6 +18,15 @@
 #include <Simpleton/Camera 2D/zoom to fit.hpp>
 #include <Simpleton/Camera 2D/constant speed.hpp>
 
+void GameScreen::enter() {
+  levelManager.reload();
+  camera.setZoom(1.0f);
+}
+
+void GameScreen::leave() {
+  
+}
+
 void GameScreen::init(RenderingContext &renderingContext) {
   camera.targetZoom = std::make_unique<Cam2D::ZoomToFit>(LEVEL_SIZE);
   camera.animateZoom = std::make_unique<Cam2D::ZoomConstantSpeed>(ZOOM_SPEED);
