@@ -29,8 +29,8 @@ void lockRenderingSystem(Registry &registry, NVGcontext *const ctx) {
     
     if (isInactive(view.get<Activation>(entity).state)) {
       nvgTranslate(ctx, 0.0f, 0.5f);
-      nvgPathWinding(ctx, NVG_HOLE);
       renderPolygon(ctx, view.get<Lock>(entity).index + 3, 0.4f, NVG_PI / 2.0f);
+      nvgPathWinding(ctx, NVG_HOLE);
     }
     
     nvgFill(ctx);
