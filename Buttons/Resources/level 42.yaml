@@ -119,7 +119,7 @@
 - file: shadow entity.yaml
   components:
     Transform:
-      pos: [10, -9]
+      pos: [10, -8]
       scale: [6, 4]
     PowerInput:
       in: 4

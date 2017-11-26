@@ -64,6 +64,7 @@
 		4533A8E51FCA499F0027B0FB /* shadow rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8E31FCA499F0027B0FB /* shadow rendering component.cpp */; };
 		4533A8E81FCA4A3F0027B0FB /* shadow rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8E61FCA4A3F0027B0FB /* shadow rendering system.cpp */; };
 		4533A8EA1FCA4ED20027B0FB /* shadow entity.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 4533A8E91FCA4ED20027B0FB /* shadow entity.yaml */; };
+		4533A8FE1FCA69440027B0FB /* game screen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8FC1FCA69440027B0FB /* game screen.cpp */; };
 		456DF0BA1FBD31BB003B3FD1 /* moving platform entity.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 456DF0B91FBD31BB003B3FD1 /* moving platform entity.yaml */; };
 		456DF0BD1FBD32E7003B3FD1 /* moving platform rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0BB1FBD32E7003B3FD1 /* moving platform rendering component.cpp */; };
 		456DF0C01FBD336A003B3FD1 /* moving platform rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0BE1FBD336A003B3FD1 /* moving platform rendering system.cpp */; };
@@ -293,6 +294,8 @@
 		4533A8E61FCA4A3F0027B0FB /* shadow rendering system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "shadow rendering system.cpp"; sourceTree = "<group>"; };
 		4533A8E71FCA4A3F0027B0FB /* shadow rendering system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "shadow rendering system.hpp"; sourceTree = "<group>"; };
 		4533A8E91FCA4ED20027B0FB /* shadow entity.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "shadow entity.yaml"; sourceTree = "<group>"; };
+		4533A8FC1FCA69440027B0FB /* game screen.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "game screen.cpp"; sourceTree = "<group>"; };
+		4533A8FD1FCA69440027B0FB /* game screen.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "game screen.hpp"; sourceTree = "<group>"; };
 		456DF0B91FBD31BB003B3FD1 /* moving platform entity.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "moving platform entity.yaml"; sourceTree = "<group>"; };
 		456DF0BB1FBD32E7003B3FD1 /* moving platform rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "moving platform rendering component.cpp"; sourceTree = "<group>"; };
 		456DF0BC1FBD32E7003B3FD1 /* moving platform rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "moving platform rendering component.hpp"; sourceTree = "<group>"; };
@@ -573,6 +576,8 @@
 			isa = PBXGroup;
 			children = (
 				4533A8A11FC8E2200027B0FB /* state.hpp */,
+				4533A8FC1FCA69440027B0FB /* game screen.cpp */,
+				4533A8FD1FCA69440027B0FB /* game screen.hpp */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -1277,6 +1282,7 @@
 				4533A8BD1FC90EF50027B0FB /* take key system.cpp in Sources */,
 				4533A8BA1FC90C390027B0FB /* player keys component.cpp in Sources */,
 				4583EE751FB190F300AED27D /* nvg helper.cpp in Sources */,
+				4533A8FE1FCA69440027B0FB /* game screen.cpp in Sources */,
 				4591F0801FC011E50075000D /* exit system.cpp in Sources */,
 				452E10891FB2D27D0063114B /* collision pairs.cpp in Sources */,
 				4583EE761FB190F300AED27D /* screenshot.cpp in Sources */,
