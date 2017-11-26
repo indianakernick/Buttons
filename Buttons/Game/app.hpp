@@ -11,6 +11,7 @@
 
 #include "screenshot.hpp"
 #include "game screen.hpp"
+#include "start menu screen.hpp"
 #include "rendering context.hpp"
 #include <experimental/optional>
 #include <Simpleton/Platform/window library.hpp>
@@ -30,6 +31,7 @@ private:
   RenderingContext renderingContext;
   Screenshot screenshot;
   GameScreen game;
+  StartMenuScreen startMenu;
   
   void init();
   void quit();

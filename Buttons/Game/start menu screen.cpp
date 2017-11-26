@@ -19,7 +19,13 @@ void StartMenuScreen::init(RenderingContext &renderingContext) {
   camera.targetZoom = std::make_unique<Cam2D::ZoomToFit>(glm::vec2(16, 9));
   font = renderingContext.getResources().getFont("Arial.ttf");
   
-  startButton.setBounds({-4.0f, -1.0f}, {4.0f, 1.0f});
+  startButton.setCenterSize({0.0f, 0.0f}, {8.0f, 2.0f});
+  startButton.setText("Start");
+  startButton.setFont(font);
+  startButton.setFontSize(80.0f);
+  startButton.setTopColor(nvgRGBf(0.5f, 1.0f, 0.5f));
+  startButton.setBottomColor(nvgRGBf(0.0f, 0.5f, 0.0f));
+  startButton.setCornerRadius(0.5f);
   
   inputDispatcher.addListener([this] (const SDL_Event &e) {
     if (e.type == SDL_MOUSEBUTTONDOWN) {

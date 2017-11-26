@@ -11,79 +11,84 @@
 #include "nvg helper.hpp"
 #include <glm/gtx/matrix_transform_2d.hpp>
 
-Button::Button()
+ButtonElement::ButtonElement()
   : top(nvgRGBf(0.0f, 0.0f, 0.0f)),
     bottom(nvgRGBf(0.0f, 0.0f, 0.0f)),
     textColor(nvgRGBf(1.0f, 1.0f, 1.0f)) {}
 
-void Button::setBounds(const glm::vec2 min, const glm::vec2 max) {
-  bounds.min = min;
-  bounds.max = max;
+void ButtonElement::setCenterSize(const glm::vec2 center, const glm::vec2 size) {
+  rect.center = center;
+  rect.halfSize = size / 2.0f;
 }
 
-void Button::setText(const std::string &newText) {
+void ButtonElement::setText(const std::string &newText) {
   text = newText;
 }
 
-void Button::setFont(const FontHandle newFont) {
+void ButtonElement::setFont(const FontHandle newFont) {
   font = newFont;
 }
 
-void Button::setFontSize(const float newFontSize) {
+void ButtonElement::setFontSize(const float newFontSize) {
   fontSize = newFontSize;
 }
 
-void Button::setTextColor(const NVGcolor color) {
+void ButtonElement::setTextColor(const NVGcolor color) {
   textColor = color;
 }
 
-void Button::setTopColor(const NVGcolor color) {
+void ButtonElement::setTopColor(const NVGcolor color) {
   top = color;
 }
 
-void Button::setBottomColor(const NVGcolor color) {
+void ButtonElement::setBottomColor(const NVGcolor color) {
   bottom = color;
 }
 
-void Button::setCornerRadius(const float radius) {
+void ButtonElement::setCornerRadius(const float radius) {
   cornerRadius = std::abs(radius);
 }
 
-void Button::swapColors() {
+void ButtonElement::swapColors() {
   std::swap(top, bottom);
 }
 
-bool Button::hit(const glm::vec2 pos) const {
-  return bounds.encloses(pos);
+bool ButtonElement::hit(const glm::vec2 pos) const {
+  return rect.encloses(pos);
 }
 
 namespace {
-  glm::mat3 getMat(const Math::RectPP<float> rect) {
+  glm::mat3 getMat(const Math::RectCS<float> rect) {
     return glm::scale(
       glm::translate(
         {},
-        glm::vec2(-rect.min.x, -rect.max.y)
+        -rect.center
       ),
-      rect.size() * glm::vec2(0.001f, -0.001f)
+      glm::vec2(0.02f, -0.02f)
     );
   }
 }
 
-void Button::render(NVGcontext *const ctx) {
+void ButtonElement::render(NVGcontext *const ctx) {
   nvgSave(ctx);
-
-  nvgTransform(ctx, getMat(bounds));
   
   nvgBeginPath(ctx);
   nvgFillPaint(ctx, nvgLinearGradient(
     ctx,
-    0.0f, 0.0f,
-    0.0f, 1000.0f,
+    0.0f, rect.top(),
+    0.0f, rect.bottom(),
     top,
     bottom
   ));
-  nvgRoundedRect(ctx, 0.0f, 0.0f, 1000.0f, 1000.0f, cornerRadius);
+  nvgRoundedRect(
+    ctx,
+    rect.left(), rect.bottom(),
+    rect.halfSize.x * 2.0f, rect.halfSize.y * 2.0f,
+    cornerRadius
+  );
   nvgFill(ctx);
+  
+  nvgTransform(ctx, getMat(rect));
   
   nvgFontFaceId(ctx, font->id);
   nvgFillColor(ctx, textColor);

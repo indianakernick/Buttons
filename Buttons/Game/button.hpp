@@ -14,11 +14,11 @@
 #include "rendering resources.hpp"
 #include <Simpleton/Math/rect.hpp>
 
-class Button {
+class ButtonElement {
 public:
-  Button();
+  ButtonElement();
   
-  void setBounds(glm::vec2, glm::vec2);
+  void setCenterSize(glm::vec2, glm::vec2);
   
   void setText(const std::string &);
   void setFont(FontHandle);
@@ -40,7 +40,7 @@ private:
   NVGcolor top;
   NVGcolor bottom;
   NVGcolor textColor;
-  Math::RectPP<float> bounds;
+  Math::RectCS<float> rect;
   float cornerRadius = 0.0f;
   float fontSize = 0.0f;
 };

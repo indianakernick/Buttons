@@ -35,7 +35,7 @@ private:
   InputDispatcher inputDispatcher;
   Cam2D::Camera camera;
   FontHandle font;
-  Button startButton;
+  ButtonElement startButton;
 };
 
 #endif

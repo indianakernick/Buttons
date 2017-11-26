@@ -63,9 +63,11 @@ void App::init() {
   renderingContext.init(window.get());
   
   game.init(renderingContext);
+  startMenu.init(renderingContext);
 }
 
 void App::quit() {
+  startMenu.quit();
   game.quit();
 
   renderingContext.quit();
@@ -86,14 +88,16 @@ bool App::input(float) {
 }
 
 bool App::update(const float delta) {
-  game.update(delta);
+  //game.update(delta);
   
   return true;
 }
 
 bool App::render(const float delta) {
-  renderingContext.preRender(game.preRender(window.size(), delta));
-  game.render(renderingContext.getContext(), delta);
+  renderingContext.preRender(startMenu.preRender(window.size(), delta));
+  startMenu.render(renderingContext.getContext(), delta);
+  //renderingContext.preRender(game.preRender(window.size(), delta));
+  //game.render(renderingContext.getContext(), delta);
   screenshot.postRender(renderingContext, ENABLE_FPS_RENDER);
   return true;
 }
