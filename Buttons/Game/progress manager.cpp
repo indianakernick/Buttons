@@ -21,7 +21,9 @@ ProgressManager::ProgressManager() {
 
 ProgressManager::~ProgressManager() {
   std::ofstream file(getSaveDir() + "progress.txt");
-  file << currentLevel;
+  if (file.is_open()) {
+    file << currentLevel;
+  }
 }
 
 Level ProgressManager::getCurrentLevel() const {

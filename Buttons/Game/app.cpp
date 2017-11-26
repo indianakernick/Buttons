@@ -61,64 +61,12 @@ void App::init() {
   windowLibrary.emplace(SDL_INIT_EVENTS);
   window = Platform::makeWindow(WINDOW_DESC);
   renderingContext.init(window.get());
-  camera.targetZoom = std::make_unique<Cam2D::ZoomToFit>(LEVEL_SIZE);
-  camera.animateZoom = std::make_unique<Cam2D::ZoomConstantSpeed>(ZOOM_SPEED);
   
-  physics.init(registry, renderingContext.getContext());
-  
-  compInits.construct<PhysicsBodyInit>(physics.getWorld());
-  compInits.construct<PhysicsJointInit>(physics.getWorld(), &registry);
-  compInits.construct<PhysicsRayCastInit>();
-  compInits.construct<PowerInputInit>();
-  compInits.construct<MultiPowerInputInit>();
-  compInits.construct<ActivationInit>();
-  compInits.construct<TransformInit>();
-  compInits.construct<AnimationInit>();
-  compInits.construct<MovingPlatformInit>();
-  compInits.construct<LaserDetectorInit>();
-  compInits.construct<TextRenderingInit>(renderingContext.getResources());
-  compInits.construct<TextInit>();
-  compInits.construct<KeyInit>();
-  compInits.construct<LockInit>();
-  compInits.setDefaults();
-  
-  levelManager.init(registry, compInits);
-  levelManager.loadLevel(42);
-  
-  inputDispatcher.addListener([this] (const SDL_Event &e) {
-    if (e.type == SDL_KEYDOWN && e.key.keysym.scancode == SDL_SCANCODE_R) {
-      levelManager.reload();
-      return true;
-    } else {
-      return false;
-    }
-  });
-  inputDispatcher.addListener([this] (const SDL_Event &e) {
-    if (
-      e.type == SDL_KEYDOWN &&
-      e.key.repeat == 0 &&
-      e.key.keysym.scancode == SDL_SCANCODE_P
-    ) {
-      screenshot.takeScreenshot();
-      return true;
-    } else {
-      return false;
-    }
-  });
-  inputDispatcher.addListener([this] (const SDL_Event &e) {
-    return playerInputSystem(registry, e);
-  });
+  game.init(renderingContext);
 }
 
 void App::quit() {
-  inputDispatcher.clearListeners();
-
-  registry.reset();
-  levelManager.quit();
-  
-  compInits.destroyAll();
-
-  physics.quit();
+  game.quit();
 
   renderingContext.quit();
   window.reset();
@@ -131,76 +79,21 @@ bool App::input(float) {
     if (e.type == SDL_QUIT) {
       return false;
     } else {
-      inputDispatcher.dispatch(e);
+      game.input(e);
     }
   }
   return true;
 }
 
 bool App::update(const float delta) {
-  if (exitSystem(registry)) {
-    if (levelManager.nextLevel()) {
-      camera.setZoom(1.0f);
-    } else {
-      /* Player just finished the last level */
-    }
-  }
-
-  playerMovementSystem(registry, delta);
-  physics.update(delta);
-  physicsTransformSystem(registry);
-  takeKeySystem(registry);
-  activateLockSystem(registry);
-  
-  laserDetectorSystem(registry);
-  activationSystem(registry, delta);
-  doorSystem(registry);
-  movingPlatformSystem(registry, delta);
-  
-  //Set outputs
-  activatePowerOutputSystem(registry);
-  buttonSystem(registry);
-  switchSystem(registry);
-  //Set inputs
-  powerSystem(registry);
-  //Respond to inputs
-  powerInputActivationSystem(registry);
+  game.update(delta);
   
   return true;
 }
 
 bool App::render(const float delta) {
-  camera.update(window.size(), delta);
-  renderingContext.preRender(camera.transform.toPixels());
-  
-  if constexpr (ENABLE_DEBUG_PHYSICS_RENDER) {
-    physics.render();
-  }
-  
-  if constexpr (ENABLE_GAME_RENDER) {
-    animationSystem(registry, delta);
-  
-    NVGcontext *const ctx = renderingContext.getContext();
-    movingPlatformRenderingSystem(registry, ctx);
-    platformRenderingSystem(registry, ctx);
-    laserEmitterRenderingSystem(registry, ctx);
-    laserDetectorRenderingSystem(registry, ctx);
-    buttonRenderingSystem(registry, ctx);
-    boxRenderingSystem(registry, ctx);
-    exitRenderingSystem(registry, ctx);
-    keyRenderingSystem(registry, ctx);
-    lockRenderingSystem(registry, ctx);
-    playerRenderingSystem(registry, ctx);
-    switchRenderingSystem(registry, ctx);
-    doorRenderingSystem(registry, ctx);
-    textRenderingSystem(registry, ctx);
-    shadowRenderingSystem(registry, ctx);
-  }
-  
-  if constexpr (ENABLE_GRID_RENDER) {
-    renderGrid(renderingContext.getContext());
-  }
-  
+  renderingContext.preRender(game.preRender(window.size(), delta));
+  game.render(renderingContext.getContext(), delta);
   screenshot.postRender(renderingContext, ENABLE_FPS_RENDER);
   return true;
 }

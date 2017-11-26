@@ -9,15 +9,10 @@
 #ifndef app_hpp
 #define app_hpp
 
-#include "comp inits.hpp"
 #include "screenshot.hpp"
-#include "level manager.hpp"
-#include "physics system.hpp"
-#include "entity registry.hpp"
-#include "input dispatcher.hpp"
+#include "game screen.hpp"
 #include "rendering context.hpp"
 #include <experimental/optional>
-#include <Simpleton/Camera 2D/camera.hpp>
 #include <Simpleton/Platform/window library.hpp>
 
 class App {
@@ -33,13 +28,8 @@ private:
   std::experimental::optional<Platform::WindowLibrary> windowLibrary;
   Platform::Window window;
   RenderingContext renderingContext;
-  Cam2D::Camera camera;
   Screenshot screenshot;
-  Registry registry;
-  PhysicsSystem physics;
-  CompInits compInits;
-  LevelManager levelManager;
-  InputDispatcher inputDispatcher;
+  GameScreen game;
   
   void init();
   void quit();
