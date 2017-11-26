@@ -13,6 +13,24 @@
 #include <glm/mat3x3.hpp>
 #include "rendering resources.hpp"
 
+inline NVGcolor nvgGray(const float val) {
+  NVGcolor color;
+  color.r = val;
+  color.g = val;
+  color.b = val;
+  color.a = 1.0f;
+  return color;
+}
+
+inline NVGcolor nvgGrayA(const float val) {
+  NVGcolor color;
+  color.r = val;
+  color.g = val;
+  color.b = val;
+  color.a = val;
+  return color;
+}
+
 inline void nvgTransform(NVGcontext *const ctx, const glm::mat3 &m) noexcept {
   //   [a c e]
   //   [b d f]

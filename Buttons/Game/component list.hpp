@@ -34,6 +34,7 @@
 #include "laser detector component.hpp"
 #include "moving platform component.hpp"
 #include <Simpleton/Utils/type list.hpp>
+#include "shadow rendering component.hpp"
 #include "switch rendering component.hpp"
 #include "button rendering component.hpp"
 #include "player rendering component.hpp"
@@ -75,6 +76,7 @@
   COMP(Lock, lock)                                                              \
   COMP(PlayerKeys, playerKeys)                                                  \
   COMP(KeyRendering, keyRendering)                                              \
+  COMP(ShadowRendering, shadowRendering)                                        \
   COMP(LockRendering, lockRendering)                                            \
   COMP(MovingPlatformRendering, movingPlatformRendering)                        \
   LAST_COMP(MovingPlatform, movingPlatform)
