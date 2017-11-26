@@ -21,22 +21,12 @@ void shadowRenderingSystem(Registry &registry, NVGcontext *const ctx) {
       continue;
     }
     
-    const float activity = activation.activity;
-    
     nvgSave(ctx);
     
     nvgTransform(ctx, getMat3(view.get<Transform>(entity)));
     
     nvgBeginPath(ctx);
-    nvgFillPaint(ctx, nvgBoxGradient(
-      ctx,
-      0.0f, 0.0f, //pos
-      1.0f, 1.0f, //size
-      0.05f, //radius
-      0.05f, //feather
-      nvgGrayA(activity),
-      nvgGrayA(0.0f)
-    ));
+    nvgFillColor(ctx, nvgRGBAf(0.0f, 0.0f, 0.0f, 1.0f - activation.activity));
     nvgRect(ctx, 0.0f, 0.0f, 1.0f, 1.0f);
     nvgFill(ctx);
     
