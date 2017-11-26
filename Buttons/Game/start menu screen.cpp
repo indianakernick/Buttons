@@ -13,6 +13,10 @@
 #include "rendering context.hpp"
 #include <Simpleton/Camera 2D/zoom to fit.hpp>
 
+void StartMenuScreen::enter() {}
+
+void StartMenuScreen::leave() {}
+
 void StartMenuScreen::init(RenderingContext &renderingContext) {
   camera.transform.setInvertY(true);
   camera.transform.setOrigin(Cam2D::Origin::CENTER);
@@ -30,9 +34,10 @@ void StartMenuScreen::init(RenderingContext &renderingContext) {
   inputDispatcher.addListener([this] (const SDL_Event &e) {
     if (e.type == SDL_MOUSEBUTTONDOWN) {
       const glm::vec2 posPx = {e.motion.x, e.motion.y};
-      const glm::vec2 posM = Cam2D::mulPos(camera.transform.toMeters(), posPx);
+      const glm::vec2 posM = camera.transform.toMeters(posPx);
       if (startButton.hit(posM)) {
         
+        return true;
       }
     }
     return false;
@@ -41,7 +46,8 @@ void StartMenuScreen::init(RenderingContext &renderingContext) {
 
 void StartMenuScreen::quit() {
   inputDispatcher.clearListeners();
-
+  
+  startButton.setFont(nullptr);
   font = nullptr;
 }
 
