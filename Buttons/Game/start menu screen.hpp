@@ -9,6 +9,7 @@
 #ifndef start_menu_screen_hpp
 #define start_menu_screen_hpp
 
+#include "screen.hpp"
 #include "button element.hpp"
 #include "input dispatcher.hpp"
 #include "rendering resources.hpp"
@@ -17,19 +18,19 @@
 class RenderingContext;
 extern "C" union SDL_Event;
 
-class StartMenuScreen {
+class StartMenuScreen final : public Screen {
 public:
   StartMenuScreen() = default;
   
-  void enter();
-  void leave();
+  void enter() override;
+  void leave() override;
   
-  void init(RenderingContext &);
-  void quit();
-  void input(const SDL_Event &);
-  void update(float);
-  glm::mat3 preRender(glm::ivec2, float);
-  void render(NVGcontext *, float);
+  void init(RenderingContext &) override;
+  void quit() override;
+  void input(const SDL_Event &) override;
+  void update(float) override;
+  glm::mat3 preRender(glm::ivec2, float) override;
+  void render(NVGcontext *, float) override;
 
 private:
   InputDispatcher inputDispatcher;

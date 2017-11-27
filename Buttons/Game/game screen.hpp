@@ -9,6 +9,7 @@
 #ifndef game_screen_hpp
 #define game_screen_hpp
 
+#include "screen.hpp"
 #include "comp inits.hpp"
 #include "level manager.hpp"
 #include "physics system.hpp"
@@ -20,19 +21,19 @@
 class RenderingContext;
 extern "C" union SDL_Event;
 
-class GameScreen {
+class GameScreen final : public Screen {
 public:
   GameScreen() = default;
   
-  void enter();
-  void leave();
+  void enter() override;
+  void leave() override;
   
-  void init(RenderingContext &);
-  void quit();
-  void input(const SDL_Event &);
-  void update(float);
-  glm::mat3 preRender(glm::ivec2, float);
-  void render(NVGcontext *, float);
+  void init(RenderingContext &) override;
+  void quit() override;
+  void input(const SDL_Event &) override;
+  void update(float) override;
+  glm::mat3 preRender(glm::ivec2, float) override;
+  void render(NVGcontext *, float) override;
 
 private:
   Registry registry;
