@@ -24,6 +24,14 @@ void ScreenManager::transition() {
   }
 }
 
+void ScreenManager::transitionTo(const ScreenID next) {
+  if (current) {
+    current->leave();
+  }
+  current = screens.at(next).get();
+  current->enter();
+}
+
 void ScreenManager::initAll(RenderingContext &renderingContext) {
   for (auto &pair : screens) {
     pair.second->init(renderingContext);

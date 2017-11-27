@@ -10,8 +10,7 @@
 #define app_hpp
 
 #include "screenshot.hpp"
-#include "game screen.hpp"
-#include "start menu screen.hpp"
+#include "screen manager.hpp"
 #include "rendering context.hpp"
 #include <experimental/optional>
 #include <Simpleton/Platform/window library.hpp>
@@ -30,8 +29,7 @@ private:
   Platform::Window window;
   RenderingContext renderingContext;
   Screenshot screenshot;
-  GameScreen game;
-  StartMenuScreen startMenu;
+  ScreenManager screens;
   
   void init();
   void quit();

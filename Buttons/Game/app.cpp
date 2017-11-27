@@ -8,16 +8,10 @@
 
 #include "app.hpp"
 
-#include "systems.hpp"
-#include "level file.hpp"
-#include "render grid.hpp"
-#include "global flags.hpp"
-#include "component inits.hpp"
+#include "game screen.hpp"
 #include "window constants.hpp"
-#include "camera constants.hpp"
+#include "start menu screen.hpp"
 #include <Simpleton/Time/get.hpp>
-#include <Simpleton/Camera 2D/zoom to fit.hpp>
-#include <Simpleton/Camera 2D/constant speed.hpp>
 
 void App::mainloop() {
   init();
@@ -62,13 +56,15 @@ void App::init() {
   window = Platform::makeWindow(WINDOW_DESC);
   renderingContext.init(window.get());
   
-  game.init(renderingContext);
-  startMenu.init(renderingContext);
+  screens.addScreen<GameScreen>();
+  screens.addScreen<StartMenuScreen>();
+  screens.transitionTo(ScreenID::START_MENU);
+  
+  screens.initAll(renderingContext);
 }
 
 void App::quit() {
-  startMenu.quit();
-  game.quit();
+  screens.quitAll();
 
   renderingContext.quit();
   window.reset();
@@ -81,23 +77,21 @@ bool App::input(float) {
     if (e.type == SDL_QUIT) {
       return false;
     } else {
-      game.input(e);
+      screens.input(e);
     }
   }
   return true;
 }
 
 bool App::update(const float delta) {
-  //game.update(delta);
-  
+  screens.update(delta);
   return true;
 }
 
 bool App::render(const float delta) {
-  renderingContext.preRender(startMenu.preRender(window.size(), delta));
-  startMenu.render(renderingContext.getContext(), delta);
-  //renderingContext.preRender(game.preRender(window.size(), delta));
-  //game.render(renderingContext.getContext(), delta);
-  screenshot.postRender(renderingContext, ENABLE_FPS_RENDER);
+  renderingContext.preRender(screens.preRender(window.size(), delta));
+  screens.render(renderingContext.getContext(), delta);
+  //screenshot.postRender(renderingContext, ENABLE_FPS_RENDER);
+  screens.transition();
   return true;
 }

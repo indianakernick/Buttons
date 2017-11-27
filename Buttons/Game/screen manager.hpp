@@ -21,11 +21,11 @@ public:
   void addScreen(Args &&... args) {
     std::unique_ptr<Screen> screen = std::make_unique<Class>(std::forward<Args>(args)...);
     const ScreenID id = screen->getID();
-    current = screen.get();
     screens.emplace(id, std::move(screen));
   }
   void removeAll();
   void transition();
+  void transitionTo(ScreenID);
   
   void initAll(RenderingContext &);
   void quitAll();
