@@ -149,6 +149,7 @@
 		4583EEA61FB1B1E800AED27D /* button system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EEA41FB1B1E800AED27D /* button system.cpp */; };
 		4583EEAA1FB1B6E100AED27D /* physics transform system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EEA81FB1B6E100AED27D /* physics transform system.cpp */; };
 		4584F4001FCBB7F50062B93E /* screen manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4584F3FE1FCBB7F50062B93E /* screen manager.cpp */; };
+		4584F4031FCBE11F0062B93E /* text element.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4584F4011FCBE11F0062B93E /* text element.cpp */; };
 		4591F0641FBFE1420075000D /* power init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0621FBFE1420075000D /* power init.cpp */; };
 		4591F0671FBFE44B0075000D /* activation init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0651FBFE44B0075000D /* activation init.cpp */; };
 		4591F06A1FBFE51E0075000D /* transform init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0681FBFE51E0075000D /* transform init.cpp */; };
@@ -473,6 +474,9 @@
 		4583EEAB1FB1B6F800AED27D /* entity registry.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "entity registry.hpp"; sourceTree = "<group>"; };
 		4584F3FE1FCBB7F50062B93E /* screen manager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "screen manager.cpp"; sourceTree = "<group>"; };
 		4584F3FF1FCBB7F50062B93E /* screen manager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "screen manager.hpp"; sourceTree = "<group>"; };
+		4584F4011FCBE11F0062B93E /* text element.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "text element.cpp"; sourceTree = "<group>"; };
+		4584F4021FCBE11F0062B93E /* text element.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "text element.hpp"; sourceTree = "<group>"; };
+		4584F4041FCBE33D0062B93E /* element rect.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "element rect.hpp"; sourceTree = "<group>"; };
 		4591F0611FBFD0FD0075000D /* physics body entity id.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "physics body entity id.hpp"; sourceTree = "<group>"; };
 		4591F0621FBFE1420075000D /* power init.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "power init.cpp"; sourceTree = "<group>"; };
 		4591F0631FBFE1420075000D /* power init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "power init.hpp"; sourceTree = "<group>"; };
@@ -591,8 +595,11 @@
 				4533A8FD1FCA69440027B0FB /* game screen.hpp */,
 				4533A9061FCAA2520027B0FB /* start menu screen.cpp */,
 				4533A9071FCAA2520027B0FB /* start menu screen.hpp */,
+				4584F4041FCBE33D0062B93E /* element rect.hpp */,
 				4533A9091FCAB1E40027B0FB /* button element.cpp */,
 				4533A90A1FCAB1E40027B0FB /* button element.hpp */,
+				4584F4011FCBE11F0062B93E /* text element.cpp */,
+				4584F4021FCBE11F0062B93E /* text element.hpp */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -1279,6 +1286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4584F4031FCBE11F0062B93E /* text element.cpp in Sources */,
 				450ED5F51FB7C945008F2902 /* debug draw.cpp in Sources */,
 				450ED5C31FB69D31008F2902 /* player input component.cpp in Sources */,
 				4591F0731FBFE8640075000D /* moving platform init.cpp in Sources */,
