@@ -44,11 +44,31 @@ void StartMenuScreen::init(RenderingContext &renderingContext) {
   startButton.setCornerRadius(0.5f);
   
   inputDispatcher.addListener([this] (const SDL_Event &e) {
-    if (e.type == SDL_MOUSEBUTTONDOWN) {
+    if (e.type == SDL_MOUSEBUTTONUP) {
       const glm::vec2 posPx = {e.button.x, e.button.y};
       const glm::vec2 posM = camera.transform.toMeters(posPx);
       if (startButton.hit(posM)) {
         startGame = true;
+        return true;
+      }
+    }
+    return false;
+  });
+  
+  resetButton.setCenterSize({0.0f, -2.0f}, {4.0f, 1.0f});
+  resetButton.setText("Reset");
+  resetButton.setFont(font);
+  resetButton.setFontSize(40.0f);
+  resetButton.setTopColor(nvgRGBf(1.0f, 0.5f, 0.5f));
+  resetButton.setBottomColor(nvgRGBf(0.5f, 0.0f, 0.0f));
+  resetButton.setCornerRadius(0.25f);
+  
+  inputDispatcher.addListener([this] (const SDL_Event &e) {
+    if (e.type == SDL_MOUSEBUTTONUP) {
+      const glm::vec2 posPx = {e.button.x, e.button.y};
+      const glm::vec2 posM = camera.transform.toMeters(posPx);
+      if (resetButton.hit(posM)) {
+        //progressManager.reset();
         return true;
       }
     }
@@ -59,6 +79,7 @@ void StartMenuScreen::init(RenderingContext &renderingContext) {
 void StartMenuScreen::quit() {
   inputDispatcher.clearListeners();
   
+  resetButton.setFont(nullptr);
   startButton.setFont(nullptr);
   font = nullptr;
 }
@@ -76,4 +97,5 @@ glm::mat3 StartMenuScreen::preRender(const glm::ivec2 windowSize, const float de
 
 void StartMenuScreen::render(NVGcontext *const ctx, const float) {
   startButton.render(ctx);
+  resetButton.render(ctx);
 }
