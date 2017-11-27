@@ -18,7 +18,11 @@ ScreenID StartMenuScreen::getID() const {
 }
 
 ScreenID StartMenuScreen::getNextScreen() const {
-  return ScreenID::START_MENU;
+  if (startGame) {
+    return ScreenID::GAME;
+  } else {
+    return ScreenID::START_MENU;
+  }
 }
 
 void StartMenuScreen::enter() {}
@@ -41,10 +45,10 @@ void StartMenuScreen::init(RenderingContext &renderingContext) {
   
   inputDispatcher.addListener([this] (const SDL_Event &e) {
     if (e.type == SDL_MOUSEBUTTONDOWN) {
-      const glm::vec2 posPx = {e.motion.x, e.motion.y};
+      const glm::vec2 posPx = {e.button.x, e.button.y};
       const glm::vec2 posM = camera.transform.toMeters(posPx);
       if (startButton.hit(posM)) {
-        
+        startGame = true;
         return true;
       }
     }

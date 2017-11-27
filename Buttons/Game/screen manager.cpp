@@ -14,7 +14,7 @@ void ScreenManager::removeAll() {
 }
 
 void ScreenManager::transition() {
-  if (current == nullptr) {
+  if (current != nullptr) {
     const ScreenID nextScreen = current->getNextScreen();
     if (current->getID() != nextScreen) {
       current->leave();

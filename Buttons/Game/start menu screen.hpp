@@ -40,6 +40,7 @@ private:
   Cam2D::Camera camera;
   FontHandle font;
   ButtonElement startButton;
+  bool startGame = false;
 };
 
 #endif
