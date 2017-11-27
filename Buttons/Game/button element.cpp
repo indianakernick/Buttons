@@ -61,10 +61,10 @@ namespace {
   glm::mat3 getMat(const Math::RectCS<float> rect) {
     return glm::scale(
       glm::translate(
-        {},
+        glm::scale({}, glm::vec2(1.0f, -1.0f)),
         -rect.center
       ),
-      glm::vec2(0.02f, -0.02f)
+      glm::vec2(0.02f, 0.02f)
     );
   }
 }
