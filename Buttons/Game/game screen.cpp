@@ -18,6 +18,10 @@
 #include <Simpleton/Camera 2D/zoom to fit.hpp>
 #include <Simpleton/Camera 2D/constant speed.hpp>
 
+ScreenID GameScreen::getID() const {
+  return ScreenID::GAME;
+}
+
 void GameScreen::enter() {
   levelManager.reload();
   camera.setZoom(1.0f);

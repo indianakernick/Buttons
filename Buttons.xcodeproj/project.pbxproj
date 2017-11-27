@@ -266,7 +266,7 @@
 		452E108B1FB2D8BA0063114B /* object types.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "object types.hpp"; sourceTree = "<group>"; };
 		452E10911FB2F2EE0063114B /* systems.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = systems.hpp; sourceTree = "<group>"; };
 		452E10931FB2F4700063114B /* Consolas.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Consolas.ttf; sourceTree = "<group>"; };
-		4533A8A11FC8E2200027B0FB /* state.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = state.hpp; sourceTree = "<group>"; };
+		4533A8A11FC8E2200027B0FB /* screen id.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "screen id.hpp"; sourceTree = "<group>"; };
 		4533A8A41FC8E32A0027B0FB /* input dispatcher.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "input dispatcher.hpp"; sourceTree = "<group>"; };
 		4533A8A91FC908CC0027B0FB /* key component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "key component.cpp"; sourceTree = "<group>"; };
 		4533A8AA1FC908CC0027B0FB /* key component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "key component.hpp"; sourceTree = "<group>"; };
@@ -591,7 +591,7 @@
 		4533A8A01FC8E1D00027B0FB /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				4533A8A11FC8E2200027B0FB /* state.hpp */,
+				4533A8A11FC8E2200027B0FB /* screen id.hpp */,
 				4533A90C1FCAE2A10027B0FB /* screen.cpp */,
 				4533A90D1FCAE2A10027B0FB /* screen.hpp */,
 				4533A8FC1FCA69440027B0FB /* game screen.cpp */,

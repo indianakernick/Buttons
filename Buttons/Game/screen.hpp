@@ -10,6 +10,7 @@
 #define screen_hpp
 
 #include <glm/vec2.hpp>
+#include "screen id.hpp"
 #include <glm/mat3x3.hpp>
 
 class RenderingContext;
@@ -20,6 +21,8 @@ class Screen {
 public:
   Screen() = default;
   virtual ~Screen() = default;
+  
+  virtual ScreenID getID() const = 0;
   
   virtual void enter() = 0;
   virtual void leave() = 0;

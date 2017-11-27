@@ -13,6 +13,10 @@
 #include "rendering context.hpp"
 #include <Simpleton/Camera 2D/zoom to fit.hpp>
 
+ScreenID StartMenuScreen::getID() const {
+  return ScreenID::START_MENU;
+}
+
 void StartMenuScreen::enter() {}
 
 void StartMenuScreen::leave() {}

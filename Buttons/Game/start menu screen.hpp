@@ -22,6 +22,8 @@ class StartMenuScreen final : public Screen {
 public:
   StartMenuScreen() = default;
   
+  ScreenID getID() const override;
+  
   void enter() override;
   void leave() override;
   

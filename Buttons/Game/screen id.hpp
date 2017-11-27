@@ -1,15 +1,15 @@
 //
-//  state.hpp
+//  screen id.hpp
 //  Buttons
 //
 //  Created by Indi Kernick on 25/11/17.
 //  Copyright © 2017 Indi Kernick. All rights reserved.
 //
 
-#ifndef state_hpp
-#define state_hpp
+#ifndef screen_id_hpp
+#define screen_id_hpp
 
-enum class AppState {
+enum class ScreenID {
   GAME,
   START_MENU
 };

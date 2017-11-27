@@ -25,6 +25,8 @@ class GameScreen final : public Screen {
 public:
   GameScreen() = default;
   
+  ScreenID getID() const override;
+  
   void enter() override;
   void leave() override;
   
