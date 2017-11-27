@@ -33,3 +33,7 @@ Level ProgressManager::getCurrentLevel() const {
 void ProgressManager::finishLevel() {
   ++currentLevel;
 }
+
+void ProgressManager::reset() {
+  currentLevel = 0;
+}

@@ -19,6 +19,7 @@ public:
   
   Level getCurrentLevel() const;
   void finishLevel();
+  void reset();
   
 private:
   Level currentLevel;
