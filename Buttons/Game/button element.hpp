@@ -10,7 +10,7 @@
 #define button_element_hpp
 
 #include "nanovg.hpp"
-#include "element rect.hpp"
+#include "element.hpp"
 
 struct ButtonStyle {
   ButtonStyle() = default;
@@ -20,24 +20,19 @@ struct ButtonStyle {
   float cornerRadius = 0.0f;
 };
 
-class ButtonElement {
+class ButtonElement final : public Element {
 public:
   ButtonElement() = default;
-  
-  void rect(glm::vec2, glm::vec2);
-  void rect(ElementRect);
-  ElementRect rect() const;
   
   void style(const ButtonStyle &);
   ButtonStyle style() const;
 
   bool hit(glm::vec2) const;
 
-  void render(NVGcontext *);
+  void render(NVGcontext *) const override;
   
 private:
   ButtonStyle mStyle;
-  ElementRect mRect;
 };
 
 #endif

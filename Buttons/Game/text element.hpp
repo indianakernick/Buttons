@@ -11,7 +11,7 @@
 
 #include <string>
 #include "nanovg.hpp"
-#include "element rect.hpp"
+#include "element.hpp"
 #include "rendering resources.hpp"
 
 struct TextStyle {
@@ -22,13 +22,9 @@ struct TextStyle {
   float size = 0.0f;
 };
 
-class TextElement {
+class TextElement final : public Element {
 public:
   TextElement() = default;
-  
-  void rect(glm::vec2, glm::vec2);
-  void rect(ElementRect);
-  ElementRect rect() const;
   
   void style(const TextStyle &);
   TextStyle style() const;
@@ -38,12 +34,11 @@ public:
   
   void nullFont();
   
-  void render(NVGcontext *) const;
+  void render(NVGcontext *) const override;
   
 private:
   std::string mText;
   TextStyle mStyle;
-  ElementRect mRect;
 };
 
 #endif

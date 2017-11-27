@@ -11,19 +11,6 @@
 #include "nvg helper.hpp"
 #include <glm/gtx/matrix_transform_2d.hpp>
 
-void TextElement::rect(const glm::vec2 center, const glm::vec2 size) {
-  mRect.center = center;
-  mRect.halfSize = size / 2.0f;
-}
-
-void TextElement::rect(const ElementRect rect) {
-  mRect = rect;
-}
-
-ElementRect TextElement::rect() const {
-  return mRect;
-}
-
 void TextElement::style(const TextStyle &style) {
   mStyle = style;
 }

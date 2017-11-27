@@ -8,19 +8,6 @@
 
 #include "button element.hpp"
 
-void ButtonElement::rect(const glm::vec2 center, const glm::vec2 size) {
-  mRect.center = center;
-  mRect.halfSize = size / 2.0f;
-}
-
-void ButtonElement::rect(const ElementRect rect) {
-  mRect = rect;
-}
-
-ElementRect ButtonElement::rect() const {
-  return mRect;
-}
-
 void ButtonElement::style(const ButtonStyle &style) {
   mStyle = style;
 }
@@ -33,7 +20,7 @@ bool ButtonElement::hit(const glm::vec2 pos) const {
   return mRect.encloses(pos);
 }
 
-void ButtonElement::render(NVGcontext *const ctx) {
+void ButtonElement::render(NVGcontext *const ctx) const {
   nvgSave(ctx);
   
   nvgBeginPath(ctx);
