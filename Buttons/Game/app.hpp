@@ -9,7 +9,6 @@
 #ifndef app_hpp
 #define app_hpp
 
-#include "screenshot.hpp"
 #include "screen manager.hpp"
 #include "rendering context.hpp"
 #include <experimental/optional>
@@ -28,7 +27,6 @@ private:
   std::experimental::optional<Platform::WindowLibrary> windowLibrary;
   Platform::Window window;
   RenderingContext renderingContext;
-  Screenshot screenshot;
   ScreenManager screens;
   
   void init();

@@ -9,6 +9,7 @@
 #include "app.hpp"
 
 #include "game screen.hpp"
+#include "global flags.hpp"
 #include "window constants.hpp"
 #include "start menu screen.hpp"
 #include <Simpleton/Time/get.hpp>
@@ -91,7 +92,7 @@ bool App::update(const float delta) {
 bool App::render(const float delta) {
   renderingContext.preRender(screens.preRender(window.size(), delta));
   screens.render(renderingContext.getContext(), delta);
-  //screenshot.postRender(renderingContext, ENABLE_FPS_RENDER);
+  renderingContext.postRender(ENABLE_FPS_RENDER);
   screens.transition();
   return true;
 }

@@ -134,14 +134,10 @@
 		4583EE321FB18F7A00AED27D /* b2BroadPhase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EDFB1FB18EFF00AED27D /* b2BroadPhase.cpp */; };
 		4583EE331FB18F7A00AED27D /* b2CollideEdge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EDFE1FB18EFF00AED27D /* b2CollideEdge.cpp */; };
 		4583EE341FB18F7A00AED27D /* b2Collision.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EDFF1FB18EFF00AED27D /* b2Collision.cpp */; };
-		4583EE741FB190F300AED27D /* framebuffer to png.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE611FB190BB00AED27D /* framebuffer to png.cpp */; };
 		4583EE751FB190F300AED27D /* nvg helper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE661FB190BD00AED27D /* nvg helper.cpp */; };
-		4583EE761FB190F300AED27D /* screenshot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE691FB190BD00AED27D /* screenshot.cpp */; };
 		4583EE781FB190F300AED27D /* yaml helper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE681FB190BD00AED27D /* yaml helper.cpp */; };
 		4583EE7A1FB190F300AED27D /* rendering context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE421FB1906D00AED27D /* rendering context.cpp */; };
 		4583EE7D1FB190F300AED27D /* rendering resources.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE451FB1906E00AED27D /* rendering resources.cpp */; };
-		4583EE7E1FB1914000AED27D /* stb_image_write.c in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE001FB18EFF00AED27D /* stb_image_write.c */; settings = {COMPILER_FLAGS = "-Wno-comma"; }; };
-		4583EE7F1FB1914000AED27D /* tinyfiledialogs.c in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE011FB18EFF00AED27D /* tinyfiledialogs.c */; settings = {COMPILER_FLAGS = "-Wno-shorten-64-to-32"; }; };
 		4583EE851FB1967700AED27D /* app.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE831FB1967700AED27D /* app.cpp */; };
 		4583EE891FB197C200AED27D /* physics system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE871FB197C200AED27D /* physics system.cpp */; };
 		4583EE8F1FB19C0300AED27D /* contact listener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE8D1FB19C0300AED27D /* contact listener.cpp */; };
@@ -341,7 +337,6 @@
 		4583ED751FB185C100AED27D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		4583ED771FB185CC00AED27D /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		4583ED791FB1860300AED27D /* libnanovg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libnanovg.a; path = ../../../../../../../usr/local/lib/libnanovg.a; sourceTree = "<group>"; };
-		4583ED9A1FB18EFE00AED27D /* tinyfiledialogs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tinyfiledialogs.h; sourceTree = "<group>"; };
 		4583ED9D1FB18EFE00AED27D /* b2Body.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = b2Body.cpp; sourceTree = "<group>"; };
 		4583ED9E1FB18EFE00AED27D /* b2World.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = b2World.cpp; sourceTree = "<group>"; };
 		4583ED9F1FB18EFE00AED27D /* b2Fixture.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = b2Fixture.cpp; sourceTree = "<group>"; };
@@ -435,22 +430,15 @@
 		4583EDFD1FB18EFF00AED27D /* b2Distance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = b2Distance.h; sourceTree = "<group>"; };
 		4583EDFE1FB18EFF00AED27D /* b2CollideEdge.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = b2CollideEdge.cpp; sourceTree = "<group>"; };
 		4583EDFF1FB18EFF00AED27D /* b2Collision.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = b2Collision.cpp; sourceTree = "<group>"; };
-		4583EE001FB18EFF00AED27D /* stb_image_write.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = stb_image_write.c; sourceTree = "<group>"; };
-		4583EE011FB18EFF00AED27D /* tinyfiledialogs.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = tinyfiledialogs.c; sourceTree = "<group>"; };
-		4583EE021FB18EFF00AED27D /* stb_image_write.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stb_image_write.h; sourceTree = "<group>"; };
 		4583EE421FB1906D00AED27D /* rendering context.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "rendering context.cpp"; sourceTree = "<group>"; };
 		4583EE451FB1906E00AED27D /* rendering resources.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "rendering resources.cpp"; sourceTree = "<group>"; };
 		4583EE461FB1906E00AED27D /* rendering context.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "rendering context.hpp"; sourceTree = "<group>"; };
 		4583EE471FB1906E00AED27D /* rendering resources.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "rendering resources.hpp"; sourceTree = "<group>"; };
 		4583EE601FB190BB00AED27D /* yaml convert.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "yaml convert.hpp"; sourceTree = "<group>"; };
-		4583EE611FB190BB00AED27D /* framebuffer to png.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "framebuffer to png.cpp"; sourceTree = "<group>"; };
-		4583EE621FB190BB00AED27D /* framebuffer to png.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "framebuffer to png.hpp"; sourceTree = "<group>"; };
 		4583EE641FB190BC00AED27D /* nvg helper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "nvg helper.hpp"; sourceTree = "<group>"; };
-		4583EE651FB190BC00AED27D /* screenshot.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = screenshot.hpp; sourceTree = "<group>"; };
 		4583EE661FB190BD00AED27D /* nvg helper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "nvg helper.cpp"; sourceTree = "<group>"; };
 		4583EE671FB190BD00AED27D /* yaml helper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "yaml helper.hpp"; sourceTree = "<group>"; };
 		4583EE681FB190BD00AED27D /* yaml helper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "yaml helper.cpp"; sourceTree = "<group>"; };
-		4583EE691FB190BD00AED27D /* screenshot.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = screenshot.cpp; sourceTree = "<group>"; };
 		4583EE6D1FB190BE00AED27D /* b2 glm cast.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "b2 glm cast.hpp"; sourceTree = "<group>"; };
 		4583EE701FB190D300AED27D /* tinyfiledialogs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tinyfiledialogs.h; sourceTree = "<group>"; };
 		4583EE711FB190D300AED27D /* nanovg.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = nanovg.hpp; sourceTree = "<group>"; };
@@ -719,10 +707,6 @@
 			isa = PBXGroup;
 			children = (
 				4583ED9B1FB18EFE00AED27D /* Box2D */,
-				4583EE001FB18EFF00AED27D /* stb_image_write.c */,
-				4583EE021FB18EFF00AED27D /* stb_image_write.h */,
-				4583EE011FB18EFF00AED27D /* tinyfiledialogs.c */,
-				4583ED9A1FB18EFE00AED27D /* tinyfiledialogs.h */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -888,10 +872,6 @@
 			children = (
 				4583EE661FB190BD00AED27D /* nvg helper.cpp */,
 				4583EE641FB190BC00AED27D /* nvg helper.hpp */,
-				4583EE611FB190BB00AED27D /* framebuffer to png.cpp */,
-				4583EE621FB190BB00AED27D /* framebuffer to png.hpp */,
-				4583EE691FB190BD00AED27D /* screenshot.cpp */,
-				4583EE651FB190BC00AED27D /* screenshot.hpp */,
 				4583EE421FB1906D00AED27D /* rendering context.cpp */,
 				4583EE461FB1906E00AED27D /* rendering context.hpp */,
 				4583EE451FB1906E00AED27D /* rendering resources.cpp */,
@@ -1306,10 +1286,7 @@
 				450ED62D1FB8620D008F2902 /* animation system.cpp in Sources */,
 				459796221FB41C24007A7432 /* transform component.cpp in Sources */,
 				4583EE971FB1A2AE00AED27D /* physics file.cpp in Sources */,
-				4583EE7E1FB1914000AED27D /* stb_image_write.c in Sources */,
-				4583EE7F1FB1914000AED27D /* tinyfiledialogs.c in Sources */,
 				456DF0C31FBD625C003B3FD1 /* moving platform component.cpp in Sources */,
-				4583EE741FB190F300AED27D /* framebuffer to png.cpp in Sources */,
 				456DF0C01FBD336A003B3FD1 /* moving platform rendering system.cpp in Sources */,
 				450ED5E31FB6B8EF008F2902 /* platform rendering component.cpp in Sources */,
 				4533A8BD1FC90EF50027B0FB /* take key system.cpp in Sources */,
@@ -1318,7 +1295,6 @@
 				4533A8FE1FCA69440027B0FB /* game screen.cpp in Sources */,
 				4591F0801FC011E50075000D /* exit system.cpp in Sources */,
 				452E10891FB2D27D0063114B /* collision pairs.cpp in Sources */,
-				4583EE761FB190F300AED27D /* screenshot.cpp in Sources */,
 				4583EE851FB1967700AED27D /* app.cpp in Sources */,
 				459796201FB41C1A007A7432 /* activation component.cpp in Sources */,
 				4533A9011FCA91DD0027B0FB /* progress manager.cpp in Sources */,
