@@ -40,6 +40,10 @@ std::string TextElement::text() const {
   return mText;
 }
 
+void TextElement::nullFont() {
+  mStyle.font = nullptr;
+}
+
 namespace {
   glm::mat3 getMat(const ElementRect rect) {
     return glm::scale(

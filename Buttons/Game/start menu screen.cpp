@@ -35,13 +35,22 @@ void StartMenuScreen::init(RenderingContext &renderingContext) {
   camera.targetZoom = std::make_unique<Cam2D::ZoomToFit>(glm::vec2(16, 9));
   font = renderingContext.getResources().getFont("Arial.ttf");
   
-  startButton.setCenterSize({0.0f, 0.0f}, {8.0f, 2.0f});
-  startButton.setText("Start");
-  startButton.setFont(font);
-  startButton.setFontSize(80.0f);
-  startButton.setTopColor(nvgRGBf(0.5f, 1.0f, 0.5f));
-  startButton.setBottomColor(nvgRGBf(0.0f, 0.5f, 0.0f));
-  startButton.setCornerRadius(0.5f);
+  {
+    ButtonStyle startButtonStyle;
+    startButtonStyle.top = nvgRGBf(0.5f, 1.0f, 0.5f);
+    startButtonStyle.bottom = nvgRGBf(0.0f, 0.5f, 0.0f);
+    startButtonStyle.cornerRadius = 0.5f;
+    startButton.style(startButtonStyle);
+  }
+  startButton.rect({0.0f, 0.0f}, {8.0f, 2.0f});
+  startText.rect(startButton.rect());
+  
+  TextStyle textStyle;
+  textStyle.font = font;
+  textStyle.size = 80.0f;
+  
+  startText.style(textStyle);
+  startText.text("Start");
   
   inputDispatcher.addListener([this] (const SDL_Event &e) {
     if (e.type == SDL_MOUSEBUTTONUP) {
@@ -55,13 +64,19 @@ void StartMenuScreen::init(RenderingContext &renderingContext) {
     return false;
   });
   
-  resetButton.setCenterSize({0.0f, -2.0f}, {4.0f, 1.0f});
-  resetButton.setText("Reset");
-  resetButton.setFont(font);
-  resetButton.setFontSize(40.0f);
-  resetButton.setTopColor(nvgRGBf(1.0f, 0.5f, 0.5f));
-  resetButton.setBottomColor(nvgRGBf(0.5f, 0.0f, 0.0f));
-  resetButton.setCornerRadius(0.25f);
+  {
+    ButtonStyle resetButtonStyle;
+    resetButtonStyle.top = nvgRGBf(1.0f, 0.5f, 0.5f);
+    resetButtonStyle.bottom = nvgRGBf(0.5f, 0.0f, 0.0f);
+    resetButtonStyle.cornerRadius = 0.25f;
+    resetButton.style(resetButtonStyle);
+  }
+  resetButton.rect({0.0f, -2.0f}, {4.0f, 1.0f});
+  resetText.rect(resetButton.rect());
+  
+  textStyle.size = 40.0f;
+  resetText.style(textStyle);
+  resetText.text("Reset");
   
   inputDispatcher.addListener([this] (const SDL_Event &e) {
     if (e.type == SDL_MOUSEBUTTONUP) {
@@ -79,8 +94,8 @@ void StartMenuScreen::init(RenderingContext &renderingContext) {
 void StartMenuScreen::quit() {
   inputDispatcher.clearListeners();
   
-  resetButton.setFont(nullptr);
-  startButton.setFont(nullptr);
+  resetText.nullFont();
+  startText.nullFont();
   font = nullptr;
 }
 
@@ -98,4 +113,6 @@ glm::mat3 StartMenuScreen::preRender(const glm::ivec2 windowSize, const float de
 void StartMenuScreen::render(NVGcontext *const ctx, const float) {
   startButton.render(ctx);
   resetButton.render(ctx);
+  startText.render(ctx);
+  resetText.render(ctx);
 }

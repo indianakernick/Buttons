@@ -9,40 +9,35 @@
 #ifndef button_element_hpp
 #define button_element_hpp
 
-#include <string>
 #include "nanovg.hpp"
-#include "rendering resources.hpp"
-#include <Simpleton/Math/rect.hpp>
+#include "element rect.hpp"
+
+struct ButtonStyle {
+  ButtonStyle() = default;
+
+  NVGcolor top = nvgRGBf(0.5f, 0.5f, 0.5f);
+  NVGcolor bottom = nvgRGBf(0.5f, 0.5f, 0.5f);
+  float cornerRadius = 0.0f;
+};
 
 class ButtonElement {
 public:
-  ButtonElement();
+  ButtonElement() = default;
   
-  void setCenterSize(glm::vec2, glm::vec2);
+  void rect(glm::vec2, glm::vec2);
+  void rect(ElementRect);
+  ElementRect rect() const;
   
-  void setText(const std::string &);
-  void setFont(FontHandle);
-  void setFontSize(float);
-  void setTextColor(NVGcolor);
-  
-  void setTopColor(NVGcolor);
-  void setBottomColor(NVGcolor);
-  void setCornerRadius(float);
-  void swapColors();
+  void style(const ButtonStyle &);
+  ButtonStyle style() const;
 
   bool hit(glm::vec2) const;
 
   void render(NVGcontext *);
   
 private:
-  std::string text;
-  FontHandle font;
-  NVGcolor top;
-  NVGcolor bottom;
-  NVGcolor textColor;
-  Math::RectCS<float> rect;
-  float cornerRadius = 0.0f;
-  float fontSize = 0.0f;
+  ButtonStyle mStyle;
+  ElementRect mRect;
 };
 
 #endif

@@ -10,6 +10,7 @@
 #define start_menu_screen_hpp
 
 #include "screen.hpp"
+#include "text element.hpp"
 #include "button element.hpp"
 #include "input dispatcher.hpp"
 #include "rendering resources.hpp"
@@ -41,6 +42,8 @@ private:
   FontHandle font;
   ButtonElement startButton;
   ButtonElement resetButton;
+  TextElement startText;
+  TextElement resetText;
   bool startGame = false;
 };
 

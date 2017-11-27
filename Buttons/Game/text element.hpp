@@ -36,6 +36,8 @@ public:
   void text(const std::string &);
   std::string text() const;
   
+  void nullFont();
+  
   void render(NVGcontext *) const;
   
 private:
