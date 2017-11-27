@@ -22,6 +22,10 @@ ScreenID GameScreen::getID() const {
   return ScreenID::GAME;
 }
 
+ScreenID GameScreen::getNextScreen() const {
+  return ScreenID::GAME;
+}
+
 void GameScreen::enter() {
   levelManager.reload();
   camera.setZoom(1.0f);

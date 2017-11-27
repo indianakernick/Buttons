@@ -26,6 +26,7 @@ public:
   GameScreen() = default;
   
   ScreenID getID() const override;
+  ScreenID getNextScreen() const override;
   
   void enter() override;
   void leave() override;

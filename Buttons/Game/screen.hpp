@@ -23,6 +23,7 @@ public:
   virtual ~Screen() = default;
   
   virtual ScreenID getID() const = 0;
+  virtual ScreenID getNextScreen() const = 0;
   
   virtual void enter() = 0;
   virtual void leave() = 0;

@@ -17,6 +17,10 @@ ScreenID StartMenuScreen::getID() const {
   return ScreenID::START_MENU;
 }
 
+ScreenID StartMenuScreen::getNextScreen() const {
+  return ScreenID::START_MENU;
+}
+
 void StartMenuScreen::enter() {}
 
 void StartMenuScreen::leave() {}
