@@ -33,6 +33,8 @@ public:
   void update(float) override;
   glm::mat3 preRender(glm::ivec2, float) override;
   void render(NVGcontext *, float) override;
+  
+  void resetProgress();
 
 private:
   Registry registry;
@@ -42,6 +44,7 @@ private:
   ProgressManager progressManager;
   InputDispatcher inputDispatcher;
   Cam2D::Camera camera;
+  bool quitGame = false;
 };
 
 #endif

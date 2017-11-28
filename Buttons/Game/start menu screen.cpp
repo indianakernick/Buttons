@@ -9,6 +9,7 @@
 #include "start menu screen.hpp"
 
 #include "nvg helper.hpp"
+#include "game screen.hpp"
 #include "text element.hpp"
 #include <SDL2/SDL_events.h>
 #include "screen manager.hpp"
@@ -69,6 +70,14 @@ void StartMenuScreen::init(RenderingContext &renderingContext) {
   resetText->style(textStyle);
   resetText->text("Reset");
   
+  resetButton->onMouseButton([this] (ButtonElement &, const MouseButtonState state) {
+    if (state == MouseButtonState::RELEASED) {
+      getScreenMan()->getScreen<GameScreen>().resetProgress();
+      return true;
+    }
+    return false;
+  });
+  
   elementMan.addElement(std::move(resetButton));
   elementMan.addElement(std::move(resetText));
   
@@ -98,12 +107,11 @@ glm::mat3 StartMenuScreen::preRender(const glm::ivec2 windowSize, const float de
   return camera.transform.toPixels();
 }
 
-class GameScreen;
-
 void StartMenuScreen::render(NVGcontext *const ctx, const float) {
   elementMan.render(ctx);
   
   if (startGame) {
     getScreenMan()->transitionTo<GameScreen>();
+    startGame = false;
   }
 }

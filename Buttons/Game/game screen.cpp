@@ -12,6 +12,7 @@
 #include "render grid.hpp"
 #include "global flags.hpp"
 #include <SDL2/SDL_events.h>
+#include "screen manager.hpp"
 #include "component inits.hpp"
 #include "camera constants.hpp"
 #include "rendering context.hpp"
@@ -54,9 +55,15 @@ void GameScreen::init(RenderingContext &renderingContext) {
     if (e.type == SDL_KEYDOWN && e.key.keysym.scancode == SDL_SCANCODE_R) {
       levelManager.reload();
       return true;
-    } else {
-      return false;
     }
+    return false;
+  });
+  inputDispatcher.addListener([this] (const SDL_Event &e) {
+    if (e.type == SDL_KEYDOWN && e.key.keysym.scancode == SDL_SCANCODE_Q) {
+      quitGame = true;
+      return true;
+    }
+    return false;
   });
   inputDispatcher.addListener([this] (const SDL_Event &e) {
     return playerInputSystem(registry, e);
@@ -114,6 +121,8 @@ glm::mat3 GameScreen::preRender(const glm::ivec2 windowSize, const float delta) 
   return camera.transform.toPixels();
 }
 
+class StartMenuScreen;
+
 void GameScreen::render(NVGcontext *const ctx, const float delta) {
   if constexpr (ENABLE_DEBUG_PHYSICS_RENDER) {
     physics.render();
@@ -140,4 +149,14 @@ void GameScreen::render(NVGcontext *const ctx, const float delta) {
   if constexpr (ENABLE_GRID_RENDER) {
     renderGrid(ctx);
   }
+  
+  if (quitGame) {
+    getScreenMan()->transitionTo<StartMenuScreen>();
+    quitGame = false;
+  }
+}
+
+void GameScreen::resetProgress() {
+  progressManager.reset();
+  levelManager.loadLevel(0);
 }
