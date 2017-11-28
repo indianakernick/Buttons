@@ -8,6 +8,9 @@
 
 #include "button element.hpp"
 
+#include <SDL2/SDL_events.h>
+#include <Simpleton/Camera 2D/matrix mul.hpp>
+
 void ButtonElement::style(const ButtonStyle &style) {
   mStyle = style;
 }
@@ -40,4 +43,18 @@ void ButtonElement::render(NVGcontext *const ctx) const {
   nvgFill(ctx);
   
   nvgRestore(ctx);
+}
+
+bool ButtonElement::handleMouseButton(const SDL_MouseButtonEvent &e, const glm::mat3 &toMeters) {
+  if (hit(Cam2D::mulPos(toMeters, {e.x, e.y}))) {
+    if (listener) {
+      listener(*this, static_cast<MouseButtonState>(e.state));
+      return true;
+    }
+  }
+  return false;
+}
+
+void ButtonElement::onMouseButton(const Listener &newListener) {
+  listener = newListener;
 }

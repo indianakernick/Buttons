@@ -20,8 +20,15 @@ struct ButtonStyle {
   float cornerRadius = 0.0f;
 };
 
+enum class MouseButtonState {
+  RELEASED, // SDL_RELEASED
+  PRESSED   // SDL_PRESSED
+};
+
 class ButtonElement final : public Element {
 public:
+  using Listener = std::function<void (ButtonElement &, MouseButtonState)>;
+
   ButtonElement() = default;
   
   void style(const ButtonStyle &);
@@ -30,9 +37,13 @@ public:
   bool hit(glm::vec2) const;
 
   void render(NVGcontext *) const override;
+  bool handleMouseButton(const SDL_MouseButtonEvent &, const glm::mat3 &) override;
+  
+  void onMouseButton(const Listener &);
   
 private:
   ButtonStyle mStyle;
+  Listener listener;
 };
 
 #endif

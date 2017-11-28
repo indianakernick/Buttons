@@ -20,3 +20,7 @@ void Element::rect(const ElementRect rect) {
 ElementRect Element::rect() const {
   return mRect;
 }
+
+bool Element::handleMouseButton(const SDL_MouseButtonEvent &, const glm::mat3 &) {
+  return false;
+}
