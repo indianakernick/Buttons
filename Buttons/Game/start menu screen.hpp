@@ -44,6 +44,7 @@ private:
   ButtonElement resetButton;
   TextElement startText;
   TextElement resetText;
+  TextElement buttonsText;
   bool startGame = false;
 };
 

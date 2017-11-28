@@ -89,6 +89,11 @@ void StartMenuScreen::init(RenderingContext &renderingContext) {
     }
     return false;
   });
+  
+  textStyle.size = 120.0f;
+  buttonsText.style(textStyle);
+  buttonsText.text("Buttons");
+  buttonsText.rect({0.0f, 2.0f}, {1.0f, 1.0f});
 }
 
 void StartMenuScreen::quit() {
@@ -115,4 +120,5 @@ void StartMenuScreen::render(NVGcontext *const ctx, const float) {
   resetButton.render(ctx);
   startText.render(ctx);
   resetText.render(ctx);
+  buttonsText.render(ctx);
 }
