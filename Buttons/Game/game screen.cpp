@@ -19,11 +19,11 @@
 #include <Simpleton/Camera 2D/constant speed.hpp>
 
 ScreenID GameScreen::getID() const {
-  return ScreenID::GAME;
+  return getScreenID<GameScreen>();
 }
 
 ScreenID GameScreen::getNextScreen() const {
-  return ScreenID::GAME;
+  return getScreenID<GameScreen>();
 }
 
 void GameScreen::enter() {

@@ -59,7 +59,7 @@ void App::init() {
   
   screens.addScreen<GameScreen>();
   screens.addScreen<StartMenuScreen>();
-  screens.transitionTo(ScreenID::START_MENU);
+  screens.transitionTo<StartMenuScreen>();
   
   screens.initAll(renderingContext);
 }

@@ -15,19 +15,15 @@ void ScreenManager::removeAll() {
 
 void ScreenManager::transition() {
   if (current != nullptr) {
-    const ScreenID nextScreen = current->getNextScreen();
-    if (current->getID() != nextScreen) {
+    const ScreenID next = current->getNextScreen();
+    if (current->getID() != next) {
       current->leave();
-      current = screens.at(nextScreen).get();
-      current->enter();
+      transitionTo(next);
     }
   }
 }
 
 void ScreenManager::transitionTo(const ScreenID next) {
-  if (current) {
-    current->leave();
-  }
   current = screens.at(next).get();
   current->enter();
 }

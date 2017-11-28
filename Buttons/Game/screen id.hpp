@@ -9,9 +9,15 @@
 #ifndef screen_id_hpp
 #define screen_id_hpp
 
-enum class ScreenID {
-  GAME,
-  START_MENU
-};
+#include <Simpleton/ID/type.hpp>
+
+using ScreenID = size_t;
+
+class Screen;
+
+template <typename ScreenClass>
+inline ScreenID getScreenID() {
+  return ID::TypeCounter<ScreenID, ScreenClass, Screen>::get();
+}
 
 #endif

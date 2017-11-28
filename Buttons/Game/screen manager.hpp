@@ -19,13 +19,20 @@ public:
   
   template <typename Class, typename ...Args>
   void addScreen(Args &&... args) {
-    std::unique_ptr<Screen> screen = std::make_unique<Class>(std::forward<Args>(args)...);
-    const ScreenID id = screen->getID();
-    screens.emplace(id, std::move(screen));
+    screens.emplace(
+      getScreenID<Class>(),
+      std::make_unique<Class>(std::forward<Args>(args)...)
+    );
+  }
+  template <typename ScreenClass>
+  void transitionTo() {
+    if (current) {
+      current->leave();
+    }
+    transitionTo(getScreenID<ScreenClass>());
   }
   void removeAll();
   void transition();
-  void transitionTo(ScreenID);
   
   void initAll(RenderingContext &);
   void quitAll();
@@ -37,6 +44,8 @@ public:
 private:
   std::unordered_map<ScreenID, std::unique_ptr<Screen>> screens;
   Screen *current = nullptr;
+  
+  void transitionTo(ScreenID);
 };
 
 #endif

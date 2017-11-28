@@ -14,14 +14,16 @@
 #include <Simpleton/Camera 2D/zoom to fit.hpp>
 
 ScreenID StartMenuScreen::getID() const {
-  return ScreenID::START_MENU;
+  return getScreenID<StartMenuScreen>();
 }
+
+class GameScreen;
 
 ScreenID StartMenuScreen::getNextScreen() const {
   if (startGame) {
-    return ScreenID::GAME;
+    return getScreenID<GameScreen>();
   } else {
-    return ScreenID::START_MENU;
+    return getScreenID<StartMenuScreen>();
   }
 }
 
