@@ -93,6 +93,5 @@ bool App::render(const float delta) {
   renderingContext.preRender(screens.preRender(window.size(), delta));
   screens.render(renderingContext.getContext(), delta);
   renderingContext.postRender(ENABLE_FPS_RENDER);
-  screens.transition();
   return true;
 }

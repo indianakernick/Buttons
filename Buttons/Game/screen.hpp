@@ -13,20 +13,20 @@
 #include "screen id.hpp"
 #include <glm/mat3x3.hpp>
 
+class ScreenManager;
 class RenderingContext;
 extern "C" union SDL_Event;
 extern "C" struct NVGcontext;
 
 class Screen {
 public:
+  friend ScreenManager;
+
   Screen() = default;
   virtual ~Screen() = default;
   
-  virtual ScreenID getID() const = 0;
-  virtual ScreenID getNextScreen() const = 0;
-  
-  virtual void enter() = 0;
-  virtual void leave() = 0;
+  virtual void enter() {};
+  virtual void leave() {};
   
   virtual void init(RenderingContext &) = 0;
   virtual void quit() = 0;
@@ -34,6 +34,12 @@ public:
   virtual void update(float) = 0;
   virtual glm::mat3 preRender(glm::ivec2, float) = 0;
   virtual void render(NVGcontext *, float) = 0;
+
+protected:
+  ScreenManager *getScreenMan() const;
+
+private:
+  ScreenManager *screenMan = nullptr;
 };
 
 #endif

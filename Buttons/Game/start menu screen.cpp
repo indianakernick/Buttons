@@ -11,27 +11,10 @@
 #include "nvg helper.hpp"
 #include "text element.hpp"
 #include <SDL2/SDL_events.h>
+#include "screen manager.hpp"
 #include "button element.hpp"
 #include "rendering context.hpp"
 #include <Simpleton/Camera 2D/zoom to fit.hpp>
-
-ScreenID StartMenuScreen::getID() const {
-  return getScreenID<StartMenuScreen>();
-}
-
-class GameScreen;
-
-ScreenID StartMenuScreen::getNextScreen() const {
-  if (startGame) {
-    return getScreenID<GameScreen>();
-  } else {
-    return getScreenID<StartMenuScreen>();
-  }
-}
-
-void StartMenuScreen::enter() {}
-
-void StartMenuScreen::leave() {}
 
 void StartMenuScreen::init(RenderingContext &renderingContext) {
   camera.transform.setInvertY(true);
@@ -58,7 +41,7 @@ void StartMenuScreen::init(RenderingContext &renderingContext) {
   startText->style(textStyle);
   startText->text("Start");
   
-  startButton->onMouseButton([this] (ButtonElement &button, const MouseButtonState state) {
+  startButton->onMouseButton([this] (ButtonElement &, const MouseButtonState state) {
     if (state == MouseButtonState::RELEASED) {
       startGame = true;
       return true;
@@ -95,6 +78,8 @@ void StartMenuScreen::init(RenderingContext &renderingContext) {
   buttonsText->style(textStyle);
   buttonsText->text("Buttons");
   buttonsText->rect({0.0f, 2.0f}, {1.0f, 1.0f});
+  
+  elementMan.addElement(std::move(buttonsText));
 }
 
 void StartMenuScreen::quit() {
@@ -113,6 +98,12 @@ glm::mat3 StartMenuScreen::preRender(const glm::ivec2 windowSize, const float de
   return camera.transform.toPixels();
 }
 
+class GameScreen;
+
 void StartMenuScreen::render(NVGcontext *const ctx, const float) {
   elementMan.render(ctx);
+  
+  if (startGame) {
+    getScreenMan()->transitionTo<GameScreen>();
+  }
 }

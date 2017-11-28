@@ -19,9 +19,11 @@ public:
   
   template <typename Class, typename ...Args>
   void addScreen(Args &&... args) {
+    auto screen = std::make_unique<Class>(std::forward<Args>(args)...);
+    screen->screenMan = this;
     screens.emplace(
       getScreenID<Class>(),
-      std::make_unique<Class>(std::forward<Args>(args)...)
+      std::move(screen)
     );
   }
   template <typename ScreenClass>
@@ -31,8 +33,13 @@ public:
     }
     transitionTo(getScreenID<ScreenClass>());
   }
+  
+  template <typename ScreenClass>
+  ScreenClass &getScreen() {
+    return dynamic_cast<ScreenClass &>(*screens.at(getScreenID<ScreenClass>()));
+  }
+  
   void removeAll();
-  void transition();
   
   void initAll(RenderingContext &);
   void quitAll();

@@ -21,12 +21,6 @@ class StartMenuScreen final : public Screen {
 public:
   StartMenuScreen() = default;
   
-  ScreenID getID() const override;
-  ScreenID getNextScreen() const override;
-  
-  void enter() override;
-  void leave() override;
-  
   void init(RenderingContext &) override;
   void quit() override;
   void input(const SDL_Event &) override;

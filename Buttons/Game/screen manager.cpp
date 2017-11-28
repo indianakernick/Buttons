@@ -9,23 +9,11 @@
 #include "screen manager.hpp"
 
 void ScreenManager::removeAll() {
+  for (auto &pair : screens) {
+    pair.second->screenMan = nullptr;
+  }
   screens.clear();
   current = nullptr;
-}
-
-void ScreenManager::transition() {
-  if (current != nullptr) {
-    const ScreenID next = current->getNextScreen();
-    if (current->getID() != next) {
-      current->leave();
-      transitionTo(next);
-    }
-  }
-}
-
-void ScreenManager::transitionTo(const ScreenID next) {
-  current = screens.at(next).get();
-  current->enter();
 }
 
 void ScreenManager::initAll(RenderingContext &renderingContext) {
@@ -64,4 +52,9 @@ void ScreenManager::render(NVGcontext *const ctx, const float delta) {
   if (current) {
     current->render(ctx, delta);
   }
+}
+
+void ScreenManager::transitionTo(const ScreenID next) {
+  current = screens.at(next).get();
+  current->enter();
 }

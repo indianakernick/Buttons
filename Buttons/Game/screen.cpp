@@ -7,3 +7,7 @@
 //
 
 #include "screen.hpp"
+
+ScreenManager *Screen::getScreenMan() const {
+  return screenMan;
+}
