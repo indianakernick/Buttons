@@ -10,9 +10,7 @@
 #define start_menu_screen_hpp
 
 #include "screen.hpp"
-#include "text element.hpp"
-#include "button element.hpp"
-#include "input dispatcher.hpp"
+#include "element manager.hpp"
 #include "rendering resources.hpp"
 #include <Simpleton/Camera 2D/camera.hpp>
 
@@ -37,14 +35,9 @@ public:
   void render(NVGcontext *, float) override;
 
 private:
-  InputDispatcher inputDispatcher;
   Cam2D::Camera camera;
   FontHandle font;
-  ButtonElement startButton;
-  ButtonElement resetButton;
-  TextElement startText;
-  TextElement resetText;
-  TextElement buttonsText;
+  ElementManager elementMan;
   bool startGame = false;
 };
 

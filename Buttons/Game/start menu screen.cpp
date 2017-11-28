@@ -9,7 +9,9 @@
 #include "start menu screen.hpp"
 
 #include "nvg helper.hpp"
+#include "text element.hpp"
 #include <SDL2/SDL_events.h>
+#include "button element.hpp"
 #include "rendering context.hpp"
 #include <Simpleton/Camera 2D/zoom to fit.hpp>
 
@@ -37,77 +39,71 @@ void StartMenuScreen::init(RenderingContext &renderingContext) {
   camera.targetZoom = std::make_unique<Cam2D::ZoomToFit>(glm::vec2(16, 9));
   font = renderingContext.getResources().getFont("Arial.ttf");
   
+  auto startButton = std::make_unique<ButtonElement>();
+  auto startText = std::make_unique<TextElement>();
   {
     ButtonStyle startButtonStyle;
     startButtonStyle.top = nvgRGBf(0.5f, 1.0f, 0.5f);
     startButtonStyle.bottom = nvgRGBf(0.0f, 0.5f, 0.0f);
     startButtonStyle.cornerRadius = 0.5f;
-    startButton.style(startButtonStyle);
+    startButton->style(startButtonStyle);
   }
-  startButton.rect({0.0f, 0.0f}, {8.0f, 2.0f});
-  startText.rect(startButton.rect());
+  startButton->rect({0.0f, 0.0f}, {8.0f, 2.0f});
+  startText->rect(startButton->rect());
   
   TextStyle textStyle;
   textStyle.font = font;
   textStyle.size = 80.0f;
   
-  startText.style(textStyle);
-  startText.text("Start");
+  startText->style(textStyle);
+  startText->text("Start");
   
-  inputDispatcher.addListener([this] (const SDL_Event &e) {
-    if (e.type == SDL_MOUSEBUTTONUP) {
-      const glm::vec2 posPx = {e.button.x, e.button.y};
-      const glm::vec2 posM = camera.transform.toMeters(posPx);
-      if (startButton.hit(posM)) {
-        startGame = true;
-        return true;
-      }
+  startButton->onMouseButton([this] (ButtonElement &button, const MouseButtonState state) {
+    if (state == MouseButtonState::RELEASED) {
+      startGame = true;
+      return true;
     }
     return false;
   });
+  
+  elementMan.addElement(std::move(startButton));
+  elementMan.addElement(std::move(startText));
+  
+  auto resetButton = std::make_unique<ButtonElement>();
+  auto resetText = std::make_unique<TextElement>();
   
   {
     ButtonStyle resetButtonStyle;
     resetButtonStyle.top = nvgRGBf(1.0f, 0.5f, 0.5f);
     resetButtonStyle.bottom = nvgRGBf(0.5f, 0.0f, 0.0f);
     resetButtonStyle.cornerRadius = 0.25f;
-    resetButton.style(resetButtonStyle);
+    resetButton->style(resetButtonStyle);
   }
-  resetButton.rect({0.0f, -2.0f}, {4.0f, 1.0f});
-  resetText.rect(resetButton.rect());
+  resetButton->rect({0.0f, -2.0f}, {4.0f, 1.0f});
+  resetText->rect(resetButton->rect());
   
   textStyle.size = 40.0f;
-  resetText.style(textStyle);
-  resetText.text("Reset");
+  resetText->style(textStyle);
+  resetText->text("Reset");
   
-  inputDispatcher.addListener([this] (const SDL_Event &e) {
-    if (e.type == SDL_MOUSEBUTTONUP) {
-      const glm::vec2 posPx = {e.button.x, e.button.y};
-      const glm::vec2 posM = camera.transform.toMeters(posPx);
-      if (resetButton.hit(posM)) {
-        //progressManager.reset();
-        return true;
-      }
-    }
-    return false;
-  });
+  elementMan.addElement(std::move(resetButton));
+  elementMan.addElement(std::move(resetText));
+  
+  auto buttonsText = std::make_unique<TextElement>();
   
   textStyle.size = 120.0f;
-  buttonsText.style(textStyle);
-  buttonsText.text("Buttons");
-  buttonsText.rect({0.0f, 2.0f}, {1.0f, 1.0f});
+  buttonsText->style(textStyle);
+  buttonsText->text("Buttons");
+  buttonsText->rect({0.0f, 2.0f}, {1.0f, 1.0f});
 }
 
 void StartMenuScreen::quit() {
-  inputDispatcher.clearListeners();
-  
-  resetText.nullFont();
-  startText.nullFont();
+  elementMan.remAllElements();
   font = nullptr;
 }
 
 void StartMenuScreen::input(const SDL_Event &e) {
-  inputDispatcher.dispatch(e);
+  elementMan.handleEvent(e, camera.transform.toMeters());
 }
 
 void StartMenuScreen::update(const float) {}
@@ -118,9 +114,5 @@ glm::mat3 StartMenuScreen::preRender(const glm::ivec2 windowSize, const float de
 }
 
 void StartMenuScreen::render(NVGcontext *const ctx, const float) {
-  startButton.render(ctx);
-  resetButton.render(ctx);
-  startText.render(ctx);
-  resetText.render(ctx);
-  buttonsText.render(ctx);
+  elementMan.render(ctx);
 }
