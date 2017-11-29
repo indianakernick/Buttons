@@ -16,6 +16,7 @@
 #include "component inits.hpp"
 #include "camera constants.hpp"
 #include "rendering context.hpp"
+#include <Simpleton/Utils/member function.hpp>
 #include <Simpleton/Camera 2D/zoom to fit.hpp>
 #include <Simpleton/Camera 2D/constant speed.hpp>
 
@@ -60,53 +61,11 @@ void GameScreen::init(RenderingContext &renderingContext) {
   levelManager.init(registry, compInits);
   levelManager.loadLevel(progressManager.getNumCompleted());
   
-  inputDispatcher.addListener([this] (const SDL_Event &e) {
-    if (keyDown(e, SDL_SCANCODE_R)) {
-      levelManager.reload();
-      return true;
-    }
-    return false;
-  });
-  inputDispatcher.addListener([this] (const SDL_Event &e) {
-    if (keyDown(e, SDL_SCANCODE_Q)) {
-      quitGame = true;
-      return true;
-    }
-    return false;
-  });
-  inputDispatcher.addListener([this] (const SDL_Event &e) {
-    return playerInputSystem(registry, e);
-  });
-  inputDispatcher.addListener([this] (const SDL_Event &e) {
-    if (keyDown(e, SDL_SCANCODE_L)) {
-      choosingLevel = true;
-      return true;
-    } else if (keyUp(e, SDL_SCANCODE_L)) {
-      choosingLevel = false;
-      if (enteredLevel.empty()) {
-        if (enteredLevel.get() <= progressManager.getNumCompleted()) {
-          levelManager.loadLevel(enteredLevel.get());
-        } else {
-          //Tell the player that the level they entered is not available
-        }
-      }
-      enteredLevel.clear();
-      return true;
-    } else if (e.type == SDL_KEYDOWN) {
-      if (!choosingLevel) {
-        return false;
-      }
-      const SDL_Scancode code = e.key.keysym.scancode;
-      if (SDL_SCANCODE_1 <= code && code <= SDL_SCANCODE_9) {
-        enteredLevel.push(code - SDL_SCANCODE_1 + 1);
-        return true;
-      } else if (code == SDL_SCANCODE_0) {
-        enteredLevel.push(0);
-        return true;
-      }
-    }
-    return false;
-  });
+  inputDispatcher.addListener(Utils::memFun(this, &GameScreen::reloadKey));
+  inputDispatcher.addListener(Utils::memFun(this, &GameScreen::quitKey));
+  inputDispatcher.addListener(Utils::memFun(this, &GameScreen::playerInputKey));
+  inputDispatcher.addListener(Utils::memFun(this, &GameScreen::toggleGotoLevelKey));
+  inputDispatcher.addListener(Utils::memFun(this, &GameScreen::typeLevelNumberKey));
 }
 
 void GameScreen::quit() {
@@ -198,4 +157,63 @@ void GameScreen::render(NVGcontext *const ctx, const float delta) {
 void GameScreen::resetProgress() {
   progressManager.reset();
   levelManager.loadLevel(0);
+}
+
+bool GameScreen::reloadKey(const SDL_Event &e) {
+  if (keyDown(e, SDL_SCANCODE_R)) {
+    levelManager.reload();
+    return true;
+  }
+  return false;
+}
+
+bool GameScreen::quitKey(const SDL_Event &e) {
+  if (keyDown(e, SDL_SCANCODE_Q)) {
+    quitGame = true;
+    return true;
+  }
+  return false;
+}
+
+bool GameScreen::playerInputKey(const SDL_Event &e) {
+  return playerInputSystem(registry, e);
+}
+
+bool GameScreen::toggleGotoLevelKey(const SDL_Event &e) {
+  if (keyDown(e, SDL_SCANCODE_L)) {
+    choosingLevel = true;
+    return true;
+  } else if (keyUp(e, SDL_SCANCODE_L)) {
+    choosingLevel = false;
+    if (!enteredLevel.empty()) {
+      if (enteredLevel.get() <= progressManager.getNumCompleted()) {
+        levelManager.loadLevel(enteredLevel.get());
+      } else {
+        //Tell the player that the level they entered is not available
+      }
+    }
+    enteredLevel.clear();
+    return true;
+  }
+  return false;
+}
+
+bool GameScreen::typeLevelNumberKey(const SDL_Event &e) {
+  if (e.type == SDL_KEYDOWN && e.key.repeat == 0) {
+    if (!choosingLevel) {
+      return false;
+    }
+    const SDL_Scancode code = e.key.keysym.scancode;
+    /*
+    Why did they put SDL_SCANCODE_0 after SDL_SCANCODE_9?
+    */
+    if (SDL_SCANCODE_1 <= code && code <= SDL_SCANCODE_9) {
+      enteredLevel.push(code - SDL_SCANCODE_1 + 1);
+      return true;
+    } else if (code == SDL_SCANCODE_0) {
+      enteredLevel.push(0);
+      return true;
+    }
+  }
+  return false;
 }

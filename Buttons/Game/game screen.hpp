@@ -45,9 +45,16 @@ private:
   ProgressManager progressManager;
   InputDispatcher inputDispatcher;
   Cam2D::Camera camera;
+  
   Math::DigitStack<Level> enteredLevel;
   bool choosingLevel = false;
   bool quitGame = false;
+  
+  bool reloadKey(const SDL_Event &);
+  bool quitKey(const SDL_Event &);
+  bool playerInputKey(const SDL_Event &);
+  bool toggleGotoLevelKey(const SDL_Event &);
+  bool typeLevelNumberKey(const SDL_Event &);
 };
 
 #endif
