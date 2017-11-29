@@ -58,7 +58,7 @@ void GameScreen::init(RenderingContext &renderingContext) {
   compInits.setDefaults();
   
   levelManager.init(registry, compInits);
-  levelManager.loadLevel(progressManager.getCurrentLevel());
+  levelManager.loadLevel(progressManager.getNumCompleted());
   
   inputDispatcher.addListener([this] (const SDL_Event &e) {
     if (keyDown(e, SDL_SCANCODE_R)) {
@@ -84,7 +84,7 @@ void GameScreen::init(RenderingContext &renderingContext) {
     } else if (keyUp(e, SDL_SCANCODE_L)) {
       choosingLevel = false;
       if (enteredLevel.empty()) {
-        if (enteredLevel.get() <= progressManager.getCurrentLevel()) {
+        if (enteredLevel.get() <= progressManager.getNumCompleted()) {
           levelManager.loadLevel(enteredLevel.get());
         } else {
           //Tell the player that the level they entered is not available
@@ -127,7 +127,7 @@ void GameScreen::input(const SDL_Event &event) {
 void GameScreen::update(const float delta) {
   if (exitSystem(registry)) {
     if (levelManager.nextLevel()) {
-      progressManager.finishLevel();
+      progressManager.finishLevel(levelManager.getLoaded() - 1);
       camera.setZoom(1.0f);
     } else {
       /* Player just finished the last level */

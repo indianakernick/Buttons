@@ -13,27 +13,29 @@
 ProgressManager::ProgressManager() {
   std::ifstream file(getSaveDir() + "progress.txt");
   if (!file.is_open()) {
-    currentLevel = 0;
+    numCompleted = 0;
   } else {
-    file >> currentLevel;
+    file >> numCompleted;
   }
 }
 
 ProgressManager::~ProgressManager() {
   std::ofstream file(getSaveDir() + "progress.txt");
   if (file.is_open()) {
-    file << currentLevel;
+    file << numCompleted;
   }
 }
 
-Level ProgressManager::getCurrentLevel() const {
-  return currentLevel;
+Level ProgressManager::getNumCompleted() const {
+  return numCompleted;
 }
 
-void ProgressManager::finishLevel() {
-  ++currentLevel;
+void ProgressManager::finishLevel(const Level level) {
+  if (numCompleted == level) {
+    ++numCompleted;
+  }
 }
 
 void ProgressManager::reset() {
-  currentLevel = 0;
+  numCompleted = 0;
 }

@@ -17,12 +17,12 @@ public:
   ProgressManager();
   ~ProgressManager();
   
-  Level getCurrentLevel() const;
-  void finishLevel();
+  Level getNumCompleted() const;
+  void finishLevel(Level);
   void reset();
   
 private:
-  Level currentLevel;
+  Level numCompleted;
 };
 
 #endif

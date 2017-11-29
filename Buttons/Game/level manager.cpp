@@ -52,3 +52,11 @@ bool LevelManager::reload() {
     return false;
   }
 }
+
+Level LevelManager::getLoaded() const {
+  return current;
+}
+
+bool LevelManager::isLoaded() const {
+  return current != NONE_LOADED;
+}

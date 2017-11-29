@@ -17,6 +17,8 @@ class CompInits;
 
 class LevelManager {
 public:
+  static constexpr Level NONE_LOADED = std::numeric_limits<Level>::max();
+
   LevelManager() = default;
   
   void init(Registry &, const CompInits &);
@@ -25,10 +27,10 @@ public:
   bool loadLevel(Level);
   bool nextLevel();
   bool reload();
+  Level getLoaded() const;
+  bool isLoaded() const;
 
 private:
-  static constexpr Level NONE_LOADED = std::numeric_limits<Level>::max();
-  
   Registry *registry = nullptr;
   const CompInits *compInits = nullptr;
   Level current = NONE_LOADED;
