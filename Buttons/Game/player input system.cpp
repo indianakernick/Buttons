@@ -37,11 +37,9 @@ namespace {
 
 bool playerInputSystem(Registry &registry, const SDL_Event &event) {
   if (event.type == SDL_KEYDOWN) {
-    handleKey(registry, event.key.keysym.scancode, true);
-    return true;
+    return handleKey(registry, event.key.keysym.scancode, true);
   } else if (event.type == SDL_KEYUP) {
-    handleKey(registry, event.key.keysym.scancode, false);
-    return true;
+    return handleKey(registry, event.key.keysym.scancode, false);
   } else {
     return false;
   }

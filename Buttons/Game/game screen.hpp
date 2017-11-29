@@ -11,6 +11,7 @@
 
 #include "screen.hpp"
 #include "comp inits.hpp"
+#include "digit stack.hpp"
 #include "level manager.hpp"
 #include "physics system.hpp"
 #include "entity registry.hpp"
@@ -44,6 +45,8 @@ private:
   ProgressManager progressManager;
   InputDispatcher inputDispatcher;
   Cam2D::Camera camera;
+  DigitStack<Level> enteredLevel;
+  bool choosingLevel = false;
   bool quitGame = false;
 };
 

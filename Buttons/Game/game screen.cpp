@@ -19,6 +19,15 @@
 #include <Simpleton/Camera 2D/zoom to fit.hpp>
 #include <Simpleton/Camera 2D/constant speed.hpp>
 
+namespace {
+  bool keyDown(const SDL_Event &e, const SDL_Scancode scancode) {
+    return e.type == SDL_KEYDOWN && e.key.repeat == 0 && e.key.keysym.scancode == scancode;
+  }
+  bool keyUp(const SDL_Event &e, const SDL_Scancode scancode) {
+    return e.type == SDL_KEYUP && e.key.keysym.scancode == scancode;
+  }
+}
+
 void GameScreen::enter() {
   levelManager.reload();
   camera.setZoom(1.0f);
@@ -52,14 +61,14 @@ void GameScreen::init(RenderingContext &renderingContext) {
   levelManager.loadLevel(progressManager.getCurrentLevel());
   
   inputDispatcher.addListener([this] (const SDL_Event &e) {
-    if (e.type == SDL_KEYDOWN && e.key.keysym.scancode == SDL_SCANCODE_R) {
+    if (keyDown(e, SDL_SCANCODE_R)) {
       levelManager.reload();
       return true;
     }
     return false;
   });
   inputDispatcher.addListener([this] (const SDL_Event &e) {
-    if (e.type == SDL_KEYDOWN && e.key.keysym.scancode == SDL_SCANCODE_Q) {
+    if (keyDown(e, SDL_SCANCODE_Q)) {
       quitGame = true;
       return true;
     }
@@ -67,6 +76,36 @@ void GameScreen::init(RenderingContext &renderingContext) {
   });
   inputDispatcher.addListener([this] (const SDL_Event &e) {
     return playerInputSystem(registry, e);
+  });
+  inputDispatcher.addListener([this] (const SDL_Event &e) {
+    if (keyDown(e, SDL_SCANCODE_L)) {
+      choosingLevel = true;
+      return true;
+    } else if (keyUp(e, SDL_SCANCODE_L)) {
+      choosingLevel = false;
+      if (enteredLevel.empty()) {
+        if (enteredLevel.get() <= progressManager.getCurrentLevel()) {
+          levelManager.loadLevel(enteredLevel.get());
+        } else {
+          //Tell the player that the level they entered is not available
+        }
+      }
+      enteredLevel.clear();
+      return true;
+    } else if (e.type == SDL_KEYDOWN) {
+      if (!choosingLevel) {
+        return false;
+      }
+      const SDL_Scancode code = e.key.keysym.scancode;
+      if (SDL_SCANCODE_1 <= code && code <= SDL_SCANCODE_9) {
+        enteredLevel.push(code - SDL_SCANCODE_1 + 1);
+        return true;
+      } else if (code == SDL_SCANCODE_0) {
+        enteredLevel.push(0);
+        return true;
+      }
+    }
+    return false;
   });
 }
 
