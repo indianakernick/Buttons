@@ -41,8 +41,8 @@ private:
   Registry registry;
   PhysicsSystem physics;
   CompInits compInits;
-  LevelManager levelManager;
-  ProgressManager progressManager;
+  LevelManager levels;
+  ProgressManager progress;
   InputDispatcher inputDispatcher;
   Cam2D::Camera camera;
   
@@ -55,6 +55,8 @@ private:
   bool playerInputKey(const SDL_Event &);
   bool toggleGotoLevelKey(const SDL_Event &);
   bool typeLevelNumberKey(const SDL_Event &);
+  bool nextLevelKey(const SDL_Event &);
+  bool prevLevelKey(const SDL_Event &);
 };
 
 #endif

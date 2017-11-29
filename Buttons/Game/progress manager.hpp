@@ -17,7 +17,8 @@ public:
   ProgressManager();
   ~ProgressManager();
   
-  Level getNumCompleted() const;
+  Level getIncompleteLevel() const;
+  bool hasCompleted(Level) const;
   void finishLevel(Level);
   void reset();
   

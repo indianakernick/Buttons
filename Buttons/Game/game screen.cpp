@@ -30,7 +30,7 @@ namespace {
 }
 
 void GameScreen::enter() {
-  levelManager.reload();
+  levels.reload();
   camera.setZoom(1.0f);
 }
 
@@ -58,21 +58,25 @@ void GameScreen::init(RenderingContext &renderingContext) {
   compInits.construct<LockInit>();
   compInits.setDefaults();
   
-  levelManager.init(registry, compInits);
-  levelManager.loadLevel(progressManager.getNumCompleted());
+  levels.init(registry, compInits);
+  if (!levels.loadLevel(progress.getIncompleteLevel())) {
+    //Player has pressed play but finished the game
+  }
   
   inputDispatcher.addListener(Utils::memFun(this, &GameScreen::reloadKey));
   inputDispatcher.addListener(Utils::memFun(this, &GameScreen::quitKey));
   inputDispatcher.addListener(Utils::memFun(this, &GameScreen::playerInputKey));
   inputDispatcher.addListener(Utils::memFun(this, &GameScreen::toggleGotoLevelKey));
   inputDispatcher.addListener(Utils::memFun(this, &GameScreen::typeLevelNumberKey));
+  inputDispatcher.addListener(Utils::memFun(this, &GameScreen::nextLevelKey));
+  inputDispatcher.addListener(Utils::memFun(this, &GameScreen::prevLevelKey));
 }
 
 void GameScreen::quit() {
   inputDispatcher.clearListeners();
   
   registry.reset();
-  levelManager.quit();
+  levels.quit();
   
   compInits.destroyAll();
   
@@ -85,8 +89,8 @@ void GameScreen::input(const SDL_Event &event) {
 
 void GameScreen::update(const float delta) {
   if (exitSystem(registry)) {
-    if (levelManager.nextLevel()) {
-      progressManager.finishLevel(levelManager.getLoaded() - 1);
+    progress.finishLevel(levels.getLoaded());
+    if (levels.nextLevel()) {
       camera.setZoom(1.0f);
     } else {
       /* Player just finished the last level */
@@ -155,13 +159,13 @@ void GameScreen::render(NVGcontext *const ctx, const float delta) {
 }
 
 void GameScreen::resetProgress() {
-  progressManager.reset();
-  levelManager.loadLevel(0);
+  progress.reset();
+  levels.loadLevel(0);
 }
 
 bool GameScreen::reloadKey(const SDL_Event &e) {
   if (keyDown(e, SDL_SCANCODE_R)) {
-    levelManager.reload();
+    levels.reload();
     return true;
   }
   return false;
@@ -186,8 +190,8 @@ bool GameScreen::toggleGotoLevelKey(const SDL_Event &e) {
   } else if (keyUp(e, SDL_SCANCODE_L)) {
     choosingLevel = false;
     if (!enteredLevel.empty()) {
-      if (enteredLevel.get() <= progressManager.getNumCompleted()) {
-        levelManager.loadLevel(enteredLevel.get());
+      if (progress.hasCompleted(enteredLevel.get())) {
+        levels.loadLevel(enteredLevel.get());
       } else {
         //Tell the player that the level they entered is not available
       }
@@ -204,9 +208,7 @@ bool GameScreen::typeLevelNumberKey(const SDL_Event &e) {
       return false;
     }
     const SDL_Scancode code = e.key.keysym.scancode;
-    /*
-    Why did they put SDL_SCANCODE_0 after SDL_SCANCODE_9?
-    */
+    //Why did they put SDL_SCANCODE_0 after SDL_SCANCODE_9?
     if (SDL_SCANCODE_1 <= code && code <= SDL_SCANCODE_9) {
       enteredLevel.push(code - SDL_SCANCODE_1 + 1);
       return true;
@@ -214,6 +216,39 @@ bool GameScreen::typeLevelNumberKey(const SDL_Event &e) {
       enteredLevel.push(0);
       return true;
     }
+  }
+  return false;
+}
+
+bool GameScreen::nextLevelKey(const SDL_Event &e) {
+  if (keyDown(e, SDL_SCANCODE_N)) {
+    const Level current = levels.getLoaded();
+    if (current == LevelManager::NONE_LOADED) {
+      levels.loadLevel(0);
+      camera.setZoom(1.0f);
+    } else if (progress.hasCompleted(current + 1)) {
+      levels.loadLevel(current + 1);
+    }
+    return true;
+  }
+  return false;
+}
+
+bool GameScreen::prevLevelKey(const SDL_Event &e) {
+  if (keyDown(e, SDL_SCANCODE_B)) {
+    const Level current = levels.getLoaded();
+    if (current == LevelManager::NONE_LOADED) {
+      // progress.getIncompleteLevel() returns the total number of levels when
+      // the game has been completed. levels.loadLevel will return false if it
+      // fails to load the level
+      if (!levels.loadLevel(progress.getIncompleteLevel())) {
+        levels.loadLevel(progress.getIncompleteLevel() - 1);
+        camera.setZoom(1.0f);
+      }
+    } else if (current != 0) {
+      levels.loadLevel(current - 1);
+    }
+    return true;
   }
   return false;
 }

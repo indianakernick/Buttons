@@ -26,8 +26,12 @@ ProgressManager::~ProgressManager() {
   }
 }
 
-Level ProgressManager::getNumCompleted() const {
+Level ProgressManager::getIncompleteLevel() const {
   return numCompleted;
+}
+
+bool ProgressManager::hasCompleted(const Level level) const {
+  return level < numCompleted;
 }
 
 void ProgressManager::finishLevel(const Level level) {
