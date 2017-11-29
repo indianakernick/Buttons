@@ -11,12 +11,12 @@
 
 #include "screen.hpp"
 #include "comp inits.hpp"
-#include "digit stack.hpp"
 #include "level manager.hpp"
 #include "physics system.hpp"
 #include "entity registry.hpp"
 #include "input dispatcher.hpp"
 #include "progress manager.hpp"
+#include <Simpleton/Math/digit stack.hpp>
 #include <Simpleton/Camera 2D/camera.hpp>
 
 class RenderingContext;
@@ -45,7 +45,7 @@ private:
   ProgressManager progressManager;
   InputDispatcher inputDispatcher;
   Cam2D::Camera camera;
-  DigitStack<Level> enteredLevel;
+  Math::DigitStack<Level> enteredLevel;
   bool choosingLevel = false;
   bool quitGame = false;
 };
