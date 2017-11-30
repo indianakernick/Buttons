@@ -23,7 +23,7 @@ void switchRenderingSystem(Registry &registry, NVGcontext *const ctx) {
     
     const float activity = view.get<Activation>(entity).activity;
     const float angle = NVG_PI * 0.75f - activity * NVG_PI / 2.0f;
-    const glm::vec2 lineEnd = Math::angleMag(angle, 1.0f);
+    const glm::vec2 lineEnd = Math::angleMag(angle, std::cos(NVG_PI / 4.0));
     
     nvgBeginPath(ctx);
     nvgStrokeColor(ctx, nvgRGBf(0.4f, 0.4f, 0.4f));
