@@ -11,8 +11,8 @@
 
 #include <vector>
 #include <utility>
+#include "entity id.hpp"
 #include "object types.hpp"
-#include "entity constants.hpp"
 
 using ObjectTypePair = std::pair<ObjectTypeID, ObjectTypeID>;
 using EntityPair = std::pair<EntityID, EntityID>;

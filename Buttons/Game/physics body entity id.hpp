@@ -9,7 +9,7 @@
 #ifndef physics_body_entity_id_hpp
 #define physics_body_entity_id_hpp
 
-#include "entity constants.hpp"
+#include "entity id.hpp"
 
 inline void *getUserData(const EntityID entity) {
   return reinterpret_cast<void *>(

@@ -9,7 +9,7 @@
 #ifndef comp_init_hpp
 #define comp_init_hpp
 
-#include "entity constants.hpp"
+#include "entity id.hpp"
 
 namespace YAML {
   class Node;

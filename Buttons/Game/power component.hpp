@@ -10,7 +10,7 @@
 #define power_component_hpp
 
 #include <vector>
-#include "entity constants.hpp"
+#include "entity id.hpp"
 
 struct PowerInput {
   EntityID input;

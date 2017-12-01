@@ -1,13 +1,13 @@
 //
-//  entity constants.hpp
+//  entity id.hpp
 //  Buttons
 //
 //  Created by Indi Kernick on 7/11/17.
 //  Copyright © 2017 Indi Kernick. All rights reserved.
 //
 
-#ifndef entity_constants_hpp
-#define entity_constants_hpp
+#ifndef entity_id_hpp
+#define entity_id_hpp
 
 #include <limits>
 #include <cstdint>

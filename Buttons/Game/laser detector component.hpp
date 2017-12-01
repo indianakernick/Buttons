@@ -9,7 +9,7 @@
 #ifndef laser_detector_component_hpp
 #define laser_detector_component_hpp
 
-#include "entity constants.hpp"
+#include "entity id.hpp"
 
 struct LaserDetector {
   EntityID emitter;

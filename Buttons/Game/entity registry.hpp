@@ -9,7 +9,7 @@
 #ifndef entity_registry_hpp
 #define entity_registry_hpp
 
-#include "entity constants.hpp"
+#include "entity id.hpp"
 #include <entt/entity/registry.hpp>
 
 using Registry = entt::Registry<EntityID>;
