@@ -156,6 +156,7 @@
 		4584F4191FCFE0E60062B93E /* level 50.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 4584F4181FCFE0E60062B93E /* level 50.yaml */; };
 		4584F4231FD105940062B93E /* event helper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4584F4211FD105940062B93E /* event helper.cpp */; };
 		4584F4421FD130F50062B93E /* json helper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4584F4401FD130F50062B93E /* json helper.cpp */; };
+		4584F4491FD13BA30062B93E /* new physics file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4584F4471FD13BA30062B93E /* new physics file.cpp */; };
 		4591F0641FBFE1420075000D /* power init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0621FBFE1420075000D /* power init.cpp */; };
 		4591F0671FBFE44B0075000D /* activation init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0651FBFE44B0075000D /* activation init.cpp */; };
 		4591F06A1FBFE51E0075000D /* transform init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0681FBFE51E0075000D /* transform init.cpp */; };
@@ -521,6 +522,8 @@
 		4584F43F1FD12CF40062B93E /* text entity.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "text entity.json"; sourceTree = "<group>"; };
 		4584F4401FD130F50062B93E /* json helper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "json helper.cpp"; sourceTree = "<group>"; };
 		4584F4411FD130F50062B93E /* json helper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "json helper.hpp"; sourceTree = "<group>"; };
+		4584F4471FD13BA30062B93E /* new physics file.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "new physics file.cpp"; sourceTree = "<group>"; };
+		4584F4481FD13BA30062B93E /* new physics file.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "new physics file.hpp"; sourceTree = "<group>"; };
 		4591F0611FBFD0FD0075000D /* physics body entity id.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "physics body entity id.hpp"; sourceTree = "<group>"; };
 		4591F0621FBFE1420075000D /* power init.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "power init.cpp"; sourceTree = "<group>"; };
 		4591F0631FBFE1420075000D /* power init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "power init.hpp"; sourceTree = "<group>"; };
@@ -1085,6 +1088,8 @@
 				450ED5F31FB7C945008F2902 /* debug draw.cpp */,
 				450ED5F41FB7C945008F2902 /* debug draw.hpp */,
 				4591F0611FBFD0FD0075000D /* physics body entity id.hpp */,
+				4584F4471FD13BA30062B93E /* new physics file.cpp */,
+				4584F4481FD13BA30062B93E /* new physics file.hpp */,
 			);
 			name = Physics;
 			sourceTree = "<group>";
@@ -1409,6 +1414,7 @@
 				4591F0901FC1534D0075000D /* laser detector init.cpp in Sources */,
 				4533A8CA1FC918920027B0FB /* lock rendering component.cpp in Sources */,
 				4533A8B71FC90AFC0027B0FB /* lock init.cpp in Sources */,
+				4584F4491FD13BA30062B93E /* new physics file.cpp in Sources */,
 				456DF0CD1FBFB519003B3FD1 /* physics init.cpp in Sources */,
 				4533A8C71FC918580027B0FB /* key rendering component.cpp in Sources */,
 				4583EE0A1FB18F7A00AED27D /* b2ChainAndPolygonContact.cpp in Sources */,
