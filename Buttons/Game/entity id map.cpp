@@ -9,7 +9,6 @@
 #include "entity id map.hpp"
 
 #include <cassert>
-#include <Simpleton/Utils/bits.hpp>
 
 void EntityIDmap::insertIDs(const YAML::Node &root, Registry &registry) {
   assert(map.empty());

@@ -36,7 +36,7 @@ namespace {
   }
 }
 
-void RenderingContext::init(SDL_Window *newWindow) {
+void RenderingContext::init(SDL_Window *newWindow, const bool vsync) {
   PROFILE(RenderingContext init);
 
   window = newWindow;
@@ -53,7 +53,7 @@ void RenderingContext::init(SDL_Window *newWindow) {
   if (sdlGLContext == nullptr) {
     throw std::runtime_error(SDL_GetError());
   }
-  SDL_GL_SetSwapInterval(1);//Vsync enabled
+  SDL_GL_SetSwapInterval(vsync);
   
   glewExperimental = GL_TRUE;
   const GLenum glewError = glewInit();

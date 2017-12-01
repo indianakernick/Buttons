@@ -55,7 +55,7 @@ void App::mainloop() {
 void App::init() {
   windowLibrary.emplace(SDL_INIT_EVENTS);
   window = Platform::makeWindow(WINDOW_DESC);
-  renderingContext.init(window.get());
+  renderingContext.init(window.get(), WINDOW_VSYNC);
   
   screens.addScreen<GameScreen>();
   screens.addScreen<StartMenuScreen>();

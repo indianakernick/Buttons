@@ -20,7 +20,7 @@ class RenderingContext {
 public:
   RenderingContext() = default;
   
-  void init(SDL_Window *);
+  void init(SDL_Window *, bool);
   void quit();
   
   void preRender(glm::mat3);
