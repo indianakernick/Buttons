@@ -11,6 +11,7 @@
 #include "systems.hpp"
 #include "yaml helper.hpp"
 #include "render grid.hpp"
+#include "event helper.hpp"
 #include "global flags.hpp"
 #include "entity id map.hpp"
 #include <SDL2/SDL_events.h>
@@ -21,15 +22,6 @@
 #include <Simpleton/Utils/member function.hpp>
 #include <Simpleton/Camera 2D/zoom to fit.hpp>
 #include <Simpleton/Camera 2D/constant speed.hpp>
-
-namespace {
-  bool keyDown(const SDL_Event &e, const SDL_Scancode scancode) {
-    return e.type == SDL_KEYDOWN && e.key.repeat == 0 && e.key.keysym.scancode == scancode;
-  }
-  bool keyUp(const SDL_Event &e, const SDL_Scancode scancode) {
-    return e.type == SDL_KEYUP && e.key.keysym.scancode == scancode;
-  }
-}
 
 void GameScreen::enter() {
   levels.reload();
@@ -93,11 +85,8 @@ void GameScreen::input(const SDL_Event &event) {
 void GameScreen::update(const float delta) {
   if (exitSystem(registry)) {
     progress.finishLevel(levels.getLoaded());
-    if (levels.nextLevel()) {
-      camera.setZoom(1.0f);
-    } else {
-      /* Player just finished the last level */
-    }
+    levels.nextLevel();
+    camera.setZoom(1.0f);
   }
 
   playerMovementSystem(registry, delta);
