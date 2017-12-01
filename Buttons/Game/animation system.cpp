@@ -13,15 +13,22 @@
 
 void animationSystem(Registry &registry, const float delta) {
   auto view = registry.view<Animation>();
+  
   for (const EntityID entity : view) {
+    using Edge = Animation::EdgeMode;
+    
     Animation &comp = view.get(entity);
     Time::ProgSpeedAnim<float> anim(comp.progress, comp.speed);
     anim.advance(delta);
-    if (comp.edgeMode == Animation::EdgeMode::REPEAT) {
+    
+    if (comp.edgeMode == Edge::STOP) {
+      anim.stopOnEdge();
+    } else if (comp.edgeMode == Edge::REPEAT) {
       anim.repeatPastEdge();
-    } else if (comp.edgeMode == Animation::EdgeMode::CHANGE_DIR) {
+    } else if (comp.edgeMode == Edge::CHANGE_DIR) {
       anim.reversePastEdge();
     }
+    
     comp.progress = anim.getProgress();
     comp.speed = anim.getSpeed();
   }

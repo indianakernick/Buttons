@@ -14,6 +14,7 @@ struct Animation {
   float speed = 1.0f;
   
   enum class EdgeMode {
+    STOP,
     REPEAT,
     CHANGE_DIR
   };

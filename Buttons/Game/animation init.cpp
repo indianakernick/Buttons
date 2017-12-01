@@ -16,7 +16,9 @@ void AnimationInit::init(Animation &comp, const YAML::Node &node) {
   
   if (const YAML::Node &edgeModeNode = node["edge mode"]) {
     const std::string &edgeModeStr = edgeModeNode.Scalar();
-    if (edgeModeStr == "repeat") {
+    if (edgeModeStr == "stop") {
+      comp.edgeMode = Animation::EdgeMode::STOP;
+    } else if (edgeModeStr == "repeat") {
       comp.edgeMode = Animation::EdgeMode::REPEAT;
     } else if (edgeModeStr == "change dir") {
       comp.edgeMode = Animation::EdgeMode::CHANGE_DIR;
