@@ -3,14 +3,8 @@
     "components": {
       "PhysicsBody": {
         "body": "platform body.yaml",
-        "pos": [
-          -16,
-          -9
-        ],
-        "scale": [
-          32,
-          7
-        ]
+        "pos": [-16, -9],
+        "scale": [32, 7]
       }
     },
     "file": "platform entity.yaml"
@@ -19,14 +13,8 @@
     "components": {
       "PhysicsBody": {
         "body": "platform body.yaml",
-        "pos": [
-          -16,
-          2
-        ],
-        "scale": [
-          32,
-          7
-        ]
+        "pos": [-16, 2],
+        "scale": [32, 7]
       }
     },
     "file": "platform entity.yaml"
@@ -35,14 +23,8 @@
     "components": {
       "PhysicsBody": {
         "body": "platform body.yaml",
-        "pos": [
-          -16,
-          -2
-        ],
-        "scale": [
-          1,
-          4
-        ]
+        "pos": [-16, -2],
+        "scale": [1, 4]
       }
     },
     "file": "platform entity.yaml"
@@ -51,14 +33,8 @@
     "components": {
       "PhysicsBody": {
         "body": "platform body.yaml",
-        "pos": [
-          15,
-          -2
-        ],
-        "scale": [
-          1,
-          4
-        ]
+        "pos": [15, -2],
+        "scale": [1, 4]
       }
     },
     "file": "platform entity.yaml"
@@ -67,10 +43,7 @@
     "components": {
       "PhysicsBody": {
         "body": "player body.yaml",
-        "pos": [
-          -9.5,
-          -1.5
-        ]
+        "pos": [-9.5, -1.5]
       }
     },
     "file": "player entity.yaml"
@@ -79,10 +52,7 @@
     "components": {
       "PhysicsBody": {
         "body": "switch body.yaml",
-        "pos": [
-          14.5,
-          -2
-        ]
+        "pos": [14.5, -2]
       }
     },
     "file": "exit entity.yaml"
@@ -91,10 +61,7 @@
     "components": {
       "PhysicsBody": {
         "body": "box body.yaml",
-        "pos": [
-          -12.5,
-          -1.5
-        ]
+        "pos": [-12.5, -1.5]
       }
     },
     "file": "box entity.yaml"
@@ -103,10 +70,7 @@
     "components": {
       "PhysicsBody": {
         "body": "button body.yaml",
-        "pos": [
-          -1.5,
-          -2
-        ]
+        "pos": [-1.5, -2]
       }
     },
     "file": "button entity.yaml",
@@ -116,10 +80,7 @@
     "components": {
       "PhysicsBody": {
         "body": "switch body.yaml",
-        "pos": [
-          1.5,
-          -2
-        ]
+        "pos": [1.5, -2]
       }
     },
     "file": "switch entity.yaml",
@@ -129,15 +90,9 @@
     "components": {
       "PhysicsBody": {
         "body": "door body.yaml",
-        "pos": [
-          5.5,
-          2
-        ],
+        "pos": [5.5, 2],
         "rotation": 180,
-        "scale": [
-          1,
-          4
-        ]
+        "scale": [1, 4]
       },
       "PowerInput": {
         "in": 1
@@ -149,15 +104,9 @@
     "components": {
       "PhysicsBody": {
         "body": "door body.yaml",
-        "pos": [
-          8.5,
-          2
-        ],
+        "pos": [8.5, 2],
         "rotation": 180,
-        "scale": [
-          1,
-          4
-        ]
+        "scale": [1, 4]
       },
       "PowerInput": {
         "in": 0

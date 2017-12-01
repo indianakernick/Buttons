@@ -490,6 +490,34 @@
 		4584F4181FCFE0E60062B93E /* level 50.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 50.yaml"; sourceTree = "<group>"; };
 		4584F4211FD105940062B93E /* event helper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "event helper.cpp"; sourceTree = "<group>"; };
 		4584F4221FD105940062B93E /* event helper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "event helper.hpp"; sourceTree = "<group>"; };
+		4584F4241FD12CED0062B93E /* door body.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "door body.json"; sourceTree = "<group>"; };
+		4584F4251FD12CEE0062B93E /* button body.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "button body.json"; sourceTree = "<group>"; };
+		4584F4261FD12CEE0062B93E /* level 4.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "level 4.json"; sourceTree = "<group>"; };
+		4584F4271FD12CEE0062B93E /* level 0.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "level 0.json"; sourceTree = "<group>"; };
+		4584F4281FD12CEE0062B93E /* player entity.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "player entity.json"; sourceTree = "<group>"; };
+		4584F4291FD12CEF0062B93E /* platform body.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "platform body.json"; sourceTree = "<group>"; };
+		4584F42A1FD12CEF0062B93E /* shadow entity.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "shadow entity.json"; sourceTree = "<group>"; };
+		4584F42B1FD12CEF0062B93E /* box entity.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "box entity.json"; sourceTree = "<group>"; };
+		4584F42C1FD12CEF0062B93E /* key entity.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "key entity.json"; sourceTree = "<group>"; };
+		4584F42D1FD12CEF0062B93E /* box body.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "box body.json"; sourceTree = "<group>"; };
+		4584F42E1FD12CF00062B93E /* button entity.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "button entity.json"; sourceTree = "<group>"; };
+		4584F42F1FD12CF00062B93E /* level 2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "level 2.json"; sourceTree = "<group>"; };
+		4584F4301FD12CF00062B93E /* exit entity.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "exit entity.json"; sourceTree = "<group>"; };
+		4584F4311FD12CF00062B93E /* level 5.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "level 5.json"; sourceTree = "<group>"; };
+		4584F4321FD12CF10062B93E /* switch entity.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "switch entity.json"; sourceTree = "<group>"; };
+		4584F4331FD12CF10062B93E /* level 42.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "level 42.json"; sourceTree = "<group>"; };
+		4584F4341FD12CF10062B93E /* switch body.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "switch body.json"; sourceTree = "<group>"; };
+		4584F4351FD12CF10062B93E /* level 1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "level 1.json"; sourceTree = "<group>"; };
+		4584F4361FD12CF20062B93E /* door entity.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "door entity.json"; sourceTree = "<group>"; };
+		4584F4371FD12CF20062B93E /* laser emitter entity.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "laser emitter entity.json"; sourceTree = "<group>"; };
+		4584F4381FD12CF20062B93E /* laser detector entity.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "laser detector entity.json"; sourceTree = "<group>"; };
+		4584F4391FD12CF20062B93E /* level 3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "level 3.json"; sourceTree = "<group>"; };
+		4584F43A1FD12CF20062B93E /* moving platform entity.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "moving platform entity.json"; sourceTree = "<group>"; };
+		4584F43B1FD12CF30062B93E /* player body.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "player body.json"; sourceTree = "<group>"; };
+		4584F43C1FD12CF30062B93E /* level 50.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "level 50.json"; sourceTree = "<group>"; };
+		4584F43D1FD12CF30062B93E /* platform entity.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "platform entity.json"; sourceTree = "<group>"; };
+		4584F43E1FD12CF40062B93E /* lock entity.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "lock entity.json"; sourceTree = "<group>"; };
+		4584F43F1FD12CF40062B93E /* text entity.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "text entity.json"; sourceTree = "<group>"; };
 		4591F0611FBFD0FD0075000D /* physics body entity id.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "physics body entity id.hpp"; sourceTree = "<group>"; };
 		4591F0621FBFE1420075000D /* power init.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "power init.cpp"; sourceTree = "<group>"; };
 		4591F0631FBFE1420075000D /* power init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "power init.hpp"; sourceTree = "<group>"; };
@@ -588,7 +616,6 @@
 			isa = PBXGroup;
 			children = (
 				4591F0AA1FC3EEDB0075000D /* Fonts */,
-				459796341FB6801C007A7432 /* Joints */,
 				459796331FB68003007A7432 /* Bodies */,
 				459796321FB67FF7007A7432 /* Entities */,
 				459796311FB67FEC007A7432 /* Levels */,
@@ -1085,6 +1112,14 @@
 		459796311FB67FEC007A7432 /* Levels */ = {
 			isa = PBXGroup;
 			children = (
+				4584F4271FD12CEE0062B93E /* level 0.json */,
+				4584F4351FD12CF10062B93E /* level 1.json */,
+				4584F42F1FD12CF00062B93E /* level 2.json */,
+				4584F4391FD12CF20062B93E /* level 3.json */,
+				4584F4261FD12CEE0062B93E /* level 4.json */,
+				4584F4311FD12CF00062B93E /* level 5.json */,
+				4584F4331FD12CF10062B93E /* level 42.json */,
+				4584F43C1FD12CF30062B93E /* level 50.json */,
 				4597962F1FB67FE7007A7432 /* level 42.yaml */,
 				4591F0751FC000020075000D /* level 0.yaml */,
 				4591F0771FC008120075000D /* level 1.yaml */,
@@ -1100,6 +1135,20 @@
 		459796321FB67FF7007A7432 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				4584F42B1FD12CEF0062B93E /* box entity.json */,
+				4584F42E1FD12CF00062B93E /* button entity.json */,
+				4584F4361FD12CF20062B93E /* door entity.json */,
+				4584F4301FD12CF00062B93E /* exit entity.json */,
+				4584F42C1FD12CEF0062B93E /* key entity.json */,
+				4584F4381FD12CF20062B93E /* laser detector entity.json */,
+				4584F4371FD12CF20062B93E /* laser emitter entity.json */,
+				4584F43E1FD12CF40062B93E /* lock entity.json */,
+				4584F43A1FD12CF20062B93E /* moving platform entity.json */,
+				4584F43D1FD12CF30062B93E /* platform entity.json */,
+				4584F4281FD12CEE0062B93E /* player entity.json */,
+				4584F42A1FD12CEF0062B93E /* shadow entity.json */,
+				4584F4321FD12CF10062B93E /* switch entity.json */,
+				4584F43F1FD12CF40062B93E /* text entity.json */,
 				459796351FB681FA007A7432 /* box entity.yaml */,
 				450ED5C71FB6A6B7008F2902 /* platform entity.yaml */,
 				450ED5CD1FB6AA31008F2902 /* player entity.yaml */,
@@ -1121,6 +1170,12 @@
 		459796331FB68003007A7432 /* Bodies */ = {
 			isa = PBXGroup;
 			children = (
+				4584F42D1FD12CEF0062B93E /* box body.json */,
+				4584F4251FD12CEE0062B93E /* button body.json */,
+				4584F4241FD12CED0062B93E /* door body.json */,
+				4584F4291FD12CEF0062B93E /* platform body.json */,
+				4584F43B1FD12CF30062B93E /* player body.json */,
+				4584F4341FD12CF10062B93E /* switch body.json */,
 				459796371FB68209007A7432 /* box body.yaml */,
 				450ED5C91FB6A6C6008F2902 /* platform body.yaml */,
 				450ED5CB1FB6A927008F2902 /* player body.yaml */,
@@ -1129,13 +1184,6 @@
 				450ED6181FB8089C008F2902 /* switch body.yaml */,
 			);
 			name = Bodies;
-			sourceTree = "<group>";
-		};
-		459796341FB6801C007A7432 /* Joints */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Joints;
 			sourceTree = "<group>";
 		};
 		459796391FB686EA007A7432 /* Rendering */ = {

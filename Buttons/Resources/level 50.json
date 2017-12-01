@@ -11,14 +11,8 @@
         "vert align": "middle"
       },
       "Transform": {
-        "pos": [
-          0,
-          4
-        ],
-        "scale": [
-          0.1,
-          0.1
-        ]
+        "pos": [0, 4],
+        "scale": [0.1, 0.1]
       }
     }
   },
@@ -28,14 +22,8 @@
         "text": "You have just completed Buttons"
       },
       "Transform": {
-        "pos": [
-          0,
-          1
-        ],
-        "scale": [
-          0.05,
-          0.05
-        ]
+        "pos": [0, 1],
+        "scale": [0.05, 0.05]
       }
     },
     "file": "text entity.yaml"
@@ -46,14 +34,8 @@
         "text": "Now you can accomplish anything"
       },
       "Transform": {
-        "pos": [
-          0,
-          0
-        ],
-        "scale": [
-          0.05,
-          0.05
-        ]
+        "pos": [0, 0],
+        "scale": [0.05, 0.05]
       }
     },
     "file": "text entity.yaml"
@@ -64,14 +46,8 @@
         "text": "A game by:"
       },
       "Transform": {
-        "pos": [
-          0,
-          -2
-        ],
-        "scale": [
-          0.05,
-          0.05
-        ]
+        "pos": [0, -2],
+        "scale": [0.05, 0.05]
       }
     },
     "file": "text entity.yaml"
@@ -82,14 +58,8 @@
         "text": "Indi Kernick"
       },
       "Transform": {
-        "pos": [
-          0,
-          -3
-        ],
-        "scale": [
-          0.05,
-          0.05
-        ]
+        "pos": [0, -3],
+        "scale": [0.05, 0.05]
       }
     },
     "file": "text entity.yaml"

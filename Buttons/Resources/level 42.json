@@ -3,14 +3,8 @@
     "components": {
       "PhysicsBody": {
         "body": "box body.yaml",
-        "pos": [
-          -5,
-          0
-        ],
-        "scale": [
-          1,
-          1
-        ]
+        "pos": [-5, 0],
+        "scale": [1, 1]
       }
     },
     "file": "box entity.yaml"
@@ -19,14 +13,8 @@
     "components": {
       "PhysicsBody": {
         "body": "platform body.yaml",
-        "pos": [
-          -16,
-          -9
-        ],
-        "scale": [
-          32,
-          1
-        ]
+        "pos": [-16, -9],
+        "scale": [32, 1]
       }
     },
     "file": "platform entity.yaml"
@@ -35,10 +23,7 @@
     "components": {
       "PhysicsBody": {
         "body": "player body.yaml",
-        "pos": [
-          0,
-          0
-        ]
+        "pos": [0, 0]
       }
     },
     "file": "player entity.yaml"
@@ -47,14 +32,8 @@
     "components": {
       "PhysicsBody": {
         "body": "door body.yaml",
-        "pos": [
-          7.5,
-          -8
-        ],
-        "scale": [
-          1,
-          4
-        ]
+        "pos": [7.5, -8],
+        "scale": [1, 4]
       },
       "PowerInput": {
         "in": 0
@@ -66,10 +45,7 @@
     "components": {
       "PhysicsBody": {
         "body": "button body.yaml",
-        "pos": [
-          5,
-          -8
-        ]
+        "pos": [5, -8]
       }
     },
     "file": "button entity.yaml",
@@ -79,14 +55,8 @@
     "components": {
       "PhysicsBody": {
         "body": "door body.yaml",
-        "pos": [
-          8.5,
-          -8
-        ],
-        "scale": [
-          1,
-          4
-        ]
+        "pos": [8.5, -8],
+        "scale": [1, 4]
       },
       "PowerInput": {
         "in": 1
@@ -98,14 +68,8 @@
     "components": {
       "PhysicsBody": {
         "body": "switch body.yaml",
-        "pos": [
-          -7.5,
-          -8
-        ],
-        "scale": [
-          1,
-          1
-        ]
+        "pos": [-7.5, -8],
+        "scale": [1, 1]
       }
     },
     "file": "switch entity.yaml",
@@ -115,14 +79,8 @@
     "components": {
       "PhysicsBody": {
         "body": "switch body.yaml",
-        "pos": [
-          14.5,
-          -8
-        ],
-        "scale": [
-          1,
-          1
-        ]
+        "pos": [14.5, -8],
+        "scale": [1, 1]
       }
     },
     "file": "exit entity.yaml"
@@ -130,26 +88,14 @@
   {
     "components": {
       "MovingPlatform": {
-        "end": [
-          -16,
-          0
-        ],
+        "end": [-16, 0],
         "speed": 0.1,
-        "start": [
-          -16,
-          -9
-        ]
+        "start": [-16, -9]
       },
       "PhysicsBody": {
         "body": "platform body.yaml",
-        "pos": [
-          -16,
-          -9
-        ],
-        "scale": [
-          4,
-          1
-        ]
+        "pos": [-16, -9],
+        "scale": [4, 1]
       },
       "PowerInput": {
         "in": 2
@@ -161,14 +107,8 @@
     "components": {
       "PhysicsBody": {
         "body": "switch body.yaml",
-        "pos": [
-          -2,
-          -8
-        ],
-        "scale": [
-          1,
-          1
-        ]
+        "pos": [-2, -8],
+        "scale": [1, 1]
       }
     },
     "file": "switch entity.yaml",
@@ -180,10 +120,7 @@
         "emitter": 3
       },
       "Transform": {
-        "pos": [
-          16,
-          4
-        ],
+        "pos": [16, 4],
         "rotation": 90
       }
     },
@@ -192,23 +129,14 @@
   {
     "components": {
       "PhysicsRayCast": {
-        "end": [
-          16,
-          4
-        ],
-        "start": [
-          -15,
-          4
-        ]
+        "end": [16, 4],
+        "start": [-15, 4]
       },
       "PowerInput": {
         "on": true
       },
       "Transform": {
-        "pos": [
-          -16,
-          4
-        ],
+        "pos": [-16, 4],
         "rotation": -90
       }
     },
@@ -222,10 +150,7 @@
       },
       "PhysicsBody": {
         "body": "switch body.yaml",
-        "pos": [
-          -7.5,
-          -6
-        ]
+        "pos": [-7.5, -6]
       }
     },
     "file": "lock entity.yaml",
@@ -238,10 +163,7 @@
       },
       "PhysicsBody": {
         "body": "switch body.yaml",
-        "pos": [
-          -2,
-          -6
-        ]
+        "pos": [-2, -6]
       }
     },
     "file": "key entity.yaml"
@@ -252,14 +174,8 @@
         "in": 4
       },
       "Transform": {
-        "pos": [
-          10,
-          -8
-        ],
-        "scale": [
-          6,
-          4
-        ]
+        "pos": [10, -8],
+        "scale": [6, 4]
       }
     },
     "file": "shadow entity.yaml"

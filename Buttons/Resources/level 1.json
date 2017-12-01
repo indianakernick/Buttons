@@ -3,14 +3,8 @@
     "components": {
       "PhysicsBody": {
         "body": "platform body.yaml",
-        "pos": [
-          -16,
-          -9
-        ],
-        "scale": [
-          32,
-          1
-        ]
+        "pos": [-16, -9],
+        "scale": [32, 1]
       }
     },
     "file": "platform entity.yaml"
@@ -19,14 +13,8 @@
     "components": {
       "PhysicsBody": {
         "body": "platform body.yaml",
-        "pos": [
-          -16,
-          8
-        ],
-        "scale": [
-          32,
-          1
-        ]
+        "pos": [-16, 8],
+        "scale": [32, 1]
       }
     },
     "file": "platform entity.yaml"
@@ -35,14 +23,8 @@
     "components": {
       "PhysicsBody": {
         "body": "platform body.yaml",
-        "pos": [
-          -16,
-          -8
-        ],
-        "scale": [
-          1,
-          16
-        ]
+        "pos": [-16, -8],
+        "scale": [1, 16]
       }
     },
     "file": "platform entity.yaml"
@@ -51,14 +33,8 @@
     "components": {
       "PhysicsBody": {
         "body": "platform body.yaml",
-        "pos": [
-          15,
-          -8
-        ],
-        "scale": [
-          1,
-          16
-        ]
+        "pos": [15, -8],
+        "scale": [1, 16]
       }
     },
     "file": "platform entity.yaml"
@@ -67,14 +43,8 @@
     "components": {
       "PhysicsBody": {
         "body": "platform body.yaml",
-        "pos": [
-          -13,
-          -8
-        ],
-        "scale": [
-          1,
-          1
-        ]
+        "pos": [-13, -8],
+        "scale": [1, 1]
       }
     },
     "file": "platform entity.yaml"
@@ -83,14 +53,8 @@
     "components": {
       "PhysicsBody": {
         "body": "platform body.yaml",
-        "pos": [
-          -8,
-          -8
-        ],
-        "scale": [
-          1,
-          2
-        ]
+        "pos": [-8, -8],
+        "scale": [1, 2]
       }
     },
     "file": "platform entity.yaml"
@@ -99,14 +63,8 @@
     "components": {
       "PhysicsBody": {
         "body": "platform body.yaml",
-        "pos": [
-          -5,
-          -5
-        ],
-        "scale": [
-          4,
-          1
-        ]
+        "pos": [-5, -5],
+        "scale": [4, 1]
       }
     },
     "file": "platform entity.yaml"
@@ -115,14 +73,8 @@
     "components": {
       "PhysicsBody": {
         "body": "platform body.yaml",
-        "pos": [
-          3,
-          -8
-        ],
-        "scale": [
-          1,
-          4
-        ]
+        "pos": [3, -8],
+        "scale": [1, 4]
       }
     },
     "file": "platform entity.yaml"
@@ -131,14 +83,8 @@
     "components": {
       "PhysicsBody": {
         "body": "platform body.yaml",
-        "pos": [
-          10,
-          -7
-        ],
-        "scale": [
-          5,
-          1
-        ]
+        "pos": [10, -7],
+        "scale": [5, 1]
       }
     },
     "file": "platform entity.yaml"
@@ -147,10 +93,7 @@
     "components": {
       "PhysicsBody": {
         "body": "player body.yaml",
-        "pos": [
-          -14.5,
-          -7.5
-        ]
+        "pos": [-14.5, -7.5]
       }
     },
     "file": "player entity.yaml"
@@ -159,10 +102,7 @@
     "components": {
       "PhysicsBody": {
         "body": "switch body.yaml",
-        "pos": [
-          14.5,
-          -6
-        ]
+        "pos": [14.5, -6]
       }
     },
     "file": "exit entity.yaml"
@@ -173,14 +113,8 @@
         "text": "Press W or up to jump"
       },
       "Transform": {
-        "pos": [
-          0,
-          0
-        ],
-        "scale": [
-          0.05,
-          0.05
-        ]
+        "pos": [0, 0],
+        "scale": [0.05, 0.05]
       }
     },
     "file": "text entity.yaml"
