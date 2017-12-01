@@ -57,6 +57,7 @@ private:
   bool typeLevelNumberKey(const SDL_Event &);
   bool nextLevelKey(const SDL_Event &);
   bool prevLevelKey(const SDL_Event &);
+  bool infoKey(const SDL_Event &);
 };
 
 #endif

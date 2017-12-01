@@ -252,3 +252,13 @@ bool GameScreen::prevLevelKey(const SDL_Event &e) {
   }
   return false;
 }
+
+bool GameScreen::infoKey(const SDL_Event &e) {
+  if (keyDown(e, SDL_SCANCODE_I)) {
+    if (levels.isLoaded()) {
+      printMessage("This is level " + std::to_string(levels.getLoaded()));
+    }
+    return true;
+  }
+  return false;
+}
