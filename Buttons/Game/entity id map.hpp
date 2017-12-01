@@ -11,6 +11,7 @@
 
 #include <vector>
 #include <yaml-cpp/yaml.h>
+#include "json helper.hpp"
 #include "entity registry.hpp"
 
 using UserID = int;
@@ -21,6 +22,7 @@ public:
   EntityIDmap() = default;
   
   void insertIDs(const YAML::Node &, Registry &);
+  void insertIDs(const json &, Registry &);
   EntityID getEntityFromUserID(UserID) const;
   EntityID getEntityFromIndex(size_t) const;
 

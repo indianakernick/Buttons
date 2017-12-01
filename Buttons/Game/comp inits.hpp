@@ -30,6 +30,17 @@ public:
     getInit<Comp>()->initialize(comp, node, idMap, entity);
   }
   
+  ///Initializes the given component
+  template <typename Comp>
+  void init(
+    Comp &comp,
+    const json &node,
+    const EntityIDmap &idMap,
+    const EntityID entity
+  ) const {
+    assert(getInit<Comp>());
+  }
+  
   ///Constructs the initializer for the given component
   template <typename CompInit, typename ...Args>
   void construct(Args &&... args) {

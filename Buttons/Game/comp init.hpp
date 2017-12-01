@@ -10,6 +10,7 @@
 #define comp_init_hpp
 
 #include "entity id.hpp"
+#include "json helper.hpp"
 
 namespace YAML {
   class Node;
