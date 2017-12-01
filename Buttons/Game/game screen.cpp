@@ -9,8 +9,10 @@
 #include "game screen.hpp"
 
 #include "systems.hpp"
+#include "yaml helper.hpp"
 #include "render grid.hpp"
 #include "global flags.hpp"
+#include "entity id map.hpp"
 #include <SDL2/SDL_events.h>
 #include "screen manager.hpp"
 #include "component inits.hpp"
@@ -70,6 +72,7 @@ void GameScreen::init(RenderingContext &renderingContext) {
   inputDispatcher.addListener(Utils::memFun(this, &GameScreen::typeLevelNumberKey));
   inputDispatcher.addListener(Utils::memFun(this, &GameScreen::nextLevelKey));
   inputDispatcher.addListener(Utils::memFun(this, &GameScreen::prevLevelKey));
+  inputDispatcher.addListener(Utils::memFun(this, &GameScreen::infoKey));
 }
 
 void GameScreen::quit() {
@@ -262,3 +265,23 @@ bool GameScreen::infoKey(const SDL_Event &e) {
   }
   return false;
 }
+
+void GameScreen::printMessage(const std::string &message) {
+  const EntityID entity = registry.create();
+  registry.assign<Text>(entity, message);
+  Transform &transform = registry.assign<Transform>(entity);
+  transform.pos = {0.0f, 8.0f};
+  transform.scale = {0.05f, 0.05f};
+  TextRendering &textRendering = registry.assign<TextRendering>(entity);
+  YAML::Node renderingNode(YAML::NodeType::Map);
+  renderingNode["font"] = "Arial.ttf";
+  renderingNode["color"] = YAML::Node(YAML::NodeType::Sequence);
+  renderingNode["color"].push_back(1.0f);
+  renderingNode["color"].push_back(0.0f);
+  renderingNode["color"].push_back(0.0f);
+  renderingNode["hori align"] = "center";
+  renderingNode["vert align"] = "middle";
+  renderingNode["size"] = "24";
+  compInits.init(textRendering, renderingNode, EntityIDmap(), entity);
+}
+

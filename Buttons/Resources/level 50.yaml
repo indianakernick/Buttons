@@ -1,5 +1,4 @@
-- file: text entity.yaml
-  components:
+- components:
     Transform:
       pos: [0, 4]
       scale: [0.1, 0.1]

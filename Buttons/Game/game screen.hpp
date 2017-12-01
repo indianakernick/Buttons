@@ -58,6 +58,8 @@ private:
   bool nextLevelKey(const SDL_Event &);
   bool prevLevelKey(const SDL_Event &);
   bool infoKey(const SDL_Event &);
+  
+  void printMessage(const std::string &);
 };
 
 #endif
