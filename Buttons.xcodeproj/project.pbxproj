@@ -155,6 +155,7 @@
 		4584F4131FCE37AB0062B93E /* level 5.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 4584F4121FCE37AB0062B93E /* level 5.yaml */; };
 		4584F4191FCFE0E60062B93E /* level 50.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 4584F4181FCFE0E60062B93E /* level 50.yaml */; };
 		4584F4231FD105940062B93E /* event helper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4584F4211FD105940062B93E /* event helper.cpp */; };
+		4584F4421FD130F50062B93E /* json helper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4584F4401FD130F50062B93E /* json helper.cpp */; };
 		4591F0641FBFE1420075000D /* power init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0621FBFE1420075000D /* power init.cpp */; };
 		4591F0671FBFE44B0075000D /* activation init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0651FBFE44B0075000D /* activation init.cpp */; };
 		4591F06A1FBFE51E0075000D /* transform init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0681FBFE51E0075000D /* transform init.cpp */; };
@@ -518,6 +519,8 @@
 		4584F43D1FD12CF30062B93E /* platform entity.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "platform entity.json"; sourceTree = "<group>"; };
 		4584F43E1FD12CF40062B93E /* lock entity.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "lock entity.json"; sourceTree = "<group>"; };
 		4584F43F1FD12CF40062B93E /* text entity.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "text entity.json"; sourceTree = "<group>"; };
+		4584F4401FD130F50062B93E /* json helper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "json helper.cpp"; sourceTree = "<group>"; };
+		4584F4411FD130F50062B93E /* json helper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "json helper.hpp"; sourceTree = "<group>"; };
 		4591F0611FBFD0FD0075000D /* physics body entity id.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "physics body entity id.hpp"; sourceTree = "<group>"; };
 		4591F0621FBFE1420075000D /* power init.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "power init.cpp"; sourceTree = "<group>"; };
 		4591F0631FBFE1420075000D /* power init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "power init.hpp"; sourceTree = "<group>"; };
@@ -946,6 +949,8 @@
 				4533A9041FCA93780027B0FB /* dir.hpp */,
 				4584F4211FD105940062B93E /* event helper.cpp */,
 				4584F4221FD105940062B93E /* event helper.hpp */,
+				4584F4401FD130F50062B93E /* json helper.cpp */,
+				4584F4411FD130F50062B93E /* json helper.hpp */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -1418,6 +1423,7 @@
 				4583EE0F1FB18F7A00AED27D /* b2ContactSolver.cpp in Sources */,
 				450ED5FE1FB7DDA5008F2902 /* activation system.cpp in Sources */,
 				4583EE101FB18F7A00AED27D /* b2CircleContact.cpp in Sources */,
+				4584F4421FD130F50062B93E /* json helper.cpp in Sources */,
 				4583EE111FB18F7A00AED27D /* b2EdgeAndCircleContact.cpp in Sources */,
 				4583EEA31FB1AFCF00AED27D /* activate power output system.cpp in Sources */,
 				4591F0671FBFE44B0075000D /* activation init.cpp in Sources */,
@@ -1636,6 +1642,7 @@
 					/usr/local/Cellar/sdl2/2.0.7/include/,
 					/usr/local/include/,
 					"/usr/local/Cellar/yaml-cpp/0.5.3/include",
+					/usr/local/Cellar/nlohmann_json/2.1.1/include,
 				);
 				INFOPLIST_FILE = Buttons/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -1674,6 +1681,7 @@
 					/usr/local/Cellar/sdl2/2.0.7/include/,
 					/usr/local/include/,
 					"/usr/local/Cellar/yaml-cpp/0.5.3/include",
+					/usr/local/Cellar/nlohmann_json/2.1.1/include,
 				);
 				INFOPLIST_FILE = Buttons/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
