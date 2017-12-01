@@ -12,6 +12,5 @@
 #include <string>
 
 std::string getSaveDir();
-std::string getResDir();
 
 #endif

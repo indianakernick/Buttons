@@ -14,6 +14,3 @@ std::string getSaveDir() {
   return Platform::getSaveDir("Indi Kernick", "Buttons");
 }
 
-std::string getResDir() {
-  return Platform::getResDir();
-}
