@@ -10,8 +10,10 @@
 #define json_helper_hpp
 
 #include "json.hpp"
+#include <glm/vec2.hpp>
+#include "json helper.hpp"
 
-using json = nlohmann::json;
+using nlohmann::json;
 
 void checkType(const json &, json::value_t);
 
@@ -22,5 +24,12 @@ void getOptional(T &dst, const json &node, const char *name) {
     dst = iter->get<T>();
   }
 }
+
+struct b2Vec2;
+extern "C" struct NVGcolor;
+
+void from_json(const json &j, glm::vec2 &);
+void from_json(const json &j, b2Vec2 &);
+void from_json(const json &, NVGcolor &);
 
 #endif
