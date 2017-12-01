@@ -14,7 +14,6 @@
 #include "event helper.hpp"
 #include "global flags.hpp"
 #include "entity id map.hpp"
-#include <SDL2/SDL_events.h>
 #include "screen manager.hpp"
 #include "component inits.hpp"
 #include "camera constants.hpp"
@@ -57,14 +56,14 @@ void GameScreen::init(RenderingContext &renderingContext) {
     //Player has pressed play but finished the game
   }
   
-  inputDispatcher.addListener(Utils::memFun(this, &GameScreen::reloadKey));
-  inputDispatcher.addListener(Utils::memFun(this, &GameScreen::quitKey));
-  inputDispatcher.addListener(Utils::memFun(this, &GameScreen::playerInputKey));
-  inputDispatcher.addListener(Utils::memFun(this, &GameScreen::toggleGotoLevelKey));
-  inputDispatcher.addListener(Utils::memFun(this, &GameScreen::typeLevelNumberKey));
-  inputDispatcher.addListener(Utils::memFun(this, &GameScreen::nextLevelKey));
-  inputDispatcher.addListener(Utils::memFun(this, &GameScreen::prevLevelKey));
-  inputDispatcher.addListener(Utils::memFun(this, &GameScreen::infoKey));
+  addListener(&GameScreen::reloadKey);
+  addListener(&GameScreen::quitKey);
+  addListener(&GameScreen::playerInputKey);
+  addListener(&GameScreen::toggleGotoLevelKey);
+  addListener(&GameScreen::typeLevelNumberKey);
+  addListener(&GameScreen::nextLevelKey);
+  addListener(&GameScreen::prevLevelKey);
+  addListener(&GameScreen::infoKey);
 }
 
 void GameScreen::quit() {
@@ -155,6 +154,11 @@ void GameScreen::resetProgress() {
   levels.loadLevel(0);
 }
 
+template <typename Listener>
+void GameScreen::addListener(const Listener listener) {
+  inputDispatcher.addListener(Utils::memFun(this, listener));
+}
+
 bool GameScreen::reloadKey(const SDL_Event &e) {
   if (keyDown(e, SDL_SCANCODE_R)) {
     levels.reload();
@@ -195,11 +199,11 @@ bool GameScreen::toggleGotoLevelKey(const SDL_Event &e) {
 }
 
 bool GameScreen::typeLevelNumberKey(const SDL_Event &e) {
-  if (e.type == SDL_KEYDOWN && e.key.repeat == 0) {
+  if (keyDown(e)) {
     if (!choosingLevel) {
       return false;
     }
-    const SDL_Scancode code = e.key.keysym.scancode;
+    const SDL_Scancode code = keyCode(e);
     //Why did they put SDL_SCANCODE_0 after SDL_SCANCODE_9?
     if (SDL_SCANCODE_1 <= code && code <= SDL_SCANCODE_9) {
       enteredLevel.push(code - SDL_SCANCODE_1 + 1);

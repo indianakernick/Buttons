@@ -15,5 +15,9 @@ extern "C" union SDL_Event;
 
 bool keyDown(const SDL_Event &, SDL_Scancode);
 bool keyUp(const SDL_Event &, SDL_Scancode);
+bool keyDown(const SDL_Event &);
+bool keyUp(const SDL_Event &);
+///Assumes the event is a key event
+SDL_Scancode keyCode(const SDL_Event &);
 
 #endif

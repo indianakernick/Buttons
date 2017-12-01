@@ -50,6 +50,9 @@ private:
   bool choosingLevel = false;
   bool quitGame = false;
   
+  template <typename Listener>
+  void addListener(Listener);
+  
   bool reloadKey(const SDL_Event &);
   bool quitKey(const SDL_Event &);
   bool playerInputKey(const SDL_Event &);
