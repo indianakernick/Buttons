@@ -1,0 +1,20 @@
+{
+  "body": {
+    "linear damping": 0,
+    "type": "dynamic"
+  },
+  "fixtures": [
+    {
+      "density": 10,
+      "shape": "main",
+      "user data": "Ground"
+    }
+  ],
+  "shapes": {
+    "main": {
+      "half height": 0.5,
+      "half width": 0.5,
+      "type": "polygon"
+    }
+  }
+}

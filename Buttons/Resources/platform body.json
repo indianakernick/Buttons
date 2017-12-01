@@ -1,0 +1,35 @@
+{
+  "body": {
+    "type": "kinematic"
+  },
+  "fixtures": [
+    {
+      "friction": 1,
+      "shape": "main",
+      "user data": "Ground"
+    }
+  ],
+  "shapes": {
+    "main": {
+      "type": "polygon",
+      "verts": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    }
+  }
+}

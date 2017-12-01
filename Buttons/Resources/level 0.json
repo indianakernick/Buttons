@@ -1,0 +1,108 @@
+[
+  {
+    "components": {
+      "PhysicsBody": {
+        "body": "platform body.yaml",
+        "pos": [
+          -16,
+          -9
+        ],
+        "scale": [
+          32,
+          8
+        ]
+      }
+    },
+    "file": "platform entity.yaml"
+  },
+  {
+    "components": {
+      "PhysicsBody": {
+        "body": "platform body.yaml",
+        "pos": [
+          -16,
+          1
+        ],
+        "scale": [
+          32,
+          8
+        ]
+      }
+    },
+    "file": "platform entity.yaml"
+  },
+  {
+    "components": {
+      "PhysicsBody": {
+        "body": "platform body.yaml",
+        "pos": [
+          -16,
+          -1
+        ],
+        "scale": [
+          1,
+          2
+        ]
+      }
+    },
+    "file": "platform entity.yaml"
+  },
+  {
+    "components": {
+      "PhysicsBody": {
+        "body": "platform body.yaml",
+        "pos": [
+          15,
+          -1
+        ],
+        "scale": [
+          1,
+          2
+        ]
+      }
+    },
+    "file": "platform entity.yaml"
+  },
+  {
+    "components": {
+      "PhysicsBody": {
+        "body": "player body.yaml",
+        "pos": [
+          -14.5,
+          -0.5
+        ]
+      }
+    },
+    "file": "player entity.yaml"
+  },
+  {
+    "components": {
+      "PhysicsBody": {
+        "body": "switch body.yaml",
+        "pos": [
+          14.5,
+          -1
+        ]
+      }
+    },
+    "file": "exit entity.yaml"
+  },
+  {
+    "components": {
+      "Text": {
+        "text": "Press A and D or left and right to move"
+      },
+      "Transform": {
+        "pos": [
+          0,
+          2
+        ],
+        "scale": [
+          0.05,
+          0.05
+        ]
+      }
+    },
+    "file": "text entity.yaml"
+  }
+]
