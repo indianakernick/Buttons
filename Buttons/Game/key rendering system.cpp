@@ -25,6 +25,7 @@ void keyRenderingSystem(Registry &registry, NVGcontext *const ctx) {
     nvgSave(ctx);
     
     nvgTransform(ctx, getMat3(view.get<Transform>(entity)));
+    nvgTranslate(ctx, 0.5f, 0.5f);
     
     nvgBeginPath(ctx);
     nvgFillColor(ctx, nvgRGBf(0.0f, 1.0f, 0.0));

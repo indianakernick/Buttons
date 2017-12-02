@@ -23,12 +23,13 @@ void switchRenderingSystem(Registry &registry, NVGcontext *const ctx) {
     
     const float activity = view.get<Activation>(entity).activity;
     const float angle = NVG_PI * 0.75f - activity * NVG_PI / 2.0f;
-    const glm::vec2 lineEnd = Math::angleMag(angle, std::cos(NVG_PI / 4.0));
+    glm::vec2 lineEnd = Math::angleMag(angle, std::cos(NVG_PI / 4.0));
+    lineEnd += glm::vec2(0.5f, 0.0f);
     
     nvgBeginPath(ctx);
     nvgStrokeColor(ctx, nvgRGBf(0.4f, 0.4f, 0.4f));
     nvgStrokeWidth(ctx, 0.08f);
-    nvgMoveTo(ctx, 0.0f, 0.0f);
+    nvgMoveTo(ctx, 0.5f, 0.0f);
     nvgLineTo(ctx, lineEnd);
     nvgStroke(ctx);
     
@@ -39,7 +40,7 @@ void switchRenderingSystem(Registry &registry, NVGcontext *const ctx) {
     
     nvgBeginPath(ctx);
     nvgFillColor(ctx, nvgRGBf(0.6f, 0.6f, 0.6f));
-    nvgArc(ctx, 0.0f, 0.0f, 0.25f, 0.0f, NVG_PI, NVG_CW);
+    nvgArc(ctx, 0.5f, 0.0f, 0.25f, 0.0f, NVG_PI, NVG_CW);
     nvgClosePath(ctx);
     nvgFill(ctx);
     

@@ -23,7 +23,7 @@ namespace {
     const float thickness,
     const float size
   ) {
-    static const glm::vec2 CENTER = {0.0f, 0.5f};
+    static const glm::vec2 CENTER = {0.5f, 0.5f};
     
     auto transform = [] (const float x, const float y) {
       return glm::vec2(x, y) + CENTER;
@@ -65,7 +65,7 @@ void exitRenderingSystem(Registry &registry, NVGcontext *const ctx) {
       
       nvgBeginPath(ctx);
       nvgFillColor(ctx, SECOND_COLOR);
-      nvgRect(ctx, -0.5f, 0.0f, 1.0f, 1.0f);
+      nvgRect(ctx, 0.0f, 0.0f, 1.0f, 1.0f);
       nvgFill(ctx);
       square(ctx, FIRST_COLOR, 0.1f, prog * 0.2f + 0.8f);
       square(ctx, FIRST_COLOR, 0.1f, prog * 0.2f + 0.4f);
@@ -75,7 +75,7 @@ void exitRenderingSystem(Registry &registry, NVGcontext *const ctx) {
       
       nvgBeginPath(ctx);
       nvgFillColor(ctx, FIRST_COLOR);
-      nvgRect(ctx, -0.5f, 0.0f, 1.0f, 1.0f);
+      nvgRect(ctx, 0.0f, 0.0f, 1.0f, 1.0f);
       nvgFill(ctx);
       square(ctx, SECOND_COLOR, 0.1f, prog * 0.2f + 0.8f);
       square(ctx, SECOND_COLOR, 0.1f, prog * 0.2f + 0.4f);

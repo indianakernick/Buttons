@@ -25,10 +25,10 @@ void lockRenderingSystem(Registry &registry, NVGcontext *const ctx) {
     nvgBeginPath(ctx);
     nvgFillColor(ctx, nvgRGBf(0.0f, 1.0f, 0.0f));
     
-    nvgRect(ctx, -0.5f, 0.0f, 1.0f, 1.0f);
+    nvgRect(ctx, 0.0f, 0.0f, 1.0f, 1.0f);
     
     if (isInactive(view.get<Activation>(entity).state)) {
-      nvgTranslate(ctx, 0.0f, 0.5f);
+      nvgTranslate(ctx, 0.5f, 0.5f);
       renderPolygon(ctx, view.get<Lock>(entity).index + 3, 0.4f, NVG_PI / 2.0f);
       nvgPathWinding(ctx, NVG_HOLE);
     }

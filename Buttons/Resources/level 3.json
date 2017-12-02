@@ -52,8 +52,8 @@
     "file": "exit entity.json",
     "components": {
       "PhysicsBody": {
-        "body": "switch body.json",
-        "pos": [14.5, -2]
+        "body": "sensor body.json",
+        "pos": [14, -2]
       }
     }
   },
@@ -72,7 +72,7 @@
     "components": {
       "PhysicsBody": {
         "body": "button body.json",
-        "pos": [-1.5, -2]
+        "pos": [-2, -2]
       }
     }
   },
@@ -81,8 +81,8 @@
     "file": "switch entity.json",
     "components": {
       "PhysicsBody": {
-        "body": "switch body.json",
-        "pos": [1.5, -2]
+        "body": "sensor body.json",
+        "pos": [1, -2]
       }
     }
   },

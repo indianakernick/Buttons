@@ -31,14 +31,14 @@ void buttonRenderingSystem(Registry &registry, NVGcontext *const ctx) {
     
     nvgBeginPath(ctx);
     nvgFillColor(ctx, nvgRGBf(1.0f, 0.0f, 0.0f));
-    nvgRect(ctx, -0.5f, 0.0f, 1.0f, 0.25f);
+    nvgRect(ctx, 0.0f, 0.0f, 1.0f, 0.25f);
     nvgFill(ctx);
     
     nvgRestore(ctx);
     
     nvgBeginPath(ctx);
     nvgFillColor(ctx, nvgRGBf(0.6f, 0.6f, 0.6f));
-    nvgRect(ctx, -BASE_WIDTH / 2.0f, 0.0f, BASE_WIDTH, -BASE_HEIGHT);
+    nvgRect(ctx, (-BASE_WIDTH + 1.0f) / 2.0f, 0.0f, BASE_WIDTH, -BASE_HEIGHT);
     nvgFill(ctx);
     
     nvgRestore(ctx);
