@@ -114,8 +114,7 @@
         "text": "Press W or up to jump"
       },
       "Transform": {
-        "pos": [0, 0],
-        "scale": [0.05, 0.05]
+        "pos": [0, 0]
       }
     }
   }

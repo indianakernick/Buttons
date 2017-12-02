@@ -7,60 +7,55 @@
       "TextRendering": {
         "font": "Arial.ttf",
         "hori align": "center",
-        "size": 32,
+        "size": 128,
         "vert align": "middle"
       },
       "Transform": {
-        "pos": [0, 4],
-        "scale": [0.1, 0.1]
+        "pos": [0, 5]
       }
     }
   },
   {
-    "file": "text entity.json",
+    "file": "credits text entity.json",
     "components": {
       "Text": {
         "text": "You have just completed Buttons"
       },
       "Transform": {
-        "pos": [0, 1],
-        "scale": [0.05, 0.05]
+        "pos": [0, 2]
       }
     }
   },
   {
-    "file": "text entity.json",
+    "file": "credits text entity.json",
     "components": {
       "Text": {
         "text": "Now you can accomplish anything"
       },
       "Transform": {
-        "pos": [0, 0],
-        "scale": [0.05, 0.05]
+        "pos": [0, 0.5]
       }
     }
   },
   {
-    "file": "text entity.json",
+    "file": "credits text entity.json",
     "components": {
       "Text": {
         "text": "A game by:"
       },
       "Transform": {
-        "pos": [0, -2],
-        "scale": [0.05, 0.05]
+        "pos": [0, -2]
       }
     }
   },
   {
-    "file": "text entity.json",
+    "file": "credits text entity.json",
     "components": {
       "Text": {
         "text": "Indi Kernick"
       },
       "Transform": {
-        "pos": [0, -3],
-        "scale": [0.05, 0.05]
+        "pos": [0, -3.5]
       }
     }
   }

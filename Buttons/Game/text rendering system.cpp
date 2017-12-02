@@ -19,7 +19,7 @@ void textRenderingSystem(Registry &registry, NVGcontext *const ctx) {
     nvgSave(ctx);
     
     nvgTransform(ctx, getMat3(view.get<Transform>(entity)));
-    nvgScale(ctx, 1.0f, -1.0f);
+    nvgScale(ctx, 0.02f, -0.02f);
     
     const TextRendering &format = view.get<TextRendering>(entity);
     const std::string &text = view.get<Text>(entity).text;

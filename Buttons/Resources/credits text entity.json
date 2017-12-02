@@ -1,7 +1,7 @@
 {
   "TextRendering": {
     "font": "Arial.ttf",
-    "size": 32,
+    "size": 64,
     "hori align": "center",
     "vert align": "middle"
   }

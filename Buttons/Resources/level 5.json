@@ -193,8 +193,7 @@
         "text": "Press R to reload the level"
       },
       "Transform": {
-        "pos": [0, 4],
-        "scale": [0.05, 0.05]
+        "pos": [0, 4]
       }
     }
   }
