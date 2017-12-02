@@ -10,7 +10,6 @@
 #define entity_id_map_hpp
 
 #include <vector>
-#include <yaml-cpp/yaml.h>
 #include "json helper.hpp"
 #include "entity registry.hpp"
 
@@ -21,7 +20,6 @@ class EntityIDmap {
 public:
   EntityIDmap() = default;
   
-  void insertIDs(const YAML::Node &, Registry &);
   void insertIDs(const json &, Registry &);
   EntityID getEntityFromUserID(UserID) const;
   EntityID getEntityFromIndex(size_t) const;
