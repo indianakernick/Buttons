@@ -14,7 +14,7 @@
 
 class AnimationInit final : public CompInit<Animation> {
 public:
-  void init(Animation &, const YAML::Node &) override;
+  void init(Animation &, const json &) override;
 };
 
 #endif

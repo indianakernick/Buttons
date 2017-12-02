@@ -8,11 +8,10 @@
 
 #include "lock init.hpp"
 
-#include "yaml helper.hpp"
 #include "player keys component.hpp"
 
-void LockInit::init(Lock &lock, const YAML::Node &node) {
-  lock.index = getChild(node, "index").as<uint16_t>();
+void LockInit::init(Lock &lock, const json &node) {
+  lock.index = node.at("index").get<uint16_t>();
   if (lock.index >= MAX_KEYS) {
     throw std::runtime_error("Lock index out of range");
   }

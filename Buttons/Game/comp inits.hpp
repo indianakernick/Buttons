@@ -22,23 +22,12 @@ public:
   template <typename Comp>
   void init(
     Comp &comp,
-    const YAML::Node &node,
-    const EntityIDmap &idMap,
-    const EntityID entity
-  ) const {
-    assert(getInit<Comp>());
-    getInit<Comp>()->initialize(comp, node, idMap, entity);
-  }
-  
-  ///Initializes the given component
-  template <typename Comp>
-  void init(
-    Comp &comp,
     const json &node,
     const EntityIDmap &idMap,
     const EntityID entity
   ) const {
     assert(getInit<Comp>());
+    getInit<Comp>()->initialize(comp, node, idMap, entity);
   }
   
   ///Constructs the initializer for the given component

@@ -8,8 +8,6 @@
 
 #include "text init.hpp"
 
-#include "yaml helper.hpp"
-
-void TextInit::init(Text &text, const YAML::Node &node) {
+void TextInit::init(Text &text, const json &node) {
   getOptional(text.text, node, "text");
 }

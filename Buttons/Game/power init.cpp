@@ -8,12 +8,11 @@
 
 #include "power init.hpp"
 
-#include "yaml helper.hpp"
 #include "entity id map.hpp"
 
 namespace {
   MultiPowerInput::LogicOp getLogicOp(const std::string &name) {
-    if (name == "and") {
+           if (name == "and") {
       return MultiPowerInput::LogicOp::AND;
     } else if (name == "or") {
       return MultiPowerInput::LogicOp::OR;
@@ -31,9 +30,9 @@ namespace {
   }
 }
 
-void PowerInputInit::init(PowerInput &comp, const YAML::Node &node, const EntityIDmap &idMap) {
-  if (const YAML::Node &inNode = node["in"]) {
-    comp.input = idMap.getEntityFromUserID(inNode.as<UserID>());
+void PowerInputInit::init(PowerInput &comp, const json &node, const EntityIDmap &idMap) {
+  if (const auto inNode = node.find("in"); inNode != node.cend()) {
+    comp.input = idMap.getEntityFromUserID(inNode->get<UserID>());
   } else {
     comp.input = NULL_ENTITY;
   }
@@ -41,14 +40,14 @@ void PowerInputInit::init(PowerInput &comp, const YAML::Node &node, const Entity
   getOptional(comp.on, node, "on");
 }
 
-void MultiPowerInputInit::init(MultiPowerInput &comp, const YAML::Node &node, const EntityIDmap &idMap) {
-  if (const YAML::Node &inNode = node["in"]) {
-    if (inNode.IsSequence()) {
-      for (auto &node : inNode) {
-        comp.inputs.push_back(idMap.getEntityFromUserID(node.as<UserID>()));
+void MultiPowerInputInit::init(MultiPowerInput &comp, const json &node, const EntityIDmap &idMap) {
+  if (const auto inNode = node.find("in"); inNode != node.cend()) {
+    if (inNode->is_array()) {
+      for (auto &node : *inNode) {
+        comp.inputs.push_back(idMap.getEntityFromUserID(node.get<UserID>()));
       }
-    } else if (inNode.IsScalar()) {
-      comp.inputs.push_back(idMap.getEntityFromUserID(node.as<UserID>()));
+    } else if (inNode->is_number()) {
+      comp.inputs.push_back(idMap.getEntityFromUserID(inNode->get<UserID>()));
     }
   }
   comp.op = getLogicOp(getChild(node, "operator").Scalar());

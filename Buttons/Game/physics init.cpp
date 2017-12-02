@@ -8,9 +8,9 @@
 
 #include "physics init.hpp"
 
-#include "yaml helper.hpp"
 #include "physics file.hpp"
 #include "entity id map.hpp"
+#include "transform init.hpp"
 #include <glm/trigonometric.hpp>
 #include "physics body entity id.hpp"
 #include "../Libraries/Box2D/Dynamics/b2World.h"
@@ -22,16 +22,14 @@ PhysicsBodyInit::PhysicsBodyInit(b2World *const world)
 
 void PhysicsBodyInit::init(
   PhysicsBody &comp,
-  const YAML::Node &node,
+  const json &node,
   const EntityIDmap &,
   const EntityID entity
 ) {
   Transform transform;
-  getOptional(transform.pos, node, "pos");
-  getOptional(transform.scale, node, "scale");
-  getOptional(transform.rotation, node, "rotation");
-  transform.rotation = glm::radians(transform.rotation);
-  comp.body = loadBody(getChild(node, "body").Scalar(), *world, transform);
+  TransformInit transformInit;
+  transformInit.init(transform, node);
+  comp.body = loadBody(node.at("body").get<std::string>(), *world, transform);
   comp.body->SetUserData(getUserData(entity));
   comp.scale = transform.scale;
 }
@@ -43,8 +41,8 @@ PhysicsJointInit::PhysicsJointInit(b2World *const world, Registry *const registr
 }
 
 namespace {
-  b2Body *getBody(const YAML::Node &node, const EntityIDmap &idMap, Registry *registry) {
-    const UserID bodyAuserID = node.as<UserID>();
+  b2Body *getBody(const json &node, const EntityIDmap &idMap, Registry *registry) {
+    const UserID bodyAuserID = node.get<UserID>();
     const EntityID bodyAentityID = idMap.getEntityFromUserID(bodyAuserID);
     return registry->get<PhysicsBody>(bodyAentityID).body;
   }
@@ -52,23 +50,23 @@ namespace {
 
 void PhysicsJointInit::init(
   PhysicsJoint &comp,
-  const YAML::Node &node,
+  const json &node,
   const EntityIDmap &idMap,
   const EntityID entity
 ) {
   //read the joint file
-  b2JointDef *const def = loadJoint(getChild(node, "joint").Scalar());
+  b2JointDef *const def = loadJoint(node.at("joint").get<std::string>());
   //read the level file
   readJoint(def, node);
   
-  def->bodyA = getBody(getChild(node, "body A"), idMap, registry);
-  def->bodyB = getBody(getChild(node, "body B"), idMap, registry);
+  def->bodyA = getBody(node.at("body A"), idMap, registry);
+  def->bodyB = getBody(node.at("body B"), idMap, registry);
   def->userData = getUserData(entity);
   
   comp.joint = world->CreateJoint(def);
 }
 
-void PhysicsRayCastInit::init(PhysicsRayCast &comp, const YAML::Node &node) {
-  comp.start = getChild(node, "start").as<b2Vec2>();
-  comp.end = getChild(node, "end").as<b2Vec2>();
+void PhysicsRayCastInit::init(PhysicsRayCast &comp, const json &node) {
+  comp.start = node.at("start").get<b2Vec2>();
+  comp.end = node.at("end").get<b2Vec2>();
 }

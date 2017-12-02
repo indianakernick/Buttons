@@ -8,9 +8,8 @@
 
 #include "laser detector init.hpp"
 
-#include "yaml helper.hpp"
 #include "entity id map.hpp"
 
-void LaserDetectorInit::init(LaserDetector &comp, const YAML::Node &node, const EntityIDmap &idMap) {
-  comp.emitter = idMap.getEntityFromUserID(getChild(node, "emitter").as<UserID>());
+void LaserDetectorInit::init(LaserDetector &comp, const json &node, const EntityIDmap &idMap) {
+  comp.emitter = idMap.getEntityFromUserID(node.at("emitter").get<UserID>());
 }

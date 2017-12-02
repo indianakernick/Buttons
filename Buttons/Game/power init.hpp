@@ -14,12 +14,12 @@
 
 class PowerInputInit final : public CompInit<PowerInput> {
 public:
-  void init(PowerInput &, const YAML::Node &, const EntityIDmap &) override;
+  void init(PowerInput &, const json &, const EntityIDmap &) override;
 };
 
 class MultiPowerInputInit final : public CompInit<MultiPowerInput> {
 public:
-  void init(MultiPowerInput &, const YAML::Node &, const EntityIDmap &) override;
+  void init(MultiPowerInput &, const json &, const EntityIDmap &) override;
 };
 
 #endif

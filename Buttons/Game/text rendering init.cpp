@@ -8,19 +8,17 @@
 
 #include "text rendering init.hpp"
 
-#include "yaml helper.hpp"
-
 TextRenderingInit::TextRenderingInit(RenderingResources &newResources)
   : resources(&newResources) {}
 
-void TextRenderingInit::init(TextRendering &comp, const YAML::Node &node) {
-  comp.font = resources->getFont(getChild(node, "font").Scalar());
+void TextRenderingInit::init(TextRendering &comp, const json &node) {
+  comp.font = resources->getFont(node.at("font").get_ref<const std::string &>());
   comp.color = nvgRGBf(1.0f, 1.0f, 1.0f);
   getOptional(comp.color, node, "color");
   
-  if (const YAML::Node &vertAlignNode = node["vert align"]) {
-    const std::string &alignStr = vertAlignNode.Scalar();
-    if (alignStr == "top") {
+  if (const auto alignNode = node.find("vert align"); alignNode != node.cend()) {
+    const std::string &alignStr = alignNode->get_ref<const std::string &>();
+           if (alignStr == "top") {
       comp.align = NVG_ALIGN_TOP;
     } else if (alignStr == "middle") {
       comp.align = NVG_ALIGN_MIDDLE;
@@ -33,9 +31,9 @@ void TextRenderingInit::init(TextRendering &comp, const YAML::Node &node) {
     comp.align = NVG_ALIGN_BASELINE;
   }
   
-  if (const YAML::Node &vertAlignNode = node["hori align"]) {
-    const std::string &alignStr = vertAlignNode.Scalar();
-    if (alignStr == "left") {
+  if (const auto alignNode = node.find("hori align"); alignNode != node.cend()) {
+    const std::string &alignStr = alignNode->get_ref<const std::string &>();
+           if (alignStr == "left") {
       comp.align |= NVG_ALIGN_LEFT;
     } else if (alignStr == "center") {
       comp.align |= NVG_ALIGN_CENTER;

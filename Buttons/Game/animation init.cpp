@@ -8,15 +8,13 @@
 
 #include "animation init.hpp"
 
-#include "yaml helper.hpp"
-
-void AnimationInit::init(Animation &comp, const YAML::Node &node) {
+void AnimationInit::init(Animation &comp, const json &node) {
   getOptional(comp.progress, node, "progress");
   getOptional(comp.speed, node, "speed");
   
-  if (const YAML::Node &edgeModeNode = node["edge mode"]) {
-    const std::string &edgeModeStr = edgeModeNode.Scalar();
-    if (edgeModeStr == "stop") {
+  if (const auto edgeNode = node.find("edge mode"); edgeNode != node.cend()) {
+    const std::string &edgeModeStr = edgeNode->get_ref<const std::string &>();
+           if (edgeModeStr == "stop") {
       comp.edgeMode = Animation::EdgeMode::STOP;
     } else if (edgeModeStr == "repeat") {
       comp.edgeMode = Animation::EdgeMode::REPEAT;

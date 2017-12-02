@@ -8,12 +8,10 @@
 
 #include "activation init.hpp"
 
-#include "yaml helper.hpp"
-
-void ActivationInit::init(Activation &comp, const YAML::Node &node) {
+void ActivationInit::init(Activation &comp, const json &node) {
   getOptional(comp.speed, node, "speed");
-  if (const YAML::Node &activeNode = node["active"]) {
-    if (activeNode.as<bool>()) {
+  if (const auto activeNode = node.find("active"); activeNode != node.cend()) {
+    if (activeNode->get<bool>()) {
       comp.state = Activation::State::ACTIVE;
       comp.activity = 1.0f;
     }

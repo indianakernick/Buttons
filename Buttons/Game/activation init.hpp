@@ -14,7 +14,7 @@
 
 class ActivationInit final : public CompInit<Activation> {
 public:
-  void init(Activation &, const YAML::Node &) override;
+  void init(Activation &, const json &) override;
 };
 
 #endif

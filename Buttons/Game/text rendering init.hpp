@@ -16,7 +16,7 @@ class TextRenderingInit final : public CompInit<TextRendering> {
 public:
   explicit TextRenderingInit(RenderingResources &);
 
-  void init(TextRendering &, const YAML::Node &) override;
+  void init(TextRendering &, const json &) override;
   
 private:
   RenderingResources *resources;

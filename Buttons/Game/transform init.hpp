@@ -14,7 +14,7 @@
 
 class TransformInit final : public CompInit<Transform> {
 public:
-  void init(Transform &, const YAML::Node &) override;
+  void init(Transform &, const json &) override;
 };
 
 #endif

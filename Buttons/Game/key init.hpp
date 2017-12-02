@@ -14,7 +14,7 @@
 
 class KeyInit final : public CompInit<Key> {
 public:
-  void init(Key &, const YAML::Node &);
+  void init(Key &, const json &);
 };
 
 #endif

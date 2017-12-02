@@ -14,7 +14,7 @@
 
 class MovingPlatformInit final : public CompInit<MovingPlatform> {
 public:
-  void init(MovingPlatform &, const YAML::Node &) override;
+  void init(MovingPlatform &, const json &) override;
 };
 
 #endif

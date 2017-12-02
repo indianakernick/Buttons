@@ -14,7 +14,7 @@
 
 class LockInit final : public CompInit<Lock> {
 public:
-  void init(Lock &, const YAML::Node &);
+  void init(Lock &, const json &);
 };
 
 #endif

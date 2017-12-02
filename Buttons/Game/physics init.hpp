@@ -17,7 +17,7 @@ class PhysicsBodyInit final : public CompInit<PhysicsBody> {
 public:
   explicit PhysicsBodyInit(b2World *);
   
-  void init(PhysicsBody &, const YAML::Node &, const EntityIDmap &, EntityID) override;
+  void init(PhysicsBody &, const json &, const EntityIDmap &, EntityID) override;
 
 private:
   b2World *world;
@@ -27,7 +27,7 @@ class PhysicsJointInit final : public CompInit<PhysicsJoint> {
 public:
   PhysicsJointInit(b2World *, Registry *);
   
-  void init(PhysicsJoint &, const YAML::Node &, const EntityIDmap &, EntityID) override;
+  void init(PhysicsJoint &, const json &, const EntityIDmap &, EntityID) override;
 
 private:
   b2World *world;
@@ -36,7 +36,7 @@ private:
 
 class PhysicsRayCastInit final : public CompInit<PhysicsRayCast> {
 public:
-  void init(PhysicsRayCast &, const YAML::Node &) override;
+  void init(PhysicsRayCast &, const json &) override;
 };
 
 #endif

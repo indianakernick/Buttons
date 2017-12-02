@@ -12,9 +12,6 @@
 #include "entity id.hpp"
 #include "json helper.hpp"
 
-namespace YAML {
-  class Node;
-}
 class EntityIDmap;
 
 template <typename Comp_>
@@ -25,18 +22,18 @@ public:
   CompInit() = default;
   virtual ~CompInit() = default;
   
-  void initialize(Comp &comp, const YAML::Node &node, const EntityIDmap &idMap, const EntityID entity) {
+  void initialize(Comp &comp, const json &node, const EntityIDmap &idMap, const EntityID entity) {
     init(comp, node, idMap, entity);
   }
 
 private:
-  virtual void init(Comp &comp, const YAML::Node &node, const EntityIDmap &idMap, EntityID) {
+  virtual void init(Comp &comp, const json &node, const EntityIDmap &idMap, EntityID) {
     init(comp, node, idMap);
   }
-  virtual void init(Comp &comp, const YAML::Node &node, const EntityIDmap &) {
+  virtual void init(Comp &comp, const json &node, const EntityIDmap &) {
     init(comp, node);
   }
-  virtual void init(Comp &comp, const YAML::Node &) {
+  virtual void init(Comp &comp, const json &) {
     init(comp);
   }
   virtual void init(Comp &) {}

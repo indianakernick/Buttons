@@ -14,7 +14,7 @@
 
 class TextInit final : public CompInit<Text> {
 public:
-  void init(Text &, const YAML::Node &) override;
+  void init(Text &, const json &) override;
 };
 
 #endif

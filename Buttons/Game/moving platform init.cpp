@@ -8,11 +8,9 @@
 
 #include "moving platform init.hpp"
 
-#include "yaml helper.hpp"
-
-void MovingPlatformInit::init(MovingPlatform &comp, const YAML::Node &node) {
-  comp.start = getChild(node, "start").as<b2Vec2>();
-  comp.end = getChild(node, "end").as<b2Vec2>();
+void MovingPlatformInit::init(MovingPlatform &comp, const json &node) {
+  comp.start = node.at("start").get<b2Vec2>();
+  comp.end = node.at("end").get<b2Vec2>();
   getOptional(comp.waitingTime, node, "waiting time");
   getOptional(comp.moveSpeed, node, "speed");
 }
