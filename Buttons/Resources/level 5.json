@@ -1,130 +1,131 @@
 [
   {
+    "file": "platform entity.json",
     "components": {
       "PhysicsBody": {
         "body": "platform body.json",
         "pos": [-16, -9],
         "scale": [32, 7]
       }
-    },
-    "file": "platform entity.json"
+    }
   },
   {
+    "file": "platform entity.json",
     "components": {
       "PhysicsBody": {
         "body": "platform body.json",
         "pos": [-16, -2],
         "scale": [9, 4]
       }
-    },
-    "file": "platform entity.json"
+    }
   },
   {
+    "file": "platform entity.json",
     "components": {
       "PhysicsBody": {
         "body": "platform body.json",
         "pos": [-16, 2],
         "scale": [32, 7]
       }
-    },
-    "file": "platform entity.json"
+    }
   },
   {
+    "file": "platform entity.json",
     "components": {
       "PhysicsBody": {
         "body": "platform body.json",
         "pos": [7, -2],
         "scale": [9, 4]
       }
-    },
-    "file": "platform entity.json"
+    }
   },
   {
+    "file": "platform entity.json",
     "components": {
       "PhysicsBody": {
         "body": "platform body.json",
         "pos": [-3, -1],
         "scale": [10, 1]
       }
-    },
-    "file": "platform entity.json"
+    }
   },
   {
+    "file": "platform entity.json",
     "components": {
       "PhysicsBody": {
         "body": "platform body.json",
         "pos": [1, 0],
         "scale": [2, 2]
       }
-    },
-    "file": "platform entity.json"
+    }
   },
   {
+    "file": "player entity.json",
     "components": {
       "PhysicsBody": {
         "body": "player body.json",
         "pos": [-6.5, -1.5]
       }
-    },
-    "file": "player entity.json"
+    }
   },
   {
+    "file": "exit entity.json",
     "components": {
       "PhysicsBody": {
         "body": "switch body.json",
         "pos": [6.5, -2]
       }
-    },
-    "file": "exit entity.json"
+    }
   },
   {
+    "file": "box entity.json",
     "components": {
       "PhysicsBody": {
         "body": "box body.json",
         "pos": [3.5, 0.5]
       }
-    },
-    "file": "box entity.json"
+    }
   },
   {
+    "file": "switch entity.json",
     "components": {
       "PhysicsBody": {
         "body": "switch body.json",
         "pos": [0.5, 0]
       }
-    },
-    "file": "switch entity.json"
+    }
   },
   {
+    "file": "button entity.json",
     "components": {
       "PhysicsBody": {
         "body": "button body.json",
         "pos": [6.5, 0]
       }
-    },
-    "file": "button entity.json"
+    }
   },
   {
+    "id": 0,
+    "file": "switch entity.json",
     "components": {
       "PhysicsBody": {
         "body": "switch body.json",
         "pos": [0.5, -2]
       }
-    },
-    "file": "switch entity.json",
-    "id": 0
+    }
   },
   {
+    "id": 1,
+    "file": "button entity.json",
     "components": {
       "PhysicsBody": {
         "body": "button body.json",
         "pos": [3.5, 0]
       }
-    },
-    "file": "button entity.json",
-    "id": 1
+    }
   },
   {
+    "file": "door entity.json",
     "components": {
       "MultiPowerInput": {
         "in": [0, 1],
@@ -134,10 +135,11 @@
         "body": "door body.json",
         "pos": [3.5, -2]
       }
-    },
-    "file": "door entity.json"
+    }
   },
   {
+    "id": 2,
+    "file": "laser emitter entity.json",
     "components": {
       "PhysicsRayCast": {
         "end": [-3, -0.5],
@@ -150,11 +152,11 @@
         "pos": [-7, -0.5],
         "rotation": -90
       }
-    },
-    "file": "laser emitter entity.json",
-    "id": 2
+    }
   },
   {
+    "id": 3,
+    "file": "laser detector entity.json",
     "components": {
       "LaserDetector": {
         "emitter": 2
@@ -163,11 +165,10 @@
         "pos": [-3, -0.5],
         "rotation": 90
       }
-    },
-    "file": "laser detector entity.json",
-    "id": 3
+    }
   },
   {
+    "file": "moving platform entity.json",
     "components": {
       "MovingPlatform": {
         "end": [3, 0],
@@ -183,10 +184,10 @@
         "in": 3,
         "invert": true
       }
-    },
-    "file": "moving platform entity.json"
+    }
   },
   {
+    "file": "text entity.json",
     "components": {
       "Text": {
         "text": "Press R to reload the level"
@@ -195,7 +196,6 @@
         "pos": [0, 4],
         "scale": [0.05, 0.05]
       }
-    },
-    "file": "text entity.json"
+    }
   }
 ]

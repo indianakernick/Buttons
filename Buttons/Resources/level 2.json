@@ -1,63 +1,64 @@
 [
   {
+    "file": "platform entity.json",
     "components": {
       "PhysicsBody": {
         "body": "platform body.json",
         "pos": [-16, -9],
         "scale": [32, 8]
       }
-    },
-    "file": "platform entity.json"
+    }
   },
   {
+    "file": "platform entity.json",
     "components": {
       "PhysicsBody": {
         "body": "platform body.json",
         "pos": [-16, 1],
         "scale": [32, 8]
       }
-    },
-    "file": "platform entity.json"
+    }
   },
   {
+    "file": "platform entity.json",
     "components": {
       "PhysicsBody": {
         "body": "platform body.json",
         "pos": [-16, -1],
         "scale": [1, 2]
       }
-    },
-    "file": "platform entity.json"
+    }
   },
   {
+    "file": "platform entity.json",
     "components": {
       "PhysicsBody": {
         "body": "platform body.json",
         "pos": [15, -1],
         "scale": [1, 2]
       }
-    },
-    "file": "platform entity.json"
+    }
   },
   {
+    "file": "player entity.json",
     "components": {
       "PhysicsBody": {
         "body": "player body.json",
         "pos": [-14.5, -0.5]
       }
-    },
-    "file": "player entity.json"
+    }
   },
   {
+    "file": "exit entity.json",
     "components": {
       "PhysicsBody": {
         "body": "switch body.json",
         "pos": [14.5, -1]
       }
-    },
-    "file": "exit entity.json"
+    }
   },
   {
+    "file": "door entity.json",
     "components": {
       "PhysicsBody": {
         "body": "door body.json",
@@ -68,20 +69,20 @@
       "PowerInput": {
         "in": 0
       }
-    },
-    "file": "door entity.json"
+    }
   },
   {
+    "id": 0,
+    "file": "switch entity.json",
     "components": {
       "PhysicsBody": {
         "body": "switch body.json",
         "pos": [-4.5, -1]
       }
-    },
-    "file": "switch entity.json",
-    "id": 0
+    }
   },
   {
+    "file": "text entity.json",
     "components": {
       "Text": {
         "text": "Press space to toggle switches"
@@ -90,7 +91,6 @@
         "pos": [0, 2],
         "scale": [0.05, 0.05]
       }
-    },
-    "file": "text entity.json"
+    }
   }
 ]

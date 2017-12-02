@@ -1,34 +1,35 @@
 [
   {
+    "file": "box entity.json",
     "components": {
       "PhysicsBody": {
         "body": "box body.json",
         "pos": [-5, 0],
         "scale": [1, 1]
       }
-    },
-    "file": "box entity.json"
+    }
   },
   {
+    "file": "platform entity.json",
     "components": {
       "PhysicsBody": {
         "body": "platform body.json",
         "pos": [-16, -9],
         "scale": [32, 1]
       }
-    },
-    "file": "platform entity.json"
+    }
   },
   {
+    "file": "player entity.json",
     "components": {
       "PhysicsBody": {
         "body": "player body.json",
         "pos": [0, 0]
       }
-    },
-    "file": "player entity.json"
+    }
   },
   {
+    "file": "door entity.json",
     "components": {
       "PhysicsBody": {
         "body": "door body.json",
@@ -38,20 +39,20 @@
       "PowerInput": {
         "in": 0
       }
-    },
-    "file": "door entity.json"
+    }
   },
   {
+    "id": 0,
+    "file": "button entity.json",
     "components": {
       "PhysicsBody": {
         "body": "button body.json",
         "pos": [5, -8]
       }
-    },
-    "file": "button entity.json",
-    "id": 0
+    }
   },
   {
+    "file": "door entity.json",
     "components": {
       "PhysicsBody": {
         "body": "door body.json",
@@ -61,31 +62,31 @@
       "PowerInput": {
         "in": 1
       }
-    },
-    "file": "door entity.json"
+    }
   },
   {
+    "id": 1,
+    "file": "switch entity.json",
     "components": {
       "PhysicsBody": {
         "body": "switch body.json",
         "pos": [-7.5, -8],
         "scale": [1, 1]
       }
-    },
-    "file": "switch entity.json",
-    "id": 1
+    }
   },
   {
+    "file": "exit entity.json",
     "components": {
       "PhysicsBody": {
         "body": "switch body.json",
         "pos": [14.5, -8],
         "scale": [1, 1]
       }
-    },
-    "file": "exit entity.json"
+    }
   },
   {
+    "file": "moving platform entity.json",
     "components": {
       "MovingPlatform": {
         "end": [-16, 0],
@@ -100,21 +101,21 @@
       "PowerInput": {
         "in": 2
       }
-    },
-    "file": "moving platform entity.json"
+    }
   },
   {
+    "id": 2,
+    "file": "switch entity.json",
     "components": {
       "PhysicsBody": {
         "body": "switch body.json",
         "pos": [-2, -8],
         "scale": [1, 1]
       }
-    },
-    "file": "switch entity.json",
-    "id": 2
+    }
   },
   {
+    "file": "laser detector entity.json",
     "components": {
       "LaserDetector": {
         "emitter": 3
@@ -123,10 +124,11 @@
         "pos": [16, 4],
         "rotation": 90
       }
-    },
-    "file": "laser detector entity.json"
+    }
   },
   {
+    "id": 3,
+    "file": "laser emitter entity.json",
     "components": {
       "PhysicsRayCast": {
         "end": [16, 4],
@@ -139,11 +141,11 @@
         "pos": [-16, 4],
         "rotation": -90
       }
-    },
-    "file": "laser emitter entity.json",
-    "id": 3
+    }
   },
   {
+    "id": 4,
+    "file": "lock entity.json",
     "components": {
       "Lock": {
         "index": 0
@@ -152,11 +154,10 @@
         "body": "switch body.json",
         "pos": [-7.5, -6]
       }
-    },
-    "file": "lock entity.json",
-    "id": 4
+    }
   },
   {
+    "file": "key entity.json",
     "components": {
       "Key": {
         "index": 0
@@ -165,10 +166,10 @@
         "body": "switch body.json",
         "pos": [-2, -6]
       }
-    },
-    "file": "key entity.json"
+    }
   },
   {
+    "file": "shadow entity.json",
     "components": {
       "PowerInput": {
         "in": 4
@@ -177,7 +178,6 @@
         "pos": [10, -8],
         "scale": [6, 4]
       }
-    },
-    "file": "shadow entity.json"
+    }
   }
 ]

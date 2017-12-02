@@ -1,113 +1,114 @@
 [
   {
+    "file": "platform entity.json",
     "components": {
       "PhysicsBody": {
         "body": "platform body.json",
         "pos": [-16, -9],
         "scale": [32, 1]
       }
-    },
-    "file": "platform entity.json"
+    }
   },
   {
+    "file": "platform entity.json",
     "components": {
       "PhysicsBody": {
         "body": "platform body.json",
         "pos": [-16, 8],
         "scale": [32, 1]
       }
-    },
-    "file": "platform entity.json"
+    }
   },
   {
+    "file": "platform entity.json",
     "components": {
       "PhysicsBody": {
         "body": "platform body.json",
         "pos": [-16, -8],
         "scale": [1, 16]
       }
-    },
-    "file": "platform entity.json"
+    }
   },
   {
+    "file": "platform entity.json",
     "components": {
       "PhysicsBody": {
         "body": "platform body.json",
         "pos": [15, -8],
         "scale": [1, 16]
       }
-    },
-    "file": "platform entity.json"
+    }
   },
   {
+    "file": "platform entity.json",
     "components": {
       "PhysicsBody": {
         "body": "platform body.json",
         "pos": [-13, -8],
         "scale": [1, 1]
       }
-    },
-    "file": "platform entity.json"
+    }
   },
   {
+    "file": "platform entity.json",
     "components": {
       "PhysicsBody": {
         "body": "platform body.json",
         "pos": [-8, -8],
         "scale": [1, 2]
       }
-    },
-    "file": "platform entity.json"
+    }
   },
   {
+    "file": "platform entity.json",
     "components": {
       "PhysicsBody": {
         "body": "platform body.json",
         "pos": [-5, -5],
         "scale": [4, 1]
       }
-    },
-    "file": "platform entity.json"
+    }
   },
   {
+    "file": "platform entity.json",
     "components": {
       "PhysicsBody": {
         "body": "platform body.json",
         "pos": [3, -8],
         "scale": [1, 4]
       }
-    },
-    "file": "platform entity.json"
+    }
   },
   {
+    "file": "platform entity.json",
     "components": {
       "PhysicsBody": {
         "body": "platform body.json",
         "pos": [10, -7],
         "scale": [5, 1]
       }
-    },
-    "file": "platform entity.json"
+    }
   },
   {
+    "file": "player entity.json",
     "components": {
       "PhysicsBody": {
         "body": "player body.json",
         "pos": [-14.5, -7.5]
       }
-    },
-    "file": "player entity.json"
+    }
   },
   {
+    "file": "exit entity.json",
     "components": {
       "PhysicsBody": {
         "body": "switch body.json",
         "pos": [14.5, -6]
       }
-    },
-    "file": "exit entity.json"
+    }
   },
   {
+    "file": "text entity.json",
     "components": {
       "Text": {
         "text": "Press W or up to jump"
@@ -116,7 +117,6 @@
         "pos": [0, 0],
         "scale": [0.05, 0.05]
       }
-    },
-    "file": "text entity.json"
+    }
   }
 ]

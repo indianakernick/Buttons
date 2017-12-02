@@ -1,73 +1,74 @@
 [
   {
+    "file": "platform entity.json",
     "components": {
       "PhysicsBody": {
         "body": "platform body.json",
         "pos": [-16, -9],
         "scale": [32, 4]
       }
-    },
-    "file": "platform entity.json"
+    }
   },
   {
+    "file": "platform entity.json",
     "components": {
       "PhysicsBody": {
         "body": "platform body.json",
         "pos": [-15, -1],
         "scale": [30, 2]
       }
-    },
-    "file": "platform entity.json"
+    }
   },
   {
+    "file": "platform entity.json",
     "components": {
       "PhysicsBody": {
         "body": "platform body.json",
         "pos": [-16, 5],
         "scale": [32, 4]
       }
-    },
-    "file": "platform entity.json"
+    }
   },
   {
+    "file": "platform entity.json",
     "components": {
       "PhysicsBody": {
         "body": "platform body.json",
         "pos": [-16, -5],
         "scale": [1, 10]
       }
-    },
-    "file": "platform entity.json"
+    }
   },
   {
+    "file": "platform entity.json",
     "components": {
       "PhysicsBody": {
         "body": "platform body.json",
         "pos": [15, -5],
         "scale": [1, 10]
       }
-    },
-    "file": "platform entity.json"
+    }
   },
   {
+    "file": "player entity.json",
     "components": {
       "PhysicsBody": {
         "body": "player body.json",
         "pos": [-14.5, -4.5]
       }
-    },
-    "file": "player entity.json"
+    }
   },
   {
+    "file": "exit entity.json",
     "components": {
       "PhysicsBody": {
         "body": "switch body.json",
         "pos": [14.5, -5]
       }
-    },
-    "file": "exit entity.json"
+    }
   },
   {
+    "file": "door entity.json",
     "components": {
       "PhysicsBody": {
         "body": "door body.json",
@@ -77,10 +78,11 @@
       "PowerInput": {
         "in": 5
       }
-    },
-    "file": "door entity.json"
+    }
   },
   {
+    "id": 4,
+    "file": "laser emitter entity.json",
     "components": {
       "PhysicsRayCast": {
         "end": [15, 3],
@@ -93,11 +95,11 @@
         "pos": [-15, 3],
         "rotation": -90
       }
-    },
-    "file": "laser emitter entity.json",
-    "id": 4
+    }
   },
   {
+    "id": 5,
+    "file": "laser detector entity.json",
     "components": {
       "LaserDetector": {
         "emitter": 4
@@ -106,51 +108,50 @@
         "pos": [15, 3],
         "rotation": 90
       }
-    },
-    "file": "laser detector entity.json",
-    "id": 5
+    }
   },
   {
+    "id": 0,
+    "file": "switch entity.json",
     "components": {
       "PhysicsBody": {
         "body": "switch body.json",
         "pos": [-4.5, -5]
       }
-    },
-    "file": "switch entity.json",
-    "id": 0
+    }
   },
   {
+    "id": 1,
+    "file": "switch entity.json",
     "components": {
       "PhysicsBody": {
         "body": "switch body.json",
         "pos": [-1.5, -5]
       }
-    },
-    "file": "switch entity.json",
-    "id": 1
+    }
   },
   {
+    "id": 2,
+    "file": "switch entity.json",
     "components": {
       "PhysicsBody": {
         "body": "switch body.json",
         "pos": [1.5, -5]
       }
-    },
-    "file": "switch entity.json",
-    "id": 2
+    }
   },
   {
+    "id": 3,
+    "file": "switch entity.json",
     "components": {
       "PhysicsBody": {
         "body": "switch body.json",
         "pos": [4.5, -5]
       }
-    },
-    "file": "switch entity.json",
-    "id": 3
+    }
   },
   {
+    "file": "door entity.json",
     "components": {
       "MultiPowerInput": {
         "in": [0, 1],
@@ -161,10 +162,10 @@
         "pos": [-10.5, 1],
         "scale": [1, 4]
       }
-    },
-    "file": "door entity.json"
+    }
   },
   {
+    "file": "door entity.json",
     "components": {
       "MultiPowerInput": {
         "in": [0, 2],
@@ -175,10 +176,10 @@
         "pos": [-3.5, 1],
         "scale": [1, 4]
       }
-    },
-    "file": "door entity.json"
+    }
   },
   {
+    "file": "door entity.json",
     "components": {
       "PhysicsBody": {
         "body": "door body.json",
@@ -188,10 +189,10 @@
       "PowerInput": {
         "in": 2
       }
-    },
-    "file": "door entity.json"
+    }
   },
   {
+    "file": "door entity.json",
     "components": {
       "PhysicsBody": {
         "body": "door body.json",
@@ -202,7 +203,6 @@
         "in": 3,
         "invert": true
       }
-    },
-    "file": "door entity.json"
+    }
   }
 ]
