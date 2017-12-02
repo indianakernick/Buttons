@@ -28,7 +28,9 @@ void getOptional(T &dst, const json &node, const char *name) {
 struct b2Vec2;
 extern "C" struct NVGcolor;
 
-void from_json(const json &j, glm::vec2 &);
+namespace glm {
+  void from_json(const json &j, glm::vec2 &);
+}
 void from_json(const json &j, b2Vec2 &);
 void from_json(const json &, NVGcolor &);
 

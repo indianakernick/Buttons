@@ -5,19 +5,16 @@
   "fixtures": [
     {
       "friction": 1,
-      "shape": "main",
-      "user data": "Ground"
+      "user data": "Ground",
+      "shape": {
+        "type": "polygon",
+        "verts": [
+          [0, 0],
+          [1, 0],
+          [1, 1],
+          [0, 1]
+        ]
+      }
     }
-  ],
-  "shapes": {
-    "main": {
-      "type": "polygon",
-      "verts": [
-        [0, 0],
-        [1, 0],
-        [1, 1],
-        [0, 1]
-      ]
-    }
-  }
+  ]
 }

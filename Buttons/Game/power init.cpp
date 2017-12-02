@@ -50,6 +50,6 @@ void MultiPowerInputInit::init(MultiPowerInput &comp, const json &node, const En
       comp.inputs.push_back(idMap.getEntityFromUserID(inNode->get<UserID>()));
     }
   }
-  comp.op = getLogicOp(getChild(node, "operator").Scalar());
+  comp.op = getLogicOp(node.at("operator").get_ref<const std::string &>());
   getOptional(comp.on, node, "on");
 }

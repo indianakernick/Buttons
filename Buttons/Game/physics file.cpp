@@ -1,45 +1,20 @@
 //
 //  physics file.cpp
-//  Catastrophe
+//  Buttons
 //
-//  Created by Indi Kernick on 16/9/17.
+//  Created by Indi Kernick on 1/12/17.
 //  Copyright © 2017 Indi Kernick. All rights reserved.
 //
 
 #include "physics file.hpp"
 
+#include <fstream>
 #include "b2 glm cast.hpp"
-#include "yaml helper.hpp"
 #include "object types.hpp"
 #include "collision categories.hpp"
 #include <Simpleton/Platform/system info.hpp>
 
 namespace {
-  b2Vec2 readVec(const YAML::Node &vecNode, const glm::vec2 scale = {1.0f, 1.0f}) {
-    checkType(vecNode, YAML::NodeType::Sequence);
-    
-    if (vecNode.size() != 2) {
-      throw std::runtime_error(
-        "Vector at line "
-        + std::to_string(vecNode.Mark().line)
-        + " must have 2 components"
-      );
-    }
-    
-    return {
-      vecNode[0].as<float32>() * scale.x,
-      vecNode[1].as<float32>() * scale.y
-    };
-  }
-  
-  void getOptionalVec(b2Vec2 &vec, const YAML::Node &node, const char *name) {
-    if (const YAML::Node &vecNode = node[name]) {
-      vec = readVec(vecNode, {1.0f, 1.0f});
-    }
-  }
-  
-  class BadBodyDef {};
-  
   b2BodyType readBodyType(const std::string &typeName) {
            if (typeName == "static") {
       return b2_staticBody;
@@ -48,23 +23,16 @@ namespace {
     } else if (typeName == "dynamic") {
       return b2_dynamicBody;
     } else {
-      throw BadBodyDef();
+      throw std::runtime_error("Invalid body type");
     }
   }
-
-  b2BodyDef readBodyDef(const YAML::Node &bodyNode) {
+  
+  b2BodyDef readBodyDef(const json &bodyNode) {
     b2BodyDef bodyDef;
     
-    try {
-      bodyDef.type = readBodyType(getChild(bodyNode, "type").Scalar());
-    } catch (BadBodyDef &) {
-      throw std::runtime_error(
-        "Invalid body type at line: "
-        + std::to_string(bodyNode.Mark().line)
-      );
-    }
+    bodyDef.type = readBodyType(bodyNode.at("type").get<std::string>());
     
-    getOptionalVec(bodyDef.linearVelocity, bodyNode, "linear velocity");
+    getOptional(bodyDef.linearVelocity, bodyNode, "linear velocity");
     getOptional(bodyDef.angularVelocity, bodyNode, "angular velocity");
     getOptional(bodyDef.linearDamping, bodyNode, "linear damping");
     getOptional(bodyDef.angularDamping, bodyNode, "angular damping");
@@ -77,115 +45,95 @@ namespace {
     return bodyDef;
   }
   
-  std::vector<b2Vec2> readVecs(const YAML::Node &vecsNode, const glm::vec2 scale) {
-    checkType(vecsNode, YAML::NodeType::Sequence);
-    
-    std::vector<b2Vec2> vecs;
-    for (auto v = vecsNode.begin(); v != vecsNode.end(); ++v) {
-      vecs.emplace_back(readVec(*v, scale));
+  std::vector<b2Vec2> readVecs(const json &vecsNode, const b2Vec2 scale) {
+    auto vecs = vecsNode.get<std::vector<b2Vec2>>();
+    for (auto &vec : vecs) {
+      vec.x *= scale.x;
+      vec.y *= scale.y;
     }
-    
     return vecs;
   }
   
-  float32 mul(const float32 scalar, const glm::vec2 scale) {
+  b2Vec2 mul(const b2Vec2 vec, const b2Vec2 scale) {
+    return {
+      vec.x * scale.x,
+      vec.y * scale.y
+    };
+  }
+  
+  float32 mul(const float32 scalar, const b2Vec2 scale) {
     return scalar * (scale.x + scale.y) * 0.5f;
   }
   
-  b2CircleShape *readCircle(
-    const YAML::Node &circleNode,
-    const glm::vec2 scale
-  ) {
+  #define OPTIONAL_VEC(OBJ, NODE, MEMBER, HAS_MEMBER, NAME)                                 \
+    if (const auto vert = NODE.find(NAME); vert != NODE.cend()) {          \
+      OBJ.m_##MEMBER = mul(vert->get<b2Vec2>(), scale);       \
+      OBJ.m_##HAS_MEMBER = true;              \
+    } do{}while(0)
+  
+  b2CircleShape *readCircle(const json &circleNode, const b2Vec2 scale) {
     static b2CircleShape circle;
     circle = {};
     
-    circle.m_p = readVec(getChild(circleNode, "pos"), scale);
-    circle.m_radius = mul(getChild(circleNode, "radius").as<float32>(), scale);
+    circle.m_p = mul(circleNode.at("pos").get<b2Vec2>(), scale);
+    circle.m_radius = mul(circleNode.at("radius").get<float32>(), scale);
+    
     return &circle;
   }
   
-  b2EdgeShape *readEdge(
-    const YAML::Node &edgeNode,
-    const glm::vec2 scale
-  ) {
+  b2EdgeShape *readEdge(const json &edgeNode, const b2Vec2 scale) {
     static b2EdgeShape edge;
     edge = {};
     
-    if (const YAML::Node &vert0 = edgeNode["vert 0"]) {
-      edge.m_vertex0 = readVec(vert0, scale);
-      edge.m_hasVertex0 = true;
-    }
-    edge.m_vertex1 = readVec(getChild(edgeNode, "vert 1"), scale);
-    edge.m_vertex2 = readVec(getChild(edgeNode, "vert 2"), scale);
-    if (const YAML::Node &vert3 = edgeNode["vert 3"]) {
-      edge.m_vertex3 = readVec(vert3, scale);
-      edge.m_hasVertex3 = true;
-    }
+    OPTIONAL_VEC(edge, edgeNode, vertex0, hasVertex0, "vert 0");
+    edge.m_vertex1 = mul(edgeNode.at("vert 1").get<b2Vec2>(), scale);
+    edge.m_vertex2 = mul(edgeNode.at("vert 2").get<b2Vec2>(), scale);
+    OPTIONAL_VEC(edge, edgeNode, vertex3, hasVertex3, "vert 3");
+    
     return &edge;
   }
   
-  b2PolygonShape *readPolygon(
-    const YAML::Node &polygonNode,
-    const glm::vec2 scale
-  ) {
+  b2PolygonShape *readPolygon(const json &polygonNode, const b2Vec2 scale) {
     static b2PolygonShape polygon;
     polygon = {};
     
-    if (const YAML::Node &vertsNode = polygonNode["verts"]) {
-      const std::vector<b2Vec2> verts = readVecs(vertsNode, scale);
+    if (const auto vertsNode = polygonNode.find("verts"); vertsNode != polygonNode.cend()) {
+      const std::vector<b2Vec2> verts = readVecs(*vertsNode, scale);
       if (verts.size() > b2_maxPolygonVertices) {
-        throw std::runtime_error(
-          "Too many verticies for polygon at line"
-          + std::to_string(vertsNode.Mark().line)
-        );
+        throw std::runtime_error("Too many verties for polygon");
       }
-    
       polygon.Set(verts.data(), static_cast<int32>(verts.size()));
     } else {
-      const YAML::Node &halfWidth = getChild(polygonNode, "half width");
-      const YAML::Node &halfHeight = getChild(polygonNode, "half height");
-      
-      glm::tvec2<float32> vec = {halfWidth.as<float32>(), halfHeight.as<float32>()};
-      vec = vec * scale;
-      
-      polygon.SetAsBox(std::abs(vec.x), std::abs(vec.y));
+      const b2Vec2 halfSize = mul(polygonNode.at("half size").get<b2Vec2>(), scale);
+      polygon.SetAsBox(std::abs(halfSize.x), std::abs(halfSize.y));
     }
     
     return &polygon;
   }
   
-  b2ChainShape *readChain(const YAML::Node &chainNode, const glm::vec2 scale) {
+  b2ChainShape *readChain(const json &chainNode, const b2Vec2 scale) {
     static b2ChainShape chain;
     chain = {};
     
     bool isLoop = false;
-    if (const YAML::Node &isLoopNode = chainNode["is loop"]) {
-      isLoop = isLoopNode.as<bool>();
-    }
-    const std::vector<b2Vec2> verts = readVecs(getChild(chainNode, "verts"), scale);
+    getOptional(isLoop, chainNode, "is loop");
+    const std::vector<b2Vec2> verts = readVecs(chainNode.at("verts"), scale);
     
     if (isLoop) {
       chain.CreateLoop(verts.data(), static_cast<int32>(verts.size()));
     } else {
       chain.CreateChain(verts.data(), static_cast<int32>(verts.size()));
       
-      if (const YAML::Node &prevVert = chainNode["prev vert"]) {
-        chain.m_prevVertex = readVec(prevVert, scale);
-        chain.m_hasPrevVertex = true;
-      }
-      
-      if (const YAML::Node &nextVert = chainNode["next vert"]) {
-        chain.m_nextVertex = readVec(nextVert, scale);
-        chain.m_hasNextVertex = true;
-      }
+      OPTIONAL_VEC(chain, chainNode, prevVertex, hasPrevVertex, "prev vert");
+      OPTIONAL_VEC(chain, chainNode, nextVertex, hasNextVertex, "next vert");
     }
+    
     return &chain;
   }
   
-  b2Shape *readShape(const YAML::Node &shapeNode, const glm::vec2 scale) {
-    checkType(shapeNode, YAML::NodeType::Map);
+  b2Shape *readShape(const json &shapeNode, const b2Vec2 scale) {
+    const std::string typeName = shapeNode.at("type").get<std::string>();
     
-    const std::string &typeName = getChild(shapeNode, "type").Scalar();
            if (typeName == "circle") {
       return readCircle(shapeNode, scale);
     } else if (typeName == "edge") {
@@ -195,79 +143,58 @@ namespace {
     } else if (typeName == "chain") {
       return readChain(shapeNode, scale);
     } else {
-      throw std::runtime_error (
-        "Invalid shape type at line: "
-        + std::to_string(shapeNode.Mark().line)
-      );
+      throw std::runtime_error("Invalid shape type");
     }
   }
   
-  uint16_t getCategoryBits(const YAML::Node &node) {
-    if (node.IsSequence()) {
+  uint16_t getCategoryBits(const json &node) {
+    if (node.is_array()) {
       uint16_t bits = 0;
-      for (auto c = node.begin(); c != node.end(); ++c) {
-        bits |= getCategoryBit(c->Scalar());
+      for (auto &c : node) {
+        bits |= getCategoryBit(c.get<std::string>());
       }
       return bits;
     } else {
-      return getCategoryBit(node.Scalar());
+      return getCategoryBit(node.get<std::string>());
     }
   }
   
-  b2Filter readFilter(const YAML::Node &filterNode) {
+  b2Filter readFilter(const json &filterNode) {
     b2Filter filter;
-    if (const YAML::Node &categoryNode = filterNode["category"]) {
-      filter.categoryBits = getCategoryBits(categoryNode);
+    if (const auto catNode = filterNode.find("category"); catNode != filterNode.cend()) {
+      filter.categoryBits = getCategoryBits(*catNode);
     }
-    if (const YAML::Node &maskNode = filterNode["collide with"]) {
-      filter.maskBits = getCategoryBits(maskNode);
-    } else if (const YAML::Node &maskNode = filterNode["no collide with"]) {
-      filter.maskBits = ~getCategoryBits(maskNode);
+    if (const auto maskNode = filterNode.find("collide with"); maskNode != filterNode.cend()) {
+      filter.maskBits = getCategoryBits(*maskNode);
+    } else if (const auto maskNode = filterNode.find("no collide with"); maskNode != filterNode.cend()) {
+      filter.maskBits = ~getCategoryBits(*maskNode);
     }
     getOptional(filter.groupIndex, filterNode, "group");
     return filter;
   }
   
-  void readFixture(
-    b2Body *body,
-    const YAML::Node &shapesNode,
-    const YAML::Node &fixtureNode,
-    const glm::vec2 scale
-  ) {
-    const std::string &shapeName = getChild(fixtureNode, "shape").Scalar();
-    const YAML::Node &shapeNode = getChild(shapesNode, shapeName.c_str());
-    b2Shape *const shape = readShape(shapeNode, scale);
-    
+  void readFixture(b2Body *const body, const json &fixtureNode, const b2Vec2 scale) {
     b2FixtureDef fixtureDef;
-    //CreateFixture copies the shape
-    fixtureDef.shape = shape;
+    fixtureDef.shape = readShape(fixtureNode.at("shape"), scale);
     
     getOptional(fixtureDef.friction, fixtureNode, "friction");
     getOptional(fixtureDef.restitution, fixtureNode, "restitution");
     getOptional(fixtureDef.density, fixtureNode, "density");
     getOptional(fixtureDef.isSensor, fixtureNode, "is sensor");
     
-    if (const YAML::Node &userData = fixtureNode["user data"]) {
-      fixtureDef.userData = getUserData(userData.Scalar());
+    if (const auto userDataNode = fixtureNode.find("user data"); userDataNode != fixtureNode.cend()) {
+      fixtureDef.userData = getUserData(userDataNode->get<std::string>());
     }
-    if (const YAML::Node &filter = fixtureNode["filter"]) {
-      fixtureDef.filter = readFilter(filter);
+    if (const auto filterNode = fixtureNode.find("filter"); filterNode != fixtureNode.cend()) {
+      fixtureDef.filter = readFilter(*filterNode);
     }
     
     body->CreateFixture(&fixtureDef);
   }
   
-  void readFixtures(
-    b2Body *body,
-    const YAML::Node &shapesNode,
-    const YAML::Node &fixturesNode,
-    const glm::vec2 scale
-  ) {
-    checkType(shapesNode, YAML::NodeType::Map);
-    checkType(fixturesNode, YAML::NodeType::Sequence);
-    
-    for (auto f = fixturesNode.begin(); f != fixturesNode.end(); ++f) {
-      readFixture(body, shapesNode, *f, scale);
+  void readFixtures(b2Body *const body, const json &fixturesNode, const b2Vec2 scale) {
+    for (auto &f : fixturesNode) {
+      readFixture(body, f, scale);
     }
   }
 }
@@ -277,34 +204,28 @@ b2Body *loadBody(
   b2World &world,
   const Transform transform
 ) {
-  const YAML::Node rootNode = YAML::LoadFile(Platform::getResDir() + fileName);
-  checkType(rootNode, YAML::NodeType::Map);
+  std::ifstream file(Platform::getResDir() + fileName);
+  json rootNode;
+  file >> rootNode;
   
-  const YAML::Node &bodyNode = getChild(rootNode, "body");
-  const b2BodyDef bodyDef = readBodyDef(bodyNode);
+  const b2BodyDef bodyDef = readBodyDef(rootNode.at("body"));
   b2Body *body = world.CreateBody(&bodyDef);
   body->SetTransform(castToB2(transform.pos), transform.rotation);
-  
-  readFixtures(
-    body,
-    getChild(rootNode, "shapes"),
-    getChild(rootNode, "fixtures"),
-    transform.scale
-  );
+  readFixtures(body, rootNode.at("fixtures"), castToB2(transform.scale));
   
   return body;
 }
 
 namespace {
   #define READ_ANCHOR                                                           \
-  getOptionalVec(def->localAnchorA, node, "local anchor A");                    \
-  getOptionalVec(def->localAnchorB, node, "local anchor B");
+  getOptional(def->localAnchorA, node, "local anchor A");                       \
+  getOptional(def->localAnchorB, node, "local anchor B");
   
   #define READ_FREQ_DAMP                                                        \
-  getOptional(def->frequencyHz, node, "frequency");                              \
+  getOptional(def->frequencyHz, node, "frequency");                             \
   getOptional(def->dampingRatio, node, "damping ratio");
 
-  void readRevolute(b2RevoluteJointDef *def, const YAML::Node &node) {
+  void readRevolute(b2RevoluteJointDef *def, const json &node) {
     READ_ANCHOR
     getOptional(def->referenceAngle, node, "reference angle");
     getOptional(def->lowerAngle, node, "lower angle");
@@ -315,9 +236,9 @@ namespace {
     getOptional(def->enableMotor, node, "enable motor");
   }
   
-  void readPrismatic(b2PrismaticJointDef *def, const YAML::Node &node) {
+  void readPrismatic(b2PrismaticJointDef *def, const json &node) {
     READ_ANCHOR
-    getOptionalVec(def->localAxisA, node, "local axis A");
+    getOptional(def->localAxisA, node, "local axis A");
     getOptional(def->referenceAngle, node, "reference angle");
     getOptional(def->enableLimit, node, "enable limit");
     getOptional(def->lowerTranslation, node, "lower translation");
@@ -327,63 +248,61 @@ namespace {
     getOptional(def->motorSpeed, node, "motor speed");
   }
   
-  void readDistance(b2DistanceJointDef *def, const YAML::Node &node) {
+  void readDistance(b2DistanceJointDef *def, const json &node) {
     READ_ANCHOR
     READ_FREQ_DAMP
     getOptional(def->length, node, "length");
   }
   
-  void readPulley(b2PulleyJointDef *def, const YAML::Node &node) {
+  void readPulley(b2PulleyJointDef *def, const json &node) {
     READ_ANCHOR
-    getOptionalVec(def->groundAnchorA, node, "ground anchor A");
-    getOptionalVec(def->groundAnchorB, node, "ground anchor B");
+    getOptional(def->groundAnchorA, node, "ground anchor A");
+    getOptional(def->groundAnchorB, node, "ground anchor B");
     getOptional(def->lengthA, node, "length A");
     getOptional(def->lengthB, node, "length B");
     getOptional(def->ratio, node, "ratio");
   }
   
-  void readMouse(b2MouseJointDef *def, const YAML::Node &node) {
+  void readMouse(b2MouseJointDef *def, const json &node) {
     READ_FREQ_DAMP
-    getOptionalVec(def->target, node, "target");
+    getOptional(def->target, node, "target");
     getOptional(def->maxForce, node, "max force");
   }
   
-  void readWheel(b2WheelJointDef *def, const YAML::Node &node) {
+  void readWheel(b2WheelJointDef *def, const json &node) {
     READ_ANCHOR
     READ_FREQ_DAMP
-    getOptionalVec(def->localAxisA, node, "local axis A");
+    getOptional(def->localAxisA, node, "local axis A");
     getOptional(def->enableMotor, node, "enable motor");
     getOptional(def->maxMotorTorque, node, "max motor torque");
     getOptional(def->motorSpeed, node, "motor speed");
   }
   
-  void readWeld(b2WeldJointDef *def, const YAML::Node &node) {
+  void readWeld(b2WeldJointDef *def, const json &node) {
     READ_ANCHOR
     READ_FREQ_DAMP
     getOptional(def->referenceAngle, node, "reference angle");
   }
   
-  void readFriction(b2FrictionJointDef *def, const YAML::Node &node) {
+  void readFriction(b2FrictionJointDef *def, const json &node) {
     READ_ANCHOR
     getOptional(def->maxForce, node, "max force");
     getOptional(def->maxTorque, node, "max torque");
   }
   
-  void readRope(b2RopeJointDef *def, const YAML::Node &node) {
+  void readRope(b2RopeJointDef *def, const json &node) {
     READ_ANCHOR
     getOptional(def->maxLength, node, "max length");
   }
   
-  void readMotor(b2MotorJointDef *def, const YAML::Node &node) {
-    getOptionalVec(def->linearOffset, node, "linear offset");
+  void readMotor(b2MotorJointDef *def, const json &node) {
+    getOptional(def->linearOffset, node, "linear offset");
     getOptional(def->angularOffset, node, "angular offset");
     getOptional(def->maxForce, node, "max force");
     getOptional(def->maxTorque, node, "max torque");
     getOptional(def->correctionFactor, node, "correction factor");
   }
-
-  class BadJointType {};
-
+  
   #define JOINTS                                                                \
     JOINT(Revolute, revolute)                                                   \
     JOINT(Prismatic, prismatic)                                                 \
@@ -396,25 +315,32 @@ namespace {
     JOINT(Rope, rope)                                                           \
     JOINT(Motor, motor)
 
-  b2JointDef *readJointDef(const std::string &type, const YAML::Node &node) {
+  b2JointDef *loadJoint(const json &node) {
     #define JOINT(CLASS, NAME)                                                  \
       if (type == #NAME) {                                                      \
         static b2##CLASS##JointDef def;                                         \
         def = {};                                                               \
         read##CLASS(&def, node);                                                \
-        return &def;                                                            \
+        jointDef = &def;                                                        \
       } else
+    
+    const std::string type = node.at("type").get<std::string>();
+    b2JointDef *jointDef;
     
     JOINTS
     /* else */ {
-      throw BadJointType();
+      throw std::runtime_error("Invalid joint type");
     }
     
     #undef JOINT
+    
+    getOptional(jointDef->collideConnected, node, "collide connected");
+    
+    return jointDef;
   }
 }
 
-void readJoint(b2JointDef *def, const YAML::Node &node) {
+void readJoint(b2JointDef *def, const json &node) {
   #define JOINT(CLASS, NAME)                                                    \
     case b2JointType::e_##NAME##Joint:                                          \
       read##CLASS(static_cast<b2##CLASS##JointDef *>(def), node);               \
@@ -426,29 +352,16 @@ void readJoint(b2JointDef *def, const YAML::Node &node) {
     JOINTS
     
     default:
-      throw BadJointType();
+      throw std::runtime_error("Invalid joint type");
   }
   
   #undef JOINT
+  #undef JOINTS
 }
 
-#undef JOINTS
-
 b2JointDef *loadJoint(const std::string &fileName) {
-  const YAML::Node rootNode = YAML::LoadFile(Platform::getResDir() + fileName);
-  checkType(rootNode, YAML::NodeType::Map);
-  
-  const YAML::Node &typeNode = getChild(rootNode, "type");
-  const std::string &type = typeNode.Scalar();
-  b2JointDef *def;
-  try {
-    def = readJointDef(type, rootNode);
-  } catch (BadJointType &) {
-    throw std::runtime_error(
-      std::string("Bad joint type at line ")
-      + std::to_string(typeNode.Mark().line)
-    );
-  }
-  getOptional(def->collideConnected, rootNode, "collide connected");
-  return def;
+  std::ifstream file(Platform::getResDir() + fileName);
+  json rootNode;
+  file >> rootNode;
+  return loadJoint(rootNode);
 }

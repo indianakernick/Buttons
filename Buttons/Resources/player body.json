@@ -8,26 +8,22 @@
     {
       "density": 6,
       "friction": 0.5,
-      "shape": "body",
-      "user data": "PlayerBody"
+      "user data": "PlayerBody",
+      "shape": {
+        "pos": [0, 0],
+        "radius": 0.49,
+        "type": "circle"
+      }
     },
     {
       "density": 0,
       "is sensor": true,
-      "shape": "foot",
-      "user data": "PlayerFoot"
+      "user data": "PlayerFoot",
+      "shape": {
+        "pos": [0, -0.1],
+        "radius": 0.4,
+        "type": "circle"
+      }
     }
-  ],
-  "shapes": {
-    "body": {
-      "pos": [0, 0],
-      "radius": 0.49,
-      "type": "circle"
-    },
-    "foot": {
-      "pos": [0, -0.1],
-      "radius": 0.4,
-      "type": "circle"
-    }
-  }
+  ]
 }

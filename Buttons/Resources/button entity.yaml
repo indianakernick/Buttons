@@ -1,7 +1,0 @@
-Collision: {}
-Activation:
-  speed: 8
-Button: {}
-Transform: {}
-ButtonRendering: {}
-PowerOutput: {}

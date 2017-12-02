@@ -2,7 +2,7 @@
 //  level file.cpp
 //  Buttons
 //
-//  Created by Indi Kernick on 10/11/17.
+//  Created by Indi Kernick on 2/12/17.
 //  Copyright © 2017 Indi Kernick. All rights reserved.
 //
 
@@ -10,67 +10,62 @@
 
 #include <fstream>
 #include "comp inits.hpp"
-#include "yaml helper.hpp"
+#include "json helper.hpp"
 #include "entity id map.hpp"
-#include "physics system.hpp"
 #include <Simpleton/Platform/system info.hpp>
 
-void loadComps(
-  const EntityID id,
-  const YAML::Node &comps,
-  const EntityIDmap &idMap,
-  Registry &registry,
-  const CompInits &compInits
-) {
-  for (auto &pair : comps) {
-    const std::string &compName = pair.first.Scalar();
-    const YAML::Node &props = pair.second;
-    const bool gotComp = Utils::getByName<CompList>(compName, [id, &idMap, &registry, &compInits, props] (auto t) {
-      compInits.init(registry.accomodate<UTILS_TYPE(t)>(id), props, idMap, id);
-    });
-    if (!gotComp) {
-      throw std::runtime_error(
-        "Unknown component name \""
-        + compName
-        + "\" at line "
-        + std::to_string(pair.first.Mark().line)
+namespace {
+  void loadComps(
+    const EntityID id,
+    const json &comps,
+    const EntityIDmap &idMap,
+    const CompInits &compInits,
+    Registry &registry
+  ) {
+    auto obj = comps.get_ref<const json::object_t &>();
+    for (auto &pair : obj) {
+      const bool gotComp = Utils::getByName<CompList>(
+        pair.first,
+        [id, &idMap, &registry, &compInits, &props = pair.second] (auto t) {
+          compInits.init(registry.accomodate<UTILS_TYPE(t)>(id), props, idMap, id);
+        }
       );
+      if (!gotComp) {
+        throw std::runtime_error(
+          "Unknown component name \""
+          + pair.first
+          + "\""
+        );
+      }
     }
   }
 }
 
-void loadEntity(
-  const EntityID id,
-  const std::string &entityFileName,
-  const YAML::Node &levelComps,
-  const EntityIDmap &idMap,
-  Registry &registry,
-  const CompInits &compInits
-) {
-  if (!entityFileName.empty()) {
-    const YAML::Node comps = YAML::LoadFile(Platform::getResDir() + entityFileName);
-    checkType(comps, YAML::NodeType::Map);
-    loadComps(id, comps, idMap, registry, compInits);
-  }
-  checkType(levelComps, YAML::NodeType::Map);
-  loadComps(id, levelComps, idMap, registry, compInits);
-}
-
-bool loadLevel(const std::string &fileName, Registry &registry, const CompInits &compInits) {
+bool loadLevel(const std::string &fileName, const CompInits &compInits, Registry &registry) {
   std::ifstream file(Platform::getResDir() + fileName);
   if (!file.is_open()) {
     return false;
   }
-  const YAML::Node root = YAML::Load(file);
-  checkType(root, YAML::NodeType::Sequence);
+  json root;
+  file >> root;
+  
   EntityIDmap idMap;
   idMap.insertIDs(root, registry);
   
   for (size_t i = 0; i != root.size(); ++i) {
-    const YAML::Node &node = root[i];
-    const std::string &entityFile = node["file"] ? node["file"].Scalar() : "";
-    const YAML::Node &comps = node["components"];
-    loadEntity(idMap.getEntityFromIndex(i), entityFile, comps, idMap, registry, compInits);
+    const EntityID id = idMap.getEntityFromIndex(i);
+    const json &node = root[i];
+    
+    if (const auto fileNode = node.find("file"); fileNode != node.cend()) {
+      std::ifstream entityFile(Platform::getResDir() + fileNode->get<std::string>());
+      json comps;
+      entityFile >> comps;
+      loadComps(id, comps, idMap, compInits, registry);
+    }
+    
+    if (const auto compsNode = node.find("components"); compsNode != node.cend()) {
+      loadComps(id, *compsNode, idMap, compInits, registry);
+    }
   }
   
   return true;

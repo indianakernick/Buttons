@@ -28,7 +28,7 @@ bool LevelManager::loadLevel(const Level level) {
   if (current != NONE_LOADED) {
     registry->reset();
   }
-  if (::loadLevel("level " + std::to_string(level) + ".yaml", *registry, *compInits)) {
+  if (::loadLevel("level " + std::to_string(level) + ".json", *compInits, *registry)) {
     current = level;
     return true;
   } else {

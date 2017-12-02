@@ -49,8 +49,8 @@ void EntityIDmap::insertIDs(const json &root, Registry &registry) {
           throw std::runtime_error("All user defined entity IDs must be unique or absent");
         }
       }
-      map[i] = {userID, registry.create()};
     }
+    map[i] = {userID, registry.create()};
   }
 }
 

@@ -9,10 +9,6 @@
 /* Begin PBXBuildFile section */
 		450ED5C31FB69D31008F2902 /* player input component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5C11FB69D31008F2902 /* player input component.cpp */; };
 		450ED5C61FB69ED3008F2902 /* player input system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5C41FB69ED3008F2902 /* player input system.cpp */; };
-		450ED5C81FB6A6B7008F2902 /* platform entity.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 450ED5C71FB6A6B7008F2902 /* platform entity.yaml */; };
-		450ED5CA1FB6A6C6008F2902 /* platform body.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 450ED5C91FB6A6C6008F2902 /* platform body.yaml */; };
-		450ED5CC1FB6A927008F2902 /* player body.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 450ED5CB1FB6A927008F2902 /* player body.yaml */; };
-		450ED5CE1FB6AA31008F2902 /* player entity.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 450ED5CD1FB6AA31008F2902 /* player entity.yaml */; };
 		450ED5D11FB6AB96008F2902 /* player movement system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5CF1FB6AB96008F2902 /* player movement system.cpp */; };
 		450ED5D41FB6AC6E008F2902 /* player jump component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5D21FB6AC6E008F2902 /* player jump component.cpp */; };
 		450ED5D71FB6B0A0008F2902 /* limit velocity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5D51FB6B0A0008F2902 /* limit velocity.cpp */; };
@@ -20,28 +16,21 @@
 		450ED5DD1FB6B409008F2902 /* player rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5DB1FB6B409008F2902 /* player rendering component.cpp */; };
 		450ED5E01FB6B7F3008F2902 /* platform rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5DE1FB6B7F3008F2902 /* platform rendering system.cpp */; };
 		450ED5E31FB6B8EF008F2902 /* platform rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5E11FB6B8EF008F2902 /* platform rendering component.cpp */; };
-		450ED5E51FB6CCAE008F2902 /* button body.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 450ED5E41FB6CCAE008F2902 /* button body.yaml */; };
 		450ED5EC1FB7C052008F2902 /* button component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5EA1FB7C052008F2902 /* button component.cpp */; };
-		450ED5EE1FB7C11B008F2902 /* button entity.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 450ED5ED1FB7C11B008F2902 /* button entity.yaml */; };
 		450ED5F51FB7C945008F2902 /* debug draw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5F31FB7C945008F2902 /* debug draw.cpp */; };
 		450ED5F81FB7D6E6008F2902 /* button rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5F61FB7D6E6008F2902 /* button rendering component.cpp */; };
 		450ED5FB1FB7D740008F2902 /* button rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5F91FB7D740008F2902 /* button rendering system.cpp */; };
 		450ED5FE1FB7DDA5008F2902 /* activation system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5FC1FB7DDA5008F2902 /* activation system.cpp */; };
-		450ED6001FB7E8D3008F2902 /* door body.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 450ED5FF1FB7E8D3008F2902 /* door body.yaml */; };
-		450ED6021FB7EA23008F2902 /* door entity.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 450ED6011FB7EA23008F2902 /* door entity.yaml */; };
 		450ED6081FB7F4F6008F2902 /* door rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED6061FB7F4F6008F2902 /* door rendering component.cpp */; };
 		450ED60B1FB7F633008F2902 /* door rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED6091FB7F633008F2902 /* door rendering system.cpp */; };
 		450ED6111FB7FB55008F2902 /* door component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED60F1FB7FB55008F2902 /* door component.cpp */; };
 		450ED6141FB7FBA4008F2902 /* door system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED6121FB7FBA4008F2902 /* door system.cpp */; };
-		450ED6191FB8089C008F2902 /* switch body.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 450ED6181FB8089C008F2902 /* switch body.yaml */; };
-		450ED61B1FB80932008F2902 /* switch entity.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 450ED61A1FB80932008F2902 /* switch entity.yaml */; };
 		450ED61E1FB80B0F008F2902 /* switch component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED61C1FB80B0F008F2902 /* switch component.cpp */; };
 		450ED6211FB80CB4008F2902 /* switch system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED61F1FB80CB4008F2902 /* switch system.cpp */; };
 		450ED6241FB81316008F2902 /* switch rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED6221FB81316008F2902 /* switch rendering component.cpp */; };
 		450ED6271FB81395008F2902 /* switch rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED6251FB81395008F2902 /* switch rendering system.cpp */; };
 		450ED62A1FB84633008F2902 /* animation component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED6281FB84633008F2902 /* animation component.cpp */; };
 		450ED62D1FB8620D008F2902 /* animation system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED62B1FB8620D008F2902 /* animation system.cpp */; };
-		450ED6321FBA7EFE008F2902 /* exit entity.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 450ED6311FBA7EFE008F2902 /* exit entity.yaml */; };
 		450ED6351FBA89B0008F2902 /* exit rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED6331FBA89B0008F2902 /* exit rendering system.cpp */; };
 		450ED6381FBA89C1008F2902 /* exit rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED6361FBA89C1008F2902 /* exit rendering component.cpp */; };
 		452E10891FB2D27D0063114B /* collision pairs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452E10871FB2D27D0063114B /* collision pairs.cpp */; };
@@ -54,8 +43,6 @@
 		4533A8BA1FC90C390027B0FB /* player keys component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8B81FC90C390027B0FB /* player keys component.cpp */; };
 		4533A8BD1FC90EF50027B0FB /* take key system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8BB1FC90EF50027B0FB /* take key system.cpp */; };
 		4533A8C01FC912B10027B0FB /* activate lock system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8BE1FC912B10027B0FB /* activate lock system.cpp */; };
-		4533A8C21FC915F00027B0FB /* key entity.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 4533A8C11FC915F00027B0FB /* key entity.yaml */; };
-		4533A8C41FC916740027B0FB /* lock entity.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 4533A8C31FC916740027B0FB /* lock entity.yaml */; };
 		4533A8C71FC918580027B0FB /* key rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8C51FC918580027B0FB /* key rendering component.cpp */; };
 		4533A8CA1FC918920027B0FB /* lock rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8C81FC918920027B0FB /* lock rendering component.cpp */; };
 		4533A8CD1FC919750027B0FB /* render polygon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8CB1FC919750027B0FB /* render polygon.cpp */; };
@@ -63,14 +50,12 @@
 		4533A8D31FC9232B0027B0FB /* lock rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8D11FC9232B0027B0FB /* lock rendering system.cpp */; };
 		4533A8E51FCA499F0027B0FB /* shadow rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8E31FCA499F0027B0FB /* shadow rendering component.cpp */; };
 		4533A8E81FCA4A3F0027B0FB /* shadow rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8E61FCA4A3F0027B0FB /* shadow rendering system.cpp */; };
-		4533A8EA1FCA4ED20027B0FB /* shadow entity.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 4533A8E91FCA4ED20027B0FB /* shadow entity.yaml */; };
 		4533A8FE1FCA69440027B0FB /* game screen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8FC1FCA69440027B0FB /* game screen.cpp */; };
 		4533A9011FCA91DD0027B0FB /* progress manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8FF1FCA91DC0027B0FB /* progress manager.cpp */; };
 		4533A9051FCA93780027B0FB /* dir.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A9031FCA93780027B0FB /* dir.cpp */; };
 		4533A9081FCAA2520027B0FB /* start menu screen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A9061FCAA2520027B0FB /* start menu screen.cpp */; };
 		4533A90B1FCAB1E40027B0FB /* button element.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A9091FCAB1E40027B0FB /* button element.cpp */; };
 		4533A90E1FCAE2A10027B0FB /* screen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A90C1FCAE2A10027B0FB /* screen.cpp */; };
-		456DF0BA1FBD31BB003B3FD1 /* moving platform entity.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 456DF0B91FBD31BB003B3FD1 /* moving platform entity.yaml */; };
 		456DF0BD1FBD32E7003B3FD1 /* moving platform rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0BB1FBD32E7003B3FD1 /* moving platform rendering component.cpp */; };
 		456DF0C01FBD336A003B3FD1 /* moving platform rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0BE1FBD336A003B3FD1 /* moving platform rendering system.cpp */; };
 		456DF0C31FBD625C003B3FD1 /* moving platform component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0C11FBD625C003B3FD1 /* moving platform component.cpp */; };
@@ -135,14 +120,12 @@
 		4583EE331FB18F7A00AED27D /* b2CollideEdge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EDFE1FB18EFF00AED27D /* b2CollideEdge.cpp */; };
 		4583EE341FB18F7A00AED27D /* b2Collision.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EDFF1FB18EFF00AED27D /* b2Collision.cpp */; };
 		4583EE751FB190F300AED27D /* nvg helper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE661FB190BD00AED27D /* nvg helper.cpp */; };
-		4583EE781FB190F300AED27D /* yaml helper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE681FB190BD00AED27D /* yaml helper.cpp */; };
 		4583EE7A1FB190F300AED27D /* rendering context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE421FB1906D00AED27D /* rendering context.cpp */; };
 		4583EE7D1FB190F300AED27D /* rendering resources.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE451FB1906E00AED27D /* rendering resources.cpp */; };
 		4583EE851FB1967700AED27D /* app.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE831FB1967700AED27D /* app.cpp */; };
 		4583EE891FB197C200AED27D /* physics system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE871FB197C200AED27D /* physics system.cpp */; };
 		4583EE8F1FB19C0300AED27D /* contact listener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE8D1FB19C0300AED27D /* contact listener.cpp */; };
 		4583EE921FB19DE600AED27D /* collision categories.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE901FB19DE600AED27D /* collision categories.cpp */; };
-		4583EE971FB1A2AE00AED27D /* physics file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE951FB1A2AD00AED27D /* physics file.cpp */; };
 		4583EE9D1FB1AC1600AED27D /* power system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE9B1FB1AC1600AED27D /* power system.cpp */; };
 		4583EEA01FB1AE3100AED27D /* power input activation system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE9E1FB1AE3100AED27D /* power input activation system.cpp */; };
 		4583EEA31FB1AFCF00AED27D /* activate power output system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EEA11FB1AFCF00AED27D /* activate power output system.cpp */; };
@@ -152,24 +135,45 @@
 		4584F4031FCBE11F0062B93E /* text element.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4584F4011FCBE11F0062B93E /* text element.cpp */; };
 		4584F4071FCBF1BD0062B93E /* element.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4584F4051FCBF1BD0062B93E /* element.cpp */; };
 		4584F40F1FCCF61D0062B93E /* element manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4584F40D1FCCF61D0062B93E /* element manager.cpp */; };
-		4584F4131FCE37AB0062B93E /* level 5.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 4584F4121FCE37AB0062B93E /* level 5.yaml */; };
-		4584F4191FCFE0E60062B93E /* level 50.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 4584F4181FCFE0E60062B93E /* level 50.yaml */; };
 		4584F4231FD105940062B93E /* event helper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4584F4211FD105940062B93E /* event helper.cpp */; };
 		4584F4421FD130F50062B93E /* json helper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4584F4401FD130F50062B93E /* json helper.cpp */; };
-		4584F4491FD13BA30062B93E /* new physics file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4584F4471FD13BA30062B93E /* new physics file.cpp */; };
-		4584F44C1FD215340062B93E /* new level file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4584F44A1FD215340062B93E /* new level file.cpp */; };
+		4584F4491FD13BA30062B93E /* physics file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4584F4471FD13BA30062B93E /* physics file.cpp */; };
+		4584F44C1FD215340062B93E /* level file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4584F44A1FD215340062B93E /* level file.cpp */; };
+		4584F44D1FD27A150062B93E /* box body.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F42D1FD12CEF0062B93E /* box body.json */; };
+		4584F44E1FD27A150062B93E /* button body.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F4251FD12CEE0062B93E /* button body.json */; };
+		4584F44F1FD27A150062B93E /* door body.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F4241FD12CED0062B93E /* door body.json */; };
+		4584F4501FD27A150062B93E /* platform body.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F4291FD12CEF0062B93E /* platform body.json */; };
+		4584F4511FD27A150062B93E /* player body.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F43B1FD12CF30062B93E /* player body.json */; };
+		4584F4521FD27A150062B93E /* switch body.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F4341FD12CF10062B93E /* switch body.json */; };
+		4584F4531FD27A150062B93E /* box entity.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F42B1FD12CEF0062B93E /* box entity.json */; };
+		4584F4541FD27A150062B93E /* button entity.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F42E1FD12CF00062B93E /* button entity.json */; };
+		4584F4551FD27A150062B93E /* door entity.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F4361FD12CF20062B93E /* door entity.json */; };
+		4584F4561FD27A150062B93E /* exit entity.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F4301FD12CF00062B93E /* exit entity.json */; };
+		4584F4571FD27A150062B93E /* key entity.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F42C1FD12CEF0062B93E /* key entity.json */; };
+		4584F4581FD27A150062B93E /* laser detector entity.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F4381FD12CF20062B93E /* laser detector entity.json */; };
+		4584F4591FD27A150062B93E /* laser emitter entity.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F4371FD12CF20062B93E /* laser emitter entity.json */; };
+		4584F45A1FD27A150062B93E /* lock entity.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F43E1FD12CF40062B93E /* lock entity.json */; };
+		4584F45B1FD27A150062B93E /* moving platform entity.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F43A1FD12CF20062B93E /* moving platform entity.json */; };
+		4584F45C1FD27A150062B93E /* platform entity.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F43D1FD12CF30062B93E /* platform entity.json */; };
+		4584F45D1FD27A150062B93E /* player entity.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F4281FD12CEE0062B93E /* player entity.json */; };
+		4584F45E1FD27A150062B93E /* shadow entity.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F42A1FD12CEF0062B93E /* shadow entity.json */; };
+		4584F45F1FD27A150062B93E /* switch entity.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F4321FD12CF10062B93E /* switch entity.json */; };
+		4584F4601FD27A150062B93E /* text entity.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F43F1FD12CF40062B93E /* text entity.json */; };
+		4584F4611FD27A150062B93E /* level 0.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F4271FD12CEE0062B93E /* level 0.json */; };
+		4584F4621FD27A150062B93E /* level 1.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F4351FD12CF10062B93E /* level 1.json */; };
+		4584F4631FD27A150062B93E /* level 2.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F42F1FD12CF00062B93E /* level 2.json */; };
+		4584F4641FD27A150062B93E /* level 3.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F4391FD12CF20062B93E /* level 3.json */; };
+		4584F4651FD27A150062B93E /* level 4.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F4261FD12CEE0062B93E /* level 4.json */; };
+		4584F4661FD27A150062B93E /* level 5.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F4311FD12CF00062B93E /* level 5.json */; };
+		4584F4671FD27A150062B93E /* level 42.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F4331FD12CF10062B93E /* level 42.json */; };
+		4584F4681FD27A150062B93E /* level 50.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F43C1FD12CF30062B93E /* level 50.json */; };
 		4591F0641FBFE1420075000D /* power init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0621FBFE1420075000D /* power init.cpp */; };
 		4591F0671FBFE44B0075000D /* activation init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0651FBFE44B0075000D /* activation init.cpp */; };
 		4591F06A1FBFE51E0075000D /* transform init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0681FBFE51E0075000D /* transform init.cpp */; };
 		4591F0701FBFE7500075000D /* animation init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F06E1FBFE7500075000D /* animation init.cpp */; };
 		4591F0731FBFE8640075000D /* moving platform init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0711FBFE8640075000D /* moving platform init.cpp */; };
-		4591F0761FC000020075000D /* level 0.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 4591F0751FC000020075000D /* level 0.yaml */; };
-		4591F0781FC008120075000D /* level 1.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 4591F0771FC008120075000D /* level 1.yaml */; };
-		4591F07A1FC00F930075000D /* level 2.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 4591F0791FC00F930075000D /* level 2.yaml */; };
 		4591F07D1FC0118C0075000D /* exit component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F07B1FC0118C0075000D /* exit component.cpp */; };
 		4591F0801FC011E50075000D /* exit system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F07E1FC011E50075000D /* exit system.cpp */; };
-		4591F0881FC145C00075000D /* laser emitter entity.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 4591F0871FC145C00075000D /* laser emitter entity.yaml */; };
-		4591F08A1FC145CC0075000D /* laser detector entity.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 4591F0891FC145CC0075000D /* laser detector entity.yaml */; };
 		4591F08D1FC152C60075000D /* laser detector component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F08B1FC152C60075000D /* laser detector component.cpp */; };
 		4591F0901FC1534D0075000D /* laser detector init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F08E1FC1534D0075000D /* laser detector init.cpp */; };
 		4591F0931FC1554A0075000D /* laser emitter rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0911FC1554A0075000D /* laser emitter rendering component.cpp */; };
@@ -183,21 +187,14 @@
 		4591F0AB1FC3F0F80075000D /* Arial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4591F0A91FC3EED00075000D /* Arial.ttf */; };
 		4591F0AE1FC3F9780075000D /* text component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0AC1FC3F9780075000D /* text component.cpp */; };
 		4591F0B11FC3F99B0075000D /* text init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0AF1FC3F99B0075000D /* text init.cpp */; };
-		4591F0B31FC3FCB10075000D /* text entity.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 4591F0B21FC3FCB10075000D /* text entity.yaml */; };
-		4591F0BD1FC40F370075000D /* level 3.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 4591F0BC1FC40F370075000D /* level 3.yaml */; };
 		4591F0C31FC8036D0075000D /* render grid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0C11FC8036D0075000D /* render grid.cpp */; };
-		4591F0C51FC806390075000D /* level 4.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 4591F0C41FC806390075000D /* level 4.yaml */; };
 		4597961A1FB41BF1007A7432 /* physics component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459796191FB41BF1007A7432 /* physics component.cpp */; };
 		4597961C1FB41BFE007A7432 /* collision component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597961B1FB41BFE007A7432 /* collision component.cpp */; };
 		4597961E1FB41C0C007A7432 /* power component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597961D1FB41C0C007A7432 /* power component.cpp */; };
 		459796201FB41C1A007A7432 /* activation component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597961F1FB41C1A007A7432 /* activation component.cpp */; };
 		459796221FB41C24007A7432 /* transform component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459796211FB41C24007A7432 /* transform component.cpp */; };
-		459796251FB56F0D007A7432 /* level file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459796231FB56F0D007A7432 /* level file.cpp */; };
 		459796281FB58752007A7432 /* entity id map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459796261FB58752007A7432 /* entity id map.cpp */; };
 		4597962E1FB65BBB007A7432 /* component list.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597962C1FB65BBB007A7432 /* component list.cpp */; };
-		459796301FB67FE7007A7432 /* level 42.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 4597962F1FB67FE7007A7432 /* level 42.yaml */; };
-		459796361FB681FA007A7432 /* box entity.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 459796351FB681FA007A7432 /* box entity.yaml */; };
-		459796381FB68209007A7432 /* box body.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 459796371FB68209007A7432 /* box body.yaml */; };
 		4597963C1FB6870A007A7432 /* box rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597963A1FB6870A007A7432 /* box rendering component.cpp */; };
 		459796401FB687AC007A7432 /* box rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597963E1FB687AC007A7432 /* box rendering system.cpp */; };
 /* End PBXBuildFile section */
@@ -207,10 +204,6 @@
 		450ED5C21FB69D31008F2902 /* player input component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "player input component.hpp"; sourceTree = "<group>"; };
 		450ED5C41FB69ED3008F2902 /* player input system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "player input system.cpp"; sourceTree = "<group>"; };
 		450ED5C51FB69ED3008F2902 /* player input system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "player input system.hpp"; sourceTree = "<group>"; };
-		450ED5C71FB6A6B7008F2902 /* platform entity.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "platform entity.yaml"; sourceTree = "<group>"; };
-		450ED5C91FB6A6C6008F2902 /* platform body.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "platform body.yaml"; sourceTree = "<group>"; };
-		450ED5CB1FB6A927008F2902 /* player body.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "player body.yaml"; sourceTree = "<group>"; };
-		450ED5CD1FB6AA31008F2902 /* player entity.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "player entity.yaml"; sourceTree = "<group>"; };
 		450ED5CF1FB6AB96008F2902 /* player movement system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "player movement system.cpp"; sourceTree = "<group>"; };
 		450ED5D01FB6AB96008F2902 /* player movement system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "player movement system.hpp"; sourceTree = "<group>"; };
 		450ED5D21FB6AC6E008F2902 /* player jump component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "player jump component.cpp"; sourceTree = "<group>"; };
@@ -225,10 +218,8 @@
 		450ED5DF1FB6B7F3008F2902 /* platform rendering system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "platform rendering system.hpp"; sourceTree = "<group>"; };
 		450ED5E11FB6B8EF008F2902 /* platform rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "platform rendering component.cpp"; sourceTree = "<group>"; };
 		450ED5E21FB6B8EF008F2902 /* platform rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "platform rendering component.hpp"; sourceTree = "<group>"; };
-		450ED5E41FB6CCAE008F2902 /* button body.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "button body.yaml"; sourceTree = "<group>"; };
 		450ED5EA1FB7C052008F2902 /* button component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "button component.cpp"; sourceTree = "<group>"; };
 		450ED5EB1FB7C052008F2902 /* button component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "button component.hpp"; sourceTree = "<group>"; };
-		450ED5ED1FB7C11B008F2902 /* button entity.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "button entity.yaml"; sourceTree = "<group>"; };
 		450ED5F31FB7C945008F2902 /* debug draw.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "debug draw.cpp"; sourceTree = "<group>"; };
 		450ED5F41FB7C945008F2902 /* debug draw.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "debug draw.hpp"; sourceTree = "<group>"; };
 		450ED5F61FB7D6E6008F2902 /* button rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "button rendering component.cpp"; sourceTree = "<group>"; };
@@ -237,8 +228,6 @@
 		450ED5FA1FB7D740008F2902 /* button rendering system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "button rendering system.hpp"; sourceTree = "<group>"; };
 		450ED5FC1FB7DDA5008F2902 /* activation system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "activation system.cpp"; sourceTree = "<group>"; };
 		450ED5FD1FB7DDA5008F2902 /* activation system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "activation system.hpp"; sourceTree = "<group>"; };
-		450ED5FF1FB7E8D3008F2902 /* door body.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "door body.yaml"; sourceTree = "<group>"; };
-		450ED6011FB7EA23008F2902 /* door entity.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "door entity.yaml"; sourceTree = "<group>"; };
 		450ED6061FB7F4F6008F2902 /* door rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "door rendering component.cpp"; sourceTree = "<group>"; };
 		450ED6071FB7F4F6008F2902 /* door rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "door rendering component.hpp"; sourceTree = "<group>"; };
 		450ED6091FB7F633008F2902 /* door rendering system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "door rendering system.cpp"; sourceTree = "<group>"; };
@@ -247,8 +236,6 @@
 		450ED6101FB7FB55008F2902 /* door component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "door component.hpp"; sourceTree = "<group>"; };
 		450ED6121FB7FBA4008F2902 /* door system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "door system.cpp"; sourceTree = "<group>"; };
 		450ED6131FB7FBA4008F2902 /* door system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "door system.hpp"; sourceTree = "<group>"; };
-		450ED6181FB8089C008F2902 /* switch body.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "switch body.yaml"; sourceTree = "<group>"; };
-		450ED61A1FB80932008F2902 /* switch entity.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "switch entity.yaml"; sourceTree = "<group>"; };
 		450ED61C1FB80B0F008F2902 /* switch component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "switch component.cpp"; sourceTree = "<group>"; };
 		450ED61D1FB80B0F008F2902 /* switch component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "switch component.hpp"; sourceTree = "<group>"; };
 		450ED61F1FB80CB4008F2902 /* switch system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "switch system.cpp"; sourceTree = "<group>"; };
@@ -261,7 +248,6 @@
 		450ED6291FB84633008F2902 /* animation component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "animation component.hpp"; sourceTree = "<group>"; };
 		450ED62B1FB8620D008F2902 /* animation system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "animation system.cpp"; sourceTree = "<group>"; };
 		450ED62C1FB8620D008F2902 /* animation system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "animation system.hpp"; sourceTree = "<group>"; };
-		450ED6311FBA7EFE008F2902 /* exit entity.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "exit entity.yaml"; sourceTree = "<group>"; };
 		450ED6331FBA89B0008F2902 /* exit rendering system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "exit rendering system.cpp"; sourceTree = "<group>"; };
 		450ED6341FBA89B0008F2902 /* exit rendering system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "exit rendering system.hpp"; sourceTree = "<group>"; };
 		450ED6361FBA89C1008F2902 /* exit rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "exit rendering component.cpp"; sourceTree = "<group>"; };
@@ -288,8 +274,6 @@
 		4533A8BC1FC90EF50027B0FB /* take key system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "take key system.hpp"; sourceTree = "<group>"; };
 		4533A8BE1FC912B10027B0FB /* activate lock system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "activate lock system.cpp"; sourceTree = "<group>"; };
 		4533A8BF1FC912B10027B0FB /* activate lock system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "activate lock system.hpp"; sourceTree = "<group>"; };
-		4533A8C11FC915F00027B0FB /* key entity.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "key entity.yaml"; sourceTree = "<group>"; };
-		4533A8C31FC916740027B0FB /* lock entity.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "lock entity.yaml"; sourceTree = "<group>"; };
 		4533A8C51FC918580027B0FB /* key rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "key rendering component.cpp"; sourceTree = "<group>"; };
 		4533A8C61FC918580027B0FB /* key rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "key rendering component.hpp"; sourceTree = "<group>"; };
 		4533A8C81FC918920027B0FB /* lock rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "lock rendering component.cpp"; sourceTree = "<group>"; };
@@ -304,7 +288,6 @@
 		4533A8E41FCA499F0027B0FB /* shadow rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "shadow rendering component.hpp"; sourceTree = "<group>"; };
 		4533A8E61FCA4A3F0027B0FB /* shadow rendering system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "shadow rendering system.cpp"; sourceTree = "<group>"; };
 		4533A8E71FCA4A3F0027B0FB /* shadow rendering system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "shadow rendering system.hpp"; sourceTree = "<group>"; };
-		4533A8E91FCA4ED20027B0FB /* shadow entity.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "shadow entity.yaml"; sourceTree = "<group>"; };
 		4533A8FC1FCA69440027B0FB /* game screen.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "game screen.cpp"; sourceTree = "<group>"; };
 		4533A8FD1FCA69440027B0FB /* game screen.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "game screen.hpp"; sourceTree = "<group>"; };
 		4533A8FF1FCA91DC0027B0FB /* progress manager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "progress manager.cpp"; sourceTree = "<group>"; };
@@ -318,7 +301,6 @@
 		4533A90A1FCAB1E40027B0FB /* button element.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "button element.hpp"; sourceTree = "<group>"; };
 		4533A90C1FCAE2A10027B0FB /* screen.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = screen.cpp; sourceTree = "<group>"; };
 		4533A90D1FCAE2A10027B0FB /* screen.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = screen.hpp; sourceTree = "<group>"; };
-		456DF0B91FBD31BB003B3FD1 /* moving platform entity.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "moving platform entity.yaml"; sourceTree = "<group>"; };
 		456DF0BB1FBD32E7003B3FD1 /* moving platform rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "moving platform rendering component.cpp"; sourceTree = "<group>"; };
 		456DF0BC1FBD32E7003B3FD1 /* moving platform rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "moving platform rendering component.hpp"; sourceTree = "<group>"; };
 		456DF0BE1FBD336A003B3FD1 /* moving platform rendering system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "moving platform rendering system.cpp"; sourceTree = "<group>"; };
@@ -443,11 +425,8 @@
 		4583EE451FB1906E00AED27D /* rendering resources.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "rendering resources.cpp"; sourceTree = "<group>"; };
 		4583EE461FB1906E00AED27D /* rendering context.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "rendering context.hpp"; sourceTree = "<group>"; };
 		4583EE471FB1906E00AED27D /* rendering resources.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "rendering resources.hpp"; sourceTree = "<group>"; };
-		4583EE601FB190BB00AED27D /* yaml convert.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "yaml convert.hpp"; sourceTree = "<group>"; };
 		4583EE641FB190BC00AED27D /* nvg helper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "nvg helper.hpp"; sourceTree = "<group>"; };
 		4583EE661FB190BD00AED27D /* nvg helper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "nvg helper.cpp"; sourceTree = "<group>"; };
-		4583EE671FB190BD00AED27D /* yaml helper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "yaml helper.hpp"; sourceTree = "<group>"; };
-		4583EE681FB190BD00AED27D /* yaml helper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "yaml helper.cpp"; sourceTree = "<group>"; };
 		4583EE6D1FB190BE00AED27D /* b2 glm cast.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "b2 glm cast.hpp"; sourceTree = "<group>"; };
 		4583EE701FB190D300AED27D /* tinyfiledialogs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tinyfiledialogs.h; sourceTree = "<group>"; };
 		4583EE711FB190D300AED27D /* nanovg.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = nanovg.hpp; sourceTree = "<group>"; };
@@ -464,8 +443,6 @@
 		4583EE911FB19DE600AED27D /* collision categories.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "collision categories.hpp"; sourceTree = "<group>"; };
 		4583EE931FB19F2B00AED27D /* entity id.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "entity id.hpp"; sourceTree = "<group>"; };
 		4583EE941FB1A25300AED27D /* collision component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "collision component.hpp"; sourceTree = "<group>"; };
-		4583EE951FB1A2AD00AED27D /* physics file.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "physics file.cpp"; sourceTree = "<group>"; };
-		4583EE961FB1A2AE00AED27D /* physics file.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "physics file.hpp"; sourceTree = "<group>"; };
 		4583EE991FB1AADD00AED27D /* power component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "power component.hpp"; sourceTree = "<group>"; };
 		4583EE9A1FB1AB0600AED27D /* activation component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "activation component.hpp"; sourceTree = "<group>"; };
 		4583EE9B1FB1AC1600AED27D /* power system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "power system.cpp"; sourceTree = "<group>"; };
@@ -489,8 +466,6 @@
 		4584F4061FCBF1BD0062B93E /* element.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = element.hpp; sourceTree = "<group>"; };
 		4584F40D1FCCF61D0062B93E /* element manager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "element manager.cpp"; sourceTree = "<group>"; };
 		4584F40E1FCCF61D0062B93E /* element manager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "element manager.hpp"; sourceTree = "<group>"; };
-		4584F4121FCE37AB0062B93E /* level 5.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 5.yaml"; sourceTree = "<group>"; };
-		4584F4181FCFE0E60062B93E /* level 50.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 50.yaml"; sourceTree = "<group>"; };
 		4584F4211FD105940062B93E /* event helper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "event helper.cpp"; sourceTree = "<group>"; };
 		4584F4221FD105940062B93E /* event helper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "event helper.hpp"; sourceTree = "<group>"; };
 		4584F4241FD12CED0062B93E /* door body.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "door body.json"; sourceTree = "<group>"; };
@@ -523,10 +498,10 @@
 		4584F43F1FD12CF40062B93E /* text entity.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "text entity.json"; sourceTree = "<group>"; };
 		4584F4401FD130F50062B93E /* json helper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "json helper.cpp"; sourceTree = "<group>"; };
 		4584F4411FD130F50062B93E /* json helper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "json helper.hpp"; sourceTree = "<group>"; };
-		4584F4471FD13BA30062B93E /* new physics file.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "new physics file.cpp"; sourceTree = "<group>"; };
-		4584F4481FD13BA30062B93E /* new physics file.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "new physics file.hpp"; sourceTree = "<group>"; };
-		4584F44A1FD215340062B93E /* new level file.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "new level file.cpp"; sourceTree = "<group>"; };
-		4584F44B1FD215340062B93E /* new level file.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "new level file.hpp"; sourceTree = "<group>"; };
+		4584F4471FD13BA30062B93E /* physics file.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "physics file.cpp"; sourceTree = "<group>"; };
+		4584F4481FD13BA30062B93E /* physics file.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "physics file.hpp"; sourceTree = "<group>"; };
+		4584F44A1FD215340062B93E /* level file.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "level file.cpp"; sourceTree = "<group>"; };
+		4584F44B1FD215340062B93E /* level file.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "level file.hpp"; sourceTree = "<group>"; };
 		4591F0611FBFD0FD0075000D /* physics body entity id.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "physics body entity id.hpp"; sourceTree = "<group>"; };
 		4591F0621FBFE1420075000D /* power init.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "power init.cpp"; sourceTree = "<group>"; };
 		4591F0631FBFE1420075000D /* power init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "power init.hpp"; sourceTree = "<group>"; };
@@ -539,15 +514,10 @@
 		4591F0711FBFE8640075000D /* moving platform init.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "moving platform init.cpp"; sourceTree = "<group>"; };
 		4591F0721FBFE8640075000D /* moving platform init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "moving platform init.hpp"; sourceTree = "<group>"; };
 		4591F0741FBFEF4B0075000D /* component inits.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "component inits.hpp"; sourceTree = "<group>"; };
-		4591F0751FC000020075000D /* level 0.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 0.yaml"; sourceTree = "<group>"; };
-		4591F0771FC008120075000D /* level 1.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 1.yaml"; sourceTree = "<group>"; };
-		4591F0791FC00F930075000D /* level 2.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 2.yaml"; sourceTree = "<group>"; };
 		4591F07B1FC0118C0075000D /* exit component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "exit component.cpp"; sourceTree = "<group>"; };
 		4591F07C1FC0118C0075000D /* exit component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "exit component.hpp"; sourceTree = "<group>"; };
 		4591F07E1FC011E50075000D /* exit system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "exit system.cpp"; sourceTree = "<group>"; };
 		4591F07F1FC011E50075000D /* exit system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "exit system.hpp"; sourceTree = "<group>"; };
-		4591F0871FC145C00075000D /* laser emitter entity.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "laser emitter entity.yaml"; sourceTree = "<group>"; };
-		4591F0891FC145CC0075000D /* laser detector entity.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "laser detector entity.yaml"; sourceTree = "<group>"; };
 		4591F08B1FC152C60075000D /* laser detector component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "laser detector component.cpp"; sourceTree = "<group>"; };
 		4591F08C1FC152C60075000D /* laser detector component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "laser detector component.hpp"; sourceTree = "<group>"; };
 		4591F08E1FC1534D0075000D /* laser detector init.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "laser detector init.cpp"; sourceTree = "<group>"; };
@@ -573,11 +543,8 @@
 		4591F0AD1FC3F9780075000D /* text component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "text component.hpp"; sourceTree = "<group>"; };
 		4591F0AF1FC3F99B0075000D /* text init.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "text init.cpp"; sourceTree = "<group>"; };
 		4591F0B01FC3F99B0075000D /* text init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "text init.hpp"; sourceTree = "<group>"; };
-		4591F0B21FC3FCB10075000D /* text entity.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "text entity.yaml"; sourceTree = "<group>"; };
-		4591F0BC1FC40F370075000D /* level 3.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 3.yaml"; sourceTree = "<group>"; };
 		4591F0C11FC8036D0075000D /* render grid.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "render grid.cpp"; sourceTree = "<group>"; };
 		4591F0C21FC8036D0075000D /* render grid.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "render grid.hpp"; sourceTree = "<group>"; };
-		4591F0C41FC806390075000D /* level 4.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 4.yaml"; sourceTree = "<group>"; };
 		459796131FB2FD2C007A7432 /* camera constants.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "camera constants.hpp"; sourceTree = "<group>"; };
 		459796141FB2FD47007A7432 /* window constants.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "window constants.hpp"; sourceTree = "<group>"; };
 		459796151FB2FD6F007A7432 /* global flags.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "global flags.hpp"; sourceTree = "<group>"; };
@@ -586,15 +553,10 @@
 		4597961D1FB41C0C007A7432 /* power component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "power component.cpp"; sourceTree = "<group>"; };
 		4597961F1FB41C1A007A7432 /* activation component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "activation component.cpp"; sourceTree = "<group>"; };
 		459796211FB41C24007A7432 /* transform component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "transform component.cpp"; sourceTree = "<group>"; };
-		459796231FB56F0D007A7432 /* level file.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "level file.cpp"; sourceTree = "<group>"; };
-		459796241FB56F0D007A7432 /* level file.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "level file.hpp"; sourceTree = "<group>"; };
 		459796261FB58752007A7432 /* entity id map.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "entity id map.cpp"; sourceTree = "<group>"; };
 		459796271FB58752007A7432 /* entity id map.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "entity id map.hpp"; sourceTree = "<group>"; };
 		4597962C1FB65BBB007A7432 /* component list.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "component list.cpp"; sourceTree = "<group>"; };
 		4597962D1FB65BBB007A7432 /* component list.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "component list.hpp"; sourceTree = "<group>"; };
-		4597962F1FB67FE7007A7432 /* level 42.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 42.yaml"; sourceTree = "<group>"; };
-		459796351FB681FA007A7432 /* box entity.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "box entity.yaml"; sourceTree = "<group>"; };
-		459796371FB68209007A7432 /* box body.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "box body.yaml"; sourceTree = "<group>"; };
 		4597963A1FB6870A007A7432 /* box rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "box rendering component.cpp"; sourceTree = "<group>"; };
 		4597963B1FB6870A007A7432 /* box rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "box rendering component.hpp"; sourceTree = "<group>"; };
 		4597963E1FB687AC007A7432 /* box rendering system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "box rendering system.cpp"; sourceTree = "<group>"; };
@@ -948,9 +910,6 @@
 			isa = PBXGroup;
 			children = (
 				4583EE6D1FB190BE00AED27D /* b2 glm cast.hpp */,
-				4583EE601FB190BB00AED27D /* yaml convert.hpp */,
-				4583EE681FB190BD00AED27D /* yaml helper.cpp */,
-				4583EE671FB190BD00AED27D /* yaml helper.hpp */,
 				4533A9031FCA93780027B0FB /* dir.cpp */,
 				4533A9041FCA93780027B0FB /* dir.hpp */,
 				4584F4211FD105940062B93E /* event helper.cpp */,
@@ -1078,8 +1037,6 @@
 			children = (
 				4583EE8D1FB19C0300AED27D /* contact listener.cpp */,
 				4583EE8E1FB19C0300AED27D /* contact listener.hpp */,
-				4583EE951FB1A2AD00AED27D /* physics file.cpp */,
-				4583EE961FB1A2AE00AED27D /* physics file.hpp */,
 				452E108A1FB2D8BA0063114B /* object types.cpp */,
 				452E108B1FB2D8BA0063114B /* object types.hpp */,
 				4583EE901FB19DE600AED27D /* collision categories.cpp */,
@@ -1091,8 +1048,8 @@
 				450ED5F31FB7C945008F2902 /* debug draw.cpp */,
 				450ED5F41FB7C945008F2902 /* debug draw.hpp */,
 				4591F0611FBFD0FD0075000D /* physics body entity id.hpp */,
-				4584F4471FD13BA30062B93E /* new physics file.cpp */,
-				4584F4481FD13BA30062B93E /* new physics file.hpp */,
+				4584F4471FD13BA30062B93E /* physics file.cpp */,
+				4584F4481FD13BA30062B93E /* physics file.hpp */,
 			);
 			name = Physics;
 			sourceTree = "<group>";
@@ -1102,15 +1059,13 @@
 			children = (
 				459796261FB58752007A7432 /* entity id map.cpp */,
 				459796271FB58752007A7432 /* entity id map.hpp */,
-				459796231FB56F0D007A7432 /* level file.cpp */,
-				459796241FB56F0D007A7432 /* level file.hpp */,
 				456DF0C71FBEB610003B3FD1 /* level manager.cpp */,
 				456DF0C81FBEB610003B3FD1 /* level manager.hpp */,
 				4533A8FF1FCA91DC0027B0FB /* progress manager.cpp */,
 				4533A9001FCA91DD0027B0FB /* progress manager.hpp */,
 				4533A9021FCA92BF0027B0FB /* level.hpp */,
-				4584F44A1FD215340062B93E /* new level file.cpp */,
-				4584F44B1FD215340062B93E /* new level file.hpp */,
+				4584F44A1FD215340062B93E /* level file.cpp */,
+				4584F44B1FD215340062B93E /* level file.hpp */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -1135,14 +1090,6 @@
 				4584F4311FD12CF00062B93E /* level 5.json */,
 				4584F4331FD12CF10062B93E /* level 42.json */,
 				4584F43C1FD12CF30062B93E /* level 50.json */,
-				4597962F1FB67FE7007A7432 /* level 42.yaml */,
-				4591F0751FC000020075000D /* level 0.yaml */,
-				4591F0771FC008120075000D /* level 1.yaml */,
-				4591F0791FC00F930075000D /* level 2.yaml */,
-				4591F0BC1FC40F370075000D /* level 3.yaml */,
-				4591F0C41FC806390075000D /* level 4.yaml */,
-				4584F4121FCE37AB0062B93E /* level 5.yaml */,
-				4584F4181FCFE0E60062B93E /* level 50.yaml */,
 			);
 			name = Levels;
 			sourceTree = "<group>";
@@ -1164,20 +1111,6 @@
 				4584F42A1FD12CEF0062B93E /* shadow entity.json */,
 				4584F4321FD12CF10062B93E /* switch entity.json */,
 				4584F43F1FD12CF40062B93E /* text entity.json */,
-				459796351FB681FA007A7432 /* box entity.yaml */,
-				450ED5C71FB6A6B7008F2902 /* platform entity.yaml */,
-				450ED5CD1FB6AA31008F2902 /* player entity.yaml */,
-				450ED5ED1FB7C11B008F2902 /* button entity.yaml */,
-				450ED6011FB7EA23008F2902 /* door entity.yaml */,
-				450ED61A1FB80932008F2902 /* switch entity.yaml */,
-				450ED6311FBA7EFE008F2902 /* exit entity.yaml */,
-				456DF0B91FBD31BB003B3FD1 /* moving platform entity.yaml */,
-				4591F0871FC145C00075000D /* laser emitter entity.yaml */,
-				4591F0891FC145CC0075000D /* laser detector entity.yaml */,
-				4591F0B21FC3FCB10075000D /* text entity.yaml */,
-				4533A8C11FC915F00027B0FB /* key entity.yaml */,
-				4533A8C31FC916740027B0FB /* lock entity.yaml */,
-				4533A8E91FCA4ED20027B0FB /* shadow entity.yaml */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -1191,12 +1124,6 @@
 				4584F4291FD12CEF0062B93E /* platform body.json */,
 				4584F43B1FD12CF30062B93E /* player body.json */,
 				4584F4341FD12CF10062B93E /* switch body.json */,
-				459796371FB68209007A7432 /* box body.yaml */,
-				450ED5C91FB6A6C6008F2902 /* platform body.yaml */,
-				450ED5CB1FB6A927008F2902 /* player body.yaml */,
-				450ED5E41FB6CCAE008F2902 /* button body.yaml */,
-				450ED5FF1FB7E8D3008F2902 /* door body.yaml */,
-				450ED6181FB8089C008F2902 /* switch body.yaml */,
 			);
 			name = Bodies;
 			sourceTree = "<group>";
@@ -1336,37 +1263,37 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4584F44D1FD27A150062B93E /* box body.json in Resources */,
+				4584F44E1FD27A150062B93E /* button body.json in Resources */,
+				4584F44F1FD27A150062B93E /* door body.json in Resources */,
+				4584F4501FD27A150062B93E /* platform body.json in Resources */,
+				4584F4511FD27A150062B93E /* player body.json in Resources */,
+				4584F4521FD27A150062B93E /* switch body.json in Resources */,
+				4584F4531FD27A150062B93E /* box entity.json in Resources */,
+				4584F4541FD27A150062B93E /* button entity.json in Resources */,
+				4584F4551FD27A150062B93E /* door entity.json in Resources */,
+				4584F4561FD27A150062B93E /* exit entity.json in Resources */,
+				4584F4571FD27A150062B93E /* key entity.json in Resources */,
+				4584F4581FD27A150062B93E /* laser detector entity.json in Resources */,
+				4584F4591FD27A150062B93E /* laser emitter entity.json in Resources */,
+				4584F45A1FD27A150062B93E /* lock entity.json in Resources */,
+				4584F45B1FD27A150062B93E /* moving platform entity.json in Resources */,
+				4584F45C1FD27A150062B93E /* platform entity.json in Resources */,
+				4584F45D1FD27A150062B93E /* player entity.json in Resources */,
+				4584F45E1FD27A150062B93E /* shadow entity.json in Resources */,
+				4584F45F1FD27A150062B93E /* switch entity.json in Resources */,
+				4584F4601FD27A150062B93E /* text entity.json in Resources */,
+				4584F4611FD27A150062B93E /* level 0.json in Resources */,
+				4584F4621FD27A150062B93E /* level 1.json in Resources */,
+				4584F4631FD27A150062B93E /* level 2.json in Resources */,
+				4584F4641FD27A150062B93E /* level 3.json in Resources */,
+				4584F4651FD27A150062B93E /* level 4.json in Resources */,
+				4584F4661FD27A150062B93E /* level 5.json in Resources */,
+				4584F4671FD27A150062B93E /* level 42.json in Resources */,
+				4584F4681FD27A150062B93E /* level 50.json in Resources */,
 				4591F0AB1FC3F0F80075000D /* Arial.ttf in Resources */,
 				452E10941FB2F4930063114B /* Consolas.ttf in Resources */,
-				450ED5CA1FB6A6C6008F2902 /* platform body.yaml in Resources */,
-				4591F0B31FC3FCB10075000D /* text entity.yaml in Resources */,
-				4533A8C21FC915F00027B0FB /* key entity.yaml in Resources */,
-				450ED5C81FB6A6B7008F2902 /* platform entity.yaml in Resources */,
-				4591F0C51FC806390075000D /* level 4.yaml in Resources */,
-				4533A8C41FC916740027B0FB /* lock entity.yaml in Resources */,
-				4584F4191FCFE0E60062B93E /* level 50.yaml in Resources */,
 				4583ED5B1FB1841100AED27D /* Assets.xcassets in Resources */,
-				450ED5E51FB6CCAE008F2902 /* button body.yaml in Resources */,
-				4591F0761FC000020075000D /* level 0.yaml in Resources */,
-				450ED5CC1FB6A927008F2902 /* player body.yaml in Resources */,
-				450ED5EE1FB7C11B008F2902 /* button entity.yaml in Resources */,
-				459796361FB681FA007A7432 /* box entity.yaml in Resources */,
-				4591F0881FC145C00075000D /* laser emitter entity.yaml in Resources */,
-				4533A8EA1FCA4ED20027B0FB /* shadow entity.yaml in Resources */,
-				450ED6321FBA7EFE008F2902 /* exit entity.yaml in Resources */,
-				450ED5CE1FB6AA31008F2902 /* player entity.yaml in Resources */,
-				4591F07A1FC00F930075000D /* level 2.yaml in Resources */,
-				450ED6191FB8089C008F2902 /* switch body.yaml in Resources */,
-				450ED6001FB7E8D3008F2902 /* door body.yaml in Resources */,
-				459796301FB67FE7007A7432 /* level 42.yaml in Resources */,
-				456DF0BA1FBD31BB003B3FD1 /* moving platform entity.yaml in Resources */,
-				459796381FB68209007A7432 /* box body.yaml in Resources */,
-				4591F0BD1FC40F370075000D /* level 3.yaml in Resources */,
-				4591F08A1FC145CC0075000D /* laser detector entity.yaml in Resources */,
-				4584F4131FCE37AB0062B93E /* level 5.yaml in Resources */,
-				450ED61B1FB80932008F2902 /* switch entity.yaml in Resources */,
-				4591F0781FC008120075000D /* level 1.yaml in Resources */,
-				450ED6021FB7EA23008F2902 /* door entity.yaml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1384,7 +1311,6 @@
 				4533A9081FCAA2520027B0FB /* start menu screen.cpp in Sources */,
 				450ED62D1FB8620D008F2902 /* animation system.cpp in Sources */,
 				459796221FB41C24007A7432 /* transform component.cpp in Sources */,
-				4583EE971FB1A2AE00AED27D /* physics file.cpp in Sources */,
 				456DF0C31FBD625C003B3FD1 /* moving platform component.cpp in Sources */,
 				456DF0C01FBD336A003B3FD1 /* moving platform rendering system.cpp in Sources */,
 				450ED5E31FB6B8EF008F2902 /* platform rendering component.cpp in Sources */,
@@ -1400,7 +1326,6 @@
 				4533A9011FCA91DD0027B0FB /* progress manager.cpp in Sources */,
 				450ED5F81FB7D6E6008F2902 /* button rendering component.cpp in Sources */,
 				456DF0BD1FBD32E7003B3FD1 /* moving platform rendering component.cpp in Sources */,
-				4583EE781FB190F300AED27D /* yaml helper.cpp in Sources */,
 				4591F06A1FBFE51E0075000D /* transform init.cpp in Sources */,
 				450ED6081FB7F4F6008F2902 /* door rendering component.cpp in Sources */,
 				4583EEA61FB1B1E800AED27D /* button system.cpp in Sources */,
@@ -1419,7 +1344,7 @@
 				4591F0901FC1534D0075000D /* laser detector init.cpp in Sources */,
 				4533A8CA1FC918920027B0FB /* lock rendering component.cpp in Sources */,
 				4533A8B71FC90AFC0027B0FB /* lock init.cpp in Sources */,
-				4584F4491FD13BA30062B93E /* new physics file.cpp in Sources */,
+				4584F4491FD13BA30062B93E /* physics file.cpp in Sources */,
 				456DF0CD1FBFB519003B3FD1 /* physics init.cpp in Sources */,
 				4533A8C71FC918580027B0FB /* key rendering component.cpp in Sources */,
 				4583EE0A1FB18F7A00AED27D /* b2ChainAndPolygonContact.cpp in Sources */,
@@ -1465,7 +1390,7 @@
 				450ED60B1FB7F633008F2902 /* door rendering system.cpp in Sources */,
 				450ED5DA1FB6B3E3008F2902 /* player rendering system.cpp in Sources */,
 				456DF0C61FBD633C003B3FD1 /* moving platform system.cpp in Sources */,
-				4584F44C1FD215340062B93E /* new level file.cpp in Sources */,
+				4584F44C1FD215340062B93E /* level file.cpp in Sources */,
 				4591F0931FC1554A0075000D /* laser emitter rendering component.cpp in Sources */,
 				4591F0AE1FC3F9780075000D /* text component.cpp in Sources */,
 				4583EE1D1FB18F7A00AED27D /* b2PrismaticJoint.cpp in Sources */,
@@ -1508,7 +1433,6 @@
 				4583EE2C1FB18F7A00AED27D /* b2DynamicTree.cpp in Sources */,
 				4597962E1FB65BBB007A7432 /* component list.cpp in Sources */,
 				4583EE2D1FB18F7A00AED27D /* b2ChainShape.cpp in Sources */,
-				459796251FB56F0D007A7432 /* level file.cpp in Sources */,
 				4583EE2E1FB18F7A00AED27D /* b2EdgeShape.cpp in Sources */,
 				4591F09C1FC2B0E00075000D /* laser detector rendering system.cpp in Sources */,
 				450ED61E1FB80B0F008F2902 /* switch component.cpp in Sources */,

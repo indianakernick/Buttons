@@ -6,15 +6,11 @@
   "fixtures": [
     {
       "density": 10,
-      "shape": "main",
-      "user data": "Ground"
+      "user data": "Ground",
+      "shape": {
+        "half size": [0.5, 0.5],
+        "type": "polygon"
+      }
     }
-  ],
-  "shapes": {
-    "main": {
-      "half height": 0.5,
-      "half width": 0.5,
-      "type": "polygon"
-    }
-  }
+  ]
 }

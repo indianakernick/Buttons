@@ -17,7 +17,7 @@ void checkType(const json &node, const json::value_t type) {
   }
 }
 
-void from_json(const json &j, glm::vec2 &vec) {
+void glm::from_json(const json &j, glm::vec2 &vec) {
   vec.x = j.at(0).get<float>();
   vec.y = j.at(1).get<float>();
 }

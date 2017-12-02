@@ -2,7 +2,7 @@
 //  level file.hpp
 //  Buttons
 //
-//  Created by Indi Kernick on 10/11/17.
+//  Created by Indi Kernick on 2/12/17.
 //  Copyright © 2017 Indi Kernick. All rights reserved.
 //
 
@@ -14,6 +14,7 @@
 
 class CompInits;
 
-bool loadLevel(const std::string &, Registry &, const CompInits &);
+bool loadLevel(const std::string &, const CompInits &, Registry &);
+
 
 #endif

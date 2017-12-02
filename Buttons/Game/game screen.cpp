@@ -9,7 +9,7 @@
 #include "game screen.hpp"
 
 #include "systems.hpp"
-#include "yaml helper.hpp"
+#include "json helper.hpp"
 #include "render grid.hpp"
 #include "event helper.hpp"
 #include "global flags.hpp"
@@ -266,15 +266,14 @@ void GameScreen::printMessage(const std::string &message) {
   transform.pos = {0.0f, 8.0f};
   transform.scale = {0.05f, 0.05f};
   TextRendering &textRendering = registry.assign<TextRendering>(entity);
-  YAML::Node renderingNode(YAML::NodeType::Map);
-  renderingNode["font"] = "Arial.ttf";
-  renderingNode["color"] = YAML::Node(YAML::NodeType::Sequence);
-  renderingNode["color"].push_back(1.0f);
-  renderingNode["color"].push_back(0.0f);
-  renderingNode["color"].push_back(0.0f);
-  renderingNode["hori align"] = "center";
-  renderingNode["vert align"] = "middle";
-  renderingNode["size"] = "24";
+  // Magic?
+  const json renderingNode = {
+    {"font", "Arial.ttf"},
+    {"color", {1.0f, 0.0f, 0.0f}},
+    {"hori align", "center"},
+    {"vert align", "middle"},
+    {"size", 24.0f}
+  };
   compInits.init(textRendering, renderingNode, EntityIDmap(), entity);
 }
 
