@@ -19,6 +19,19 @@ void laserEmitterRenderingSystem(Registry &registry, NVGcontext *const ctx) {
   for (const EntityID entity : view) {
     nvgSave(ctx);
     
+    if (view.get<Activation>(entity).state == Activation::State::ACTIVE) {
+      const PhysicsRayCast &rayCast = view.get<PhysicsRayCast>(entity);
+      const glm::vec2 start = castToGLM(rayCast.start);
+      const glm::vec2 end = castToGLM(rayCast.start + rayCast.closestFraction * (rayCast.end - rayCast.start));
+      
+      nvgBeginPath(ctx);
+      nvgStrokeWidth(ctx, 0.1f);
+      nvgStrokeColor(ctx, nvgRGBf(1.0f, 0.0f, 0.0f));
+      nvgMoveTo(ctx, start);
+      nvgLineTo(ctx, end);
+      nvgStroke(ctx);
+    }
+    
     nvgTransform(ctx, getMat3(view.get<Transform>(entity)));
     
     nvgBeginPath(ctx);
@@ -35,18 +48,5 @@ void laserEmitterRenderingSystem(Registry &registry, NVGcontext *const ctx) {
     nvgFill(ctx);
     
     nvgRestore(ctx);
-    
-    if (view.get<Activation>(entity).state == Activation::State::ACTIVE) {
-      const PhysicsRayCast &rayCast = view.get<PhysicsRayCast>(entity);
-      const glm::vec2 start = castToGLM(rayCast.start);
-      const glm::vec2 end = castToGLM(rayCast.start + rayCast.closestFraction * (rayCast.end - rayCast.start));
-      
-      nvgBeginPath(ctx);
-      nvgStrokeWidth(ctx, 0.1f);
-      nvgStrokeColor(ctx, nvgRGBf(1.0f, 0.0f, 0.0f));
-      nvgMoveTo(ctx, start);
-      nvgLineTo(ctx, end);
-      nvgStroke(ctx);
-    }
   }
 }

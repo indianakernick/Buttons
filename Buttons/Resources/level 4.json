@@ -86,7 +86,7 @@
     "components": {
       "PhysicsRayCast": {
         "end": [15, 3],
-        "start": [-14, 3]
+        "start": [-15, 3]
       },
       "PowerInput": {
         "on": true
