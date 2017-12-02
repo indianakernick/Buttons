@@ -60,9 +60,7 @@
   {
     "file": "text entity.json",
     "components": {
-      "Text": {
-        "text": "Press A and D or left and right to move"
-      },
+      "Text": "Press A and D or left and right to move",
       "Transform": {
         "pos": [0, 2]
       }

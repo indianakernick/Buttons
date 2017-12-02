@@ -110,9 +110,7 @@
   {
     "file": "text entity.json",
     "components": {
-      "Text": {
-        "text": "Press W or up to jump"
-      },
+      "Text": "Press W or up to jump",
       "Transform": {
         "pos": [0, 0]
       }

@@ -189,9 +189,7 @@
   {
     "file": "text entity.json",
     "components": {
-      "Text": {
-        "text": "Press R to reload the level"
-      },
+      "Text": "Press R to reload the level",
       "Transform": {
         "pos": [0, 4]
       }

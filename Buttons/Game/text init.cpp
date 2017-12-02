@@ -9,5 +9,5 @@
 #include "text init.hpp"
 
 void TextInit::init(Text &text, const json &node) {
-  getOptional(text.text, node, "text");
+  text.text = node.get_ref<const std::string &>();
 }

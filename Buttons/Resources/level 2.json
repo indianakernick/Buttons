@@ -84,9 +84,7 @@
   {
     "file": "text entity.json",
     "components": {
-      "Text": {
-        "text": "Press space to toggle switches"
-      },
+      "Text": "Press space to toggle switches",
       "Transform": {
         "pos": [0, 2]
       }
