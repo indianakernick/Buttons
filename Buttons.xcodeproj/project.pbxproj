@@ -428,9 +428,7 @@
 		4583EE641FB190BC00AED27D /* nvg helper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "nvg helper.hpp"; sourceTree = "<group>"; };
 		4583EE661FB190BD00AED27D /* nvg helper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "nvg helper.cpp"; sourceTree = "<group>"; };
 		4583EE6D1FB190BE00AED27D /* b2 glm cast.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "b2 glm cast.hpp"; sourceTree = "<group>"; };
-		4583EE701FB190D300AED27D /* tinyfiledialogs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tinyfiledialogs.h; sourceTree = "<group>"; };
 		4583EE711FB190D300AED27D /* nanovg.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = nanovg.hpp; sourceTree = "<group>"; };
-		4583EE721FB190D300AED27D /* stb_image_write.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stb_image_write.h; sourceTree = "<group>"; };
 		4583EE831FB1967700AED27D /* app.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = app.cpp; sourceTree = "<group>"; };
 		4583EE841FB1967700AED27D /* app.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = app.hpp; sourceTree = "<group>"; };
 		4583EE861FB1978500AED27D /* physics component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "physics component.hpp"; sourceTree = "<group>"; };
@@ -924,8 +922,6 @@
 			isa = PBXGroup;
 			children = (
 				4583EE711FB190D300AED27D /* nanovg.hpp */,
-				4583EE721FB190D300AED27D /* stb_image_write.h */,
-				4583EE701FB190D300AED27D /* tinyfiledialogs.h */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
