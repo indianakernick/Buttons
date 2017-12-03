@@ -167,7 +167,8 @@
 		4584F4671FD27A150062B93E /* level 42.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F4331FD12CF10062B93E /* level 42.json */; };
 		4584F4681FD27A150062B93E /* level 50.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F43C1FD12CF30062B93E /* level 50.json */; };
 		4584F46C1FD289E30062B93E /* credits text entity.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F46B1FD289E30062B93E /* credits text entity.json */; };
-		4584F46E1FD34D440062B93E /* level 6.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F46D1FD34D440062B93E /* level 6.json */; };
+		4584F46E1FD34D440062B93E /* level 10.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F46D1FD34D440062B93E /* level 10.json */; };
+		4584F4701FD38E0A0062B93E /* level 6.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F46F1FD38E0A0062B93E /* level 6.json */; };
 		4591F0641FBFE1420075000D /* power init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0621FBFE1420075000D /* power init.cpp */; };
 		4591F0671FBFE44B0075000D /* activation init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0651FBFE44B0075000D /* activation init.cpp */; };
 		4591F06A1FBFE51E0075000D /* transform init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0681FBFE51E0075000D /* transform init.cpp */; };
@@ -502,7 +503,8 @@
 		4584F44A1FD215340062B93E /* level file.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "level file.cpp"; sourceTree = "<group>"; };
 		4584F44B1FD215340062B93E /* level file.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "level file.hpp"; sourceTree = "<group>"; };
 		4584F46B1FD289E30062B93E /* credits text entity.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "credits text entity.json"; sourceTree = "<group>"; };
-		4584F46D1FD34D440062B93E /* level 6.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "level 6.json"; sourceTree = "<group>"; };
+		4584F46D1FD34D440062B93E /* level 10.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "level 10.json"; sourceTree = "<group>"; };
+		4584F46F1FD38E0A0062B93E /* level 6.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "level 6.json"; sourceTree = "<group>"; };
 		4591F0611FBFD0FD0075000D /* physics body entity id.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "physics body entity id.hpp"; sourceTree = "<group>"; };
 		4591F0621FBFE1420075000D /* power init.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "power init.cpp"; sourceTree = "<group>"; };
 		4591F0631FBFE1420075000D /* power init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "power init.hpp"; sourceTree = "<group>"; };
@@ -1086,7 +1088,8 @@
 				4584F4391FD12CF20062B93E /* level 3.json */,
 				4584F4261FD12CEE0062B93E /* level 4.json */,
 				4584F4311FD12CF00062B93E /* level 5.json */,
-				4584F46D1FD34D440062B93E /* level 6.json */,
+				4584F46F1FD38E0A0062B93E /* level 6.json */,
+				4584F46D1FD34D440062B93E /* level 10.json */,
 				4584F4331FD12CF10062B93E /* level 42.json */,
 				4584F43C1FD12CF30062B93E /* level 50.json */,
 			);
@@ -1271,7 +1274,7 @@
 				4584F4521FD27A150062B93E /* sensor body.json in Resources */,
 				4584F4531FD27A150062B93E /* box entity.json in Resources */,
 				4584F4541FD27A150062B93E /* button entity.json in Resources */,
-				4584F46E1FD34D440062B93E /* level 6.json in Resources */,
+				4584F46E1FD34D440062B93E /* level 10.json in Resources */,
 				4584F4551FD27A150062B93E /* door entity.json in Resources */,
 				4584F4561FD27A150062B93E /* exit entity.json in Resources */,
 				4584F4571FD27A150062B93E /* key entity.json in Resources */,
@@ -1291,6 +1294,7 @@
 				4584F4641FD27A150062B93E /* level 3.json in Resources */,
 				4584F4651FD27A150062B93E /* level 4.json in Resources */,
 				4584F4661FD27A150062B93E /* level 5.json in Resources */,
+				4584F4701FD38E0A0062B93E /* level 6.json in Resources */,
 				4584F4671FD27A150062B93E /* level 42.json in Resources */,
 				4584F4681FD27A150062B93E /* level 50.json in Resources */,
 				4591F0AB1FC3F0F80075000D /* Arial.ttf in Resources */,
