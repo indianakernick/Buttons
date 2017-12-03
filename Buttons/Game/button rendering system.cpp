@@ -14,7 +14,8 @@
 #include "button rendering component.hpp"
 
 namespace {
-  constexpr float BASE_WIDTH = 1.4f;
+  constexpr float TOP_WIDTH = 0.75f;
+  constexpr float TOP_HEIGHT = 0.25f;
   constexpr float BASE_HEIGHT = 0.15f;
 }
 
@@ -31,14 +32,14 @@ void buttonRenderingSystem(Registry &registry, NVGcontext *const ctx) {
     
     nvgBeginPath(ctx);
     nvgFillColor(ctx, nvgRGBf(1.0f, 0.0f, 0.0f));
-    nvgRect(ctx, 0.0f, 0.0f, 1.0f, 0.25f);
+    nvgRect(ctx, (1.0f - TOP_WIDTH) / 2.0f, 0.0f, TOP_WIDTH, TOP_HEIGHT);
     nvgFill(ctx);
     
     nvgRestore(ctx);
     
     nvgBeginPath(ctx);
     nvgFillColor(ctx, nvgRGBf(0.6f, 0.6f, 0.6f));
-    nvgRect(ctx, (-BASE_WIDTH + 1.0f) / 2.0f, 0.0f, BASE_WIDTH, -BASE_HEIGHT);
+    nvgRect(ctx, 0.0f, 0.0f, 1.0f, -BASE_HEIGHT);
     nvgFill(ctx);
     
     nvgRestore(ctx);
