@@ -1,0 +1,102 @@
+[
+  {
+    "file": "platform entity.json",
+    "components": {
+      "PhysicsBody": {
+        "body": "platform body.json",
+        "pos": [-16, -9],
+        "scale": [32, 1]
+      }
+    }
+  },
+  {
+    "file": "platform entity.json",
+    "components": {
+      "PhysicsBody": {
+        "body": "platform body.json",
+        "pos": [-16, 8],
+        "scale": [32, 1]
+      }
+    }
+  },
+  {
+    "file": "platform entity.json",
+    "components": {
+      "PhysicsBody": {
+        "body": "platform body.json",
+        "pos": [-16, -8],
+        "scale": [1, 16]
+      }
+    }
+  },
+  {
+    "file": "platform entity.json",
+    "components": {
+      "PhysicsBody": {
+        "body": "platform body.json",
+        "pos": [15, -8],
+        "scale": [1, 16]
+      }
+    }
+  },
+  {
+    "file": "platform entity.json",
+    "components": {
+      "PhysicsBody": {
+        "body": "platform body.json",
+        "pos": [-1, -7],
+        "scale": [16, 1]
+      }
+    }
+  },
+  {
+    "file": "platform entity.json",
+    "components": {
+      "PhysicsBody": {
+        "body": "platform body.json",
+        "pos": [12, 6],
+        "scale": [3, 1]
+      }
+    }
+  },
+  {
+    "file": "platform entity.json",
+    "components": {
+      "PhysicsBody": {
+        "body": "platform body.json",
+        "pos": [-1, -8],
+        "scale": [1, 1]
+      }
+    }
+  },
+  {
+    "file": "platform entity.json",
+    "components": {
+      "PhysicsBody": {
+        "body": "platform body.json",
+        "pos": [3, -8],
+        "scale": [1, 1]
+      }
+    }
+  },
+  {
+    "file": "platform entity.json",
+    "components": {
+      "PhysicsBody": {
+        "body": "platform body.json",
+        "pos": [7, -8],
+        "scale": [1, 1]
+      }
+    }
+  },
+  {
+    "file": "platform entity.json",
+    "components": {
+      "PhysicsBody": {
+        "body": "platform body.json",
+        "pos": [11, -8],
+        "scale": [1, 1]
+      }
+    }
+  }
+]
