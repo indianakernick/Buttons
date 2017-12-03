@@ -64,7 +64,7 @@
     "components": {
       "PhysicsBody": {
         "body": "player body.json",
-        "pos": [-0.5, -4.5]
+        "pos": [-1, -5]
       }
     }
   },
@@ -82,7 +82,7 @@
     "components": {
       "PhysicsBody": {
         "body": "box body.json",
-        "pos": [-13.5, 6.5],
+        "pos": [-15, 5],
         "scale": [3, 3]
       }
     }

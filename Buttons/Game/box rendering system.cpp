@@ -27,24 +27,20 @@ void boxRenderingSystem(Registry &registry, NVGcontext *const ctx) {
     nvgSave(ctx);
     
     nvgTransform(ctx, getMat3(view.get<Transform>(entity)));
-    nvgScissor(ctx, -0.5f, -0.5f, 1.0f, 1.0f);
+    nvgScissor(ctx, 0.0f, 0.0f, 1.0f, 1.0f);
     
     nvgBeginPath(ctx);
     nvgStrokeWidth(ctx, STROKE_WIDTH);
-    nvgMoveTo(ctx, -0.5f, -0.5f);
-    nvgLineTo(ctx, 0.5f, -0.5f);
-    nvgLineTo(ctx, 0.5f, 0.5f);
-    nvgLineTo(ctx, -0.5f, 0.5f);
-    nvgClosePath(ctx);
+    nvgRect(ctx, 0.0f, 0.0f, 1.0f, 1.0f);
     nvgFill(ctx);
     nvgStroke(ctx);
     
     nvgBeginPath(ctx);
     nvgStrokeWidth(ctx, STROKE_WIDTH / 2.0f);
-    nvgMoveTo(ctx, -0.5f, -0.5f);
-    nvgLineTo(ctx, 0.5f, 0.5f);
-    nvgMoveTo(ctx, 0.5f, -0.5f);
-    nvgLineTo(ctx, -0.5f, 0.5f);
+    nvgMoveTo(ctx, 0.0f, 0.0f);
+    nvgLineTo(ctx, 1.0f, 1.0f);
+    nvgMoveTo(ctx, 1, 0.0f);
+    nvgLineTo(ctx, 0.0f, 1.0f);
     nvgStroke(ctx);
     
     nvgRestore(ctx);

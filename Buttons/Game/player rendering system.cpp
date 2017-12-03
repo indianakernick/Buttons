@@ -21,7 +21,7 @@ void playerRenderingSystem(Registry &registry, NVGcontext *const ctx) {
     
     nvgBeginPath(ctx);
     nvgFillColor(ctx, nvgRGBf(1.0f, 1.0f, 1.0f));
-    nvgCircle(ctx, 0.0f, 0.0f, 0.5f);
+    nvgCircle(ctx, 0.5f, 0.5f, 0.5f);
     nvgFill(ctx);
     
     nvgRestore(ctx);
