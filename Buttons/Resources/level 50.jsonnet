@@ -1,52 +1,11 @@
+local e = import "entities.jsonnet";
+local headSize = 128;
+local bodySize = 64;
+
 [
-  {
-    "components": {
-      "Text": "Congratulations",
-      "TextRendering": {
-        "font": "Arial.ttf",
-        "hori align": "center",
-        "size": 128,
-        "vert align": "middle"
-      },
-      "Transform": {
-        "pos": [0, 5]
-      }
-    }
-  },
-  {
-    "file": "credits text entity.json",
-    "components": {
-      "Text": "You have just completed Buttons",
-      "Transform": {
-        "pos": [0, 2]
-      }
-    }
-  },
-  {
-    "file": "credits text entity.json",
-    "components": {
-      "Text": "Now you can accomplish anything",
-      "Transform": {
-        "pos": [0, 0.5]
-      }
-    }
-  },
-  {
-    "file": "credits text entity.json",
-    "components": {
-      "Text": "A game by:",
-      "Transform": {
-        "pos": [0, -2]
-      }
-    }
-  },
-  {
-    "file": "credits text entity.json",
-    "components": {
-      "Text": "Indi Kernick",
-      "Transform": {
-        "pos": [0, -3.5]
-      }
-    }
-  }
+  e.text.makePosPointsText([0, 5], headSize, "Congratulations"),
+  e.text.makePosPointsText([0, 2], bodySize, "You have just completed Buttons"),
+  e.text.makePosPointsText([0, 0.5], bodySize, "Now you can accomplish anything"),
+  e.text.makePosPointsText([0, -2], bodySize, "A game by:"),
+  e.text.makePosPointsText([0, -3.5], bodySize, "Indi Kernick")
 ]
