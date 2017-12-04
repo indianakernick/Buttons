@@ -50,6 +50,7 @@ local e = import "entities.jsonnet";
   }),
   e.makeLaserEmitter({
     id: 4,
+    "on": true,
     start: [-15, 3],
     end: [15, 3],
     rotation: -90

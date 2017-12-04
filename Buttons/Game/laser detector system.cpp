@@ -14,12 +14,12 @@
 
 void laserDetectorSystem(Registry &registry) {
   auto detectors = registry.view<Activation, LaserDetector>();
-  const auto emitters = registry.view<PhysicsRayCast>();
+  const auto emitters = registry.view<PhysicsRayCast, Activation>();
   for (const EntityID entity : detectors) {
     const EntityID emitter = detectors.get<LaserDetector>(entity).emitter;
-    const float fraction = emitters.get(emitter).closestFraction;
+    const float fraction = emitters.get<PhysicsRayCast>(emitter).closestFraction;
     Activation::State &activeState = detectors.get<Activation>(entity).state;
-    if (fraction >= 0.99f) {
+    if (isActive(emitters.get<Activation>(emitter).state) && fraction >= 0.99f) {
       activate(activeState);
     } else {
       deactivate(activeState);
