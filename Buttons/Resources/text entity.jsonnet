@@ -9,7 +9,8 @@
       },
       Transform: {
         pos: pos_
-      }
+      },
+      Text: text_
     }
   },
   

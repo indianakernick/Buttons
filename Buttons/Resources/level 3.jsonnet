@@ -7,7 +7,9 @@ local e = import "entities.jsonnet";
   e.platform.makePosSize([15, -2], [1, 4]),
   e.player.makePos([-10, -2]),
   e.exit.makePos([14, -2]),
-  e.box.makePos([-13, -2]),
+  e.makeBox({
+    pos: [-13, -2]
+  }),
   e.button.makeIdPos(0, [-2, -2]),
   e.switch.makeIdPos(1, [1, -2]),
   e.door.makeInPosSizeRot(1, [5.5, 2], [1, 4], 180),

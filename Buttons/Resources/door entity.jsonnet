@@ -18,12 +18,16 @@
   
   makeInPosSizeRot(in_, pos_, size_, rotation_)::
     self.makePosSizeRot(pos_, size_, rotation_) + {
-      components: super.components + {
+      components +: {
         PowerInput: {
           "in": in_
         }
       }
     },
   
-  makeInPosSize(in_, pos_, size_):: self.makeInPosSizeRot(in_, pos_, size_, 0)
+  makeInPosSize(in_, pos_, size_)::
+    self.makeInPosSizeRot(in_, pos_, size_, 0),
+  
+  makeInPos(in_, pos_)::
+    self.makeInPosSize(in_, pos_, [1, 1])
 }

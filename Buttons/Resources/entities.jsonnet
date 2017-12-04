@@ -1,5 +1,5 @@
 {
-  box:: import "box entity.jsonnet",
+  makeBox:: import "box entity.jsonnet",
   button:: import "button entity.jsonnet",
   door:: import "door entity.jsonnet",
   exit:: import "exit entity.jsonnet",
