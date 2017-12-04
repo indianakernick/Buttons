@@ -23,7 +23,12 @@ local e = import "entities.jsonnet";
   e.makeExit({
     pos: [14, -1]
   }),
-  e.door.makeInPosSizeRot(0, [5.5, 1], [1, 2], 180),
+  e.makeDoor({
+    "in": 0,
+    pos: [5.5, 1],
+    size: [1, 2],
+    rotation: 180
+  }),
   e.makeSwitch({
     id: 0,
     pos: [-5, -1]

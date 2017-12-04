@@ -32,63 +32,34 @@ std.flattenArrays([[
   e.makeExit({
     pos: [14, -5]
   }),
-  e.door.makeInPosSize(5, [9.5, -5], [1, 4]),
+  e.makeDoor({
+    "in": 5,
+    pos: [9.5, -5],
+    size: [1, 4]
+  }),
   e.laser_emitter.makeIdStartEndRot(4, [-15, 3], [15, 3], -90),
   e.laser_detector.makeIdEmitterPosRot(5, 4, [15, 3], 90),
-
-  {
-    "file": "door entity.json",
-    "components": {
-      "MultiPowerInput": {
-        "in": [0, 1],
-        "operator": "or"
-      },
-      "PhysicsBody": {
-        "body": "door body.json",
-        "pos": [-10.5, 1],
-        "scale": [1, 4]
-      }
-    }
-  },
-  {
-    "file": "door entity.json",
-    "components": {
-      "MultiPowerInput": {
-        "in": [0, 2],
-        "operator": "xor"
-      },
-      "PhysicsBody": {
-        "body": "door body.json",
-        "pos": [-3.5, 1],
-        "scale": [1, 4]
-      }
-    }
-  },
-  {
-    "file": "door entity.json",
-    "components": {
-      "PhysicsBody": {
-        "body": "door body.json",
-        "pos": [3.5, 1],
-        "scale": [1, 4]
-      },
-      "PowerInput": {
-        "in": 2
-      }
-    }
-  },
-  {
-    "file": "door entity.json",
-    "components": {
-      "PhysicsBody": {
-        "body": "door body.json",
-        "pos": [10.5, 1],
-        "scale": [1, 4]
-      },
-      "PowerInput": {
-        "in": 3,
-        "invert": true
-      }
-    }
-  }
+  e.makeDoor({
+    "in": [0, 1],
+    operator: "or",
+    pos: [-10.5, 1],
+    size: [1, 4]
+  }),
+  e.makeDoor({
+    "in": [0, 2],
+    operator: "xor",
+    pos: [-3.5, 1],
+    size: [1, 4]
+  }),
+  e.makeDoor({
+    "in": 2,
+    pos: [3.5, 1],
+    size: [1, 4]
+  }),
+  e.makeDoor({
+    "in": 3,
+    operator: "not",
+    pos: [10.5, 1],
+    size: [1, 4]
+  })
 ]])

@@ -1,19 +1,17 @@
-{
-  makeIdIndexPos(id_, index_, pos_):: {
-    id: id_,
-    components: {
-      Activation: {},
-      Collision: {},
-      LockRendering: {},
-      PowerOutput: {},
-      Transform: {},
-      PhysicsBody: {
-        body: "sensor body.json",
-        pos: pos_
-      },
-      Lock: {
-        index: index_
-      }
+function(params) {
+  id: params.id,
+  components: {
+    Activation: {},
+    Collision: {},
+    LockRendering: {},
+    PowerOutput: {},
+    Transform: {},
+    PhysicsBody: {
+      body: "sensor body.json",
+      [if "pos" in params then "pos"]: params.pos
+    },
+    Lock: {
+      [if "index" in params then "index"]: params.index
     }
   }
 }

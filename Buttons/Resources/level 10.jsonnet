@@ -1,5 +1,5 @@
 local e = import "entities.jsonnet";
-//e\.platform\.makePosSize\((\[[-.\d]+, [-.\d]+\]), (\[[-.\d]+, [-.\d]+\])\)
+
 [
   e.makePlatform({
     pos: [-16, -9],
@@ -22,8 +22,15 @@ local e = import "entities.jsonnet";
   e.makeExit({
     pos: [-8, -8]
   }),
-  e.lock.makeIdIndexPos(0, 0, [-11, -8]),
-  e.door.makeInPos(0, [-8.5, -8]),
+  e.makeLock({
+    id: 0,
+    index: 0,
+    pos: [-11, -8]
+  }),
+  e.makeDoor({
+    "in": 0,
+    pos: [-8.5, -8]
+  }),
   e.makeSwitch({
     id: 10,
     pos: [-13, -8]
@@ -59,7 +66,17 @@ local e = import "entities.jsonnet";
     pos: [-11, 1],
     size: [3, 1]
   }),
-  e.key.makeIndexPos(0, [-10, 0]),
-  e.lock.makeIdIndexPos(1, 1, [-13, 0]),
-  e.door.makeInPos(1, [-10.5, 0])
+  e.makeKey({
+    index: 0,
+    pos: [-10, 0]
+  }),
+  e.makeLock({
+    id: 1,
+    index: 1,
+    pos: [-13, 0]
+  }),
+  e.makeDoor({
+    "in": 1,
+    pos: [-10.5, 0]
+  })
 ]

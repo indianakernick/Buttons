@@ -34,6 +34,16 @@ local e = import "entities.jsonnet";
     id: 1,
     pos: [1, -2]
   }),
-  e.door.makeInPosSizeRot(1, [5.5, 2], [1, 4], 180),
-  e.door.makeInPosSizeRot(0, [8.5, 2], [1, 4], 180)
+  e.makeDoor({
+    "in": 1,
+    pos: [5.5, 2],
+    size: [1, 4],
+    rotation: 180
+  }),
+  e.makeDoor({
+    "in": 0,
+    pos: [8.5, 2],
+    size: [1, 4],
+    rotation: 180
+  })
 ]
