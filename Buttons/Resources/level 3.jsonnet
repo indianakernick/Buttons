@@ -1,3 +1,5 @@
+local box = import "box entity.jsonnet";
+
 [
   {
     "file": "platform entity.json",
@@ -57,15 +59,7 @@
       }
     }
   },
-  {
-    "file": "box entity.json",
-    "components": {
-      "PhysicsBody": {
-        "body": "box body.json",
-        "pos": [-13, -2]
-      }
-    }
-  },
+  box.make([-13, -2]),
   {
     "id": 0,
     "file": "button entity.json",
