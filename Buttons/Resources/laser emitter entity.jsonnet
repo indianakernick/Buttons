@@ -10,9 +10,8 @@ function(params) {
       start: params.start,
       end: params.end
     },
-    Transform: {
+    Transform: common.transformParams(params) + {
       pos: params.start,
-      [if "rotation" in params then "rotation"]: params.rotation
     }
   }
 }

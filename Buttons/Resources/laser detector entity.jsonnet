@@ -1,13 +1,12 @@
+local common = import "common components.jsonnet";
+
 function(params) {
   [if "id" in params then "id"]: params.id,
   components: {
     Activation: {},
     LaserDetectorRendering: {},
     PowerOutput: {},
-    Transform: {
-      [if "pos" in params then "pos"]: params.pos,
-      [if "rotation" in params then "rotation"]: params.rotation
-    },
+    Transform: common.transformParams(params),
     LaserDetector: {
       emitter: params.emitter
     }

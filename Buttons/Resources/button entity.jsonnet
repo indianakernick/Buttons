@@ -1,3 +1,5 @@
+local common = import "common components.jsonnet";
+
 function(params) {
   [if "id" in params then "id"]: params.id,
   components: {
@@ -9,9 +11,8 @@ function(params) {
     Collision: {},
     PowerOutput: {},
     Transform: {},
-    PhysicsBody: {
-      body: "button body.json",
-      [if "pos" in params then "pos"]: params.pos
+    PhysicsBody: common.transformParams(params) + {
+      body: "button body.json"
     }
   }
 }
