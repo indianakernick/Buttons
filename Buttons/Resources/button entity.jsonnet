@@ -1,6 +1,5 @@
 function(params) {
-  // The id parameter is not optional
-  id: params.id,
+  [if "id" in params then "id"]: params.id,
   components: {
     Activation: {
       speed: 8

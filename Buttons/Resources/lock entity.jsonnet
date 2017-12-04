@@ -1,5 +1,5 @@
 function(params) {
-  id: params.id,
+  [if "id" in params then "id"]: params.id,
   components: {
     Activation: {},
     Collision: {},
