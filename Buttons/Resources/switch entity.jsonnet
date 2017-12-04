@@ -1,19 +1,17 @@
-{
-  makeIdPos(id_, pos_):: {
-    id: id_,
-    components: {
-      Activation: {
-        speed: 4
-      },
-      Collision: {},
-      PowerOutput: {},
-      Switch: {},
-      SwitchRendering: {},
-      Transform: {},
-      PhysicsBody: {
-        body: "sensor body.json",
-        pos: pos_
-      }
+function(params) {
+  id: params.id,
+  components: {
+    Activation: {
+      speed: 4
+    },
+    Collision: {},
+    PowerOutput: {},
+    Switch: {},
+    SwitchRendering: {},
+    Transform: {},
+    PhysicsBody: {
+      body: "sensor body.json",
+      [if "pos" in params then "pos"]: params.pos
     }
   }
 }

@@ -42,5 +42,8 @@ local e = import "entities.jsonnet";
   e.makeExit({
     pos: [14, -6]
   }),
-  e.text.makePosText([0, 0], "Press W or up to jump")
+  e.makeText({
+    pos: [0, 0],
+    text: "Press W or up to jump"
+  })
 ]

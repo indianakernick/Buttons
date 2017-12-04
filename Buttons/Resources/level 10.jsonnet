@@ -24,7 +24,10 @@ local e = import "entities.jsonnet";
   }),
   e.lock.makeIdIndexPos(0, 0, [-11, -8]),
   e.door.makeInPos(0, [-8.5, -8]),
-  e.switch.makeIdPos(10, [-13, -8]),
+  e.makeSwitch({
+    id: 10,
+    pos: [-13, -8]
+  }),
  
   {
     "file": "moving platform entity.json",

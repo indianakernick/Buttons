@@ -10,7 +10,7 @@
   moving_platform:: import "moving platform entity.jsonnet",
   makePlatform:: import "platform entity.jsonnet",
   makePlayer:: import "player entity.jsonnet",
-  shadow:: import "shadow entity.jsonnet",
-  switch:: import "switch entity.jsonnet",
-  text:: import "text entity.jsonnet",
+  makeShadow:: import "shadow entity.jsonnet",
+  makeSwitch:: import "switch entity.jsonnet",
+  makeText:: import "text entity.jsonnet",
 }

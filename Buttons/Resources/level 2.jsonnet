@@ -24,6 +24,12 @@ local e = import "entities.jsonnet";
     pos: [14, -1]
   }),
   e.door.makeInPosSizeRot(0, [5.5, 1], [1, 2], 180),
-  e.switch.makeIdPos(0, [-5, -1]),
-  e.text.makePosText([0, 2], "Press space to toggle switches")
+  e.makeSwitch({
+    id: 0,
+    pos: [-5, -1]
+  }),
+  e.makeText({
+    pos: [0, 2],
+    text: "Press space to toggle switches"
+  })
 ]

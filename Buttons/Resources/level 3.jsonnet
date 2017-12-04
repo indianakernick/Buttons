@@ -30,7 +30,10 @@ local e = import "entities.jsonnet";
     id: 0,
     pos: [-2, -2]
   }),
-  e.switch.makeIdPos(1, [1, -2]),
+  e.makeSwitch({
+    id: 1,
+    pos: [1, -2]
+  }),
   e.door.makeInPosSizeRot(1, [5.5, 2], [1, 4], 180),
   e.door.makeInPosSizeRot(0, [8.5, 2], [1, 4], 180)
 ]
