@@ -1,4 +1,6 @@
 local box = import "box entity.jsonnet";
+local button = import "button entity.jsonnet";
+local door = import "door entity.jsonnet";
 
 [
   {
@@ -60,16 +62,7 @@ local box = import "box entity.jsonnet";
     }
   },
   box.make([-13, -2]),
-  {
-    "id": 0,
-    "file": "button entity.json",
-    "components": {
-      "PhysicsBody": {
-        "body": "button body.json",
-        "pos": [-2, -2]
-      }
-    }
-  },
+  button.make(0, [-2, -2]),
   {
     "id": 1,
     "file": "switch entity.json",
@@ -80,20 +73,7 @@ local box = import "box entity.jsonnet";
       }
     }
   },
-  {
-    "file": "door entity.json",
-    "components": {
-      "PhysicsBody": {
-        "body": "door body.json",
-        "pos": [5.5, 2],
-        "rotation": 180,
-        "scale": [1, 4]
-      },
-      "PowerInput": {
-        "in": 1
-      }
-    }
-  },
+  door.makeInPosSizeRot(1, [5.5, 2], [1, 4], 180),
   {
     "file": "door entity.json",
     "components": {
