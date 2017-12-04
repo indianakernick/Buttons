@@ -464,7 +464,7 @@
 		4584F4351FD12CF10062B93E /* level 1.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 1.jsonnet"; sourceTree = "<group>"; };
 		4584F4361FD12CF20062B93E /* door entity.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "door entity.jsonnet"; sourceTree = "<group>"; };
 		4584F4371FD12CF20062B93E /* laser emitter entity.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "laser emitter entity.jsonnet"; sourceTree = "<group>"; };
-		4584F4381FD12CF20062B93E /* laser detector entity.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "laser detector entity.jsonnet"; sourceTree = "<group>"; };
+		4584F4381FD12CF20062B93E /* laser detector entity.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "laser detector entity.jsonnet"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
 		4584F4391FD12CF20062B93E /* level 3.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 3.jsonnet"; sourceTree = "<group>"; };
 		4584F43A1FD12CF20062B93E /* moving platform entity.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "moving platform entity.jsonnet"; sourceTree = "<group>"; };
 		4584F43B1FD12CF30062B93E /* player body.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "player body.json"; sourceTree = "<group>"; };

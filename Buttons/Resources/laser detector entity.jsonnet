@@ -1,17 +1,15 @@
-{
-  makeIdEmitterPosRot(id_, emitter_, pos_, rot_):: {
-    id: id_,
-    components: {
-      Activation: {},
-      LaserDetectorRendering: {},
-      PowerOutput: {},
-      Transform: {
-        pos: pos_,
-        rotation: rot_
-      },
-      LaserDetector: {
-        emitter: emitter_
-      }
+function(params) {
+  id: params.id,
+  components: {
+    Activation: {},
+    LaserDetectorRendering: {},
+    PowerOutput: {},
+    Transform: {
+      [if "pos" in params then "pos"]: params.pos,
+      [if "rotation" in params then "rotation"]: params.rotation
+    },
+    LaserDetector: {
+      emitter: params.emitter
     }
   }
 }

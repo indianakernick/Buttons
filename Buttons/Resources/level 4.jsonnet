@@ -1,11 +1,6 @@
 local e = import "entities.jsonnet";
 
-std.flattenArrays([[
-  e.makeSwitch({
-    id: i,
-    pos: [-5 + i * 3, -5]
-  }) for i in std.makeArray(4, function(x) x)
-], [
+[
   e.makePlatform({
     pos: [-16, -9],
     size: [32, 4]
@@ -37,8 +32,34 @@ std.flattenArrays([[
     pos: [9.5, -5],
     size: [1, 4]
   }),
-  e.laser_emitter.makeIdStartEndRot(4, [-15, 3], [15, 3], -90),
-  e.laser_detector.makeIdEmitterPosRot(5, 4, [15, 3], 90),
+  e.makeSwitch({
+    id: 0,
+    pos: [-5, -5]
+  }),
+  e.makeSwitch({
+    id: 1,
+    pos: [-2, -5]
+  }),
+  e.makeSwitch({
+    id: 2,
+    pos: [1, -5]
+  }),
+  e.makeSwitch({
+    id: 3,
+    pos: [4, -5]
+  }),
+  e.makeLaserEmitter({
+    id: 4,
+    start: [-15, 3],
+    end: [15, 3],
+    rotation: -90
+  }),
+  e.makeLaserDetector({
+    id: 5,
+    emitter: 4,
+    pos: [15, 3],
+    rotation: 90
+  }),
   e.makeDoor({
     "in": [0, 1],
     operator: "or",
@@ -62,4 +83,4 @@ std.flattenArrays([[
     pos: [10.5, 1],
     size: [1, 4]
   })
-]])
+]
