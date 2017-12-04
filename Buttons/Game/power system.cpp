@@ -17,20 +17,32 @@ namespace {
     };
   }
 
-  bool logic(const MultiPowerInput::LogicOp op, const std::vector<bool> &input) {
+  bool logic(const PowerInput::LogicOp op, const std::vector<bool> &input) {
     switch (op) {
-      case MultiPowerInput::LogicOp::AND:
+      case PowerInput::LogicOp::AND:
         return std::all_of(input.cbegin(), input.cend(), equalTo(true));
-      case MultiPowerInput::LogicOp::OR:
+      case PowerInput::LogicOp::OR:
         return std::any_of(input.cbegin(), input.cend(), equalTo(true));
-      case MultiPowerInput::LogicOp::XOR:
+      case PowerInput::LogicOp::XOR:
         return std::count(input.cbegin(), input.cend(), true) == 1;
-      case MultiPowerInput::LogicOp::NAND:
-        return !logic(MultiPowerInput::LogicOp::AND, input);
-      case MultiPowerInput::LogicOp::NOR:
-        return !logic(MultiPowerInput::LogicOp::OR, input);
-      case MultiPowerInput::LogicOp::XNOR:
-        return !logic(MultiPowerInput::LogicOp::XOR, input);
+      case PowerInput::LogicOp::NAND:
+        return !logic(PowerInput::LogicOp::AND, input);
+      case PowerInput::LogicOp::NOR:
+        return !logic(PowerInput::LogicOp::OR, input);
+      case PowerInput::LogicOp::XNOR:
+        return !logic(PowerInput::LogicOp::XOR, input);
+      case PowerInput::LogicOp::NOT:
+        if (input.size() == 1) {
+          return !input[0];
+        } else {
+          throw std::runtime_error("NOT operator expects a single input");
+        }
+      case PowerInput::LogicOp::IDENTITY:
+        if (input.size() == 1) {
+          return input[0];
+        } else {
+          throw std::runtime_error("IDENTITY operator expects a single input");
+        }
       default:
         assert(false);
     }
@@ -42,20 +54,9 @@ void powerSystem(Registry &registry) {
 
   const auto powerOutput = registry.view<PowerOutput>();
   auto powerInput = registry.view<PowerInput>();
-  auto multiPowerInput = registry.view<MultiPowerInput>();
   
   for (const EntityID entity : powerInput) {
     PowerInput &input = powerInput.get(entity);
-    if (input.input != NULL_ENTITY) {
-      input.on = powerOutput.get(input.input).on;
-      if (input.invert) {
-        input.on = !input.on;
-      }
-    }
-  }
-  
-  for (const EntityID entity : multiPowerInput) {
-    MultiPowerInput &input = multiPowerInput.get(entity);
     if (!input.inputs.empty()) {
       inputs.clear();
       for (const EntityID in : input.inputs) {

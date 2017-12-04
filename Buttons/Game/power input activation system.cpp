@@ -21,14 +21,4 @@ void powerInputActivationSystem(Registry &registry) {
       deactivate(state);
     }
   }
-  
-  auto multiInput = registry.view<Activation, MultiPowerInput>();
-  for (const EntityID entity : multiInput) {
-    Activation::State &state = multiInput.get<Activation>(entity).state;
-    if (multiInput.get<MultiPowerInput>(entity).on) {
-      activate(state);
-    } else {
-      deactivate(state);
-    }
-  }
 }

@@ -11,19 +11,21 @@
 #include "entity id map.hpp"
 
 namespace {
-  MultiPowerInput::LogicOp getLogicOp(const std::string &name) {
+  PowerInput::LogicOp getLogicOp(const std::string &name) {
            if (name == "and") {
-      return MultiPowerInput::LogicOp::AND;
+      return PowerInput::LogicOp::AND;
     } else if (name == "or") {
-      return MultiPowerInput::LogicOp::OR;
+      return PowerInput::LogicOp::OR;
     } else if (name == "xor") {
-      return MultiPowerInput::LogicOp::XOR;
+      return PowerInput::LogicOp::XOR;
     } else if (name == "nand") {
-      return MultiPowerInput::LogicOp::NAND;
+      return PowerInput::LogicOp::NAND;
     } else if (name == "nor") {
-      return MultiPowerInput::LogicOp::NOR;
+      return PowerInput::LogicOp::NOR;
     } else if (name == "xnor") {
-      return MultiPowerInput::LogicOp::XNOR;
+      return PowerInput::LogicOp::XNOR;
+    } else if (name == "not") {
+      return PowerInput::LogicOp::NOT;
     } else {
       throw std::runtime_error("Invalid logical operator name");
     }
@@ -31,16 +33,6 @@ namespace {
 }
 
 void PowerInputInit::init(PowerInput &comp, const json &node, const EntityIDmap &idMap) {
-  if (const auto inNode = node.find("in"); inNode != node.cend()) {
-    comp.input = idMap.getEntityFromUserID(inNode->get<UserID>());
-  } else {
-    comp.input = NULL_ENTITY;
-  }
-  getOptional(comp.invert, node, "invert");
-  getOptional(comp.on, node, "on");
-}
-
-void MultiPowerInputInit::init(MultiPowerInput &comp, const json &node, const EntityIDmap &idMap) {
   if (const auto inNode = node.find("in"); inNode != node.cend()) {
     if (inNode->is_array()) {
       for (auto &node : *inNode) {
@@ -50,6 +42,10 @@ void MultiPowerInputInit::init(MultiPowerInput &comp, const json &node, const En
       comp.inputs.push_back(idMap.getEntityFromUserID(inNode->get<UserID>()));
     }
   }
-  comp.op = getLogicOp(node.at("operator").get_ref<const std::string &>());
+  if (const auto opNode = node.find("operator"); opNode != node.cend()) {
+    comp.op = getLogicOp(opNode->get_ref<const std::string &>());
+  } else {
+    comp.op = PowerInput::LogicOp::IDENTITY;
+  }
   getOptional(comp.on, node, "on");
 }

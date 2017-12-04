@@ -17,9 +17,4 @@ public:
   void init(PowerInput &, const json &, const EntityIDmap &) override;
 };
 
-class MultiPowerInputInit final : public CompInit<MultiPowerInput> {
-public:
-  void init(MultiPowerInput &, const json &, const EntityIDmap &) override;
-};
-
 #endif

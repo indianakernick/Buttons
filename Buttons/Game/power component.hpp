@@ -13,19 +13,15 @@
 #include "entity id.hpp"
 
 struct PowerInput {
-  EntityID input;
-  bool invert = false;
-  bool on = false;
-};
-
-struct MultiPowerInput {
   enum class LogicOp {
     AND,
     OR,
     XOR,
     NAND,
     NOR,
-    XNOR
+    XNOR,
+    NOT,
+    IDENTITY
   };
 
   std::vector<EntityID> inputs;
