@@ -1,119 +1,16 @@
+local e = import "entities.jsonnet";
+
 [
-  {
-    "file": "platform entity.json",
-    "components": {
-      "PhysicsBody": {
-        "body": "platform body.json",
-        "pos": [-16, -9],
-        "scale": [32, 1]
-      }
-    }
-  },
-  {
-    "file": "platform entity.json",
-    "components": {
-      "PhysicsBody": {
-        "body": "platform body.json",
-        "pos": [-16, 8],
-        "scale": [32, 1]
-      }
-    }
-  },
-  {
-    "file": "platform entity.json",
-    "components": {
-      "PhysicsBody": {
-        "body": "platform body.json",
-        "pos": [-16, -8],
-        "scale": [1, 16]
-      }
-    }
-  },
-  {
-    "file": "platform entity.json",
-    "components": {
-      "PhysicsBody": {
-        "body": "platform body.json",
-        "pos": [15, -8],
-        "scale": [1, 16]
-      }
-    }
-  },
-  {
-    "file": "platform entity.json",
-    "components": {
-      "PhysicsBody": {
-        "body": "platform body.json",
-        "pos": [-13, -8],
-        "scale": [1, 1]
-      }
-    }
-  },
-  {
-    "file": "platform entity.json",
-    "components": {
-      "PhysicsBody": {
-        "body": "platform body.json",
-        "pos": [-8, -8],
-        "scale": [1, 2]
-      }
-    }
-  },
-  {
-    "file": "platform entity.json",
-    "components": {
-      "PhysicsBody": {
-        "body": "platform body.json",
-        "pos": [-5, -5],
-        "scale": [4, 1]
-      }
-    }
-  },
-  {
-    "file": "platform entity.json",
-    "components": {
-      "PhysicsBody": {
-        "body": "platform body.json",
-        "pos": [3, -8],
-        "scale": [1, 4]
-      }
-    }
-  },
-  {
-    "file": "platform entity.json",
-    "components": {
-      "PhysicsBody": {
-        "body": "platform body.json",
-        "pos": [10, -7],
-        "scale": [5, 1]
-      }
-    }
-  },
-  {
-    "file": "player entity.json",
-    "components": {
-      "PhysicsBody": {
-        "body": "player body.json",
-        "pos": [-15, -8]
-      }
-    }
-  },
-  {
-    "file": "exit entity.json",
-    "components": {
-      "PhysicsBody": {
-        "body": "sensor body.json",
-        "pos": [14, -6]
-      }
-    }
-  },
-  {
-    "file": "text entity.json",
-    "components": {
-      "Text": "Press W or up to jump",
-      "Transform": {
-        "pos": [0, 0]
-      }
-    }
-  }
+  e.platform.makePosSize([-16, -9], [32, 1]),
+  e.platform.makePosSize([-16, 8], [32, 1]),
+  e.platform.makePosSize([-16, -8], [1, 16]),
+  e.platform.makePosSize([15, -8], [1, 16]),
+  e.platform.makePos([-13, -8]),
+  e.platform.makePosSize([-8, -8], [1, 2]),
+  e.platform.makePosSize([-5, -5], [4, 1]),
+  e.platform.makePosSize([3, -8], [1, 4]),
+  e.platform.makePosSize([10, -7], [5, 1]),
+  e.player.makePos([-15, -8]),
+  e.exit.makePos([14, -6]),
+  e.text.makePosText([0, 0], "Press W or up to jump")
 ]
