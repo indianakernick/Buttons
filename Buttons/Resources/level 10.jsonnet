@@ -35,26 +35,14 @@ local e = import "entities.jsonnet";
     id: 10,
     pos: [-13, -8]
   }),
- 
-  {
-    "file": "moving platform entity.json",
-    "components": {
-      "PhysicsBody": {
-        "body": "platform body.json",
-        "pos": [-15, -9],
-        "scale": [2, 1]
-      },
-      "PowerInput": {
-        "in": 10
-      },
-      "MovingPlatform": {
-        "start": [-15, -9],
-        "end": [-15, -1],
-        "speed": 0.1,
-        "waiting time": 2.0
-      }
-    }
-  },
+  e.makeMovingPlatform({
+    "in": 10,
+    start: [-15, -9],
+    end: [-15, -1],
+    size: [2, 1],
+    speed: 0.1,
+    "waiting time": 2.0
+  }),
   e.makePlatform({
     pos: [-13, -1],
     size: [5, 1]

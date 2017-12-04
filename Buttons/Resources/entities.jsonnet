@@ -7,7 +7,7 @@
   makeLaserDetector:: import "laser detector entity.jsonnet",
   makeLaserEmitter:: import "laser emitter entity.jsonnet",
   makeLock:: import "lock entity.jsonnet",
-  moving_platform:: import "moving platform entity.jsonnet",
+  makeMovingPlatform:: import "moving platform entity.jsonnet",
   makePlatform:: import "platform entity.jsonnet",
   makePlayer:: import "player entity.jsonnet",
   makeShadow:: import "shadow entity.jsonnet",

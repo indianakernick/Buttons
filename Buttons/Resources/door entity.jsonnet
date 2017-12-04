@@ -1,3 +1,5 @@
+local common = import "common components.jsonnet";
+
 function(params) {
   components: {
     Activation: {
@@ -6,15 +8,9 @@ function(params) {
     Door: {},
     DoorRendering: {},
     Transform: {},
-    PhysicsBody: {
-      body: "door body.json",
-      [if "pos" in params then "pos"]: params.pos,
-      [if "size" in params then "scale"]: params.size,
-      [if "rotation" in params then "rotation"]: params.rotation
+    PhysicsBody: common.transformParams(params) + {
+      body: "door body.json"
     },
-    PowerInput: {
-      [if "in" in params then "in"]: params["in"],
-      [if "operator" in params then "operator"]: params.operator
-    }
+    PowerInput: common.powerInputParams(params)
   }
 }

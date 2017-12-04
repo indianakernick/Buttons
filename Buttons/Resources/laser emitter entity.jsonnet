@@ -1,13 +1,11 @@
+local common = import "common components.jsonnet";
+
 function(params) {
   id: params.id,
   components: {
     Activation: {},
     LaserEmitterRendering: {},
-    PowerInput: {
-      [if "in" in params then "in"]: params["in"],
-      [if "operator" in params then "operator"]: params.operator,
-      [if "on" in params then "on"]: params.on
-    },
+    PowerInput: common.powerInputParams(params),
     PhysicsRayCast: {
       start: params.start,
       end: params.end
