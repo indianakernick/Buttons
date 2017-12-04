@@ -13,7 +13,9 @@ function(params) {
       "hori align": "center",
       "vert align": "middle"
     },
-    Transform: common.transformParams(params),
+    Transform: {
+      [if "pos" in params then "pos"]: params.pos
+    },
     Text:
       if "text" in params then
         params.text

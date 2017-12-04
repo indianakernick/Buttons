@@ -1,6 +1,8 @@
 function(params) {
   components: {
-    Activation: {},
+    Activation: {
+      active: true
+    },
     Collision: {},
     KeyRendering: {},
     Transform: {},
