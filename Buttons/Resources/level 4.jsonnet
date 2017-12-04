@@ -1,155 +1,20 @@
+local e = import "entities.jsonnet";
+
 [
-  {
-    "file": "platform entity.json",
-    "components": {
-      "PhysicsBody": {
-        "body": "platform body.json",
-        "pos": [-16, -9],
-        "scale": [32, 4]
-      }
-    }
-  },
-  {
-    "file": "platform entity.json",
-    "components": {
-      "PhysicsBody": {
-        "body": "platform body.json",
-        "pos": [-15, -1],
-        "scale": [30, 2]
-      }
-    }
-  },
-  {
-    "file": "platform entity.json",
-    "components": {
-      "PhysicsBody": {
-        "body": "platform body.json",
-        "pos": [-16, 5],
-        "scale": [32, 4]
-      }
-    }
-  },
-  {
-    "file": "platform entity.json",
-    "components": {
-      "PhysicsBody": {
-        "body": "platform body.json",
-        "pos": [-16, -5],
-        "scale": [1, 10]
-      }
-    }
-  },
-  {
-    "file": "platform entity.json",
-    "components": {
-      "PhysicsBody": {
-        "body": "platform body.json",
-        "pos": [15, -5],
-        "scale": [1, 10]
-      }
-    }
-  },
-  {
-    "file": "player entity.json",
-    "components": {
-      "PhysicsBody": {
-        "body": "player body.json",
-        "pos": [-15, -5]
-      }
-    }
-  },
-  {
-    "file": "exit entity.json",
-    "components": {
-      "PhysicsBody": {
-        "body": "sensor body.json",
-        "pos": [14, -5]
-      }
-    }
-  },
-  {
-    "file": "door entity.json",
-    "components": {
-      "PhysicsBody": {
-        "body": "door body.json",
-        "pos": [9.5, -5],
-        "scale": [1, 4]
-      },
-      "PowerInput": {
-        "in": 5
-      }
-    }
-  },
-  {
-    "id": 4,
-    "file": "laser emitter entity.json",
-    "components": {
-      "PhysicsRayCast": {
-        "end": [15, 3],
-        "start": [-15, 3]
-      },
-      "PowerInput": {
-        "on": true
-      },
-      "Transform": {
-        "pos": [-15, 3],
-        "rotation": -90
-      }
-    }
-  },
-  {
-    "id": 5,
-    "file": "laser detector entity.json",
-    "components": {
-      "LaserDetector": {
-        "emitter": 4
-      },
-      "Transform": {
-        "pos": [15, 3],
-        "rotation": 90
-      }
-    }
-  },
-  {
-    "id": 0,
-    "file": "switch entity.json",
-    "components": {
-      "PhysicsBody": {
-        "body": "sensor body.json",
-        "pos": [-5, -5]
-      }
-    }
-  },
-  {
-    "id": 1,
-    "file": "switch entity.json",
-    "components": {
-      "PhysicsBody": {
-        "body": "sensor body.json",
-        "pos": [-2, -5]
-      }
-    }
-  },
-  {
-    "id": 2,
-    "file": "switch entity.json",
-    "components": {
-      "PhysicsBody": {
-        "body": "sensor body.json",
-        "pos": [1, -5]
-      }
-    }
-  },
-  {
-    "id": 3,
-    "file": "switch entity.json",
-    "components": {
-      "PhysicsBody": {
-        "body": "sensor body.json",
-        "pos": [4, -5]
-      }
-    }
-  },
+  e.platform.makePosSize([-16, -9], [32, 4]),
+  e.platform.makePosSize([-15, -1], [30, 2]),
+  e.platform.makePosSize([-16, 5], [32, 4]),
+  e.platform.makePosSize([-16, -5], [1, 10]),
+  e.platform.makePosSize([15, -5], [1, 10]),
+  e.player.makePos([-15, -5]),
+  e.exit.makePos([14, -5]),
+  e.door.makeInPosSize(5, [9.5, -5], [1, 4]),
+  e.laser_emitter.makeIdStartEndRot(4, [-15, 3], [15, 3], -90),
+  e.laser_detector.makeIdEmitterPosRot(5, 4, [15, 3], 90),
+  e.switch.makeIdPos(0, [-5, -5]),
+  e.switch.makeIdPos(1, [-2, -5]),
+  e.switch.makeIdPos(2, [1, -5]),
+  e.switch.makeIdPos(3, [4, -5]),
   {
     "file": "door entity.json",
     "components": {
