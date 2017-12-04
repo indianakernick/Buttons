@@ -1,3 +1,5 @@
+local key = import "key entity.jsonnet";
+
 [
   {
     "file": "platform entity.json",
@@ -141,18 +143,7 @@
       }
     }
   },
-  {
-    "file": "key entity.json",
-    "components": {
-      "PhysicsBody": {
-        "pos": [-10, 0],
-        "body": "sensor body.json"
-      },
-      "Key": {
-        "index": 0
-      }
-    }
-  },
+  key.makeIndexPos(0, [-10, 0]),
   {
     "id": 1,
     "file": "lock entity.json",
