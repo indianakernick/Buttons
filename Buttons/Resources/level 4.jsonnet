@@ -1,13 +1,32 @@
 local e = import "entities.jsonnet";
 
 [
-  e.platform.makePosSize([-16, -9], [32, 4]),
-  e.platform.makePosSize([-15, -1], [30, 2]),
-  e.platform.makePosSize([-16, 5], [32, 4]),
-  e.platform.makePosSize([-16, -5], [1, 10]),
-  e.platform.makePosSize([15, -5], [1, 10]),
-  e.player.makePos([-15, -5]),
-  e.exit.makePos([14, -5]),
+  e.makePlatform({
+    pos: [-16, -9],
+    size: [32, 4]
+  }),
+  e.makePlatform({
+    pos: [-15, -1],
+    size: [30, 2]
+  }),
+  e.makePlatform({
+    pos: [-16, 5],
+    size: [32, 4]
+  }),
+  e.makePlatform({
+    pos: [-16, -5],
+    size: [1, 10]
+  }),
+  e.makePlatform({
+    pos: [15, -5],
+    size: [1, 10]
+  }),
+  e.makePlayer({
+    pos: [-15, -5]
+  }),
+  e.makeExit({
+    pos: [14, -5]
+  }),
   e.door.makeInPosSize(5, [9.5, -5], [1, 4]),
   e.laser_emitter.makeIdStartEndRot(4, [-15, 3], [15, 3], -90),
   e.laser_detector.makeIdEmitterPosRot(5, 4, [15, 3], 90),
