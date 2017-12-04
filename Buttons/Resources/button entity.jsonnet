@@ -1,5 +1,5 @@
 {
-  make(id_, pos_):: {
+  makeIdPos(id_, pos_):: {
     id: id_,
     components: {
       Activation: {
