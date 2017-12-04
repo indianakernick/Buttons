@@ -38,7 +38,7 @@ local main = [
 ];
 
 local areaWidth = 26;
-local count = areaWidth * 2;
+local count = areaWidth;
 local scale = areaWidth / count;
 local pistonSpeed = 3;
 
