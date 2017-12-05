@@ -56,13 +56,6 @@ bool loadLevel(const std::string &fileName, const CompInits &compInits, Registry
     const EntityID id = idMap.getEntityFromIndex(i);
     const json &node = root[i];
     
-    if (const auto fileNode = node.find("file"); fileNode != node.cend()) {
-      std::ifstream entityFile(Platform::getResDir() + fileNode->get<std::string>());
-      json comps;
-      entityFile >> comps;
-      loadComps(id, comps, idMap, compInits, registry);
-    }
-    
     if (const auto compsNode = node.find("components"); compsNode != node.cend()) {
       loadComps(id, *compsNode, idMap, compInits, registry);
     }
