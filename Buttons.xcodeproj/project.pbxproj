@@ -1187,7 +1187,7 @@
 			buildPhases = (
 				4583ED511FB1841100AED27D /* Sources */,
 				4583ED521FB1841100AED27D /* Frameworks */,
-				4584F4751FD4BF060062B93E /* ShellScript */,
+				4584F4751FD4BF060062B93E /* Compile Levels */,
 				4583ED531FB1841100AED27D /* Resources */,
 			);
 			buildRules = (
@@ -1259,18 +1259,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4584F4751FD4BF060062B93E /* ShellScript */ = {
+		4584F4751FD4BF060062B93E /* Compile Levels */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Compile Levels";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "find . -name \"level *.jsonnet\" | egrep --only-matching \"level \\d+\" | xargs -I {} jsonnet --output-file \"$BUILT_PRODUCTS_DIR/Buttons.app/Contents/Resources/{}.json\" \"$PROJECT_DIR/Buttons/Resources/{}.jsonnet\"";
+			shellScript = $PROJECT_DIR/Buttons/compile_level.bash;
 		};
 /* End PBXShellScriptBuildPhase section */
 
