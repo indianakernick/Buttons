@@ -261,6 +261,62 @@ local doors = [
   e.makeDoor({
     "in": 21,
     pos: [13.5, 7]
+  }),
+  
+  /*left combo lock
+  
+  0   0 AND 1
+  1   1 XOR 3
+  2   2 NOR 3
+  3   0 OR 2
+  */
+  e.makeDoor({
+    "in": [10, 11],
+    operator: "and",
+    pos: [-13.5, 7]
+  }),
+  e.makeDoor({
+    "in": [11, 13],
+    operator: "xor",
+    pos: [-11.5, 7]
+  }),
+  e.makeDoor({
+    "in": [12, 13],
+    operator: "nor",
+    pos: [-9.5, 7]
+  }),
+  e.makeDoor({
+    "in": [10, 12],
+    operator: "or",
+    pos: [-7.5, 7]
+  }),
+  
+  /*right combo lock
+  
+  0   1 XOR 2
+  1   0 NOR 2
+  2   1 XNOR 3
+  3   0 NAND 3
+  */
+  e.makeDoor({
+    "in": [15, 16],
+    operator: "xor",
+    pos: [-3.5, 7]
+  }),
+  e.makeDoor({
+    "in": [14, 16],
+    operator: "nor",
+    pos: [-1.5, 7]
+  }),
+  e.makeDoor({
+    "in": [15, 17],
+    operator: "xnor",
+    pos: [0.5, 7]
+  }),
+  e.makeDoor({
+    "in": [14, 17],
+    operator: "nand",
+    pos: [2.5, 7]
   })
 ];
 
