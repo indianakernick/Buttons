@@ -22,33 +22,31 @@ local platforms = [
   //combo lock
   e.makePlatform({
     pos: [-15, 6],
-    size: [20, 1]
+    size: [22, 1]
   }),
   e.makePlatform({
     pos: [-15, 4],
-    size: [21, 1]
+    size: [23, 1]
   }),
   e.makePlatform({
-    pos: [-6, 7]
-  }),
-  e.makePlatform({
-    pos: [4, 7]
-  }),
-  
-  //key 4
-  e.makePlatform({
-    pos: [13, 6],
+    pos: [-15, 7],
     size: [2, 1]
+  }),
+  e.makePlatform({
+    pos: [-4, 7]
+  }),
+  e.makePlatform({
+    pos: [6, 7]
   }),
   
   //key 2
   e.makePlatform({
-    pos: [5, -3],
+    pos: [7, -2],
     size: [3, 1]
   }),
   e.makePlatform({
-    pos: [5, -5],
-    size: [3, 1]
+    pos: [6, -4],
+    size: [5, 1]
   }),
   
   //key 0
@@ -57,10 +55,10 @@ local platforms = [
     size: [12, 1]
   }),
   e.makePlatform({
-    pos: [-9, 0]
+    pos: [-7, 0]
   }),
   e.makePlatform({
-    pos: [-11, 1],
+    pos: [-9, 1],
     size: [3, 1]
   }),
   
@@ -114,19 +112,40 @@ local makeStairs(start_x, start_y, count) = [
 ];
 
 local stairs =
-  makeStairs(12, -8, 4) +
-  makeStairs(10, -6, 4) +
-  makeStairs(8, 0, 2) +
-  [
-    e.makePlatform({
-      pos: [4, 0]
-    })
-  ];
+  makeStairs(14, -8, 4) +
+  makeStairs(12, -6, 4) +
+  makeStairs(10, 0, 2) +
+[
+  e.makePlatform({
+    pos: [10, -8]
+  }),
+  e.makePlatform({
+    pos: [8, -6]
+  }),
+  e.makePlatform({
+    pos: [6, -8]
+  }),
+  e.makePlatform({
+    pos: [4, -6]
+  }),
+  e.makePlatform({
+    pos: [2, -4]
+  }),
+  e.makePlatform({
+    pos: [4, -2]
+  }),
+  e.makePlatform({
+    pos: [6, 0]
+  }),
+  e.makePlatform({
+    pos: [2, 0]
+  })
+];
 
 local keys = [
   e.makeKey({
     index: 0,
-    pos: [-10, 0]
+    pos: [-8, 0]
   }),
   e.makeKey({
     index: 1,
@@ -134,8 +153,7 @@ local keys = [
   }),
   e.makeKey({
     index: 2,
-    //6 minus 4 is 2
-    pos: [6, -4]
+    pos: [8, -3]
   }),
   e.makeKey({
     //Is this a sign?
@@ -144,7 +162,7 @@ local keys = [
   }),
   e.makeKey({
     index: 4,
-    pos: [14, 7]
+    pos: [-15, 5]
   }),
   e.makeKey({
     index: 5,
@@ -152,7 +170,7 @@ local keys = [
   }),
   e.makeKey({
     index: 6,
-    pos: [10, 7]
+    pos: [12, 7]
   })
 ];
 
@@ -176,12 +194,12 @@ local locks = [
   e.makeLock({
     id: 0,
     index: 0,
-    pos: [-11, -8]
+    pos: [-10, -8]
   }),
   e.makeLock({
     id: 1,
     index: 1,
-    pos: [-13, 0]
+    pos: [-10, 0]
   }),
   e.makeLock({
     id: 2,
@@ -191,8 +209,7 @@ local locks = [
   e.makeLock({
     id: 3,
     index: 3,
-    //6 divided by 2 is 3
-    pos: [6, -2]
+    pos: [8, -1]
   }),
   e.makeLock({
     id: 4,
@@ -201,10 +218,9 @@ local locks = [
     pos: [-5, -3]
   }),
   e.makeLock({
-    //I swear this is completly accidental
     id: 5,
     index: 5,
-    pos: [5, 5]
+    pos: [7, 5]
   }),
   e.makeLock({
     id: 6,
@@ -220,7 +236,7 @@ local doors = [
   }),
   e.makeDoor({
     "in": 1,
-    pos: [-10.5, 0]
+    pos: [-8.5, 0]
   }),
   e.makeDoor({
     "in": 2,
@@ -228,11 +244,11 @@ local doors = [
   }),
   e.makeDoor({
     "in": 3,
-    pos: [5.5, -4]
+    pos: [7.5, -3]
   }),
   e.makeDoor({
     "in": 3,
-    pos: [7.5, -4]
+    pos: [9.5, -3]
   }),
   e.makeDoor({
     "in": 4,
@@ -241,7 +257,7 @@ local doors = [
   }),
   e.makeDoor({
     "in": 5,
-    pos: [4.5, 5]
+    pos: [6.5, 5]
   }),
   e.makeDoor({
     "in": 6,
@@ -256,11 +272,11 @@ local doors = [
   }),
   e.makeDoor({
     "in": 19,
-    pos: [-5.5, 5]
+    pos: [-3.5, 5]
   }),
   e.makeDoor({
     "in": 21,
-    pos: [13.5, 7]
+    pos: [-13.5, 5]
   }),
   
   /*left combo lock
@@ -273,22 +289,22 @@ local doors = [
   e.makeDoor({
     "in": [10, 11],
     operator: "and",
-    pos: [-13.5, 7]
+    pos: [-11.5, 7]
   }),
   e.makeDoor({
     "in": [11, 13],
     operator: "xor",
-    pos: [-11.5, 7]
+    pos: [-9.5, 7]
   }),
   e.makeDoor({
     "in": [12, 13],
     operator: "nor",
-    pos: [-9.5, 7]
+    pos: [-7.5, 7]
   }),
   e.makeDoor({
     "in": [10, 12],
     operator: "or",
-    pos: [-7.5, 7]
+    pos: [-5.5, 7]
   }),
   
   /*right combo lock
@@ -301,22 +317,22 @@ local doors = [
   e.makeDoor({
     "in": [15, 16],
     operator: "xor",
-    pos: [-3.5, 7]
+    pos: [-1.5, 7]
   }),
   e.makeDoor({
     "in": [14, 16],
     operator: "nor",
-    pos: [-1.5, 7]
+    pos: [0.5, 7]
   }),
   e.makeDoor({
     "in": [15, 17],
     operator: "xnor",
-    pos: [0.5, 7]
+    pos: [2.5, 7]
   }),
   e.makeDoor({
     "in": [14, 17],
     operator: "nand",
-    pos: [2.5, 7]
+    pos: [4.5, 7]
   })
 ];
 
@@ -336,8 +352,8 @@ local switches = [
     id: 8,
     pos: [-6, -3]
   })
-] + makeSwitchRow(-14, 10)
-  + makeSwitchRow(-4, 14);
+] + makeSwitchRow(-12, 10)
+  + makeSwitchRow(-2, 14);
 
 local misc = [
   e.makePlayer({
@@ -351,7 +367,7 @@ local misc = [
   }),
   e.makeButton({
     id: 9,
-    pos: [-6, -8]
+    pos: [-3, -8]
   })
 ];
 
@@ -378,27 +394,27 @@ local lasers = [
   e.makeLaserEmitter({
     id: 18,
     "in": 5,
-    start: [4, 7.5],
-    end: [-5, 7.5],
+    start: [6, 7.5],
+    end: [-3, 7.5],
     rotation: 90
   }),
   e.makeLaserDetector({
     id: 19,
     emitter: 18,
-    pos: [-5, 7.5],
+    pos: [-3, 7.5],
     rotation: -90
   }),
   e.makeLaserEmitter({
     id: 20,
     "in": 19,
-    start: [-6, 7.5],
-    end: [-15, 7.5],
+    start: [-4, 7.5],
+    end: [-13, 7.5],
     rotation: 90
   }),
   e.makeLaserDetector({
     id: 21,
     emitter: 20,
-    pos: [-15, 7.5],
+    pos: [-13, 7.5],
     rotation: -90
   })
 ];

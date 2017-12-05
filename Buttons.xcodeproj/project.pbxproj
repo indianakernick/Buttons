@@ -1276,7 +1276,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "$PROJECT_DIR/Buttons/compile_level.bash 10";
+			shellScript = $PROJECT_DIR/Buttons/compile_level.bash;
 		};
 /* End PBXShellScriptBuildPhase section */
 
