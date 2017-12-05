@@ -107,6 +107,22 @@ local platforms = [
   })
 ];
 
+local makeStairs(start_x, start_y, count) = [
+  e.makePlatform({
+    pos: [start_x, start_y + offsetY]
+  }) for offsetY in std.makeArray(count, function(y) y * 4)
+];
+
+local stairs =
+  makeStairs(12, -8, 4) +
+  makeStairs(10, -6, 4) +
+  makeStairs(8, 0, 2) +
+  [
+    e.makePlatform({
+      pos: [4, 0]
+    })
+  ];
+
 local keys = [
   e.makeKey({
     index: 0,
@@ -115,20 +131,78 @@ local keys = [
   e.makeKey({
     index: 1,
     pos: [3, -8]
+  }),
+  e.makeKey({
+    index: 2,
+    //6 minus 4 is 2
+    pos: [6, -4]
+  }),
+  e.makeKey({
+    //Is this a sign?
+    index: 3,
+    pos: [-3, -3]
+  }),
+  e.makeKey({
+    index: 4,
+    pos: [14, 7]
+  }),
+  e.makeKey({
+    index: 5,
+    pos: [-12, -3]
+  }),
+  e.makeKey({
+    index: 6,
+    pos: [10, 7]
   })
 ];
 
-platforms + keys + [
+local locks = [
+  e.makeLock({
+    id: 0,
+    index: 0,
+    pos: [-11, -8]
+  }),
+  e.makeLock({
+    id: 1,
+    index: 1,
+    pos: [-13, 0]
+  }),
+  e.makeLock({
+    id: 2,
+    index: 2,
+    pos: [1, -8]
+  }),
+  e.makeLock({
+    id: 3,
+    index: 3,
+    //6 divided by 2 is 3
+    pos: [6, -2]
+  }),
+  e.makeLock({
+    id: 4,
+    index: 4,
+    //between 5 and 3 lies 4
+    pos: [-5, -3]
+  }),
+  e.makeLock({
+    //I swear this is completly accidental
+    id: 5,
+    index: 5,
+    pos: [5, 5]
+  }),
+  e.makeLock({
+    id: 6,
+    index: 6,
+    pos: [-10, -3]
+  })
+];
+
+platforms + stairs + keys + locks + [
   e.makePlayer({
     pos: [-15, -8]
   }),
   e.makeExit({
     pos: [-8, -8]
-  }),
-  e.makeLock({
-    id: 0,
-    index: 0,
-    pos: [-11, -8]
   }),
   e.makeDoor({
     "in": 0,
@@ -145,11 +219,6 @@ platforms + keys + [
     size: [2, 1],
     speed: 0.1,
     "waiting time": 2.0
-  }),
-  e.makeLock({
-    id: 1,
-    index: 1,
-    pos: [-13, 0]
   }),
   e.makeDoor({
     "in": 1,
