@@ -469,7 +469,7 @@
 		4584F4391FD12CF20062B93E /* level 3.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 3.jsonnet"; sourceTree = "<group>"; };
 		4584F43A1FD12CF20062B93E /* moving platform entity.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "moving platform entity.jsonnet"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
 		4584F43B1FD12CF30062B93E /* player body.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "player body.json"; sourceTree = "<group>"; };
-		4584F43C1FD12CF30062B93E /* level final.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level final.jsonnet"; sourceTree = "<group>"; };
+		4584F43C1FD12CF30062B93E /* level final.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level final.jsonnet"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
 		4584F43D1FD12CF30062B93E /* platform entity.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "platform entity.jsonnet"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
 		4584F43E1FD12CF40062B93E /* lock entity.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "lock entity.jsonnet"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
 		4584F43F1FD12CF40062B93E /* text entity.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "text entity.jsonnet"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };

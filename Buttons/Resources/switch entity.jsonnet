@@ -11,7 +11,7 @@ function(params) {
     Switch: {},
     SwitchRendering: {},
     Transform: {},
-    PhysicsBody: common.transformParams(params) + {
+    PhysicsBody: common.getTransform(params) + {
       body: "sensor body.json"
     }
   }

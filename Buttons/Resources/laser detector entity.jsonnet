@@ -6,7 +6,7 @@ function(params) {
     Activation: {},
     LaserDetectorRendering: {},
     PowerOutput: {},
-    Transform: common.transformParams(params),
+    Transform: common.getTransform(params),
     LaserDetector: {
       emitter: params.emitter
     }

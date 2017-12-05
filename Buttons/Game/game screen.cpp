@@ -24,7 +24,7 @@
 
 void GameScreen::enter() {
   levels.reload();
-  camera.setZoom(1.0f);
+  camera.setZoom(0.0f);
 }
 
 void GameScreen::init(RenderingContext &renderingContext) {
@@ -84,7 +84,7 @@ void GameScreen::update(const float delta) {
   if (exitSystem(registry)) {
     progress.finishLevel(levels.getLoaded());
     levels.nextLevel();
-    camera.setZoom(1.0f);
+    camera.setZoom(0.0f);
   }
 
   playerMovementSystem(registry, delta);
@@ -222,7 +222,7 @@ bool GameScreen::nextLevelKey(const SDL_Event &e) {
     const Level current = levels.getLoaded();
     if (current == LevelManager::NONE_LOADED) {
       levels.loadLevel(0);
-      camera.setZoom(1.0f);
+      camera.setZoom(0.0f);
     } else if (progress.hasCompleted(current + 1)) {
       levels.loadLevel(current + 1);
     }
@@ -240,7 +240,7 @@ bool GameScreen::prevLevelKey(const SDL_Event &e) {
       // fails to load the level
       if (!levels.loadLevel(progress.getIncompleteLevel())) {
         levels.loadLevel(progress.getIncompleteLevel() - 1);
-        camera.setZoom(1.0f);
+        camera.setZoom(0.0f);
       }
     } else if (current != 0) {
       levels.loadLevel(current - 1);

@@ -1,3 +1,5 @@
+local common = import "common.jsonnet";
+
 function(params) {
   [if "id" in params then "id"]: params.id,
   components: {
@@ -6,9 +8,8 @@ function(params) {
     LockRendering: {},
     PowerOutput: {},
     Transform: {},
-    PhysicsBody: {
-      body: "sensor body.json",
-      [if "pos" in params then "pos"]: params.pos
+    PhysicsBody: common.getPos(params) + {
+      body: "sensor body.json"
     },
     Lock: {
       [if "index" in params then "index"]: params.index

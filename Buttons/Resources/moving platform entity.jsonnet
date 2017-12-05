@@ -5,11 +5,11 @@ function(params) {
     Activation: {},
     MovingPlatformRendering: {},
     Transform: {},
-    PhysicsBody: common.transformParams(params) + {
+    PhysicsBody: common.getTransform(params) + {
       body: "platform body.json",
       pos: params.start
     },
-    PowerInput: common.powerInputParams(params),
+    PowerInput: common.getPowerInput(params),
     MovingPlatform: {
       start: params.start,
       end: params.end,

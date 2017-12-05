@@ -5,8 +5,8 @@ function(params) {
     TextRendering: {
       font: "Arial.ttf",
       size:
-        if "size" in params then
-          params.size
+        if "font size" in params then
+          params["font size"]
         else
           32
       ,

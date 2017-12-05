@@ -5,12 +5,12 @@ function(params) {
   components: {
     Activation: {},
     LaserEmitterRendering: {},
-    PowerInput: common.powerInputParams(params),
+    PowerInput: common.getPowerInput(params),
     PhysicsRayCast: {
       start: params.start,
       end: params.end
     },
-    Transform: common.transformParams(params) + {
+    Transform: common.getTransform(params) + {
       pos: params.start,
     }
   }

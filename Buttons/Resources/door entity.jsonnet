@@ -8,9 +8,9 @@ function(params) {
     Door: {},
     DoorRendering: {},
     Transform: {},
-    PhysicsBody: common.transformParams(params) + {
+    PhysicsBody: common.getTransform(params) + {
       body: "door body.json"
     },
-    PowerInput: common.powerInputParams(params)
+    PowerInput: common.getPowerInput(params)
   }
 }
