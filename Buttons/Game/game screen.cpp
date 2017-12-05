@@ -93,8 +93,8 @@ void GameScreen::update(const float delta) {
   takeKeySystem(registry);
   activateLockSystem(registry);
   
-  laserDetectorSystem(registry);//laser detector
-  activationSystem(registry, delta);//activation
+  laserDetectorSystem(registry);
+  activationSystem(registry, delta);
   doorSystem(registry);
   movingPlatformSystem(registry, delta);
   
@@ -102,10 +102,12 @@ void GameScreen::update(const float delta) {
   activatePowerOutputSystem(registry);
   buttonSystem(registry);
   switchSystem(registry);
+  
+  //Respond to inputs
+  powerInputActivationSystem(registry);
+  
   //Set inputs
   powerSystem(registry);//power
-  //Respond to inputs
-  powerInputActivationSystem(registry);//power input activation
 }
 
 glm::mat3 GameScreen::preRender(const glm::ivec2 windowSize, const float delta) {

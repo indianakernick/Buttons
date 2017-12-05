@@ -255,13 +255,20 @@ local doors = [
     rotation: -90
   }),
   e.makeDoor({
-    //"in": 19,
+    "in": 19,
     pos: [-5.5, 5]
   }),
   e.makeDoor({
-    //"in": 21,
+    "in": 21,
     pos: [13.5, 7]
   })
+];
+
+local makeSwitchRow(start_x, start_id) = [
+  e.makeSwitch({
+    id: start_id + i,
+    pos: [start_x + i * 2, 5]
+  }) for i in std.makeArray(4, function(x) x)
 ];
 
 local switches = [
@@ -273,7 +280,8 @@ local switches = [
     id: 8,
     pos: [-6, -3]
   })
-];
+] + makeSwitchRow(-14, 10)
+  + makeSwitchRow(-4, 14);
 
 local misc = [
   e.makePlayer({
@@ -310,6 +318,35 @@ local movingPlatforms = [
   })
 ];
 
+local lasers = [
+  e.makeLaserEmitter({
+    id: 18,
+    "in": 5,
+    start: [4, 7.5],
+    end: [-5, 7.5],
+    rotation: 90
+  }),
+  e.makeLaserDetector({
+    id: 19,
+    emitter: 18,
+    pos: [-5, 7.5],
+    rotation: -90
+  }),
+  e.makeLaserEmitter({
+    id: 20,
+    "in": 19,
+    start: [-6, 7.5],
+    end: [-15, 7.5],
+    rotation: 90
+  }),
+  e.makeLaserDetector({
+    id: 21,
+    emitter: 20,
+    pos: [-15, 7.5],
+    rotation: -90
+  })
+];
+
 platforms +
 stairs +
 keys +
@@ -317,4 +354,5 @@ locks +
 doors +
 switches +
 misc +
-movingPlatforms
+movingPlatforms +
+lasers
