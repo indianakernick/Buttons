@@ -28,7 +28,8 @@ bool LevelManager::loadLevel(const Level level) {
   if (current != NONE_LOADED) {
     registry->reset();
   }
-  if (::loadLevel("level " + std::to_string(level) + ".json", *compInits, *registry)) {
+  const std::string levelStr = level == FINAL ? "final" : std::to_string(level);
+  if (::loadLevel("level " + levelStr + ".json", *compInits, *registry)) {
     current = level;
     return true;
   } else {
@@ -36,11 +37,19 @@ bool LevelManager::loadLevel(const Level level) {
   }
 }
 
+bool LevelManager::loadFinalLevel() {
+  return loadLevel(FINAL);
+}
+
 bool LevelManager::nextLevel() {
   if (current == NONE_LOADED) {
     return loadLevel(0);
   } else {
-    return loadLevel(current + 1);
+    if (loadLevel(current + 1)) {
+      return true;
+    } else {
+      return loadFinalLevel();
+    }
   }
 }
 

@@ -8,4 +8,9 @@ else
   LEVEL="$1"
 fi
 
-find /Users/indikernick/Dev/Projects/C++/Games/Buttons/Buttons/Resources/ -name "level $LEVEL.jsonnet" | egrep --only-matching "level \d+" | xargs -I {} jsonnet --output-file "/Users/indikernick/Library/Developer/Xcode/DerivedData/Buttons-etwygbpumdfbpjfbjwtjfrrpwvxk/Build/Products/Debug/Buttons.app/Contents/Resources/{}.json" "/Users/indikernick/Dev/Projects/C++/Games/Buttons/Buttons/Resources/{}.jsonnet"
+PROJECT_RES="/Users/indikernick/Dev/Projects/C++/Games/Buttons/Buttons/Resources"
+PRODUCT_RES="/Users/indikernick/Library/Developer/Xcode/DerivedData/Buttons-etwygbpumdfbpjfbjwtjfrrpwvxk/Build/Products/Debug/Buttons.app/Contents/Resources"
+
+find $PROJECT_RES -name "level $LEVEL.jsonnet" |
+egrep --only-matching "level (\d+|final)" |
+xargs -I {} jsonnet --output-file "$PRODUCT_RES/{}.json" "$PROJECT_RES/{}.jsonnet"

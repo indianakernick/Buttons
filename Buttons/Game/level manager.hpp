@@ -18,6 +18,7 @@ class CompInits;
 class LevelManager {
 public:
   static constexpr Level NONE_LOADED = std::numeric_limits<Level>::max();
+  static constexpr Level FINAL = NONE_LOADED - 1;
 
   LevelManager() = default;
   
@@ -25,6 +26,7 @@ public:
   void quit();
   
   bool loadLevel(Level);
+  bool loadFinalLevel();
   bool nextLevel();
   bool reload();
   Level getLoaded() const;
