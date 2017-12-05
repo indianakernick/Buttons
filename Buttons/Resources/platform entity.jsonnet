@@ -1,10 +1,11 @@
+local common = import "common.jsonnet";
+
 function(params) {
   components: {
     PlatformRendering: {},
     Transform: {},
-    PhysicsBody: {
+    PhysicsBody: common.getPos(params) + {
       body: "platform body.json",
-      [if "pos" in params then "pos"]: params.pos,
       [if "size" in params then "scale"]: params.size
     }
   }

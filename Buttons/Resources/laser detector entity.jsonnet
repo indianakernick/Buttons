@@ -1,4 +1,4 @@
-local common = import "common components.jsonnet";
+local common = import "common.jsonnet";
 
 function(params) {
   [if "id" in params then "id"]: params.id,

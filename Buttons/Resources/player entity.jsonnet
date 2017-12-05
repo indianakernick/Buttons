@@ -1,3 +1,5 @@
+local common = import "common.jsonnet";
+
 function(params) {
   components: {
     Collision: {},
@@ -6,9 +8,8 @@ function(params) {
     PlayerKeys: {},
     PlayerRendering: {},
     Transform: {},
-    PhysicsBody: {
-      body: "player body.json",
-      [if "pos" in params then "pos"]: params.pos
+    PhysicsBody: common.getPos(params) + {
+      body: "player body.json"
     }
   }
 }

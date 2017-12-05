@@ -1,4 +1,4 @@
-local common = import "common components.jsonnet";
+local common = import "common.jsonnet";
 
 function(params) {
   components: {
@@ -13,9 +13,7 @@ function(params) {
       "hori align": "center",
       "vert align": "middle"
     },
-    Transform: {
-      [if "pos" in params then "pos"]: params.pos
-    },
+    Transform: common.getPos(params),
     Text:
       if "text" in params then
         params.text
