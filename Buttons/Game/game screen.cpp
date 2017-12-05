@@ -93,8 +93,8 @@ void GameScreen::update(const float delta) {
   takeKeySystem(registry);
   activateLockSystem(registry);
   
-  laserDetectorSystem(registry);
-  activationSystem(registry, delta);
+  laserDetectorSystem(registry);//laser detector
+  activationSystem(registry, delta);//activation
   doorSystem(registry);
   movingPlatformSystem(registry, delta);
   
@@ -103,9 +103,9 @@ void GameScreen::update(const float delta) {
   buttonSystem(registry);
   switchSystem(registry);
   //Set inputs
-  powerSystem(registry);
+  powerSystem(registry);//power
   //Respond to inputs
-  powerInputActivationSystem(registry);
+  powerInputActivationSystem(registry);//power input activation
 }
 
 glm::mat3 GameScreen::preRender(const glm::ivec2 windowSize, const float delta) {
@@ -263,7 +263,6 @@ void GameScreen::printMessage(const std::string &message) {
   registry.assign<Text>(entity, message);
   Transform &transform = registry.assign<Transform>(entity);
   transform.pos = {0.0f, 8.0f};
-  transform.scale = {0.05f, 0.05f};
   TextRendering &textRendering = registry.assign<TextRendering>(entity);
   // Magic?
   const json renderingNode = {
@@ -271,7 +270,7 @@ void GameScreen::printMessage(const std::string &message) {
     {"color", {1.0f, 0.0f, 0.0f}},
     {"hori align", "center"},
     {"vert align", "middle"},
-    {"size", 24.0f}
+    {"size", 48.0f}
   };
   compInits.init(textRendering, renderingNode, EntityIDmap(), entity);
 }

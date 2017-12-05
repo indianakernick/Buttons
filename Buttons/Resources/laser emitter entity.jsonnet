@@ -3,7 +3,9 @@ local common = import "common components.jsonnet";
 function(params) {
   id: params.id,
   components: {
-    Activation: {},
+    Activation: {
+      active: true
+    },
     LaserEmitterRendering: {},
     PowerInput: common.powerInputParams(params),
     PhysicsRayCast: {
