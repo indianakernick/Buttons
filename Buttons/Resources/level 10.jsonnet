@@ -156,6 +156,22 @@ local keys = [
   })
 ];
 
+/*
+
+ID ALLOCATION
+
+0-6      Locks
+7        Left switch
+8        Right switch
+9        Button
+10-17    Combo lock switches
+18       Right laser emitter
+19       Right laser detector
+20       Left laser emitter
+21       Left laser detector
+
+*/
+
 local locks = [
   e.makeLock({
     id: 0,
@@ -197,31 +213,108 @@ local locks = [
   })
 ];
 
-platforms + stairs + keys + locks + [
+local doors = [
+  e.makeDoor({
+    "in": 0,
+    pos: [-8.5, -8]
+  }),
+  e.makeDoor({
+    "in": 1,
+    pos: [-10.5, 0]
+  }),
+  e.makeDoor({
+    "in": 2,
+    pos: [2.5, -8]
+  }),
+  e.makeDoor({
+    "in": 3,
+    pos: [5.5, -4]
+  }),
+  e.makeDoor({
+    "in": 3,
+    pos: [7.5, -4]
+  }),
+  e.makeDoor({
+    "in": 4,
+    pos: [-3.5, -3],
+    size: [1, 2]
+  }),
+  e.makeDoor({
+    "in": 5,
+    pos: [4.5, 5]
+  }),
+  e.makeDoor({
+    "in": 6,
+    pos: [-10.5, -3],
+    size: [1, 2]
+  }),
+  e.makeDoor({
+    "in": 8,
+    pos: [-1, -0.5],
+    size: [1, 2],
+    rotation: -90
+  }),
+  e.makeDoor({
+    //"in": 19,
+    pos: [-5.5, 5]
+  }),
+  e.makeDoor({
+    //"in": 21,
+    pos: [13.5, 7]
+  })
+];
+
+local switches = [
+  e.makeSwitch({
+    id: 7,
+    pos: [-13, -8]
+  }),
+  e.makeSwitch({
+    id: 8,
+    pos: [-6, -3]
+  })
+];
+
+local misc = [
   e.makePlayer({
     pos: [-15, -8]
   }),
   e.makeExit({
     pos: [-8, -8]
   }),
-  e.makeDoor({
-    "in": 0,
-    pos: [-8.5, -8]
+  e.makeBox({
+    pos: [-8, -6]
   }),
-  e.makeSwitch({
-    id: 10,
-    pos: [-13, -8]
-  }),
+  e.makeButton({
+    id: 9,
+    pos: [-6, -8]
+  })
+];
+
+local movingPlatforms = [
   e.makeMovingPlatform({
-    "in": 10,
+    "in": 7,
     start: [-15, -9],
     end: [-15, -1],
     size: [2, 1],
     speed: 0.1,
-    "waiting time": 2.0
+    "waiting time": 2
   }),
-  e.makeDoor({
-    "in": 1,
-    pos: [-10.5, 0]
+  e.makeMovingPlatform({
+    "in": 9,
+    start: [-1, -9],
+    end: [-1, -2],
+    size: [2, 1],
+    speed: 0.1,
+    "waiting time": 2
   })
-]
+];
+
+platforms +
+stairs +
+keys +
+locks +
+doors +
+switches +
+misc +
+movingPlatforms
