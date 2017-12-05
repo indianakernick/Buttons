@@ -12,6 +12,8 @@
 #include "../Libraries/Box2D/Common/b2Math.h"
 
 struct MovingPlatform {
+  static constexpr float PISTON = std::numeric_limits<float>::max();
+
   b2Vec2 start;
   b2Vec2 end;
   float waitingTime = 1.0f;

@@ -8,22 +8,29 @@
 
 #include "moving platform init.hpp"
 
+namespace {
+  float getWaitingTime(const json &waitNode) {
+    if (waitNode.is_number()) {
+      if (const float time = waitNode.get<float>(); time >= 0.0f) {
+        return time;
+      }
+    } else if (waitNode.is_string()) {
+      if (waitNode.get_ref<const std::string &>() == "piston") {
+        return MovingPlatform::PISTON;
+      }
+    }
+    throw std::runtime_error(
+      "Invalid value for \"waiting time\": "
+      + waitNode.dump()
+    );
+  }
+}
+
 void MovingPlatformInit::init(MovingPlatform &comp, const json &node) {
   comp.start = node.at("start").get<b2Vec2>();
   comp.end = node.at("end").get<b2Vec2>();
   if (const auto waitNode = node.find("waiting time"); waitNode != node.cend()) {
-    if (waitNode->is_number()) {
-      comp.waitingTime = waitNode->get<float>();
-    } else if (waitNode->is_string()) {
-      if (waitNode->get_ref<const std::string &>() == "forever") {
-        comp.waitingTime = std::numeric_limits<float>::max();
-      } else {
-        throw std::runtime_error(
-          "Invalid value for \"waiting time\": "
-          + waitNode->dump()
-        );
-      }
-    }
+    comp.waitingTime = getWaitingTime(*waitNode);
   }
   getOptional(comp.moveSpeed, node, "speed");
 }

@@ -49,8 +49,12 @@ namespace {
     return platform.timeTillFinishWait <= 0.0f;
   }
   
+  b2Vec2 toEndVel(MovingPlatform &platform) {
+    return platform.moveSpeed * (platform.end - platform.start);
+  }
+  
   void activeState(MovingPlatform &platform, b2Body *const body, const float delta) {
-    const b2Vec2 toEnd = platform.moveSpeed * (platform.end - platform.start);
+    const b2Vec2 toEnd = toEndVel(platform);
     
     switch (platform.state) {
       case State::AT_START:
@@ -95,6 +99,32 @@ namespace {
       platform.state = State::TO_START;
     }
   }
+  
+  void activePiston(MovingPlatform &platform, b2Body *const body) {
+    const b2Vec2 toEnd = toEndVel(platform);
+  
+    if (platform.state == State::AT_START || platform.state == State::TO_START) {
+      platform.state = State::TO_END;
+      body->SetLinearVelocity(toEnd);
+    } else if (platform.state == State::TO_END) {
+      if (finishedMovingTo(platform.end, body)) {
+        finishMove(platform, body, State::TO_START, State::WAIT_AT_END);
+      }
+    }
+  }
+  
+  void inactivePiston(MovingPlatform &platform, b2Body *const body) {
+    const b2Vec2 toEnd = toEndVel(platform);
+    
+    if (platform.state == State::WAIT_AT_END || platform.state == State::TO_END) {
+      platform.state = State::TO_START;
+      body->SetLinearVelocity(-toEnd);
+    } else if (platform.state == State::TO_START) {
+      if (finishedMovingTo(platform.start, body)) {
+        finishMove(platform, body, State::TO_END, State::AT_START);
+      }
+    }
+  }
 }
 
 void movingPlatformSystem(Registry &registry, const float delta) {
@@ -102,10 +132,19 @@ void movingPlatformSystem(Registry &registry, const float delta) {
   for (const EntityID entity : view) {
     MovingPlatform &platform = view.get<MovingPlatform>(entity);
     b2Body *const body = view.get<PhysicsBody>(entity).body;
-    if (view.get<Activation>(entity).state == Activation::State::ACTIVE) {
-      activeState(platform, body, delta);
+    const bool active = view.get<Activation>(entity).state == Activation::State::ACTIVE;
+    if (platform.waitingTime == MovingPlatform::PISTON) {
+      if (active) {
+        activePiston(platform, body);
+      } else {
+        inactivePiston(platform, body);
+      }
     } else {
-      inactiveState(platform, body);
+      if (active) {
+        activeState(platform, body, delta);
+      } else {
+        inactiveState(platform, body);
+      }
     }
   }
 }
