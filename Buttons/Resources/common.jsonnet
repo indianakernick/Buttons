@@ -1,6 +1,6 @@
 {
   getPos(params):: {
-    [if "pos" in params then "pos"]: [params.pos[0] - 16, params.pos[1] - 9]
+    [if "pos" in params then "pos"]: params.pos
   },
   
   getPosSize(params):: self.getPos(params) + {
