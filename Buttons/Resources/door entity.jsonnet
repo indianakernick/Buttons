@@ -8,10 +8,7 @@ function(params) {
     Door: {},
     DoorRendering: {},
     Transform: {},
-    PhysicsBody: {
-      [if "pos" in params then "pos"]: common.getOrientPos(params),
-      [if "size" in params then "scale"]: params.size,
-      rotation: common.getOrientAngle(params),
+    PhysicsBody: common.getOrientTransform(params) + {
       body: "door body.json"
     },
     PowerInput: common.getPowerInput(params)
