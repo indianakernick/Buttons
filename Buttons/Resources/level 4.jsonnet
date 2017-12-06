@@ -2,86 +2,86 @@ local e = import "entities.jsonnet";
 
 [
   e.makePlatform({
-    pos: [-16, -9],
+    pos: [0, 0],
     size: [32, 4]
   }),
   e.makePlatform({
-    pos: [-15, -1],
+    pos: [1, 8],
     size: [30, 2]
   }),
   e.makePlatform({
-    pos: [-16, 5],
+    pos: [0, 14],
     size: [32, 4]
   }),
   e.makePlatform({
-    pos: [-16, -5],
+    pos: [0, 4],
     size: [1, 10]
   }),
   e.makePlatform({
-    pos: [15, -5],
+    pos: [31, 4],
     size: [1, 10]
   }),
   e.makePlayer({
-    pos: [-15, -5]
+    pos: [1, 4]
   }),
   e.makeExit({
-    pos: [14, -5]
+    pos: [30, 4]
   }),
   e.makeDoor({
     "in": 5,
-    pos: [9.5, -5],
+    pos: [25.5, 4],
     size: [1, 4]
   }),
   e.makeSwitch({
     id: 0,
-    pos: [-5, -5]
+    pos: [11, 4]
   }),
   e.makeSwitch({
     id: 1,
-    pos: [-2, -5]
+    pos: [14, 4]
   }),
   e.makeSwitch({
     id: 2,
-    pos: [1, -5]
+    pos: [17, 4]
   }),
   e.makeSwitch({
     id: 3,
-    pos: [4, -5]
+    pos: [20, 4]
   }),
   e.makeLaserEmitter({
     id: 4,
     "on": true,
-    start: [-15, 3],
-    end: [15, 3],
+    start: [1, 12],
+    end: [31, 12],
     rotation: -90
   }),
   e.makeLaserDetector({
     id: 5,
     emitter: 4,
-    pos: [15, 3],
+    pos: [31, 12],
     rotation: 90
   }),
   e.makeDoor({
     "in": [0, 1],
     operator: "or",
-    pos: [-10.5, 1],
+    pos: [5.5, 10],
     size: [1, 4]
   }),
   e.makeDoor({
     "in": [0, 2],
     operator: "xor",
-    pos: [-3.5, 1],
+    pos: [12.5, 10],
     size: [1, 4]
   }),
   e.makeDoor({
     "in": 2,
-    pos: [3.5, 1],
+    pos: [19.5, 10],
     size: [1, 4]
   }),
   e.makeDoor({
     "in": 3,
     operator: "not",
-    pos: [10.5, 1],
+    pos: [26.5, 10],
     size: [1, 4]
   })
 ]

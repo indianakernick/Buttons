@@ -2,80 +2,80 @@ local e = import "entities.jsonnet";
 
 [
   e.makePlatform({
-    pos: [-16, -9],
+    pos: [0, 0],
     size: [32, 7]
   }),
   e.makePlatform({
-    pos: [-16, -2],
+    pos: [0, 7],
     size: [9, 4]
   }),
   e.makePlatform({
-    pos: [-16, 2],
+    pos: [0, 11],
     size: [32, 7]
   }),
   e.makePlatform({
-    pos: [7, -2],
+    pos: [23, 7],
     size: [9, 4]
   }),
   e.makePlatform({
-    pos: [-3, -1],
+    pos: [13, 8],
     size: [10, 1]
   }),
   e.makePlatform({
-    pos: [1, 0],
+    pos: [17, 9],
     size: [2, 2]
   }),
   e.makePlayer({
-    pos: [-7, -2]
+    pos: [9, 7]
   }),
   e.makeExit({
-    pos: [6, -2]
+    pos: [22, 7]
   }),
   e.makeBox({
-    pos: [3, 0]
+    pos: [19, 9]
   }),
   e.makeSwitch({
-    pos: [0, 0]
+    pos: [16, 9]
   }),
   e.makeButton({
-    pos: [6, 0]
+    pos: [22, 9]
   }),
   e.makeSwitch({
     id: 0,
-    pos: [0, -2]
+    pos: [16, 7]
   }),
   e.makeButton({
     id: 1,
-    pos: [3, 0]
+    pos: [19, 9]
   }),
   e.makeDoor({
     "in": [0, 1],
     operator: "and",
-    pos: [3.5, -2]
+    pos: [19.5, 7]
   }),
   e.makeLaserEmitter({
     id: 2,
     "on": true,
-    start: [-7, -0.5],
-    end: [-3, -0.5],
+    start: [9, 8.5],
+    end: [13, 8.5],
     rotation: -90
   }),
   e.makeLaserDetector({
     id: 3,
     emitter: 2,
-    pos: [-3, -0.5],
+    pos: [13, 8.5],
     rotation: 90
   }),
   e.makeMovingPlatform({
     "in": 3,
     operator: "not",
-    start: [2, 0],
-    end: [3, 0],
+    start: [18, 9],
+    end: [19, 9],
     size: [1, 2],
     speed: 10
   }),
   e.makeText({
-    pos: [0, 4],
+    pos: [16, 13],
     text: "Press R to reload the level"
   })
 ]
