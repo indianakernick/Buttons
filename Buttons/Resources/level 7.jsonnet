@@ -128,32 +128,3 @@ main
 + exitDoor
 + keyButtons
 + stairs
-
-
-/*
-function shift(str, key) {
-  let string = "";
-  let lastIndex = 0;
-  for (let index = str.indexOf(key); index != -1; index = str.indexOf(key, index + 1)) {
-    let open = str.indexOf('[', index);
-    let close = str.indexOf(']', open);
-    string += str.slice(lastIndex, open);
-    try {
-      let pos = eval(str.slice(open, close + 1));
-      pos[0] += 16;
-      pos[1] += 9;
-      string += "[" + pos[0] + ", " + pos[1] + "]";
-    } catch (e) {
-      string += str.slice(open, close + 1);
-      console.log("Missed: " + str.slice(index, index + 50));
-    }
-    lastIndex = close + 1;
-  }
-  string += str.slice(lastIndex);
-  return string;
-}
-
-function shiftAll(str) {
-  return shift(shift(shift(str, "pos:"), "start:"), "end:");
-}
-*/
