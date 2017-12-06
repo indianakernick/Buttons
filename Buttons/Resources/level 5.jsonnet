@@ -56,15 +56,15 @@ local e = import "entities.jsonnet";
   e.makeLaserEmitter({
     id: 2,
     "on": true,
-    start: [9, 8.5],
-    end: [13, 8.5],
-    rotation: -90
+    start: [9, 8],
+    end: [12, 8],
+    orient: "right"
   }),
   e.makeLaserDetector({
     id: 3,
     emitter: 2,
-    pos: [13, 8.5],
-    rotation: 90
+    pos: [12, 8],
+    orient: "left"
   }),
   e.makeMovingPlatform({
     "in": 3,

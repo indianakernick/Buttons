@@ -28,11 +28,7 @@ void laserDetectorRenderingSystem(Registry &registry, NVGcontext *const ctx) {
       nvgFillColor(ctx, nvgRGBf(0.5f, 0.5f, 0.5f));
     }
     
-    nvgMoveTo(ctx, -0.5f, 0.0f);
-    nvgLineTo(ctx, 0.5f, 0.0f);
-    nvgLineTo(ctx, 0.5f, 0.2f);
-    nvgLineTo(ctx, -0.5f, 0.2);
-    nvgClosePath(ctx);
+    nvgRect(ctx, 0.0f, 0.0f, 1.0f, 0.2f);
     nvgFill(ctx);
     
     nvgRestore(ctx);

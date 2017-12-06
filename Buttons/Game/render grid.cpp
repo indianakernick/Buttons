@@ -16,17 +16,14 @@ void renderGrid(NVGcontext *const ctx) {
   nvgStrokeWidth(ctx, 0.05f);
   nvgStrokeColor(ctx, nvgRGBf(0.1f, 0.1f, 0.1f));
   
-  const float halfWidth = LEVEL_SIZE.x / 2.0f;
-  const float halfHeight = LEVEL_SIZE.y / 2.0f;
-  
-  for (float x = -halfWidth + 1.0f; x < halfWidth; ++x) {
-    nvgMoveTo(ctx, x, halfHeight);
-    nvgLineTo(ctx, x, -halfHeight);
+  for (float x = 1.0f; x < LEVEL_SIZE.x; ++x) {
+    nvgMoveTo(ctx, x, 0.0f);
+    nvgLineTo(ctx, x, LEVEL_SIZE.y);
   }
   
-  for (float y = -halfHeight + 1.0f; y < halfHeight; ++y) {
-    nvgMoveTo(ctx, halfWidth, y);
-    nvgLineTo(ctx, -halfWidth, y);
+  for (float y = 1.0f; y < LEVEL_SIZE.y; ++y) {
+    nvgMoveTo(ctx, 0.0f, y);
+    nvgLineTo(ctx, LEVEL_SIZE.x, y);
   }
   
   nvgStroke(ctx);

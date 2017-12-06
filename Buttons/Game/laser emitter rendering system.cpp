@@ -36,14 +36,14 @@ void laserEmitterRenderingSystem(Registry &registry, NVGcontext *const ctx) {
     
     nvgBeginPath(ctx);
     nvgFillColor(ctx, nvgRGBf(0.6f, 0.6f, 0.6f));
-    nvgMoveTo(ctx, -0.5f, 0.0f);
-    nvgLineTo(ctx, 0.5f, 0.0f);
-    nvgLineTo(ctx, 0.5f, 0.5f);
-    nvgLineTo(ctx, 0.25f, 0.5f);
+    nvgMoveTo(ctx, 0.0f, 0.0f);
+    nvgLineTo(ctx, 1.0f, 0.0f);
+    nvgLineTo(ctx, 1.0f, 0.5f);
+    nvgLineTo(ctx, 0.75f, 0.5f);
+    nvgLineTo(ctx, 0.75f, 1.0f);
     nvgLineTo(ctx, 0.25f, 1.0f);
-    nvgLineTo(ctx, -0.25f, 1.0f);
-    nvgLineTo(ctx, -0.25f, 0.5f);
-    nvgLineTo(ctx, -0.5f, 0.5f);
+    nvgLineTo(ctx, 0.25f, 0.5f);
+    nvgLineTo(ctx, 0.0f, 0.5f);
     nvgClosePath(ctx);
     nvgFill(ctx);
     

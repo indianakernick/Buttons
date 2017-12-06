@@ -266,7 +266,7 @@ void GameScreen::printMessage(const std::string &message) {
   const EntityID entity = registry.create();
   registry.assign<Text>(entity, message);
   Transform &transform = registry.assign<Transform>(entity);
-  transform.pos = {0.0f, 8.0f};
+  transform.pos = {16.0f, 17.0f};
   TextRendering &textRendering = registry.assign<TextRendering>(entity);
   // Magic?
   const json renderingNode = {

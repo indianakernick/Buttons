@@ -394,28 +394,28 @@ local lasers = [
   e.makeLaserEmitter({
     id: 18,
     "in": 5,
-    start: [22, 16.5],
-    end: [13, 16.5],
-    rotation: 90
+    start: [21, 16],
+    end: [13, 16],
+    orient: "left"
   }),
   e.makeLaserDetector({
     id: 19,
     emitter: 18,
-    pos: [13, 16.5],
-    rotation: -90
+    pos: [13, 16],
+    orient: "right"
   }),
   e.makeLaserEmitter({
     id: 20,
     "in": 19,
-    start: [12, 16.5],
-    end: [3, 16.5],
-    rotation: 90
+    start: [11, 16],
+    end: [3, 16],
+    orient: "left"
   }),
   e.makeLaserDetector({
     id: 21,
     emitter: 20,
-    pos: [3, 16.5],
-    rotation: -90
+    pos: [3, 16],
+    orient: "right"
   })
 ];
 

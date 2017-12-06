@@ -46,9 +46,10 @@ local emitters = [
   e.makeLaserEmitter({
     id: i,
     on: true,
-    start: [1 + scale / 2 + i * scale, 1],
-    end: [1 + scale / 2 + i * scale, 8],
-    size: [scale, scale]
+    start: [1 + i * scale, 1],
+    end: [1 + i * scale, 7],
+    size: [scale, scale],
+    orient: "up"
   }) for i in std.makeArray(count, function(x) x)
 ];
 
@@ -56,9 +57,9 @@ local detectors = [
   e.makeLaserDetector({
     id: count + i,
     emitter: i,
-    pos: [1 + scale / 2 + i * scale, 8],
+    pos: [1 + i * scale, 7],
     size: [scale, scale],
-    rotation: 180
+    orient: "down"
   }) for i in std.makeArray(count, function(x) x)
 ];
 

@@ -1,59 +1,56 @@
-local lookupOrient(params, table) =
-  if "orient" in params then
-    if params.orient in table then
-      table[params.orient]
+{
+  lookupOrient(params, table)::
+    if "orient" in params then
+      if params.orient in table then
+        table[params.orient]
+      else
+        table.up
     else
       table.up
-  else
-    table.up
-;
+  ,
 
-local getOrientAngle(params) =
-  local table = {
-    up: 0.0,
-    right: 270,
-    down: 180,
-    left: 90
-  };
+  getOrientOffset(params)::
+    local table = {
+      up: [0.0, 0.0],
+      right: [0.0, 1.0],
+      down: [1.0, 1.0],
+      left: [1.0, 0.0]
+    };
 
-  lookupOrient(params, table)
-;
+    $.lookupOrient(params, table)
+  ,
 
-local getOrientOffset(params) =
-  local table = {
-    up: [0.0, 0.0],
-    right: [0.0, 1.0],
-    down: [1.0, 1.0],
-    left: [1.0, 0.0]
-  };
+  add(vecA, vecB):: [
+    vecA[0] + vecB[0],
+    vecA[1] + vecB[1]
+  ],
 
-  lookupOrient(params, table)
-;
+  scale(vecA, vecB):: [
+    vecA[0] * vecB[0],
+    vecA[1] * vecB[1]
+  ],
 
-local add(vecA, vecB) = [
-  vecA[0] + vecB[0],
-  vecA[1] + vecB[1]
-];
-
-local scale(vecA, vecB) = [
-  vecA[0] * vecB[0],
-  vecA[1] * vecB[1]
-];
-
-local getOrientPos(params) =
-  if "pos" in params then
-    if "size" in params then
-      add(scale(getOrientOffset(params), params.size), params.pos)
+  getOrientPos(params)::
+    if "pos" in params then
+      $.add($.getOrientOffset(params), params.pos)
     else
-      add(getOrientOffset(params), params.pos)
-  else
-    getOrientOffset(params)
-;
+      $.getOrientOffset(params)
+  ,
+  
+  getOrientAngle(params)::
+    local table = {
+      up: 0.0,
+      right: 270,
+      down: 180,
+      left: 90
+    };
 
-{
+    $.lookupOrient(params, table)
+  ,
+  
   getOrientTransform(params):: {
-    pos: getOrientPos(params),
-    rotation: getOrientAngle(params),
+    pos: $.getOrientPos(params),
+    rotation: $.getOrientAngle(params),
     [if "size" in params then "scale"]: params.size
   },
 
