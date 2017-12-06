@@ -3,105 +3,105 @@ local e = import "entities.jsonnet";
 local platforms = [
   //outer border
   e.makePlatform({
-    pos: [-16, -9],
+    pos: [0, 0],
     size: [32, 1]
   }),
   e.makePlatform({
-    pos: [-16, -8],
+    pos: [0, 1],
     size: [1, 16]
   }),
   e.makePlatform({
-    pos: [-16, 8],
+    pos: [0, 17],
     size: [32, 1]
   }),
   e.makePlatform({
-    pos: [15, -8],
+    pos: [31, 1],
     size: [1, 16]
   }),
   
   //combo lock
   e.makePlatform({
-    pos: [-15, 6],
+    pos: [1, 15],
     size: [22, 1]
   }),
   e.makePlatform({
-    pos: [-15, 4],
+    pos: [1, 13],
     size: [23, 1]
   }),
   e.makePlatform({
-    pos: [-15, 7],
+    pos: [1, 16],
     size: [2, 1]
   }),
   e.makePlatform({
-    pos: [-4, 7]
+    pos: [12, 16]
   }),
   e.makePlatform({
-    pos: [6, 7]
+    pos: [22, 16]
   }),
   
   //key 2
   e.makePlatform({
-    pos: [7, -2],
+    pos: [23, 7],
     size: [3, 1]
   }),
   e.makePlatform({
-    pos: [6, -4],
+    pos: [22, 5],
     size: [5, 1]
   }),
   
   //key 0
   e.makePlatform({
-    pos: [-13, -1],
+    pos: [3, 8],
     size: [12, 1]
   }),
   e.makePlatform({
-    pos: [-7, 0]
+    pos: [9, 9]
   }),
   e.makePlatform({
-    pos: [-9, 1],
+    pos: [7, 10],
     size: [3, 1]
   }),
   
   //key 5
   e.makePlatform({
-    pos: [-13, -3],
+    pos: [3, 6],
     size: [1, 2]
   }),
   e.makePlatform({
-    pos: [-13, -4],
+    pos: [3, 5],
     size: [4, 1]
   }),
   
   //key 3
   e.makePlatform({
-    pos: [-6, -4],
+    pos: [10, 5],
     size: [4, 1]
   }),
   
   //key 1
   e.makePlatform({
-    pos: [-2, -8],
+    pos: [14, 1],
     size: [1, 7]
   }),
   e.makePlatform({
-    pos: [1, -6],
+    pos: [17, 3],
     size: [1, 6]
   }),
   e.makePlatform({
-    pos: [1, -7],
+    pos: [17, 2],
     size: [4, 1]
   }),
   e.makePlatform({
-    pos: [4, -8]
+    pos: [20, 1]
   }),
   
   //exit
   e.makePlatform({
-    pos: [-9, -7],
+    pos: [7, 2],
     size: [3, 1]
   }),
   e.makePlatform({
-    pos: [-7, -8]
+    pos: [9, 1]
   })
 ];
 
@@ -112,65 +112,65 @@ local makeStairs(start_x, start_y, count) = [
 ];
 
 local stairs =
-  makeStairs(14, -8, 4) +
-  makeStairs(12, -6, 4) +
-  makeStairs(10, 0, 2) +
+  makeStairs(30, 1, 4) +
+  makeStairs(28, 3, 4) +
+  makeStairs(26, 9, 2) +
 [
   e.makePlatform({
-    pos: [10, -8]
+    pos: [26, 1]
   }),
   e.makePlatform({
-    pos: [8, -6]
+    pos: [24, 3]
   }),
   e.makePlatform({
-    pos: [6, -8]
+    pos: [22, 1]
   }),
   e.makePlatform({
-    pos: [4, -6]
+    pos: [20, 3]
   }),
   e.makePlatform({
-    pos: [2, -4]
+    pos: [18, 5]
   }),
   e.makePlatform({
-    pos: [4, -2]
+    pos: [20, 7]
   }),
   e.makePlatform({
-    pos: [6, 0]
+    pos: [22, 9]
   }),
   e.makePlatform({
-    pos: [2, 0]
+    pos: [18, 9]
   })
 ];
 
 local keys = [
   e.makeKey({
     index: 0,
-    pos: [-8, 0]
+    pos: [8, 9]
   }),
   e.makeKey({
     index: 1,
-    pos: [3, -8]
+    pos: [19, 1]
   }),
   e.makeKey({
     index: 2,
-    pos: [8, -3]
+    pos: [24, 6]
   }),
   e.makeKey({
     //Is this a sign?
     index: 3,
-    pos: [-3, -3]
+    pos: [13, 6]
   }),
   e.makeKey({
     index: 4,
-    pos: [-15, 5]
+    pos: [1, 14]
   }),
   e.makeKey({
     index: 5,
-    pos: [-12, -3]
+    pos: [4, 6]
   }),
   e.makeKey({
     index: 6,
-    pos: [12, 7]
+    pos: [28, 16]
   })
 ];
 
@@ -194,89 +194,89 @@ local locks = [
   e.makeLock({
     id: 0,
     index: 0,
-    pos: [-10, -8]
+    pos: [6, 1]
   }),
   e.makeLock({
     id: 1,
     index: 1,
-    pos: [-10, 0]
+    pos: [6, 9]
   }),
   e.makeLock({
     id: 2,
     index: 2,
-    pos: [1, -8]
+    pos: [17, 1]
   }),
   e.makeLock({
     id: 3,
     index: 3,
-    pos: [8, -1]
+    pos: [24, 8]
   }),
   e.makeLock({
     id: 4,
     index: 4,
     //between 5 and 3 lies 4
-    pos: [-5, -3]
+    pos: [11, 6]
   }),
   e.makeLock({
     id: 5,
     index: 5,
-    pos: [7, 5]
+    pos: [23, 14]
   }),
   e.makeLock({
     id: 6,
     index: 6,
-    pos: [-10, -3]
+    pos: [6, 6]
   })
 ];
 
 local doors = [
   e.makeDoor({
     "in": 0,
-    pos: [-8.5, -8]
+    pos: [7.5, 1]
   }),
   e.makeDoor({
     "in": 1,
-    pos: [-8.5, 0]
+    pos: [7.5, 9]
   }),
   e.makeDoor({
     "in": 2,
-    pos: [2.5, -8]
+    pos: [18.5, 1]
   }),
   e.makeDoor({
     "in": 3,
-    pos: [7.5, -3]
+    pos: [23.5, 6]
   }),
   e.makeDoor({
     "in": 3,
-    pos: [9.5, -3]
+    pos: [25.5, 6]
   }),
   e.makeDoor({
     "in": 4,
-    pos: [-3.5, -3],
+    pos: [12.5, 6],
     size: [1, 2]
   }),
   e.makeDoor({
     "in": 5,
-    pos: [6.5, 5]
+    pos: [22.5, 14]
   }),
   e.makeDoor({
     "in": 6,
-    pos: [-10.5, -3],
+    pos: [5.5, 6],
     size: [1, 2]
   }),
   e.makeDoor({
     "in": 8,
-    pos: [-1, -0.5],
+    pos: [15, 8.5],
     size: [1, 2],
     rotation: -90
   }),
   e.makeDoor({
     "in": 19,
-    pos: [-3.5, 5]
+    pos: [12.5, 14]
   }),
   e.makeDoor({
     "in": 21,
-    pos: [-13.5, 5]
+    pos: [2.5, 14]
   }),
   
   /*left combo lock
@@ -289,22 +289,22 @@ local doors = [
   e.makeDoor({
     "in": [10, 11],
     operator: "and",
-    pos: [-11.5, 7]
+    pos: [4.5, 16]
   }),
   e.makeDoor({
     "in": [11, 13],
     operator: "xor",
-    pos: [-9.5, 7]
+    pos: [6.5, 16]
   }),
   e.makeDoor({
     "in": [12, 13],
     operator: "nor",
-    pos: [-7.5, 7]
+    pos: [8.5, 16]
   }),
   e.makeDoor({
     "in": [10, 12],
     operator: "or",
-    pos: [-5.5, 7]
+    pos: [10.5, 16]
   }),
   
   /*right combo lock
@@ -317,73 +317,73 @@ local doors = [
   e.makeDoor({
     "in": [15, 16],
     operator: "xor",
-    pos: [-1.5, 7]
+    pos: [14.5, 16]
   }),
   e.makeDoor({
     "in": [14, 16],
     operator: "nor",
-    pos: [0.5, 7]
+    pos: [16.5, 16]
   }),
   e.makeDoor({
     "in": [15, 17],
     operator: "xnor",
-    pos: [2.5, 7]
+    pos: [18.5, 16]
   }),
   e.makeDoor({
     "in": [14, 17],
     operator: "nand",
-    pos: [4.5, 7]
+    pos: [20.5, 16]
   })
 ];
 
 local makeSwitchRow(start_x, start_id) = [
   e.makeSwitch({
     id: start_id + i,
-    pos: [start_x + i * 2, 5]
+    pos: [start_x + i * 2, 14]
   }) for i in std.makeArray(4, function(x) x)
 ];
 
 local switches = [
   e.makeSwitch({
     id: 7,
-    pos: [-13, -8]
+    pos: [3, 1]
   }),
   e.makeSwitch({
     id: 8,
-    pos: [-6, -3]
+    pos: [10, 6]
   })
-] + makeSwitchRow(-12, 10)
-  + makeSwitchRow(-2, 14);
+] + makeSwitchRow(4, 10)
+  + makeSwitchRow(14, 14);
 
 local misc = [
   e.makePlayer({
-    pos: [-15, -8]
+    pos: [1, 1]
   }),
   e.makeExit({
-    pos: [-8, -8]
+    pos: [8, 1]
   }),
   e.makeBox({
-    pos: [-8, -6]
+    pos: [8, 3]
   }),
   e.makeButton({
     id: 9,
-    pos: [-3, -8]
+    pos: [13, 1]
   })
 ];
 
 local movingPlatforms = [
   e.makeMovingPlatform({
     "in": 7,
-    start: [-15, -9],
-    end: [-15, -1],
+    start: [1, 0],
+    end: [1, 8],
     size: [2, 1],
     speed: 0.1,
     "waiting time": 2
   }),
   e.makeMovingPlatform({
     "in": 9,
-    start: [-1, -9],
-    end: [-1, -2],
+    start: [15, 0],
+    end: [15, 7],
     size: [2, 1],
     speed: 0.1,
     "waiting time": 2
@@ -394,27 +394,27 @@ local lasers = [
   e.makeLaserEmitter({
     id: 18,
     "in": 5,
-    start: [6, 7.5],
-    end: [-3, 7.5],
+    start: [22, 16.5],
+    end: [13, 16.5],
     rotation: 90
   }),
   e.makeLaserDetector({
     id: 19,
     emitter: 18,
-    pos: [-3, 7.5],
+    pos: [13, 16.5],
     rotation: -90
   }),
   e.makeLaserEmitter({
     id: 20,
     "in": 19,
-    start: [-4, 7.5],
-    end: [-13, 7.5],
+    start: [12, 16.5],
+    end: [3, 16.5],
     rotation: 90
   }),
   e.makeLaserDetector({
     id: 21,
     emitter: 20,
-    pos: [-13, 7.5],
+    pos: [3, 16.5],
     rotation: -90
   })
 ];
