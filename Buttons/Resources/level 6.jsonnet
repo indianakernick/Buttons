@@ -78,11 +78,15 @@ local movingPlatforms = [
 local exitDoor = [
   e.makeButton({
     id: 2 * count,
-    pos: [28, 10],
-    size: [2, 2]
+    pos: [28, 10]
+  }),
+  e.makeButton({
+    id: 2 * count + 1,
+    pos: [29, 10]
   }),
   e.makeDoor({
-    "in": 2 * count,
+    "in": [2 * count, 2 * count + 1],
+    operator: "or",
     pos: [29, 1]
   })
 ];

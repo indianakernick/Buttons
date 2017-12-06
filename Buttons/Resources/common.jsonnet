@@ -50,8 +50,7 @@
   
   getOrientTransform(params):: {
     pos: $.getOrientPos(params),
-    rotation: $.getOrientAngle(params),
-    [if "size" in params then "scale"]: params.size
+    rotation: $.getOrientAngle(params)
   },
 
   getPos(params):: {
@@ -60,10 +59,6 @@
   
   getPosSize(params):: self.getPos(params) + {
     [if "size" in params then "scale"]: params.size
-  },
-  
-  getTransform(params):: self.getPosSize(params) + {
-    [if "rotation" in params then "rotation"]: params.rotation
   },
   
   getPowerInput(params):: {

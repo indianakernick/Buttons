@@ -6,6 +6,6 @@ function(params) {
       speed: 0.5
     },
     ShadowRendering: {},
-    Transform: common.getTransform(params)
+    Transform: common.getPosSize(params)
   }
 }

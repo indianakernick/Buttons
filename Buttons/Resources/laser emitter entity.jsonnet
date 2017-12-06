@@ -24,8 +24,6 @@ function(params) {
       start: common.add(params.start, common.lookupOrient(params, startPosTable)),
       end: common.add(params.end, common.lookupOrient(params, endPosTable)),
     },
-    Transform: common.getOrientTransform(params) + {
-      pos: common.add(common.getOrientOffset(params), params.start)
-    }
+    Transform: common.getOrientTransform(params + {pos: params.start})
   }
 }

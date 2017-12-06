@@ -11,7 +11,7 @@ function(params) {
     Collision: {},
     PowerOutput: {},
     Transform: {},
-    PhysicsBody: common.getTransform(params) + {
+    PhysicsBody: common.getOrientTransform(params) + {
       body: "button body.json"
     }
   }

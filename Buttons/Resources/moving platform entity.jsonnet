@@ -5,7 +5,7 @@ function(params) {
     Activation: {},
     MovingPlatformRendering: {},
     Transform: {},
-    PhysicsBody: common.getTransform(params) + {
+    PhysicsBody: common.getPosSize(params) + {
       body: "platform body.json",
       pos: params.start
     },
