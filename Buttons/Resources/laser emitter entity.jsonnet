@@ -17,7 +17,13 @@ local endPosTable = {
 function(params) {
   id: params.id,
   components: {
-    Activation: {},
+    Activation:
+      if "active" in params then {
+        active: params.active
+      } else if "on" in params then {
+        active: params.on
+      } else {}
+    ,
     LaserEmitterRendering: {},
     PowerInput: common.getPowerInput(params),
     PhysicsRayCast: {
