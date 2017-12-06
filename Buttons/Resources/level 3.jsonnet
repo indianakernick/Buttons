@@ -2,47 +2,47 @@ local e = import "entities.jsonnet";
 
 [
   e.makePlatform({
-    pos: [-16, -9],
+    pos: [0, 0],
     size: [32, 7]
   }),
   e.makePlatform({
-    pos: [-16, 2],
+    pos: [0, 11],
     size: [32, 7]
   }),
   e.makePlatform({
-    pos: [-16, -2],
+    pos: [0, 7],
     size: [1, 4]
   }),
   e.makePlatform({
-    pos: [15, -2],
+    pos: [31, 7],
     size: [1, 4]
   }),
   e.makePlayer({
-    pos: [-10, -2]
+    pos: [6, 7]
   }),
   e.makeExit({
-    pos: [14, -2]
+    pos: [30, 7]
   }),
   e.makeBox({
-    pos: [-13, -2]
+    pos: [3, 7]
   }),
   e.makeButton({
     id: 0,
-    pos: [-2, -2]
+    pos: [14, 7]
   }),
   e.makeSwitch({
     id: 1,
-    pos: [1, -2]
+    pos: [17, 7]
   }),
   e.makeDoor({
     "in": 1,
-    pos: [5.5, 2],
+    pos: [21.5, 11],
     size: [1, 4],
     rotation: 180
   }),
   e.makeDoor({
     "in": 0,
-    pos: [8.5, 2],
+    pos: [24.5, 11],
     size: [1, 4],
     rotation: 180
   })
