@@ -82,7 +82,7 @@ local exitDoor = [
   }),
   e.makeDoor({
     "in": 2 * count,
-    pos: [29.5, 1]
+    pos: [29, 1]
   })
 ];
 

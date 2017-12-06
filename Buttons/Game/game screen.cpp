@@ -105,11 +105,11 @@ void GameScreen::update(const float delta) {
   buttonSystem(registry);
   switchSystem(registry);
   
+  //Set inputs
+  powerSystem(registry);
+  
   //Respond to inputs
   powerInputActivationSystem(registry);
-  
-  //Set inputs
-  powerSystem(registry);//power
 }
 
 glm::mat3 GameScreen::preRender(const glm::ivec2 windowSize, const float delta) {

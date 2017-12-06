@@ -51,7 +51,7 @@ local e = import "entities.jsonnet";
   e.makeDoor({
     "in": [0, 1],
     operator: "and",
-    pos: [19.5, 7]
+    pos: [19, 7]
   }),
   e.makeLaserEmitter({
     id: 2,

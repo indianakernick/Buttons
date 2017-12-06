@@ -232,51 +232,51 @@ local locks = [
 local doors = [
   e.makeDoor({
     "in": 0,
-    pos: [7.5, 1]
+    pos: [7, 1]
   }),
   e.makeDoor({
     "in": 1,
-    pos: [7.5, 9]
+    pos: [7, 9]
   }),
   e.makeDoor({
     "in": 2,
-    pos: [18.5, 1]
+    pos: [18, 1]
   }),
   e.makeDoor({
     "in": 3,
-    pos: [23.5, 6]
+    pos: [23, 6]
   }),
   e.makeDoor({
     "in": 3,
-    pos: [25.5, 6]
+    pos: [25, 6]
   }),
   e.makeDoor({
     "in": 4,
-    pos: [12.5, 6],
+    pos: [12, 6],
     size: [1, 2]
   }),
   e.makeDoor({
     "in": 5,
-    pos: [22.5, 14]
+    pos: [22, 14]
   }),
   e.makeDoor({
     "in": 6,
-    pos: [5.5, 6],
+    pos: [5, 6],
     size: [1, 2]
   }),
   e.makeDoor({
     "in": 8,
-    pos: [15, 8.5],
+    pos: [15, 8],
     size: [1, 2],
-    rotation: -90
+    orient: "right"
   }),
   e.makeDoor({
     "in": 19,
-    pos: [12.5, 14]
+    pos: [12, 14]
   }),
   e.makeDoor({
     "in": 21,
-    pos: [2.5, 14]
+    pos: [2, 14]
   }),
   
   /*left combo lock
@@ -289,22 +289,22 @@ local doors = [
   e.makeDoor({
     "in": [10, 11],
     operator: "and",
-    pos: [4.5, 16]
+    pos: [4, 16]
   }),
   e.makeDoor({
     "in": [11, 13],
     operator: "xor",
-    pos: [6.5, 16]
+    pos: [6, 16]
   }),
   e.makeDoor({
     "in": [12, 13],
     operator: "nor",
-    pos: [8.5, 16]
+    pos: [8, 16]
   }),
   e.makeDoor({
     "in": [10, 12],
     operator: "or",
-    pos: [10.5, 16]
+    pos: [10, 16]
   }),
   
   /*right combo lock
@@ -317,22 +317,22 @@ local doors = [
   e.makeDoor({
     "in": [15, 16],
     operator: "xor",
-    pos: [14.5, 16]
+    pos: [14, 16]
   }),
   e.makeDoor({
     "in": [14, 16],
     operator: "nor",
-    pos: [16.5, 16]
+    pos: [16, 16]
   }),
   e.makeDoor({
     "in": [15, 17],
     operator: "xnor",
-    pos: [18.5, 16]
+    pos: [18, 16]
   }),
   e.makeDoor({
     "in": [14, 17],
     operator: "nand",
-    pos: [20.5, 16]
+    pos: [20, 16]
   })
 ];
 

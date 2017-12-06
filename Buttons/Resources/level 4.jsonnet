@@ -29,7 +29,7 @@ local e = import "entities.jsonnet";
   }),
   e.makeDoor({
     "in": 5,
-    pos: [25.5, 4],
+    pos: [25, 4],
     size: [1, 4]
   }),
   e.makeSwitch({
@@ -64,24 +64,24 @@ local e = import "entities.jsonnet";
   e.makeDoor({
     "in": [0, 1],
     operator: "or",
-    pos: [5.5, 10],
+    pos: [5, 10],
     size: [1, 4]
   }),
   e.makeDoor({
     "in": [0, 2],
     operator: "xor",
-    pos: [12.5, 10],
+    pos: [12, 10],
     size: [1, 4]
   }),
   e.makeDoor({
     "in": 2,
-    pos: [19.5, 10],
+    pos: [19, 10],
     size: [1, 4]
   }),
   e.makeDoor({
     "in": 3,
     operator: "not",
-    pos: [26.5, 10],
+    pos: [26, 10],
     size: [1, 4]
   })
 ]

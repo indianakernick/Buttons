@@ -25,9 +25,9 @@ local e = import "entities.jsonnet";
   }),
   e.makeDoor({
     "in": 0,
-    pos: [21.5, 10],
+    pos: [21, 9],
     size: [1, 2],
-    rotation: 180
+    orient: "down"
   }),
   e.makeSwitch({
     id: 0,

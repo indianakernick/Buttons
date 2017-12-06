@@ -78,7 +78,7 @@ local machinePistons = [
 local exitDoor = [
   e.makeDoor({
     "in": 3,
-    pos: [29.5, 16]
+    pos: [29, 16]
   })
 ];
 

@@ -36,14 +36,14 @@ local e = import "entities.jsonnet";
   }),
   e.makeDoor({
     "in": 1,
-    pos: [21.5, 11],
+    pos: [21, 10],
     size: [1, 4],
-    rotation: 180
+    orient: "down"
   }),
   e.makeDoor({
     "in": 0,
-    pos: [24.5, 11],
+    pos: [24, 10],
     size: [1, 4],
-    rotation: 180
+    orient: "down"
   })
 ]

@@ -1,4 +1,9 @@
 {
+  add(a, b):: [
+    a[0] + b[0],
+    a[1] + b[1]
+  ],
+
   getPos(params):: {
     [if "pos" in params then "pos"]: params.pos
   },
