@@ -12,7 +12,7 @@ function(params) {
       body: "sensor body.json"
     },
     Lock: {
-      [if "index" in params then "index"]: params.index
+      index: params.index
     }
   }
 }

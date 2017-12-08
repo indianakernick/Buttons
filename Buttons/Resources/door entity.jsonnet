@@ -9,7 +9,11 @@ function(params) {
     DoorRendering: {},
     Transform: {},
     PhysicsBody: common.getOrientTransform(params) + {
-      [if "size" in params then "scale"]: params.size,
+      scale: if "height" in params then
+        [1, params.height]
+      else
+        [1, 1]
+      ,
       body: "door body.json"
     },
     PowerInput: common.getPowerInput(params)

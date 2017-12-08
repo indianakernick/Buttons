@@ -37,13 +37,13 @@ local e = import "entities.jsonnet";
   e.makeDoor({
     "in": 1,
     pos: [21, 10],
-    size: [1, 4],
+    height: 4,
     orient: "down"
   }),
   e.makeDoor({
     "in": 0,
     pos: [24, 10],
-    size: [1, 4],
+    height: 4,
     orient: "down"
   })
 ]
