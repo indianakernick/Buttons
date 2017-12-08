@@ -2,7 +2,7 @@ local common = import "common.jsonnet";
 
 function(params) {
   components: {
-    Activation: {
+    Activation: common.getActive(params) + {
       speed: 4
     },
     Door: {},

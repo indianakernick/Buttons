@@ -65,5 +65,12 @@
     [if "in" in params then "in"]: params["in"],
     [if "operator" in params then "operator"]: params.operator,
     [if "on" in params then "on"]: params.on
-  }
+  },
+  
+  getActive(params)::
+    if "active" in params then {
+      active: params.active
+    } else if "on" in params then {
+      active: params.on
+    } else {}
 }
