@@ -13,6 +13,22 @@
 #include <glm/mat3x3.hpp>
 #include "rendering resources.hpp"
 
+//@TODO use this instead of nvgSave and nvgRestore
+class SaveTransform {
+public:
+  explicit SaveTransform(NVGcontext *const ctx)
+    : ctx(ctx) {
+    nvgCurrentTransform(ctx, mat);
+  }
+  ~SaveTransform() {
+    nvgTransform(ctx, mat[0], mat[1], mat[2], mat[3], mat[4], mat[5]);
+  }
+  
+private:
+  NVGcontext *ctx;
+  float mat[6];
+};
+
 inline NVGcolor nvgGray(const float val) {
   NVGcolor color;
   color.r = val;
