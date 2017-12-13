@@ -37,42 +37,38 @@ local main = [
   })
 ];
 
-local areaWidth = 26;
-local count = areaWidth;
-local scale = areaWidth / count;
+local count = 26;
 local pistonSpeed = 2;
 
 local emitters = [
   e.makeLaserEmitter({
-    id: i,
+    id: x,
     on: true,
-    start: [1 + i * scale, 1],
-    end: [1 + i * scale, 7],
-    size: [scale, scale],
+    start: [1 + x, 1],
+    end: [1 + x, 7],
     orient: "up"
-  }) for i in std.makeArray(count, function(x) x)
+  }) for x in std.makeArray(count, function(x) x)
 ];
 
 local detectors = [
   e.makeLaserDetector({
-    id: count + i,
-    emitter: i,
-    pos: [1 + i * scale, 7],
-    size: [scale, scale],
+    id: count + x,
+    emitter: x,
+    pos: [1 + x, 7],
     orient: "down"
-  }) for i in std.makeArray(count, function(x) x)
+  }) for x in std.makeArray(count, function(x) x)
 ];
 
 local movingPlatforms = [
   e.makeMovingPlatform({
-    "in": count + i,
+    "in": count + x,
     operator: "not",
-    start: [1 + i * scale, 8],
-    end: [1 + i * scale, 10],
-    size: [scale, 2],
+    start: [1 + x, 8],
+    end: [1 + x, 10],
+    size: [1, 2],
     speed: pistonSpeed,
     "waiting time": "piston"
-  }) for i in std.makeArray(count, function(x) x)
+  }) for x in std.makeArray(count, function(x) x)
 ];
 
 local exitDoor = [
@@ -91,4 +87,8 @@ local exitDoor = [
   })
 ];
 
-main + emitters + detectors + movingPlatforms + exitDoor
+main
++ emitters
++ detectors
++ movingPlatforms
++ exitDoor

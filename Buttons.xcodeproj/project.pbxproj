@@ -480,7 +480,7 @@
 		4584F44A1FD215340062B93E /* level file.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "level file.cpp"; sourceTree = "<group>"; };
 		4584F44B1FD215340062B93E /* level file.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "level file.hpp"; sourceTree = "<group>"; };
 		4584F46D1FD34D440062B93E /* level 10.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 10.jsonnet"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
-		4584F46F1FD38E0A0062B93E /* level 6.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 6.jsonnet"; sourceTree = "<group>"; };
+		4584F46F1FD38E0A0062B93E /* level 6.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 6.jsonnet"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
 		4584F4711FD3ABE40062B93E /* level 7.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 7.jsonnet"; sourceTree = "<group>"; };
 		4584F4791FD4DE560062B93E /* entities.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = entities.jsonnet; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
 		4584F47B1FD517B70062B93E /* common.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = common.jsonnet; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
