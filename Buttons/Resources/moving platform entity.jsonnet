@@ -1,7 +1,9 @@
 local common = import "common.jsonnet";
 
+local validParams = ["start", "end", "size", "on", "in", "operator", "speed", "waiting time"];
+
 function(params) {
-  components: {
+  components: common.checkParams(params, validParams) {
     Activation: {},
     MovingPlatformRendering: {},
     Transform: {},

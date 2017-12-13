@@ -2,7 +2,7 @@ local common = import "common.jsonnet";
 
 function(params) {
   [if "id" in params then "id"]: params.id,
-  components: {
+  components: common.checkParams(params, ["id", "pos", "orient"]) {
     Activation: {
       speed: 4
     },

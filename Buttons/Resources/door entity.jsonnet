@@ -1,7 +1,9 @@
 local common = import "common.jsonnet";
 
+local validNames = ["active", "on", "in", "operator", "pos", "orient", "height"];
+
 function(params) {
-  components: {
+  components: common.checkParams(params, validNames) {
     Activation: common.getActive(params) + {
       speed: 4
     },

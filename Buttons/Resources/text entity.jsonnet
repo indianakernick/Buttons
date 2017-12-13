@@ -1,7 +1,7 @@
 local common = import "common.jsonnet";
 
 function(params) {
-  components: {
+  components: common.checkParams(params, ["font size", "pos", "text"]) {
     TextRendering: {
       font: "Arial.ttf",
       size:

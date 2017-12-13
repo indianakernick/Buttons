@@ -14,9 +14,11 @@ local endPosTable = {
   left: [0.0, 0.5]
 };
 
+local validNames = ["id", "active", "on", "in", "operator", "start", "end", "orient"];
+
 function(params) {
   id: params.id,
-  components: {
+  components: common.checkParams(params, validNames) {
     Activation: common.getActive(params),
     LaserEmitterRendering: {},
     PowerInput: common.getPowerInput(params),
