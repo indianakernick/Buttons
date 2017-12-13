@@ -253,7 +253,7 @@ local doors = [
   e.makeDoor({
     "in": 4,
     pos: [12, 6],
-    size: [1, 2]
+    height: 2
   }),
   e.makeDoor({
     "in": 5,
