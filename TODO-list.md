@@ -1,6 +1,6 @@
- - [ ] Get the level editor working
+ - [x] Get the level editor working
  - [ ] Create level compiler (JSONNET to JSON)
- - [ ] Unroll the loops in the levels made without the editor (for compatibility with the editor)
+ - [ ] ~~Unroll the loops in the levels made without the editor (for compatibility with the editor)~~
  - [ ] Create asset compiler (Generates a texture atlas)
  - [ ] Use texture atlas in game
  - [ ] Use texture atlas in level editor
