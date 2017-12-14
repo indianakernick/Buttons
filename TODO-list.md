@@ -1,0 +1,10 @@
+ - [ ] Get the level editor working
+ - [ ] Create level compiler (JSONNET to JSON)
+ - [ ] Unroll the loops in the levels made without the editor (for compatibility with the editor)
+ - [ ] Create asset compiler (Generates a texture atlas)
+ - [ ] Use texture atlas in game
+ - [ ] Use texture atlas in level editor
+ - [ ] Make as many levels as possible with the level editor. Also add a few features to the editor when necessary
+ - [ ] Release the game and possibly the level editor
+ - [ ] Make some more levels and release those
+ - [ ] Add new features to the game. (Analog power, other stuff)
