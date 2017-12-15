@@ -230,6 +230,7 @@
 		450ED6341FBA89B0008F2902 /* exit rendering system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "exit rendering system.hpp"; sourceTree = "<group>"; };
 		450ED6361FBA89C1008F2902 /* exit rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "exit rendering component.cpp"; sourceTree = "<group>"; };
 		450ED6371FBA89C1008F2902 /* exit rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "exit rendering component.hpp"; sourceTree = "<group>"; };
+		4520DFAD1FE37017008FCBB4 /* level 8.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 8.jsonnet"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
 		452E10871FB2D27D0063114B /* collision pairs.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "collision pairs.cpp"; sourceTree = "<group>"; };
 		452E10881FB2D27D0063114B /* collision pairs.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "collision pairs.hpp"; sourceTree = "<group>"; };
 		452E108A1FB2D8BA0063114B /* object types.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "object types.cpp"; sourceTree = "<group>"; };
@@ -479,7 +480,7 @@
 		4584F4481FD13BA30062B93E /* physics file.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "physics file.hpp"; sourceTree = "<group>"; };
 		4584F44A1FD215340062B93E /* level file.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "level file.cpp"; sourceTree = "<group>"; };
 		4584F44B1FD215340062B93E /* level file.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "level file.hpp"; sourceTree = "<group>"; };
-		4584F46D1FD34D440062B93E /* level 10.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 10.jsonnet"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
+		4584F46D1FD34D440062B93E /* level 9.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 9.jsonnet"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
 		4584F46F1FD38E0A0062B93E /* level 6.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 6.jsonnet"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
 		4584F4711FD3ABE40062B93E /* level 7.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 7.jsonnet"; sourceTree = "<group>"; };
 		4584F4791FD4DE560062B93E /* entities.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = entities.jsonnet; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
@@ -1071,7 +1072,8 @@
 				4584F4311FD12CF00062B93E /* level 5.jsonnet */,
 				4584F46F1FD38E0A0062B93E /* level 6.jsonnet */,
 				4584F4711FD3ABE40062B93E /* level 7.jsonnet */,
-				4584F46D1FD34D440062B93E /* level 10.jsonnet */,
+				4520DFAD1FE37017008FCBB4 /* level 8.jsonnet */,
+				4584F46D1FD34D440062B93E /* level 9.jsonnet */,
 				4584F43C1FD12CF30062B93E /* level final.jsonnet */,
 			);
 			name = Levels;
