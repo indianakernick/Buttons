@@ -33,6 +33,10 @@
 		450ED62D1FB8620D008F2902 /* animation system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED62B1FB8620D008F2902 /* animation system.cpp */; };
 		450ED6351FBA89B0008F2902 /* exit rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED6331FBA89B0008F2902 /* exit rendering system.cpp */; };
 		450ED6381FBA89C1008F2902 /* exit rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED6361FBA89C1008F2902 /* exit rendering component.cpp */; };
+		4520DFB11FE3966C008FCBB4 /* libGLEW.2.1.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4583ED6B1FB1859500AED27D /* libGLEW.2.1.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		4520DFB21FE3966C008FCBB4 /* libSDL2-2.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4583ED6C1FB1859500AED27D /* libSDL2-2.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		4520DFB31FE3966C008FCBB4 /* libSimpleton Engine.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4583ED691FB1859500AED27D /* libSimpleton Engine.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		4520DFB41FE3966C008FCBB4 /* libyaml-cpp.0.5.3.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4583ED6A1FB1859500AED27D /* libyaml-cpp.0.5.3.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		452E10891FB2D27D0063114B /* collision pairs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452E10871FB2D27D0063114B /* collision pairs.cpp */; };
 		452E108C1FB2D8BA0063114B /* object types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452E108A1FB2D8BA0063114B /* object types.cpp */; };
 		452E10941FB2F4930063114B /* Consolas.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 452E10931FB2F4700063114B /* Consolas.ttf */; };
@@ -175,6 +179,22 @@
 		459796401FB687AC007A7432 /* box rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597963E1FB687AC007A7432 /* box rendering system.cpp */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4520DFB01FE39608008FCBB4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4520DFB11FE3966C008FCBB4 /* libGLEW.2.1.0.dylib in CopyFiles */,
+				4520DFB21FE3966C008FCBB4 /* libSDL2-2.0.0.dylib in CopyFiles */,
+				4520DFB31FE3966C008FCBB4 /* libSimpleton Engine.dylib in CopyFiles */,
+				4520DFB41FE3966C008FCBB4 /* libyaml-cpp.0.5.3.dylib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		450ED5C11FB69D31008F2902 /* player input component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "player input component.cpp"; sourceTree = "<group>"; };
 		450ED5C21FB69D31008F2902 /* player input component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "player input component.hpp"; sourceTree = "<group>"; };
@@ -229,7 +249,7 @@
 		450ED6361FBA89C1008F2902 /* exit rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "exit rendering component.cpp"; sourceTree = "<group>"; };
 		450ED6371FBA89C1008F2902 /* exit rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "exit rendering component.hpp"; sourceTree = "<group>"; };
 		4520DFAD1FE37017008FCBB4 /* level 8.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 8.jsonnet"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
-		4520DFAF1FE3909B008FCBB4 /* switch entity.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; name = "switch entity.jsonnet"; path = "../../../../../../../.Trash/switch entity.jsonnet"; sourceTree = "<group>"; };
+		4520DFAF1FE3909B008FCBB4 /* switch entity.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "switch entity.jsonnet"; sourceTree = "<group>"; };
 		452E10871FB2D27D0063114B /* collision pairs.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "collision pairs.cpp"; sourceTree = "<group>"; };
 		452E10881FB2D27D0063114B /* collision pairs.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "collision pairs.hpp"; sourceTree = "<group>"; };
 		452E108A1FB2D8BA0063114B /* object types.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "object types.cpp"; sourceTree = "<group>"; };
@@ -1180,6 +1200,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4583ED631FB1841100AED27D /* Build configuration list for PBXNativeTarget "Buttons" */;
 			buildPhases = (
+				4520DFB01FE39608008FCBB4 /* CopyFiles */,
 				4583ED511FB1841100AED27D /* Sources */,
 				4583ED521FB1841100AED27D /* Frameworks */,
 				4584F4751FD4BF060062B93E /* Compile Levels */,
