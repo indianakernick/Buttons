@@ -67,7 +67,7 @@ local movingPlatforms = [
     end: [1 + x, 10],
     size: [1, 2],
     speed: pistonSpeed,
-    "waiting time": "piston"
+    piston: true,
   }) for x in std.makeArray(count, function(x) x)
 ];
 

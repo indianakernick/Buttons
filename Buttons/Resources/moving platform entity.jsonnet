@@ -1,6 +1,6 @@
 local common = import "common.jsonnet";
 
-local validParams = ["start", "end", "size", "on", "in", "operator", "speed", "waiting time"];
+local validParams = ["start", "end", "size", "on", "in", "operator", "speed", "waiting time", "piston"];
 
 function(params) {
   components: common.checkParams(params, validParams) {
@@ -16,7 +16,8 @@ function(params) {
       start: params.start,
       end: params.end,
       [if "speed" in params then "speed"]: params.speed,
-      [if "waiting time" in params then "waiting time"]: params["waiting time"]
+      [if "waiting time" in params then "waiting time"]: params["waiting time"],
+      [if "piston" in params then "piston"]: params["piston"]
     }
   }
 }

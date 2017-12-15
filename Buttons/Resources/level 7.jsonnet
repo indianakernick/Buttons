@@ -62,7 +62,7 @@ local machinePistons = [
     start: [12, 1],
     end: [13, 1],
     speed: 5,
-    "waiting time": "piston"
+    piston: true
   })
 ] + [
   e.makeMovingPlatform({
@@ -71,7 +71,7 @@ local machinePistons = [
     start: [i * 5 + 17, 1],
     end: [i * 5 + 18, 1],
     speed: 5,
-    "waiting time": "piston"
+    piston: true
   }) for i in std.makeArray(3, function(x) x)
 ];
 
