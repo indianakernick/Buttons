@@ -1,0 +1,87 @@
+[
+   {
+      "components": {
+         "Text": "Congratulations",
+         "TextRendering": {
+            "font": "Arial.ttf",
+            "hori align": "center",
+            "size": 128,
+            "vert align": "middle"
+         },
+         "Transform": {
+            "pos": [
+               16,
+               14
+            ]
+         }
+      }
+   },
+   {
+      "components": {
+         "Text": "You have just completed Buttons",
+         "TextRendering": {
+            "font": "Arial.ttf",
+            "hori align": "center",
+            "size": 64,
+            "vert align": "middle"
+         },
+         "Transform": {
+            "pos": [
+               16,
+               11
+            ]
+         }
+      }
+   },
+   {
+      "components": {
+         "Text": "Now you can accomplish anything",
+         "TextRendering": {
+            "font": "Arial.ttf",
+            "hori align": "center",
+            "size": 64,
+            "vert align": "middle"
+         },
+         "Transform": {
+            "pos": [
+               16,
+               9.5
+            ]
+         }
+      }
+   },
+   {
+      "components": {
+         "Text": "A game by:",
+         "TextRendering": {
+            "font": "Arial.ttf",
+            "hori align": "center",
+            "size": 64,
+            "vert align": "middle"
+         },
+         "Transform": {
+            "pos": [
+               16,
+               7
+            ]
+         }
+      }
+   },
+   {
+      "components": {
+         "Text": "Indi Kernick",
+         "TextRendering": {
+            "font": "Arial.ttf",
+            "hori align": "center",
+            "size": 64,
+            "vert align": "middle"
+         },
+         "Transform": {
+            "pos": [
+               16,
+               5.5
+            ]
+         }
+      }
+   }
+]

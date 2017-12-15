@@ -1,0 +1,204 @@
+[
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               0,
+               0
+            ],
+            "scale": [
+               32,
+               1
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               0,
+               17
+            ],
+            "scale": [
+               32,
+               1
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               0,
+               1
+            ],
+            "scale": [
+               1,
+               16
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               31,
+               1
+            ],
+            "scale": [
+               1,
+               16
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               3,
+               1
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               8,
+               1
+            ],
+            "scale": [
+               1,
+               2
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               11,
+               4
+            ],
+            "scale": [
+               4,
+               1
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               19,
+               1
+            ],
+            "scale": [
+               1,
+               4
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               26,
+               2
+            ],
+            "scale": [
+               5,
+               1
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "Collision": { },
+         "PhysicsBody": {
+            "body": "player body.json",
+            "pos": [
+               1,
+               1
+            ]
+         },
+         "PlayerInput": { },
+         "PlayerJump": { },
+         "PlayerKeys": { },
+         "PlayerRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "Activation": { },
+         "Animation": {
+            "speed": 1.5
+         },
+         "Collision": { },
+         "Exit": { },
+         "ExitRendering": { },
+         "PhysicsBody": {
+            "body": "sensor body.json",
+            "pos": [
+               30,
+               3
+            ]
+         },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "Text": "Press W or up to jump",
+         "TextRendering": {
+            "font": "Arial.ttf",
+            "hori align": "center",
+            "size": 32,
+            "vert align": "middle"
+         },
+         "Transform": {
+            "pos": [
+               16,
+               9
+            ]
+         }
+      }
+   }
+]

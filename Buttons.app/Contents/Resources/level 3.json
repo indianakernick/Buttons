@@ -1,0 +1,211 @@
+[
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               0,
+               0
+            ],
+            "scale": [
+               32,
+               7
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               0,
+               11
+            ],
+            "scale": [
+               32,
+               7
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               0,
+               7
+            ],
+            "scale": [
+               1,
+               4
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               31,
+               7
+            ],
+            "scale": [
+               1,
+               4
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "Collision": { },
+         "PhysicsBody": {
+            "body": "player body.json",
+            "pos": [
+               6,
+               7
+            ]
+         },
+         "PlayerInput": { },
+         "PlayerJump": { },
+         "PlayerKeys": { },
+         "PlayerRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "Activation": { },
+         "Animation": {
+            "speed": 1.5
+         },
+         "Collision": { },
+         "Exit": { },
+         "ExitRendering": { },
+         "PhysicsBody": {
+            "body": "sensor body.json",
+            "pos": [
+               30,
+               7
+            ]
+         },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "BoxRendering": { },
+         "PhysicsBody": {
+            "body": "box body.json",
+            "pos": [
+               3,
+               7
+            ]
+         },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "Activation": {
+            "speed": 8
+         },
+         "Button": { },
+         "ButtonRendering": { },
+         "Collision": { },
+         "PhysicsBody": {
+            "body": "button body.json",
+            "pos": [
+               14,
+               7
+            ],
+            "rotation": 0
+         },
+         "PowerOutput": { },
+         "Transform": { }
+      },
+      "id": 0
+   },
+   {
+      "components": {
+         "Activation": {
+            "speed": 4
+         },
+         "Collision": { },
+         "PhysicsBody": {
+            "body": "sensor body.json",
+            "pos": [
+               17,
+               7
+            ],
+            "rotation": 0
+         },
+         "PowerOutput": { },
+         "Switch": { },
+         "SwitchRendering": { },
+         "Transform": { }
+      },
+      "id": 1
+   },
+   {
+      "components": {
+         "Activation": {
+            "speed": 4
+         },
+         "Door": { },
+         "DoorRendering": { },
+         "PhysicsBody": {
+            "body": "door body.json",
+            "pos": [
+               22,
+               11
+            ],
+            "rotation": 180,
+            "scale": [
+               1,
+               4
+            ]
+         },
+         "PowerInput": {
+            "in": 1
+         },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "Activation": {
+            "speed": 4
+         },
+         "Door": { },
+         "DoorRendering": { },
+         "PhysicsBody": {
+            "body": "door body.json",
+            "pos": [
+               25,
+               11
+            ],
+            "rotation": 180,
+            "scale": [
+               1,
+               4
+            ]
+         },
+         "PowerInput": {
+            "in": 0
+         },
+         "Transform": { }
+      }
+   }
+]

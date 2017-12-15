@@ -1,0 +1,1301 @@
+[
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               0,
+               0
+            ],
+            "scale": [
+               32,
+               1
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               0,
+               17
+            ],
+            "scale": [
+               32,
+               1
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               0,
+               1
+            ],
+            "scale": [
+               1,
+               16
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               31,
+               1
+            ],
+            "scale": [
+               1,
+               16
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               30,
+               15
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               12,
+               2
+            ],
+            "scale": [
+               19,
+               1
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "Collision": { },
+         "PhysicsBody": {
+            "body": "player body.json",
+            "pos": [
+               1,
+               1
+            ]
+         },
+         "PlayerInput": { },
+         "PlayerJump": { },
+         "PlayerKeys": { },
+         "PlayerRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "Activation": { },
+         "Animation": {
+            "speed": 1.5
+         },
+         "Collision": { },
+         "Exit": { },
+         "ExitRendering": { },
+         "PhysicsBody": {
+            "body": "sensor body.json",
+            "pos": [
+               30,
+               16
+            ]
+         },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               12,
+               1
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               16,
+               1
+            ],
+            "scale": [
+               2,
+               1
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               21,
+               1
+            ],
+            "scale": [
+               2,
+               1
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               26,
+               1
+            ],
+            "scale": [
+               2,
+               1
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "BoxRendering": { },
+         "PhysicsBody": {
+            "body": "box body.json",
+            "pos": [
+               13,
+               1
+            ]
+         },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "BoxRendering": { },
+         "PhysicsBody": {
+            "body": "box body.json",
+            "pos": [
+               18,
+               1
+            ]
+         },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "BoxRendering": { },
+         "PhysicsBody": {
+            "body": "box body.json",
+            "pos": [
+               23,
+               1
+            ]
+         },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "BoxRendering": { },
+         "PhysicsBody": {
+            "body": "box body.json",
+            "pos": [
+               28,
+               1
+            ]
+         },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "Activation": {
+            "speed": 8
+         },
+         "Button": { },
+         "ButtonRendering": { },
+         "Collision": { },
+         "PhysicsBody": {
+            "body": "button body.json",
+            "pos": [
+               15,
+               1
+            ],
+            "rotation": 0
+         },
+         "PowerOutput": { },
+         "Transform": { }
+      },
+      "id": 0
+   },
+   {
+      "components": {
+         "Activation": {
+            "speed": 8
+         },
+         "Button": { },
+         "ButtonRendering": { },
+         "Collision": { },
+         "PhysicsBody": {
+            "body": "button body.json",
+            "pos": [
+               20,
+               1
+            ],
+            "rotation": 0
+         },
+         "PowerOutput": { },
+         "Transform": { }
+      },
+      "id": 1
+   },
+   {
+      "components": {
+         "Activation": {
+            "speed": 8
+         },
+         "Button": { },
+         "ButtonRendering": { },
+         "Collision": { },
+         "PhysicsBody": {
+            "body": "button body.json",
+            "pos": [
+               25,
+               1
+            ],
+            "rotation": 0
+         },
+         "PowerOutput": { },
+         "Transform": { }
+      },
+      "id": 2
+   },
+   {
+      "components": {
+         "Activation": {
+            "speed": 8
+         },
+         "Button": { },
+         "ButtonRendering": { },
+         "Collision": { },
+         "PhysicsBody": {
+            "body": "button body.json",
+            "pos": [
+               30,
+               1
+            ],
+            "rotation": 0
+         },
+         "PowerOutput": { },
+         "Transform": { }
+      },
+      "id": 3
+   },
+   {
+      "components": {
+         "Activation": { },
+         "MovingPlatform": {
+            "end": [
+               13,
+               1
+            ],
+            "piston": true,
+            "speed": 5,
+            "start": [
+               12,
+               1
+            ]
+         },
+         "MovingPlatformRendering": { },
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               12,
+               1
+            ]
+         },
+         "PowerInput": {
+            "in": 4
+         },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "Activation": { },
+         "MovingPlatform": {
+            "end": [
+               18,
+               1
+            ],
+            "piston": true,
+            "speed": 5,
+            "start": [
+               17,
+               1
+            ]
+         },
+         "MovingPlatformRendering": { },
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               17,
+               1
+            ]
+         },
+         "PowerInput": {
+            "in": [
+               5,
+               0
+            ],
+            "operator": "and"
+         },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "Activation": { },
+         "MovingPlatform": {
+            "end": [
+               23,
+               1
+            ],
+            "piston": true,
+            "speed": 5,
+            "start": [
+               22,
+               1
+            ]
+         },
+         "MovingPlatformRendering": { },
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               22,
+               1
+            ]
+         },
+         "PowerInput": {
+            "in": [
+               6,
+               1
+            ],
+            "operator": "and"
+         },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "Activation": { },
+         "MovingPlatform": {
+            "end": [
+               28,
+               1
+            ],
+            "piston": true,
+            "speed": 5,
+            "start": [
+               27,
+               1
+            ]
+         },
+         "MovingPlatformRendering": { },
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               27,
+               1
+            ]
+         },
+         "PowerInput": {
+            "in": [
+               7,
+               2
+            ],
+            "operator": "and"
+         },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "Activation": {
+            "speed": 4
+         },
+         "Door": { },
+         "DoorRendering": { },
+         "PhysicsBody": {
+            "body": "door body.json",
+            "pos": [
+               29,
+               16
+            ],
+            "rotation": 0,
+            "scale": [
+               1,
+               1
+            ]
+         },
+         "PowerInput": {
+            "in": 3
+         },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "Activation": {
+            "speed": 8
+         },
+         "Button": { },
+         "ButtonRendering": { },
+         "Collision": { },
+         "PhysicsBody": {
+            "body": "button body.json",
+            "pos": [
+               5,
+               4
+            ],
+            "rotation": 0
+         },
+         "PowerOutput": { },
+         "Transform": { }
+      },
+      "id": 4
+   },
+   {
+      "components": {
+         "Activation": {
+            "speed": 8
+         },
+         "Button": { },
+         "ButtonRendering": { },
+         "Collision": { },
+         "PhysicsBody": {
+            "body": "button body.json",
+            "pos": [
+               23,
+               6
+            ],
+            "rotation": 0
+         },
+         "PowerOutput": { },
+         "Transform": { }
+      },
+      "id": 5
+   },
+   {
+      "components": {
+         "Activation": {
+            "speed": 8
+         },
+         "Button": { },
+         "ButtonRendering": { },
+         "Collision": { },
+         "PhysicsBody": {
+            "body": "button body.json",
+            "pos": [
+               25,
+               16
+            ],
+            "rotation": 0
+         },
+         "PowerOutput": { },
+         "Transform": { }
+      },
+      "id": 6
+   },
+   {
+      "components": {
+         "Activation": {
+            "speed": 8
+         },
+         "Button": { },
+         "ButtonRendering": { },
+         "Collision": { },
+         "PhysicsBody": {
+            "body": "button body.json",
+            "pos": [
+               7,
+               10
+            ],
+            "rotation": 0
+         },
+         "PowerOutput": { },
+         "Transform": { }
+      },
+      "id": 7
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               3,
+               1
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               7,
+               1
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               11,
+               1
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               1,
+               3
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               5,
+               3
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               9,
+               3
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               13,
+               3
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               17,
+               3
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               21,
+               3
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               25,
+               3
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               29,
+               3
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               3,
+               5
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               7,
+               5
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               11,
+               5
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               15,
+               5
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               19,
+               5
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               23,
+               5
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               27,
+               5
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               1,
+               7
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               5,
+               7
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               9,
+               7
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               13,
+               7
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               17,
+               7
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               21,
+               7
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               25,
+               7
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               29,
+               7
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               3,
+               9
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               7,
+               9
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               11,
+               9
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               15,
+               9
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               19,
+               9
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               23,
+               9
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               27,
+               9
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               1,
+               11
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               5,
+               11
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               9,
+               11
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               13,
+               11
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               17,
+               11
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               21,
+               11
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               25,
+               11
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               29,
+               11
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               3,
+               13
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               7,
+               13
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               11,
+               13
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               15,
+               13
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               19,
+               13
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               23,
+               13
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               27,
+               13
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               1,
+               15
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               5,
+               15
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               9,
+               15
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               13,
+               15
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               17,
+               15
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               21,
+               15
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               25,
+               15
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   },
+   {
+      "components": {
+         "PhysicsBody": {
+            "body": "platform body.json",
+            "pos": [
+               29,
+               15
+            ]
+         },
+         "PlatformRendering": { },
+         "Transform": { }
+      }
+   }
+]
