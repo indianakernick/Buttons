@@ -139,7 +139,6 @@ void GameScreen::render(NVGcontext *const ctx, const float delta) {
     switchRenderingSystem(registry, ctx);
     doorRenderingSystem(registry, ctx);
     textRenderingSystem(registry, ctx);
-    shadowRenderingSystem(registry, ctx);
   }
   
   if constexpr (ENABLE_GRID_RENDER) {
