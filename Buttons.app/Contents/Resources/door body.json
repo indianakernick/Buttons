@@ -1,0 +1,20 @@
+{
+  "body": {
+    "type": "static"
+  },
+  "fixtures": [
+    {
+      "friction": 1,
+      "user data": "Ground",
+      "shape": {
+        "type": "polygon",
+        "verts": [
+          [0.3, 0],
+          [0.7, 0],
+          [0.7, 1],
+          [0.3, 1]
+        ]
+      }
+    }
+  ]
+}

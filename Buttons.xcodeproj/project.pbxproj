@@ -37,6 +37,7 @@
 		4520DFB21FE3966C008FCBB4 /* libSDL2-2.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4583ED6C1FB1859500AED27D /* libSDL2-2.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		4520DFB31FE3966C008FCBB4 /* libSimpleton Engine.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4583ED691FB1859500AED27D /* libSimpleton Engine.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		4520DFB41FE3966C008FCBB4 /* libyaml-cpp.0.5.3.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4583ED6A1FB1859500AED27D /* libyaml-cpp.0.5.3.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		4520DFB61FE39FD1008FCBB4 /* Buttons.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4583ED551FB1841100AED27D /* Buttons.app */; };
 		452E10891FB2D27D0063114B /* collision pairs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452E10871FB2D27D0063114B /* collision pairs.cpp */; };
 		452E108C1FB2D8BA0063114B /* object types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452E108A1FB2D8BA0063114B /* object types.cpp */; };
 		452E10941FB2F4930063114B /* Consolas.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 452E10931FB2F4700063114B /* Consolas.ttf */; };
@@ -190,6 +191,16 @@
 				4520DFB21FE3966C008FCBB4 /* libSDL2-2.0.0.dylib in CopyFiles */,
 				4520DFB31FE3966C008FCBB4 /* libSimpleton Engine.dylib in CopyFiles */,
 				4520DFB41FE3966C008FCBB4 /* libyaml-cpp.0.5.3.dylib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4520DFB51FE39F9D008FCBB4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "/Users/indikernick/Dev/Projects/C++/Games/Buttons";
+			dstSubfolderSpec = 0;
+			files = (
+				4520DFB61FE39FD1008FCBB4 /* Buttons.app in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1205,6 +1216,8 @@
 				4583ED521FB1841100AED27D /* Frameworks */,
 				4584F4751FD4BF060062B93E /* Compile Levels */,
 				4583ED531FB1841100AED27D /* Resources */,
+				4520DFB51FE39F9D008FCBB4 /* CopyFiles */,
+				4520DFB81FE3A05C008FCBB4 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1275,6 +1288,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4520DFB81FE3A05C008FCBB4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd /Users/indikernick/Dev/Projects/C++/Games/Buttons/\nzip -r Buttons.zip Buttons.app";
+		};
 		4584F4751FD4BF060062B93E /* Compile Levels */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
