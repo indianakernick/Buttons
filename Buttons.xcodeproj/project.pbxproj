@@ -1289,7 +1289,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = $PROJECT_DIR/Buttons/compile_level.bash;
+			shellScript = "#!/bin/bash\n\n# \"*\" means all levels\n# \"5\" means only level 5\nLEVEL=\"*\"\n\nPROJECT_RES=\"$PROJECT_DIR/Buttons/Resources\"\nPRODUCT_RES=\"$BUILT_PRODUCTS_DIR/Buttons.app/Contents/Resources\"\n\nfind $PROJECT_RES -name \"level $LEVEL.jsonnet\" |\negrep --only-matching \"level (\\d+|final)\" |\nxargs -I {} jsonnet --output-file \"$PRODUCT_RES/{}.json\" \"$PROJECT_RES/{}.jsonnet\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
