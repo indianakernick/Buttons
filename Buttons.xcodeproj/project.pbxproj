@@ -37,7 +37,6 @@
 		4520DFB21FE3966C008FCBB4 /* libSDL2-2.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4583ED6C1FB1859500AED27D /* libSDL2-2.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		4520DFB31FE3966C008FCBB4 /* libSimpleton Engine.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4583ED691FB1859500AED27D /* libSimpleton Engine.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		4520DFB41FE3966C008FCBB4 /* libyaml-cpp.0.5.3.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4583ED6A1FB1859500AED27D /* libyaml-cpp.0.5.3.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		4520DFB61FE39FD1008FCBB4 /* Buttons.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4583ED551FB1841100AED27D /* Buttons.app */; };
 		452E10891FB2D27D0063114B /* collision pairs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452E10871FB2D27D0063114B /* collision pairs.cpp */; };
 		452E108C1FB2D8BA0063114B /* object types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452E108A1FB2D8BA0063114B /* object types.cpp */; };
 		452E10941FB2F4930063114B /* Consolas.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 452E10931FB2F4700063114B /* Consolas.ttf */; };
@@ -194,16 +193,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4520DFB51FE39F9D008FCBB4 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "/Users/indikernick/Dev/Projects/C++/Games/Buttons";
-			dstSubfolderSpec = 0;
-			files = (
-				4520DFB61FE39FD1008FCBB4 /* Buttons.app in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -261,6 +250,7 @@
 		450ED6371FBA89C1008F2902 /* exit rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "exit rendering component.hpp"; sourceTree = "<group>"; };
 		4520DFAD1FE37017008FCBB4 /* level 8.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 8.jsonnet"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
 		4520DFAF1FE3909B008FCBB4 /* switch entity.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "switch entity.jsonnet"; sourceTree = "<group>"; };
+		4520DFC91FE4A387008FCBB4 /* level 9.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 9.jsonnet"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = "<none>"; };
 		452E10871FB2D27D0063114B /* collision pairs.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "collision pairs.cpp"; sourceTree = "<group>"; };
 		452E10881FB2D27D0063114B /* collision pairs.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "collision pairs.hpp"; sourceTree = "<group>"; };
 		452E108A1FB2D8BA0063114B /* object types.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "object types.cpp"; sourceTree = "<group>"; };
@@ -504,7 +494,7 @@
 		4584F4481FD13BA30062B93E /* physics file.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "physics file.hpp"; sourceTree = "<group>"; };
 		4584F44A1FD215340062B93E /* level file.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "level file.cpp"; sourceTree = "<group>"; };
 		4584F44B1FD215340062B93E /* level file.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "level file.hpp"; sourceTree = "<group>"; };
-		4584F46D1FD34D440062B93E /* level 9.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 9.jsonnet"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
+		4584F46D1FD34D440062B93E /* level 10.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 10.jsonnet"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
 		4584F46F1FD38E0A0062B93E /* level 6.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 6.jsonnet"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
 		4584F4711FD3ABE40062B93E /* level 7.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 7.jsonnet"; sourceTree = "<group>"; };
 		4584F4791FD4DE560062B93E /* entities.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = entities.jsonnet; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
@@ -1097,7 +1087,8 @@
 				4584F46F1FD38E0A0062B93E /* level 6.jsonnet */,
 				4584F4711FD3ABE40062B93E /* level 7.jsonnet */,
 				4520DFAD1FE37017008FCBB4 /* level 8.jsonnet */,
-				4584F46D1FD34D440062B93E /* level 9.jsonnet */,
+				4520DFC91FE4A387008FCBB4 /* level 9.jsonnet */,
+				4584F46D1FD34D440062B93E /* level 10.jsonnet */,
 				4584F43C1FD12CF30062B93E /* level final.jsonnet */,
 			);
 			name = Levels;
@@ -1216,8 +1207,6 @@
 				4583ED521FB1841100AED27D /* Frameworks */,
 				4584F4751FD4BF060062B93E /* Compile Levels */,
 				4583ED531FB1841100AED27D /* Resources */,
-				4520DFB51FE39F9D008FCBB4 /* CopyFiles */,
-				4520DFB81FE3A05C008FCBB4 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1288,19 +1277,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4520DFB81FE3A05C008FCBB4 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "cd /Users/indikernick/Dev/Projects/C++/Games/Buttons/\nzip -r Buttons.zip Buttons.app";
-		};
 		4584F4751FD4BF060062B93E /* Compile Levels */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
