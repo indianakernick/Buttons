@@ -10,35 +10,21 @@
 #define text_element_hpp
 
 #include <string>
-#include "nanovg.hpp"
 #include "element.hpp"
-#include "rendering resources.hpp"
-
-struct TextStyle {
-  TextStyle() = default;
-  
-  FontHandle font = nullptr;
-  NVGcolor color = nvgRGBf(1.0f, 1.0f, 1.0f);
-  float size = 0.0f;
-};
 
 class TextElement final : public Element {
 public:
   TextElement() = default;
-  
-  void style(const TextStyle &);
-  TextStyle style() const;
   
   void text(const std::string &);
   std::string text() const;
   
   void nullFont();
   
-  void render(NVGcontext *) const override;
+  void render(SDL_Renderer *) const override;
   
 private:
   std::string mText;
-  TextStyle mStyle;
 };
 
 #endif

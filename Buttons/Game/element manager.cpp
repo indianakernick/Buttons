@@ -21,7 +21,7 @@ bool ElementManager::handleEvent(const SDL_Event &e, const glm::mat3 &toMeters) 
   return false;
 }
 
-void ElementManager::render(NVGcontext *const ctx) {
+void ElementManager::render(SDL_Renderer *const ctx) {
   for (auto &e : elements) {
     e->render(ctx);
   }

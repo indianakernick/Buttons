@@ -20,7 +20,7 @@ public:
   ElementManager() = default;
   
   bool handleEvent(const SDL_Event &, const glm::mat3 &);
-  void render(NVGcontext *);
+  void render(SDL_Renderer *);
   
   void addElement(std::unique_ptr<Element> &&);
   void remAllElements();

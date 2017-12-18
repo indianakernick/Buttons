@@ -8,7 +8,6 @@
 
 #include "start menu screen.hpp"
 
-#include "nvg helper.hpp"
 #include "game screen.hpp"
 #include "text element.hpp"
 #include <SDL2/SDL_events.h>
@@ -21,25 +20,13 @@ void StartMenuScreen::init(RenderingContext &renderingContext) {
   camera.transform.setInvertY(true);
   camera.transform.setOrigin(Cam2D::Origin::CENTER);
   camera.targetZoom = std::make_unique<Cam2D::ZoomToFit>(glm::vec2(16, 9));
-  font = nullptr;//renderingContext.getResources().getFont("Arial.ttf");
   
   auto startButton = std::make_unique<ButtonElement>();
   auto startText = std::make_unique<TextElement>();
-  {
-    ButtonStyle startButtonStyle;
-    startButtonStyle.top = nvgRGBf(0.5f, 1.0f, 0.5f);
-    startButtonStyle.bottom = nvgRGBf(0.0f, 0.5f, 0.0f);
-    startButtonStyle.cornerRadius = 0.5f;
-    startButton->style(startButtonStyle);
-  }
+  
   startButton->rect({0.0f, 0.0f}, {8.0f, 2.0f});
   startText->rect(startButton->rect());
   
-  TextStyle textStyle;
-  textStyle.font = font;
-  textStyle.size = 80.0f;
-  
-  startText->style(textStyle);
   startText->text("Start");
   
   startButton->onMouseButton([this] (ButtonElement &, const MouseButtonState state) {
@@ -56,18 +43,9 @@ void StartMenuScreen::init(RenderingContext &renderingContext) {
   auto resetButton = std::make_unique<ButtonElement>();
   auto resetText = std::make_unique<TextElement>();
   
-  {
-    ButtonStyle resetButtonStyle;
-    resetButtonStyle.top = nvgRGBf(1.0f, 0.5f, 0.5f);
-    resetButtonStyle.bottom = nvgRGBf(0.5f, 0.0f, 0.0f);
-    resetButtonStyle.cornerRadius = 0.25f;
-    resetButton->style(resetButtonStyle);
-  }
   resetButton->rect({0.0f, -2.0f}, {4.0f, 1.0f});
   resetText->rect(resetButton->rect());
   
-  textStyle.size = 40.0f;
-  resetText->style(textStyle);
   resetText->text("Reset");
   
   resetButton->onMouseButton([this] (ButtonElement &, const MouseButtonState state) {
@@ -83,8 +61,6 @@ void StartMenuScreen::init(RenderingContext &renderingContext) {
   
   auto buttonsText = std::make_unique<TextElement>();
   
-  textStyle.size = 120.0f;
-  buttonsText->style(textStyle);
   buttonsText->text("Buttons");
   buttonsText->rect({0.0f, 2.0f}, {1.0f, 1.0f});
   
@@ -93,7 +69,6 @@ void StartMenuScreen::init(RenderingContext &renderingContext) {
 
 void StartMenuScreen::quit() {
   elementMan.remAllElements();
-  font = nullptr;
 }
 
 void StartMenuScreen::input(const SDL_Event &e) {
@@ -107,7 +82,7 @@ glm::mat3 StartMenuScreen::preRender(const glm::ivec2 windowSize, const float de
   return camera.transform.toPixels();
 }
 
-void StartMenuScreen::render(NVGcontext *const ctx, const float) {
+void StartMenuScreen::render(SDL_Renderer *const ctx, const float) {
   elementMan.render(ctx);
   
   if (startGame) {

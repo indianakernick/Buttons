@@ -16,7 +16,7 @@
 class ScreenManager;
 class RenderingContext;
 extern "C" union SDL_Event;
-extern "C" struct NVGcontext;
+extern "C" struct SDL_Renderer;
 
 class Screen {
 public:
@@ -33,7 +33,7 @@ public:
   virtual void input(const SDL_Event &) = 0;
   virtual void update(float) = 0;
   virtual glm::mat3 preRender(glm::ivec2, float) = 0;
-  virtual void render(NVGcontext *, float) = 0;
+  virtual void render(SDL_Renderer *, float) = 0;
 
 protected:
   ScreenManager *getScreenMan() const;

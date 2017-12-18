@@ -13,7 +13,7 @@
 #include "element rect.hpp"
 
 extern "C" struct SDL_MouseButtonEvent;
-extern "C" struct NVGcontext;
+extern "C" struct SDL_Renderer;
 
 class Element {
 public:
@@ -24,7 +24,7 @@ public:
   void rect(ElementRect);
   ElementRect rect() const;
 
-  virtual void render(NVGcontext *) const = 0;
+  virtual void render(SDL_Renderer *) const = 0;
   virtual bool handleMouseButton(const SDL_MouseButtonEvent &, const glm::mat3 &);
 
 protected:

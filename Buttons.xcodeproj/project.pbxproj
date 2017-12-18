@@ -98,9 +98,7 @@
 		4583EE321FB18F7A00AED27D /* b2BroadPhase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EDFB1FB18EFF00AED27D /* b2BroadPhase.cpp */; };
 		4583EE331FB18F7A00AED27D /* b2CollideEdge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EDFE1FB18EFF00AED27D /* b2CollideEdge.cpp */; };
 		4583EE341FB18F7A00AED27D /* b2Collision.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EDFF1FB18EFF00AED27D /* b2Collision.cpp */; };
-		4583EE751FB190F300AED27D /* nvg helper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE661FB190BD00AED27D /* nvg helper.cpp */; };
 		4583EE7A1FB190F300AED27D /* rendering context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE421FB1906D00AED27D /* rendering context.cpp */; };
-		4583EE7D1FB190F300AED27D /* rendering resources.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE451FB1906E00AED27D /* rendering resources.cpp */; };
 		4583EE851FB1967700AED27D /* app.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE831FB1967700AED27D /* app.cpp */; };
 		4583EE891FB197C200AED27D /* physics system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE871FB197C200AED27D /* physics system.cpp */; };
 		4583EE8F1FB19C0300AED27D /* contact listener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE8D1FB19C0300AED27D /* contact listener.cpp */; };
@@ -416,11 +414,7 @@
 		4583EDFE1FB18EFF00AED27D /* b2CollideEdge.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = b2CollideEdge.cpp; sourceTree = "<group>"; };
 		4583EDFF1FB18EFF00AED27D /* b2Collision.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = b2Collision.cpp; sourceTree = "<group>"; };
 		4583EE421FB1906D00AED27D /* rendering context.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "rendering context.cpp"; sourceTree = "<group>"; };
-		4583EE451FB1906E00AED27D /* rendering resources.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "rendering resources.cpp"; sourceTree = "<group>"; };
 		4583EE461FB1906E00AED27D /* rendering context.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "rendering context.hpp"; sourceTree = "<group>"; };
-		4583EE471FB1906E00AED27D /* rendering resources.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "rendering resources.hpp"; sourceTree = "<group>"; };
-		4583EE641FB190BC00AED27D /* nvg helper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "nvg helper.hpp"; sourceTree = "<group>"; };
-		4583EE661FB190BD00AED27D /* nvg helper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "nvg helper.cpp"; sourceTree = "<group>"; };
 		4583EE6D1FB190BE00AED27D /* b2 glm cast.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "b2 glm cast.hpp"; sourceTree = "<group>"; };
 		4583EE831FB1967700AED27D /* app.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = app.cpp; sourceTree = "<group>"; };
 		4583EE841FB1967700AED27D /* app.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = app.hpp; sourceTree = "<group>"; };
@@ -949,12 +943,8 @@
 		4583EE401FB1905200AED27D /* Rendering */ = {
 			isa = PBXGroup;
 			children = (
-				4583EE661FB190BD00AED27D /* nvg helper.cpp */,
-				4583EE641FB190BC00AED27D /* nvg helper.hpp */,
 				4583EE421FB1906D00AED27D /* rendering context.cpp */,
 				4583EE461FB1906E00AED27D /* rendering context.hpp */,
-				4583EE451FB1906E00AED27D /* rendering resources.cpp */,
-				4583EE471FB1906E00AED27D /* rendering resources.hpp */,
 				4591F0C11FC8036D0075000D /* render grid.cpp */,
 				4591F0C21FC8036D0075000D /* render grid.hpp */,
 			);
@@ -1314,7 +1304,6 @@
 				456DF0C31FBD625C003B3FD1 /* moving platform component.cpp in Sources */,
 				4533A8BD1FC90EF50027B0FB /* take key system.cpp in Sources */,
 				4533A8BA1FC90C390027B0FB /* player keys component.cpp in Sources */,
-				4583EE751FB190F300AED27D /* nvg helper.cpp in Sources */,
 				4533A8FE1FCA69440027B0FB /* game screen.cpp in Sources */,
 				4584F4231FD105940062B93E /* event helper.cpp in Sources */,
 				4591F0801FC011E50075000D /* exit system.cpp in Sources */,
@@ -1330,7 +1319,6 @@
 				450ED6211FB80CB4008F2902 /* switch system.cpp in Sources */,
 				450ED5D41FB6AC6E008F2902 /* player jump component.cpp in Sources */,
 				450ED5D71FB6B0A0008F2902 /* limit velocity.cpp in Sources */,
-				4583EE7D1FB190F300AED27D /* rendering resources.cpp in Sources */,
 				4583EE071FB18F7A00AED27D /* b2Body.cpp in Sources */,
 				4597961E1FB41C0C007A7432 /* power component.cpp in Sources */,
 				4583EE081FB18F7A00AED27D /* b2World.cpp in Sources */,
@@ -1566,11 +1554,7 @@
 					"-Wno-documentation",
 					"-std=c++1z",
 				);
-				OTHER_LDFLAGS = (
-					/usr/local/Cellar/glew/2.1.0/lib/libGLEW.a,
-					"/usr/local/lib/libSimpleton\\ Engine.a",
-					/usr/local/lib/libnanovg.a,
-				);
+				OTHER_LDFLAGS = "/usr/local/lib/libSimpleton\\ Engine.a";
 				PRODUCT_BUNDLE_IDENTIFIER = "Indi-Kernick.Buttons";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1608,11 +1592,7 @@
 					"-Wno-documentation",
 					"-std=c++1z",
 				);
-				OTHER_LDFLAGS = (
-					/usr/local/Cellar/glew/2.1.0/lib/libGLEW.a,
-					"/usr/local/lib/libSimpleton\\ Engine.a",
-					/usr/local/lib/libnanovg.a,
-				);
+				OTHER_LDFLAGS = "/usr/local/lib/libSimpleton\\ Engine.a";
 				PRODUCT_BUNDLE_IDENTIFIER = "Indi-Kernick.Buttons";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

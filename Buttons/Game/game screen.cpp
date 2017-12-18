@@ -118,7 +118,7 @@ glm::mat3 GameScreen::preRender(const glm::ivec2 windowSize, const float delta) 
 
 class StartMenuScreen;
 
-void GameScreen::render(NVGcontext *const ctx, const float delta) {
+void GameScreen::render(SDL_Renderer *const ctx, const float delta) {
   if constexpr (ENABLE_DEBUG_PHYSICS_RENDER) {
     physics.render();
   }

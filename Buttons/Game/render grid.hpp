@@ -9,8 +9,8 @@
 #ifndef render_grid_hpp
 #define render_grid_hpp
 
-extern "C" struct NVGcontext;
+extern "C" struct SDL_Renderer;
 
-void renderGrid(NVGcontext *);
+void renderGrid(SDL_Renderer *);
 
 #endif
