@@ -12,27 +12,15 @@
 		450ED5D11FB6AB96008F2902 /* player movement system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5CF1FB6AB96008F2902 /* player movement system.cpp */; };
 		450ED5D41FB6AC6E008F2902 /* player jump component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5D21FB6AC6E008F2902 /* player jump component.cpp */; };
 		450ED5D71FB6B0A0008F2902 /* limit velocity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5D51FB6B0A0008F2902 /* limit velocity.cpp */; };
-		450ED5DA1FB6B3E3008F2902 /* player rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5D81FB6B3E3008F2902 /* player rendering system.cpp */; };
-		450ED5DD1FB6B409008F2902 /* player rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5DB1FB6B409008F2902 /* player rendering component.cpp */; };
-		450ED5E01FB6B7F3008F2902 /* platform rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5DE1FB6B7F3008F2902 /* platform rendering system.cpp */; };
-		450ED5E31FB6B8EF008F2902 /* platform rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5E11FB6B8EF008F2902 /* platform rendering component.cpp */; };
 		450ED5EC1FB7C052008F2902 /* button component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5EA1FB7C052008F2902 /* button component.cpp */; };
 		450ED5F51FB7C945008F2902 /* debug draw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5F31FB7C945008F2902 /* debug draw.cpp */; };
-		450ED5F81FB7D6E6008F2902 /* button rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5F61FB7D6E6008F2902 /* button rendering component.cpp */; };
-		450ED5FB1FB7D740008F2902 /* button rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5F91FB7D740008F2902 /* button rendering system.cpp */; };
 		450ED5FE1FB7DDA5008F2902 /* activation system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5FC1FB7DDA5008F2902 /* activation system.cpp */; };
-		450ED6081FB7F4F6008F2902 /* door rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED6061FB7F4F6008F2902 /* door rendering component.cpp */; };
-		450ED60B1FB7F633008F2902 /* door rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED6091FB7F633008F2902 /* door rendering system.cpp */; };
 		450ED6111FB7FB55008F2902 /* door component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED60F1FB7FB55008F2902 /* door component.cpp */; };
 		450ED6141FB7FBA4008F2902 /* door system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED6121FB7FBA4008F2902 /* door system.cpp */; };
 		450ED61E1FB80B0F008F2902 /* switch component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED61C1FB80B0F008F2902 /* switch component.cpp */; };
 		450ED6211FB80CB4008F2902 /* switch system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED61F1FB80CB4008F2902 /* switch system.cpp */; };
-		450ED6241FB81316008F2902 /* switch rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED6221FB81316008F2902 /* switch rendering component.cpp */; };
-		450ED6271FB81395008F2902 /* switch rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED6251FB81395008F2902 /* switch rendering system.cpp */; };
 		450ED62A1FB84633008F2902 /* animation component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED6281FB84633008F2902 /* animation component.cpp */; };
 		450ED62D1FB8620D008F2902 /* animation system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED62B1FB8620D008F2902 /* animation system.cpp */; };
-		450ED6351FBA89B0008F2902 /* exit rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED6331FBA89B0008F2902 /* exit rendering system.cpp */; };
-		450ED6381FBA89C1008F2902 /* exit rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED6361FBA89C1008F2902 /* exit rendering component.cpp */; };
 		452E10891FB2D27D0063114B /* collision pairs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452E10871FB2D27D0063114B /* collision pairs.cpp */; };
 		452E108C1FB2D8BA0063114B /* object types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452E108A1FB2D8BA0063114B /* object types.cpp */; };
 		452E10941FB2F4930063114B /* Consolas.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 452E10931FB2F4700063114B /* Consolas.ttf */; };
@@ -43,11 +31,7 @@
 		4533A8BA1FC90C390027B0FB /* player keys component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8B81FC90C390027B0FB /* player keys component.cpp */; };
 		4533A8BD1FC90EF50027B0FB /* take key system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8BB1FC90EF50027B0FB /* take key system.cpp */; };
 		4533A8C01FC912B10027B0FB /* activate lock system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8BE1FC912B10027B0FB /* activate lock system.cpp */; };
-		4533A8C71FC918580027B0FB /* key rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8C51FC918580027B0FB /* key rendering component.cpp */; };
-		4533A8CA1FC918920027B0FB /* lock rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8C81FC918920027B0FB /* lock rendering component.cpp */; };
 		4533A8CD1FC919750027B0FB /* render polygon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8CB1FC919750027B0FB /* render polygon.cpp */; };
-		4533A8D01FC91BB60027B0FB /* key rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8CE1FC91BB60027B0FB /* key rendering system.cpp */; };
-		4533A8D31FC9232B0027B0FB /* lock rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8D11FC9232B0027B0FB /* lock rendering system.cpp */; };
 		4533A8FE1FCA69440027B0FB /* game screen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8FC1FCA69440027B0FB /* game screen.cpp */; };
 		4533A9011FCA91DD0027B0FB /* progress manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8FF1FCA91DC0027B0FB /* progress manager.cpp */; };
 		4533A9051FCA93780027B0FB /* dir.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A9031FCA93780027B0FB /* dir.cpp */; };
@@ -57,8 +41,6 @@
 		4541A4B21FD64E8000AD20C1 /* debug input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4541A4B01FD64D7F00AD20C1 /* debug input.cpp */; };
 		454D04B41FE64FCA00D3E560 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 454D04B31FE64FCA00D3E560 /* SDL2.framework */; };
 		454D04B51FE64FD100D3E560 /* SDL2.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 454D04B31FE64FCA00D3E560 /* SDL2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		456DF0BD1FBD32E7003B3FD1 /* moving platform rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0BB1FBD32E7003B3FD1 /* moving platform rendering component.cpp */; };
-		456DF0C01FBD336A003B3FD1 /* moving platform rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0BE1FBD336A003B3FD1 /* moving platform rendering system.cpp */; };
 		456DF0C31FBD625C003B3FD1 /* moving platform component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0C11FBD625C003B3FD1 /* moving platform component.cpp */; };
 		456DF0C61FBD633C003B3FD1 /* moving platform system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0C41FBD633C003B3FD1 /* moving platform system.cpp */; };
 		456DF0C91FBEB610003B3FD1 /* level manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0C71FBEB610003B3FD1 /* level manager.cpp */; };
@@ -152,14 +134,7 @@
 		4591F0801FC011E50075000D /* exit system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F07E1FC011E50075000D /* exit system.cpp */; };
 		4591F08D1FC152C60075000D /* laser detector component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F08B1FC152C60075000D /* laser detector component.cpp */; };
 		4591F0901FC1534D0075000D /* laser detector init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F08E1FC1534D0075000D /* laser detector init.cpp */; };
-		4591F0931FC1554A0075000D /* laser emitter rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0911FC1554A0075000D /* laser emitter rendering component.cpp */; };
-		4591F0961FC155BA0075000D /* laser emitter rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0941FC155BA0075000D /* laser emitter rendering system.cpp */; };
-		4591F0991FC2B0650075000D /* laser detector rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0971FC2B0650075000D /* laser detector rendering component.cpp */; };
-		4591F09C1FC2B0E00075000D /* laser detector rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F09A1FC2B0E00075000D /* laser detector rendering system.cpp */; };
 		4591F09F1FC2B40E0075000D /* laser detector system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F09D1FC2B40E0075000D /* laser detector system.cpp */; };
-		4591F0A21FC2B72E0075000D /* text rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0A01FC2B72E0075000D /* text rendering system.cpp */; };
-		4591F0A51FC2B73E0075000D /* text rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0A31FC2B73E0075000D /* text rendering component.cpp */; };
-		4591F0A81FC2BAD10075000D /* text rendering init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0A61FC2BAD10075000D /* text rendering init.cpp */; };
 		4591F0AB1FC3F0F80075000D /* Arial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4591F0A91FC3EED00075000D /* Arial.ttf */; };
 		4591F0AE1FC3F9780075000D /* text component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0AC1FC3F9780075000D /* text component.cpp */; };
 		4591F0B11FC3F99B0075000D /* text init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0AF1FC3F99B0075000D /* text init.cpp */; };
@@ -171,8 +146,6 @@
 		459796221FB41C24007A7432 /* transform component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459796211FB41C24007A7432 /* transform component.cpp */; };
 		459796281FB58752007A7432 /* entity id map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459796261FB58752007A7432 /* entity id map.cpp */; };
 		4597962E1FB65BBB007A7432 /* component list.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597962C1FB65BBB007A7432 /* component list.cpp */; };
-		4597963C1FB6870A007A7432 /* box rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597963A1FB6870A007A7432 /* box rendering component.cpp */; };
-		459796401FB687AC007A7432 /* box rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597963E1FB687AC007A7432 /* box rendering system.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -199,28 +172,12 @@
 		450ED5D31FB6AC6E008F2902 /* player jump component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "player jump component.hpp"; sourceTree = "<group>"; };
 		450ED5D51FB6B0A0008F2902 /* limit velocity.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "limit velocity.cpp"; sourceTree = "<group>"; };
 		450ED5D61FB6B0A0008F2902 /* limit velocity.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "limit velocity.hpp"; sourceTree = "<group>"; };
-		450ED5D81FB6B3E3008F2902 /* player rendering system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "player rendering system.cpp"; sourceTree = "<group>"; };
-		450ED5D91FB6B3E3008F2902 /* player rendering system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "player rendering system.hpp"; sourceTree = "<group>"; };
-		450ED5DB1FB6B409008F2902 /* player rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "player rendering component.cpp"; sourceTree = "<group>"; };
-		450ED5DC1FB6B409008F2902 /* player rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "player rendering component.hpp"; sourceTree = "<group>"; };
-		450ED5DE1FB6B7F3008F2902 /* platform rendering system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "platform rendering system.cpp"; sourceTree = "<group>"; };
-		450ED5DF1FB6B7F3008F2902 /* platform rendering system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "platform rendering system.hpp"; sourceTree = "<group>"; };
-		450ED5E11FB6B8EF008F2902 /* platform rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "platform rendering component.cpp"; sourceTree = "<group>"; };
-		450ED5E21FB6B8EF008F2902 /* platform rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "platform rendering component.hpp"; sourceTree = "<group>"; };
 		450ED5EA1FB7C052008F2902 /* button component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "button component.cpp"; sourceTree = "<group>"; };
 		450ED5EB1FB7C052008F2902 /* button component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "button component.hpp"; sourceTree = "<group>"; };
 		450ED5F31FB7C945008F2902 /* debug draw.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "debug draw.cpp"; sourceTree = "<group>"; };
 		450ED5F41FB7C945008F2902 /* debug draw.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "debug draw.hpp"; sourceTree = "<group>"; };
-		450ED5F61FB7D6E6008F2902 /* button rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "button rendering component.cpp"; sourceTree = "<group>"; };
-		450ED5F71FB7D6E6008F2902 /* button rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "button rendering component.hpp"; sourceTree = "<group>"; };
-		450ED5F91FB7D740008F2902 /* button rendering system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "button rendering system.cpp"; sourceTree = "<group>"; };
-		450ED5FA1FB7D740008F2902 /* button rendering system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "button rendering system.hpp"; sourceTree = "<group>"; };
 		450ED5FC1FB7DDA5008F2902 /* activation system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "activation system.cpp"; sourceTree = "<group>"; };
 		450ED5FD1FB7DDA5008F2902 /* activation system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "activation system.hpp"; sourceTree = "<group>"; };
-		450ED6061FB7F4F6008F2902 /* door rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "door rendering component.cpp"; sourceTree = "<group>"; };
-		450ED6071FB7F4F6008F2902 /* door rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "door rendering component.hpp"; sourceTree = "<group>"; };
-		450ED6091FB7F633008F2902 /* door rendering system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "door rendering system.cpp"; sourceTree = "<group>"; };
-		450ED60A1FB7F633008F2902 /* door rendering system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "door rendering system.hpp"; sourceTree = "<group>"; };
 		450ED60F1FB7FB55008F2902 /* door component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "door component.cpp"; sourceTree = "<group>"; };
 		450ED6101FB7FB55008F2902 /* door component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "door component.hpp"; sourceTree = "<group>"; };
 		450ED6121FB7FBA4008F2902 /* door system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "door system.cpp"; sourceTree = "<group>"; };
@@ -229,18 +186,10 @@
 		450ED61D1FB80B0F008F2902 /* switch component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "switch component.hpp"; sourceTree = "<group>"; };
 		450ED61F1FB80CB4008F2902 /* switch system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "switch system.cpp"; sourceTree = "<group>"; };
 		450ED6201FB80CB4008F2902 /* switch system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "switch system.hpp"; sourceTree = "<group>"; };
-		450ED6221FB81316008F2902 /* switch rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "switch rendering component.cpp"; sourceTree = "<group>"; };
-		450ED6231FB81316008F2902 /* switch rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "switch rendering component.hpp"; sourceTree = "<group>"; };
-		450ED6251FB81395008F2902 /* switch rendering system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "switch rendering system.cpp"; sourceTree = "<group>"; };
-		450ED6261FB81395008F2902 /* switch rendering system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "switch rendering system.hpp"; sourceTree = "<group>"; };
 		450ED6281FB84633008F2902 /* animation component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "animation component.cpp"; sourceTree = "<group>"; };
 		450ED6291FB84633008F2902 /* animation component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "animation component.hpp"; sourceTree = "<group>"; };
 		450ED62B1FB8620D008F2902 /* animation system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "animation system.cpp"; sourceTree = "<group>"; };
 		450ED62C1FB8620D008F2902 /* animation system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "animation system.hpp"; sourceTree = "<group>"; };
-		450ED6331FBA89B0008F2902 /* exit rendering system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "exit rendering system.cpp"; sourceTree = "<group>"; };
-		450ED6341FBA89B0008F2902 /* exit rendering system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "exit rendering system.hpp"; sourceTree = "<group>"; };
-		450ED6361FBA89C1008F2902 /* exit rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "exit rendering component.cpp"; sourceTree = "<group>"; };
-		450ED6371FBA89C1008F2902 /* exit rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "exit rendering component.hpp"; sourceTree = "<group>"; };
 		4520DFAD1FE37017008FCBB4 /* level 8.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 8.jsonnet"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
 		4520DFAF1FE3909B008FCBB4 /* switch entity.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "switch entity.jsonnet"; sourceTree = "<group>"; };
 		4520DFC91FE4A387008FCBB4 /* level 9.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 9.jsonnet"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = "<none>"; };
@@ -266,16 +215,8 @@
 		4533A8BC1FC90EF50027B0FB /* take key system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "take key system.hpp"; sourceTree = "<group>"; };
 		4533A8BE1FC912B10027B0FB /* activate lock system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "activate lock system.cpp"; sourceTree = "<group>"; };
 		4533A8BF1FC912B10027B0FB /* activate lock system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "activate lock system.hpp"; sourceTree = "<group>"; };
-		4533A8C51FC918580027B0FB /* key rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "key rendering component.cpp"; sourceTree = "<group>"; };
-		4533A8C61FC918580027B0FB /* key rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "key rendering component.hpp"; sourceTree = "<group>"; };
-		4533A8C81FC918920027B0FB /* lock rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "lock rendering component.cpp"; sourceTree = "<group>"; };
-		4533A8C91FC918920027B0FB /* lock rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "lock rendering component.hpp"; sourceTree = "<group>"; };
 		4533A8CB1FC919750027B0FB /* render polygon.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "render polygon.cpp"; sourceTree = "<group>"; };
 		4533A8CC1FC919750027B0FB /* render polygon.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "render polygon.hpp"; sourceTree = "<group>"; };
-		4533A8CE1FC91BB60027B0FB /* key rendering system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "key rendering system.cpp"; sourceTree = "<group>"; };
-		4533A8CF1FC91BB60027B0FB /* key rendering system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "key rendering system.hpp"; sourceTree = "<group>"; };
-		4533A8D11FC9232B0027B0FB /* lock rendering system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "lock rendering system.cpp"; sourceTree = "<group>"; };
-		4533A8D21FC9232B0027B0FB /* lock rendering system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "lock rendering system.hpp"; sourceTree = "<group>"; };
 		4533A8FC1FCA69440027B0FB /* game screen.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "game screen.cpp"; sourceTree = "<group>"; };
 		4533A8FD1FCA69440027B0FB /* game screen.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "game screen.hpp"; sourceTree = "<group>"; };
 		4533A8FF1FCA91DC0027B0FB /* progress manager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "progress manager.cpp"; sourceTree = "<group>"; };
@@ -310,10 +251,6 @@
 		454D03E41FE63AC700D3E560 /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = ../../../../../../../usr/local/Cellar/glew/2.1.0/lib/libGLEW.a; sourceTree = "<group>"; };
 		454D04A61FE6438400D3E560 /* libSimpleton Engine.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libSimpleton Engine.a"; path = "../../../../../../../usr/local/lib/libSimpleton Engine.a"; sourceTree = "<group>"; };
 		454D04B31FE64FCA00D3E560 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
-		456DF0BB1FBD32E7003B3FD1 /* moving platform rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "moving platform rendering component.cpp"; sourceTree = "<group>"; };
-		456DF0BC1FBD32E7003B3FD1 /* moving platform rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "moving platform rendering component.hpp"; sourceTree = "<group>"; };
-		456DF0BE1FBD336A003B3FD1 /* moving platform rendering system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "moving platform rendering system.cpp"; sourceTree = "<group>"; };
-		456DF0BF1FBD336A003B3FD1 /* moving platform rendering system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "moving platform rendering system.hpp"; sourceTree = "<group>"; };
 		456DF0C11FBD625C003B3FD1 /* moving platform component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "moving platform component.cpp"; sourceTree = "<group>"; };
 		456DF0C21FBD625C003B3FD1 /* moving platform component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "moving platform component.hpp"; sourceTree = "<group>"; };
 		456DF0C41FBD633C003B3FD1 /* moving platform system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "moving platform system.cpp"; sourceTree = "<group>"; };
@@ -581,22 +518,8 @@
 		4591F08C1FC152C60075000D /* laser detector component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "laser detector component.hpp"; sourceTree = "<group>"; };
 		4591F08E1FC1534D0075000D /* laser detector init.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "laser detector init.cpp"; sourceTree = "<group>"; };
 		4591F08F1FC1534D0075000D /* laser detector init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "laser detector init.hpp"; sourceTree = "<group>"; };
-		4591F0911FC1554A0075000D /* laser emitter rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "laser emitter rendering component.cpp"; sourceTree = "<group>"; };
-		4591F0921FC1554A0075000D /* laser emitter rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "laser emitter rendering component.hpp"; sourceTree = "<group>"; };
-		4591F0941FC155BA0075000D /* laser emitter rendering system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "laser emitter rendering system.cpp"; sourceTree = "<group>"; };
-		4591F0951FC155BA0075000D /* laser emitter rendering system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "laser emitter rendering system.hpp"; sourceTree = "<group>"; };
-		4591F0971FC2B0650075000D /* laser detector rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "laser detector rendering component.cpp"; sourceTree = "<group>"; };
-		4591F0981FC2B0650075000D /* laser detector rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "laser detector rendering component.hpp"; sourceTree = "<group>"; };
-		4591F09A1FC2B0E00075000D /* laser detector rendering system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "laser detector rendering system.cpp"; sourceTree = "<group>"; };
-		4591F09B1FC2B0E00075000D /* laser detector rendering system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "laser detector rendering system.hpp"; sourceTree = "<group>"; };
 		4591F09D1FC2B40E0075000D /* laser detector system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "laser detector system.cpp"; sourceTree = "<group>"; };
 		4591F09E1FC2B40E0075000D /* laser detector system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "laser detector system.hpp"; sourceTree = "<group>"; };
-		4591F0A01FC2B72E0075000D /* text rendering system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "text rendering system.cpp"; sourceTree = "<group>"; };
-		4591F0A11FC2B72E0075000D /* text rendering system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "text rendering system.hpp"; sourceTree = "<group>"; };
-		4591F0A31FC2B73E0075000D /* text rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "text rendering component.cpp"; sourceTree = "<group>"; };
-		4591F0A41FC2B73E0075000D /* text rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "text rendering component.hpp"; sourceTree = "<group>"; };
-		4591F0A61FC2BAD10075000D /* text rendering init.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "text rendering init.cpp"; sourceTree = "<group>"; };
-		4591F0A71FC2BAD10075000D /* text rendering init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "text rendering init.hpp"; sourceTree = "<group>"; };
 		4591F0A91FC3EED00075000D /* Arial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Arial.ttf; sourceTree = "<group>"; };
 		4591F0AC1FC3F9780075000D /* text component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "text component.cpp"; sourceTree = "<group>"; };
 		4591F0AD1FC3F9780075000D /* text component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "text component.hpp"; sourceTree = "<group>"; };
@@ -616,10 +539,6 @@
 		459796271FB58752007A7432 /* entity id map.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "entity id map.hpp"; sourceTree = "<group>"; };
 		4597962C1FB65BBB007A7432 /* component list.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "component list.cpp"; sourceTree = "<group>"; };
 		4597962D1FB65BBB007A7432 /* component list.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "component list.hpp"; sourceTree = "<group>"; };
-		4597963A1FB6870A007A7432 /* box rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "box rendering component.cpp"; sourceTree = "<group>"; };
-		4597963B1FB6870A007A7432 /* box rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "box rendering component.hpp"; sourceTree = "<group>"; };
-		4597963E1FB687AC007A7432 /* box rendering system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "box rendering system.cpp"; sourceTree = "<group>"; };
-		4597963F1FB687AC007A7432 /* box rendering system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "box rendering system.hpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -790,8 +709,6 @@
 				4591F0721FBFE8640075000D /* moving platform init.hpp */,
 				4591F08E1FC1534D0075000D /* laser detector init.cpp */,
 				4591F08F1FC1534D0075000D /* laser detector init.hpp */,
-				4591F0A61FC2BAD10075000D /* text rendering init.cpp */,
-				4591F0A71FC2BAD10075000D /* text rendering init.hpp */,
 				4591F0AF1FC3F99B0075000D /* text init.cpp */,
 				4591F0B01FC3F99B0075000D /* text init.hpp */,
 				4533A8B21FC90A550027B0FB /* key init.cpp */,
@@ -1073,7 +990,6 @@
 		4583EE801FB195CD00AED27D /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				459796391FB686EA007A7432 /* Rendering */,
 				4597962C1FB65BBB007A7432 /* component list.cpp */,
 				4597962D1FB65BBB007A7432 /* component list.hpp */,
 				459796191FB41BF1007A7432 /* physics component.cpp */,
@@ -1119,7 +1035,6 @@
 		4583EE821FB1965A00AED27D /* Systems */ = {
 			isa = PBXGroup;
 			children = (
-				4597963D1FB6879B007A7432 /* Rendering */,
 				452E10911FB2F2EE0063114B /* systems.hpp */,
 				4583EE871FB197C200AED27D /* physics system.cpp */,
 				4583EE881FB197C200AED27D /* physics system.hpp */,
@@ -1273,72 +1188,6 @@
 			name = Bodies;
 			sourceTree = "<group>";
 		};
-		459796391FB686EA007A7432 /* Rendering */ = {
-			isa = PBXGroup;
-			children = (
-				4597963A1FB6870A007A7432 /* box rendering component.cpp */,
-				4597963B1FB6870A007A7432 /* box rendering component.hpp */,
-				450ED5DB1FB6B409008F2902 /* player rendering component.cpp */,
-				450ED5DC1FB6B409008F2902 /* player rendering component.hpp */,
-				450ED5E11FB6B8EF008F2902 /* platform rendering component.cpp */,
-				450ED5E21FB6B8EF008F2902 /* platform rendering component.hpp */,
-				450ED5F61FB7D6E6008F2902 /* button rendering component.cpp */,
-				450ED5F71FB7D6E6008F2902 /* button rendering component.hpp */,
-				450ED6061FB7F4F6008F2902 /* door rendering component.cpp */,
-				450ED6071FB7F4F6008F2902 /* door rendering component.hpp */,
-				450ED6221FB81316008F2902 /* switch rendering component.cpp */,
-				450ED6231FB81316008F2902 /* switch rendering component.hpp */,
-				450ED6361FBA89C1008F2902 /* exit rendering component.cpp */,
-				450ED6371FBA89C1008F2902 /* exit rendering component.hpp */,
-				456DF0BB1FBD32E7003B3FD1 /* moving platform rendering component.cpp */,
-				456DF0BC1FBD32E7003B3FD1 /* moving platform rendering component.hpp */,
-				4591F0911FC1554A0075000D /* laser emitter rendering component.cpp */,
-				4591F0921FC1554A0075000D /* laser emitter rendering component.hpp */,
-				4591F0971FC2B0650075000D /* laser detector rendering component.cpp */,
-				4591F0981FC2B0650075000D /* laser detector rendering component.hpp */,
-				4591F0A31FC2B73E0075000D /* text rendering component.cpp */,
-				4591F0A41FC2B73E0075000D /* text rendering component.hpp */,
-				4533A8C51FC918580027B0FB /* key rendering component.cpp */,
-				4533A8C61FC918580027B0FB /* key rendering component.hpp */,
-				4533A8C81FC918920027B0FB /* lock rendering component.cpp */,
-				4533A8C91FC918920027B0FB /* lock rendering component.hpp */,
-			);
-			name = Rendering;
-			sourceTree = "<group>";
-		};
-		4597963D1FB6879B007A7432 /* Rendering */ = {
-			isa = PBXGroup;
-			children = (
-				4597963E1FB687AC007A7432 /* box rendering system.cpp */,
-				4597963F1FB687AC007A7432 /* box rendering system.hpp */,
-				450ED5D81FB6B3E3008F2902 /* player rendering system.cpp */,
-				450ED5D91FB6B3E3008F2902 /* player rendering system.hpp */,
-				450ED5DE1FB6B7F3008F2902 /* platform rendering system.cpp */,
-				450ED5DF1FB6B7F3008F2902 /* platform rendering system.hpp */,
-				450ED5F91FB7D740008F2902 /* button rendering system.cpp */,
-				450ED5FA1FB7D740008F2902 /* button rendering system.hpp */,
-				450ED6091FB7F633008F2902 /* door rendering system.cpp */,
-				450ED60A1FB7F633008F2902 /* door rendering system.hpp */,
-				450ED6251FB81395008F2902 /* switch rendering system.cpp */,
-				450ED6261FB81395008F2902 /* switch rendering system.hpp */,
-				450ED6331FBA89B0008F2902 /* exit rendering system.cpp */,
-				450ED6341FBA89B0008F2902 /* exit rendering system.hpp */,
-				456DF0BE1FBD336A003B3FD1 /* moving platform rendering system.cpp */,
-				456DF0BF1FBD336A003B3FD1 /* moving platform rendering system.hpp */,
-				4591F0941FC155BA0075000D /* laser emitter rendering system.cpp */,
-				4591F0951FC155BA0075000D /* laser emitter rendering system.hpp */,
-				4591F09A1FC2B0E00075000D /* laser detector rendering system.cpp */,
-				4591F09B1FC2B0E00075000D /* laser detector rendering system.hpp */,
-				4591F0A01FC2B72E0075000D /* text rendering system.cpp */,
-				4591F0A11FC2B72E0075000D /* text rendering system.hpp */,
-				4533A8CE1FC91BB60027B0FB /* key rendering system.cpp */,
-				4533A8CF1FC91BB60027B0FB /* key rendering system.hpp */,
-				4533A8D11FC9232B0027B0FB /* lock rendering system.cpp */,
-				4533A8D21FC9232B0027B0FB /* lock rendering system.hpp */,
-			);
-			name = Rendering;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1468,8 +1317,6 @@
 				450ED62D1FB8620D008F2902 /* animation system.cpp in Sources */,
 				459796221FB41C24007A7432 /* transform component.cpp in Sources */,
 				456DF0C31FBD625C003B3FD1 /* moving platform component.cpp in Sources */,
-				456DF0C01FBD336A003B3FD1 /* moving platform rendering system.cpp in Sources */,
-				450ED5E31FB6B8EF008F2902 /* platform rendering component.cpp in Sources */,
 				4533A8BD1FC90EF50027B0FB /* take key system.cpp in Sources */,
 				4533A8BA1FC90C390027B0FB /* player keys component.cpp in Sources */,
 				4583EE751FB190F300AED27D /* nvg helper.cpp in Sources */,
@@ -1480,16 +1327,12 @@
 				4583EE851FB1967700AED27D /* app.cpp in Sources */,
 				459796201FB41C1A007A7432 /* activation component.cpp in Sources */,
 				4533A9011FCA91DD0027B0FB /* progress manager.cpp in Sources */,
-				450ED5F81FB7D6E6008F2902 /* button rendering component.cpp in Sources */,
-				456DF0BD1FBD32E7003B3FD1 /* moving platform rendering component.cpp in Sources */,
 				4591F06A1FBFE51E0075000D /* transform init.cpp in Sources */,
-				450ED6081FB7F4F6008F2902 /* door rendering component.cpp in Sources */,
 				4583EEA61FB1B1E800AED27D /* button system.cpp in Sources */,
 				4597961A1FB41BF1007A7432 /* physics component.cpp in Sources */,
 				4583EE7A1FB190F300AED27D /* rendering context.cpp in Sources */,
 				450ED5D11FB6AB96008F2902 /* player movement system.cpp in Sources */,
 				450ED6211FB80CB4008F2902 /* switch system.cpp in Sources */,
-				450ED6271FB81395008F2902 /* switch rendering system.cpp in Sources */,
 				450ED5D41FB6AC6E008F2902 /* player jump component.cpp in Sources */,
 				450ED5D71FB6B0A0008F2902 /* limit velocity.cpp in Sources */,
 				4583EE7D1FB190F300AED27D /* rendering resources.cpp in Sources */,
@@ -1498,20 +1341,16 @@
 				4583EE081FB18F7A00AED27D /* b2World.cpp in Sources */,
 				4583EE091FB18F7A00AED27D /* b2Fixture.cpp in Sources */,
 				4591F0901FC1534D0075000D /* laser detector init.cpp in Sources */,
-				4533A8CA1FC918920027B0FB /* lock rendering component.cpp in Sources */,
 				4533A8B71FC90AFC0027B0FB /* lock init.cpp in Sources */,
 				4584F4491FD13BA30062B93E /* physics file.cpp in Sources */,
 				456DF0CD1FBFB519003B3FD1 /* physics init.cpp in Sources */,
-				4533A8C71FC918580027B0FB /* key rendering component.cpp in Sources */,
 				4583EE0A1FB18F7A00AED27D /* b2ChainAndPolygonContact.cpp in Sources */,
 				4583EE0B1FB18F7A00AED27D /* b2EdgeAndPolygonContact.cpp in Sources */,
 				4591F0C31FC8036D0075000D /* render grid.cpp in Sources */,
 				4583EE0C1FB18F7A00AED27D /* b2ChainAndCircleContact.cpp in Sources */,
-				4591F0A81FC2BAD10075000D /* text rendering init.cpp in Sources */,
 				4533A90B1FCAB1E40027B0FB /* button element.cpp in Sources */,
 				4583EE0D1FB18F7A00AED27D /* b2PolygonAndCircleContact.cpp in Sources */,
 				4583EE0E1FB18F7A00AED27D /* b2PolygonContact.cpp in Sources */,
-				450ED6351FBA89B0008F2902 /* exit rendering system.cpp in Sources */,
 				4583EE0F1FB18F7A00AED27D /* b2ContactSolver.cpp in Sources */,
 				450ED5FE1FB7DDA5008F2902 /* activation system.cpp in Sources */,
 				4583EE101FB18F7A00AED27D /* b2CircleContact.cpp in Sources */,
@@ -1521,10 +1360,7 @@
 				4591F0671FBFE44B0075000D /* activation init.cpp in Sources */,
 				4584F40F1FCCF61D0062B93E /* element manager.cpp in Sources */,
 				450ED5C61FB69ED3008F2902 /* player input system.cpp in Sources */,
-				4591F0991FC2B0650075000D /* laser detector rendering component.cpp in Sources */,
-				459796401FB687AC007A7432 /* box rendering system.cpp in Sources */,
 				4583EE121FB18F7A00AED27D /* b2Contact.cpp in Sources */,
-				4597963C1FB6870A007A7432 /* box rendering component.cpp in Sources */,
 				4591F08D1FC152C60075000D /* laser detector component.cpp in Sources */,
 				4583EE131FB18F7A00AED27D /* b2WorldCallbacks.cpp in Sources */,
 				4583EE921FB19DE600AED27D /* collision categories.cpp in Sources */,
@@ -1534,26 +1370,19 @@
 				4583EE141FB18F7A00AED27D /* b2WeldJoint.cpp in Sources */,
 				4583EE151FB18F7A00AED27D /* b2MouseJoint.cpp in Sources */,
 				4583EE161FB18F7A00AED27D /* b2FrictionJoint.cpp in Sources */,
-				450ED6381FBA89C1008F2902 /* exit rendering component.cpp in Sources */,
 				4583EE171FB18F7A00AED27D /* b2DistanceJoint.cpp in Sources */,
 				4583EE181FB18F7A00AED27D /* b2WheelJoint.cpp in Sources */,
 				4583EE191FB18F7A00AED27D /* b2MotorJoint.cpp in Sources */,
 				4583EE1A1FB18F7A00AED27D /* b2RevoluteJoint.cpp in Sources */,
 				4583EE1B1FB18F7A00AED27D /* b2GearJoint.cpp in Sources */,
 				4583EE1C1FB18F7A00AED27D /* b2Joint.cpp in Sources */,
-				450ED6241FB81316008F2902 /* switch rendering component.cpp in Sources */,
 				4533A8CD1FC919750027B0FB /* render polygon.cpp in Sources */,
-				450ED60B1FB7F633008F2902 /* door rendering system.cpp in Sources */,
-				450ED5DA1FB6B3E3008F2902 /* player rendering system.cpp in Sources */,
 				456DF0C61FBD633C003B3FD1 /* moving platform system.cpp in Sources */,
 				4584F44C1FD215340062B93E /* level file.cpp in Sources */,
-				4591F0931FC1554A0075000D /* laser emitter rendering component.cpp in Sources */,
 				4591F0AE1FC3F9780075000D /* text component.cpp in Sources */,
 				4583EE1D1FB18F7A00AED27D /* b2PrismaticJoint.cpp in Sources */,
-				4533A8D31FC9232B0027B0FB /* lock rendering system.cpp in Sources */,
 				4597961C1FB41BFE007A7432 /* collision component.cpp in Sources */,
 				4583EE1E1FB18F7A00AED27D /* b2PulleyJoint.cpp in Sources */,
-				450ED5FB1FB7D740008F2902 /* button rendering system.cpp in Sources */,
 				4583EE1F1FB18F7A00AED27D /* b2RopeJoint.cpp in Sources */,
 				450ED6141FB7FBA4008F2902 /* door system.cpp in Sources */,
 				4583EE201FB18F7A00AED27D /* b2Island.cpp in Sources */,
@@ -1562,7 +1391,6 @@
 				450ED5EC1FB7C052008F2902 /* button component.cpp in Sources */,
 				4583EE211FB18F7A00AED27D /* b2ContactManager.cpp in Sources */,
 				4583EE221FB18F7A00AED27D /* b2Rope.cpp in Sources */,
-				4591F0A21FC2B72E0075000D /* text rendering system.cpp in Sources */,
 				4583EE231FB18F7A00AED27D /* b2Draw.cpp in Sources */,
 				4583EE241FB18F7A00AED27D /* b2BlockAllocator.cpp in Sources */,
 				4533A90E1FCAE2A10027B0FB /* screen.cpp in Sources */,
@@ -1571,7 +1399,6 @@
 				4583EE261FB18F7A00AED27D /* b2Timer.cpp in Sources */,
 				4583EE271FB18F7A00AED27D /* b2StackAllocator.cpp in Sources */,
 				4591F09F1FC2B40E0075000D /* laser detector system.cpp in Sources */,
-				4533A8D01FC91BB60027B0FB /* key rendering system.cpp in Sources */,
 				450ED62A1FB84633008F2902 /* animation component.cpp in Sources */,
 				4533A8B11FC909F90027B0FB /* lock component.cpp in Sources */,
 				4583EE281FB18F7A00AED27D /* b2Math.cpp in Sources */,
@@ -1581,7 +1408,6 @@
 				4591F07D1FC0118C0075000D /* exit component.cpp in Sources */,
 				4583EE891FB197C200AED27D /* physics system.cpp in Sources */,
 				4584F4071FCBF1BD0062B93E /* element.cpp in Sources */,
-				450ED5E01FB6B7F3008F2902 /* platform rendering system.cpp in Sources */,
 				4583EE9D1FB1AC1600AED27D /* power system.cpp in Sources */,
 				4583EE2A1FB18F7A00AED27D /* b2CollideCircle.cpp in Sources */,
 				4583EE2B1FB18F7A00AED27D /* b2CollidePolygon.cpp in Sources */,
@@ -1589,7 +1415,6 @@
 				4597962E1FB65BBB007A7432 /* component list.cpp in Sources */,
 				4583EE2D1FB18F7A00AED27D /* b2ChainShape.cpp in Sources */,
 				4583EE2E1FB18F7A00AED27D /* b2EdgeShape.cpp in Sources */,
-				4591F09C1FC2B0E00075000D /* laser detector rendering system.cpp in Sources */,
 				450ED61E1FB80B0F008F2902 /* switch component.cpp in Sources */,
 				459796281FB58752007A7432 /* entity id map.cpp in Sources */,
 				456DF0C91FBEB610003B3FD1 /* level manager.cpp in Sources */,
@@ -1597,13 +1422,10 @@
 				4583EEAA1FB1B6E100AED27D /* physics transform system.cpp in Sources */,
 				4583EE2F1FB18F7A00AED27D /* b2CircleShape.cpp in Sources */,
 				4533A9051FCA93780027B0FB /* dir.cpp in Sources */,
-				4591F0961FC155BA0075000D /* laser emitter rendering system.cpp in Sources */,
 				4583EE301FB18F7A00AED27D /* b2PolygonShape.cpp in Sources */,
 				4583EEA01FB1AE3100AED27D /* power input activation system.cpp in Sources */,
-				450ED5DD1FB6B409008F2902 /* player rendering component.cpp in Sources */,
 				4583EE311FB18F7A00AED27D /* b2TimeOfImpact.cpp in Sources */,
 				4591F0B11FC3F99B0075000D /* text init.cpp in Sources */,
-				4591F0A51FC2B73E0075000D /* text rendering component.cpp in Sources */,
 				4583EE321FB18F7A00AED27D /* b2BroadPhase.cpp in Sources */,
 				4583EE331FB18F7A00AED27D /* b2CollideEdge.cpp in Sources */,
 				4583EE341FB18F7A00AED27D /* b2Collision.cpp in Sources */,

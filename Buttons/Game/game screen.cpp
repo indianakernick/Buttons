@@ -46,8 +46,6 @@ void GameScreen::init(RenderingContext &renderingContext) {
   compInits.construct<AnimationInit>();
   compInits.construct<MovingPlatformInit>();
   compInits.construct<LaserDetectorInit>();
-  RenderingResources res;
-  compInits.construct<TextRenderingInit>(res);
   compInits.construct<TextInit>();
   compInits.construct<KeyInit>();
   compInits.construct<LockInit>();
@@ -127,19 +125,7 @@ void GameScreen::render(NVGcontext *const ctx, const float delta) {
   
   if constexpr (ENABLE_GAME_RENDER) {
     animationSystem(registry, delta);
-    movingPlatformRenderingSystem(registry, ctx);
-    platformRenderingSystem(registry, ctx);
-    laserEmitterRenderingSystem(registry, ctx);
-    laserDetectorRenderingSystem(registry, ctx);
-    buttonRenderingSystem(registry, ctx);
-    boxRenderingSystem(registry, ctx);
-    exitRenderingSystem(registry, ctx);
-    keyRenderingSystem(registry, ctx);
-    lockRenderingSystem(registry, ctx);
-    playerRenderingSystem(registry, ctx);
-    switchRenderingSystem(registry, ctx);
-    doorRenderingSystem(registry, ctx);
-    textRenderingSystem(registry, ctx);
+    
   }
   
   if constexpr (ENABLE_GRID_RENDER) {
@@ -263,19 +249,6 @@ bool GameScreen::infoKey(const SDL_Event &e) {
 }
 
 void GameScreen::printMessage(const std::string &message) {
-  const EntityID entity = registry.create();
-  registry.assign<Text>(entity, message);
-  Transform &transform = registry.assign<Transform>(entity);
-  transform.pos = {16.0f, 17.0f};
-  TextRendering &textRendering = registry.assign<TextRendering>(entity);
-  // Magic?
-  const json renderingNode = {
-    {"font", "Arial.ttf"},
-    {"color", {1.0f, 0.0f, 0.0f}},
-    {"hori align", "center"},
-    {"vert align", "middle"},
-    {"size", 48.0f}
-  };
-  compInits.init(textRendering, renderingNode, EntityIDmap(), entity);
+  
 }
 

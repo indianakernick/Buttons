@@ -25,22 +25,9 @@
 #include "player keys component.hpp"
 #include "player jump component.hpp"
 #include "player input component.hpp"
-#include "box rendering component.hpp"
-#include "key rendering component.hpp"
-#include "lock rendering component.hpp"
-#include "text rendering component.hpp"
-#include "door rendering component.hpp"
-#include "exit rendering component.hpp"
 #include "laser detector component.hpp"
 #include "moving platform component.hpp"
 #include <Simpleton/Utils/type list.hpp>
-#include "switch rendering component.hpp"
-#include "button rendering component.hpp"
-#include "player rendering component.hpp"
-#include "platform rendering component.hpp"
-#include "laser emitter rendering component.hpp"
-#include "laser detector rendering component.hpp"
-#include "moving platform rendering component.hpp"
 
 #define COMPS                                                                   \
   COMP(PowerInput, powerInput)                                                  \
@@ -51,31 +38,18 @@
   COMP(Transform, transform)                                                    \
   COMP(Collision, collision)                                                    \
   COMP(Activation, activation)                                                  \
-  COMP(BoxRendering, boxRendering)                                              \
   COMP(PlayerInput, playerInput)                                                \
   COMP(PlayerJump, playerJump)                                                  \
-  COMP(PlayerRendering, playerRendering)                                        \
-  COMP(PlatformRendering, platformRendering)                                    \
   COMP(Button, button)                                                          \
-  COMP(ButtonRendering, buttonRendering)                                        \
-  COMP(DoorRendering, doorRendering)                                            \
   COMP(Door, door)                                                              \
   COMP(Switch, switch)                                                          \
-  COMP(SwitchRendering, switchRendering)                                        \
   COMP(Animation, animation)                                                    \
-  COMP(ExitRendering, exitRendering)                                            \
   COMP(Exit, exit)                                                              \
   COMP(LaserDetector, laserDetector)                                            \
-  COMP(LaserEmitterRendering, laserEmitterRendering)                            \
-  COMP(LaserDetectorRendering, laserDetectorRendering)                          \
-  COMP(TextRendering, textRendering)                                            \
   COMP(Text, text)                                                              \
   COMP(Key, key)                                                                \
   COMP(Lock, lock)                                                              \
   COMP(PlayerKeys, playerKeys)                                                  \
-  COMP(KeyRendering, keyRendering)                                              \
-  COMP(LockRendering, lockRendering)                                            \
-  COMP(MovingPlatformRendering, movingPlatformRendering)                        \
   LAST_COMP(MovingPlatform, movingPlatform)
 
 #define COMP(NAME, ID_NAME) NAME,
