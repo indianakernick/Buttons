@@ -11,8 +11,6 @@
 
 #include "../Libraries/Box2D/Common/b2Draw.h"
 
-extern "C" struct NVGcontext;
-
 class DebugDraw final : public b2Draw {
 public:
   DebugDraw();
@@ -24,11 +22,6 @@ public:
   void DrawSegment(const b2Vec2 &, const b2Vec2 &, const b2Color &) override;
   void DrawTransform(const b2Transform &) override;
   void DrawPoint(const b2Vec2 &, float32, const b2Color &) override;
-
-  void setContext(NVGcontext *);
-
-private:
-  NVGcontext *ctx = nullptr;
 };
 
 #endif

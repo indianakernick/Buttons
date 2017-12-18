@@ -20,7 +20,7 @@ class PhysicsSystem {
 public:
   PhysicsSystem() = default;
 
-  void init(Registry &, NVGcontext *);
+  void init(Registry &);
   void quit();
   
   b2World *getWorld();

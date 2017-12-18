@@ -13,7 +13,7 @@
 #include "physics constants.hpp"
 #include <Simpleton/Utils/member function.hpp>
 
-void PhysicsSystem::init(Registry &newRegistry, NVGcontext *const ctx) {
+void PhysicsSystem::init(Registry &newRegistry) {
   world.emplace(GRAVITY);
   
   contactListener.emplace();
@@ -23,7 +23,6 @@ void PhysicsSystem::init(Registry &newRegistry, NVGcontext *const ctx) {
   
   debugDraw.emplace();
   world->SetDebugDraw(&(*debugDraw));
-  debugDraw->setContext(ctx);
   
   registry = &newRegistry;
 }
@@ -31,7 +30,6 @@ void PhysicsSystem::init(Registry &newRegistry, NVGcontext *const ctx) {
 void PhysicsSystem::quit() {
   registry = nullptr;
   
-  debugDraw->setContext(nullptr);
   world->SetDebugDraw(nullptr);
   debugDraw = std::experimental::nullopt;
   

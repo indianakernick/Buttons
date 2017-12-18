@@ -31,7 +31,6 @@
 		4533A8BA1FC90C390027B0FB /* player keys component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8B81FC90C390027B0FB /* player keys component.cpp */; };
 		4533A8BD1FC90EF50027B0FB /* take key system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8BB1FC90EF50027B0FB /* take key system.cpp */; };
 		4533A8C01FC912B10027B0FB /* activate lock system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8BE1FC912B10027B0FB /* activate lock system.cpp */; };
-		4533A8CD1FC919750027B0FB /* render polygon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8CB1FC919750027B0FB /* render polygon.cpp */; };
 		4533A8FE1FCA69440027B0FB /* game screen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8FC1FCA69440027B0FB /* game screen.cpp */; };
 		4533A9011FCA91DD0027B0FB /* progress manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8FF1FCA91DC0027B0FB /* progress manager.cpp */; };
 		4533A9051FCA93780027B0FB /* dir.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A9031FCA93780027B0FB /* dir.cpp */; };
@@ -215,8 +214,6 @@
 		4533A8BC1FC90EF50027B0FB /* take key system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "take key system.hpp"; sourceTree = "<group>"; };
 		4533A8BE1FC912B10027B0FB /* activate lock system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "activate lock system.cpp"; sourceTree = "<group>"; };
 		4533A8BF1FC912B10027B0FB /* activate lock system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "activate lock system.hpp"; sourceTree = "<group>"; };
-		4533A8CB1FC919750027B0FB /* render polygon.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "render polygon.cpp"; sourceTree = "<group>"; };
-		4533A8CC1FC919750027B0FB /* render polygon.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "render polygon.hpp"; sourceTree = "<group>"; };
 		4533A8FC1FCA69440027B0FB /* game screen.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "game screen.cpp"; sourceTree = "<group>"; };
 		4533A8FD1FCA69440027B0FB /* game screen.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "game screen.hpp"; sourceTree = "<group>"; };
 		4533A8FF1FCA91DC0027B0FB /* progress manager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "progress manager.cpp"; sourceTree = "<group>"; };
@@ -960,8 +957,6 @@
 				4583EE471FB1906E00AED27D /* rendering resources.hpp */,
 				4591F0C11FC8036D0075000D /* render grid.cpp */,
 				4591F0C21FC8036D0075000D /* render grid.hpp */,
-				4533A8CB1FC919750027B0FB /* render polygon.cpp */,
-				4533A8CC1FC919750027B0FB /* render polygon.hpp */,
 			);
 			name = Rendering;
 			sourceTree = "<group>";
@@ -1376,7 +1371,6 @@
 				4583EE1A1FB18F7A00AED27D /* b2RevoluteJoint.cpp in Sources */,
 				4583EE1B1FB18F7A00AED27D /* b2GearJoint.cpp in Sources */,
 				4583EE1C1FB18F7A00AED27D /* b2Joint.cpp in Sources */,
-				4533A8CD1FC919750027B0FB /* render polygon.cpp in Sources */,
 				456DF0C61FBD633C003B3FD1 /* moving platform system.cpp in Sources */,
 				4584F44C1FD215340062B93E /* level file.cpp in Sources */,
 				4591F0AE1FC3F9780075000D /* text component.cpp in Sources */,
