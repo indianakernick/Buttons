@@ -63,6 +63,8 @@
 		456DF0C61FBD633C003B3FD1 /* moving platform system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0C41FBD633C003B3FD1 /* moving platform system.cpp */; };
 		456DF0C91FBEB610003B3FD1 /* level manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0C71FBEB610003B3FD1 /* level manager.cpp */; };
 		456DF0CD1FBFB519003B3FD1 /* physics init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0CB1FBFB519003B3FD1 /* physics init.cpp */; };
+		45771B921FE74C7D00F533DA /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 45771B911FE74C6800F533DA /* sprites.atlas */; };
+		45771B931FE74C7D00F533DA /* sprites.png in Resources */ = {isa = PBXBuildFile; fileRef = 45771B901FE74C6700F533DA /* sprites.png */; };
 		4583ED5B1FB1841100AED27D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4583ED5A1FB1841100AED27D /* Assets.xcassets */; };
 		4583ED671FB1845B00AED27D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583ED661FB1845B00AED27D /* main.cpp */; };
 		4583ED721FB185AD00AED27D /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4583ED711FB185AD00AED27D /* OpenGL.framework */; };
@@ -322,6 +324,61 @@
 		456DF0CC1FBFB519003B3FD1 /* physics init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "physics init.hpp"; sourceTree = "<group>"; };
 		456DF0CE1FBFB6C3003B3FD1 /* comp inits.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "comp inits.hpp"; sourceTree = "<group>"; };
 		456DF0CF1FBFB753003B3FD1 /* comp init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "comp init.hpp"; sourceTree = "<group>"; };
+		45771B8E1FE749E100F533DA /* config.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = config.yaml; sourceTree = "<group>"; };
+		45771B901FE74C6700F533DA /* sprites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sprites.png; sourceTree = "<group>"; };
+		45771B911FE74C6800F533DA /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = file; path = sprites.atlas; sourceTree = "<group>"; };
+		45771BC81FE7504D00F533DA /* exit 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "exit 1.png"; sourceTree = "<group>"; };
+		45771BC91FE7504D00F533DA /* button top 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button top 1.png"; sourceTree = "<group>"; };
+		45771BCA1FE7504D00F533DA /* lock 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lock 2.png"; sourceTree = "<group>"; };
+		45771BCB1FE7504D00F533DA /* laser emitter 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "laser emitter 0.png"; sourceTree = "<group>"; };
+		45771BCC1FE7504D00F533DA /* laser emitter 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "laser emitter 4.png"; sourceTree = "<group>"; };
+		45771BCD1FE7504D00F533DA /* laser emitter 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "laser emitter 2.png"; sourceTree = "<group>"; };
+		45771BCE1FE7504E00F533DA /* key 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "key 7.png"; sourceTree = "<group>"; };
+		45771BCF1FE7504E00F533DA /* switch 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "switch 0.png"; sourceTree = "<group>"; };
+		45771BD01FE7504E00F533DA /* key 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "key 4.png"; sourceTree = "<group>"; };
+		45771BD11FE7504E00F533DA /* key 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "key 2.png"; sourceTree = "<group>"; };
+		45771BD21FE7504E00F533DA /* exit 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "exit 0.png"; sourceTree = "<group>"; };
+		45771BD31FE7504E00F533DA /* door top 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "door top 1.png"; sourceTree = "<group>"; };
+		45771BD41FE7504E00F533DA /* door top 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "door top 2.png"; sourceTree = "<group>"; };
+		45771BD51FE7504E00F533DA /* door top 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "door top 4.png"; sourceTree = "<group>"; };
+		45771BD61FE7504E00F533DA /* lock 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lock 7.png"; sourceTree = "<group>"; };
+		45771BD71FE7504E00F533DA /* laser detector 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "laser detector 2.png"; sourceTree = "<group>"; };
+		45771BD81FE7504E00F533DA /* button top 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button top 0.png"; sourceTree = "<group>"; };
+		45771BD91FE7504E00F533DA /* button top 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button top 3.png"; sourceTree = "<group>"; };
+		45771BDA1FE7504F00F533DA /* key 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "key 6.png"; sourceTree = "<group>"; };
+		45771BDB1FE7504F00F533DA /* moving platform.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moving platform.png"; sourceTree = "<group>"; };
+		45771BDC1FE7504F00F533DA /* key 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "key 1.png"; sourceTree = "<group>"; };
+		45771BDD1FE7504F00F533DA /* switch 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "switch 4.png"; sourceTree = "<group>"; };
+		45771BDE1FE7504F00F533DA /* laser emitter 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "laser emitter 3.png"; sourceTree = "<group>"; };
+		45771BDF1FE7504F00F533DA /* button top 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button top 2.png"; sourceTree = "<group>"; };
+		45771BE01FE7504F00F533DA /* button bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button bottom.png"; sourceTree = "<group>"; };
+		45771BE11FE7504F00F533DA /* laser detector 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "laser detector 0.png"; sourceTree = "<group>"; };
+		45771BE21FE7505000F533DA /* door bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "door bottom.png"; sourceTree = "<group>"; };
+		45771BE31FE7505000F533DA /* lock 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lock 1.png"; sourceTree = "<group>"; };
+		45771BE41FE7505000F533DA /* key 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "key 5.png"; sourceTree = "<group>"; };
+		45771BE51FE7505000F533DA /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
+		45771BE61FE7505000F533DA /* box 1x1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "box 1x1.png"; sourceTree = "<group>"; };
+		45771BE71FE7505000F533DA /* lock 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lock 6.png"; sourceTree = "<group>"; };
+		45771BE81FE7505000F533DA /* exit 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "exit 3.png"; sourceTree = "<group>"; };
+		45771BE91FE7505000F533DA /* lock 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lock 3.png"; sourceTree = "<group>"; };
+		45771BEA1FE7505100F533DA /* key 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "key 3.png"; sourceTree = "<group>"; };
+		45771BEB1FE7505100F533DA /* switch 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "switch 2.png"; sourceTree = "<group>"; };
+		45771BEC1FE7505100F533DA /* laser detector 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "laser detector 4.png"; sourceTree = "<group>"; };
+		45771BED1FE7505100F533DA /* laser detector 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "laser detector 3.png"; sourceTree = "<group>"; };
+		45771BEE1FE7505100F533DA /* key 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "key 0.png"; sourceTree = "<group>"; };
+		45771BEF1FE7505100F533DA /* lock 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lock 5.png"; sourceTree = "<group>"; };
+		45771BF01FE7505100F533DA /* door top 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "door top 0.png"; sourceTree = "<group>"; };
+		45771BF11FE7505200F533DA /* platform.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = platform.png; sourceTree = "<group>"; };
+		45771BF21FE7505200F533DA /* button top 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button top 4.png"; sourceTree = "<group>"; };
+		45771BF31FE7505200F533DA /* laser emitter 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "laser emitter 1.png"; sourceTree = "<group>"; };
+		45771BF41FE7505200F533DA /* box 3x3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "box 3x3.png"; sourceTree = "<group>"; };
+		45771BF51FE7505200F533DA /* exit 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "exit 2.png"; sourceTree = "<group>"; };
+		45771BF61FE7505200F533DA /* switch 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "switch 1.png"; sourceTree = "<group>"; };
+		45771BF71FE7505200F533DA /* laser detector 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "laser detector 1.png"; sourceTree = "<group>"; };
+		45771BF81FE7505300F533DA /* lock 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lock 0.png"; sourceTree = "<group>"; };
+		45771BF91FE7505300F533DA /* door top 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "door top 3.png"; sourceTree = "<group>"; };
+		45771BFA1FE7505300F533DA /* lock 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lock 4.png"; sourceTree = "<group>"; };
+		45771BFB1FE7505300F533DA /* switch 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "switch 3.png"; sourceTree = "<group>"; };
 		4583ED551FB1841100AED27D /* Buttons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Buttons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4583ED5A1FB1841100AED27D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4583ED5F1FB1841100AED27D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -585,6 +642,9 @@
 		452E10921FB2F4550063114B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				45771B8E1FE749E100F533DA /* config.yaml */,
+				45771B911FE74C6800F533DA /* sprites.atlas */,
+				45771B901FE74C6700F533DA /* sprites.png */,
 				454D03DC1FE61D8E00D3E560 /* Sprites */,
 				454D03DB1FE61C4700D3E560 /* Animations */,
 				4591F0AA1FC3EEDB0075000D /* Fonts */,
@@ -655,6 +715,58 @@
 		454D03DC1FE61D8E00D3E560 /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
+				45771BE61FE7505000F533DA /* box 1x1.png */,
+				45771BF41FE7505200F533DA /* box 3x3.png */,
+				45771BE01FE7504F00F533DA /* button bottom.png */,
+				45771BD81FE7504E00F533DA /* button top 0.png */,
+				45771BC91FE7504D00F533DA /* button top 1.png */,
+				45771BDF1FE7504F00F533DA /* button top 2.png */,
+				45771BD91FE7504E00F533DA /* button top 3.png */,
+				45771BF21FE7505200F533DA /* button top 4.png */,
+				45771BE21FE7505000F533DA /* door bottom.png */,
+				45771BF01FE7505100F533DA /* door top 0.png */,
+				45771BD31FE7504E00F533DA /* door top 1.png */,
+				45771BD41FE7504E00F533DA /* door top 2.png */,
+				45771BF91FE7505300F533DA /* door top 3.png */,
+				45771BD51FE7504E00F533DA /* door top 4.png */,
+				45771BD21FE7504E00F533DA /* exit 0.png */,
+				45771BC81FE7504D00F533DA /* exit 1.png */,
+				45771BF51FE7505200F533DA /* exit 2.png */,
+				45771BE81FE7505000F533DA /* exit 3.png */,
+				45771BEE1FE7505100F533DA /* key 0.png */,
+				45771BDC1FE7504F00F533DA /* key 1.png */,
+				45771BD11FE7504E00F533DA /* key 2.png */,
+				45771BEA1FE7505100F533DA /* key 3.png */,
+				45771BD01FE7504E00F533DA /* key 4.png */,
+				45771BE41FE7505000F533DA /* key 5.png */,
+				45771BDA1FE7504F00F533DA /* key 6.png */,
+				45771BCE1FE7504E00F533DA /* key 7.png */,
+				45771BE11FE7504F00F533DA /* laser detector 0.png */,
+				45771BF71FE7505200F533DA /* laser detector 1.png */,
+				45771BD71FE7504E00F533DA /* laser detector 2.png */,
+				45771BED1FE7505100F533DA /* laser detector 3.png */,
+				45771BEC1FE7505100F533DA /* laser detector 4.png */,
+				45771BCB1FE7504D00F533DA /* laser emitter 0.png */,
+				45771BF31FE7505200F533DA /* laser emitter 1.png */,
+				45771BCD1FE7504D00F533DA /* laser emitter 2.png */,
+				45771BDE1FE7504F00F533DA /* laser emitter 3.png */,
+				45771BCC1FE7504D00F533DA /* laser emitter 4.png */,
+				45771BF81FE7505300F533DA /* lock 0.png */,
+				45771BE31FE7505000F533DA /* lock 1.png */,
+				45771BCA1FE7504D00F533DA /* lock 2.png */,
+				45771BE91FE7505000F533DA /* lock 3.png */,
+				45771BFA1FE7505300F533DA /* lock 4.png */,
+				45771BEF1FE7505100F533DA /* lock 5.png */,
+				45771BE71FE7505000F533DA /* lock 6.png */,
+				45771BD61FE7504E00F533DA /* lock 7.png */,
+				45771BDB1FE7504F00F533DA /* moving platform.png */,
+				45771BF11FE7505200F533DA /* platform.png */,
+				45771BE51FE7505000F533DA /* player.png */,
+				45771BCF1FE7504E00F533DA /* switch 0.png */,
+				45771BF61FE7505200F533DA /* switch 1.png */,
+				45771BEB1FE7505100F533DA /* switch 2.png */,
+				45771BFB1FE7505300F533DA /* switch 3.png */,
+				45771BDD1FE7504F00F533DA /* switch 4.png */,
 			);
 			path = Sprites;
 			sourceTree = "<group>";
@@ -1240,6 +1352,7 @@
 				4583ED511FB1841100AED27D /* Sources */,
 				4583ED521FB1841100AED27D /* Frameworks */,
 				4584F4751FD4BF060062B93E /* Compile Levels */,
+				45771B8F1FE74A2A00F533DA /* Pack Sprites */,
 				4583ED531FB1841100AED27D /* Resources */,
 			);
 			buildRules = (
@@ -1296,6 +1409,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45771B921FE74C7D00F533DA /* sprites.atlas in Resources */,
+				45771B931FE74C7D00F533DA /* sprites.png in Resources */,
 				4584F44D1FD27A150062B93E /* box body.json in Resources */,
 				4584F44E1FD27A150062B93E /* button body.json in Resources */,
 				4584F44F1FD27A150062B93E /* door body.json in Resources */,
@@ -1311,6 +1426,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		45771B8F1FE74A2A00F533DA /* Pack Sprites */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Pack Sprites";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd $PROJECT_DIR/Buttons/Resources\n\npacker --silent config.yaml";
+		};
 		4584F4751FD4BF060062B93E /* Compile Levels */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
