@@ -6,8 +6,11 @@ function(params) {
     Activation: {
       speed: 8
     },
+    ActiveSpriteRendering: {
+      sprite: "button top 0",
+      frames: 5
+    },
     Button: {},
-    ButtonRendering: {},
     Collision: {},
     PowerOutput: {},
     Transform: {},

@@ -12,6 +12,7 @@
 #include <glm/trigonometric.hpp>
 #include "transform component.hpp"
 #include "activation component.hpp"
+#include <Simpleton/Platform/sdl error.hpp>
 #include "active sprite rendering component.hpp"
 
 /*
@@ -24,7 +25,7 @@ namespace {
   using Unpack::SpriteID;
 
   SpriteID calcSprite(const float progress, const SpriteID begin, const SpriteID size) {
-    return begin + static_cast<SpriteID>(std::round(progress * size));
+    return begin + static_cast<SpriteID>(std::round(progress * (size - 1)));
   }
   
   SDL_Rect toSDL(const Unpack::RectPx rect) {
@@ -67,6 +68,6 @@ void activeSpriteRenderingSystem(
     const SDL_Rect dstrect = toRect(camera * getMat3(transform));
     const SDL_Point center = {0, 0};
     
-    SDL_RenderCopyEx(renderer, texture, &srcrect, &dstrect, angle, &center, SDL_FLIP_NONE);
+    CHECK_SDL_ERROR(SDL_RenderCopyEx(renderer, texture, &srcrect, &dstrect, angle, &center, SDL_FLIP_NONE));
   }
 }

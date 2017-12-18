@@ -125,18 +125,18 @@ glm::mat3 GameScreen::preRender(const glm::ivec2 windowSize, const float delta) 
 
 class StartMenuScreen;
 
-void GameScreen::render(SDL_Renderer *const ctx, const float delta) {
+void GameScreen::render(SDL_Renderer *const renderer, const float delta) {
   if constexpr (ENABLE_DEBUG_PHYSICS_RENDER) {
     physics.render();
   }
   
   if constexpr (ENABLE_GAME_RENDER) {
     animationSystem(registry, delta);
-    
+    activeSpriteRenderingSystem(registry, renderer, texture, sheet, camera.transform.toPixels());
   }
   
   if constexpr (ENABLE_GRID_RENDER) {
-    renderGrid(ctx);
+    renderGrid(renderer);
   }
   
   if (quitGame) {

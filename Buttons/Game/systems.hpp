@@ -26,5 +26,6 @@
 #include "physics transform system.hpp"
 #include "activate power output system.hpp"
 #include "power input activation system.hpp"
+#include "active sprite rendering system.hpp"
 
 #endif

@@ -6,10 +6,13 @@ function(params) {
     Activation: {
       speed: 4
     },
+    ActiveSpriteRendering: {
+      sprite: "switch 0",
+      frames: 5
+    },
     Collision: {},
     PowerOutput: {},
     Switch: {},
-    SwitchRendering: {},
     Transform: {},
     PhysicsBody: common.getOrientTransform(params) + {
       body: "sensor body.json"

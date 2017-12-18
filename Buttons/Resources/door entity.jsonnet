@@ -7,8 +7,11 @@ function(params) {
     Activation: common.getActive(params) + {
       speed: 4
     },
+    ActiveSpriteRendering: {
+      sprite: "door top 0",
+      frames: 5
+    },
     Door: {},
-    DoorRendering: {},
     Transform: {},
     PhysicsBody: common.getOrientTransform(params) + {
       scale: if "height" in params then

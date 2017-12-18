@@ -93,7 +93,7 @@ bool App::render(const float delta) {
   const glm::ivec2 frameSize = renderingContext.getFrameSize();
   const glm::mat3 mat = screens.preRender(frameSize, delta);
   renderingContext.preRender();
-  screens.render(nullptr, delta);
+  screens.render(renderingContext.getRenderer(), delta);
   renderingContext.postRender();
   return true;
 }

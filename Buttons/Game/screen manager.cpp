@@ -48,9 +48,9 @@ glm::mat3 ScreenManager::preRender(const glm::ivec2 windowSize, const float delt
   }
 }
 
-void ScreenManager::render(SDL_Renderer *const ctx, const float delta) {
+void ScreenManager::render(SDL_Renderer *const render, const float delta) {
   if (current) {
-    current->render(ctx, delta);
+    current->render(render, delta);
   }
 }
 

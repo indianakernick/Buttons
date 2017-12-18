@@ -20,7 +20,10 @@ function(params) {
   id: params.id,
   components: common.checkParams(params, validNames) {
     Activation: common.getActive(params),
-    LaserEmitterRendering: {},
+    ActiveSpriteRendering: {
+      sprite: "laser emitter 0",
+      frames: 5
+    },
     PowerInput: common.getPowerInput(params),
     PhysicsRayCast: {
       start: common.add(params.start, common.lookupOrient(params, startPosTable)),
