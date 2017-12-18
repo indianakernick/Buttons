@@ -35,7 +35,7 @@ void GameScreen::init(RenderingContext &renderingContext) {
   camera.targetZoom = std::make_unique<Cam2D::ZoomToFit>(LEVEL_SIZE);
   camera.animateZoom = std::make_unique<Cam2D::ZoomConstantSpeed>(ZOOM_SPEED);
 
-  physics.init(registry, renderingContext.getContext());
+  physics.init(registry, nullptr);
   
   compInits.construct<PhysicsBodyInit>(physics.getWorld());
   compInits.construct<PhysicsJointInit>(physics.getWorld(), &registry);
@@ -46,7 +46,8 @@ void GameScreen::init(RenderingContext &renderingContext) {
   compInits.construct<AnimationInit>();
   compInits.construct<MovingPlatformInit>();
   compInits.construct<LaserDetectorInit>();
-  compInits.construct<TextRenderingInit>(renderingContext.getResources());
+  RenderingResources res;
+  compInits.construct<TextRenderingInit>(res);
   compInits.construct<TextInit>();
   compInits.construct<KeyInit>();
   compInits.construct<LockInit>();

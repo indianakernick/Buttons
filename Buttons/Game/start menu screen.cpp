@@ -21,7 +21,7 @@ void StartMenuScreen::init(RenderingContext &renderingContext) {
   camera.transform.setInvertY(true);
   camera.transform.setOrigin(Cam2D::Origin::CENTER);
   camera.targetZoom = std::make_unique<Cam2D::ZoomToFit>(glm::vec2(16, 9));
-  font = renderingContext.getResources().getFont("Arial.ttf");
+  font = nullptr;//renderingContext.getResources().getFont("Arial.ttf");
   
   auto startButton = std::make_unique<ButtonElement>();
   auto startText = std::make_unique<TextElement>();

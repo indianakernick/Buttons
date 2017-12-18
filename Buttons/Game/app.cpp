@@ -90,8 +90,10 @@ bool App::update(const float delta) {
 }
 
 bool App::render(const float delta) {
-  renderingContext.preRender(screens.preRender(window.size(), delta));
-  screens.render(renderingContext.getContext(), delta);
-  renderingContext.postRender(ENABLE_FPS_RENDER);
+  const glm::ivec2 frameSize = renderingContext.getFrameSize();
+  const glm::mat3 mat = screens.preRender(frameSize, delta);
+  renderingContext.preRender();
+  screens.render(nullptr, delta);
+  renderingContext.postRender();
   return true;
 }

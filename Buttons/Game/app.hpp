@@ -9,6 +9,7 @@
 #ifndef app_hpp
 #define app_hpp
 
+#include <chrono>
 #include "screen manager.hpp"
 #include "rendering context.hpp"
 #include <experimental/optional>
