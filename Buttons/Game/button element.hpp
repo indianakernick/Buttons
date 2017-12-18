@@ -10,6 +10,7 @@
 #define button_element_hpp
 
 #include "nanovg.hpp"
+#include <functional>
 #include "element.hpp"
 
 struct ButtonStyle {
