@@ -46,6 +46,10 @@
 		456DF0CD1FBFB519003B3FD1 /* physics init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0CB1FBFB519003B3FD1 /* physics init.cpp */; };
 		45771B921FE74C7D00F533DA /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 45771B911FE74C6800F533DA /* sprites.atlas */; };
 		45771B931FE74C7D00F533DA /* sprites.png in Resources */ = {isa = PBXBuildFile; fileRef = 45771B901FE74C6700F533DA /* sprites.png */; };
+		45771BFE1FE784DE00F533DA /* active sprite rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45771BFC1FE784DE00F533DA /* active sprite rendering system.cpp */; };
+		45771C001FE7872B00F533DA /* libUnpacker.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 45771BFF1FE7872B00F533DA /* libUnpacker.dylib */; };
+		45771C031FE788CF00F533DA /* active sprite rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45771C011FE788CF00F533DA /* active sprite rendering component.cpp */; };
+		45771C061FE7906900F533DA /* active sprite rendering init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45771C041FE7906900F533DA /* active sprite rendering init.cpp */; };
 		4583ED5B1FB1841100AED27D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4583ED5A1FB1841100AED27D /* Assets.xcassets */; };
 		4583ED671FB1845B00AED27D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583ED661FB1845B00AED27D /* main.cpp */; };
 		4583ED721FB185AD00AED27D /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4583ED711FB185AD00AED27D /* OpenGL.framework */; };
@@ -311,6 +315,13 @@
 		45771BF91FE7505300F533DA /* door top 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "door top 3.png"; sourceTree = "<group>"; };
 		45771BFA1FE7505300F533DA /* lock 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lock 4.png"; sourceTree = "<group>"; };
 		45771BFB1FE7505300F533DA /* switch 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "switch 3.png"; sourceTree = "<group>"; };
+		45771BFC1FE784DE00F533DA /* active sprite rendering system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "active sprite rendering system.cpp"; sourceTree = "<group>"; };
+		45771BFD1FE784DE00F533DA /* active sprite rendering system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "active sprite rendering system.hpp"; sourceTree = "<group>"; };
+		45771BFF1FE7872B00F533DA /* libUnpacker.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libUnpacker.dylib; path = ../../../../../../../usr/local/lib/libUnpacker.dylib; sourceTree = "<group>"; };
+		45771C011FE788CF00F533DA /* active sprite rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "active sprite rendering component.cpp"; sourceTree = "<group>"; };
+		45771C021FE788CF00F533DA /* active sprite rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "active sprite rendering component.hpp"; sourceTree = "<group>"; };
+		45771C041FE7906900F533DA /* active sprite rendering init.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "active sprite rendering init.cpp"; sourceTree = "<group>"; };
+		45771C051FE7906900F533DA /* active sprite rendering init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "active sprite rendering init.hpp"; sourceTree = "<group>"; };
 		4583ED551FB1841100AED27D /* Buttons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Buttons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4583ED5A1FB1841100AED27D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4583ED5F1FB1841100AED27D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -537,6 +548,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45771C001FE7872B00F533DA /* libUnpacker.dylib in Frameworks */,
 				454D04B41FE64FCA00D3E560 /* SDL2.framework in Frameworks */,
 				4583ED781FB185CC00AED27D /* CoreVideo.framework in Frameworks */,
 				4583ED761FB185C100AED27D /* Cocoa.framework in Frameworks */,
@@ -706,6 +718,8 @@
 				4533A8B31FC90A550027B0FB /* key init.hpp */,
 				4533A8B51FC90AFC0027B0FB /* lock init.cpp */,
 				4533A8B61FC90AFC0027B0FB /* lock init.hpp */,
+				45771C041FE7906900F533DA /* active sprite rendering init.cpp */,
+				45771C051FE7906900F533DA /* active sprite rendering init.hpp */,
 			);
 			name = "Component initializers";
 			sourceTree = "<group>";
@@ -743,6 +757,7 @@
 		4583ED681FB1859400AED27D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				45771BFF1FE7872B00F533DA /* libUnpacker.dylib */,
 				454D04B31FE64FCA00D3E560 /* SDL2.framework */,
 				454D04A61FE6438400D3E560 /* libSimpleton Engine.a */,
 				454D03E41FE63AC700D3E560 /* libGLEW.a */,
@@ -1013,6 +1028,8 @@
 				4533A8B01FC909F90027B0FB /* lock component.hpp */,
 				4533A8B81FC90C390027B0FB /* player keys component.cpp */,
 				4533A8B91FC90C390027B0FB /* player keys component.hpp */,
+				45771C011FE788CF00F533DA /* active sprite rendering component.cpp */,
+				45771C021FE788CF00F533DA /* active sprite rendering component.hpp */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -1055,6 +1072,8 @@
 				4533A8BC1FC90EF50027B0FB /* take key system.hpp */,
 				4533A8BE1FC912B10027B0FB /* activate lock system.cpp */,
 				4533A8BF1FC912B10027B0FB /* activate lock system.hpp */,
+				45771BFC1FE784DE00F533DA /* active sprite rendering system.cpp */,
+				45771BFD1FE784DE00F533DA /* active sprite rendering system.hpp */,
 			);
 			name = Systems;
 			sourceTree = "<group>";
@@ -1355,6 +1374,8 @@
 				4583EE161FB18F7A00AED27D /* b2FrictionJoint.cpp in Sources */,
 				4583EE171FB18F7A00AED27D /* b2DistanceJoint.cpp in Sources */,
 				4583EE181FB18F7A00AED27D /* b2WheelJoint.cpp in Sources */,
+				45771BFE1FE784DE00F533DA /* active sprite rendering system.cpp in Sources */,
+				45771C031FE788CF00F533DA /* active sprite rendering component.cpp in Sources */,
 				4583EE191FB18F7A00AED27D /* b2MotorJoint.cpp in Sources */,
 				4583EE1A1FB18F7A00AED27D /* b2RevoluteJoint.cpp in Sources */,
 				4583EE1B1FB18F7A00AED27D /* b2GearJoint.cpp in Sources */,
@@ -1407,6 +1428,7 @@
 				4583EE301FB18F7A00AED27D /* b2PolygonShape.cpp in Sources */,
 				4583EEA01FB1AE3100AED27D /* power input activation system.cpp in Sources */,
 				4583EE311FB18F7A00AED27D /* b2TimeOfImpact.cpp in Sources */,
+				45771C061FE7906900F533DA /* active sprite rendering init.cpp in Sources */,
 				4591F0B11FC3F99B0075000D /* text init.cpp in Sources */,
 				4583EE321FB18F7A00AED27D /* b2BroadPhase.cpp in Sources */,
 				4583EE331FB18F7A00AED27D /* b2CollideEdge.cpp in Sources */,
@@ -1534,7 +1556,6 @@
 				DEVELOPMENT_TEAM = QY44MADGVC;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Buttons",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = (
@@ -1544,7 +1565,7 @@
 				);
 				INFOPLIST_FILE = Buttons/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-Wall",
@@ -1572,7 +1593,6 @@
 				DEVELOPMENT_TEAM = QY44MADGVC;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Buttons",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = (
@@ -1582,7 +1602,7 @@
 				);
 				INFOPLIST_FILE = Buttons/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-Wall",

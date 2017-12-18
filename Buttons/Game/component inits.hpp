@@ -19,5 +19,6 @@
 #include "activation init.hpp"
 #include "laser detector init.hpp"
 #include "moving platform init.hpp"
+#include "active sprite rendering init.hpp"
 
 #endif

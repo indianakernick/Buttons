@@ -16,11 +16,13 @@
 #include "entity registry.hpp"
 #include "input dispatcher.hpp"
 #include "progress manager.hpp"
+#include <Unpacker/unpacker.hpp>
 #include <Simpleton/Math/digit stack.hpp>
 #include <Simpleton/Camera 2D/camera.hpp>
 
 class RenderingContext;
 extern "C" union SDL_Event;
+extern "C" struct SDL_Texture;
 
 class GameScreen final : public Screen {
 public:
@@ -45,6 +47,10 @@ private:
   ProgressManager progress;
   InputDispatcher inputDispatcher;
   Cam2D::Camera camera;
+  Unpack::Spritesheet sheet;
+  SDL_Texture *texture;
+  
+  void initSpritesheet(SDL_Renderer *);
   
   Math::DigitStack<Level> enteredLevel;
   bool choosingLevel = false;

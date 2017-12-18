@@ -13,11 +13,13 @@
 #include "render grid.hpp"
 #include "event helper.hpp"
 #include "global flags.hpp"
+#include <SDL2/SDL_render.h>
 #include "entity id map.hpp"
 #include "screen manager.hpp"
 #include "component inits.hpp"
 #include "camera constants.hpp"
 #include "rendering context.hpp"
+#include <Simpleton/Platform/system info.hpp>
 #include <Simpleton/Utils/member function.hpp>
 #include <Simpleton/Camera 2D/zoom to fit.hpp>
 #include <Simpleton/Camera 2D/constant speed.hpp>
@@ -37,6 +39,8 @@ void GameScreen::init(RenderingContext &renderingContext) {
 
   physics.init(registry);
   
+  initSpritesheet(renderingContext.getRenderer());
+  
   compInits.construct<PhysicsBodyInit>(physics.getWorld());
   compInits.construct<PhysicsJointInit>(physics.getWorld(), &registry);
   compInits.construct<PhysicsRayCastInit>();
@@ -49,6 +53,7 @@ void GameScreen::init(RenderingContext &renderingContext) {
   compInits.construct<TextInit>();
   compInits.construct<KeyInit>();
   compInits.construct<LockInit>();
+  compInits.construct<ActiveSpriteRenderingInit>(sheet);
   compInits.setDefaults();
   
   levels.init(registry, compInits);
@@ -73,6 +78,8 @@ void GameScreen::quit() {
   levels.quit();
   
   compInits.destroyAll();
+  
+  SDL_DestroyTexture(texture);
   
   physics.quit();
 }
@@ -141,6 +148,21 @@ void GameScreen::render(SDL_Renderer *const ctx, const float delta) {
 void GameScreen::resetProgress() {
   progress.reset();
   levels.loadLevel(0);
+}
+
+void GameScreen::initSpritesheet(SDL_Renderer *const renderer) {
+  const std::string path = Platform::getResDir() + "sprites.";
+  sheet = Unpack::makeSpritesheet(path + "atlas", path + "png");
+  const Unpack::Image &image = sheet.getImage();
+  texture = SDL_CreateTexture(
+    renderer,
+    SDL_PIXELFORMAT_ABGR8888,
+    SDL_TEXTUREACCESS_STATIC,
+    image.width(),
+    image.height()
+  );
+  SDL_UpdateTexture(texture, nullptr, image.data(), static_cast<int>(image.pitch()));
+  SDL_SetTextureBlendMode(texture, SDL_BLENDMODE_BLEND);
 }
 
 template <typename Listener>

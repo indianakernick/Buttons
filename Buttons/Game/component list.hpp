@@ -28,6 +28,7 @@
 #include "laser detector component.hpp"
 #include "moving platform component.hpp"
 #include <Simpleton/Utils/type list.hpp>
+#include "active sprite rendering component.hpp"
 
 #define COMPS                                                                   \
   COMP(PowerInput, powerInput)                                                  \
@@ -50,6 +51,7 @@
   COMP(Key, key)                                                                \
   COMP(Lock, lock)                                                              \
   COMP(PlayerKeys, playerKeys)                                                  \
+  COMP(ActiveSpriteRendering, activeSpriteRendering)                            \
   LAST_COMP(MovingPlatform, movingPlatform)
 
 #define COMP(NAME, ID_NAME) NAME,
