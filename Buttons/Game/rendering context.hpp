@@ -10,6 +10,7 @@
 #define rendering_context_hpp
 
 #include <glm/vec2.hpp>
+#include <Simpleton/OpenGL/context.hpp>
 
 extern "C" struct SDL_Window;
 extern "C" struct SDL_Renderer;
@@ -26,11 +27,10 @@ public:
   
   glm::ivec2 getFrameSize() const;
   SDL_Window *getWindow() const;
-  SDL_Renderer *getRenderer() const;
   
 private:
   SDL_Window *window = nullptr;
-  SDL_Renderer *renderer = nullptr;
+  GL::Context context;
 };
 
 #endif

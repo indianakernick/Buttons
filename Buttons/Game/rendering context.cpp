@@ -13,40 +13,32 @@
 
 void RenderingContext::init(SDL_Window *newWindow, const bool vsync) {
   window = newWindow;
-  
-  renderer = SDL_CreateRenderer(
-    window,
-    -1,
-    SDL_RENDERER_ACCELERATED
-    | (vsync * SDL_RENDERER_PRESENTVSYNC)
-  );
+  GL::ContextParams params;
+  params.vsync = vsync;
+  params.majorVersion = 3;
+  params.minorVersion = 3;
+  context = GL::makeContext(window, params);
 }
 
 void RenderingContext::quit() {
-  SDL_DestroyRenderer(renderer);
-  renderer = nullptr;
+  context = nullptr;
   window = nullptr;
 }
 
 void RenderingContext::preRender() {
-  CHECK_SDL_ERROR(SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0));
-  CHECK_SDL_ERROR(SDL_RenderClear(renderer));
+  GL::clearFrame();
 }
 
 void RenderingContext::postRender() {
-  SDL_RenderPresent(renderer);
+  SDL_GL_SwapWindow(window);
 }
 
 glm::ivec2 RenderingContext::getFrameSize() const {
   glm::ivec2 size;
-  CHECK_SDL_ERROR(SDL_GetRendererOutputSize(renderer, &size.x, &size.y));
+  SDL_GL_GetDrawableSize(window, &size.x, &size.y);
   return size;
 }
 
 SDL_Window *RenderingContext::getWindow() const {
   return window;
-}
-
-SDL_Renderer *RenderingContext::getRenderer() const {
-  return renderer;
 }

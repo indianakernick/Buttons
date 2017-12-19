@@ -14,9 +14,9 @@
 #include "level manager.hpp"
 #include "physics system.hpp"
 #include "entity registry.hpp"
+#include "rendering system.hpp"
 #include "input dispatcher.hpp"
 #include "progress manager.hpp"
-#include <Unpacker/unpacker.hpp>
 #include <Simpleton/Math/digit stack.hpp>
 #include <Simpleton/Camera 2D/camera.hpp>
 
@@ -42,15 +42,12 @@ public:
 private:
   Registry registry;
   PhysicsSystem physics;
+  RenderingSystem rendering;
   CompInits compInits;
   LevelManager levels;
   ProgressManager progress;
   InputDispatcher inputDispatcher;
   Cam2D::Camera camera;
-  Unpack::Spritesheet sheet;
-  SDL_Texture *texture;
-  
-  void initSpritesheet(SDL_Renderer *);
   
   Math::DigitStack<Level> enteredLevel;
   bool choosingLevel = false;

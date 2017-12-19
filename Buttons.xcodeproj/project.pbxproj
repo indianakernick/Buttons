@@ -46,10 +46,10 @@
 		456DF0CD1FBFB519003B3FD1 /* physics init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0CB1FBFB519003B3FD1 /* physics init.cpp */; };
 		45771B921FE74C7D00F533DA /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 45771B911FE74C6800F533DA /* sprites.atlas */; };
 		45771B931FE74C7D00F533DA /* sprites.png in Resources */ = {isa = PBXBuildFile; fileRef = 45771B901FE74C6700F533DA /* sprites.png */; };
-		45771BFE1FE784DE00F533DA /* active sprite rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45771BFC1FE784DE00F533DA /* active sprite rendering system.cpp */; };
 		45771C001FE7872B00F533DA /* libUnpacker.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 45771BFF1FE7872B00F533DA /* libUnpacker.dylib */; };
 		45771C031FE788CF00F533DA /* active sprite rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45771C011FE788CF00F533DA /* active sprite rendering component.cpp */; };
 		45771C061FE7906900F533DA /* active sprite rendering init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45771C041FE7906900F533DA /* active sprite rendering init.cpp */; };
+		45771C091FE8745F00F533DA /* rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45771C071FE8745F00F533DA /* rendering system.cpp */; };
 		4583ED5B1FB1841100AED27D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4583ED5A1FB1841100AED27D /* Assets.xcassets */; };
 		4583ED671FB1845B00AED27D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583ED661FB1845B00AED27D /* main.cpp */; };
 		4583ED721FB185AD00AED27D /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4583ED711FB185AD00AED27D /* OpenGL.framework */; };
@@ -315,13 +315,13 @@
 		45771BF91FE7505300F533DA /* door top 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "door top 3.png"; sourceTree = "<group>"; };
 		45771BFA1FE7505300F533DA /* lock 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lock 4.png"; sourceTree = "<group>"; };
 		45771BFB1FE7505300F533DA /* switch 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "switch 3.png"; sourceTree = "<group>"; };
-		45771BFC1FE784DE00F533DA /* active sprite rendering system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "active sprite rendering system.cpp"; sourceTree = "<group>"; };
-		45771BFD1FE784DE00F533DA /* active sprite rendering system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "active sprite rendering system.hpp"; sourceTree = "<group>"; };
 		45771BFF1FE7872B00F533DA /* libUnpacker.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libUnpacker.dylib; path = ../../../../../../../usr/local/lib/libUnpacker.dylib; sourceTree = "<group>"; };
 		45771C011FE788CF00F533DA /* active sprite rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "active sprite rendering component.cpp"; sourceTree = "<group>"; };
 		45771C021FE788CF00F533DA /* active sprite rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "active sprite rendering component.hpp"; sourceTree = "<group>"; };
 		45771C041FE7906900F533DA /* active sprite rendering init.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "active sprite rendering init.cpp"; sourceTree = "<group>"; };
 		45771C051FE7906900F533DA /* active sprite rendering init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "active sprite rendering init.hpp"; sourceTree = "<group>"; };
+		45771C071FE8745F00F533DA /* rendering system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "rendering system.cpp"; sourceTree = "<group>"; };
+		45771C081FE8745F00F533DA /* rendering system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "rendering system.hpp"; sourceTree = "<group>"; };
 		4583ED551FB1841100AED27D /* Buttons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Buttons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4583ED5A1FB1841100AED27D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4583ED5F1FB1841100AED27D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1072,8 +1072,8 @@
 				4533A8BC1FC90EF50027B0FB /* take key system.hpp */,
 				4533A8BE1FC912B10027B0FB /* activate lock system.cpp */,
 				4533A8BF1FC912B10027B0FB /* activate lock system.hpp */,
-				45771BFC1FE784DE00F533DA /* active sprite rendering system.cpp */,
-				45771BFD1FE784DE00F533DA /* active sprite rendering system.hpp */,
+				45771C071FE8745F00F533DA /* rendering system.cpp */,
+				45771C081FE8745F00F533DA /* rendering system.hpp */,
 			);
 			name = Systems;
 			sourceTree = "<group>";
@@ -1374,7 +1374,6 @@
 				4583EE161FB18F7A00AED27D /* b2FrictionJoint.cpp in Sources */,
 				4583EE171FB18F7A00AED27D /* b2DistanceJoint.cpp in Sources */,
 				4583EE181FB18F7A00AED27D /* b2WheelJoint.cpp in Sources */,
-				45771BFE1FE784DE00F533DA /* active sprite rendering system.cpp in Sources */,
 				45771C031FE788CF00F533DA /* active sprite rendering component.cpp in Sources */,
 				4583EE191FB18F7A00AED27D /* b2MotorJoint.cpp in Sources */,
 				4583EE1A1FB18F7A00AED27D /* b2RevoluteJoint.cpp in Sources */,
@@ -1413,6 +1412,7 @@
 				4584F4071FCBF1BD0062B93E /* element.cpp in Sources */,
 				4583EE9D1FB1AC1600AED27D /* power system.cpp in Sources */,
 				4583EE2A1FB18F7A00AED27D /* b2CollideCircle.cpp in Sources */,
+				45771C091FE8745F00F533DA /* rendering system.cpp in Sources */,
 				4583EE2B1FB18F7A00AED27D /* b2CollidePolygon.cpp in Sources */,
 				4583EE2C1FB18F7A00AED27D /* b2DynamicTree.cpp in Sources */,
 				4597962E1FB65BBB007A7432 /* component list.cpp in Sources */,
@@ -1575,7 +1575,10 @@
 					"-Wno-documentation",
 					"-std=c++1z",
 				);
-				OTHER_LDFLAGS = "/usr/local/lib/libSimpleton\\ Engine.a";
+				OTHER_LDFLAGS = (
+					/usr/local/Cellar/glew/2.1.0/lib/libGLEW.a,
+					"/usr/local/lib/libSimpleton\\ Engine.a",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Indi-Kernick.Buttons";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1612,7 +1615,10 @@
 					"-Wno-documentation",
 					"-std=c++1z",
 				);
-				OTHER_LDFLAGS = "/usr/local/lib/libSimpleton\\ Engine.a";
+				OTHER_LDFLAGS = (
+					/usr/local/Cellar/glew/2.1.0/lib/libGLEW.a,
+					"/usr/local/lib/libSimpleton\\ Engine.a",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Indi-Kernick.Buttons";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

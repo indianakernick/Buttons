@@ -38,8 +38,7 @@ void GameScreen::init(RenderingContext &renderingContext) {
   camera.animateZoom = std::make_unique<Cam2D::ZoomConstantSpeed>(ZOOM_SPEED);
 
   physics.init(registry);
-  
-  initSpritesheet(renderingContext.getRenderer());
+  rendering.init();
   
   compInits.construct<PhysicsBodyInit>(physics.getWorld());
   compInits.construct<PhysicsJointInit>(physics.getWorld(), &registry);
@@ -53,7 +52,6 @@ void GameScreen::init(RenderingContext &renderingContext) {
   compInits.construct<TextInit>();
   compInits.construct<KeyInit>();
   compInits.construct<LockInit>();
-  compInits.construct<ActiveSpriteRenderingInit>(sheet);
   compInits.setDefaults();
   
   levels.init(registry, compInits);
@@ -78,8 +76,6 @@ void GameScreen::quit() {
   levels.quit();
   
   compInits.destroyAll();
-  
-  SDL_DestroyTexture(texture);
   
   physics.quit();
 }
@@ -132,7 +128,7 @@ void GameScreen::render(SDL_Renderer *const renderer, const float delta) {
   
   if constexpr (ENABLE_GAME_RENDER) {
     animationSystem(registry, delta);
-    activeSpriteRenderingSystem(registry, renderer, texture, sheet, camera.transform.toPixels());
+    //activeSpriteRenderingSystem(registry, renderer, texture, sheet, camera.transform.toPixels());
   }
   
   if constexpr (ENABLE_GRID_RENDER) {
@@ -148,21 +144,6 @@ void GameScreen::render(SDL_Renderer *const renderer, const float delta) {
 void GameScreen::resetProgress() {
   progress.reset();
   levels.loadLevel(0);
-}
-
-void GameScreen::initSpritesheet(SDL_Renderer *const renderer) {
-  const std::string path = Platform::getResDir() + "sprites.";
-  sheet = Unpack::makeSpritesheet(path + "atlas", path + "png");
-  const Unpack::Image &image = sheet.getImage();
-  texture = SDL_CreateTexture(
-    renderer,
-    SDL_PIXELFORMAT_ABGR8888,
-    SDL_TEXTUREACCESS_STATIC,
-    image.width(),
-    image.height()
-  );
-  SDL_UpdateTexture(texture, nullptr, image.data(), static_cast<int>(image.pitch()));
-  SDL_SetTextureBlendMode(texture, SDL_BLENDMODE_BLEND);
 }
 
 template <typename Listener>
