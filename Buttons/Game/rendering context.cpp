@@ -18,6 +18,8 @@ void RenderingContext::init(SDL_Window *newWindow, const bool vsync) {
   params.majorVersion = 3;
   params.minorVersion = 3;
   context = GL::makeContext(window, params);
+  
+  glDisable(GL_CULL_FACE);
 }
 
 void RenderingContext::quit() {

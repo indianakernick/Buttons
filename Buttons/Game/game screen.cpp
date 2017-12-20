@@ -77,6 +77,8 @@ void GameScreen::quit() {
   
   compInits.destroyAll();
   
+  rendering.quit();
+  
   physics.quit();
 }
 
@@ -89,6 +91,7 @@ void GameScreen::update(const float delta) {
     progress.finishLevel(levels.getLoaded());
     levels.nextLevel();
     camera.setZoom(0.0f);
+    rendering.onLevelLoad(registry);
   }
 
   playerMovementSystem(registry, delta);

@@ -21,6 +21,8 @@
 		450ED6211FB80CB4008F2902 /* switch system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED61F1FB80CB4008F2902 /* switch system.cpp */; };
 		450ED62A1FB84633008F2902 /* animation component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED6281FB84633008F2902 /* animation component.cpp */; };
 		450ED62D1FB8620D008F2902 /* animation system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED62B1FB8620D008F2902 /* animation system.cpp */; };
+		4520AD6F1FE9F85C00ECE3C1 /* sprite shader.vert in Resources */ = {isa = PBXBuildFile; fileRef = 4520AD6E1FE9F85C00ECE3C1 /* sprite shader.vert */; };
+		4520AD711FE9F8B000ECE3C1 /* sprite shader.frag in Resources */ = {isa = PBXBuildFile; fileRef = 4520AD701FE9F8B000ECE3C1 /* sprite shader.frag */; };
 		452E10891FB2D27D0063114B /* collision pairs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452E10871FB2D27D0063114B /* collision pairs.cpp */; };
 		452E108C1FB2D8BA0063114B /* object types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452E108A1FB2D8BA0063114B /* object types.cpp */; };
 		452E10941FB2F4930063114B /* Consolas.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 452E10931FB2F4700063114B /* Consolas.ttf */; };
@@ -191,6 +193,8 @@
 		450ED6291FB84633008F2902 /* animation component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "animation component.hpp"; sourceTree = "<group>"; };
 		450ED62B1FB8620D008F2902 /* animation system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "animation system.cpp"; sourceTree = "<group>"; };
 		450ED62C1FB8620D008F2902 /* animation system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "animation system.hpp"; sourceTree = "<group>"; };
+		4520AD6E1FE9F85C00ECE3C1 /* sprite shader.vert */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = "sprite shader.vert"; sourceTree = "<group>"; };
+		4520AD701FE9F8B000ECE3C1 /* sprite shader.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = "sprite shader.frag"; sourceTree = "<group>"; };
 		4520DFAD1FE37017008FCBB4 /* level 8.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 8.jsonnet"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
 		4520DFAF1FE3909B008FCBB4 /* switch entity.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "switch entity.jsonnet"; sourceTree = "<group>"; };
 		4520DFC91FE4A387008FCBB4 /* level 9.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 9.jsonnet"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = "<none>"; };
@@ -572,6 +576,8 @@
 				459796331FB68003007A7432 /* Bodies */,
 				459796321FB67FF7007A7432 /* Entities */,
 				459796311FB67FEC007A7432 /* Levels */,
+				4520AD6E1FE9F85C00ECE3C1 /* sprite shader.vert */,
+				4520AD701FE9F8B000ECE3C1 /* sprite shader.frag */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1260,6 +1266,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4520AD711FE9F8B000ECE3C1 /* sprite shader.frag in Resources */,
 				45771B921FE74C7D00F533DA /* sprites.atlas in Resources */,
 				45771B931FE74C7D00F533DA /* sprites.png in Resources */,
 				4584F44D1FD27A150062B93E /* box body.json in Resources */,
@@ -1267,6 +1274,7 @@
 				4584F44F1FD27A150062B93E /* door body.json in Resources */,
 				4584F4501FD27A150062B93E /* platform body.json in Resources */,
 				4584F4511FD27A150062B93E /* player body.json in Resources */,
+				4520AD6F1FE9F85C00ECE3C1 /* sprite shader.vert in Resources */,
 				4584F4521FD27A150062B93E /* sensor body.json in Resources */,
 				4591F0AB1FC3F0F80075000D /* Arial.ttf in Resources */,
 				452E10941FB2F4930063114B /* Consolas.ttf in Resources */,
