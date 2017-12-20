@@ -17,7 +17,7 @@
 #include <Simpleton/Camera 2D/zoom to fit.hpp>
 
 void StartMenuScreen::init() {
-  /*camera.transform.setOrigin(Cam2D::Origin::CENTER);
+  camera.transform.setOrigin(Cam2D::Origin::CENTER);
   camera.targetZoom = std::make_unique<Cam2D::ZoomToFit>(glm::vec2(16, 9));
   
   auto startButton = std::make_unique<ButtonElement>();
@@ -63,7 +63,7 @@ void StartMenuScreen::init() {
   buttonsText->text("Buttons");
   buttonsText->rect({0.0f, 2.0f}, {1.0f, 1.0f});
   
-  elementMan.addElement(std::move(buttonsText));*/
+  elementMan.addElement(std::move(buttonsText));
 }
 
 void StartMenuScreen::quit() {
@@ -71,6 +71,9 @@ void StartMenuScreen::quit() {
 }
 
 void StartMenuScreen::input(const SDL_Event &e) {
+  if (e.type == SDL_KEYDOWN) {
+    startGame = true;
+  }
   elementMan.handleEvent(e, camera.transform.toMeters());
 }
 

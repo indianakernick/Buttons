@@ -9,6 +9,7 @@
 #ifndef rendering_system_hpp
 #define rendering_system_hpp
 
+#include <glm/mat3x3.hpp>
 #include "entity registry.hpp"
 #include <Unpacker/unpacker.hpp>
 #include <Simpleton/OpenGL/buffer.hpp>
@@ -25,7 +26,9 @@ public:
   void init();
   void quit();
   
+  const Unpack::Spritesheet &getSheet() const;
   void onLevelLoad(Registry &);
+  void render(Registry &, const glm::mat3 &);
 
 private:
   Unpack::Spritesheet sheet;
@@ -34,6 +37,9 @@ private:
   GL::ElementBuffer elemBuf;
   GL::VertexArray vertArray;
   GL::ShaderProgram program;
+  size_t numQuads;
+  GLint viewProjLoc;
+  GLint texLoc;
   
   struct Vertex {
     PosType pos;
@@ -44,6 +50,8 @@ private:
   std::vector<ElemType> indicies;
   
   void fillIndicies(size_t);
+  
+  void activeSprites(Registry &);
 };
 
 #endif

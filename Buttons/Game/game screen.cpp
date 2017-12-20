@@ -51,13 +51,13 @@ void GameScreen::init() {
   compInits.construct<TextInit>();
   compInits.construct<KeyInit>();
   compInits.construct<LockInit>();
+  compInits.construct<ActiveSpriteRenderingInit>(rendering.getSheet());
   compInits.setDefaults();
   
   levels.init(registry, compInits);
   if (!levels.loadLevel(progress.getIncompleteLevel())) {
     //Player has pressed play but finished the game
   }
-  rendering.onLevelLoad(registry);
   
   addListener(&GameScreen::reloadKey);
   addListener(&GameScreen::quitKey);
@@ -128,7 +128,7 @@ void GameScreen::render(const float aspect, const float delta) {
   
   if constexpr (ENABLE_GAME_RENDER) {
     animationSystem(registry, delta);
-    //activeSpriteRenderingSystem(registry, renderer, texture, sheet, camera.transform.toPixels());
+    rendering.render(registry, viewProj);
   }
   
   if constexpr (ENABLE_GRID_RENDER) {

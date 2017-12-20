@@ -1,4 +1,4 @@
-#version 330
+#version 410 core
 
 in vec2 fragTexCoord;
 

@@ -15,11 +15,12 @@ void RenderingContext::init(SDL_Window *newWindow, const bool vsync) {
   window = newWindow;
   GL::ContextParams params;
   params.vsync = vsync;
-  params.majorVersion = 3;
-  params.minorVersion = 3;
+  params.majorVersion = 4;
+  params.minorVersion = 1;
   context = GL::makeContext(window, params);
   
   glDisable(GL_CULL_FACE);
+  glDisable(GL_DEPTH_TEST);
 }
 
 void RenderingContext::quit() {
