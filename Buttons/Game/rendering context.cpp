@@ -35,6 +35,7 @@ void RenderingContext::preRender() {
   glm::ivec2 size;
   SDL_GL_GetDrawableSize(window, &size.x, &size.y);
   glViewport(0, 0, size.x, size.y);
+  CHECK_OPENGL_ERROR();
   
   GL::clearFrame();
 }
