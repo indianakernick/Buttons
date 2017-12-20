@@ -20,12 +20,11 @@ class StartMenuScreen final : public Screen {
 public:
   StartMenuScreen() = default;
   
-  void init(RenderingContext &) override;
+  void init() override;
   void quit() override;
   void input(const SDL_Event &) override;
   void update(float) override;
-  glm::mat3 preRender(glm::ivec2, float) override;
-  void render(SDL_Renderer *, float) override;
+  void render(float, float) override;
 
 private:
   Cam2D::Camera camera;

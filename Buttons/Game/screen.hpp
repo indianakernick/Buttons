@@ -9,14 +9,11 @@
 #ifndef screen_hpp
 #define screen_hpp
 
-#include <glm/vec2.hpp>
 #include "screen id.hpp"
-#include <glm/mat3x3.hpp>
 
 class ScreenManager;
 class RenderingContext;
 extern "C" union SDL_Event;
-extern "C" struct SDL_Renderer;
 
 class Screen {
 public:
@@ -28,12 +25,11 @@ public:
   virtual void enter() {};
   virtual void leave() {};
   
-  virtual void init(RenderingContext &) = 0;
+  virtual void init() = 0;
   virtual void quit() = 0;
   virtual void input(const SDL_Event &) = 0;
   virtual void update(float) = 0;
-  virtual glm::mat3 preRender(glm::ivec2, float) = 0;
-  virtual void render(SDL_Renderer *, float) = 0;
+  virtual void render(float, float) = 0;
 
 protected:
   ScreenManager *getScreenMan() const;

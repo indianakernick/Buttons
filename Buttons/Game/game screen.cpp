@@ -27,13 +27,12 @@
 void GameScreen::enter() {
   levels.reload();
   camera.setZoom(0.0f);
+  rendering.onLevelLoad(registry);
 }
 
-void GameScreen::init(RenderingContext &renderingContext) {
-  camera.transform.setInvertY(true);
-  camera.transform.setPosOrigin(Cam2D::Origin::BOTTOM_LEFT);
-  camera.transform.setPosOriginSize(LEVEL_SIZE);
-  camera.transform.setZoomOrigin(Cam2D::Origin::CENTER);
+void GameScreen::init() {
+  camera.setPos(LEVEL_SIZE / 2.0f);
+  camera.transform.setOrigin(Cam2D::Origin::CENTER);
   camera.targetZoom = std::make_unique<Cam2D::ZoomToFit>(LEVEL_SIZE);
   camera.animateZoom = std::make_unique<Cam2D::ZoomConstantSpeed>(ZOOM_SPEED);
 
@@ -58,6 +57,7 @@ void GameScreen::init(RenderingContext &renderingContext) {
   if (!levels.loadLevel(progress.getIncompleteLevel())) {
     //Player has pressed play but finished the game
   }
+  rendering.onLevelLoad(registry);
   
   addListener(&GameScreen::reloadKey);
   addListener(&GameScreen::quitKey);
@@ -117,14 +117,11 @@ void GameScreen::update(const float delta) {
   powerInputActivationSystem(registry);
 }
 
-glm::mat3 GameScreen::preRender(const glm::ivec2 windowSize, const float delta) {
-  camera.update(windowSize, delta);
-  return camera.transform.toPixels();
-}
-
 class StartMenuScreen;
 
-void GameScreen::render(SDL_Renderer *const renderer, const float delta) {
+void GameScreen::render(const float aspect, const float delta) {
+  camera.update(aspect, delta);
+  const glm::mat3 viewProj = camera.transform.toPixels();
   if constexpr (ENABLE_DEBUG_PHYSICS_RENDER) {
     physics.render();
   }
@@ -135,7 +132,7 @@ void GameScreen::render(SDL_Renderer *const renderer, const float delta) {
   }
   
   if constexpr (ENABLE_GRID_RENDER) {
-    renderGrid(renderer);
+    renderGrid(nullptr);
   }
   
   if (quitGame) {

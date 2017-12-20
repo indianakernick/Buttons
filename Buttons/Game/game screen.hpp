@@ -22,7 +22,6 @@
 
 class RenderingContext;
 extern "C" union SDL_Event;
-extern "C" struct SDL_Texture;
 
 class GameScreen final : public Screen {
 public:
@@ -30,12 +29,11 @@ public:
   
   void enter() override;
   
-  void init(RenderingContext &) override;
+  void init() override;
   void quit() override;
   void input(const SDL_Event &) override;
   void update(float) override;
-  glm::mat3 preRender(glm::ivec2, float) override;
-  void render(SDL_Renderer *, float) override;
+  void render(float, float) override;
   
   void resetProgress();
 

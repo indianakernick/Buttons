@@ -28,6 +28,13 @@ void RenderingContext::quit() {
 }
 
 void RenderingContext::preRender() {
+  // @TODO
+  // emulate a retina display with a device pixel ratio of 2
+  // sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool YES
+  glm::ivec2 size;
+  SDL_GL_GetDrawableSize(window, &size.x, &size.y);
+  glViewport(0, 0, size.x, size.y);
+  
   GL::clearFrame();
 }
 

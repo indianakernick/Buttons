@@ -16,6 +16,10 @@
 #include <Simpleton/OpenGL/vertex array.hpp>
 #include <Simpleton/OpenGL/shader program.hpp>
 
+using PosType = glm::vec2;
+using TexCoordType = glm::vec2;
+using ElemType = unsigned short;
+
 class RenderingSystem {
 public:
   void init();
@@ -26,10 +30,20 @@ public:
 private:
   Unpack::Spritesheet sheet;
   GL::Texture2D texture;
-  GL::ArrayBuffer geometry;
-  GL::ElementBuffer indicies;
+  GL::ArrayBuffer arrayBuf;
+  GL::ElementBuffer elemBuf;
   GL::VertexArray vertArray;
   GL::ShaderProgram program;
+  
+  struct Vertex {
+    PosType pos;
+    TexCoordType texCoord;
+  };
+  
+  std::vector<Vertex> verts;
+  std::vector<ElemType> indicies;
+  
+  void fillIndicies(size_t);
 };
 
 #endif

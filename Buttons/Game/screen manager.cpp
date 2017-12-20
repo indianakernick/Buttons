@@ -16,9 +16,9 @@ void ScreenManager::removeAll() {
   current = nullptr;
 }
 
-void ScreenManager::initAll(RenderingContext &renderingContext) {
+void ScreenManager::initAll() {
   for (auto &pair : screens) {
-    pair.second->init(renderingContext);
+    pair.second->init();
   }
 }
 
@@ -40,17 +40,9 @@ void ScreenManager::update(const float delta) {
   }
 }
 
-glm::mat3 ScreenManager::preRender(const glm::ivec2 windowSize, const float delta) {
+void ScreenManager::render(const float aspect, const float delta) {
   if (current) {
-    return current->preRender(windowSize, delta);
-  } else {
-    return {};
-  }
-}
-
-void ScreenManager::render(SDL_Renderer *const render, const float delta) {
-  if (current) {
-    current->render(render, delta);
+    current->render(aspect, delta);
   }
 }
 

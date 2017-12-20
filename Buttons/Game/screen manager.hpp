@@ -41,12 +41,11 @@ public:
   
   void removeAll();
   
-  void initAll(RenderingContext &);
+  void initAll();
   void quitAll();
   void input(const SDL_Event &);
   void update(float);
-  glm::mat3 preRender(glm::ivec2, float);
-  void render(SDL_Renderer *, float);
+  void render(float, float);
   
 private:
   std::unordered_map<ScreenID, std::unique_ptr<Screen>> screens;

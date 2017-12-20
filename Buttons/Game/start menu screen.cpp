@@ -16,9 +16,8 @@
 #include "rendering context.hpp"
 #include <Simpleton/Camera 2D/zoom to fit.hpp>
 
-void StartMenuScreen::init(RenderingContext &renderingContext) {
-  camera.transform.setInvertY(true);
-  camera.transform.setOrigin(Cam2D::Origin::CENTER);
+void StartMenuScreen::init() {
+  /*camera.transform.setOrigin(Cam2D::Origin::CENTER);
   camera.targetZoom = std::make_unique<Cam2D::ZoomToFit>(glm::vec2(16, 9));
   
   auto startButton = std::make_unique<ButtonElement>();
@@ -64,7 +63,7 @@ void StartMenuScreen::init(RenderingContext &renderingContext) {
   buttonsText->text("Buttons");
   buttonsText->rect({0.0f, 2.0f}, {1.0f, 1.0f});
   
-  elementMan.addElement(std::move(buttonsText));
+  elementMan.addElement(std::move(buttonsText));*/
 }
 
 void StartMenuScreen::quit() {
@@ -77,13 +76,11 @@ void StartMenuScreen::input(const SDL_Event &e) {
 
 void StartMenuScreen::update(const float) {}
 
-glm::mat3 StartMenuScreen::preRender(const glm::ivec2 windowSize, const float delta) {
-  camera.update(windowSize, delta);
-  return camera.transform.toPixels();
-}
-
-void StartMenuScreen::render(SDL_Renderer *const ctx, const float) {
-  elementMan.render(ctx);
+void StartMenuScreen::render(const float aspect, const float delta) {
+  camera.update(aspect, delta);
+  const glm::mat3 viewProj = camera.transform.toPixels();
+  
+  
   
   if (startGame) {
     getScreenMan()->transitionTo<GameScreen>();

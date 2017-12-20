@@ -15,15 +15,13 @@
 #include "active sprite rendering component.hpp"
 
 namespace {
-  using PosType = glm::vec2;
-  using TexCoordType = glm::vec2;
-  using ElemType = unsigned short;
-  
   constexpr GLint POS_ID = 0;
   constexpr GLint TEX_COORD_ID = 1;
   
-  constexpr size_t QUAD_ATTR_SIZE = (sizeof(PosType) + sizeof(TexCoordType)) * 4;
-  constexpr size_t QUAD_ELEM_SIZE = sizeof(ElemType) * 6;
+  constexpr size_t QUAD_INDICIES = 6;
+  constexpr size_t QUAD_VERTS = 4;
+  constexpr size_t QUAD_ATTR_SIZE = (sizeof(PosType) + sizeof(TexCoordType)) * QUAD_VERTS;
+  constexpr size_t QUAD_ELEM_SIZE = sizeof(ElemType) * QUAD_INDICIES;
   
   constexpr auto *enablePos = GL::enable<POS_ID, PosType>;
   constexpr auto *enableTexCoord = GL::enable<TEX_COORD_ID, TexCoordType>;
@@ -58,8 +56,8 @@ void RenderingSystem::init() {
 }
 
 void RenderingSystem::quit() {
-  indicies = nullptr;
-  geometry = nullptr;
+  elemBuf = nullptr;
+  arrayBuf = nullptr;
   vertArray = nullptr;
   texture = nullptr;
 }
@@ -67,22 +65,12 @@ void RenderingSystem::quit() {
 void RenderingSystem::onLevelLoad(Registry &registry) {
   const size_t numEntities = registry.view<ActiveSpriteRendering>().size();
   
-  // @TODO store this in a static buffer and only generate it when the number of
-  // indicies grows
-  std::vector<ElemType> quadIndicies;
-  for (size_t i = 0; i != numEntities; ++i) {
-    quadIndicies.push_back(0);
-    quadIndicies.push_back(1);
-    quadIndicies.push_back(2);
-    quadIndicies.push_back(2);
-    quadIndicies.push_back(3);
-    quadIndicies.push_back(0);
-  }
+  fillIndicies(numEntities);
   
   vertArray.bind();
   
-  geometry = GL::makeArrayBuffer(numEntities * QUAD_ATTR_SIZE, GL_DYNAMIC_DRAW);
-  indicies = GL::makeElementBuffer(quadIndicies.data(), numEntities * QUAD_ELEM_SIZE);
+  arrayBuf = GL::makeArrayBuffer(numEntities * QUAD_ATTR_SIZE, GL_DYNAMIC_DRAW);
+  elemBuf = GL::makeElementBuffer(indicies.data(), numEntities * QUAD_ELEM_SIZE);
   
   posPointer(sizeof(PosType) + sizeof(TexCoordType), 0);
   enablePos();
@@ -90,4 +78,18 @@ void RenderingSystem::onLevelLoad(Registry &registry) {
   enableTexCoord();
   
   GL::unbindVertexArray();
+}
+
+void RenderingSystem::fillIndicies(const size_t minSize) {
+  if (indicies.size() * QUAD_INDICIES < minSize) {
+    const size_t neededSize = minSize - indicies.size() / QUAD_INDICIES;
+    for (size_t i = 0; i != neededSize; ++i) {
+      indicies.push_back(0);
+      indicies.push_back(1);
+      indicies.push_back(2);
+      indicies.push_back(2);
+      indicies.push_back(3);
+      indicies.push_back(0);
+    }
+  }
 }

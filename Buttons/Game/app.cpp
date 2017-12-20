@@ -61,7 +61,7 @@ void App::init() {
   screens.addScreen<StartMenuScreen>();
   screens.transitionTo<StartMenuScreen>();
   
-  screens.initAll(renderingContext);
+  screens.initAll();
 }
 
 void App::quit() {
@@ -90,10 +90,10 @@ bool App::update(const float delta) {
 }
 
 bool App::render(const float delta) {
-  const glm::ivec2 frameSize = renderingContext.getFrameSize();
-  const glm::mat3 mat = screens.preRender(frameSize, delta);
   renderingContext.preRender();
-  //screens.render(renderingContext.getRenderer(), delta);
+  const glm::ivec2 windowSize = window.size();
+  const float aspect = static_cast<float>(windowSize.x) / windowSize.y;
+  screens.render(aspect, delta);
   renderingContext.postRender();
   return true;
 }
