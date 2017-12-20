@@ -175,10 +175,10 @@ void RenderingSystem::activeSprites(Registry &registry) {
     verts[spriteIndex + 2].pos = mulPos(world, {1.0f, 1.0f});
     verts[spriteIndex + 3].pos = mulPos(world, {0.0f, 1.0f});
     
-    verts[spriteIndex + 0].texCoord = bottomLeft;
-    verts[spriteIndex + 1].texCoord = {topRight.x, bottomLeft.y};
-    verts[spriteIndex + 2].texCoord = topRight;
-    verts[spriteIndex + 3].texCoord = {bottomLeft.x, topRight.y};
+    verts[spriteIndex + 0].texCoord = {bottomLeft.x, topRight.y};
+    verts[spriteIndex + 1].texCoord = topRight;
+    verts[spriteIndex + 2].texCoord = {topRight.x, bottomLeft.y};
+    verts[spriteIndex + 3].texCoord = bottomLeft;
     
     spriteIndex += 4;
   }
