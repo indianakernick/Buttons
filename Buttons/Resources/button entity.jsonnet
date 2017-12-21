@@ -10,6 +10,10 @@ function(params) {
       sprite: "button top 0",
       frames: 5
     },
+    StaticSpriteRendering: {
+      sprite: "button bottom",
+      offset: [0.0, -1.0]
+    },
     Button: {},
     Collision: {},
     PowerOutput: {},

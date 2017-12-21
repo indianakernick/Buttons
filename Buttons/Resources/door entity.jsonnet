@@ -11,6 +11,10 @@ function(params) {
       sprite: "door top 0",
       frames: 5
     },
+    StaticSpriteRendering: {
+      sprite: "door bottom",
+      offset: [0.0, -1.0]
+    },
     Door: {},
     Transform: {},
     PhysicsBody: common.getOrientTransform(params) + {
