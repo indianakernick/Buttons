@@ -11,7 +11,7 @@
 
 #include <bitset>
 
-constexpr size_t MAX_KEYS = 64;
+constexpr size_t MAX_KEYS = 8;
 
 struct PlayerKeys {
   std::bitset<MAX_KEYS> keys;

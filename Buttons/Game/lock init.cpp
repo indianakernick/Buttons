@@ -11,7 +11,7 @@
 #include "player keys component.hpp"
 
 void LockInit::init(Lock &lock, const json &node) {
-  lock.index = node.at("index").get<uint16_t>();
+  lock.index = node.at("index").get<uint8_t>();
   if (lock.index >= MAX_KEYS) {
     throw std::runtime_error("Lock index out of range");
   }

@@ -12,7 +12,7 @@
 #include <cstdint>
 
 struct Key {
-  uint16_t index;
+  uint8_t index;
 };
 
 #endif

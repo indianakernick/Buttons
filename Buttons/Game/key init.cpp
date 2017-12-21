@@ -11,7 +11,7 @@
 #include "player keys component.hpp"
 
 void KeyInit::init(Key &key, const json &node) {
-  key.index = node.at("index").get<uint16_t>();
+  key.index = node.at("index").get<uint8_t>();
   if (key.index >= MAX_KEYS) {
     throw std::runtime_error("Key index out of range");
   }

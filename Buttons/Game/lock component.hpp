@@ -12,7 +12,7 @@
 #include <cstdint>
 
 struct Lock {
-  uint16_t index;
+  uint8_t index;
 };
 
 #endif
