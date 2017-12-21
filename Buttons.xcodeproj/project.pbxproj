@@ -151,6 +151,8 @@
 		459796281FB58752007A7432 /* entity id map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459796261FB58752007A7432 /* entity id map.cpp */; };
 		4597962E1FB65BBB007A7432 /* component list.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597962C1FB65BBB007A7432 /* component list.cpp */; };
 		45C5242B1FEB373900A738E0 /* static sprite rendering init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45C524291FEB373900A738E0 /* static sprite rendering init.cpp */; };
+		45C5245B1FEB611C00A738E0 /* anim sprite rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45C524591FEB611C00A738E0 /* anim sprite rendering component.cpp */; };
+		45C5245E1FEB61AB00A738E0 /* anim sprite rendering init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45C5245C1FEB61AB00A738E0 /* anim sprite rendering init.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -581,6 +583,10 @@
 		45C524531FEB58C000A738E0 /* key 6 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "key 6 3.png"; sourceTree = "<group>"; };
 		45C524541FEB58C000A738E0 /* key 1 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "key 1 4.png"; sourceTree = "<group>"; };
 		45C524551FEB58E800A738E0 /* box.anim */ = {isa = PBXFileReference; lastKnownFileType = file; path = box.anim; sourceTree = "<group>"; };
+		45C524591FEB611C00A738E0 /* anim sprite rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "anim sprite rendering component.cpp"; sourceTree = "<group>"; };
+		45C5245A1FEB611C00A738E0 /* anim sprite rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "anim sprite rendering component.hpp"; sourceTree = "<group>"; };
+		45C5245C1FEB61AB00A738E0 /* anim sprite rendering init.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "anim sprite rendering init.cpp"; sourceTree = "<group>"; };
+		45C5245D1FEB61AB00A738E0 /* anim sprite rendering init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "anim sprite rendering init.hpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -794,6 +800,8 @@
 				45771C051FE7906900F533DA /* active sprite rendering init.hpp */,
 				45C524291FEB373900A738E0 /* static sprite rendering init.cpp */,
 				45C5242A1FEB373900A738E0 /* static sprite rendering init.hpp */,
+				45C5245C1FEB61AB00A738E0 /* anim sprite rendering init.cpp */,
+				45C5245D1FEB61AB00A738E0 /* anim sprite rendering init.hpp */,
 			);
 			name = "Component initializers";
 			sourceTree = "<group>";
@@ -1106,6 +1114,8 @@
 				45771C021FE788CF00F533DA /* active sprite rendering component.hpp */,
 				4520AD721FEB32FC00ECE3C1 /* static sprite rendering component.cpp */,
 				4520AD731FEB32FC00ECE3C1 /* static sprite rendering component.hpp */,
+				45C524591FEB611C00A738E0 /* anim sprite rendering component.cpp */,
+				45C5245A1FEB611C00A738E0 /* anim sprite rendering component.hpp */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -1472,6 +1482,7 @@
 				450ED5EC1FB7C052008F2902 /* button component.cpp in Sources */,
 				4583EE211FB18F7A00AED27D /* b2ContactManager.cpp in Sources */,
 				4583EE221FB18F7A00AED27D /* b2Rope.cpp in Sources */,
+				45C5245B1FEB611C00A738E0 /* anim sprite rendering component.cpp in Sources */,
 				4583EE231FB18F7A00AED27D /* b2Draw.cpp in Sources */,
 				4583EE241FB18F7A00AED27D /* b2BlockAllocator.cpp in Sources */,
 				4533A90E1FCAE2A10027B0FB /* screen.cpp in Sources */,
@@ -1512,6 +1523,7 @@
 				4591F0B11FC3F99B0075000D /* text init.cpp in Sources */,
 				4583EE321FB18F7A00AED27D /* b2BroadPhase.cpp in Sources */,
 				4583EE331FB18F7A00AED27D /* b2CollideEdge.cpp in Sources */,
+				45C5245E1FEB61AB00A738E0 /* anim sprite rendering init.cpp in Sources */,
 				4583EE341FB18F7A00AED27D /* b2Collision.cpp in Sources */,
 				4583ED671FB1845B00AED27D /* main.cpp in Sources */,
 			);

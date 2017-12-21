@@ -1,0 +1,30 @@
+//
+//  anim sprite rendering init.hpp
+//  Buttons
+//
+//  Created by Indi Kernick on 21/12/17.
+//  Copyright © 2017 Indi Kernick. All rights reserved.
+//
+
+#ifndef anim_sprite_rendering_init_hpp
+#define anim_sprite_rendering_init_hpp
+
+#include "comp init.hpp"
+#include "anim sprite rendering component.hpp"
+
+/*
+@TODO create a system that copies Activation progress into Animation progress
+then we will no longer need ActiveSpriteRendering
+*/
+
+class AnimSpriteRenderingInit final : public CompInit<AnimSpriteRendering> {
+public:
+  explicit AnimSpriteRenderingInit(const Unpack::Spritesheet &);
+  
+  void init(AnimSpriteRendering &, const json &) override;
+
+private:
+  const Unpack::Spritesheet &sheet;
+};
+
+#endif

@@ -13,7 +13,7 @@
 
 struct ActiveSpriteRendering {
   Unpack::SpriteID sprite;
-  Unpack::SpriteID numFrames;
+  Unpack::SpriteID frames;
 };
 
 #endif

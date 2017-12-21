@@ -203,7 +203,7 @@ void RenderingSystem::activeSprites(Registry &registry, size_t &spriteIndex) {
   for (const EntityID entity : view) {
     const float activity = view.get<Activation>(entity).activity;
     const ActiveSpriteRendering anim = view.get<ActiveSpriteRendering>(entity);
-    const Unpack::SpriteID frame = getFrame(activity, anim.sprite, anim.numFrames);
+    const Unpack::SpriteID frame = getFrame(activity, anim.sprite, anim.frames);
     
     setPositions(spriteIndex, getMat3(view.get<Transform>(entity)));
     setTexCoords(spriteIndex, getTexCoords(frame));
