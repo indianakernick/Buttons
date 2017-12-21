@@ -9,11 +9,13 @@
 #include "rendering system.hpp"
 
 #include <fstream>
+#include "animation component.hpp"
 #include "transform component.hpp"
 #include "activation component.hpp"
 #include <Simpleton/OpenGL/uniforms.hpp>
 #include <Simpleton/Platform/system info.hpp>
 #include <Simpleton/OpenGL/attrib pointer.hpp>
+#include "anim sprite rendering component.hpp"
 #include "active sprite rendering component.hpp"
 #include "static sprite rendering component.hpp"
 
@@ -85,7 +87,8 @@ const Unpack::Spritesheet &RenderingSystem::getSheet() const {
 void RenderingSystem::onLevelLoad(Registry &registry) {
   numQuads
   = registry.view<ActiveSpriteRendering>().size()
-  + registry.view<StaticSpriteRendering>().size();
+  + registry.view<StaticSpriteRendering>().size()
+  + registry.view<AnimSpriteRendering>().size();
   
   fillIndicies(numQuads);
   verts.resize(numQuads * QUAD_VERTS);
@@ -108,6 +111,7 @@ void RenderingSystem::render(Registry &registry, const glm::mat3 &viewProj) {
   size_t spriteIndex = 0;
   activeSprites(registry, spriteIndex);
   staticSprites(registry, spriteIndex);
+  animSprites(registry, spriteIndex);
   
   vertArray.bind();
   GL::setUniform(viewProjLoc, viewProj);
@@ -157,7 +161,7 @@ namespace {
     const Unpack::SpriteID startFrame,
     const Unpack::SpriteID numFrames
   ) {
-    return startFrame + std::round(progress * (numFrames - 1));
+    return startFrame + progress * numFrames;
   }
   
   glm::vec2 mulPos(const glm::mat3 &mat, const glm::vec2 pos) {
@@ -201,7 +205,7 @@ void RenderingSystem::activeSprites(Registry &registry, size_t &spriteIndex) {
   const auto view = registry.view<ActiveSpriteRendering, Activation, Transform>();
   
   for (const EntityID entity : view) {
-    const float activity = view.get<Activation>(entity).activity;
+    const float activity = view.get<Activation>(entity).activity * 0.99999f;
     const ActiveSpriteRendering anim = view.get<ActiveSpriteRendering>(entity);
     const Unpack::SpriteID frame = getFrame(activity, anim.sprite, anim.frames);
     
@@ -225,6 +229,21 @@ void RenderingSystem::staticSprites(Registry &registry, size_t &spriteIndex) {
     verts[spriteIndex + 3].pos = mulPos(world, anim.offset + glm::vec2(0.0f, 1.0f));
     
     setTexCoords(spriteIndex, getTexCoords(anim.sprite));
+    
+    spriteIndex += 4;
+  }
+}
+
+void RenderingSystem::animSprites(Registry &registry, size_t &spriteIndex) {
+  const auto view = registry.view<AnimSpriteRendering, Animation, Transform>();
+  
+  for (const EntityID entity : view) {
+    const float progress = view.get<Animation>(entity).progress;
+    const AnimSpriteRendering anim = view.get<AnimSpriteRendering>(entity);
+    const Unpack::SpriteID frame = getFrame(progress, anim.sprite, anim.frames);
+    
+    setPositions(spriteIndex, getMat3(view.get<Transform>(entity)));
+    setTexCoords(spriteIndex, getTexCoords(frame));
     
     spriteIndex += 4;
   }

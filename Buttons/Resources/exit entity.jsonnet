@@ -6,9 +6,12 @@ function(params) {
     Animation: {
       speed: 1.5
     },
+    AnimSpriteRendering: {
+      sprite: "exit 0",
+      frames: 4
+    },
     Collision: {},
     Exit: {},
-    ExitRendering: {},
     Transform: {},
     PhysicsBody: common.getPos(params) + {
       body: "sensor body.json"
