@@ -612,6 +612,8 @@
 		45C524931FEB956700A738E0 /* button 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button 0.png"; sourceTree = "<group>"; };
 		45C524941FEB956700A738E0 /* button 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button 3.png"; sourceTree = "<group>"; };
 		45C524951FEB956700A738E0 /* button 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button 4.png"; sourceTree = "<group>"; };
+		45C524961FEB9D2300A738E0 /* exit 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "exit 4.png"; sourceTree = "<group>"; };
+		45C524971FEB9D2300A738E0 /* exit 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "exit 5.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -721,6 +723,8 @@
 				45771BC81FE7504D00F533DA /* exit 1.png */,
 				45771BF51FE7505200F533DA /* exit 2.png */,
 				45771BE81FE7505000F533DA /* exit 3.png */,
+				45C524961FEB9D2300A738E0 /* exit 4.png */,
+				45C524971FEB9D2300A738E0 /* exit 5.png */,
 				45C524421FEB58BD00A738E0 /* key 0 0.png */,
 				45C524501FEB58C000A738E0 /* key 0 1.png */,
 				45C5243F1FEB58BC00A738E0 /* key 0 2.png */,

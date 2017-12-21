@@ -8,7 +8,7 @@ function(params) {
     },
     AnimSpriteRendering: {
       sprite: "exit 0",
-      frames: 4
+      frames: 6
     },
     Collision: {},
     Exit: {},
