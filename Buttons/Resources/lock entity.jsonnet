@@ -5,8 +5,9 @@ function(params) {
   components: common.checkParams(params, ["id", "pos", "index"]) {
     Activation: {},
     Collision: {},
-    StaticSpriteRendering: {
-      sprite: "lock " + params.index
+    ActiveSpriteRendering: {
+      sprite: "lock " + params.index,
+      frames: 1
     },
     PowerOutput: {},
     Transform: {},

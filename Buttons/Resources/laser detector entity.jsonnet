@@ -3,7 +3,9 @@ local common = import "common.jsonnet";
 function(params) {
   [if "id" in params then "id"]: params.id,
   components: common.checkParams(params, ["id", "pos", "orient", "emitter"]) {
-    Activation: {},
+    Activation: {
+      speed: 8
+    },
     ActiveSpriteRendering: {
       sprite: "laser detector 0",
       frames: 5

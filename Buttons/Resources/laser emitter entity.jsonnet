@@ -19,7 +19,9 @@ local validNames = ["id", "active", "on", "in", "operator", "start", "end", "ori
 function(params) {
   id: params.id,
   components: common.checkParams(params, validNames) {
-    Activation: common.getActive(params),
+    Activation: common.getActive(params) {
+      speed: 8
+    },
     ActiveSpriteRendering: {
       sprite: "laser emitter 0",
       frames: 5

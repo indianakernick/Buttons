@@ -19,8 +19,7 @@ void RenderingContext::init(SDL_Window *newWindow, const bool vsync) {
   params.minorVersion = 1;
   context = GL::makeContext(window, params);
   
-  glDisable(GL_CULL_FACE);
-  glDisable(GL_DEPTH_TEST);
+  glEnable(GL_DEPTH_TEST);
 }
 
 void RenderingContext::quit() {

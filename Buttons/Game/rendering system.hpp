@@ -52,7 +52,17 @@ private:
   void fillIndicies(size_t);
   void fillVBOs();
   
+  struct TexCoords {
+    glm::vec2 bottomLeft;
+    glm::vec2 topRight;
+  };
+  
+  glm::vec2 getSheetSize() const;
+  TexCoords getTexCoords(Unpack::SpriteID);
+  void setPositions(size_t, const glm::mat3 &);
+  void setTexCoords(size_t, TexCoords);
   void activeSprites(Registry &, size_t &);
+  void staticSprites(Registry &, size_t &);
 };
 
 #endif

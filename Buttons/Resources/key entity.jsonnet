@@ -6,8 +6,9 @@ function(params) {
       active: true
     },
     Collision: {},
-    StaticSpriteRendering: {
-      sprite: "key " + params.index
+    ActiveSpriteRendering: {
+      sprite: "key " + params.index,
+      frames: 1
     },
     Transform: {},
     PhysicsBody: common.getPos(params) + {

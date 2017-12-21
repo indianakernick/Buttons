@@ -15,6 +15,7 @@
 #include <Simpleton/Platform/system info.hpp>
 #include <Simpleton/OpenGL/attrib pointer.hpp>
 #include "active sprite rendering component.hpp"
+#include "static sprite rendering component.hpp"
 
 namespace {
   constexpr GLint POS_ID = 0;
@@ -82,7 +83,9 @@ const Unpack::Spritesheet &RenderingSystem::getSheet() const {
 }
 
 void RenderingSystem::onLevelLoad(Registry &registry) {
-  numQuads = registry.view<ActiveSpriteRendering>().size();
+  numQuads
+  = registry.view<ActiveSpriteRendering>().size()
+  + registry.view<StaticSpriteRendering>().size();
   
   fillIndicies(numQuads);
   verts.resize(numQuads * QUAD_VERTS);
@@ -104,6 +107,7 @@ void RenderingSystem::onLevelLoad(Registry &registry) {
 void RenderingSystem::render(Registry &registry, const glm::mat3 &viewProj) {
   size_t spriteIndex = 0;
   activeSprites(registry, spriteIndex);
+  staticSprites(registry, spriteIndex);
   
   vertArray.bind();
   GL::setUniform(viewProjLoc, viewProj);
@@ -161,29 +165,66 @@ namespace {
   }
 }
 
+glm::vec2 RenderingSystem::getSheetSize() const {
+  return {sheet.getImage().width(), sheet.getImage().height()};
+}
+
+RenderingSystem::TexCoords RenderingSystem::getTexCoords(
+  const Unpack::SpriteID sprite
+) {
+  const glm::vec2 sheetSize = getSheetSize();
+  const Unpack::RectPx rect = sheet.getSprite(sprite);
+  TexCoords coords;
+  coords.bottomLeft = glm::vec2(rect.x, rect.y) / sheetSize;
+  coords.topRight = coords.bottomLeft + glm::vec2(rect.w, rect.h) / sheetSize;
+  return coords;
+}
+
+void RenderingSystem::setPositions(const size_t index, const glm::mat3 &world) {
+  verts[index + 0].pos = mulPos(world, {0.0f, 0.0f});
+  verts[index + 1].pos = mulPos(world, {1.0f, 0.0f});
+  verts[index + 2].pos = mulPos(world, {1.0f, 1.0f});
+  verts[index + 3].pos = mulPos(world, {0.0f, 1.0f});
+}
+
+void RenderingSystem::setTexCoords(
+  const size_t index,
+  const TexCoords coords
+) {
+  verts[index + 0].texCoord = {coords.bottomLeft.x, coords.topRight.y};
+  verts[index + 1].texCoord = coords.topRight;
+  verts[index + 2].texCoord = {coords.topRight.x, coords.bottomLeft.y};
+  verts[index + 3].texCoord = coords.bottomLeft;
+}
+
 void RenderingSystem::activeSprites(Registry &registry, size_t &spriteIndex) {
   const auto view = registry.view<ActiveSpriteRendering, Activation, Transform>();
-  const glm::vec2 sheetSize = {sheet.getImage().width(), sheet.getImage().height()};
   
   for (const EntityID entity : view) {
     const float activity = view.get<Activation>(entity).activity;
-    const glm::mat3 world = getMat3(view.get<Transform>(entity));
     const ActiveSpriteRendering anim = view.get<ActiveSpriteRendering>(entity);
-    
     const Unpack::SpriteID frame = getFrame(activity, anim.sprite, anim.numFrames);
-    const Unpack::RectPx rect = sheet.getSprite(frame);
-    const glm::vec2 bottomLeft = glm::vec2(rect.x, rect.y) / sheetSize;
-    const glm::vec2 topRight = bottomLeft + glm::vec2(rect.w, rect.h) / sheetSize;
     
-    verts[spriteIndex + 0].pos = mulPos(world, {0.0f, 0.0f});
-    verts[spriteIndex + 1].pos = mulPos(world, {1.0f, 0.0f});
-    verts[spriteIndex + 2].pos = mulPos(world, {1.0f, 1.0f});
-    verts[spriteIndex + 3].pos = mulPos(world, {0.0f, 1.0f});
+    setPositions(spriteIndex, getMat3(view.get<Transform>(entity)));
+    setTexCoords(spriteIndex, getTexCoords(frame));
     
-    verts[spriteIndex + 0].texCoord = {bottomLeft.x, topRight.y};
-    verts[spriteIndex + 1].texCoord = topRight;
-    verts[spriteIndex + 2].texCoord = {topRight.x, bottomLeft.y};
-    verts[spriteIndex + 3].texCoord = bottomLeft;
+    spriteIndex += 4;
+  }
+}
+
+void RenderingSystem::staticSprites(Registry &registry, size_t &spriteIndex) {
+  const auto view = registry.view<StaticSpriteRendering, Transform>();
+  
+  for (const EntityID entity : view) {
+    const StaticSpriteRendering anim = view.get<StaticSpriteRendering>(entity);
+    const glm::mat3 world = getMat3(view.get<Transform>(entity));
+    
+    verts[spriteIndex + 0].pos = mulPos(world, anim.offset + glm::vec2(0.0f, 0.0f));
+    verts[spriteIndex + 1].pos = mulPos(world, anim.offset + glm::vec2(1.0f, 0.0f));
+    verts[spriteIndex + 2].pos = mulPos(world, anim.offset + glm::vec2(1.0f, 1.0f));
+    verts[spriteIndex + 3].pos = mulPos(world, anim.offset + glm::vec2(0.0f, 1.0f));
+    
+    setTexCoords(spriteIndex, getTexCoords(anim.sprite));
     
     spriteIndex += 4;
   }
