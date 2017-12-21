@@ -14,5 +14,8 @@ StaticSpriteRenderingInit::StaticSpriteRenderingInit(const Unpack::Spritesheet &
 void StaticSpriteRenderingInit::init(StaticSpriteRendering &comp, const json &node) {
   const std::string &spriteName = node.at("sprite").get_ref<const std::string &>();
   comp.sprite = sheet.getIDfromName(spriteName);
+  if (comp.sprite == Unpack::NULL_SPRITE) {
+    throw std::runtime_error("Invalid sprite name");
+  }
   getOptional(comp.offset, node, "offset");
 }

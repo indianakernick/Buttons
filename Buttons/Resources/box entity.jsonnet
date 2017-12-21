@@ -3,7 +3,7 @@ local common = import "common.jsonnet";
 function(params) {
   components: common.checkParams(params, ["pos", "size"]) {
     StaticSpriteRendering: {
-      sprite: "box 1x1"
+      sprite: "box"
     },
     Transform: {},
     PhysicsBody: common.getPosSize(params) + {
