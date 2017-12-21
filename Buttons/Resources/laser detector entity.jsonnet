@@ -6,7 +6,10 @@ function(params) {
     Activation: {
       speed: 8
     },
-    ActiveSpriteRendering: {
+    Animation: {
+      speed: 0
+    },
+    AnimSpriteRendering: {
       sprite: "laser detector 0",
       frames: 5
     },

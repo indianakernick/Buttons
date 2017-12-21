@@ -6,11 +6,14 @@ function(params) {
       active: true,
       speed: 4
     },
-    Collision: {},
-    ActiveSpriteRendering: {
+    Animation: {
+      speed: 0
+    },
+    AnimSpriteRendering: {
       sprite: "key " + params.index + " 0",
       frames: 5
     },
+    Collision: {},
     Transform: {},
     PhysicsBody: common.getPos(params) + {
       body: "sensor body.json"

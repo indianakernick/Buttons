@@ -22,7 +22,10 @@ function(params) {
     Activation: common.getActive(params) {
       speed: 8
     },
-    ActiveSpriteRendering: {
+    Animation: {
+      speed: 0
+    },
+    AnimSpriteRendering: {
       sprite: "laser emitter 0",
       frames: 5
     },

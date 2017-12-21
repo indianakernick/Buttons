@@ -12,11 +12,6 @@
 #include "comp init.hpp"
 #include "anim sprite rendering component.hpp"
 
-/*
-@TODO create a system that copies Activation progress into Animation progress
-then we will no longer need ActiveSpriteRendering
-*/
-
 class AnimSpriteRenderingInit final : public CompInit<AnimSpriteRendering> {
 public:
   explicit AnimSpriteRenderingInit(const Unpack::Spritesheet &);

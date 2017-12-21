@@ -25,6 +25,7 @@
 #include "moving platform system.hpp"
 #include "player movement system.hpp"
 #include "physics transform system.hpp"
+#include "activation animation system.hpp"
 #include "activate power output system.hpp"
 #include "power input activation system.hpp"
 

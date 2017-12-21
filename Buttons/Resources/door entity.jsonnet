@@ -7,7 +7,10 @@ function(params) {
     Activation: common.getActive(params) + {
       speed: 4
     },
-    ActiveSpriteRendering: {
+    Animation: {
+      speed: 0
+    },
+    AnimSpriteRendering: {
       sprite: "door top 0",
       frames: 5
     },

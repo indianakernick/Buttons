@@ -52,7 +52,6 @@ void GameScreen::init() {
   compInits.construct<KeyInit>();
   compInits.construct<LockInit>();
   compInits.construct<AnimSpriteRenderingInit>(rendering.getSheet());
-  compInits.construct<ActiveSpriteRenderingInit>(rendering.getSheet());
   compInits.construct<StaticSpriteRenderingInit>(rendering.getSheet());
   compInits.setDefaults();
   
@@ -104,6 +103,7 @@ void GameScreen::update(const float delta) {
   
   laserDetectorSystem(registry);
   activationSystem(registry, delta);
+  activationAnimationSystem(registry);
   doorSystem(registry);
   movingPlatformSystem(registry, delta);
   

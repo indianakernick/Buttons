@@ -16,7 +16,6 @@
 #include <Simpleton/Platform/system info.hpp>
 #include <Simpleton/OpenGL/attrib pointer.hpp>
 #include "anim sprite rendering component.hpp"
-#include "active sprite rendering component.hpp"
 #include "static sprite rendering component.hpp"
 
 namespace {
@@ -27,8 +26,6 @@ namespace {
   constexpr size_t QUAD_INDICIES = 6;
   ///Number of verticies that make up a quad
   constexpr size_t QUAD_VERTS = 4;
-  ///Number of triangles that make up a quad
-  constexpr size_t QUAD_TRIS = 2;
   ///Byte size of a quad in a GL_ARRAY_BUFFER
   constexpr size_t QUAD_ATTR_SIZE = (sizeof(PosType) + sizeof(TexCoordType)) * QUAD_VERTS;
   ///Byte size of a quad in a GL_ELEMENT_ARRAY_BUFFER
@@ -86,8 +83,7 @@ const Unpack::Spritesheet &RenderingSystem::getSheet() const {
 
 void RenderingSystem::onLevelLoad(Registry &registry) {
   numQuads
-  = registry.view<ActiveSpriteRendering>().size()
-  + registry.view<StaticSpriteRendering>().size()
+  = registry.view<StaticSpriteRendering>().size()
   + registry.view<AnimSpriteRendering>().size();
   
   fillIndicies(numQuads);
@@ -109,7 +105,6 @@ void RenderingSystem::onLevelLoad(Registry &registry) {
 
 void RenderingSystem::render(Registry &registry, const glm::mat3 &viewProj) {
   size_t spriteIndex = 0;
-  activeSprites(registry, spriteIndex);
   staticSprites(registry, spriteIndex);
   animSprites(registry, spriteIndex);
   
@@ -161,7 +156,8 @@ namespace {
     const Unpack::SpriteID startFrame,
     const Unpack::SpriteID numFrames
   ) {
-    return startFrame + progress * numFrames;
+    constexpr float MUL = 1.0f - 10.0f * std::numeric_limits<float>::epsilon();
+    return startFrame + progress * numFrames * MUL;
   }
   
   glm::vec2 mulPos(const glm::mat3 &mat, const glm::vec2 pos) {
@@ -184,11 +180,15 @@ RenderingSystem::TexCoords RenderingSystem::getTexCoords(
   return coords;
 }
 
-void RenderingSystem::setPositions(const size_t index, const glm::mat3 &world) {
-  verts[index + 0].pos = mulPos(world, {0.0f, 0.0f});
-  verts[index + 1].pos = mulPos(world, {1.0f, 0.0f});
-  verts[index + 2].pos = mulPos(world, {1.0f, 1.0f});
-  verts[index + 3].pos = mulPos(world, {0.0f, 1.0f});
+void RenderingSystem::setPositions(
+  const size_t index,
+  const glm::mat3 &world,
+  const glm::vec2 offset
+) {
+  verts[index + 0].pos = mulPos(world, offset + glm::vec2(0.0f, 0.0f));
+  verts[index + 1].pos = mulPos(world, offset + glm::vec2(1.0f, 0.0f));
+  verts[index + 2].pos = mulPos(world, offset + glm::vec2(1.0f, 1.0f));
+  verts[index + 3].pos = mulPos(world, offset + glm::vec2(0.0f, 1.0f));
 }
 
 void RenderingSystem::setTexCoords(
@@ -201,33 +201,13 @@ void RenderingSystem::setTexCoords(
   verts[index + 3].texCoord = coords.bottomLeft;
 }
 
-void RenderingSystem::activeSprites(Registry &registry, size_t &spriteIndex) {
-  const auto view = registry.view<ActiveSpriteRendering, Activation, Transform>();
-  
-  for (const EntityID entity : view) {
-    const float activity = view.get<Activation>(entity).activity * 0.99999f;
-    const ActiveSpriteRendering anim = view.get<ActiveSpriteRendering>(entity);
-    const Unpack::SpriteID frame = getFrame(activity, anim.sprite, anim.frames);
-    
-    setPositions(spriteIndex, getMat3(view.get<Transform>(entity)));
-    setTexCoords(spriteIndex, getTexCoords(frame));
-    
-    spriteIndex += 4;
-  }
-}
-
 void RenderingSystem::staticSprites(Registry &registry, size_t &spriteIndex) {
   const auto view = registry.view<StaticSpriteRendering, Transform>();
   
   for (const EntityID entity : view) {
     const StaticSpriteRendering anim = view.get<StaticSpriteRendering>(entity);
-    const glm::mat3 world = getMat3(view.get<Transform>(entity));
     
-    verts[spriteIndex + 0].pos = mulPos(world, anim.offset + glm::vec2(0.0f, 0.0f));
-    verts[spriteIndex + 1].pos = mulPos(world, anim.offset + glm::vec2(1.0f, 0.0f));
-    verts[spriteIndex + 2].pos = mulPos(world, anim.offset + glm::vec2(1.0f, 1.0f));
-    verts[spriteIndex + 3].pos = mulPos(world, anim.offset + glm::vec2(0.0f, 1.0f));
-    
+    setPositions(spriteIndex, getMat3(view.get<Transform>(entity)), anim.offset);
     setTexCoords(spriteIndex, getTexCoords(anim.sprite));
     
     spriteIndex += 4;

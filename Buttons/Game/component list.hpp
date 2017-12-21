@@ -29,7 +29,6 @@
 #include "moving platform component.hpp"
 #include <Simpleton/Utils/type list.hpp>
 #include "anim sprite rendering component.hpp"
-#include "active sprite rendering component.hpp"
 #include "static sprite rendering component.hpp"
 
 #define COMPS                                                                   \
@@ -53,7 +52,6 @@
   COMP(Key, key)                                                                \
   COMP(Lock, lock)                                                              \
   COMP(PlayerKeys, playerKeys)                                                  \
-  COMP(ActiveSpriteRendering, activeSpriteRendering)                            \
   COMP(StaticSpriteRendering, staticSpriteRendering)                            \
   COMP(AnimSpriteRendering, animSpriteRendering)                                \
   LAST_COMP(MovingPlatform, movingPlatform)
