@@ -11,12 +11,10 @@ function(params) {
       speed: 0
     },
     AnimSpriteRendering: {
-      sprite: "door top 0",
-      frames: 5
-    },
-    StaticSpriteRendering: {
-      sprite: "door bottom",
-      offset: [0.0, -1.0]
+      sprite: "door 0",
+      frames: 5,
+      offset: [0.0, -0.5],
+      scale: [1.0, 1.5]
     },
     Door: {},
     Transform: {},

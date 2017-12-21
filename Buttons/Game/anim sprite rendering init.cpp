@@ -18,4 +18,6 @@ void AnimSpriteRenderingInit::init(AnimSpriteRendering &comp, const json &node) 
     throw std::runtime_error("Invalid sprite name");
   }
   comp.frames = node.at("frames").get<Unpack::SpriteID>();
+  getOptional(comp.offset, node, "offset");
+  getOptional(comp.scale, node, "scale");
 }

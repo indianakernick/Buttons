@@ -10,12 +10,9 @@ function(params) {
       speed: 0
     },
     AnimSpriteRendering: {
-      sprite: "button top 0",
-      frames: 5
-    },
-    StaticSpriteRendering: {
-      sprite: "button bottom",
-      offset: [0.0, -1.0]
+      sprite: "button 0",
+      frames: 5,
+      offset: [0.0, -0.5]
     },
     Button: {},
     Collision: {},

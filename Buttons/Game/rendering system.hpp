@@ -59,7 +59,7 @@ private:
   
   glm::vec2 getSheetSize() const;
   TexCoords getTexCoords(Unpack::SpriteID);
-  void setPositions(size_t, const glm::mat3 &, glm::vec2 = {0.0f, 0.0f});
+  void setPositions(size_t, const glm::mat3 &, glm::vec2 = {0.0f, 0.0f}, glm::vec2 = {1.0f, 1.0f});
   void setTexCoords(size_t, TexCoords);
   void staticSprites(Registry &, size_t &);
   void animSprites(Registry &, size_t &);

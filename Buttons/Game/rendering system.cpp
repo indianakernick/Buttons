@@ -105,8 +105,8 @@ void RenderingSystem::onLevelLoad(Registry &registry) {
 
 void RenderingSystem::render(Registry &registry, const glm::mat3 &viewProj) {
   size_t spriteIndex = 0;
-  staticSprites(registry, spriteIndex);
   animSprites(registry, spriteIndex);
+  staticSprites(registry, spriteIndex);
   
   vertArray.bind();
   GL::setUniform(viewProjLoc, viewProj);
@@ -183,12 +183,13 @@ RenderingSystem::TexCoords RenderingSystem::getTexCoords(
 void RenderingSystem::setPositions(
   const size_t index,
   const glm::mat3 &world,
-  const glm::vec2 offset
+  const glm::vec2 offset,
+  const glm::vec2 scale
 ) {
-  verts[index + 0].pos = mulPos(world, offset + glm::vec2(0.0f, 0.0f));
-  verts[index + 1].pos = mulPos(world, offset + glm::vec2(1.0f, 0.0f));
-  verts[index + 2].pos = mulPos(world, offset + glm::vec2(1.0f, 1.0f));
-  verts[index + 3].pos = mulPos(world, offset + glm::vec2(0.0f, 1.0f));
+  verts[index + 0].pos = mulPos(world, offset + scale * glm::vec2(0.0f, 0.0f));
+  verts[index + 1].pos = mulPos(world, offset + scale * glm::vec2(1.0f, 0.0f));
+  verts[index + 2].pos = mulPos(world, offset + scale * glm::vec2(1.0f, 1.0f));
+  verts[index + 3].pos = mulPos(world, offset + scale * glm::vec2(0.0f, 1.0f));
 }
 
 void RenderingSystem::setTexCoords(
@@ -207,7 +208,7 @@ void RenderingSystem::staticSprites(Registry &registry, size_t &spriteIndex) {
   for (const EntityID entity : view) {
     const StaticSpriteRendering anim = view.get<StaticSpriteRendering>(entity);
     
-    setPositions(spriteIndex, getMat3(view.get<Transform>(entity)), anim.offset);
+    setPositions(spriteIndex, getMat3(view.get<Transform>(entity)));
     setTexCoords(spriteIndex, getTexCoords(anim.sprite));
     
     spriteIndex += 4;
@@ -222,7 +223,7 @@ void RenderingSystem::animSprites(Registry &registry, size_t &spriteIndex) {
     const AnimSpriteRendering anim = view.get<AnimSpriteRendering>(entity);
     const Unpack::SpriteID frame = getFrame(progress, anim.sprite, anim.frames);
     
-    setPositions(spriteIndex, getMat3(view.get<Transform>(entity)));
+    setPositions(spriteIndex, getMat3(view.get<Transform>(entity)), anim.offset, anim.scale);
     setTexCoords(spriteIndex, getTexCoords(frame));
     
     spriteIndex += 4;

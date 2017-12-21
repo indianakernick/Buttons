@@ -9,11 +9,14 @@
 #ifndef anim_sprite_rendering_component_hpp
 #define anim_sprite_rendering_component_hpp
 
+#include <glm/vec2.hpp>
 #include <Unpacker/unpacker.hpp>
 
 struct AnimSpriteRendering {
   Unpack::SpriteID sprite;
   Unpack::SpriteID frames;
+  glm::vec2 offset = {0.0f, 0.0f};
+  glm::vec2 scale = {1.0f, 1.0f};
 };
 
 #endif
