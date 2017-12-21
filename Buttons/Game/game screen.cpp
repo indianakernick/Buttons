@@ -52,6 +52,7 @@ void GameScreen::init() {
   compInits.construct<KeyInit>();
   compInits.construct<LockInit>();
   compInits.construct<ActiveSpriteRenderingInit>(rendering.getSheet());
+  compInits.construct<StaticSpriteRenderingInit>(rendering.getSheet());
   compInits.setDefaults();
   
   levels.init(registry, compInits);
@@ -180,6 +181,7 @@ bool GameScreen::toggleGotoLevelKey(const SDL_Event &e) {
     if (!enteredLevel.empty()) {
       if (progress.hasCompleted(enteredLevel.get())) {
         levels.loadLevel(enteredLevel.get());
+        rendering.onLevelLoad(registry);
       } else {
         //Tell the player that the level they entered is not available
       }
@@ -214,8 +216,10 @@ bool GameScreen::nextLevelKey(const SDL_Event &e) {
     if (current == LevelManager::NONE_LOADED) {
       levels.loadLevel(0);
       camera.setZoom(0.0f);
+      rendering.onLevelLoad(registry);
     } else if (progress.hasCompleted(current + 1)) {
       levels.loadLevel(current + 1);
+      rendering.onLevelLoad(registry);
     }
     return true;
   }
@@ -232,9 +236,11 @@ bool GameScreen::prevLevelKey(const SDL_Event &e) {
       if (!levels.loadLevel(progress.getIncompleteLevel())) {
         levels.loadLevel(progress.getIncompleteLevel() - 1);
         camera.setZoom(0.0f);
+        rendering.onLevelLoad(registry);
       }
     } else if (current != 0) {
       levels.loadLevel(current - 1);
+      rendering.onLevelLoad(registry);
     }
     return true;
   }

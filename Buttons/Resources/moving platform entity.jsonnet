@@ -5,7 +5,9 @@ local validParams = ["start", "end", "size", "on", "in", "operator", "speed", "w
 function(params) {
   components: common.checkParams(params, validParams) {
     Activation: {},
-    MovingPlatformRendering: {},
+    StaticSpriteRendering: {
+      sprite: "moving platform"
+    },
     Transform: {},
     PhysicsBody: common.getPosSize(params) + {
       body: "platform body.json",

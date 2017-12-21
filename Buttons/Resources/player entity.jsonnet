@@ -6,7 +6,9 @@ function(params) {
     PlayerInput: {},
     PlayerJump: {},
     PlayerKeys: {},
-    PlayerRendering: {},
+    StaticSpriteRendering: {
+      sprite: "player"
+    },
     Transform: {},
     PhysicsBody: common.getPos(params) + {
       body: "player body.json"

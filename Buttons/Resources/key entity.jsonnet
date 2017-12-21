@@ -6,7 +6,9 @@ function(params) {
       active: true
     },
     Collision: {},
-    KeyRendering: {},
+    StaticSpriteRendering: {
+      sprite: "key " + params.index
+    },
     Transform: {},
     PhysicsBody: common.getPos(params) + {
       body: "sensor body.json"

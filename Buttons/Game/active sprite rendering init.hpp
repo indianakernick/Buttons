@@ -20,7 +20,7 @@ class ActiveSpriteRenderingInit final : public CompInit<ActiveSpriteRendering> {
 public:
   explicit ActiveSpriteRenderingInit(const Unpack::Spritesheet &);
 
-  void init(ActiveSpriteRendering &, const json &);
+  void init(ActiveSpriteRendering &, const json &) override;
 
 private:
   const Unpack::Spritesheet &sheet;

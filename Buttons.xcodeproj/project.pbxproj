@@ -23,6 +23,7 @@
 		450ED62D1FB8620D008F2902 /* animation system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED62B1FB8620D008F2902 /* animation system.cpp */; };
 		4520AD6F1FE9F85C00ECE3C1 /* sprite shader.vert in Resources */ = {isa = PBXBuildFile; fileRef = 4520AD6E1FE9F85C00ECE3C1 /* sprite shader.vert */; };
 		4520AD711FE9F8B000ECE3C1 /* sprite shader.frag in Resources */ = {isa = PBXBuildFile; fileRef = 4520AD701FE9F8B000ECE3C1 /* sprite shader.frag */; };
+		4520AD741FEB32FC00ECE3C1 /* static sprite rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4520AD721FEB32FC00ECE3C1 /* static sprite rendering component.cpp */; };
 		452E10891FB2D27D0063114B /* collision pairs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452E10871FB2D27D0063114B /* collision pairs.cpp */; };
 		452E108C1FB2D8BA0063114B /* object types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452E108A1FB2D8BA0063114B /* object types.cpp */; };
 		452E10941FB2F4930063114B /* Consolas.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 452E10931FB2F4700063114B /* Consolas.ttf */; };
@@ -149,6 +150,7 @@
 		459796221FB41C24007A7432 /* transform component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459796211FB41C24007A7432 /* transform component.cpp */; };
 		459796281FB58752007A7432 /* entity id map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459796261FB58752007A7432 /* entity id map.cpp */; };
 		4597962E1FB65BBB007A7432 /* component list.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597962C1FB65BBB007A7432 /* component list.cpp */; };
+		45C5242B1FEB373900A738E0 /* static sprite rendering init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45C524291FEB373900A738E0 /* static sprite rendering init.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -195,6 +197,8 @@
 		450ED62C1FB8620D008F2902 /* animation system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "animation system.hpp"; sourceTree = "<group>"; };
 		4520AD6E1FE9F85C00ECE3C1 /* sprite shader.vert */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = "sprite shader.vert"; sourceTree = "<group>"; };
 		4520AD701FE9F8B000ECE3C1 /* sprite shader.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = "sprite shader.frag"; sourceTree = "<group>"; };
+		4520AD721FEB32FC00ECE3C1 /* static sprite rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "static sprite rendering component.cpp"; sourceTree = "<group>"; };
+		4520AD731FEB32FC00ECE3C1 /* static sprite rendering component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "static sprite rendering component.hpp"; sourceTree = "<group>"; };
 		4520DFAD1FE37017008FCBB4 /* level 8.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 8.jsonnet"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
 		4520DFAF1FE3909B008FCBB4 /* switch entity.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "switch entity.jsonnet"; sourceTree = "<group>"; };
 		4520DFC91FE4A387008FCBB4 /* level 9.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 9.jsonnet"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = "<none>"; };
@@ -545,6 +549,8 @@
 		459796271FB58752007A7432 /* entity id map.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "entity id map.hpp"; sourceTree = "<group>"; };
 		4597962C1FB65BBB007A7432 /* component list.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "component list.cpp"; sourceTree = "<group>"; };
 		4597962D1FB65BBB007A7432 /* component list.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "component list.hpp"; sourceTree = "<group>"; };
+		45C524291FEB373900A738E0 /* static sprite rendering init.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "static sprite rendering init.cpp"; sourceTree = "<group>"; };
+		45C5242A1FEB373900A738E0 /* static sprite rendering init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "static sprite rendering init.hpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -726,6 +732,8 @@
 				4533A8B61FC90AFC0027B0FB /* lock init.hpp */,
 				45771C041FE7906900F533DA /* active sprite rendering init.cpp */,
 				45771C051FE7906900F533DA /* active sprite rendering init.hpp */,
+				45C524291FEB373900A738E0 /* static sprite rendering init.cpp */,
+				45C5242A1FEB373900A738E0 /* static sprite rendering init.hpp */,
 			);
 			name = "Component initializers";
 			sourceTree = "<group>";
@@ -1036,6 +1044,8 @@
 				4533A8B91FC90C390027B0FB /* player keys component.hpp */,
 				45771C011FE788CF00F533DA /* active sprite rendering component.cpp */,
 				45771C021FE788CF00F533DA /* active sprite rendering component.hpp */,
+				4520AD721FEB32FC00ECE3C1 /* static sprite rendering component.cpp */,
+				4520AD731FEB32FC00ECE3C1 /* static sprite rendering component.hpp */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -1336,6 +1346,7 @@
 				4591F0801FC011E50075000D /* exit system.cpp in Sources */,
 				452E10891FB2D27D0063114B /* collision pairs.cpp in Sources */,
 				4583EE851FB1967700AED27D /* app.cpp in Sources */,
+				45C5242B1FEB373900A738E0 /* static sprite rendering init.cpp in Sources */,
 				459796201FB41C1A007A7432 /* activation component.cpp in Sources */,
 				4533A9011FCA91DD0027B0FB /* progress manager.cpp in Sources */,
 				4591F06A1FBFE51E0075000D /* transform init.cpp in Sources */,
@@ -1425,6 +1436,7 @@
 				4583EE2C1FB18F7A00AED27D /* b2DynamicTree.cpp in Sources */,
 				4597962E1FB65BBB007A7432 /* component list.cpp in Sources */,
 				4583EE2D1FB18F7A00AED27D /* b2ChainShape.cpp in Sources */,
+				4520AD741FEB32FC00ECE3C1 /* static sprite rendering component.cpp in Sources */,
 				4583EE2E1FB18F7A00AED27D /* b2EdgeShape.cpp in Sources */,
 				450ED61E1FB80B0F008F2902 /* switch component.cpp in Sources */,
 				459796281FB58752007A7432 /* entity id map.cpp in Sources */,

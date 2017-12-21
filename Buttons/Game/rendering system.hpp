@@ -50,8 +50,9 @@ private:
   std::vector<ElemType> indicies;
   
   void fillIndicies(size_t);
+  void fillVBOs();
   
-  void activeSprites(Registry &);
+  void activeSprites(Registry &, size_t &);
 };
 
 #endif

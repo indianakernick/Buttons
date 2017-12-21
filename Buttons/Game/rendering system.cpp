@@ -102,16 +102,12 @@ void RenderingSystem::onLevelLoad(Registry &registry) {
 }
 
 void RenderingSystem::render(Registry &registry, const glm::mat3 &viewProj) {
-  activeSprites(registry);
+  size_t spriteIndex = 0;
+  activeSprites(registry, spriteIndex);
   
   vertArray.bind();
   GL::setUniform(viewProjLoc, viewProj);
-  const size_t vertsSize = sizeof(Vertex) * verts.size();
-  glBufferSubData(GL_ARRAY_BUFFER, 0, vertsSize, verts.data());
-  CHECK_OPENGL_ERROR();
-  const size_t indiciesSize = sizeof(ElemType) * QUAD_INDICIES * numQuads;
-  glBufferSubData(GL_ELEMENT_ARRAY_BUFFER, 0, indiciesSize, indicies.data());
-  CHECK_OPENGL_ERROR();
+  fillVBOs();
   if (!program.validate()) {
     std::cerr << "Failed to validate program\n";
     std::cerr << "Shader program info log:\n" << program << '\n';
@@ -141,6 +137,16 @@ void RenderingSystem::fillIndicies(const size_t minQuads) {
   }
 }
 
+void RenderingSystem::fillVBOs() {
+  const size_t vertsSize = sizeof(Vertex) * verts.size();
+  glBufferSubData(GL_ARRAY_BUFFER, 0, vertsSize, verts.data());
+  CHECK_OPENGL_ERROR();
+  
+  const size_t indiciesSize = sizeof(ElemType) * QUAD_INDICIES * numQuads;
+  glBufferSubData(GL_ELEMENT_ARRAY_BUFFER, 0, indiciesSize, indicies.data());
+  CHECK_OPENGL_ERROR();
+}
+
 namespace {
   Unpack::SpriteID getFrame(
     const float progress,
@@ -155,10 +161,9 @@ namespace {
   }
 }
 
-void RenderingSystem::activeSprites(Registry &registry) {
+void RenderingSystem::activeSprites(Registry &registry, size_t &spriteIndex) {
   const auto view = registry.view<ActiveSpriteRendering, Activation, Transform>();
   const glm::vec2 sheetSize = {sheet.getImage().width(), sheet.getImage().height()};
-  size_t spriteIndex = 0;
   
   for (const EntityID entity : view) {
     const float activity = view.get<Activation>(entity).activity;
