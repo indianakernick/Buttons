@@ -9,5 +9,5 @@
 #include "text init.hpp"
 
 void TextInit::init(Text &text, const json &node) {
-  text.text = node.get_ref<const std::string &>();
+  text.indicies = node.get<std::vector<uint8_t>>();
 }

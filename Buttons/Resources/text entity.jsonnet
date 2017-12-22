@@ -1,24 +1,18 @@
 local common = import "common.jsonnet";
 
 function(params) {
-  components: common.checkParams(params, ["font size", "pos", "text"]) {
+  components: common.checkParams(params, ["font scale", "pos", "text"]) {
     TextRendering: {
-      font: "Arial.ttf",
+      sprite: "char 0",
       size:
-        if "font size" in params then
-          params["font size"]
+        if "font scale" in params then
+          params["font scale"]
         else
-          32
+          2
       ,
-      "hori align": "center",
-      "vert align": "middle",
       depth: common.getDepth("text")
     },
     Transform: common.getPos(params),
-    Text:
-      if "text" in params then
-        params.text
-      else
-        ""
+    Text: common.stringToIndicies(params.text)
   }
 }

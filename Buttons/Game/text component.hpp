@@ -9,10 +9,10 @@
 #ifndef text_component_hpp
 #define text_component_hpp
 
-#include <string>
+#include <vector>
 
 struct Text {
-  std::string text;
+  std::vector<uint8_t> indicies;
 };
 
 #endif

@@ -117,4 +117,32 @@
       error "Invalid layer name \"" + layer + "\""
     else
       index / std.length($.layerNames)
+  ,
+  
+  charToIndex(char)::
+    local lowerA = 97;
+    local lowerZ = lowerA + 25;
+    local upperA = 65;
+    local upperZ = upperA + 25;
+    local zero = 48;
+    local nine = zero + 9;
+    local space = 32;
+  
+    local code = std.codepoint(char);
+  
+    if lowerA <= code && code <= lowerZ then
+      code - lowerA
+    else if upperA <= code && code <= upperZ then
+      code - upperA
+    else if zero <= code && code <= nine then
+      26 + code - zero
+    else if code == space then
+      36
+    else
+      error "Character not in font '" + char + "'"
+  ,
+  
+  stringToIndicies(string):: [
+    $.charToIndex(char) for char in std.stringChars(string)
+  ]
 }
