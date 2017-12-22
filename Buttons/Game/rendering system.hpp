@@ -63,6 +63,7 @@ private:
   void setTexCoords(size_t, TexCoords);
   void staticSprites(Registry &, size_t &);
   void animSprites(Registry &, size_t &);
+  void laserSprites(Registry &, size_t &);
 };
 
 #endif

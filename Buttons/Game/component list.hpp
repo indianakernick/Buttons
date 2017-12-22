@@ -28,6 +28,7 @@
 #include "laser detector component.hpp"
 #include "moving platform component.hpp"
 #include <Simpleton/Utils/type list.hpp>
+#include "laser rendering component.hpp"
 #include "anim sprite rendering component.hpp"
 #include "static sprite rendering component.hpp"
 
@@ -54,6 +55,7 @@
   COMP(PlayerKeys, playerKeys)                                                  \
   COMP(StaticSpriteRendering, staticSpriteRendering)                            \
   COMP(AnimSpriteRendering, animSpriteRendering)                                \
+  COMP(LaserRendering, laserRendering)                                          \
   LAST_COMP(MovingPlatform, movingPlatform)
 
 #define COMP(NAME, ID_NAME) NAME,

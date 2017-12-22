@@ -30,6 +30,9 @@ function(params) {
       frames: 5,
       depth: common.getDepth("laser emitter")
     },
+    LaserRendering: {
+      depth: common.getDepth("laser")
+    },
     PowerInput: common.getPowerInput(params),
     PhysicsRayCast: {
       start: common.add(params.start, common.lookupOrient(params, startPosTable)),

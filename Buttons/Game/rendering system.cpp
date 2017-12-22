@@ -9,10 +9,13 @@
 #include "rendering system.hpp"
 
 #include <fstream>
+#include "b2 glm cast.hpp"
+#include "physics component.hpp"
 #include "animation component.hpp"
 #include "transform component.hpp"
 #include "activation component.hpp"
 #include <Simpleton/OpenGL/uniforms.hpp>
+#include "laser rendering component.hpp"
 #include <Simpleton/Platform/system info.hpp>
 #include <Simpleton/OpenGL/attrib pointer.hpp>
 #include "anim sprite rendering component.hpp"
@@ -87,7 +90,8 @@ const Unpack::Spritesheet &RenderingSystem::getSheet() const {
 void RenderingSystem::onLevelLoad(Registry &registry) {
   numQuads
   = registry.view<StaticSpriteRendering>().size()
-  + registry.view<AnimSpriteRendering>().size();
+  + registry.view<AnimSpriteRendering>().size()
+  + registry.view<LaserRendering>().size();
   
   fillIndicies(numQuads);
   verts.resize(numQuads * QUAD_VERTS);
@@ -110,6 +114,7 @@ void RenderingSystem::render(Registry &registry, const glm::mat3 &viewProj) {
   size_t spriteIndex = 0;
   animSprites(registry, spriteIndex);
   staticSprites(registry, spriteIndex);
+  laserSprites(registry, spriteIndex);
   
   vertArray.bind();
   GL::setUniform(viewProjLoc, viewProj);
@@ -230,6 +235,45 @@ void RenderingSystem::animSprites(Registry &registry, size_t &spriteIndex) {
     
     setPositions(spriteIndex, getMat3(view.get<Transform>(entity)), anim.depth, anim.offset, anim.scale);
     setTexCoords(spriteIndex, getTexCoords(frame));
+    
+    spriteIndex += 4;
+  }
+}
+
+namespace {
+  // rotates by 90 degrees
+  glm::vec2 perp(const glm::vec2 v) {
+    return {-v.y, v.x};
+  }
+  glm::vec3 setDepth(const glm::vec2 pos, const float depth) {
+    return glm::vec3(pos.x, pos.y, depth);
+  }
+}
+
+void RenderingSystem::laserSprites(Registry &registry, size_t &spriteIndex) {
+  static const Unpack::SpriteID LASER_ID = sheet.getIDfromName("laser");
+  const auto view = registry.view<LaserRendering, PhysicsRayCast, Activation>();
+  
+  for (const EntityID entity : view) {
+    if (isActive(view.get<Activation>(entity).state)) {
+      const float depth = view.get<LaserRendering>(entity).depth;
+      const PhysicsRayCast &rayCast = view.get<PhysicsRayCast>(entity);
+      const glm::vec2 start = castToGLM(rayCast.start);
+      const glm::vec2 startToEnd = (castToGLM(rayCast.end) - start);
+      const glm::vec2 end = startToEnd * rayCast.closestFraction + start;
+      const glm::vec2 toTopLeft = 0.5f * glm::normalize(perp(startToEnd));
+      
+      verts[spriteIndex + 0].pos = setDepth(start + toTopLeft, depth);
+      verts[spriteIndex + 1].pos = setDepth(start - toTopLeft, depth);
+      verts[spriteIndex + 2].pos = setDepth(end - toTopLeft, depth);
+      verts[spriteIndex + 3].pos = setDepth(end + toTopLeft, depth);
+    } else {
+      for (size_t i = 0; i != 4; ++i) {
+        verts[spriteIndex + i].pos = glm::vec3(0.0f, 0.0f, -1.0f);
+      }
+    }
+    
+    setTexCoords(spriteIndex, getTexCoords(LASER_ID));
     
     spriteIndex += 4;
   }

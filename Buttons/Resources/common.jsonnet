@@ -96,6 +96,7 @@
     "button",
     "laser detector",
     "laser emitter",
+    "laser",
     "platform",
     "moving platform"
   ],
