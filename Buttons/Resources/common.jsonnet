@@ -82,5 +82,38 @@
     [if (std.length(invalidNames) > 0) then
       error "Invalid parameters: " + invalidNames
     ]:: null
-  }
+  },
+  
+  layerNames:: [
+    "text",
+    "door",
+    "switch",
+    "player",
+    "lock",
+    "key",
+    "exit",
+    "box",
+    "button",
+    "laser detector",
+    "laser emitter",
+    "platform",
+    "moving platform"
+  ],
+  
+  indexOf(array, item)::
+    local find(info, current) =
+      if info.found == -1 && item == current then
+        {found: info.index, index: info.index + 1}
+      else
+        {found: info.found, index: info.index + 1}
+    ;
+    std.foldl(find, array, {found: -1, index: 0}).found
+  ,
+  
+  getDepth(layer)::
+    local index = $.indexOf($.layerNames, layer);
+    if index == -1 then
+      error "Invalid layer name \"" + layer + "\""
+    else
+      index / std.length($.layerNames)
 }

@@ -20,4 +20,5 @@ void AnimSpriteRenderingInit::init(AnimSpriteRendering &comp, const json &node) 
   comp.frames = node.at("frames").get<Unpack::SpriteID>();
   getOptional(comp.offset, node, "offset");
   getOptional(comp.scale, node, "scale");
+  comp.depth = node.at("depth").get<float>();
 }

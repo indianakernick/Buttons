@@ -17,4 +17,5 @@ void StaticSpriteRenderingInit::init(StaticSpriteRendering &comp, const json &no
   if (comp.sprite == Unpack::NULL_SPRITE) {
     throw std::runtime_error("Invalid sprite name");
   }
+  comp.depth = node.at("depth").get<float>();
 }

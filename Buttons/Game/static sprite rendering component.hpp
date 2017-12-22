@@ -14,6 +14,7 @@
 
 struct StaticSpriteRendering {
   Unpack::SpriteID sprite;
+  float depth;
 };
 
 #endif

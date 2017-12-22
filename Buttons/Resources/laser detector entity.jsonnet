@@ -11,7 +11,8 @@ function(params) {
     },
     AnimSpriteRendering: {
       sprite: "laser detector 0",
-      frames: 5
+      frames: 5,
+      depth: common.getDepth("laser detector")
     },
     PowerOutput: {},
     Transform: common.getOrientTransform(params),

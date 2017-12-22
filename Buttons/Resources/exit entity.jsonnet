@@ -8,7 +8,8 @@ function(params) {
     },
     AnimSpriteRendering: {
       sprite: "exit 0",
-      frames: 6
+      frames: 6,
+      depth: common.getDepth("exit")
     },
     Collision: {},
     Exit: {},

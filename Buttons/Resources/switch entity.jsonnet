@@ -11,7 +11,8 @@ function(params) {
     },
     AnimSpriteRendering: {
       sprite: "switch 0",
-      frames: 5
+      frames: 5,
+      depth: common.getDepth("switch")
     },
     Collision: {},
     PowerOutput: {},

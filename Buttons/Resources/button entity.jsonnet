@@ -12,7 +12,8 @@ function(params) {
     AnimSpriteRendering: {
       sprite: "button 0",
       frames: 5,
-      offset: [0.0, -0.5]
+      offset: [0.0, -0.5],
+      depth: common.getDepth("button")
     },
     Button: {},
     Collision: {},

@@ -17,6 +17,7 @@ struct AnimSpriteRendering {
   Unpack::SpriteID frames;
   glm::vec2 offset = {0.0f, 0.0f};
   glm::vec2 scale = {1.0f, 1.0f};
+  float depth;
 };
 
 #endif

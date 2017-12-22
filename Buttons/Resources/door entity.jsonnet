@@ -14,7 +14,8 @@ function(params) {
       sprite: "door 0",
       frames: 5,
       offset: [0.0, -0.5],
-      scale: [1.0, 1.5]
+      scale: [1.0, 1.5],
+      depth: common.getDepth("door")
     },
     Door: {},
     Transform: {},

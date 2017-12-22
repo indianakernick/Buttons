@@ -7,7 +7,8 @@ function(params) {
     PlayerJump: {},
     PlayerKeys: {},
     StaticSpriteRendering: {
-      sprite: "player"
+      sprite: "player",
+      depth: common.getDepth("player")
     },
     Transform: {},
     PhysicsBody: common.getPos(params) + {

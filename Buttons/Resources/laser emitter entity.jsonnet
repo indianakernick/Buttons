@@ -27,7 +27,8 @@ function(params) {
     },
     AnimSpriteRendering: {
       sprite: "laser emitter 0",
-      frames: 5
+      frames: 5,
+      depth: common.getDepth("laser emitter")
     },
     PowerInput: common.getPowerInput(params),
     PhysicsRayCast: {

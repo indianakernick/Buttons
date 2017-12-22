@@ -11,7 +11,8 @@ function(params) {
           32
       ,
       "hori align": "center",
-      "vert align": "middle"
+      "vert align": "middle",
+      depth: common.getDepth("text")
     },
     Transform: common.getPos(params),
     Text:

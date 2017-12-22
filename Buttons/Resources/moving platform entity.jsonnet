@@ -6,7 +6,8 @@ function(params) {
   components: common.checkParams(params, validParams) {
     Activation: {},
     StaticSpriteRendering: {
-      sprite: "moving platform"
+      sprite: "moving platform",
+      depth: common.getDepth("moving platform")
     },
     Transform: {},
     PhysicsBody: common.getPosSize(params) + {
