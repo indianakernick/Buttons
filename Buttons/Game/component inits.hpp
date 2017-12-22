@@ -18,6 +18,7 @@
 #include "animation init.hpp"
 #include "activation init.hpp"
 #include "laser detector init.hpp"
+#include "text rendering init.hpp"
 #include "moving platform init.hpp"
 #include "laser rendering init.hpp"
 #include "anim sprite rendering init.hpp"

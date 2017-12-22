@@ -52,6 +52,7 @@ void GameScreen::init() {
   compInits.construct<KeyInit>();
   compInits.construct<LockInit>();
   compInits.construct<LaserRenderingInit>();
+  compInits.construct<TextRenderingInit>(rendering.getSheet());
   compInits.construct<AnimSpriteRenderingInit>(rendering.getSheet());
   compInits.construct<StaticSpriteRenderingInit>(rendering.getSheet());
   compInits.setDefaults();
