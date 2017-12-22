@@ -11,7 +11,7 @@ function(params) {
     },
     AnimSpriteRendering: {
       sprite: "lock " + params.index + " 0",
-      frames: 5
+      frames: 6
     },
     Collision: {},
     PowerOutput: {},

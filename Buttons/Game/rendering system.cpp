@@ -156,7 +156,7 @@ namespace {
     const Unpack::SpriteID startFrame,
     const Unpack::SpriteID numFrames
   ) {
-    constexpr float MUL = 1.0f - 10.0f * std::numeric_limits<float>::epsilon();
+    constexpr float MUL = 0.9999f;
     return startFrame + progress * numFrames * MUL;
   }
   
