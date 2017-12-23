@@ -28,6 +28,7 @@ using Quad = std::array<Vertex, 4>;
 
 using Quads = std::vector<Quad>;
 using QuadIter = typename Quads::iterator;
+using Elems = std::vector<ElemType>;
 
 struct TexCoords {
   glm::vec2 bottomLeft;

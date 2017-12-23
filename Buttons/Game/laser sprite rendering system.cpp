@@ -30,7 +30,7 @@ size_t countLaserSprites(Registry &registry) {
 void writeLaserSprites(
   Registry &registry,
   const Spritesheet &sheet,
-  QuadIter quadIter
+  QuadIter &quadIter
 ) {
   static const Unpack::SpriteID LASER_ID = sheet.getIDfromName("laser");
   static const TexCoords LASER_COORDS = lookupTexCoords(sheet, LASER_ID);

@@ -18,7 +18,7 @@ size_t countStaticSprites(Registry &registry) {
 void writeStaticSprites(
   Registry &registry,
   const Spritesheet &sheet,
-  QuadIter quadIter
+  QuadIter &quadIter
 ) {
   const auto view = registry.view<StaticSpriteRendering, Transform>();
   

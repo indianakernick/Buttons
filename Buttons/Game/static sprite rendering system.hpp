@@ -13,6 +13,6 @@
 #include "rendering helpers.hpp"
 
 size_t countStaticSprites(Registry &);
-void writeStaticSprites(Registry &, const Spritesheet &, QuadIter);
+void writeStaticSprites(Registry &, const Spritesheet &, QuadIter &);
 
 #endif

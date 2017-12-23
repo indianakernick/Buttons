@@ -13,6 +13,6 @@
 #include "rendering helpers.hpp"
 
 size_t countLaserSprites(Registry &);
-void writeLaserSprites(Registry &, const Spritesheet &, QuadIter);
+void writeLaserSprites(Registry &, const Spritesheet &, QuadIter &);
 
 #endif

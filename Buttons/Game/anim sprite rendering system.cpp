@@ -19,7 +19,7 @@ size_t countAnimSprites(Registry &registry) {
 void writeAnimSprites(
   Registry &registry,
   const Spritesheet &sheet,
-  QuadIter quadIter
+  QuadIter &quadIter
 ) {
   const auto view = registry.view<AnimSpriteRendering, Animation, Transform>();
   
