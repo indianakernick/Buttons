@@ -25,7 +25,8 @@
 #include <Simpleton/Camera 2D/constant speed.hpp>
 
 void GameScreen::enter() {
-  levels.reload();
+  //levels.reload();
+  levels.loadFinalLevel();
   camera.setZoom(0.0f);
   rendering.onLevelLoad(registry);
 }

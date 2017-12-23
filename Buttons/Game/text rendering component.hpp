@@ -9,12 +9,14 @@
 #ifndef text_rendering_component_hpp
 #define text_rendering_component_hpp
 
+#include <glm/vec2.hpp>
 #include <Unpacker/unpacker.hpp>
 
 struct TextRendering {
+  glm::vec2 scale;
   Unpack::SpriteID sprite;
   float depth;
-  float scale;
+  float kern;
 };
 
 #endif

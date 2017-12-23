@@ -1,31 +1,31 @@
 local e = import "entities.jsonnet";
-local headSize = 8;
-local bodySize = 4;
+local headSize = 6;
+local bodySize = 3;
 
 [
   e.makeText({
     "font scale": headSize,
-    pos: [16, 14],
+    pos: [16, 13],
     text: "Congratulations"
   }),
   e.makeText({
     "font scale": bodySize,
-    pos: [16, 11],
+    pos: [16, 10],
     text: "You have just completed Buttons"
   }),
   e.makeText({
     "font scale": bodySize,
-    pos: [16, 9.5],
+    pos: [16, 8.5],
     text: "Now you can accomplish anything"
   }),
   e.makeText({
     "font scale": bodySize,
-    pos: [16, 7],
+    pos: [16, 6],
     text: "A game by"
   }),
   e.makeText({
     "font scale": bodySize,
-    pos: [16, 5.5],
+    pos: [16, 4.5],
     text: "Indi Kernick"
   })
 ]

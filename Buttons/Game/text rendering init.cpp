@@ -18,5 +18,6 @@ void TextRenderingInit::init(TextRendering &comp, const json &node) {
     throw std::runtime_error("Invalid sprite name");
   }
   comp.depth = node.at("depth").get<float>();
-  comp.scale = node.at("scale").get<float>();
+  comp.scale = node.at("scale").get<glm::vec2>();
+  comp.kern = node.at("kern").get<float>();
 }

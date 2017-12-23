@@ -256,7 +256,7 @@ platforms(1, 11, topOrder)
     end: [21, 8],
     size: [2, 1],
     speed: 0.2,
-    "waiting time": 2,
+    "waiting time": 6,
     on: true
   }),
   e.makeMovingPlatform({

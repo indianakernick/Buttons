@@ -10,6 +10,7 @@
 
 #include <fstream>
 #include <Simpleton/OpenGL/uniforms.hpp>
+#include "text sprite rendering system.hpp"
 #include "anim sprite rendering system.hpp"
 #include "laser sprite rendering system.hpp"
 #include "static sprite rendering system.hpp"
@@ -52,16 +53,11 @@ void RenderingSystem::init() {
   vertArray = GL::makeVertexArray();
   
   std::ifstream vertFile(Platform::getResDir() + "sprite shader.vert");
-  assert(vertFile.is_open());
   std::ifstream fragFile(Platform::getResDir() + "sprite shader.frag");
-  assert(fragFile.is_open());
-  
-  std::cout << "Creating vertex shader\n";
-  GL::Shader vertShader = GL::makeShader(GL_VERTEX_SHADER, vertFile);
-  std::cout << "Creating fragment shader\n";
-  GL::Shader fragShader = GL::makeShader(GL_FRAGMENT_SHADER, fragFile);
-  
-  program = GL::makeShaderProgram(vertShader, fragShader);
+  program = GL::makeShaderProgram(
+    GL::makeVertShader(vertFile),
+    GL::makeFragShader(fragFile)
+  );
   
   viewProjLoc = program.getUniformLoc("viewProj");
   texLoc = program.getUniformLoc("tex");
@@ -86,7 +82,8 @@ void RenderingSystem::onLevelLoad(Registry &registry) {
   numQuads
   = countStaticSprites(registry)
   + countAnimSprites(registry)
-  + countLaserSprites(registry);
+  + countLaserSprites(registry)
+  + countTextSprites(registry);
   
   fillIndicies(numQuads);
   quads.resize(numQuads);
@@ -110,6 +107,7 @@ void RenderingSystem::render(Registry &registry, const glm::mat3 &viewProj) {
   writeStaticSprites(registry, sheet, quadIter);
   writeAnimSprites(registry, sheet, quadIter);
   writeLaserSprites(registry, sheet, quadIter);
+  writeTextSprites(registry, sheet, quadIter);
   
   vertArray.bind();
   GL::setUniform(viewProjLoc, viewProj);

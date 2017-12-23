@@ -158,6 +158,7 @@
 		45C5259A1FED0B4900A738E0 /* anim sprite rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45C525981FED0B4900A738E0 /* anim sprite rendering system.cpp */; };
 		45C5259D1FED0B5300A738E0 /* laser sprite rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45C5259B1FED0B5300A738E0 /* laser sprite rendering system.cpp */; };
 		45C525A01FED0C5D00A738E0 /* rendering helpers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45C5259E1FED0C5D00A738E0 /* rendering helpers.cpp */; };
+		45C525A51FEE008300A738E0 /* text sprite rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45C525A31FEE008300A738E0 /* text sprite rendering system.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -690,6 +691,8 @@
 		45C5259C1FED0B5300A738E0 /* laser sprite rendering system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "laser sprite rendering system.hpp"; sourceTree = "<group>"; };
 		45C5259E1FED0C5D00A738E0 /* rendering helpers.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "rendering helpers.cpp"; sourceTree = "<group>"; };
 		45C5259F1FED0C5D00A738E0 /* rendering helpers.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "rendering helpers.hpp"; sourceTree = "<group>"; };
+		45C525A31FEE008300A738E0 /* text sprite rendering system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "text sprite rendering system.cpp"; sourceTree = "<group>"; };
+		45C525A41FEE008300A738E0 /* text sprite rendering system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "text sprite rendering system.hpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1475,6 +1478,8 @@
 				45C525991FED0B4900A738E0 /* anim sprite rendering system.hpp */,
 				45C5259B1FED0B5300A738E0 /* laser sprite rendering system.cpp */,
 				45C5259C1FED0B5300A738E0 /* laser sprite rendering system.hpp */,
+				45C525A31FEE008300A738E0 /* text sprite rendering system.cpp */,
+				45C525A41FEE008300A738E0 /* text sprite rendering system.hpp */,
 			);
 			name = Rendering;
 			sourceTree = "<group>";
@@ -1703,6 +1708,7 @@
 				4583EE291FB18F7A00AED27D /* b2Distance.cpp in Sources */,
 				4591F07D1FC0118C0075000D /* exit component.cpp in Sources */,
 				4583EE891FB197C200AED27D /* physics system.cpp in Sources */,
+				45C525A51FEE008300A738E0 /* text sprite rendering system.cpp in Sources */,
 				4584F4071FCBF1BD0062B93E /* element.cpp in Sources */,
 				4583EE9D1FB1AC1600AED27D /* power system.cpp in Sources */,
 				4583EE2A1FB18F7A00AED27D /* b2CollideCircle.cpp in Sources */,
