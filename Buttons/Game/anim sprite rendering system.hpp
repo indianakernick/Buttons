@@ -9,6 +9,10 @@
 #ifndef anim_sprite_rendering_system_hpp
 #define anim_sprite_rendering_system_hpp
 
+#include "entity registry.hpp"
+#include "rendering helpers.hpp"
 
+size_t countAnimSprites(Registry &);
+void writeAnimSprites(Registry &, const Spritesheet &, QuadIter);
 
 #endif

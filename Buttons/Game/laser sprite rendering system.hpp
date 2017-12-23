@@ -9,6 +9,10 @@
 #ifndef laser_sprite_rendering_system_hpp
 #define laser_sprite_rendering_system_hpp
 
+#include "entity registry.hpp"
+#include "rendering helpers.hpp"
 
+size_t countLaserSprites(Registry &);
+void writeLaserSprites(Registry &, const Spritesheet &, QuadIter);
 
 #endif
