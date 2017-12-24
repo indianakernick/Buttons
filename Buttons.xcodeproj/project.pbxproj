@@ -203,6 +203,7 @@
 		450ED6291FB84633008F2902 /* animation component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "animation component.hpp"; sourceTree = "<group>"; };
 		450ED62B1FB8620D008F2902 /* animation system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "animation system.cpp"; sourceTree = "<group>"; };
 		450ED62C1FB8620D008F2902 /* animation system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "animation system.hpp"; sourceTree = "<group>"; };
+		451452561FEF75A5007C57AF /* title screen.anim */ = {isa = PBXFileReference; lastKnownFileType = file; path = "title screen.anim"; sourceTree = "<group>"; };
 		4520AD6E1FE9F85C00ECE3C1 /* sprite shader.vert */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = "sprite shader.vert"; sourceTree = "<group>"; };
 		4520AD701FE9F8B000ECE3C1 /* sprite shader.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = "sprite shader.frag"; sourceTree = "<group>"; };
 		4520AD721FEB32FC00ECE3C1 /* static sprite rendering component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "static sprite rendering component.cpp"; sourceTree = "<group>"; };
@@ -781,6 +782,7 @@
 				45C5253E1FECC23A00A738E0 /* platform.anim */,
 				45C525371FECC23900A738E0 /* player.anim */,
 				45C525381FECC23A00A738E0 /* switch.anim */,
+				451452561FEF75A5007C57AF /* title screen.anim */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
