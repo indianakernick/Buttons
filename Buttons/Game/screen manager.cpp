@@ -16,9 +16,9 @@ void ScreenManager::removeAll() {
   current = nullptr;
 }
 
-void ScreenManager::initAll() {
+void ScreenManager::initAll(RenderingSystem &renderingSystem) {
   for (auto &pair : screens) {
-    pair.second->init();
+    pair.second->init(renderingSystem);
   }
 }
 

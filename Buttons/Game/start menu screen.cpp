@@ -9,72 +9,44 @@
 #include "start menu screen.hpp"
 
 #include "game screen.hpp"
-#include "text element.hpp"
 #include <SDL2/SDL_events.h>
 #include "screen manager.hpp"
-#include "button element.hpp"
-#include "rendering context.hpp"
+#include "rendering system.hpp"
+#include "animation system.hpp"
+#include "transform component.hpp"
+#include "animation component.hpp"
+#include "anim sprite rendering component.hpp"
 #include <Simpleton/Camera 2D/zoom to fit.hpp>
 
-void StartMenuScreen::init() {
+void StartMenuScreen::init(RenderingSystem &renderingSystem) {
+  rendering = &renderingSystem;
+
+  const glm::vec2 scale = {16.0f / 9.0f, 1.0f};
+
+  camera.setPos(scale / 2.0f);
   camera.transform.setOrigin(Cam2D::Origin::CENTER);
-  camera.targetZoom = std::make_unique<Cam2D::ZoomToFit>(glm::vec2(16, 9));
+  camera.targetZoom = std::make_unique<Cam2D::ZoomToFit>(scale);
   
-  auto startButton = std::make_unique<ButtonElement>();
-  auto startText = std::make_unique<TextElement>();
+  const EntityID entity = registry.create();
+  Animation &anim = registry.assign<Animation>(entity);
+  anim.speed = 24.0f / 96.0f;
+  AnimSpriteRendering &sprite = registry.assign<AnimSpriteRendering>(entity);
+  sprite.sprite = rendering->getSheet().getIDfromName("title screen 0");
+  sprite.frames = 96;
+  Transform &transform = registry.assign<Transform>(entity);
+  transform.scale = scale;
   
-  startButton->rect({0.0f, 0.0f}, {8.0f, 2.0f});
-  startText->rect(startButton->rect());
-  
-  startText->text("Start");
-  
-  startButton->onMouseButton([this] (ButtonElement &, const MouseButtonState state) {
-    if (state == MouseButtonState::RELEASED) {
-      startGame = true;
-      return true;
-    }
-    return false;
-  });
-  
-  elementMan.addElement(std::move(startButton));
-  elementMan.addElement(std::move(startText));
-  
-  auto resetButton = std::make_unique<ButtonElement>();
-  auto resetText = std::make_unique<TextElement>();
-  
-  resetButton->rect({0.0f, -2.0f}, {4.0f, 1.0f});
-  resetText->rect(resetButton->rect());
-  
-  resetText->text("Reset");
-  
-  resetButton->onMouseButton([this] (ButtonElement &, const MouseButtonState state) {
-    if (state == MouseButtonState::RELEASED) {
-      getScreenMan()->getScreen<GameScreen>().resetProgress();
-      return true;
-    }
-    return false;
-  });
-  
-  elementMan.addElement(std::move(resetButton));
-  elementMan.addElement(std::move(resetText));
-  
-  auto buttonsText = std::make_unique<TextElement>();
-  
-  buttonsText->text("Buttons");
-  buttonsText->rect({0.0f, 2.0f}, {1.0f, 1.0f});
-  
-  elementMan.addElement(std::move(buttonsText));
+  rendering->onLevelLoad(registry);
 }
 
 void StartMenuScreen::quit() {
-  elementMan.remAllElements();
+  registry.reset();
 }
 
 void StartMenuScreen::input(const SDL_Event &e) {
   if (e.type == SDL_KEYDOWN) {
     startGame = true;
   }
-  elementMan.handleEvent(e, camera.transform.toMeters());
 }
 
 void StartMenuScreen::update(const float) {}
@@ -83,7 +55,8 @@ void StartMenuScreen::render(const float aspect, const float delta) {
   camera.update(aspect, delta);
   const glm::mat3 viewProj = camera.transform.toPixels();
   
-  
+  animationSystem(registry, delta);
+  rendering->render(registry, viewProj);
   
   if (startGame) {
     getScreenMan()->transitionTo<GameScreen>();

@@ -56,17 +56,19 @@ void App::init() {
   windowLibrary.emplace(SDL_INIT_EVENTS);
   window = Platform::makeWindow(WINDOW_DESC);
   renderingContext.init(window.get(), WINDOW_VSYNC);
+  renderingSystem.init();
   
   screens.addScreen<GameScreen>();
   screens.addScreen<StartMenuScreen>();
   screens.transitionTo<StartMenuScreen>();
   
-  screens.initAll();
+  screens.initAll(renderingSystem);
 }
 
 void App::quit() {
   screens.quitAll();
 
+  renderingSystem.quit();
   renderingContext.quit();
   window.reset();
   windowLibrary = std::experimental::nullopt;

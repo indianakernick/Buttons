@@ -10,17 +10,16 @@
 #define start_menu_screen_hpp
 
 #include "screen.hpp"
-#include "element manager.hpp"
+#include "entity registry.hpp"
 #include <Simpleton/Camera 2D/camera.hpp>
 
-class RenderingContext;
 extern "C" union SDL_Event;
 
 class StartMenuScreen final : public Screen {
 public:
   StartMenuScreen() = default;
   
-  void init() override;
+  void init(RenderingSystem &) override;
   void quit() override;
   void input(const SDL_Event &) override;
   void update(float) override;
@@ -28,7 +27,8 @@ public:
 
 private:
   Cam2D::Camera camera;
-  ElementManager elementMan;
+  RenderingSystem *rendering;
+  Registry registry;
   bool startGame = false;
 };
 

@@ -12,7 +12,7 @@
 #include "screen id.hpp"
 
 class ScreenManager;
-class RenderingContext;
+class RenderingSystem;
 extern "C" union SDL_Event;
 
 class Screen {
@@ -25,7 +25,7 @@ public:
   virtual void enter() {};
   virtual void leave() {};
   
-  virtual void init() = 0;
+  virtual void init(RenderingSystem &) = 0;
   virtual void quit() = 0;
   virtual void input(const SDL_Event &) = 0;
   virtual void update(float) = 0;

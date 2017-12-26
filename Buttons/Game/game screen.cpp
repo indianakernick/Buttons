@@ -18,27 +18,27 @@
 #include "screen manager.hpp"
 #include "component inits.hpp"
 #include "camera constants.hpp"
-#include "rendering context.hpp"
+#include "rendering system.hpp"
 #include <Simpleton/Platform/system info.hpp>
 #include <Simpleton/Utils/member function.hpp>
 #include <Simpleton/Camera 2D/zoom to fit.hpp>
 #include <Simpleton/Camera 2D/constant speed.hpp>
 
 void GameScreen::enter() {
-  //levels.reload();
-  levels.loadFinalLevel();
+  levels.reload();
   camera.setZoom(0.0f);
-  rendering.onLevelLoad(registry);
+  rendering->onLevelLoad(registry);
 }
 
-void GameScreen::init() {
+void GameScreen::init(RenderingSystem &renderingSystem) {
+  rendering = &renderingSystem;
+  
   camera.setPos(LEVEL_SIZE / 2.0f);
   camera.transform.setOrigin(Cam2D::Origin::CENTER);
   camera.targetZoom = std::make_unique<Cam2D::ZoomToFit>(LEVEL_SIZE);
   camera.animateZoom = std::make_unique<Cam2D::ZoomConstantSpeed>(ZOOM_SPEED);
 
   physics.init(registry);
-  rendering.init();
   
   compInits.construct<PhysicsBodyInit>(physics.getWorld());
   compInits.construct<PhysicsJointInit>(physics.getWorld(), &registry);
@@ -53,9 +53,9 @@ void GameScreen::init() {
   compInits.construct<KeyInit>();
   compInits.construct<LockInit>();
   compInits.construct<LaserRenderingInit>();
-  compInits.construct<TextRenderingInit>(rendering.getSheet());
-  compInits.construct<AnimSpriteRenderingInit>(rendering.getSheet());
-  compInits.construct<StaticSpriteRenderingInit>(rendering.getSheet());
+  compInits.construct<TextRenderingInit>(rendering->getSheet());
+  compInits.construct<AnimSpriteRenderingInit>(rendering->getSheet());
+  compInits.construct<StaticSpriteRenderingInit>(rendering->getSheet());
   compInits.setDefaults();
   
   levels.init(registry, compInits);
@@ -70,7 +70,6 @@ void GameScreen::init() {
   addListener(&GameScreen::typeLevelNumberKey);
   addListener(&GameScreen::nextLevelKey);
   addListener(&GameScreen::prevLevelKey);
-  addListener(&GameScreen::infoKey);
 }
 
 void GameScreen::quit() {
@@ -81,9 +80,9 @@ void GameScreen::quit() {
   
   compInits.destroyAll();
   
-  rendering.quit();
-  
   physics.quit();
+  
+  rendering = nullptr;
 }
 
 void GameScreen::input(const SDL_Event &event) {
@@ -95,7 +94,7 @@ void GameScreen::update(const float delta) {
     progress.finishLevel(levels.getLoaded());
     levels.nextLevel();
     camera.setZoom(0.0f);
-    rendering.onLevelLoad(registry);
+    rendering->onLevelLoad(registry);
   }
 
   playerMovementSystem(registry, delta);
@@ -133,7 +132,7 @@ void GameScreen::render(const float aspect, const float delta) {
   
   if constexpr (ENABLE_GAME_RENDER) {
     animationSystem(registry, delta);
-    rendering.render(registry, viewProj);
+    rendering->render(registry, viewProj);
   }
   
   if constexpr (ENABLE_GRID_RENDER) {
@@ -185,7 +184,7 @@ bool GameScreen::toggleGotoLevelKey(const SDL_Event &e) {
     if (!enteredLevel.empty()) {
       if (progress.hasCompleted(enteredLevel.get())) {
         levels.loadLevel(enteredLevel.get());
-        rendering.onLevelLoad(registry);
+        rendering->onLevelLoad(registry);
       } else {
         //Tell the player that the level they entered is not available
       }
@@ -220,10 +219,10 @@ bool GameScreen::nextLevelKey(const SDL_Event &e) {
     if (current == LevelManager::NONE_LOADED) {
       levels.loadLevel(0);
       camera.setZoom(0.0f);
-      rendering.onLevelLoad(registry);
+      rendering->onLevelLoad(registry);
     } else if (progress.hasCompleted(current + 1)) {
       levels.loadLevel(current + 1);
-      rendering.onLevelLoad(registry);
+      rendering->onLevelLoad(registry);
     }
     return true;
   }
@@ -240,28 +239,14 @@ bool GameScreen::prevLevelKey(const SDL_Event &e) {
       if (!levels.loadLevel(progress.getIncompleteLevel())) {
         levels.loadLevel(progress.getIncompleteLevel() - 1);
         camera.setZoom(0.0f);
-        rendering.onLevelLoad(registry);
+        rendering->onLevelLoad(registry);
       }
     } else if (current != 0) {
       levels.loadLevel(current - 1);
-      rendering.onLevelLoad(registry);
+      rendering->onLevelLoad(registry);
     }
     return true;
   }
   return false;
-}
-
-bool GameScreen::infoKey(const SDL_Event &e) {
-  if (keyDown(e, SDL_SCANCODE_I)) {
-    if (levels.isLoaded()) {
-      printMessage("This is level " + std::to_string(levels.getLoaded()));
-    }
-    return true;
-  }
-  return false;
-}
-
-void GameScreen::printMessage(const std::string &message) {
-  
 }
 

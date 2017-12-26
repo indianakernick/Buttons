@@ -41,7 +41,7 @@ public:
   
   void removeAll();
   
-  void initAll();
+  void initAll(RenderingSystem &);
   void quitAll();
   void input(const SDL_Event &);
   void update(float);

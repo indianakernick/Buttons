@@ -14,13 +14,11 @@
 #include "level manager.hpp"
 #include "physics system.hpp"
 #include "entity registry.hpp"
-#include "rendering system.hpp"
 #include "input dispatcher.hpp"
 #include "progress manager.hpp"
 #include <Simpleton/Math/digit stack.hpp>
 #include <Simpleton/Camera 2D/camera.hpp>
 
-class RenderingContext;
 extern "C" union SDL_Event;
 
 class GameScreen final : public Screen {
@@ -29,7 +27,7 @@ public:
   
   void enter() override;
   
-  void init() override;
+  void init(RenderingSystem &) override;
   void quit() override;
   void input(const SDL_Event &) override;
   void update(float) override;
@@ -40,7 +38,7 @@ public:
 private:
   Registry registry;
   PhysicsSystem physics;
-  RenderingSystem rendering;
+  RenderingSystem *rendering;
   CompInits compInits;
   LevelManager levels;
   ProgressManager progress;
@@ -61,7 +59,6 @@ private:
   bool typeLevelNumberKey(const SDL_Event &);
   bool nextLevelKey(const SDL_Event &);
   bool prevLevelKey(const SDL_Event &);
-  bool infoKey(const SDL_Event &);
   
   void printMessage(const std::string &);
 };

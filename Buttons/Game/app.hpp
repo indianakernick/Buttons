@@ -11,6 +11,7 @@
 
 #include <chrono>
 #include "screen manager.hpp"
+#include "rendering system.hpp"
 #include "rendering context.hpp"
 #include <experimental/optional>
 #include <Simpleton/Platform/window library.hpp>
@@ -29,6 +30,7 @@ private:
   Platform::Window window;
   RenderingContext renderingContext;
   ScreenManager screens;
+  RenderingSystem renderingSystem;
   
   void init();
   void quit();
