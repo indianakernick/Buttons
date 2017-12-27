@@ -49,6 +49,11 @@ private:
   bool choosingLevel = false;
   bool quitGame = false;
   
+  bool loadLevel(Level);
+  bool loadFinalLevel();
+  bool loadNextLevel();
+  void reloadLevel();
+  
   template <typename Listener>
   void addListener(Listener);
   
@@ -59,8 +64,6 @@ private:
   bool typeLevelNumberKey(const SDL_Event &);
   bool nextLevelKey(const SDL_Event &);
   bool prevLevelKey(const SDL_Event &);
-  
-  void printMessage(const std::string &);
 };
 
 #endif

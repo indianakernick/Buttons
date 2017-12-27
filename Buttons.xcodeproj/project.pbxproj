@@ -1220,7 +1220,6 @@
 			children = (
 				4533A8A21FC8E3100027B0FB /* Input */,
 				4533A8A01FC8E1D00027B0FB /* UI */,
-				4583EE6F1FB190C400AED27D /* Libraries */,
 				4583EE5D1FB190AC00AED27D /* Utils */,
 				4583EE8A1FB199BF00AED27D /* Constants */,
 				4583EE981FB1AA1C00AED27D /* Entity */,
@@ -1410,13 +1409,6 @@
 				4584F4411FD130F50062B93E /* json helper.hpp */,
 			);
 			name = Utils;
-			sourceTree = "<group>";
-		};
-		4583EE6F1FB190C400AED27D /* Libraries */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Libraries;
 			sourceTree = "<group>";
 		};
 		4583EE801FB195CD00AED27D /* Components */ = {

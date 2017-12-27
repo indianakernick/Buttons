@@ -10,7 +10,6 @@
 
 #include "systems.hpp"
 #include "json helper.hpp"
-#include "render grid.hpp"
 #include "event helper.hpp"
 #include "global flags.hpp"
 #include <SDL2/SDL_render.h>
@@ -25,9 +24,7 @@
 #include <Simpleton/Camera 2D/constant speed.hpp>
 
 void GameScreen::enter() {
-  levels.reload();
-  camera.setZoom(0.0f);
-  rendering->onLevelLoad(registry);
+  reloadLevel();
 }
 
 void GameScreen::init(RenderingSystem &renderingSystem) {
@@ -59,8 +56,8 @@ void GameScreen::init(RenderingSystem &renderingSystem) {
   compInits.setDefaults();
   
   levels.init(registry, compInits);
-  if (!levels.loadLevel(progress.getIncompleteLevel())) {
-    //Player has pressed play but finished the game
+  if (!loadLevel(progress.getIncompleteLevel())) {
+    loadFinalLevel();
   }
   
   addListener(&GameScreen::reloadKey);
@@ -92,9 +89,7 @@ void GameScreen::input(const SDL_Event &event) {
 void GameScreen::update(const float delta) {
   if (exitSystem(registry)) {
     progress.finishLevel(levels.getLoaded());
-    levels.nextLevel();
-    camera.setZoom(0.0f);
-    rendering->onLevelLoad(registry);
+    loadNextLevel();
   }
 
   playerMovementSystem(registry, delta);
@@ -135,10 +130,6 @@ void GameScreen::render(const float aspect, const float delta) {
     rendering->render(registry, viewProj);
   }
   
-  if constexpr (ENABLE_GRID_RENDER) {
-    renderGrid(nullptr);
-  }
-  
   if (quitGame) {
     getScreenMan()->transitionTo<StartMenuScreen>();
     quitGame = false;
@@ -147,7 +138,36 @@ void GameScreen::render(const float aspect, const float delta) {
 
 void GameScreen::resetProgress() {
   progress.reset();
-  levels.loadLevel(0);
+  loadLevel(0);
+}
+
+bool GameScreen::loadLevel(const Level level) {
+  if (levels.loadLevel(level)) {
+    camera.setZoom(0.0f);
+    rendering->onLevelLoad(registry);
+    return true;
+  } else {
+    return false;
+  }
+}
+
+bool GameScreen::loadFinalLevel() {
+  return loadLevel(LevelManager::FINAL);
+}
+
+bool GameScreen::loadNextLevel() {
+  if (levels.nextLevel()) {
+    camera.setZoom(0.0f);
+    rendering->onLevelLoad(registry);
+    return true;
+  } else {
+    return false;
+  }
+}
+
+void GameScreen::reloadLevel() {
+  levels.reload();
+  rendering->onLevelLoad(registry);
 }
 
 template <typename Listener>
@@ -157,7 +177,7 @@ void GameScreen::addListener(const Listener listener) {
 
 bool GameScreen::reloadKey(const SDL_Event &e) {
   if (keyDown(e, SDL_SCANCODE_R)) {
-    levels.reload();
+    reloadLevel();
     return true;
   }
   return false;
@@ -183,8 +203,7 @@ bool GameScreen::toggleGotoLevelKey(const SDL_Event &e) {
     choosingLevel = false;
     if (!enteredLevel.empty()) {
       if (progress.hasCompleted(enteredLevel.get())) {
-        levels.loadLevel(enteredLevel.get());
-        rendering->onLevelLoad(registry);
+        loadLevel(enteredLevel.get());
       } else {
         //Tell the player that the level they entered is not available
       }
@@ -217,12 +236,9 @@ bool GameScreen::nextLevelKey(const SDL_Event &e) {
   if (keyDown(e, SDL_SCANCODE_N)) {
     const Level current = levels.getLoaded();
     if (current == LevelManager::NONE_LOADED) {
-      levels.loadLevel(0);
-      camera.setZoom(0.0f);
-      rendering->onLevelLoad(registry);
+      loadLevel(0);
     } else if (progress.hasCompleted(current + 1)) {
-      levels.loadLevel(current + 1);
-      rendering->onLevelLoad(registry);
+      loadLevel(current + 1);
     }
     return true;
   }
@@ -236,14 +252,11 @@ bool GameScreen::prevLevelKey(const SDL_Event &e) {
       // progress.getIncompleteLevel() returns the total number of levels when
       // the game has been completed. levels.loadLevel will return false if it
       // fails to load the level
-      if (!levels.loadLevel(progress.getIncompleteLevel())) {
-        levels.loadLevel(progress.getIncompleteLevel() - 1);
-        camera.setZoom(0.0f);
-        rendering->onLevelLoad(registry);
+      if (!loadLevel(progress.getIncompleteLevel())) {
+        loadLevel(progress.getIncompleteLevel() - 1);
       }
     } else if (current != 0) {
-      levels.loadLevel(current - 1);
-      rendering->onLevelLoad(registry);
+      loadLevel(current - 1);
     }
     return true;
   }
