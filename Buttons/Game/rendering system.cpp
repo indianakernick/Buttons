@@ -40,8 +40,12 @@ namespace {
 void RenderingSystem::init() {
   const std::string path = SDL::getResDir() + "sprites.";
   sheet = Unpack::makeSpritesheet(path + "atlas", path + "png");
-  const Unpack::Image &image = sheet.getImage();
-  const GL::Image2D glImage = {image.data(), image.width(), image.height()};
+  const Surface &image = sheet.getImage();
+  const GL::Image2D glImage = {
+    image.data(),
+    static_cast<GLsizei>(image.width()),
+    static_cast<GLsizei>(image.height())
+  };
   
   GL::TexParams2D texParams;
   texParams.setWrap(GL_CLAMP_TO_EDGE);

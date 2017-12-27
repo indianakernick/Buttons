@@ -47,7 +47,6 @@
 		456DF0CD1FBFB519003B3FD1 /* physics init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0CB1FBFB519003B3FD1 /* physics init.cpp */; };
 		45771B921FE74C7D00F533DA /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 45771B911FE74C6800F533DA /* sprites.atlas */; };
 		45771B931FE74C7D00F533DA /* sprites.png in Resources */ = {isa = PBXBuildFile; fileRef = 45771B901FE74C6700F533DA /* sprites.png */; };
-		45771C001FE7872B00F533DA /* libUnpacker.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 45771BFF1FE7872B00F533DA /* libUnpacker.dylib */; };
 		45771C091FE8745F00F533DA /* rendering system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45771C071FE8745F00F533DA /* rendering system.cpp */; };
 		4583ED5B1FB1841100AED27D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4583ED5A1FB1841100AED27D /* Assets.xcassets */; };
 		4583ED671FB1845B00AED27D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583ED661FB1845B00AED27D /* main.cpp */; };
@@ -781,7 +780,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45771C001FE7872B00F533DA /* libUnpacker.dylib in Frameworks */,
 				454D04B41FE64FCA00D3E560 /* SDL2.framework in Frameworks */,
 				4583ED781FB185CC00AED27D /* CoreVideo.framework in Frameworks */,
 				4583ED761FB185C100AED27D /* Cocoa.framework in Frameworks */,
@@ -2026,6 +2024,7 @@
 					"-std=c++1z",
 				);
 				OTHER_LDFLAGS = (
+					/usr/local/lib/libUnpacker.a,
 					/usr/local/Cellar/glew/2.1.0/lib/libGLEW.a,
 					"/usr/local/lib/libSimpleton\\ Engine.a",
 				);
@@ -2066,6 +2065,7 @@
 					"-std=c++1z",
 				);
 				OTHER_LDFLAGS = (
+					/usr/local/lib/libUnpacker.a,
 					/usr/local/Cellar/glew/2.1.0/lib/libGLEW.a,
 					"/usr/local/lib/libSimpleton\\ Engine.a",
 				);
