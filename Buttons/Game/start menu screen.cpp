@@ -29,7 +29,7 @@ void StartMenuScreen::init(RenderingSystem &renderingSystem) {
   
   const EntityID entity = registry.create();
   Animation &anim = registry.assign<Animation>(entity);
-  anim.speed = 24.0f / 96.0f;
+  anim.speed = 30.0f / 96.0f;
   AnimSpriteRendering &sprite = registry.assign<AnimSpriteRendering>(entity);
   sprite.sprite = rendering->getSheet().getIDfromName("title screen 0");
   sprite.frames = 96;
