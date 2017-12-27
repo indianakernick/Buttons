@@ -31,6 +31,8 @@ public:
 private:
   SDL_Window *window = nullptr;
   GL::Context context;
+  Uint32 minFrameTime = 1000 / 70;
+  bool vsync = false;
 };
 
 #endif

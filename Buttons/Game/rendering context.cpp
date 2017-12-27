@@ -11,7 +11,9 @@
 #include <SDL2/SDL.h>
 #include <Simpleton/Platform/sdl error.hpp>
 
-void RenderingContext::init(SDL_Window *newWindow, const bool vsync) {
+void RenderingContext::init(SDL_Window *newWindow, const bool vsyncEnabled) {
+  vsync = vsyncEnabled;
+
   window = newWindow;
   GL::ContextParams params;
   params.vsync = vsync;
@@ -20,6 +22,12 @@ void RenderingContext::init(SDL_Window *newWindow, const bool vsync) {
   context = GL::makeContext(window, params);
   
   glEnable(GL_DEPTH_TEST);
+  
+  SDL_DisplayMode mode;
+  CHECK_SDL_ERROR(SDL_GetWindowDisplayMode(window, &mode));
+  if (mode.refresh_rate != 0) {
+    minFrameTime = 1000 / (mode.refresh_rate + 10);
+  }
 }
 
 void RenderingContext::quit() {
@@ -28,11 +36,8 @@ void RenderingContext::quit() {
 }
 
 void RenderingContext::preRender() {
-  // @TODO
-  // emulate a retina display with a device pixel ratio of 2
-  // sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool YES
   glm::ivec2 size;
-  SDL_GL_GetDrawableSize(window, &size.x, &size.y);
+  SDL_GetWindowSize(window, &size.x, &size.y);
   glViewport(0, 0, size.x, size.y);
   CHECK_OPENGL_ERROR();
   
@@ -40,7 +45,18 @@ void RenderingContext::preRender() {
 }
 
 void RenderingContext::postRender() {
-  SDL_GL_SwapWindow(window);
+  if (vsync) {
+    const Uint32 start = SDL_GetTicks();
+    SDL_GL_SwapWindow(window);
+    const Uint32 end = SDL_GetTicks();
+    
+    const Uint32 swapTime = end - start;
+    if (swapTime < minFrameTime) {
+      SDL_Delay(minFrameTime - swapTime);
+    }
+  } else {
+    SDL_GL_SwapWindow(window);
+  }
 }
 
 glm::ivec2 RenderingContext::getFrameSize() const {
