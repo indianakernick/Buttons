@@ -11,10 +11,10 @@
 
 #include <array>
 #include <vector>
+#include <unpacker.hpp>
 #include <glm/vec2.hpp>
 #include <glm/vec3.hpp>
 #include <glm/mat3x3.hpp>
-#include <Unpacker/unpacker.hpp>
 
 using PosType = glm::vec3;
 using TexCoordType = glm::vec2;

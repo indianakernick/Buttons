@@ -38,9 +38,8 @@ namespace {
 }
 
 void RenderingSystem::init() {
-  const std::string path = SDL::getResDir() + "sprites.";
-  sheet = Unpack::makeSpritesheet(path + "atlas", path + "png");
-  const Surface &image = sheet.getImage();
+  sheet = Unpack::makeSpritesheet(SDL::getResDir() + "sprites.atlas");
+  const Surface image = loadSurface(SDL::getResDir() + "sprites.png");
   const GL::Image2D glImage = {
     image.data(),
     static_cast<GLsizei>(image.width()),

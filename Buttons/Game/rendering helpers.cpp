@@ -10,8 +10,8 @@
 
 namespace {
   glm::vec2 getSheetSize(const Spritesheet &sheet) {
-    const Surface &image = sheet.getImage();
-    return {image.width(), image.height()};
+    const Unpack::VecPx size = sheet.getSize();
+    return {size.x, size.y};
   }
 }
 

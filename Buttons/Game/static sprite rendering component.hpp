@@ -9,8 +9,8 @@
 #ifndef static_sprite_rendering_component_hpp
 #define static_sprite_rendering_component_hpp
 
+#include <unpacker.hpp>
 #include <glm/vec2.hpp>
-#include <Unpacker/unpacker.hpp>
 
 struct StaticSpriteRendering {
   Unpack::SpriteID sprite;

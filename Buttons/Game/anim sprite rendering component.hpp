@@ -9,8 +9,8 @@
 #ifndef anim_sprite_rendering_component_hpp
 #define anim_sprite_rendering_component_hpp
 
+#include <unpacker.hpp>
 #include <glm/vec2.hpp>
-#include <Unpacker/unpacker.hpp>
 
 struct AnimSpriteRendering {
   Unpack::SpriteID sprite;
