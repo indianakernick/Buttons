@@ -13,8 +13,7 @@
 #include "screen manager.hpp"
 #include "rendering system.hpp"
 #include "rendering context.hpp"
-#include <experimental/optional>
-#include <Simpleton/Platform/window library.hpp>
+#include <Simpleton/SDL/library.hpp>
 
 class App {
 public:
@@ -26,8 +25,8 @@ public:
   void mainloop();
 
 private:
-  std::experimental::optional<Platform::WindowLibrary> windowLibrary;
-  Platform::Window window;
+  SDL::Library windowLibrary;
+  SDL::Window window;
   RenderingContext renderingContext;
   ScreenManager screens;
   RenderingSystem renderingSystem;

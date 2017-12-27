@@ -12,7 +12,7 @@
 #include "comp inits.hpp"
 #include "json helper.hpp"
 #include "entity id map.hpp"
-#include <Simpleton/Platform/system info.hpp>
+#include <Simpleton/SDL/paths.hpp>
 
 namespace {
   void loadComps(
@@ -42,7 +42,7 @@ namespace {
 }
 
 bool loadLevel(const std::string &fileName, const CompInits &compInits, Registry &registry) {
-  std::ifstream file(Platform::getResDir() + fileName);
+  std::ifstream file(SDL::getResDir() + fileName);
   if (!file.is_open()) {
     return false;
   }

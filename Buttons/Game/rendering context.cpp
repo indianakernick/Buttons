@@ -9,7 +9,7 @@
 #include "rendering context.hpp"
 
 #include <SDL2/SDL.h>
-#include <Simpleton/Platform/sdl error.hpp>
+#include <Simpleton/SDL/sdl error.hpp>
 
 void RenderingContext::init(SDL_Window *newWindow, const bool vsyncEnabled) {
   vsync = vsyncEnabled;

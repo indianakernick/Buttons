@@ -11,8 +11,8 @@
 #include <fstream>
 #include "b2 glm cast.hpp"
 #include "object types.hpp"
+#include <Simpleton/SDL/paths.hpp>
 #include "collision categories.hpp"
-#include <Simpleton/Platform/system info.hpp>
 
 namespace {
   b2BodyType readBodyType(const std::string &typeName) {
@@ -204,7 +204,7 @@ b2Body *loadBody(
   b2World &world,
   const Transform transform
 ) {
-  std::ifstream file(Platform::getResDir() + fileName);
+  std::ifstream file(SDL::getResDir() + fileName);
   json rootNode;
   file >> rootNode;
   
@@ -360,7 +360,7 @@ void readJoint(b2JointDef *def, const json &node) {
 }
 
 b2JointDef *loadJoint(const std::string &fileName) {
-  std::ifstream file(Platform::getResDir() + fileName);
+  std::ifstream file(SDL::getResDir() + fileName);
   json rootNode;
   file >> rootNode;
   return loadJoint(rootNode);

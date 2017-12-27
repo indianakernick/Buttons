@@ -53,8 +53,8 @@ void App::mainloop() {
 }
 
 void App::init() {
-  windowLibrary.emplace(SDL_INIT_EVENTS);
-  window = Platform::makeWindow(WINDOW_DESC);
+  windowLibrary = SDL::makeLibrary(SDL_INIT_EVENTS);
+  window = SDL::makeWindow(WINDOW_DESC);
   renderingContext.init(window.get(), WINDOW_VSYNC);
   renderingSystem.init();
   
@@ -71,7 +71,7 @@ void App::quit() {
   renderingSystem.quit();
   renderingContext.quit();
   window.reset();
-  windowLibrary = std::experimental::nullopt;
+  windowLibrary.reset();
 }
 
 bool App::input(float) {

@@ -8,9 +8,9 @@
 
 #include "dir.hpp"
 
-#include <Simpleton/Platform/system info.hpp>
+#include <Simpleton/SDL/paths.hpp>
 
 std::string getSaveDir() {
-  return Platform::getSaveDir("Indi Kernick", "Buttons");
+  return SDL::getSaveDir("Indi Kernick", "Buttons");
 }
 

@@ -9,12 +9,12 @@
 #include "rendering system.hpp"
 
 #include <fstream>
+#include <Simpleton/SDL/paths.hpp>
 #include <Simpleton/OpenGL/uniforms.hpp>
 #include "text sprite rendering system.hpp"
 #include "anim sprite rendering system.hpp"
 #include "laser sprite rendering system.hpp"
 #include "static sprite rendering system.hpp"
-#include <Simpleton/Platform/system info.hpp>
 #include <Simpleton/OpenGL/attrib pointer.hpp>
 
 namespace {
@@ -38,7 +38,7 @@ namespace {
 }
 
 void RenderingSystem::init() {
-  const std::string path = Platform::getResDir() + "sprites.";
+  const std::string path = SDL::getResDir() + "sprites.";
   sheet = Unpack::makeSpritesheet(path + "atlas", path + "png");
   const Unpack::Image &image = sheet.getImage();
   const GL::Image2D glImage = {image.data(), image.width(), image.height()};
@@ -52,8 +52,8 @@ void RenderingSystem::init() {
   
   vertArray = GL::makeVertexArray();
   
-  std::ifstream vertFile(Platform::getResDir() + "sprite shader.vert");
-  std::ifstream fragFile(Platform::getResDir() + "sprite shader.frag");
+  std::ifstream vertFile(SDL::getResDir() + "sprite shader.vert");
+  std::ifstream fragFile(SDL::getResDir() + "sprite shader.frag");
   program = GL::makeShaderProgram(
     GL::makeVertShader(vertFile),
     GL::makeFragShader(fragFile)
