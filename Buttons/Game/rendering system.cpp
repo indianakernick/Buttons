@@ -9,6 +9,7 @@
 #include "rendering system.hpp"
 
 #include <fstream>
+#include <Surface/load.hpp>
 #include <Simpleton/SDL/paths.hpp>
 #include <Simpleton/OpenGL/uniforms.hpp>
 #include "text sprite rendering system.hpp"

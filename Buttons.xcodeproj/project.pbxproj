@@ -2024,6 +2024,7 @@
 					"-std=c++1z",
 				);
 				OTHER_LDFLAGS = (
+					/usr/local/lib/libSurface.a,
 					/usr/local/lib/libUnpacker.a,
 					/usr/local/Cellar/glew/2.1.0/lib/libGLEW.a,
 					"/usr/local/lib/libSimpleton\\ Engine.a",
@@ -2065,6 +2066,7 @@
 					"-std=c++1z",
 				);
 				OTHER_LDFLAGS = (
+					/usr/local/lib/libSurface.a,
 					/usr/local/lib/libUnpacker.a,
 					/usr/local/Cellar/glew/2.1.0/lib/libGLEW.a,
 					"/usr/local/lib/libSimpleton\\ Engine.a",
