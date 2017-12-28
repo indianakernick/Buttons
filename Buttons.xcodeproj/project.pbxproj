@@ -110,7 +110,6 @@
 		4583EEA61FB1B1E800AED27D /* button system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EEA41FB1B1E800AED27D /* button system.cpp */; };
 		4583EEAA1FB1B6E100AED27D /* physics transform system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EEA81FB1B6E100AED27D /* physics transform system.cpp */; };
 		4584F4001FCBB7F50062B93E /* screen manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4584F3FE1FCBB7F50062B93E /* screen manager.cpp */; };
-		4584F4231FD105940062B93E /* event helper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4584F4211FD105940062B93E /* event helper.cpp */; };
 		4584F4421FD130F50062B93E /* json helper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4584F4401FD130F50062B93E /* json helper.cpp */; };
 		4584F4491FD13BA30062B93E /* physics file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4584F4471FD13BA30062B93E /* physics file.cpp */; };
 		4584F44C1FD215340062B93E /* level file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4584F44A1FD215340062B93E /* level file.cpp */; };
@@ -506,8 +505,6 @@
 		4583EEAB1FB1B6F800AED27D /* entity registry.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "entity registry.hpp"; sourceTree = "<group>"; };
 		4584F3FE1FCBB7F50062B93E /* screen manager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "screen manager.cpp"; sourceTree = "<group>"; };
 		4584F3FF1FCBB7F50062B93E /* screen manager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "screen manager.hpp"; sourceTree = "<group>"; };
-		4584F4211FD105940062B93E /* event helper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "event helper.cpp"; sourceTree = "<group>"; };
-		4584F4221FD105940062B93E /* event helper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "event helper.hpp"; sourceTree = "<group>"; };
 		4584F4241FD12CED0062B93E /* door body.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "door body.json"; sourceTree = "<group>"; };
 		4584F4251FD12CEE0062B93E /* button body.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "button body.json"; sourceTree = "<group>"; };
 		4584F4261FD12CEE0062B93E /* level 4.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 4.jsonnet"; sourceTree = "<group>"; };
@@ -1394,8 +1391,6 @@
 			children = (
 				4533A9031FCA93780027B0FB /* dir.cpp */,
 				4533A9041FCA93780027B0FB /* dir.hpp */,
-				4584F4211FD105940062B93E /* event helper.cpp */,
-				4584F4221FD105940062B93E /* event helper.hpp */,
 				4584F4401FD130F50062B93E /* json helper.cpp */,
 				4584F4411FD130F50062B93E /* json helper.hpp */,
 			);
@@ -1758,7 +1753,6 @@
 				4533A8BD1FC90EF50027B0FB /* take key system.cpp in Sources */,
 				4533A8BA1FC90C390027B0FB /* player keys component.cpp in Sources */,
 				4533A8FE1FCA69440027B0FB /* game screen.cpp in Sources */,
-				4584F4231FD105940062B93E /* event helper.cpp in Sources */,
 				4591F0801FC011E50075000D /* exit system.cpp in Sources */,
 				452E10891FB2D27D0063114B /* collision pairs.cpp in Sources */,
 				4583EE851FB1967700AED27D /* app.cpp in Sources */,

@@ -10,15 +10,14 @@
 
 #include "systems.hpp"
 #include "json helper.hpp"
-#include "event helper.hpp"
 #include "global flags.hpp"
-#include <SDL2/SDL_render.h>
 #include "entity id map.hpp"
 #include "screen manager.hpp"
 #include "component inits.hpp"
 #include "camera constants.hpp"
 #include "rendering system.hpp"
 #include <Simpleton/SDL/paths.hpp>
+#include <Simpleton/SDL/events.hpp>
 #include <Simpleton/Utils/member function.hpp>
 #include <Simpleton/Camera 2D/zoom to fit.hpp>
 #include <Simpleton/Camera 2D/constant speed.hpp>
@@ -176,7 +175,7 @@ void GameScreen::addListener(const Listener listener) {
 }
 
 bool GameScreen::reloadKey(const SDL_Event &e) {
-  if (keyDown(e, SDL_SCANCODE_R)) {
+  if (SDL::keyDown(e, SDL_SCANCODE_R)) {
     reloadLevel();
     return true;
   }
@@ -184,7 +183,7 @@ bool GameScreen::reloadKey(const SDL_Event &e) {
 }
 
 bool GameScreen::quitKey(const SDL_Event &e) {
-  if (keyDown(e, SDL_SCANCODE_Q)) {
+  if (SDL::keyDown(e, SDL_SCANCODE_Q)) {
     quitGame = true;
     return true;
   }
@@ -196,10 +195,10 @@ bool GameScreen::playerInputKey(const SDL_Event &e) {
 }
 
 bool GameScreen::toggleGotoLevelKey(const SDL_Event &e) {
-  if (keyDown(e, SDL_SCANCODE_L)) {
+  if (SDL::keyDown(e, SDL_SCANCODE_L)) {
     choosingLevel = true;
     return true;
-  } else if (keyUp(e, SDL_SCANCODE_L)) {
+  } else if (SDL::keyUp(e, SDL_SCANCODE_L)) {
     choosingLevel = false;
     if (!enteredLevel.empty()) {
       if (progress.hasCompleted(enteredLevel.get())) {
@@ -215,11 +214,11 @@ bool GameScreen::toggleGotoLevelKey(const SDL_Event &e) {
 }
 
 bool GameScreen::typeLevelNumberKey(const SDL_Event &e) {
-  if (keyDown(e)) {
+  if (SDL::keyDown(e)) {
     if (!choosingLevel) {
       return false;
     }
-    const SDL_Scancode code = keyCode(e);
+    const SDL_Scancode code = SDL::keyCode(e.key);
     //Why did they put SDL_SCANCODE_0 after SDL_SCANCODE_9?
     if (SDL_SCANCODE_1 <= code && code <= SDL_SCANCODE_9) {
       enteredLevel.push(code - SDL_SCANCODE_1 + 1);
@@ -233,7 +232,7 @@ bool GameScreen::typeLevelNumberKey(const SDL_Event &e) {
 }
 
 bool GameScreen::nextLevelKey(const SDL_Event &e) {
-  if (keyDown(e, SDL_SCANCODE_N)) {
+  if (SDL::keyDown(e, SDL_SCANCODE_N)) {
     const Level current = levels.getLoaded();
     if (current == LevelManager::NONE_LOADED) {
       loadLevel(0);
@@ -246,7 +245,7 @@ bool GameScreen::nextLevelKey(const SDL_Event &e) {
 }
 
 bool GameScreen::prevLevelKey(const SDL_Event &e) {
-  if (keyDown(e, SDL_SCANCODE_B)) {
+  if (SDL::keyDown(e, SDL_SCANCODE_B)) {
     const Level current = levels.getLoaded();
     if (current == LevelManager::NONE_LOADED) {
       // progress.getIncompleteLevel() returns the total number of levels when
