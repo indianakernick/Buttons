@@ -13,8 +13,8 @@ void CollisionPairs::addPair(const CollisionPair pair) {
 }
 
 void CollisionPairs::remPair(const CollisionPair pair) {
-  const auto iter = std::find(pairs.begin(), pairs.end(), sort(pair));
-  if (iter != pairs.end()) {
+  const auto iter = std::find(pairs.cbegin(), pairs.cend(), sort(pair));
+  if (iter != pairs.cend()) {
     pairs.erase(iter);
   }
 }

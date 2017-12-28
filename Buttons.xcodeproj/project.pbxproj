@@ -11,7 +11,6 @@
 		450ED5C61FB69ED3008F2902 /* player input system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5C41FB69ED3008F2902 /* player input system.cpp */; };
 		450ED5D11FB6AB96008F2902 /* player movement system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5CF1FB6AB96008F2902 /* player movement system.cpp */; };
 		450ED5D41FB6AC6E008F2902 /* player jump component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5D21FB6AC6E008F2902 /* player jump component.cpp */; };
-		450ED5D71FB6B0A0008F2902 /* limit velocity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5D51FB6B0A0008F2902 /* limit velocity.cpp */; };
 		450ED5EC1FB7C052008F2902 /* button component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5EA1FB7C052008F2902 /* button component.cpp */; };
 		450ED5F51FB7C945008F2902 /* debug draw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5F31FB7C945008F2902 /* debug draw.cpp */; };
 		450ED5FE1FB7DDA5008F2902 /* activation system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5FC1FB7DDA5008F2902 /* activation system.cpp */; };
@@ -173,8 +172,6 @@
 		450ED5D01FB6AB96008F2902 /* player movement system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "player movement system.hpp"; sourceTree = "<group>"; };
 		450ED5D21FB6AC6E008F2902 /* player jump component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "player jump component.cpp"; sourceTree = "<group>"; };
 		450ED5D31FB6AC6E008F2902 /* player jump component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "player jump component.hpp"; sourceTree = "<group>"; };
-		450ED5D51FB6B0A0008F2902 /* limit velocity.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "limit velocity.cpp"; sourceTree = "<group>"; };
-		450ED5D61FB6B0A0008F2902 /* limit velocity.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "limit velocity.hpp"; sourceTree = "<group>"; };
 		450ED5EA1FB7C052008F2902 /* button component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "button component.cpp"; sourceTree = "<group>"; };
 		450ED5EB1FB7C052008F2902 /* button component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "button component.hpp"; sourceTree = "<group>"; };
 		450ED5F31FB7C945008F2902 /* debug draw.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "debug draw.cpp"; sourceTree = "<group>"; };
@@ -1506,8 +1503,6 @@
 				4583EE911FB19DE600AED27D /* collision categories.hpp */,
 				452E10871FB2D27D0063114B /* collision pairs.cpp */,
 				452E10881FB2D27D0063114B /* collision pairs.hpp */,
-				450ED5D51FB6B0A0008F2902 /* limit velocity.cpp */,
-				450ED5D61FB6B0A0008F2902 /* limit velocity.hpp */,
 				450ED5F31FB7C945008F2902 /* debug draw.cpp */,
 				450ED5F41FB7C945008F2902 /* debug draw.hpp */,
 				4584F4471FD13BA30062B93E /* physics file.cpp */,
@@ -1752,7 +1747,6 @@
 				450ED5D11FB6AB96008F2902 /* player movement system.cpp in Sources */,
 				450ED6211FB80CB4008F2902 /* switch system.cpp in Sources */,
 				450ED5D41FB6AC6E008F2902 /* player jump component.cpp in Sources */,
-				450ED5D71FB6B0A0008F2902 /* limit velocity.cpp in Sources */,
 				4583EE071FB18F7A00AED27D /* b2Body.cpp in Sources */,
 				4597961E1FB41C0C007A7432 /* power component.cpp in Sources */,
 				4583EE081FB18F7A00AED27D /* b2World.cpp in Sources */,

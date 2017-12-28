@@ -9,11 +9,11 @@
 #include "player movement system.hpp"
 
 #include "object types.hpp"
-#include "limit velocity.hpp"
 #include "physics component.hpp"
 #include "collision component.hpp"
 #include "player jump component.hpp"
 #include "player input component.hpp"
+#include <Simpleton/Box2D/limit velocity.hpp>
 
 namespace {
   constexpr float MOVE_FORCE = 100.0f;
@@ -47,7 +47,7 @@ void playerMovementSystem(ECS::Registry &registry, const float delta) {
     }
     
     //@TODO this should happen after the physics world is stepped, not before
-    body->SetLinearVelocity(limitVelX(body->GetLinearVelocity(), {0.0f, 0.0f}, MAX_MOVE_VEL));
+    body->SetLinearVelocity(B2::limitVelX(body->GetLinearVelocity(), {0.0f, 0.0f}, MAX_MOVE_VEL));
     
     PlayerJump &jump = view.get<PlayerJump>(entity);
     if (input.jump) {
