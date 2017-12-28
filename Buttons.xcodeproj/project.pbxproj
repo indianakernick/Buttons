@@ -478,7 +478,6 @@
 		4583EDFF1FB18EFF00AED27D /* b2Collision.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = b2Collision.cpp; sourceTree = "<group>"; };
 		4583EE421FB1906D00AED27D /* rendering context.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "rendering context.cpp"; sourceTree = "<group>"; };
 		4583EE461FB1906E00AED27D /* rendering context.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "rendering context.hpp"; sourceTree = "<group>"; };
-		4583EE6D1FB190BE00AED27D /* b2 glm cast.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "b2 glm cast.hpp"; sourceTree = "<group>"; };
 		4583EE831FB1967700AED27D /* app.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = app.cpp; sourceTree = "<group>"; };
 		4583EE841FB1967700AED27D /* app.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = app.hpp; sourceTree = "<group>"; };
 		4583EE861FB1978500AED27D /* physics component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "physics component.hpp"; sourceTree = "<group>"; };
@@ -1393,7 +1392,6 @@
 		4583EE5D1FB190AC00AED27D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				4583EE6D1FB190BE00AED27D /* b2 glm cast.hpp */,
 				4533A9031FCA93780027B0FB /* dir.cpp */,
 				4533A9041FCA93780027B0FB /* dir.hpp */,
 				4584F4211FD105940062B93E /* event helper.cpp */,
@@ -2004,6 +2002,7 @@
 					/usr/local/Cellar/sdl2/2.0.7/include/,
 					/usr/local/include/,
 					/usr/local/Cellar/nlohmann_json/3.0.0/include,
+					$PROJECT_DIR/Buttons/Libraries,
 				);
 				INFOPLIST_FILE = Buttons/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -2046,6 +2045,7 @@
 					/usr/local/Cellar/sdl2/2.0.7/include/,
 					/usr/local/include/,
 					/usr/local/Cellar/nlohmann_json/3.0.0/include,
+					$PROJECT_DIR/Buttons/Libraries,
 				);
 				INFOPLIST_FILE = Buttons/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";

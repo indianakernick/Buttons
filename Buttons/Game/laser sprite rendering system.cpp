@@ -8,8 +8,8 @@
 
 #include "laser sprite rendering system.hpp"
 
-#include "b2 glm cast.hpp"
 #include "physics component.hpp"
+#include <Simpleton/Box2D/glm.hpp>
 #include "activation component.hpp"
 #include "laser rendering component.hpp"
 
@@ -43,8 +43,8 @@ void writeLaserSprites(
     if (isActive(view.get<Activation>(entity).state)) {
       const float depth = view.get<LaserRendering>(entity).depth;
       const PhysicsRayCast &rayCast = view.get<PhysicsRayCast>(entity);
-      const glm::vec2 start = castToGLM(rayCast.start);
-      const glm::vec2 startToEnd = (castToGLM(rayCast.end) - start);
+      const glm::vec2 start = B2::cast(rayCast.start);
+      const glm::vec2 startToEnd = (B2::cast(rayCast.end) - start);
       const glm::vec2 end = startToEnd * rayCast.closestFraction + start;
       const glm::vec2 toTopLeft = 0.5f * glm::normalize(perp(startToEnd));
       

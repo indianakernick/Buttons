@@ -8,8 +8,8 @@
 
 #include "physics transform system.hpp"
 
-#include "b2 glm cast.hpp"
 #include "physics component.hpp"
+#include <Simpleton/Box2D/glm.hpp>
 #include "transform component.hpp"
 
 void physicsTransformSystem(Registry &registry) {
@@ -18,7 +18,7 @@ void physicsTransformSystem(Registry &registry) {
     const PhysicsBody &physics = view.get<PhysicsBody>(entity);
     b2Body *const body = physics.body;
     Transform &transform = view.get<Transform>(entity);
-    transform.pos = castToGLM(body->GetPosition());
+    transform.pos = B2::cast(body->GetPosition());
     transform.scale = physics.scale;
     transform.rotation = body->GetAngle();
   }

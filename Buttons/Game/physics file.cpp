@@ -9,8 +9,8 @@
 #include "physics file.hpp"
 
 #include <fstream>
-#include "b2 glm cast.hpp"
 #include "object types.hpp"
+#include <Simpleton/Box2D/glm.hpp>
 #include <Simpleton/SDL/paths.hpp>
 #include "collision categories.hpp"
 
@@ -210,8 +210,8 @@ b2Body *loadBody(
   
   const b2BodyDef bodyDef = readBodyDef(rootNode.at("body"));
   b2Body *body = world.CreateBody(&bodyDef);
-  body->SetTransform(castToB2(transform.pos), transform.rotation);
-  readFixtures(body, rootNode.at("fixtures"), castToB2(transform.scale));
+  body->SetTransform(B2::cast(transform.pos), transform.rotation);
+  readFixtures(body, rootNode.at("fixtures"), B2::cast(transform.scale));
   
   return body;
 }

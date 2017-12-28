@@ -11,6 +11,7 @@
 
 #include <json.hpp>
 #include <glm/vec2.hpp>
+#include <Box2D/Common/b2Math.h>
 
 using nlohmann::json;
 
