@@ -10,9 +10,9 @@
 #define contact_listener_hpp
 
 #include <functional>
-#include "entity id.hpp"
 #include "collision pairs.hpp"
-#include "../Libraries/Box2D/Dynamics/b2WorldCallbacks.h"
+#include <Simpleton/ECS/registry.hpp>
+#include <Box2D/Dynamics/b2WorldCallbacks.h>
 
 class ContactListener final : public b2ContactListener {
 public:

@@ -12,11 +12,11 @@
 #include "door component.hpp"
 #include "physics component.hpp"
 #include "activation component.hpp"
-#include "../Libraries/Box2D/Dynamics/b2Fixture.h"
+#include <Box2D/Dynamics/b2Fixture.h>
 
-void doorSystem(Registry &registry) {
+void doorSystem(ECS::Registry &registry) {
   auto view = registry.view<Door, PhysicsBody, Activation>();
-  for (const EntityID entity : view) {
+  for (const ECS::EntityID entity : view) {
     const bool active = isActive(view.get<Activation>(entity).state);
     b2Body *const body = view.get<PhysicsBody>(entity).body;
     b2Fixture *const fixture = body->GetFixtureList();

@@ -9,8 +9,8 @@
 #ifndef activate_lock_system_hpp
 #define activate_lock_system_hpp
 
-#include "entity registry.hpp"
+#include <Simpleton/ECS/registry.hpp>
 
-void activateLockSystem(Registry &);
+void activateLockSystem(ECS::Registry &);
 
 #endif

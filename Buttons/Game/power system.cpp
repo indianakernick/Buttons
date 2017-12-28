@@ -49,17 +49,17 @@ namespace {
   }
 }
 
-void powerSystem(Registry &registry) {
+void powerSystem(ECS::Registry &registry) {
   static std::vector<bool> inputs;
 
   const auto powerOutput = registry.view<PowerOutput>();
   auto powerInput = registry.view<PowerInput>();
   
-  for (const EntityID entity : powerInput) {
+  for (const ECS::EntityID entity : powerInput) {
     PowerInput &input = powerInput.get(entity);
     if (!input.inputs.empty()) {
       inputs.clear();
-      for (const EntityID in : input.inputs) {
+      for (const ECS::EntityID in : input.inputs) {
         inputs.push_back(powerOutput.get(in).on);
       }
       input.on = logic(input.op, inputs);

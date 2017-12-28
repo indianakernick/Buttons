@@ -11,7 +11,7 @@
 
 #include <vector>
 #include "json helper.hpp"
-#include "entity registry.hpp"
+#include <Simpleton/ECS/registry.hpp>
 
 using UserID = int;
 constexpr UserID NULL_USER_ID = std::numeric_limits<UserID>::min();
@@ -20,12 +20,12 @@ class EntityIDmap {
 public:
   EntityIDmap() = default;
   
-  void insertIDs(const json &, Registry &);
-  EntityID getEntityFromUserID(UserID) const;
-  EntityID getEntityFromIndex(size_t) const;
+  void insertIDs(const json &, ECS::Registry &);
+  ECS::EntityID getEntityFromUserID(UserID) const;
+  ECS::EntityID getEntityFromIndex(size_t) const;
 
 private:
-  std::vector<std::pair<UserID, EntityID>> map;
+  std::vector<std::pair<UserID, ECS::EntityID>> map;
 };
 
 #endif

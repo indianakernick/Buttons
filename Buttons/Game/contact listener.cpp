@@ -10,7 +10,7 @@
 
 #include <utility>
 #include "physics body entity id.hpp"
-#include "../Libraries/Box2D/Dynamics/Contacts/b2Contact.h"
+#include <Box2D/Dynamics/Contacts/b2Contact.h>
 
 namespace {
   ObjectTypePair getTypePair(b2Contact *const contact) {

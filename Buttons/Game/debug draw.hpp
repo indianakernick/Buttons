@@ -9,7 +9,7 @@
 #ifndef debug_draw_hpp
 #define debug_draw_hpp
 
-#include "../Libraries/Box2D/Common/b2Draw.h"
+#include <Box2D/Common/b2Draw.h>
 
 class DebugDraw final : public b2Draw {
 public:

@@ -11,9 +11,9 @@
 #include "exit component.hpp"
 #include "collision component.hpp"
 
-bool exitSystem(Registry &registry) {
+bool exitSystem(ECS::Registry &registry) {
   const auto view = registry.view<Exit, Collision>();
-  for (const EntityID entity : view) {
+  for (const ECS::EntityID entity : view) {
     const CollisionPairs &pairs = view.get<Collision>(entity).collisionPairs;
     if (pairs.hasPair<ObjectType::Sensor, ObjectType::PlayerBody>()) {
       return true;

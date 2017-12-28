@@ -9,9 +9,9 @@
 #ifndef power_input_activation_system_hpp
 #define power_input_activation_system_hpp
 
-#include "entity registry.hpp"
+#include <Simpleton/ECS/registry.hpp>
 
 ///Activates an entity when it is receiving input. (Laser, Door, Moving Platform)
-void powerInputActivationSystem(Registry &);
+void powerInputActivationSystem(ECS::Registry &);
 
 #endif

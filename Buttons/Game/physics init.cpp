@@ -13,7 +13,7 @@
 #include "transform init.hpp"
 #include <glm/trigonometric.hpp>
 #include "physics body entity id.hpp"
-#include "../Libraries/Box2D/Dynamics/b2World.h"
+#include <Box2D/Dynamics/b2World.h>
 
 PhysicsBodyInit::PhysicsBodyInit(b2World *const world)
   : world(world) {
@@ -24,7 +24,7 @@ void PhysicsBodyInit::init(
   PhysicsBody &comp,
   const json &node,
   const EntityIDmap &,
-  const EntityID entity
+  const ECS::EntityID entity
 ) {
   Transform transform;
   TransformInit transformInit;
@@ -34,16 +34,16 @@ void PhysicsBodyInit::init(
   comp.scale = transform.scale;
 }
 
-PhysicsJointInit::PhysicsJointInit(b2World *const world, Registry *const registry)
+PhysicsJointInit::PhysicsJointInit(b2World *const world, ECS::Registry *const registry)
   : world(world), registry(registry) {
   assert(world);
   assert(registry);
 }
 
 namespace {
-  b2Body *getBody(const json &node, const EntityIDmap &idMap, Registry *registry) {
+  b2Body *getBody(const json &node, const EntityIDmap &idMap, ECS::Registry *registry) {
     const UserID bodyAuserID = node.get<UserID>();
-    const EntityID bodyAentityID = idMap.getEntityFromUserID(bodyAuserID);
+    const ECS::EntityID bodyAentityID = idMap.getEntityFromUserID(bodyAuserID);
     return registry->get<PhysicsBody>(bodyAentityID).body;
   }
 }
@@ -52,7 +52,7 @@ void PhysicsJointInit::init(
   PhysicsJoint &comp,
   const json &node,
   const EntityIDmap &idMap,
-  const EntityID entity
+  const ECS::EntityID entity
 ) {
   //read the joint file
   b2JointDef *const def = loadJoint(node.at("joint").get<std::string>());

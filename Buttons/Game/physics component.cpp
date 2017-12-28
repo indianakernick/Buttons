@@ -8,7 +8,7 @@
 
 #include "physics component.hpp"
 
-#include "../Libraries/Box2D/Dynamics/b2World.h"
+#include <Box2D/Dynamics/b2World.h>
 
 PhysicsBody::PhysicsBody(PhysicsBody &&other)
   : body(std::exchange(other.body, nullptr)), scale(other.scale) {}

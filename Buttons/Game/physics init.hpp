@@ -10,14 +10,14 @@
 #define physics_init_hpp
 
 #include "comp init.hpp"
-#include "entity registry.hpp"
 #include "physics component.hpp"
+#include <Simpleton/ECS/registry.hpp>
 
 class PhysicsBodyInit final : public CompInit<PhysicsBody> {
 public:
   explicit PhysicsBodyInit(b2World *);
   
-  void init(PhysicsBody &, const json &, const EntityIDmap &, EntityID) override;
+  void init(PhysicsBody &, const json &, const EntityIDmap &, ECS::EntityID) override;
 
 private:
   b2World *world;
@@ -25,13 +25,13 @@ private:
 
 class PhysicsJointInit final : public CompInit<PhysicsJoint> {
 public:
-  PhysicsJointInit(b2World *, Registry *);
+  PhysicsJointInit(b2World *, ECS::Registry *);
   
-  void init(PhysicsJoint &, const json &, const EntityIDmap &, EntityID) override;
+  void init(PhysicsJoint &, const json &, const EntityIDmap &, ECS::EntityID) override;
 
 private:
   b2World *world;
-  Registry *registry;
+  ECS::Registry *registry;
 };
 
 class PhysicsRayCastInit final : public CompInit<PhysicsRayCast> {

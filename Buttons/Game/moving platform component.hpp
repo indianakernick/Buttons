@@ -9,7 +9,7 @@
 #ifndef moving_platform_component_hpp
 #define moving_platform_component_hpp
 
-#include "../Libraries/Box2D/Common/b2Math.h"
+#include <Box2D/Common/b2Math.h>
 
 struct MovingPlatform {
   static constexpr float PISTON = std::numeric_limits<float>::max();

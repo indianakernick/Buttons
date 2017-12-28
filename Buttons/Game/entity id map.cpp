@@ -10,7 +10,7 @@
 
 #include <cassert>
 
-void EntityIDmap::insertIDs(const json &root, Registry &registry) {
+void EntityIDmap::insertIDs(const json &root, ECS::Registry &registry) {
   assert(map.empty());
   map.resize(root.size());
   
@@ -32,14 +32,14 @@ void EntityIDmap::insertIDs(const json &root, Registry &registry) {
   }
 }
 
-EntityID EntityIDmap::getEntityFromIndex(const size_t i) const {
+ECS::EntityID EntityIDmap::getEntityFromIndex(const size_t i) const {
   if (i < map.size()) {
     return map[i].second;
   }
   throw std::runtime_error("Invalid index");
 }
 
-EntityID EntityIDmap::getEntityFromUserID(const UserID id) const {
+ECS::EntityID EntityIDmap::getEntityFromUserID(const UserID id) const {
   for (auto &pair : map) {
     if (pair.first == id) {
       return pair.second;

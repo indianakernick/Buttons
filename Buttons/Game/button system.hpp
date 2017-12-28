@@ -9,9 +9,9 @@
 #ifndef button_system_hpp
 #define button_system_hpp
 
-#include "entity registry.hpp"
+#include <Simpleton/ECS/registry.hpp>
 
 ///Activates an entity when a button base is colliding with a button top. (Button base)
-void buttonSystem(Registry &);
+void buttonSystem(ECS::Registry &);
 
 #endif

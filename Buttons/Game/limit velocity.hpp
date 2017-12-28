@@ -9,7 +9,7 @@
 #ifndef limit_velocity_hpp
 #define limit_velocity_hpp
 
-#include "../Libraries/Box2D/Common/b2Math.h"
+#include <Box2D/Common/b2Math.h>
 
 b2Vec2 limitVel(b2Vec2 vel, b2Vec2 groundVel, b2Vec2 maxSpeed);
 b2Vec2 limitVel(b2Vec2 vel, b2Vec2 groundVel, float maxSpeed);

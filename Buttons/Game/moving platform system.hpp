@@ -9,8 +9,8 @@
 #ifndef moving_platform_system_hpp
 #define moving_platform_system_hpp
 
-#include "entity registry.hpp"
+#include <Simpleton/ECS/registry.hpp>
 
-void movingPlatformSystem(Registry &, float);
+void movingPlatformSystem(ECS::Registry &, float);
 
 #endif

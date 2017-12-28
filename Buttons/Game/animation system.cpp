@@ -11,10 +11,10 @@
 #include "animation component.hpp"
 #include <Simpleton/Time/progress speed anim.hpp>
 
-void animationSystem(Registry &registry, const float delta) {
+void animationSystem(ECS::Registry &registry, const float delta) {
   auto view = registry.view<Animation>();
   
-  for (const EntityID entity : view) {
+  for (const ECS::EntityID entity : view) {
     using Edge = Animation::EdgeMode;
     
     Animation &comp = view.get(entity);

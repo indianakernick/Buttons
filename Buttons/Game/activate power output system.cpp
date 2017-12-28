@@ -11,9 +11,9 @@
 #include "power component.hpp"
 #include "activation component.hpp"
 
-void activatePowerOutputSystem(Registry &registry) {
+void activatePowerOutputSystem(ECS::Registry &registry) {
   auto view = registry.view<PowerOutput, Activation>();
-  for (const EntityID entity : view) {
+  for (const ECS::EntityID entity : view) {
     view.get<PowerOutput>(entity).on = isActive(view.get<Activation>(entity).state);
   }
 }

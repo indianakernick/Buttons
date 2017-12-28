@@ -9,10 +9,10 @@
 #ifndef anim_sprite_rendering_system_hpp
 #define anim_sprite_rendering_system_hpp
 
-#include "entity registry.hpp"
 #include "rendering helpers.hpp"
+#include <Simpleton/ECS/registry.hpp>
 
-size_t countAnimSprites(Registry &);
-void writeAnimSprites(Registry &, const Spritesheet &, QuadIter &);
+size_t countAnimSprites(ECS::Registry &);
+void writeAnimSprites(ECS::Registry &, const Spritesheet &, QuadIter &);
 
 #endif

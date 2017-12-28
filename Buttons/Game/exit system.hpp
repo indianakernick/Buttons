@@ -9,8 +9,8 @@
 #ifndef exit_system_hpp
 #define exit_system_hpp
 
-#include "entity registry.hpp"
+#include <Simpleton/ECS/registry.hpp>
 
-bool exitSystem(Registry &);
+bool exitSystem(ECS::Registry &);
 
 #endif

@@ -13,9 +13,9 @@
 #include "comp inits.hpp"
 #include "level manager.hpp"
 #include "physics system.hpp"
-#include "entity registry.hpp"
 #include "input dispatcher.hpp"
 #include "progress manager.hpp"
+#include <Simpleton/ECS/registry.hpp>
 #include <Simpleton/Math/digit stack.hpp>
 #include <Simpleton/Camera 2D/camera.hpp>
 
@@ -36,7 +36,7 @@ public:
   void resetProgress();
 
 private:
-  Registry registry;
+  ECS::Registry registry;
   PhysicsSystem physics;
   RenderingSystem *rendering;
   CompInits compInits;

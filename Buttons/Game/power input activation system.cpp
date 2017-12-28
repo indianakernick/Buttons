@@ -11,9 +11,9 @@
 #include "power component.hpp"
 #include "activation component.hpp"
 
-void powerInputActivationSystem(Registry &registry) {
+void powerInputActivationSystem(ECS::Registry &registry) {
   auto singleInput = registry.view<Activation, PowerInput>();
-  for (const EntityID entity : singleInput) {
+  for (const ECS::EntityID entity : singleInput) {
     Activation::State &state = singleInput.get<Activation>(entity).state;
     if (singleInput.get<PowerInput>(entity).on) {
       activate(state);

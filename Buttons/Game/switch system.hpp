@@ -9,8 +9,8 @@
 #ifndef switch_system_hpp
 #define switch_system_hpp
 
-#include "entity registry.hpp"
+#include <Simpleton/ECS/registry.hpp>
 
-void switchSystem(Registry &);
+void switchSystem(ECS::Registry &);
 
 #endif

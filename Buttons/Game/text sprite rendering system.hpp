@@ -9,10 +9,10 @@
 #ifndef text_sprite_rendering_system_hpp
 #define text_sprite_rendering_system_hpp
 
-#include "entity registry.hpp"
 #include "rendering helpers.hpp"
+#include <Simpleton/ECS/registry.hpp>
 
-size_t countTextSprites(Registry &);
-void writeTextSprites(Registry &, const Spritesheet &, QuadIter &);
+size_t countTextSprites(ECS::Registry &);
+void writeTextSprites(ECS::Registry &, const Spritesheet &, QuadIter &);
 
 #endif

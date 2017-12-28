@@ -23,12 +23,12 @@ namespace {
   }
 }
 
-size_t countLaserSprites(Registry &registry) {
+size_t countLaserSprites(ECS::Registry &registry) {
   return registry.view<LaserRendering>().size();
 }
 
 void writeLaserSprites(
-  Registry &registry,
+  ECS::Registry &registry,
   const Spritesheet &sheet,
   QuadIter &quadIter
 ) {
@@ -37,7 +37,7 @@ void writeLaserSprites(
   
   const auto view = registry.view<LaserRendering, PhysicsRayCast, Activation>();
   
-  for (const EntityID entity : view) {
+  for (const ECS::EntityID entity : view) {
     Quad &quad = *quadIter;
     
     if (isActive(view.get<Activation>(entity).state)) {

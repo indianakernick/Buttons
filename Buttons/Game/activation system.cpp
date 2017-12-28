@@ -10,9 +10,9 @@
 
 #include "activation component.hpp"
 
-void activationSystem(Registry &registry, const float delta) {
+void activationSystem(ECS::Registry &registry, const float delta) {
   auto view = registry.view<Activation>();
-  for (const EntityID entity : view) {
+  for (const ECS::EntityID entity : view) {
     Activation &comp = view.get(entity);
     if (comp.state == Activation::State::ACTIVATING) {
       comp.activity = std::min(comp.activity + comp.speed * delta, 1.0f);

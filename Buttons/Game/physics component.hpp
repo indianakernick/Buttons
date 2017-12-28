@@ -10,9 +10,9 @@
 #define physics_body_component_hpp
 
 #include <glm/vec2.hpp>
-#include "entity registry.hpp"
-#include "../Libraries/Box2D/Dynamics/b2Body.h"
-#include "../Libraries/Box2D/Dynamics/Joints/b2Joint.h"
+#include <Simpleton/ECS/registry.hpp>
+#include <Box2D/Dynamics/b2Body.h>
+#include <Box2D/Dynamics/Joints/b2Joint.h>
 
 struct PhysicsBody {
   PhysicsBody() = default;

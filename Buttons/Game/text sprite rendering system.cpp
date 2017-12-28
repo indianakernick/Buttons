@@ -13,10 +13,10 @@
 #include <glm/gtx/matrix_transform_2d.hpp>
 #include "text rendering component.hpp"
 
-size_t countTextSprites(Registry &registry) {
+size_t countTextSprites(ECS::Registry &registry) {
   const auto view = registry.view<Text>();
   size_t count = 0;
-  for (const EntityID entity : view) {
+  for (const ECS::EntityID entity : view) {
     count += view.get(entity).indicies.size();
   }
   return count;
@@ -54,13 +54,13 @@ namespace {
 }
 
 void writeTextSprites(
-  Registry &registry,
+  ECS::Registry &registry,
   const Spritesheet &sheet,
   QuadIter &quadIter
 ) {
   const auto view = registry.view<Text, TextRendering, Transform>();
   
-  for (const EntityID entity : view) {
+  for (const ECS::EntityID entity : view) {
     writeTextSprite(
       view.get<Text>(entity).indicies,
       getMat3(view.get<Transform>(entity)),

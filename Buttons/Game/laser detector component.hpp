@@ -9,10 +9,10 @@
 #ifndef laser_detector_component_hpp
 #define laser_detector_component_hpp
 
-#include "entity id.hpp"
+#include <Simpleton/ECS/registry.hpp>
 
 struct LaserDetector {
-  EntityID emitter;
+  ECS::EntityID emitter;
 };
 
 #endif

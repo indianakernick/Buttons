@@ -9,10 +9,10 @@
 #ifndef player_input_system_hpp
 #define player_input_system_hpp
 
-#include "entity registry.hpp"
+#include <Simpleton/ECS/registry.hpp>
 
 extern "C" union SDL_Event;
 
-bool playerInputSystem(Registry &, const SDL_Event &);
+bool playerInputSystem(ECS::Registry &, const SDL_Event &);
 
 #endif

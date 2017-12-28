@@ -9,9 +9,9 @@
 #ifndef physics_transform_system_hpp
 #define physics_transform_system_hpp
 
-#include "entity registry.hpp"
+#include <Simpleton/ECS/registry.hpp>
 
 ///Copy physics body transform into transform component
-void physicsTransformSystem(Registry &);
+void physicsTransformSystem(ECS::Registry &);
 
 #endif

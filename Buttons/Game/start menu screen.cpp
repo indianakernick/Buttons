@@ -27,7 +27,7 @@ void StartMenuScreen::init(RenderingSystem &renderingSystem) {
   camera.transform.setOrigin(Cam2D::Origin::CENTER);
   camera.targetZoom = std::make_unique<Cam2D::ZoomToFit>(scale);
   
-  const EntityID entity = registry.create();
+  const ECS::EntityID entity = registry.create();
   Animation &anim = registry.assign<Animation>(entity);
   anim.speed = 30.0f / 96.0f;
   AnimSpriteRendering &sprite = registry.assign<AnimSpriteRendering>(entity);

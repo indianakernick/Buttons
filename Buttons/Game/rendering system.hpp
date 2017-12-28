@@ -9,8 +9,8 @@
 #ifndef rendering_system_hpp
 #define rendering_system_hpp
 
-#include "entity registry.hpp"
 #include "rendering helpers.hpp"
+#include <Simpleton/ECS/registry.hpp>
 #include <Simpleton/OpenGL/buffer.hpp>
 #include <Simpleton/OpenGL/texture.hpp>
 #include <Simpleton/OpenGL/vertex array.hpp>
@@ -22,8 +22,8 @@ public:
   void quit();
   
   const Unpack::Spritesheet &getSheet() const;
-  void onLevelLoad(Registry &);
-  void render(Registry &, const glm::mat3 &);
+  void onLevelLoad(ECS::Registry &);
+  void render(ECS::Registry &, const glm::mat3 &);
 
 private:
   Spritesheet sheet;

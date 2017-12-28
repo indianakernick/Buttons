@@ -9,10 +9,10 @@
 #ifndef static_sprite_rendering_system_hpp
 #define static_sprite_rendering_system_hpp
 
-#include "entity registry.hpp"
 #include "rendering helpers.hpp"
+#include <Simpleton/ECS/registry.hpp>
 
-size_t countStaticSprites(Registry &);
-void writeStaticSprites(Registry &, const Spritesheet &, QuadIter &);
+size_t countStaticSprites(ECS::Registry &);
+void writeStaticSprites(ECS::Registry &, const Spritesheet &, QuadIter &);
 
 #endif

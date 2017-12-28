@@ -12,9 +12,9 @@
 #include <Simpleton/Box2D/glm.hpp>
 #include "transform component.hpp"
 
-void physicsTransformSystem(Registry &registry) {
+void physicsTransformSystem(ECS::Registry &registry) {
   auto view = registry.view<PhysicsBody, Transform>();
-  for (const EntityID entity : view) {
+  for (const ECS::EntityID entity : view) {
     const PhysicsBody &physics = view.get<PhysicsBody>(entity);
     b2Body *const body = physics.body;
     Transform &transform = view.get<Transform>(entity);

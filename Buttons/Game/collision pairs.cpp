@@ -40,10 +40,10 @@ EntityPair CollisionPairs::getPair(const ObjectTypePair type) const {
   }
 }
 
-EntityID CollisionPairs::getHalfPair(const ObjectTypeID type) const {
+ECS::EntityID CollisionPairs::getHalfPair(const ObjectTypeID type) const {
   const auto iter = find(type);
   if (iter == pairs.cend()) {
-    return NULL_ENTITY;
+    return ECS::NULL_ENTITY;
   } else {
     if (iter->type.first == type) {
       return iter->entity.first;

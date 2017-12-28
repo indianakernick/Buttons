@@ -10,7 +10,7 @@
 #define power_component_hpp
 
 #include <vector>
-#include "entity id.hpp"
+#include <Simpleton/ECS/registry.hpp>
 
 struct PowerInput {
   enum class LogicOp {
@@ -24,7 +24,7 @@ struct PowerInput {
     IDENTITY
   };
 
-  std::vector<EntityID> inputs;
+  std::vector<ECS::EntityID> inputs;
   LogicOp op;
   bool on = false;
 };

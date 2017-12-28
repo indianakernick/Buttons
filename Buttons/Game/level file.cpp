@@ -16,11 +16,11 @@
 
 namespace {
   void loadComps(
-    const EntityID id,
+    const ECS::EntityID id,
     const json &comps,
     const EntityIDmap &idMap,
     const CompInits &compInits,
-    Registry &registry
+    ECS::Registry &registry
   ) {
     auto obj = comps.get_ref<const json::object_t &>();
     for (auto &pair : obj) {
@@ -41,7 +41,7 @@ namespace {
   }
 }
 
-bool loadLevel(const std::string &fileName, const CompInits &compInits, Registry &registry) {
+bool loadLevel(const std::string &fileName, const CompInits &compInits, ECS::Registry &registry) {
   std::ifstream file(SDL::getResDir() + fileName);
   if (!file.is_open()) {
     return false;
@@ -53,7 +53,7 @@ bool loadLevel(const std::string &fileName, const CompInits &compInits, Registry
   idMap.insertIDs(root, registry);
   
   for (size_t i = 0; i != root.size(); ++i) {
-    const EntityID id = idMap.getEntityFromIndex(i);
+    const ECS::EntityID id = idMap.getEntityFromIndex(i);
     const json &node = root[i];
     
     if (const auto compsNode = node.find("components"); compsNode != node.cend()) {

@@ -9,8 +9,8 @@
 #ifndef laser_detector_system_hpp
 #define laser_detector_system_hpp
 
-#include "entity registry.hpp"
+#include <Simpleton/ECS/registry.hpp>
 
-void laserDetectorSystem(Registry &);
+void laserDetectorSystem(ECS::Registry &);
 
 #endif

@@ -9,8 +9,8 @@
 #ifndef animation_system_hpp
 #define animation_system_hpp
 
-#include "entity registry.hpp"
+#include <Simpleton/ECS/registry.hpp>
 
-void animationSystem(Registry &, float);
+void animationSystem(ECS::Registry &, float);
 
 #endif

@@ -23,8 +23,6 @@ void getOptional(T &dst, const json &node, const char *name) {
   }
 }
 
-struct b2Vec2;
-
 namespace glm {
   void from_json(const json &j, glm::vec2 &);
 }

@@ -9,8 +9,8 @@
 #ifndef activation_system_hpp
 #define activation_system_hpp
 
-#include "entity registry.hpp"
+#include <Simpleton/ECS/registry.hpp>
 
-void activationSystem(Registry &, float);
+void activationSystem(ECS::Registry &, float);
 
 #endif

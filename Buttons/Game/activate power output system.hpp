@@ -9,9 +9,9 @@
 #ifndef activate_power_output_system_hpp
 #define activate_power_output_system_hpp
 
-#include "entity registry.hpp"
+#include <Simpleton/ECS/registry.hpp>
 
 ///Outputs power when the entity is active. (Button, Switch, Laser Sensor)
-void activatePowerOutputSystem(Registry &);
+void activatePowerOutputSystem(ECS::Registry &);
 
 #endif

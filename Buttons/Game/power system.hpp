@@ -9,9 +9,9 @@
 #ifndef power_system_hpp
 #define power_system_hpp
 
-#include "entity registry.hpp"
+#include <Simpleton/ECS/registry.hpp>
 
 ///Moves power from outputs to inputs
-void powerSystem(Registry &);
+void powerSystem(ECS::Registry &);
 
 #endif

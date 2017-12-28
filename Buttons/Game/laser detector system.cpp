@@ -12,11 +12,11 @@
 #include "activation component.hpp"
 #include "laser detector component.hpp"
 
-void laserDetectorSystem(Registry &registry) {
+void laserDetectorSystem(ECS::Registry &registry) {
   auto detectors = registry.view<Activation, LaserDetector>();
   const auto emitters = registry.view<PhysicsRayCast, Activation>();
-  for (const EntityID entity : detectors) {
-    const EntityID emitter = detectors.get<LaserDetector>(entity).emitter;
+  for (const ECS::EntityID entity : detectors) {
+    const ECS::EntityID emitter = detectors.get<LaserDetector>(entity).emitter;
     const float fraction = emitters.get<PhysicsRayCast>(emitter).closestFraction;
     Activation::State &activeState = detectors.get<Activation>(entity).state;
     if (isActive(emitters.get<Activation>(emitter).state) && fraction >= 0.99f) {

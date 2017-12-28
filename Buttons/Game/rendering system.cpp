@@ -75,7 +75,7 @@ const Unpack::Spritesheet &RenderingSystem::getSheet() const {
   return sheet;
 }
 
-void RenderingSystem::onLevelLoad(Registry &registry) {
+void RenderingSystem::onLevelLoad(ECS::Registry &registry) {
   numQuads
   = countStaticSprites(registry)
   + countAnimSprites(registry)
@@ -96,7 +96,7 @@ void RenderingSystem::onLevelLoad(Registry &registry) {
   GL::unbindVertexArray();
 }
 
-void RenderingSystem::render(Registry &registry, const glm::mat3 &viewProj) {
+void RenderingSystem::render(ECS::Registry &registry, const glm::mat3 &viewProj) {
   QuadIter quadIter = quads.begin();
   writeStaticSprites(registry, sheet, quadIter);
   writeAnimSprites(registry, sheet, quadIter);

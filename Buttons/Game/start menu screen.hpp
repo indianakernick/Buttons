@@ -10,7 +10,7 @@
 #define start_menu_screen_hpp
 
 #include "screen.hpp"
-#include "entity registry.hpp"
+#include <Simpleton/ECS/registry.hpp>
 #include <Simpleton/Camera 2D/camera.hpp>
 
 extern "C" union SDL_Event;
@@ -28,7 +28,7 @@ public:
 private:
   Cam2D::Camera camera;
   RenderingSystem *rendering;
-  Registry registry;
+  ECS::Registry registry;
   bool startGame = false;
 };
 

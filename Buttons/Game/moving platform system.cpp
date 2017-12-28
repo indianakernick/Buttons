@@ -127,9 +127,9 @@ namespace {
   }
 }
 
-void movingPlatformSystem(Registry &registry, const float delta) {
+void movingPlatformSystem(ECS::Registry &registry, const float delta) {
   auto view = registry.view<PhysicsBody, Activation, MovingPlatform>();
-  for (const EntityID entity : view) {
+  for (const ECS::EntityID entity : view) {
     MovingPlatform &platform = view.get<MovingPlatform>(entity);
     b2Body *const body = view.get<PhysicsBody>(entity).body;
     const bool active = view.get<Activation>(entity).state == Activation::State::ACTIVE;

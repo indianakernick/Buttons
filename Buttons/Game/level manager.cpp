@@ -11,7 +11,7 @@
 #include <cassert>
 #include "level file.hpp"
 
-void LevelManager::init(Registry &newRegistry, const CompInits &newCompInits) {
+void LevelManager::init(ECS::Registry &newRegistry, const CompInits &newCompInits) {
   assert(!registry);
   registry = &newRegistry;
   compInits = &newCompInits;

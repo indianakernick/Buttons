@@ -9,10 +9,10 @@
 #ifndef laser_sprite_rendering_system_hpp
 #define laser_sprite_rendering_system_hpp
 
-#include "entity registry.hpp"
 #include "rendering helpers.hpp"
+#include <Simpleton/ECS/registry.hpp>
 
-size_t countLaserSprites(Registry &);
-void writeLaserSprites(Registry &, const Spritesheet &, QuadIter &);
+size_t countLaserSprites(ECS::Registry &);
+void writeLaserSprites(ECS::Registry &, const Spritesheet &, QuadIter &);
 
 #endif

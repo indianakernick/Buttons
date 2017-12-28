@@ -13,11 +13,11 @@
 
 namespace {
   #define ASSIGN(MEMBER)                                                        \
-    registry.view<PlayerInput>().each([down] (EntityID, PlayerInput &comp) {    \
+    registry.view<PlayerInput>().each([down] (ECS::EntityID, PlayerInput &comp) {    \
       comp.MEMBER = down;                                                       \
     });
   
-  bool handleKey(Registry &registry, const SDL_Scancode key, const bool down) {
+  bool handleKey(ECS::Registry &registry, const SDL_Scancode key, const bool down) {
     if (key == SDL_SCANCODE_LEFT || key == SDL_SCANCODE_A) {
       ASSIGN(left);
     } else if (key == SDL_SCANCODE_RIGHT || key == SDL_SCANCODE_D) {
@@ -35,7 +35,7 @@ namespace {
   #undef ASSIGN
 }
 
-bool playerInputSystem(Registry &registry, const SDL_Event &event) {
+bool playerInputSystem(ECS::Registry &registry, const SDL_Event &event) {
   if (event.type == SDL_KEYDOWN) {
     return handleKey(registry, event.key.keysym.scancode, true);
   } else if (event.type == SDL_KEYUP) {

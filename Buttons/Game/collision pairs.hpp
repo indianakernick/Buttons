@@ -11,11 +11,11 @@
 
 #include <vector>
 #include <utility>
-#include "entity id.hpp"
 #include "object types.hpp"
+#include <Simpleton/ECS/registry.hpp>
 
 using ObjectTypePair = std::pair<ObjectTypeID, ObjectTypeID>;
-using EntityPair = std::pair<EntityID, EntityID>;
+using EntityPair = std::pair<ECS::EntityID, ECS::EntityID>;
 
 struct CollisionPair {
   ObjectTypePair type;
@@ -26,7 +26,7 @@ inline bool operator==(const CollisionPair left, const CollisionPair right) {
   return left.type == right.type && left.entity == right.entity;
 }
 
-constexpr EntityPair NULL_ENTITY_PAIR = {NULL_ENTITY, NULL_ENTITY};
+constexpr EntityPair NULL_ENTITY_PAIR = {ECS::NULL_ENTITY, ECS::NULL_ENTITY};
 
 class CollisionPairs {
 public:
@@ -40,7 +40,7 @@ public:
   bool hasAny() const;
   
   EntityPair getPair(ObjectTypePair) const;
-  EntityID getHalfPair(ObjectTypeID) const;
+  ECS::EntityID getHalfPair(ObjectTypeID) const;
   
   template <typename Type0, typename Type1>
   bool hasPair() const {
@@ -58,7 +58,7 @@ public:
   }
   
   template <typename Type>
-  EntityID getHalfPair() const {
+  ECS::EntityID getHalfPair() const {
     return getHalfPair(getObjectTypeID<Type>());
   }
   

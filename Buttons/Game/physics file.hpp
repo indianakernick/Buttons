@@ -11,7 +11,7 @@
 
 #include "json helper.hpp"
 #include "transform component.hpp"
-#include "../Libraries/Box2D/Box2D.h"
+#include <Box2D/Box2D.h>
 
 b2Body *loadBody(const std::string &, b2World &, Transform);
 void readJoint(b2JointDef *, const json &);

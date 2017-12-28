@@ -13,9 +13,9 @@
 #include "collision categories.hpp"
 #include "activation component.hpp"
 
-void buttonSystem(Registry &registry) {
+void buttonSystem(ECS::Registry &registry) {
   auto view = registry.view<Collision, Activation, Button>();
-  for (const EntityID entity : view) {
+  for (const ECS::EntityID entity : view) {
     const auto &collisions = view.get<Collision>(entity).collisionPairs;
     if (collisions.hasAny()) {
       activate(view.get<Activation>(entity).state);

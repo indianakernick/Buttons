@@ -9,7 +9,7 @@
 #ifndef physics_constants_hpp
 #define physics_constants_hpp
 
-#include "../Libraries/Box2D/Common/b2Math.h"
+#include <Box2D/Common/b2Math.h>
 
 const b2Vec2 GRAVITY = {0.0f, -9.80665f};
 constexpr int32 VELOCITY_ITER = 16;

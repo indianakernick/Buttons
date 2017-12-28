@@ -11,18 +11,18 @@
 #include "transform component.hpp"
 #include "static sprite rendering component.hpp"
 
-size_t countStaticSprites(Registry &registry) {
+size_t countStaticSprites(ECS::Registry &registry) {
   return registry.view<StaticSpriteRendering>().size();
 }
 
 void writeStaticSprites(
-  Registry &registry,
+  ECS::Registry &registry,
   const Spritesheet &sheet,
   QuadIter &quadIter
 ) {
   const auto view = registry.view<StaticSpriteRendering, Transform>();
   
-  for (const EntityID entity : view) {
+  for (const ECS::EntityID entity : view) {
     Quad &quad = *quadIter;
     
     const StaticSpriteRendering sprite = view.get<StaticSpriteRendering>(entity);

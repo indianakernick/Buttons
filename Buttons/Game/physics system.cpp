@@ -13,7 +13,7 @@
 #include "physics constants.hpp"
 #include <Simpleton/Utils/member function.hpp>
 
-void PhysicsSystem::init(Registry &newRegistry) {
+void PhysicsSystem::init(ECS::Registry &newRegistry) {
   world.emplace(GRAVITY);
   
   contactListener.emplace();
@@ -73,7 +73,7 @@ namespace {
 void PhysicsSystem::update(const float delta) {
   world->Step(delta, VELOCITY_ITER, POSITION_ITER);
   auto view = registry->view<PhysicsRayCast>();
-  for (const EntityID entity : view) {
+  for (const ECS::EntityID entity : view) {
     PhysicsRayCast &comp = view.get(entity);
     FindClosest callback;
     world->RayCast(&callback, comp.start, comp.end);

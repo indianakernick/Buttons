@@ -9,16 +9,16 @@
 #ifndef physics_body_entity_id_hpp
 #define physics_body_entity_id_hpp
 
-#include "entity id.hpp"
+#include <Simpleton/ECS/registry.hpp>
 
-inline void *getUserData(const EntityID entity) {
+inline void *getUserData(const ECS::EntityID entity) {
   return reinterpret_cast<void *>(
     static_cast<uintptr_t>(entity)
   );
 }
 
-inline EntityID getEntity(const void *const userData) {
-  return static_cast<EntityID>(
+inline ECS::EntityID getEntity(const void *const userData) {
+  return static_cast<ECS::EntityID>(
     reinterpret_cast<uintptr_t>(userData)
   );
 }

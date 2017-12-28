@@ -12,18 +12,18 @@
 #include "animation component.hpp"
 #include "anim sprite rendering component.hpp"
 
-size_t countAnimSprites(Registry &registry) {
+size_t countAnimSprites(ECS::Registry &registry) {
   return registry.view<AnimSpriteRendering>().size();
 }
 
 void writeAnimSprites(
-  Registry &registry,
+  ECS::Registry &registry,
   const Spritesheet &sheet,
   QuadIter &quadIter
 ) {
   const auto view = registry.view<AnimSpriteRendering, Animation, Transform>();
   
-  for (const EntityID entity : view) {
+  for (const ECS::EntityID entity : view) {
     Quad &quad = *quadIter;
     
     const float progress = view.get<Animation>(entity).progress;

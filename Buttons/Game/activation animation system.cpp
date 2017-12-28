@@ -11,9 +11,9 @@
 #include "animation component.hpp"
 #include "activation component.hpp"
 
-void activationAnimationSystem(Registry &registry) {
+void activationAnimationSystem(ECS::Registry &registry) {
   auto view = registry.view<Animation, Activation>();
-  for (const EntityID entity : view) {
+  for (const ECS::EntityID entity : view) {
     Animation &anim = view.get<Animation>(entity);
     if (anim.speed == 0.0f) {
       anim.progress = view.get<Activation>(entity).activity;

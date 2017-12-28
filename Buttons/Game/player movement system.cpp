@@ -33,9 +33,9 @@ namespace {
   }
 }
 
-void playerMovementSystem(Registry &registry, const float delta) {
+void playerMovementSystem(ECS::Registry &registry, const float delta) {
   auto view = registry.view<PlayerInput, PlayerJump, Collision, PhysicsBody>();
-  for (const EntityID entity : view) {
+  for (const ECS::EntityID entity : view) {
     const PlayerInput input = view.get<PlayerInput>(entity);
     b2Body *const body = view.get<PhysicsBody>(entity).body;
     const bool onGround = isOnGround(view.get<Collision>(entity));

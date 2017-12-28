@@ -9,8 +9,8 @@
 #ifndef door_system_hpp
 #define door_system_hpp
 
-#include "entity registry.hpp"
+#include <Simpleton/ECS/registry.hpp>
 
-void doorSystem(Registry &);
+void doorSystem(ECS::Registry &);
 
 #endif

@@ -13,19 +13,19 @@
 #include "activation component.hpp"
 #include "player keys component.hpp"
 
-void activateLockSystem(Registry &registry) {
+void activateLockSystem(ECS::Registry &registry) {
   auto view = registry.view<Lock, Collision, Activation>();
   const auto playerKeys = registry.view<PlayerKeys>();
   
-  for (const EntityID entity : view) {
+  for (const ECS::EntityID entity : view) {
     Activation::State &activeState = view.get<Activation>(entity).state;
     if (isActive(activeState)) {
       continue;
     }
     
     const CollisionPairs &pairs = view.get<Collision>(entity).collisionPairs;
-    const EntityID player = pairs.getHalfPair<ObjectType::PlayerBody>();
-    if (player != NULL_ENTITY) {
+    const ECS::EntityID player = pairs.getHalfPair<ObjectType::PlayerBody>();
+    if (player != ECS::NULL_ENTITY) {
       if (playerKeys.get(player).keys[view.get<Lock>(entity).index]) {
         activate(activeState);
       }

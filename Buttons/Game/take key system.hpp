@@ -9,8 +9,8 @@
 #ifndef take_key_system_hpp
 #define take_key_system_hpp
 
-#include "entity registry.hpp"
+#include <Simpleton/ECS/registry.hpp>
 
-void takeKeySystem(Registry &);
+void takeKeySystem(ECS::Registry &);
 
 #endif

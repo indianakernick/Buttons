@@ -9,8 +9,8 @@
 #ifndef player_movement_system_hpp
 #define player_movement_system_hpp
 
-#include "entity registry.hpp"
+#include <Simpleton/ECS/registry.hpp>
 
-void playerMovementSystem(Registry &, float);
+void playerMovementSystem(ECS::Registry &, float);
 
 #endif
