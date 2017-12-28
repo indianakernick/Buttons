@@ -12,8 +12,8 @@
 #include "entity id map.hpp"
 #include "transform init.hpp"
 #include <glm/trigonometric.hpp>
-#include "physics body entity id.hpp"
 #include <Box2D/Dynamics/b2World.h>
+#include <Simpleton/Box2D/entity id.hpp>
 
 PhysicsBodyInit::PhysicsBodyInit(b2World *const world)
   : world(world) {
@@ -30,7 +30,7 @@ void PhysicsBodyInit::init(
   TransformInit transformInit;
   transformInit.init(transform, node);
   comp.body = loadBody(node.at("body").get<std::string>(), *world, transform);
-  comp.body->SetUserData(getUserData(entity));
+  comp.body->SetUserData(B2::getUserData(entity));
   comp.scale = transform.scale;
 }
 
@@ -61,7 +61,7 @@ void PhysicsJointInit::init(
   
   def->bodyA = getBody(node.at("body A"), idMap, registry);
   def->bodyB = getBody(node.at("body B"), idMap, registry);
-  def->userData = getUserData(entity);
+  def->userData = B2::getUserData(entity);
   
   comp.joint = world->CreateJoint(def);
 }

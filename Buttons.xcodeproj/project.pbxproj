@@ -536,7 +536,6 @@
 		4584F4711FD3ABE40062B93E /* level 7.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 7.jsonnet"; sourceTree = "<group>"; };
 		4584F4791FD4DE560062B93E /* entities.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = entities.jsonnet; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
 		4584F47B1FD517B70062B93E /* common.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = common.jsonnet; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
-		4591F0611FBFD0FD0075000D /* physics body entity id.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "physics body entity id.hpp"; sourceTree = "<group>"; };
 		4591F0621FBFE1420075000D /* power init.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "power init.cpp"; sourceTree = "<group>"; };
 		4591F0631FBFE1420075000D /* power init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "power init.hpp"; sourceTree = "<group>"; };
 		4591F0651FBFE44B0075000D /* activation init.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "activation init.cpp"; sourceTree = "<group>"; };
@@ -1514,7 +1513,6 @@
 				450ED5D61FB6B0A0008F2902 /* limit velocity.hpp */,
 				450ED5F31FB7C945008F2902 /* debug draw.cpp */,
 				450ED5F41FB7C945008F2902 /* debug draw.hpp */,
-				4591F0611FBFD0FD0075000D /* physics body entity id.hpp */,
 				4584F4471FD13BA30062B93E /* physics file.cpp */,
 				4584F4481FD13BA30062B93E /* physics file.hpp */,
 			);

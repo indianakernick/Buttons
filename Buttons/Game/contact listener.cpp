@@ -9,7 +9,7 @@
 #include "contact listener.hpp"
 
 #include <utility>
-#include "physics body entity id.hpp"
+#include <Simpleton/Box2D/entity id.hpp>
 #include <Box2D/Dynamics/Contacts/b2Contact.h>
 
 namespace {
@@ -22,8 +22,8 @@ namespace {
   
   EntityPair getEntityPair(b2Contact *const contact) {
     return {
-      getEntity(contact->GetFixtureA()->GetBody()->GetUserData()),
-      getEntity(contact->GetFixtureB()->GetBody()->GetUserData())
+      B2::getEntity(contact->GetFixtureA()->GetBody()->GetUserData()),
+      B2::getEntity(contact->GetFixtureB()->GetBody()->GetUserData())
     };
   }
   
