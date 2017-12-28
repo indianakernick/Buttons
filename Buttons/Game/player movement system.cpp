@@ -24,7 +24,7 @@ namespace {
   
   bool isOnGround(const Collision &collision) {
     const CollisionPairs &pairs = collision.collisionPairs;
-    return pairs.hasPair<ObjectType::PlayerFoot, ObjectType::Ground>();
+    return pairs.hasPair<B2::ObjT::PlayerFoot, B2::ObjT::Ground>();
   }
   
   void move(b2Body *const body, const float dir, const bool onGround) {

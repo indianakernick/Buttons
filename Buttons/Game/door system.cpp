@@ -23,8 +23,8 @@ void doorSystem(ECS::Registry &registry) {
     fixture->SetSensor(active);
     fixture->SetUserData(
       active
-      ? getUserData<ObjectType::Sensor>()
-      : getUserData<ObjectType::Ground>()
+      ? B2::getObjectTypeUserData<B2::ObjT::Sensor>()
+      : B2::getObjectTypeUserData<B2::ObjT::Ground>()
     );
   }
 }

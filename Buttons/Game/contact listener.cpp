@@ -15,8 +15,8 @@
 namespace {
   ObjectTypePair getTypePair(b2Contact *const contact) {
     return {
-      getObjectTypeID(contact->GetFixtureA()->GetUserData()),
-      getObjectTypeID(contact->GetFixtureB()->GetUserData())
+      B2::getObjectTypeID(contact->GetFixtureA()->GetUserData()),
+      B2::getObjectTypeID(contact->GetFixtureB()->GetUserData())
     };
   }
   

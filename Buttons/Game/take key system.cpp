@@ -24,7 +24,7 @@ void takeKeySystem(ECS::Registry &registry) {
     }
     
     const CollisionPairs &pairs = view.get<Collision>(entity).collisionPairs;
-    const ECS::EntityID player = pairs.getHalfPair<ObjectType::PlayerBody>();
+    const ECS::EntityID player = pairs.getHalfPair<B2::ObjT::PlayerBody>();
     if (player != ECS::NULL_ENTITY) {
       playerKeys.get(player).keys[view.get<Key>(entity).index] = true;
       deactivate(activeState);

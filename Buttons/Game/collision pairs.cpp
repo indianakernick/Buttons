@@ -23,7 +23,7 @@ bool CollisionPairs::hasPair(const ObjectTypePair type) const {
   return find(type) != pairs.cend();
 }
 
-bool CollisionPairs::hasHalfPair(const ObjectTypeID type) const {
+bool CollisionPairs::hasHalfPair(const B2::ObjectTypeID type) const {
   return find(type) != pairs.cend();
 }
 
@@ -40,7 +40,7 @@ EntityPair CollisionPairs::getPair(const ObjectTypePair type) const {
   }
 }
 
-ECS::EntityID CollisionPairs::getHalfPair(const ObjectTypeID type) const {
+ECS::EntityID CollisionPairs::getHalfPair(const B2::ObjectTypeID type) const {
   const auto iter = find(type);
   if (iter == pairs.cend()) {
     return ECS::NULL_ENTITY;
@@ -59,7 +59,7 @@ auto CollisionPairs::searchPred(const ObjectTypePair type) {
   };
 }
 
-auto CollisionPairs::searchPred(const ObjectTypeID type) {
+auto CollisionPairs::searchPred(const B2::ObjectTypeID type) {
   return [type] (const CollisionPair pair) {
     return pair.type.first == type || pair.type.second == type;
   };
@@ -69,7 +69,7 @@ CollisionPairs::Iter CollisionPairs::find(const ObjectTypePair type) const {
   return std::find_if(pairs.cbegin(), pairs.cend(), searchPred(type));
 }
 
-CollisionPairs::Iter CollisionPairs::find(const ObjectTypeID type) const {
+CollisionPairs::Iter CollisionPairs::find(const B2::ObjectTypeID type) const {
   return std::find_if(pairs.cbegin(), pairs.cend(), searchPred(type));
 }
 

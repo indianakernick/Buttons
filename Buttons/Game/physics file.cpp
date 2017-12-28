@@ -183,7 +183,7 @@ namespace {
     getOptional(fixtureDef.isSensor, fixtureNode, "is sensor");
     
     if (const auto userDataNode = fixtureNode.find("user data"); userDataNode != fixtureNode.cend()) {
-      fixtureDef.userData = getUserData(userDataNode->get<std::string>());
+      fixtureDef.userData = B2::getObjectTypeUserData(userDataNode->get<std::string>());
     }
     if (const auto filterNode = fixtureNode.find("filter"); filterNode != fixtureNode.cend()) {
       fixtureDef.filter = readFilter(*filterNode);

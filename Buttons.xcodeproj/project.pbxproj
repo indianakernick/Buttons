@@ -25,7 +25,6 @@
 		4520AD711FE9F8B000ECE3C1 /* sprite shader.frag in Resources */ = {isa = PBXBuildFile; fileRef = 4520AD701FE9F8B000ECE3C1 /* sprite shader.frag */; };
 		4520AD741FEB32FC00ECE3C1 /* static sprite rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4520AD721FEB32FC00ECE3C1 /* static sprite rendering component.cpp */; };
 		452E10891FB2D27D0063114B /* collision pairs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452E10871FB2D27D0063114B /* collision pairs.cpp */; };
-		452E108C1FB2D8BA0063114B /* object types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452E108A1FB2D8BA0063114B /* object types.cpp */; };
 		4533A8AB1FC908CC0027B0FB /* key component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8A91FC908CC0027B0FB /* key component.cpp */; };
 		4533A8B11FC909F90027B0FB /* lock component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8AF1FC909F90027B0FB /* lock component.cpp */; };
 		4533A8B41FC90A550027B0FB /* key init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8B21FC90A550027B0FB /* key init.cpp */; };
@@ -300,7 +299,6 @@
 		4520DFC91FE4A387008FCBB4 /* level 9.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 9.jsonnet"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = "<none>"; };
 		452E10871FB2D27D0063114B /* collision pairs.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "collision pairs.cpp"; sourceTree = "<group>"; };
 		452E10881FB2D27D0063114B /* collision pairs.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "collision pairs.hpp"; sourceTree = "<group>"; };
-		452E108A1FB2D8BA0063114B /* object types.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "object types.cpp"; sourceTree = "<group>"; };
 		452E108B1FB2D8BA0063114B /* object types.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "object types.hpp"; sourceTree = "<group>"; };
 		452E10911FB2F2EE0063114B /* systems.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = systems.hpp; sourceTree = "<group>"; };
 		4533A8A11FC8E2200027B0FB /* screen id.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "screen id.hpp"; sourceTree = "<group>"; };
@@ -1503,7 +1501,6 @@
 			children = (
 				4583EE8D1FB19C0300AED27D /* contact listener.cpp */,
 				4583EE8E1FB19C0300AED27D /* contact listener.hpp */,
-				452E108A1FB2D8BA0063114B /* object types.cpp */,
 				452E108B1FB2D8BA0063114B /* object types.hpp */,
 				4583EE901FB19DE600AED27D /* collision categories.cpp */,
 				4583EE911FB19DE600AED27D /* collision categories.hpp */,
@@ -1807,7 +1804,6 @@
 				4583EE201FB18F7A00AED27D /* b2Island.cpp in Sources */,
 				4591F0701FBFE7500075000D /* animation init.cpp in Sources */,
 				45C525931FECE5B900A738E0 /* text rendering init.cpp in Sources */,
-				452E108C1FB2D8BA0063114B /* object types.cpp in Sources */,
 				450ED5EC1FB7C052008F2902 /* button component.cpp in Sources */,
 				4583EE211FB18F7A00AED27D /* b2ContactManager.cpp in Sources */,
 				4583EE221FB18F7A00AED27D /* b2Rope.cpp in Sources */,
