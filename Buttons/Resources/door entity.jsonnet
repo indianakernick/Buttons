@@ -25,7 +25,7 @@ function(params) {
       else
         [1, 1]
       ,
-      body: "door body.json"
+      body: (import "door body.json")
     },
     PowerInput: common.getPowerInput(params)
   }

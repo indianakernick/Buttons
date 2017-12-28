@@ -31,11 +31,11 @@ namespace {
         }
       );
       if (!gotComp) {
-        /*throw std::runtime_error(
+        throw std::runtime_error(
           "Unknown component name \""
           + pair.first
           + "\""
-        );*/
+        );
       }
     }
   }

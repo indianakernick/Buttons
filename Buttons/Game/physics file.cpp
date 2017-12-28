@@ -199,6 +199,14 @@ namespace {
   }
 }
 
+b2Body *loadBody(const json &node, b2World &world, const Transform transform) {
+  const b2BodyDef bodyDef = readBodyDef(node.at("body"));
+  b2Body *const body = world.CreateBody(&bodyDef);
+  body->SetTransform(B2::cast(transform.pos), transform.rotation);
+  readFixtures(body, node.at("fixtures"), B2::cast(transform.scale));
+  return body;
+}
+
 b2Body *loadBody(
   const std::string &fileName,
   b2World &world,
@@ -207,13 +215,7 @@ b2Body *loadBody(
   std::ifstream file(SDL::getResDir() + fileName);
   json rootNode;
   file >> rootNode;
-  
-  const b2BodyDef bodyDef = readBodyDef(rootNode.at("body"));
-  b2Body *body = world.CreateBody(&bodyDef);
-  body->SetTransform(B2::cast(transform.pos), transform.rotation);
-  readFixtures(body, rootNode.at("fixtures"), B2::cast(transform.scale));
-  
-  return body;
+  return loadBody(rootNode, world, transform);
 }
 
 namespace {

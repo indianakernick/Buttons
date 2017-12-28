@@ -18,7 +18,7 @@ function(params) {
     PowerOutput: {},
     Transform: {},
     PhysicsBody: common.getPos(params) + {
-      body: "sensor body.json"
+      body: (import "sensor body.json")
     },
     Lock: {
       index: params.index

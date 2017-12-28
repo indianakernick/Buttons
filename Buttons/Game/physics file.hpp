@@ -9,13 +9,13 @@
 #ifndef physics_file_hpp
 #define physics_file_hpp
 
+#include <Box2D/Box2D.h>
 #include "json helper.hpp"
 #include "transform component.hpp"
-#include <Box2D/Box2D.h>
 
+b2Body *loadBody(const json &, b2World &, Transform);
 b2Body *loadBody(const std::string &, b2World &, Transform);
 void readJoint(b2JointDef *, const json &);
 b2JointDef *loadJoint(const std::string &);
-
 
 #endif

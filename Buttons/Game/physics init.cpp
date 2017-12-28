@@ -29,7 +29,7 @@ void PhysicsBodyInit::init(
   Transform transform;
   TransformInit transformInit;
   transformInit.init(transform, node);
-  comp.body = loadBody(node.at("body").get<std::string>(), *world, transform);
+  comp.body = loadBody(node.at("body"), *world, transform);
   comp.body->SetUserData(B2::getUserData(entity));
   comp.scale = transform.scale;
 }

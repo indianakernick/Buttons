@@ -110,12 +110,6 @@
 		4584F4421FD130F50062B93E /* json helper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4584F4401FD130F50062B93E /* json helper.cpp */; };
 		4584F4491FD13BA30062B93E /* physics file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4584F4471FD13BA30062B93E /* physics file.cpp */; };
 		4584F44C1FD215340062B93E /* level file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4584F44A1FD215340062B93E /* level file.cpp */; };
-		4584F44D1FD27A150062B93E /* box body.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F42D1FD12CEF0062B93E /* box body.json */; };
-		4584F44E1FD27A150062B93E /* button body.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F4251FD12CEE0062B93E /* button body.json */; };
-		4584F44F1FD27A150062B93E /* door body.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F4241FD12CED0062B93E /* door body.json */; };
-		4584F4501FD27A150062B93E /* platform body.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F4291FD12CEF0062B93E /* platform body.json */; };
-		4584F4511FD27A150062B93E /* player body.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F43B1FD12CF30062B93E /* player body.json */; };
-		4584F4521FD27A150062B93E /* sensor body.json in Resources */ = {isa = PBXBuildFile; fileRef = 4584F4341FD12CF10062B93E /* sensor body.json */; };
 		4591F0641FBFE1420075000D /* power init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0621FBFE1420075000D /* power init.cpp */; };
 		4591F0671FBFE44B0075000D /* activation init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0651FBFE44B0075000D /* activation init.cpp */; };
 		4591F06A1FBFE51E0075000D /* transform init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0681FBFE51E0075000D /* transform init.cpp */; };
@@ -1673,13 +1667,7 @@
 				4520AD711FE9F8B000ECE3C1 /* sprite shader.frag in Resources */,
 				45771B921FE74C7D00F533DA /* sprites.atlas in Resources */,
 				45771B931FE74C7D00F533DA /* sprites.png in Resources */,
-				4584F44D1FD27A150062B93E /* box body.json in Resources */,
-				4584F44E1FD27A150062B93E /* button body.json in Resources */,
-				4584F44F1FD27A150062B93E /* door body.json in Resources */,
-				4584F4501FD27A150062B93E /* platform body.json in Resources */,
-				4584F4511FD27A150062B93E /* player body.json in Resources */,
 				4520AD6F1FE9F85C00ECE3C1 /* sprite shader.vert in Resources */,
-				4584F4521FD27A150062B93E /* sensor body.json in Resources */,
 				4583ED5B1FB1841100AED27D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

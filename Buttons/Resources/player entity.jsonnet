@@ -12,7 +12,7 @@ function(params) {
     },
     Transform: {},
     PhysicsBody: common.getPos(params) + {
-      body: "player body.json"
+      body: (import "player body.json")
     }
   }
 }

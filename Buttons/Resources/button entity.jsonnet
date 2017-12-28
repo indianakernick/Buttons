@@ -20,7 +20,7 @@ function(params) {
     PowerOutput: {},
     Transform: {},
     PhysicsBody: common.getOrientTransform(params) + {
-      body: "button body.json"
+      body: (import "button body.json")
     }
   }
 }

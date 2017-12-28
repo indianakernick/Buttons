@@ -19,7 +19,7 @@ function(params) {
     Switch: {},
     Transform: {},
     PhysicsBody: common.getOrientTransform(params) + {
-      body: "sensor body.json"
+      body: (import "sensor body.json")
     }
   }
 }

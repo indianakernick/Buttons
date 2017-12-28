@@ -17,7 +17,7 @@ function(params) {
     Collision: {},
     Transform: {},
     PhysicsBody: common.getPos(params) + {
-      body: "sensor body.json"
+      body: (import "sensor body.json")
     },
     Key: {
       index: params.index

@@ -8,7 +8,7 @@ function(params) {
     },
     Transform: {},
     PhysicsBody: common.getPosSize(params) + {
-      body: "box body.json"
+      body: (import "box body.json")
     }
   }
 }

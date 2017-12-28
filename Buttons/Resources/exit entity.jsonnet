@@ -15,7 +15,7 @@ function(params) {
     Exit: {},
     Transform: {},
     PhysicsBody: common.getPos(params) + {
-      body: "sensor body.json"
+      body: (import "sensor body.json")
     }
   }
 }
