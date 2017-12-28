@@ -19,9 +19,6 @@
 #include <Simpleton/OpenGL/attrib pointer.hpp>
 
 namespace {
-  constexpr GLint POS_ID = 0;
-  constexpr GLint TEX_COORD_ID = 1;
-  
   ///Number of indicies that make up a quad
   constexpr size_t QUAD_INDICIES = 6;
   ///Number of verticies that make up a quad
@@ -31,11 +28,7 @@ namespace {
   ///Byte size of a quad in a GL_ELEMENT_ARRAY_BUFFER
   constexpr size_t QUAD_ELEM_SIZE = sizeof(ElemType) * QUAD_INDICIES;
   
-  constexpr auto *enablePos = GL::enable<POS_ID, PosType>;
-  constexpr auto *enableTexCoord = GL::enable<TEX_COORD_ID, TexCoordType>;
-  
-  constexpr auto *posPointer = GL::attribPointer<POS_ID, PosType>;
-  constexpr auto *texCoordPointer = GL::attribPointer<TEX_COORD_ID, TexCoordType>;
+  using Attribs = std::tuple<PosType, TexCoordType>;
 }
 
 void RenderingSystem::init() {
@@ -98,10 +91,7 @@ void RenderingSystem::onLevelLoad(Registry &registry) {
   arrayBuf = GL::makeArrayBuffer(numQuads * QUAD_ATTR_SIZE, GL_DYNAMIC_DRAW);
   elemBuf = GL::makeElementBuffer(indicies.data(), numQuads * QUAD_ELEM_SIZE);
   
-  posPointer(sizeof(PosType) + sizeof(TexCoordType), 0);
-  enablePos();
-  texCoordPointer(sizeof(PosType) + sizeof(TexCoordType), sizeof(PosType));
-  enableTexCoord();
+  GL::attribs<Attribs>();
   
   GL::unbindVertexArray();
 }
