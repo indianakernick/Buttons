@@ -38,7 +38,6 @@
 		4533A9051FCA93780027B0FB /* dir.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A9031FCA93780027B0FB /* dir.cpp */; };
 		4533A9081FCAA2520027B0FB /* start menu screen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A9061FCAA2520027B0FB /* start menu screen.cpp */; };
 		4533A90E1FCAE2A10027B0FB /* screen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A90C1FCAE2A10027B0FB /* screen.cpp */; };
-		4541A4B21FD64E8000AD20C1 /* debug input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4541A4B01FD64D7F00AD20C1 /* debug input.cpp */; };
 		454D04B41FE64FCA00D3E560 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 454D04B31FE64FCA00D3E560 /* SDL2.framework */; };
 		454D04B51FE64FD100D3E560 /* SDL2.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 454D04B31FE64FCA00D3E560 /* SDL2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		456DF0C31FBD625C003B3FD1 /* moving platform component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0C11FBD625C003B3FD1 /* moving platform component.cpp */; };
@@ -333,8 +332,6 @@
 		4533A9071FCAA2520027B0FB /* start menu screen.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "start menu screen.hpp"; sourceTree = "<group>"; };
 		4533A90C1FCAE2A10027B0FB /* screen.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = screen.cpp; sourceTree = "<group>"; };
 		4533A90D1FCAE2A10027B0FB /* screen.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = screen.hpp; sourceTree = "<group>"; };
-		4541A4B01FD64D7F00AD20C1 /* debug input.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "debug input.cpp"; sourceTree = "<group>"; };
-		4541A4B11FD64D7F00AD20C1 /* debug input.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "debug input.hpp"; sourceTree = "<group>"; };
 		454D03E21FE63A9800D3E560 /* libSDL2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDL2.a; path = ../../../../../../../usr/local/Cellar/sdl2/2.0.7/lib/libSDL2.a; sourceTree = "<group>"; };
 		454D03E41FE63AC700D3E560 /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = ../../../../../../../usr/local/Cellar/glew/2.1.0/lib/libGLEW.a; sourceTree = "<group>"; };
 		454D04A61FE6438400D3E560 /* libSimpleton Engine.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libSimpleton Engine.a"; path = "../../../../../../../usr/local/lib/libSimpleton Engine.a"; sourceTree = "<group>"; };
@@ -828,8 +825,6 @@
 			isa = PBXGroup;
 			children = (
 				4533A8A41FC8E32A0027B0FB /* input dispatcher.hpp */,
-				4541A4B01FD64D7F00AD20C1 /* debug input.cpp */,
-				4541A4B11FD64D7F00AD20C1 /* debug input.hpp */,
 			);
 			name = Input;
 			sourceTree = "<group>";
@@ -1754,7 +1749,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				45C524611FEB6DD800A738E0 /* activation animation system.cpp in Sources */,
-				4541A4B21FD64E8000AD20C1 /* debug input.cpp in Sources */,
 				450ED5F51FB7C945008F2902 /* debug draw.cpp in Sources */,
 				450ED5C31FB69D31008F2902 /* player input component.cpp in Sources */,
 				45C5259D1FED0B5300A738E0 /* laser sprite rendering system.cpp in Sources */,
