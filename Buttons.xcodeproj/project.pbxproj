@@ -35,7 +35,6 @@
 		4533A8C01FC912B10027B0FB /* activate lock system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8BE1FC912B10027B0FB /* activate lock system.cpp */; };
 		4533A8FE1FCA69440027B0FB /* game screen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8FC1FCA69440027B0FB /* game screen.cpp */; };
 		4533A9011FCA91DD0027B0FB /* progress manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8FF1FCA91DC0027B0FB /* progress manager.cpp */; };
-		4533A9051FCA93780027B0FB /* dir.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A9031FCA93780027B0FB /* dir.cpp */; };
 		4533A9081FCAA2520027B0FB /* start menu screen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A9061FCAA2520027B0FB /* start menu screen.cpp */; };
 		4533A90E1FCAE2A10027B0FB /* screen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A90C1FCAE2A10027B0FB /* screen.cpp */; };
 		454D04B41FE64FCA00D3E560 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 454D04B31FE64FCA00D3E560 /* SDL2.framework */; };
@@ -325,8 +324,6 @@
 		4533A8FF1FCA91DC0027B0FB /* progress manager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "progress manager.cpp"; sourceTree = "<group>"; };
 		4533A9001FCA91DD0027B0FB /* progress manager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "progress manager.hpp"; sourceTree = "<group>"; };
 		4533A9021FCA92BF0027B0FB /* level.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = level.hpp; sourceTree = "<group>"; };
-		4533A9031FCA93780027B0FB /* dir.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = dir.cpp; sourceTree = "<group>"; };
-		4533A9041FCA93780027B0FB /* dir.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = dir.hpp; sourceTree = "<group>"; };
 		4533A9061FCAA2520027B0FB /* start menu screen.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "start menu screen.cpp"; sourceTree = "<group>"; };
 		4533A9071FCAA2520027B0FB /* start menu screen.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "start menu screen.hpp"; sourceTree = "<group>"; };
 		4533A90C1FCAE2A10027B0FB /* screen.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = screen.cpp; sourceTree = "<group>"; };
@@ -1389,8 +1386,6 @@
 		4583EE5D1FB190AC00AED27D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				4533A9031FCA93780027B0FB /* dir.cpp */,
-				4533A9041FCA93780027B0FB /* dir.hpp */,
 				4584F4401FD130F50062B93E /* json helper.cpp */,
 				4584F4411FD130F50062B93E /* json helper.hpp */,
 			);
@@ -1856,7 +1851,6 @@
 				4583EEAA1FB1B6E100AED27D /* physics transform system.cpp in Sources */,
 				45C5252F1FEC9B0C00A738E0 /* laser rendering component.cpp in Sources */,
 				4583EE2F1FB18F7A00AED27D /* b2CircleShape.cpp in Sources */,
-				4533A9051FCA93780027B0FB /* dir.cpp in Sources */,
 				4583EE301FB18F7A00AED27D /* b2PolygonShape.cpp in Sources */,
 				45C5259A1FED0B4900A738E0 /* anim sprite rendering system.cpp in Sources */,
 				45C525971FED0B3D00A738E0 /* static sprite rendering system.cpp in Sources */,

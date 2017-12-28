@@ -8,7 +8,13 @@
 
 #include "progress manager.hpp"
 
-#include "dir.hpp"
+#include <Simpleton/SDL/paths.hpp>
+
+namespace {
+  std::string getSaveDir() {
+    return SDL::getSaveDir("Indi Kernick", "Buttons");
+  }
+}
 
 ProgressManager::ProgressManager() {
   std::ifstream file(getSaveDir() + "progress.txt");
