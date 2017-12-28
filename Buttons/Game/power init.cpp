@@ -36,10 +36,10 @@ void PowerInputInit::init(PowerInput &comp, const json &node, const EntityIDmap 
   if (const auto inNode = node.find("in"); inNode != node.cend()) {
     if (inNode->is_array()) {
       for (auto &node : *inNode) {
-        comp.inputs.push_back(idMap.getEntityFromUserID(node.get<UserID>()));
+        comp.inputs.push_back(idMap.getEntityFromID(node.get<ClientEntityID>()));
       }
     } else if (inNode->is_number()) {
-      comp.inputs.push_back(idMap.getEntityFromUserID(inNode->get<UserID>()));
+      comp.inputs.push_back(idMap.getEntityFromID(inNode->get<ClientEntityID>()));
     }
   }
   if (const auto opNode = node.find("operator"); opNode != node.cend()) {

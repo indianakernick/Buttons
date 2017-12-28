@@ -13,19 +13,19 @@
 #include "json helper.hpp"
 #include <Simpleton/ECS/registry.hpp>
 
-using UserID = int;
-constexpr UserID NULL_USER_ID = std::numeric_limits<UserID>::min();
+using ClientEntityID = int;
+constexpr ClientEntityID NULL_CLIENT_ENTITY_ID = std::numeric_limits<ClientEntityID>::min();
 
 class EntityIDmap {
 public:
   EntityIDmap() = default;
   
   void insertIDs(const json &, ECS::Registry &);
-  ECS::EntityID getEntityFromUserID(UserID) const;
+  ECS::EntityID getEntityFromID(ClientEntityID) const;
   ECS::EntityID getEntityFromIndex(size_t) const;
 
 private:
-  std::vector<std::pair<UserID, ECS::EntityID>> map;
+  std::vector<std::pair<ClientEntityID, ECS::EntityID>> map;
 };
 
 #endif

@@ -42,9 +42,9 @@ PhysicsJointInit::PhysicsJointInit(b2World *const world, ECS::Registry *const re
 
 namespace {
   b2Body *getBody(const json &node, const EntityIDmap &idMap, ECS::Registry *registry) {
-    const UserID bodyAuserID = node.get<UserID>();
-    const ECS::EntityID bodyAentityID = idMap.getEntityFromUserID(bodyAuserID);
-    return registry->get<PhysicsBody>(bodyAentityID).body;
+    const ClientEntityID bodyClientID = node.get<ClientEntityID>();
+    const ECS::EntityID bodyEntityID = idMap.getEntityFromID(bodyClientID);
+    return registry->get<PhysicsBody>(bodyEntityID).body;
   }
 }
 

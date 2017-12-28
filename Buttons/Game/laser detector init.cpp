@@ -11,5 +11,5 @@
 #include "entity id map.hpp"
 
 void LaserDetectorInit::init(LaserDetector &comp, const json &node, const EntityIDmap &idMap) {
-  comp.emitter = idMap.getEntityFromUserID(node.at("emitter").get<UserID>());
+  comp.emitter = idMap.getEntityFromID(node.at("emitter").get<ClientEntityID>());
 }

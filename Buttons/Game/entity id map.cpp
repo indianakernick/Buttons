@@ -16,19 +16,19 @@ void EntityIDmap::insertIDs(const json &root, ECS::Registry &registry) {
   
   for (size_t i = 0; i != map.size(); ++i) {
     const json &node = root[i];
-    UserID userID = NULL_USER_ID;
+    ClientEntityID clientID = NULL_CLIENT_ENTITY_ID;
     if (const auto idNode = node.find("id"); idNode != node.cend()) {
-      userID = idNode->get<UserID>();
-      if (userID == NULL_USER_ID) {
+      clientID = idNode->get<ClientEntityID>();
+      if (clientID == NULL_CLIENT_ENTITY_ID) {
         throw std::runtime_error("Usage of reserved user defined entity ID");
       }
       for (size_t j = 0; j != i; ++j) {
-        if (map[j].first == userID) {
+        if (map[j].first == clientID) {
           throw std::runtime_error("All user defined entity IDs must be unique or absent");
         }
       }
     }
-    map[i] = {userID, registry.create()};
+    map[i] = {clientID, registry.create()};
   }
 }
 
@@ -39,7 +39,7 @@ ECS::EntityID EntityIDmap::getEntityFromIndex(const size_t i) const {
   throw std::runtime_error("Invalid index");
 }
 
-ECS::EntityID EntityIDmap::getEntityFromUserID(const UserID id) const {
+ECS::EntityID EntityIDmap::getEntityFromID(const ClientEntityID id) const {
   for (auto &pair : map) {
     if (pair.first == id) {
       return pair.second;
