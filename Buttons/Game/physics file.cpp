@@ -65,10 +65,10 @@ namespace {
     return scalar * (scale.x + scale.y) * 0.5f;
   }
   
-  #define OPTIONAL_VEC(OBJ, NODE, MEMBER, HAS_MEMBER, NAME)                                 \
-    if (const auto vert = NODE.find(NAME); vert != NODE.cend()) {          \
-      OBJ.m_##MEMBER = mul(vert->get<b2Vec2>(), scale);       \
-      OBJ.m_##HAS_MEMBER = true;              \
+  #define OPTIONAL_VEC(OBJ, NODE, MEMBER, HAS_MEMBER, NAME)                     \
+    if (const auto vert = NODE.find(NAME); vert != NODE.cend()) {               \
+      OBJ.m_##MEMBER = mul(vert->get<b2Vec2>(), scale);                         \
+      OBJ.m_##HAS_MEMBER = true;                                                \
     } do{}while(0)
   
   b2CircleShape *readCircle(const json &circleNode, const b2Vec2 scale) {
@@ -131,6 +131,8 @@ namespace {
     return &chain;
   }
   
+  #undef OPTIONAL_VEC
+  
   b2Shape *readShape(const json &shapeNode, const b2Vec2 scale) {
     const std::string typeName = shapeNode.at("type").get<std::string>();
     
@@ -151,11 +153,11 @@ namespace {
     if (node.is_array()) {
       uint16_t bits = 0;
       for (auto &c : node) {
-        bits |= getCategoryBit(c.get<std::string>());
+        bits |= B2::getCategoryBit(c.get<std::string>());
       }
       return bits;
     } else {
-      return getCategoryBit(node.get<std::string>());
+      return B2::getCategoryBit(node.get<std::string>());
     }
   }
   
@@ -304,6 +306,9 @@ namespace {
     getOptional(def->maxTorque, node, "max torque");
     getOptional(def->correctionFactor, node, "correction factor");
   }
+  
+  #undef READ_FREQ_DAMP
+  #undef READ_ANCHOR
   
   #define JOINTS                                                                \
     JOINT(Revolute, revolute)                                                   \

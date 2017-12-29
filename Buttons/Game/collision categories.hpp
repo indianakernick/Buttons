@@ -9,31 +9,10 @@
 #ifndef collision_categories_hpp
 #define collision_categories_hpp
 
-#include <Simpleton/Utils/type list.hpp>
-#include <Simpleton/Utils/instance limiter.hpp>
+#define CATEGORIES
 
-#define CATEGORIES                                                              \
-
-namespace Category {
-  #define CAT(NAME) MAKE_SYMBOL(NAME);
-  #define LAST_CAT(NAME) CAT(NAME)
-  CATEGORIES
-  #undef LAST_CAT
-  #undef CAT
-}
-
-using Categories = Utils::TypeList<
-  #define CAT(NAME) Category::NAME,
-  #define LAST_CAT(NAME) Category::NAME
-  CATEGORIES
-  #undef LAST_CAT
-  #undef CAT
->;
+#include <Simpleton/Box2D/collision categories.hpp>
 
 #undef CATEGORIES
-
-static_assert(Utils::listSize<Categories> <= 16);
-
-uint16_t getCategoryBit(const std::string &);
 
 #endif

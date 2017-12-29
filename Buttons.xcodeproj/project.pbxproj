@@ -98,7 +98,6 @@
 		4583EE7A1FB190F300AED27D /* rendering context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE421FB1906D00AED27D /* rendering context.cpp */; };
 		4583EE851FB1967700AED27D /* app.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE831FB1967700AED27D /* app.cpp */; };
 		4583EE891FB197C200AED27D /* physics system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE871FB197C200AED27D /* physics system.cpp */; };
-		4583EE921FB19DE600AED27D /* collision categories.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE901FB19DE600AED27D /* collision categories.cpp */; };
 		4583EE9D1FB1AC1600AED27D /* power system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE9B1FB1AC1600AED27D /* power system.cpp */; };
 		4583EEA01FB1AE3100AED27D /* power input activation system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EE9E1FB1AE3100AED27D /* power input activation system.cpp */; };
 		4583EEA31FB1AFCF00AED27D /* activate power output system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EEA11FB1AFCF00AED27D /* activate power output system.cpp */; };
@@ -465,7 +464,6 @@
 		4583EE871FB197C200AED27D /* physics system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "physics system.cpp"; sourceTree = "<group>"; };
 		4583EE881FB197C200AED27D /* physics system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "physics system.hpp"; sourceTree = "<group>"; };
 		4583EE8B1FB199E100AED27D /* physics constants.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "physics constants.hpp"; sourceTree = "<group>"; };
-		4583EE901FB19DE600AED27D /* collision categories.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "collision categories.cpp"; sourceTree = "<group>"; };
 		4583EE911FB19DE600AED27D /* collision categories.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "collision categories.hpp"; sourceTree = "<group>"; };
 		4583EE941FB1A25300AED27D /* collision component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "collision component.hpp"; sourceTree = "<group>"; };
 		4583EE991FB1AADD00AED27D /* power component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "power component.hpp"; sourceTree = "<group>"; };
@@ -1485,7 +1483,6 @@
 			isa = PBXGroup;
 			children = (
 				452E108B1FB2D8BA0063114B /* object types.hpp */,
-				4583EE901FB19DE600AED27D /* collision categories.cpp */,
 				4583EE911FB19DE600AED27D /* collision categories.hpp */,
 				450ED5F31FB7C945008F2902 /* debug draw.cpp */,
 				450ED5F41FB7C945008F2902 /* debug draw.hpp */,
@@ -1750,7 +1747,6 @@
 				4583EE121FB18F7A00AED27D /* b2Contact.cpp in Sources */,
 				4591F08D1FC152C60075000D /* laser detector component.cpp in Sources */,
 				4583EE131FB18F7A00AED27D /* b2WorldCallbacks.cpp in Sources */,
-				4583EE921FB19DE600AED27D /* collision categories.cpp in Sources */,
 				45C525321FEC9BA900A738E0 /* laser rendering init.cpp in Sources */,
 				4533A8AB1FC908CC0027B0FB /* key component.cpp in Sources */,
 				4533A8C01FC912B10027B0FB /* activate lock system.cpp in Sources */,

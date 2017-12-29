@@ -10,7 +10,6 @@
 
 #include "switch component.hpp"
 #include "collision component.hpp"
-#include "collision categories.hpp"
 #include "activation component.hpp"
 #include "player input component.hpp"
 

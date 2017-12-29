@@ -10,7 +10,6 @@
 
 #include "button component.hpp"
 #include "collision component.hpp"
-#include "collision categories.hpp"
 #include "activation component.hpp"
 
 void buttonSystem(ECS::Registry &registry) {
