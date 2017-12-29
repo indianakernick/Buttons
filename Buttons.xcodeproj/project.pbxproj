@@ -12,7 +12,6 @@
 		450ED5D11FB6AB96008F2902 /* player movement system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5CF1FB6AB96008F2902 /* player movement system.cpp */; };
 		450ED5D41FB6AC6E008F2902 /* player jump component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5D21FB6AC6E008F2902 /* player jump component.cpp */; };
 		450ED5EC1FB7C052008F2902 /* button component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5EA1FB7C052008F2902 /* button component.cpp */; };
-		450ED5F51FB7C945008F2902 /* debug draw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5F31FB7C945008F2902 /* debug draw.cpp */; };
 		450ED5FE1FB7DDA5008F2902 /* activation system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED5FC1FB7DDA5008F2902 /* activation system.cpp */; };
 		450ED6111FB7FB55008F2902 /* door component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED60F1FB7FB55008F2902 /* door component.cpp */; };
 		450ED6141FB7FBA4008F2902 /* door system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450ED6121FB7FBA4008F2902 /* door system.cpp */; };
@@ -165,8 +164,6 @@
 		450ED5D31FB6AC6E008F2902 /* player jump component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "player jump component.hpp"; sourceTree = "<group>"; };
 		450ED5EA1FB7C052008F2902 /* button component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "button component.cpp"; sourceTree = "<group>"; };
 		450ED5EB1FB7C052008F2902 /* button component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "button component.hpp"; sourceTree = "<group>"; };
-		450ED5F31FB7C945008F2902 /* debug draw.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "debug draw.cpp"; sourceTree = "<group>"; };
-		450ED5F41FB7C945008F2902 /* debug draw.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "debug draw.hpp"; sourceTree = "<group>"; };
 		450ED5FC1FB7DDA5008F2902 /* activation system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "activation system.cpp"; sourceTree = "<group>"; };
 		450ED5FD1FB7DDA5008F2902 /* activation system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "activation system.hpp"; sourceTree = "<group>"; };
 		450ED60F1FB7FB55008F2902 /* door component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "door component.cpp"; sourceTree = "<group>"; };
@@ -1484,8 +1481,6 @@
 			children = (
 				452E108B1FB2D8BA0063114B /* object types.hpp */,
 				4583EE911FB19DE600AED27D /* collision categories.hpp */,
-				450ED5F31FB7C945008F2902 /* debug draw.cpp */,
-				450ED5F41FB7C945008F2902 /* debug draw.hpp */,
 				4584F4471FD13BA30062B93E /* physics file.cpp */,
 				4584F4481FD13BA30062B93E /* physics file.hpp */,
 			);
@@ -1698,7 +1693,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				45C524611FEB6DD800A738E0 /* activation animation system.cpp in Sources */,
-				450ED5F51FB7C945008F2902 /* debug draw.cpp in Sources */,
 				450ED5C31FB69D31008F2902 /* player input component.cpp in Sources */,
 				45C5259D1FED0B5300A738E0 /* laser sprite rendering system.cpp in Sources */,
 				4591F0731FBFE8640075000D /* moving platform init.cpp in Sources */,

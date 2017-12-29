@@ -21,17 +21,11 @@ void PhysicsSystem::init(ECS::Registry &newRegistry) {
   contactListener->setBeginListener(Utils::memFun(this, &PhysicsSystem::beginContact));
   contactListener->setEndListener(Utils::memFun(this, &PhysicsSystem::endContact));
   
-  debugDraw.emplace();
-  world->SetDebugDraw(&(*debugDraw));
-  
   registry = &newRegistry;
 }
 
 void PhysicsSystem::quit() {
   registry = nullptr;
-  
-  world->SetDebugDraw(nullptr);
-  debugDraw = std::experimental::nullopt;
   
   contactListener->setEndListener(nullptr);
   contactListener->setBeginListener(nullptr);

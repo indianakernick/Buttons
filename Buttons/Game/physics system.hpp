@@ -10,7 +10,6 @@
 #define physics_system_hpp
 
 #include <Box2D/Box2D.h>
-#include "debug draw.hpp"
 #include <experimental/optional>
 #include "collision component.hpp"
 #include <Simpleton/ECS/registry.hpp>
@@ -32,7 +31,6 @@ private:
   ECS::Registry *registry = nullptr;
   std::experimental::optional<b2World> world;
   std::experimental::optional<B2::ContactListener> contactListener;
-  std::experimental::optional<DebugDraw> debugDraw;
   
   void beginContact(B2::CollisionPair);
   void endContact(B2::CollisionPair);
