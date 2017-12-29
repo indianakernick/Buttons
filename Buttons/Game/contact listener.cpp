@@ -13,21 +13,21 @@
 #include <Box2D/Dynamics/Contacts/b2Contact.h>
 
 namespace {
-  ObjectTypePair getTypePair(b2Contact *const contact) {
+  B2::ObjectTypePair getTypePair(b2Contact *const contact) {
     return {
       B2::getObjectTypeID(contact->GetFixtureA()->GetUserData()),
       B2::getObjectTypeID(contact->GetFixtureB()->GetUserData())
     };
   }
   
-  EntityPair getEntityPair(b2Contact *const contact) {
+  B2::EntityPair getEntityPair(b2Contact *const contact) {
     return {
       B2::getEntity(contact->GetFixtureA()->GetBody()->GetUserData()),
       B2::getEntity(contact->GetFixtureB()->GetBody()->GetUserData())
     };
   }
   
-  CollisionPair getCollisionPair(b2Contact *const contact) {
+  B2::CollisionPair getCollisionPair(b2Contact *const contact) {
     return {getTypePair(contact), getEntityPair(contact)};
   }
 }

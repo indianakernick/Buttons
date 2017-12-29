@@ -9,10 +9,11 @@
 #ifndef collision_component_hpp
 #define collision_component_hpp
 
-#include "collision pairs.hpp"
+#include "object types.hpp"
+#include <Simpleton/Box2D/collision pairs.hpp>
 
 struct Collision {
-  CollisionPairs collisionPairs;
+  B2::CollisionPairs collisionPairs;
 };
 
 #endif

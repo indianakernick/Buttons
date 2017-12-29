@@ -85,7 +85,7 @@ void PhysicsSystem::render() {
   world->DrawDebugData();
 }
 
-void PhysicsSystem::beginContact(const CollisionPair pair) {
+void PhysicsSystem::beginContact(const B2::CollisionPair pair) {
   if (registry->has<Collision>(pair.entity.first)) {
     registry->get<Collision>(pair.entity.first).collisionPairs.addPair(pair);
   }
@@ -94,7 +94,7 @@ void PhysicsSystem::beginContact(const CollisionPair pair) {
   }
 }
 
-void PhysicsSystem::endContact(const CollisionPair pair) {
+void PhysicsSystem::endContact(const B2::CollisionPair pair) {
   if (registry->has<Collision>(pair.entity.first)) {
     registry->get<Collision>(pair.entity.first).collisionPairs.remPair(pair);
   }

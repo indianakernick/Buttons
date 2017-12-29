@@ -23,7 +23,7 @@ void activateLockSystem(ECS::Registry &registry) {
       continue;
     }
     
-    const CollisionPairs &pairs = view.get<Collision>(entity).collisionPairs;
+    const B2::CollisionPairs &pairs = view.get<Collision>(entity).collisionPairs;
     const ECS::EntityID player = pairs.getHalfPair<B2::ObjT::PlayerBody>();
     if (player != ECS::NULL_ENTITY) {
       if (playerKeys.get(player).keys[view.get<Lock>(entity).index]) {

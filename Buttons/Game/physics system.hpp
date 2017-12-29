@@ -34,8 +34,8 @@ private:
   std::experimental::optional<ContactListener> contactListener;
   std::experimental::optional<DebugDraw> debugDraw;
   
-  void beginContact(CollisionPair);
-  void endContact(CollisionPair);
+  void beginContact(B2::CollisionPair);
+  void endContact(B2::CollisionPair);
 };
 
 #endif

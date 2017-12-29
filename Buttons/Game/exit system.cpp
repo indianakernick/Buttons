@@ -14,7 +14,7 @@
 bool exitSystem(ECS::Registry &registry) {
   const auto view = registry.view<Exit, Collision>();
   for (const ECS::EntityID entity : view) {
-    const CollisionPairs &pairs = view.get<Collision>(entity).collisionPairs;
+    const B2::CollisionPairs &pairs = view.get<Collision>(entity).collisionPairs;
     if (pairs.hasPair<B2::ObjT::Sensor, B2::ObjT::PlayerBody>()) {
       return true;
     }

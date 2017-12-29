@@ -23,7 +23,7 @@ namespace {
   constexpr float MAX_MOVE_VEL = 4.0f;
   
   bool isOnGround(const Collision &collision) {
-    const CollisionPairs &pairs = collision.collisionPairs;
+    const B2::CollisionPairs &pairs = collision.collisionPairs;
     return pairs.hasPair<B2::ObjT::PlayerFoot, B2::ObjT::Ground>();
   }
   

@@ -10,13 +10,14 @@
 #define contact_listener_hpp
 
 #include <functional>
-#include "collision pairs.hpp"
+#include "object types.hpp"
 #include <Simpleton/ECS/registry.hpp>
 #include <Box2D/Dynamics/b2WorldCallbacks.h>
+#include <Simpleton/Box2D/collision pairs.hpp>
 
 class ContactListener final : public b2ContactListener {
 public:
-  using Listener = std::function<void (CollisionPair)>;
+  using Listener = std::function<void (B2::CollisionPair)>;
 
   ContactListener() = default;
   
