@@ -13,6 +13,7 @@
 #include "transform init.hpp"
 #include <glm/trigonometric.hpp>
 #include <Box2D/Dynamics/b2World.h>
+#include <Simpleton/Box2D/json.hpp>
 #include <Simpleton/Box2D/entity id.hpp>
 
 PhysicsBodyInit::PhysicsBodyInit(b2World *const world)

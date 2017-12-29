@@ -12,6 +12,7 @@
 #include "object types.hpp"
 #include <Simpleton/Box2D/glm.hpp>
 #include <Simpleton/SDL/paths.hpp>
+#include <Simpleton/Box2D/json.hpp>
 #include "collision categories.hpp"
 
 namespace {
@@ -32,15 +33,15 @@ namespace {
     
     bodyDef.type = readBodyType(bodyNode.at("type").get<std::string>());
     
-    getOptional(bodyDef.linearVelocity, bodyNode, "linear velocity");
-    getOptional(bodyDef.angularVelocity, bodyNode, "angular velocity");
-    getOptional(bodyDef.linearDamping, bodyNode, "linear damping");
-    getOptional(bodyDef.angularDamping, bodyNode, "angular damping");
-    getOptional(bodyDef.allowSleep, bodyNode, "allow sleep");
-    getOptional(bodyDef.awake, bodyNode, "awake");
-    getOptional(bodyDef.fixedRotation, bodyNode, "fixed rotation");
-    getOptional(bodyDef.bullet, bodyNode, "bullet");
-    getOptional(bodyDef.gravityScale, bodyNode, "gravity scale");
+    Data::getOptional(bodyDef.linearVelocity, bodyNode, "linear velocity");
+    Data::getOptional(bodyDef.angularVelocity, bodyNode, "angular velocity");
+    Data::getOptional(bodyDef.linearDamping, bodyNode, "linear damping");
+    Data::getOptional(bodyDef.angularDamping, bodyNode, "angular damping");
+    Data::getOptional(bodyDef.allowSleep, bodyNode, "allow sleep");
+    Data::getOptional(bodyDef.awake, bodyNode, "awake");
+    Data::getOptional(bodyDef.fixedRotation, bodyNode, "fixed rotation");
+    Data::getOptional(bodyDef.bullet, bodyNode, "bullet");
+    Data::getOptional(bodyDef.gravityScale, bodyNode, "gravity scale");
     
     return bodyDef;
   }
@@ -116,7 +117,7 @@ namespace {
     chain = {};
     
     bool isLoop = false;
-    getOptional(isLoop, chainNode, "is loop");
+    Data::getOptional(isLoop, chainNode, "is loop");
     const std::vector<b2Vec2> verts = readVecs(chainNode.at("verts"), scale);
     
     if (isLoop) {
@@ -171,7 +172,7 @@ namespace {
     } else if (const auto maskNode = filterNode.find("no collide with"); maskNode != filterNode.cend()) {
       filter.maskBits = ~getCategoryBits(*maskNode);
     }
-    getOptional(filter.groupIndex, filterNode, "group");
+    Data::getOptional(filter.groupIndex, filterNode, "group");
     return filter;
   }
   
@@ -179,10 +180,10 @@ namespace {
     b2FixtureDef fixtureDef;
     fixtureDef.shape = readShape(fixtureNode.at("shape"), scale);
     
-    getOptional(fixtureDef.friction, fixtureNode, "friction");
-    getOptional(fixtureDef.restitution, fixtureNode, "restitution");
-    getOptional(fixtureDef.density, fixtureNode, "density");
-    getOptional(fixtureDef.isSensor, fixtureNode, "is sensor");
+    Data::getOptional(fixtureDef.friction, fixtureNode, "friction");
+    Data::getOptional(fixtureDef.restitution, fixtureNode, "restitution");
+    Data::getOptional(fixtureDef.density, fixtureNode, "density");
+    Data::getOptional(fixtureDef.isSensor, fixtureNode, "is sensor");
     
     if (const auto userDataNode = fixtureNode.find("user data"); userDataNode != fixtureNode.cend()) {
       fixtureDef.userData = B2::getObjectTypeUserData(userDataNode->get<std::string>());
@@ -222,89 +223,89 @@ b2Body *loadBody(
 
 namespace {
   #define READ_ANCHOR                                                           \
-  getOptional(def->localAnchorA, node, "local anchor A");                       \
-  getOptional(def->localAnchorB, node, "local anchor B");
+  Data::getOptional(def->localAnchorA, node, "local anchor A");                 \
+  Data::getOptional(def->localAnchorB, node, "local anchor B");
   
   #define READ_FREQ_DAMP                                                        \
-  getOptional(def->frequencyHz, node, "frequency");                             \
-  getOptional(def->dampingRatio, node, "damping ratio");
+  Data::getOptional(def->frequencyHz, node, "frequency");                       \
+  Data::getOptional(def->dampingRatio, node, "damping ratio");
 
   void readRevolute(b2RevoluteJointDef *def, const json &node) {
     READ_ANCHOR
-    getOptional(def->referenceAngle, node, "reference angle");
-    getOptional(def->lowerAngle, node, "lower angle");
-    getOptional(def->upperAngle, node, "upper angle");
-    getOptional(def->maxMotorTorque, node, "max motor torque");
-    getOptional(def->motorSpeed, node, "motor speed");
-    getOptional(def->enableLimit, node, "enable limit");
-    getOptional(def->enableMotor, node, "enable motor");
+    Data::getOptional(def->referenceAngle, node, "reference angle");
+    Data::getOptional(def->lowerAngle, node, "lower angle");
+    Data::getOptional(def->upperAngle, node, "upper angle");
+    Data::getOptional(def->maxMotorTorque, node, "max motor torque");
+    Data::getOptional(def->motorSpeed, node, "motor speed");
+    Data::getOptional(def->enableLimit, node, "enable limit");
+    Data::getOptional(def->enableMotor, node, "enable motor");
   }
   
   void readPrismatic(b2PrismaticJointDef *def, const json &node) {
     READ_ANCHOR
-    getOptional(def->localAxisA, node, "local axis A");
-    getOptional(def->referenceAngle, node, "reference angle");
-    getOptional(def->enableLimit, node, "enable limit");
-    getOptional(def->lowerTranslation, node, "lower translation");
-    getOptional(def->upperTranslation, node, "upper translation");
-    getOptional(def->enableMotor, node, "enable motor");
-    getOptional(def->maxMotorForce, node, "max motor force");
-    getOptional(def->motorSpeed, node, "motor speed");
+    Data::getOptional(def->localAxisA, node, "local axis A");
+    Data::getOptional(def->referenceAngle, node, "reference angle");
+    Data::getOptional(def->enableLimit, node, "enable limit");
+    Data::getOptional(def->lowerTranslation, node, "lower translation");
+    Data::getOptional(def->upperTranslation, node, "upper translation");
+    Data::getOptional(def->enableMotor, node, "enable motor");
+    Data::getOptional(def->maxMotorForce, node, "max motor force");
+    Data::getOptional(def->motorSpeed, node, "motor speed");
   }
   
   void readDistance(b2DistanceJointDef *def, const json &node) {
     READ_ANCHOR
     READ_FREQ_DAMP
-    getOptional(def->length, node, "length");
+    Data::getOptional(def->length, node, "length");
   }
   
   void readPulley(b2PulleyJointDef *def, const json &node) {
     READ_ANCHOR
-    getOptional(def->groundAnchorA, node, "ground anchor A");
-    getOptional(def->groundAnchorB, node, "ground anchor B");
-    getOptional(def->lengthA, node, "length A");
-    getOptional(def->lengthB, node, "length B");
-    getOptional(def->ratio, node, "ratio");
+    Data::getOptional(def->groundAnchorA, node, "ground anchor A");
+    Data::getOptional(def->groundAnchorB, node, "ground anchor B");
+    Data::getOptional(def->lengthA, node, "length A");
+    Data::getOptional(def->lengthB, node, "length B");
+    Data::getOptional(def->ratio, node, "ratio");
   }
   
   void readMouse(b2MouseJointDef *def, const json &node) {
     READ_FREQ_DAMP
-    getOptional(def->target, node, "target");
-    getOptional(def->maxForce, node, "max force");
+    Data::getOptional(def->target, node, "target");
+    Data::getOptional(def->maxForce, node, "max force");
   }
   
   void readWheel(b2WheelJointDef *def, const json &node) {
     READ_ANCHOR
     READ_FREQ_DAMP
-    getOptional(def->localAxisA, node, "local axis A");
-    getOptional(def->enableMotor, node, "enable motor");
-    getOptional(def->maxMotorTorque, node, "max motor torque");
-    getOptional(def->motorSpeed, node, "motor speed");
+    Data::getOptional(def->localAxisA, node, "local axis A");
+    Data::getOptional(def->enableMotor, node, "enable motor");
+    Data::getOptional(def->maxMotorTorque, node, "max motor torque");
+    Data::getOptional(def->motorSpeed, node, "motor speed");
   }
   
   void readWeld(b2WeldJointDef *def, const json &node) {
     READ_ANCHOR
     READ_FREQ_DAMP
-    getOptional(def->referenceAngle, node, "reference angle");
+    Data::getOptional(def->referenceAngle, node, "reference angle");
   }
   
   void readFriction(b2FrictionJointDef *def, const json &node) {
     READ_ANCHOR
-    getOptional(def->maxForce, node, "max force");
-    getOptional(def->maxTorque, node, "max torque");
+    Data::getOptional(def->maxForce, node, "max force");
+    Data::getOptional(def->maxTorque, node, "max torque");
   }
   
   void readRope(b2RopeJointDef *def, const json &node) {
     READ_ANCHOR
-    getOptional(def->maxLength, node, "max length");
+    Data::getOptional(def->maxLength, node, "max length");
   }
   
   void readMotor(b2MotorJointDef *def, const json &node) {
-    getOptional(def->linearOffset, node, "linear offset");
-    getOptional(def->angularOffset, node, "angular offset");
-    getOptional(def->maxForce, node, "max force");
-    getOptional(def->maxTorque, node, "max torque");
-    getOptional(def->correctionFactor, node, "correction factor");
+    Data::getOptional(def->linearOffset, node, "linear offset");
+    Data::getOptional(def->angularOffset, node, "angular offset");
+    Data::getOptional(def->maxForce, node, "max force");
+    Data::getOptional(def->maxTorque, node, "max torque");
+    Data::getOptional(def->correctionFactor, node, "correction factor");
   }
   
   #undef READ_FREQ_DAMP
@@ -341,7 +342,7 @@ namespace {
     
     #undef JOINT
     
-    getOptional(jointDef->collideConnected, node, "collide connected");
+    Data::getOptional(jointDef->collideConnected, node, "collide connected");
     
     return jointDef;
   }
@@ -353,7 +354,7 @@ void readJoint(b2JointDef *def, const json &node) {
       read##CLASS(static_cast<b2##CLASS##JointDef *>(def), node);               \
       break;
 
-  getOptional(def->collideConnected, node, "collide connected");
+  Data::getOptional(def->collideConnected, node, "collide connected");
 
   switch (def->type) {
     JOINTS

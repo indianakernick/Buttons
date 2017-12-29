@@ -9,7 +9,7 @@
 #ifndef comp_init_hpp
 #define comp_init_hpp
 
-#include "json helper.hpp"
+#include <Simpleton/Data/json.hpp>
 #include <Simpleton/ECS/registry.hpp>
 
 class EntityIDmap;

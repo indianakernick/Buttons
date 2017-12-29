@@ -47,5 +47,5 @@ void PowerInputInit::init(PowerInput &comp, const json &node, const EntityIDmap 
   } else {
     comp.op = PowerInput::LogicOp::IDENTITY;
   }
-  getOptional(comp.on, node, "on");
+  Data::getOptional(comp.on, node, "on");
 }

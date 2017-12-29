@@ -9,7 +9,7 @@
 #include "activation init.hpp"
 
 void ActivationInit::init(Activation &comp, const json &node) {
-  getOptional(comp.speed, node, "speed");
+  Data::getOptional(comp.speed, node, "speed");
   if (const auto activeNode = node.find("active"); activeNode != node.cend()) {
     if (activeNode->get<bool>()) {
       comp.state = Activation::State::ACTIVE;

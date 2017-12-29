@@ -10,8 +10,8 @@
 #define physics_file_hpp
 
 #include <Box2D/Box2D.h>
-#include "json helper.hpp"
 #include "transform component.hpp"
+#include <Simpleton/Data/json.hpp>
 
 b2Body *loadBody(const json &, b2World &, Transform);
 b2Body *loadBody(const std::string &, b2World &, Transform);

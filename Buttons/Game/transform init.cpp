@@ -11,8 +11,8 @@
 #include <glm/trigonometric.hpp>
 
 void TransformInit::init(Transform &comp, const json &node) {
-  getOptional(comp.pos, node, "pos");
-  getOptional(comp.scale, node, "scale");
-  getOptional(comp.rotation, node, "rotation");
+  Data::getOptional(comp.pos, node, "pos");
+  Data::getOptional(comp.scale, node, "scale");
+  Data::getOptional(comp.rotation, node, "rotation");
   comp.rotation = glm::radians(comp.rotation);
 }

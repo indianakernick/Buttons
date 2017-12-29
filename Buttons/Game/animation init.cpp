@@ -9,8 +9,8 @@
 #include "animation init.hpp"
 
 void AnimationInit::init(Animation &comp, const json &node) {
-  getOptional(comp.progress, node, "progress");
-  getOptional(comp.speed, node, "speed");
+  Data::getOptional(comp.progress, node, "progress");
+  Data::getOptional(comp.speed, node, "speed");
   
   if (const auto edgeNode = node.find("edge mode"); edgeNode != node.cend()) {
     const std::string &edgeModeStr = edgeNode->get_ref<const std::string &>();

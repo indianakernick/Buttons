@@ -10,7 +10,7 @@
 #define entity_id_map_hpp
 
 #include <vector>
-#include "json helper.hpp"
+#include <Simpleton/Data/json.hpp>
 #include <Simpleton/ECS/registry.hpp>
 
 using ClientEntityID = int;
