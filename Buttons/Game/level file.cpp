@@ -27,7 +27,7 @@ namespace {
       const bool gotComp = Utils::getByName<CompList>(
         pair.first,
         [id, &idMap, &registry, &compInits, &props = pair.second] (auto t) {
-          compInits.init(registry.accomodate<UTILS_TYPE(t)>(id), props, idMap, id);
+          compInits.init(registry.assign<UTILS_TYPE(t)>(id), props, idMap, id);
         }
       );
       if (!gotComp) {
