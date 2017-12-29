@@ -8,13 +8,11 @@
 
 #include "physics init.hpp"
 
-#include "physics file.hpp"
+#include "object types.hpp"
 #include "entity id map.hpp"
 #include "transform init.hpp"
-#include <glm/trigonometric.hpp>
-#include <Box2D/Dynamics/b2World.h>
-#include <Simpleton/Box2D/json.hpp>
-#include <Simpleton/Box2D/entity id.hpp>
+#include "collision categories.hpp"
+#include <Simpleton/Box2D/parse json.hpp>
 
 PhysicsBodyInit::PhysicsBodyInit(b2World *const world)
   : world(world) {
@@ -30,8 +28,14 @@ void PhysicsBodyInit::init(
   Transform transform;
   TransformInit transformInit;
   transformInit.init(transform, node);
-  comp.body = loadBody(node.at("body"), *world, transform);
-  comp.body->SetUserData(B2::getUserData(entity));
+  comp.body = B2::loadBody(
+    node.at("body"),
+    *world,
+    transform.pos,
+    transform.scale,
+    transform.rotation
+  );
+  B2::setEntity(comp.body, entity);
   comp.scale = transform.scale;
 }
 
@@ -55,14 +59,11 @@ void PhysicsJointInit::init(
   const EntityIDmap &idMap,
   const ECS::EntityID entity
 ) {
-  //read the joint file
-  b2JointDef *const def = loadJoint(node.at("joint").get<std::string>());
-  //read the level file
-  readJoint(def, node);
+  b2JointDef *const def = B2::loadJoint(node.at("joint"));
+  B2::setEntity(def, entity);
   
   def->bodyA = getBody(node.at("body A"), idMap, registry);
   def->bodyB = getBody(node.at("body B"), idMap, registry);
-  def->userData = B2::getUserData(entity);
   
   comp.joint = world->CreateJoint(def);
 }

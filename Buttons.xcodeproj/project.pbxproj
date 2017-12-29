@@ -103,7 +103,6 @@
 		4583EEA61FB1B1E800AED27D /* button system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EEA41FB1B1E800AED27D /* button system.cpp */; };
 		4583EEAA1FB1B6E100AED27D /* physics transform system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4583EEA81FB1B6E100AED27D /* physics transform system.cpp */; };
 		4584F4001FCBB7F50062B93E /* screen manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4584F3FE1FCBB7F50062B93E /* screen manager.cpp */; };
-		4584F4491FD13BA30062B93E /* physics file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4584F4471FD13BA30062B93E /* physics file.cpp */; };
 		4584F44C1FD215340062B93E /* level file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4584F44A1FD215340062B93E /* level file.cpp */; };
 		4591F0641FBFE1420075000D /* power init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0621FBFE1420075000D /* power init.cpp */; };
 		4591F0671FBFE44B0075000D /* activation init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4591F0651FBFE44B0075000D /* activation init.cpp */; };
@@ -502,8 +501,6 @@
 		4584F43D1FD12CF30062B93E /* platform entity.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "platform entity.jsonnet"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
 		4584F43E1FD12CF40062B93E /* lock entity.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "lock entity.jsonnet"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
 		4584F43F1FD12CF40062B93E /* text entity.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "text entity.jsonnet"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
-		4584F4471FD13BA30062B93E /* physics file.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "physics file.cpp"; sourceTree = "<group>"; };
-		4584F4481FD13BA30062B93E /* physics file.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "physics file.hpp"; sourceTree = "<group>"; };
 		4584F44A1FD215340062B93E /* level file.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "level file.cpp"; sourceTree = "<group>"; };
 		4584F44B1FD215340062B93E /* level file.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "level file.hpp"; sourceTree = "<group>"; };
 		4584F46D1FD34D440062B93E /* level 10.jsonnet */ = {isa = PBXFileReference; lastKnownFileType = text; path = "level 10.jsonnet"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
@@ -1468,8 +1465,6 @@
 			children = (
 				452E108B1FB2D8BA0063114B /* object types.hpp */,
 				4583EE911FB19DE600AED27D /* collision categories.hpp */,
-				4584F4471FD13BA30062B93E /* physics file.cpp */,
-				4584F4481FD13BA30062B93E /* physics file.hpp */,
 			);
 			name = Physics;
 			sourceTree = "<group>";
@@ -1708,7 +1703,6 @@
 				4583EE091FB18F7A00AED27D /* b2Fixture.cpp in Sources */,
 				4591F0901FC1534D0075000D /* laser detector init.cpp in Sources */,
 				4533A8B71FC90AFC0027B0FB /* lock init.cpp in Sources */,
-				4584F4491FD13BA30062B93E /* physics file.cpp in Sources */,
 				45C525901FECE41500A738E0 /* text rendering component.cpp in Sources */,
 				456DF0CD1FBFB519003B3FD1 /* physics init.cpp in Sources */,
 				4583EE0A1FB18F7A00AED27D /* b2ChainAndPolygonContact.cpp in Sources */,
