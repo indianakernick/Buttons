@@ -23,7 +23,7 @@ public:
   void init(
     Comp &comp,
     const json &node,
-    const EntityIDmap &idMap,
+    const ECS::EntityIDmap &idMap,
     const ECS::EntityID entity
   ) const {
     assert(getInit<Comp>());

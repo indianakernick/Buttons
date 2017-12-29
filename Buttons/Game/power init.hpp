@@ -14,7 +14,7 @@
 
 class PowerInputInit final : public CompInit<PowerInput> {
 public:
-  void init(PowerInput &, const json &, const EntityIDmap &) override;
+  void init(PowerInput &, const json &, const ECS::EntityIDmap &) override;
 };
 
 #endif

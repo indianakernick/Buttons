@@ -14,7 +14,7 @@
 
 class LaserDetectorInit final : public CompInit<LaserDetector> {
 public:
-  void init(LaserDetector &, const json &, const EntityIDmap &) override;
+  void init(LaserDetector &, const json &, const ECS::EntityIDmap &) override;
 };
 
 #endif

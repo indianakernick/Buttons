@@ -8,8 +8,8 @@
 
 #include "laser detector init.hpp"
 
-#include "entity id map.hpp"
+#include <Simpleton/ECS/entity id map.hpp>
 
-void LaserDetectorInit::init(LaserDetector &comp, const json &node, const EntityIDmap &idMap) {
-  comp.emitter = idMap.getEntityFromID(node.at("emitter").get<ClientEntityID>());
+void LaserDetectorInit::init(LaserDetector &comp, const json &node, const ECS::EntityIDmap &idMap) {
+  comp.emitter = idMap.getEntityFromID(node.at("emitter").get<ECS::ClientEntityID>());
 }

@@ -12,7 +12,9 @@
 #include <Simpleton/Data/json.hpp>
 #include <Simpleton/ECS/registry.hpp>
 
-class EntityIDmap;
+namespace ECS {
+  class EntityIDmap;
+}
 
 template <typename Comp_>
 class CompInit {
@@ -22,15 +24,15 @@ public:
   CompInit() = default;
   virtual ~CompInit() = default;
   
-  void initialize(Comp &comp, const json &node, const EntityIDmap &idMap, const ECS::EntityID entity) {
+  void initialize(Comp &comp, const json &node, const ECS::EntityIDmap &idMap, const ECS::EntityID entity) {
     init(comp, node, idMap, entity);
   }
 
 private:
-  virtual void init(Comp &comp, const json &node, const EntityIDmap &idMap, ECS::EntityID) {
+  virtual void init(Comp &comp, const json &node, const ECS::EntityIDmap &idMap, ECS::EntityID) {
     init(comp, node, idMap);
   }
-  virtual void init(Comp &comp, const json &node, const EntityIDmap &) {
+  virtual void init(Comp &comp, const json &node, const ECS::EntityIDmap &) {
     init(comp, node);
   }
   virtual void init(Comp &comp, const json &) {

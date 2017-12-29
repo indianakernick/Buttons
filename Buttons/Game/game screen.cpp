@@ -10,7 +10,6 @@
 
 #include "systems.hpp"
 #include "global flags.hpp"
-#include "entity id map.hpp"
 #include "screen manager.hpp"
 #include "component inits.hpp"
 #include "camera constants.hpp"

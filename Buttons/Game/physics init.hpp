@@ -17,7 +17,7 @@ class PhysicsBodyInit final : public CompInit<PhysicsBody> {
 public:
   explicit PhysicsBodyInit(b2World *);
   
-  void init(PhysicsBody &, const json &, const EntityIDmap &, ECS::EntityID) override;
+  void init(PhysicsBody &, const json &, const ECS::EntityIDmap &, ECS::EntityID) override;
 
 private:
   b2World *world;
@@ -27,7 +27,7 @@ class PhysicsJointInit final : public CompInit<PhysicsJoint> {
 public:
   PhysicsJointInit(b2World *, ECS::Registry *);
   
-  void init(PhysicsJoint &, const json &, const EntityIDmap &, ECS::EntityID) override;
+  void init(PhysicsJoint &, const json &, const ECS::EntityIDmap &, ECS::EntityID) override;
 
 private:
   b2World *world;

@@ -10,14 +10,15 @@
 
 #include <fstream>
 #include "comp inits.hpp"
-#include "entity id map.hpp"
+#include <Simpleton/ECS/json.hpp>
 #include <Simpleton/SDL/paths.hpp>
+#include <Simpleton/ECS/entity id map.hpp>
 
 namespace {
   void loadComps(
     const ECS::EntityID id,
     const json &comps,
-    const EntityIDmap &idMap,
+    const ECS::EntityIDmap &idMap,
     const CompInits &compInits,
     ECS::Registry &registry
   ) {
@@ -48,8 +49,8 @@ bool loadLevel(const std::string &fileName, const CompInits &compInits, ECS::Reg
   json root;
   file >> root;
   
-  EntityIDmap idMap;
-  idMap.insertIDs(root, registry);
+  ECS::EntityIDmap idMap;
+  ECS::insertPairs(idMap, root, registry);
   
   for (size_t i = 0; i != root.size(); ++i) {
     const ECS::EntityID id = idMap.getEntityFromIndex(i);

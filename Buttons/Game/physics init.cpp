@@ -9,10 +9,10 @@
 #include "physics init.hpp"
 
 #include "object types.hpp"
-#include "entity id map.hpp"
 #include "transform init.hpp"
 #include "collision categories.hpp"
 #include <Simpleton/Box2D/parse json.hpp>
+#include <Simpleton/ECS/entity id map.hpp>
 
 PhysicsBodyInit::PhysicsBodyInit(b2World *const world)
   : world(world) {
@@ -22,7 +22,7 @@ PhysicsBodyInit::PhysicsBodyInit(b2World *const world)
 void PhysicsBodyInit::init(
   PhysicsBody &comp,
   const json &node,
-  const EntityIDmap &,
+  const ECS::EntityIDmap &,
   const ECS::EntityID entity
 ) {
   Transform transform;
@@ -46,8 +46,8 @@ PhysicsJointInit::PhysicsJointInit(b2World *const world, ECS::Registry *const re
 }
 
 namespace {
-  b2Body *getBody(const json &node, const EntityIDmap &idMap, ECS::Registry *registry) {
-    const ClientEntityID bodyClientID = node.get<ClientEntityID>();
+  b2Body *getBody(const json &node, const ECS::EntityIDmap &idMap, ECS::Registry *registry) {
+    const ECS::ClientEntityID bodyClientID = node.get<ECS::ClientEntityID>();
     const ECS::EntityID bodyEntityID = idMap.getEntityFromID(bodyClientID);
     return registry->get<PhysicsBody>(bodyEntityID).body;
   }
@@ -56,7 +56,7 @@ namespace {
 void PhysicsJointInit::init(
   PhysicsJoint &comp,
   const json &node,
-  const EntityIDmap &idMap,
+  const ECS::EntityIDmap &idMap,
   const ECS::EntityID entity
 ) {
   b2JointDef *const def = B2::loadJoint(node.at("joint"));

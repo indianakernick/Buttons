@@ -8,7 +8,7 @@
 
 #include "power init.hpp"
 
-#include "entity id map.hpp"
+#include <Simpleton/ECS/entity id map.hpp>
 
 namespace {
   PowerInput::LogicOp getLogicOp(const std::string &name) {
@@ -32,14 +32,14 @@ namespace {
   }
 }
 
-void PowerInputInit::init(PowerInput &comp, const json &node, const EntityIDmap &idMap) {
+void PowerInputInit::init(PowerInput &comp, const json &node, const ECS::EntityIDmap &idMap) {
   if (const auto inNode = node.find("in"); inNode != node.cend()) {
     if (inNode->is_array()) {
       for (auto &node : *inNode) {
-        comp.inputs.push_back(idMap.getEntityFromID(node.get<ClientEntityID>()));
+        comp.inputs.push_back(idMap.getEntityFromID(node.get<ECS::ClientEntityID>()));
       }
     } else if (inNode->is_number()) {
-      comp.inputs.push_back(idMap.getEntityFromID(inNode->get<ClientEntityID>()));
+      comp.inputs.push_back(idMap.getEntityFromID(inNode->get<ECS::ClientEntityID>()));
     }
   }
   if (const auto opNode = node.find("operator"); opNode != node.cend()) {
