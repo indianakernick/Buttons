@@ -55,11 +55,11 @@ public:
   }
   
 private:
-  #define COMP(NAME, ID_NAME) std::unique_ptr<CompInit<NAME>>,
-  #define LAST_COMP(NAME, ID_NAME) std::unique_ptr<CompInit<NAME>>
-  std::tuple<COMPS> inits;
-  #undef LAST_COMP
-  #undef COMP
+  template <typename Comp>
+  struct InitPointer {
+    using type = std::unique_ptr<CompInit<Comp>>;
+  };
+  Utils::ListToTuple<Utils::TransformList<CompList, InitPointer>> inits;
   
   template <typename Comp>
   auto &getInit() {

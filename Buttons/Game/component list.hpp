@@ -34,38 +34,40 @@
 #include "static sprite rendering component.hpp"
 
 #define COMPS                                                                   \
-  COMP(PowerInput, powerInput)                                                  \
-  COMP(PowerOutput, powerOutput)                                                \
-  COMP(PhysicsBody, physicsBody)                                                \
-  COMP(PhysicsJoint, physicsJoint)                                              \
-  COMP(PhysicsRayCast, physicsRayCast)                                          \
-  COMP(Transform, transform)                                                    \
-  COMP(Collision, collision)                                                    \
-  COMP(Activation, activation)                                                  \
-  COMP(PlayerInput, playerInput)                                                \
-  COMP(PlayerJump, playerJump)                                                  \
-  COMP(Button, button)                                                          \
-  COMP(Door, door)                                                              \
-  COMP(Switch, switch)                                                          \
-  COMP(Animation, animation)                                                    \
-  COMP(Exit, exit)                                                              \
-  COMP(LaserDetector, laserDetector)                                            \
-  COMP(Text, text)                                                              \
-  COMP(Key, key)                                                                \
-  COMP(Lock, lock)                                                              \
-  COMP(PlayerKeys, playerKeys)                                                  \
-  COMP(StaticSpriteRendering, staticSpriteRendering)                            \
-  COMP(AnimSpriteRendering, animSpriteRendering)                                \
-  COMP(LaserRendering, laserRendering)                                          \
-  COMP(TextRendering, textRendering)                                            \
-  LAST_COMP(MovingPlatform, movingPlatform)
+  COMP(PowerInput)                                                              \
+  COMP(PowerOutput)                                                             \
+  COMP(PhysicsBody)                                                             \
+  COMP(PhysicsJoint)                                                            \
+  COMP(PhysicsRayCast)                                                          \
+  COMP(Transform)                                                               \
+  COMP(Collision)                                                               \
+  COMP(Activation)                                                              \
+  COMP(PlayerInput)                                                             \
+  COMP(PlayerJump)                                                              \
+  COMP(Button)                                                                  \
+  COMP(Door)                                                                    \
+  COMP(Switch)                                                                  \
+  COMP(Animation)                                                               \
+  COMP(Exit)                                                                    \
+  COMP(LaserDetector)                                                           \
+  COMP(Text)                                                                    \
+  COMP(Key)                                                                     \
+  COMP(Lock)                                                                    \
+  COMP(PlayerKeys)                                                              \
+  COMP(StaticSpriteRendering)                                                   \
+  COMP(AnimSpriteRendering)                                                     \
+  COMP(LaserRendering)                                                          \
+  COMP(TextRendering)                                                           \
+  LAST_COMP(MovingPlatform)
 
-#define COMP(NAME, ID_NAME) NAME,
-#define LAST_COMP(NAME, ID_NAME) NAME
+#define COMP(NAME) NAME,
+#define LAST_COMP(NAME) NAME
 using CompList = Utils::TypeList<
   COMPS
 >;
 #undef LAST_COMP
 #undef COMP
+
+#undef COMPS
 
 #endif

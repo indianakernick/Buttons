@@ -121,7 +121,6 @@
 		4597961E1FB41C0C007A7432 /* power component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597961D1FB41C0C007A7432 /* power component.cpp */; };
 		459796201FB41C1A007A7432 /* activation component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597961F1FB41C1A007A7432 /* activation component.cpp */; };
 		459796221FB41C24007A7432 /* transform component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459796211FB41C24007A7432 /* transform component.cpp */; };
-		4597962E1FB65BBB007A7432 /* component list.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4597962C1FB65BBB007A7432 /* component list.cpp */; };
 		45C5242B1FEB373900A738E0 /* static sprite rendering init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45C524291FEB373900A738E0 /* static sprite rendering init.cpp */; };
 		45C5245B1FEB611C00A738E0 /* anim sprite rendering component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45C524591FEB611C00A738E0 /* anim sprite rendering component.cpp */; };
 		45C5245E1FEB61AB00A738E0 /* anim sprite rendering init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45C5245C1FEB61AB00A738E0 /* anim sprite rendering init.cpp */; };
@@ -540,7 +539,6 @@
 		4597961D1FB41C0C007A7432 /* power component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "power component.cpp"; sourceTree = "<group>"; };
 		4597961F1FB41C1A007A7432 /* activation component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "activation component.cpp"; sourceTree = "<group>"; };
 		459796211FB41C24007A7432 /* transform component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "transform component.cpp"; sourceTree = "<group>"; };
-		4597962C1FB65BBB007A7432 /* component list.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "component list.cpp"; sourceTree = "<group>"; };
 		4597962D1FB65BBB007A7432 /* component list.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "component list.hpp"; sourceTree = "<group>"; };
 		45C524291FEB373900A738E0 /* static sprite rendering init.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "static sprite rendering init.cpp"; sourceTree = "<group>"; };
 		45C5242A1FEB373900A738E0 /* static sprite rendering init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "static sprite rendering init.hpp"; sourceTree = "<group>"; };
@@ -1351,7 +1349,6 @@
 		4583EE801FB195CD00AED27D /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				4597962C1FB65BBB007A7432 /* component list.cpp */,
 				4597962D1FB65BBB007A7432 /* component list.hpp */,
 				459796191FB41BF1007A7432 /* physics component.cpp */,
 				4583EE861FB1978500AED27D /* physics component.hpp */,
@@ -1765,7 +1762,6 @@
 				45771C091FE8745F00F533DA /* rendering system.cpp in Sources */,
 				4583EE2B1FB18F7A00AED27D /* b2CollidePolygon.cpp in Sources */,
 				4583EE2C1FB18F7A00AED27D /* b2DynamicTree.cpp in Sources */,
-				4597962E1FB65BBB007A7432 /* component list.cpp in Sources */,
 				4583EE2D1FB18F7A00AED27D /* b2ChainShape.cpp in Sources */,
 				4520AD741FEB32FC00ECE3C1 /* static sprite rendering component.cpp in Sources */,
 				4583EE2E1FB18F7A00AED27D /* b2EdgeShape.cpp in Sources */,
