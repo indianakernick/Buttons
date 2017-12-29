@@ -56,7 +56,7 @@ bool loadLevel(const std::string &fileName, const CompInits &compInits, ECS::Reg
     const ECS::EntityID id = idMap.getEntityFromIndex(i);
     const json &node = root[i];
     
-    if (const auto compsNode = node.find("components"); compsNode != node.cend()) {
+    if (JSON_OPTIONAL(compsNode, node, "components")) {
       loadComps(id, *compsNode, idMap, compInits, registry);
     }
   }

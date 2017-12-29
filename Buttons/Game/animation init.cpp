@@ -12,8 +12,8 @@ void AnimationInit::init(Animation &comp, const json &node) {
   Data::getOptional(comp.progress, node, "progress");
   Data::getOptional(comp.speed, node, "speed");
   
-  if (const auto edgeNode = node.find("edge mode"); edgeNode != node.cend()) {
-    const std::string &edgeModeStr = edgeNode->get_ref<const std::string &>();
+  if (JSON_OPTIONAL(edgeMode, node, "edge mode")) {
+    const std::string &edgeModeStr = edgeMode->get_ref<const std::string &>();
            if (edgeModeStr == "stop") {
       comp.edgeMode = Animation::EdgeMode::STOP;
     } else if (edgeModeStr == "repeat") {

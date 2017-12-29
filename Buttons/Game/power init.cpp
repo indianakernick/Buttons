@@ -33,7 +33,7 @@ namespace {
 }
 
 void PowerInputInit::init(PowerInput &comp, const json &node, const ECS::EntityIDmap &idMap) {
-  if (const auto inNode = node.find("in"); inNode != node.cend()) {
+  if (JSON_OPTIONAL(inNode, node, "in")) {
     if (inNode->is_array()) {
       for (auto &node : *inNode) {
         comp.inputs.push_back(idMap.getEntityFromID(node.get<ECS::ClientEntityID>()));
@@ -42,7 +42,7 @@ void PowerInputInit::init(PowerInput &comp, const json &node, const ECS::EntityI
       comp.inputs.push_back(idMap.getEntityFromID(inNode->get<ECS::ClientEntityID>()));
     }
   }
-  if (const auto opNode = node.find("operator"); opNode != node.cend()) {
+  if (JSON_OPTIONAL(opNode, node, "operator")) {
     comp.op = getLogicOp(opNode->get_ref<const std::string &>());
   } else {
     comp.op = PowerInput::LogicOp::IDENTITY;

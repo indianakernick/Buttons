@@ -16,7 +16,7 @@ void MovingPlatformInit::init(MovingPlatform &comp, const json &node) {
   Data::getOptional(comp.waitingTime, node, "waiting time");
   Data::getOptional(comp.moveSpeed, node, "speed");
   
-  if (const auto piston = node.find("piston"); piston != node.cend()) {
+  if (JSON_OPTIONAL(piston, node, "piston")) {
     if (piston->get<bool>()) {
       //piston mode overrides "waiting time"
       comp.waitingTime = MovingPlatform::PISTON;
