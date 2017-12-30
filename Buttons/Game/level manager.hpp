@@ -11,9 +11,9 @@
 
 #include <limits>
 #include "level.hpp"
+#include "component list.hpp"
 #include <Simpleton/ECS/registry.hpp>
-
-class CompInits;
+#include <Simpleton/ECS/comp inits.hpp>
 
 class LevelManager {
 public:
@@ -22,7 +22,7 @@ public:
 
   LevelManager() = default;
   
-  void init(ECS::Registry &, const CompInits &);
+  void init(ECS::Registry &, const ECS::CompInits<CompList> &);
   void quit();
   
   bool loadLevel(Level);
@@ -34,7 +34,7 @@ public:
 
 private:
   ECS::Registry *registry = nullptr;
-  const CompInits *compInits = nullptr;
+  const ECS::CompInits<CompList> *compInits = nullptr;
   Level current = NONE_LOADED;
 };
 

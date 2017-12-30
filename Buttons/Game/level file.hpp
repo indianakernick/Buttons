@@ -10,11 +10,11 @@
 #define level_file_hpp
 
 #include <string>
+#include "component list.hpp"
 #include <Simpleton/ECS/registry.hpp>
+#include <Simpleton/ECS/comp inits.hpp>
 
-class CompInits;
-
-bool loadLevel(const std::string &, const CompInits &, ECS::Registry &);
+bool loadLevel(const std::string &, const ECS::CompInits<CompList> &, ECS::Registry &);
 
 
 #endif

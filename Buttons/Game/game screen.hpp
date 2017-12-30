@@ -10,12 +10,13 @@
 #define game_screen_hpp
 
 #include "screen.hpp"
-#include "comp inits.hpp"
 #include "level manager.hpp"
 #include "physics system.hpp"
+#include "component list.hpp"
 #include "input dispatcher.hpp"
 #include "progress manager.hpp"
 #include <Simpleton/ECS/registry.hpp>
+#include <Simpleton/ECS/comp inits.hpp>
 #include <Simpleton/Math/digit stack.hpp>
 #include <Simpleton/Camera 2D/camera.hpp>
 
@@ -39,7 +40,7 @@ private:
   ECS::Registry registry;
   PhysicsSystem physics;
   RenderingSystem *rendering;
-  CompInits compInits;
+  ECS::CompInits<CompList> compInits;
   LevelManager levels;
   ProgressManager progress;
   InputDispatcher inputDispatcher;

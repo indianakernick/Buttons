@@ -9,7 +9,6 @@
 #include "level file.hpp"
 
 #include <fstream>
-#include "comp inits.hpp"
 #include <Simpleton/ECS/json.hpp>
 #include <Simpleton/SDL/paths.hpp>
 #include <Simpleton/ECS/entity id map.hpp>
@@ -19,7 +18,7 @@ namespace {
     const ECS::EntityID id,
     const json &comps,
     const ECS::EntityIDmap &idMap,
-    const CompInits &compInits,
+    const ECS::CompInits<CompList> &compInits,
     ECS::Registry &registry
   ) {
     auto obj = comps.get_ref<const json::object_t &>();
@@ -41,7 +40,11 @@ namespace {
   }
 }
 
-bool loadLevel(const std::string &fileName, const CompInits &compInits, ECS::Registry &registry) {
+bool loadLevel(
+  const std::string &fileName,
+  const ECS::CompInits<CompList> &compInits,
+  ECS::Registry &registry
+) {
   std::ifstream file(SDL::getResDir() + fileName);
   if (!file.is_open()) {
     return false;
