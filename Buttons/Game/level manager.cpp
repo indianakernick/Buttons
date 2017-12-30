@@ -23,7 +23,7 @@ void LevelManager::quit() {
   registry = nullptr;
 }
 
-bool LevelManager::loadLevel(const Level level) {
+bool LevelManager::loadLevel(const ECS::Level level) {
   assert(registry);
   if (current != NONE_LOADED) {
     registry->reset();
@@ -62,7 +62,7 @@ bool LevelManager::reload() {
   }
 }
 
-Level LevelManager::getLoaded() const {
+ECS::Level LevelManager::getLoaded() const {
   return current;
 }
 

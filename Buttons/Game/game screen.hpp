@@ -14,11 +14,11 @@
 #include "physics system.hpp"
 #include "component list.hpp"
 #include "input dispatcher.hpp"
-#include "progress manager.hpp"
 #include <Simpleton/ECS/registry.hpp>
 #include <Simpleton/ECS/comp inits.hpp>
 #include <Simpleton/Math/digit stack.hpp>
 #include <Simpleton/Camera 2D/camera.hpp>
+#include <Simpleton/ECS/progress manager.hpp>
 
 extern "C" union SDL_Event;
 
@@ -42,15 +42,15 @@ private:
   RenderingSystem *rendering;
   ECS::CompInits<CompList> compInits;
   LevelManager levels;
-  ProgressManager progress;
+  ECS::ProgressManager progress;
   InputDispatcher inputDispatcher;
   Cam2D::Camera camera;
   
-  Math::DigitStack<Level> enteredLevel;
+  Math::DigitStack<ECS::Level> enteredLevel;
   bool choosingLevel = false;
   bool quitGame = false;
   
-  bool loadLevel(Level);
+  bool loadLevel(ECS::Level);
   bool loadFinalLevel();
   bool loadNextLevel();
   void reloadLevel();

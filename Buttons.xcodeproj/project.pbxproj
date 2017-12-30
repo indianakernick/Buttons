@@ -30,7 +30,6 @@
 		4533A8BD1FC90EF50027B0FB /* take key system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8BB1FC90EF50027B0FB /* take key system.cpp */; };
 		4533A8C01FC912B10027B0FB /* activate lock system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8BE1FC912B10027B0FB /* activate lock system.cpp */; };
 		4533A8FE1FCA69440027B0FB /* game screen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8FC1FCA69440027B0FB /* game screen.cpp */; };
-		4533A9011FCA91DD0027B0FB /* progress manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A8FF1FCA91DC0027B0FB /* progress manager.cpp */; };
 		4533A9081FCAA2520027B0FB /* start menu screen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A9061FCAA2520027B0FB /* start menu screen.cpp */; };
 		4533A90E1FCAE2A10027B0FB /* screen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4533A90C1FCAE2A10027B0FB /* screen.cpp */; };
 		454D04B41FE64FCA00D3E560 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 454D04B31FE64FCA00D3E560 /* SDL2.framework */; };
@@ -298,9 +297,6 @@
 		4533A8BF1FC912B10027B0FB /* activate lock system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "activate lock system.hpp"; sourceTree = "<group>"; };
 		4533A8FC1FCA69440027B0FB /* game screen.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "game screen.cpp"; sourceTree = "<group>"; };
 		4533A8FD1FCA69440027B0FB /* game screen.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "game screen.hpp"; sourceTree = "<group>"; };
-		4533A8FF1FCA91DC0027B0FB /* progress manager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "progress manager.cpp"; sourceTree = "<group>"; };
-		4533A9001FCA91DD0027B0FB /* progress manager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "progress manager.hpp"; sourceTree = "<group>"; };
-		4533A9021FCA92BF0027B0FB /* level.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = level.hpp; sourceTree = "<group>"; };
 		4533A9061FCAA2520027B0FB /* start menu screen.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "start menu screen.cpp"; sourceTree = "<group>"; };
 		4533A9071FCAA2520027B0FB /* start menu screen.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "start menu screen.hpp"; sourceTree = "<group>"; };
 		4533A90C1FCAE2A10027B0FB /* screen.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = screen.cpp; sourceTree = "<group>"; };
@@ -1464,9 +1460,6 @@
 			children = (
 				456DF0C71FBEB610003B3FD1 /* level manager.cpp */,
 				456DF0C81FBEB610003B3FD1 /* level manager.hpp */,
-				4533A8FF1FCA91DC0027B0FB /* progress manager.cpp */,
-				4533A9001FCA91DD0027B0FB /* progress manager.hpp */,
-				4533A9021FCA92BF0027B0FB /* level.hpp */,
 				4584F44A1FD215340062B93E /* level file.cpp */,
 				4584F44B1FD215340062B93E /* level file.hpp */,
 			);
@@ -1677,7 +1670,6 @@
 				4583EE851FB1967700AED27D /* app.cpp in Sources */,
 				45C5242B1FEB373900A738E0 /* static sprite rendering init.cpp in Sources */,
 				459796201FB41C1A007A7432 /* activation component.cpp in Sources */,
-				4533A9011FCA91DD0027B0FB /* progress manager.cpp in Sources */,
 				4591F06A1FBFE51E0075000D /* transform init.cpp in Sources */,
 				4583EEA61FB1B1E800AED27D /* button system.cpp in Sources */,
 				4597961A1FB41BF1007A7432 /* physics component.cpp in Sources */,
