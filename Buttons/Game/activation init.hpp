@@ -9,10 +9,10 @@
 #ifndef activation_init_hpp
 #define activation_init_hpp
 
-#include "comp init.hpp"
 #include "activation component.hpp"
+#include <Simpleton/ECS/comp init.hpp>
 
-class ActivationInit final : public CompInit<Activation> {
+class ActivationInit final : public ECS::CompInit<Activation> {
 public:
   void init(Activation &, const json &) override;
 };

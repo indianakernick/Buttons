@@ -9,10 +9,10 @@
 #ifndef laser_rendering_init_hpp
 #define laser_rendering_init_hpp
 
-#include "comp init.hpp"
+#include <Simpleton/ECS/comp init.hpp>
 #include "laser rendering component.hpp"
 
-class LaserRenderingInit final : public CompInit<LaserRendering> {
+class LaserRenderingInit final : public ECS::CompInit<LaserRendering> {
 public:
   void init(LaserRendering &, const json &) override;
 };

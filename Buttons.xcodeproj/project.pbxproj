@@ -318,7 +318,6 @@
 		456DF0CB1FBFB519003B3FD1 /* physics init.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "physics init.cpp"; sourceTree = "<group>"; };
 		456DF0CC1FBFB519003B3FD1 /* physics init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "physics init.hpp"; sourceTree = "<group>"; };
 		456DF0CE1FBFB6C3003B3FD1 /* comp inits.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "comp inits.hpp"; sourceTree = "<group>"; };
-		456DF0CF1FBFB753003B3FD1 /* comp init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "comp init.hpp"; sourceTree = "<group>"; };
 		45771B8E1FE749E100F533DA /* sprite config.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "sprite config.yaml"; sourceTree = "<group>"; };
 		45771B901FE74C6700F533DA /* sprites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sprites.png; sourceTree = "<group>"; };
 		45771B911FE74C6800F533DA /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = file; path = sprites.atlas; sourceTree = "<group>"; };
@@ -1085,7 +1084,6 @@
 			children = (
 				4591F0741FBFEF4B0075000D /* component inits.hpp */,
 				456DF0CE1FBFB6C3003B3FD1 /* comp inits.hpp */,
-				456DF0CF1FBFB753003B3FD1 /* comp init.hpp */,
 				456DF0CB1FBFB519003B3FD1 /* physics init.cpp */,
 				456DF0CC1FBFB519003B3FD1 /* physics init.hpp */,
 				4591F0621FBFE1420075000D /* power init.cpp */,

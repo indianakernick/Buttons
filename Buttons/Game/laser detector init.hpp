@@ -9,10 +9,10 @@
 #ifndef laser_detector_init_hpp
 #define laser_detector_init_hpp
 
-#include "comp init.hpp"
+#include <Simpleton/ECS/comp init.hpp>
 #include "laser detector component.hpp"
 
-class LaserDetectorInit final : public CompInit<LaserDetector> {
+class LaserDetectorInit final : public ECS::CompInit<LaserDetector> {
 public:
   void init(LaserDetector &, const json &, const ECS::EntityIDmap &) override;
 };

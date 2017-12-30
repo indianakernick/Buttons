@@ -9,10 +9,10 @@
 #ifndef power_init_hpp
 #define power_init_hpp
 
-#include "comp init.hpp"
 #include "power component.hpp"
+#include <Simpleton/ECS/comp init.hpp>
 
-class PowerInputInit final : public CompInit<PowerInput> {
+class PowerInputInit final : public ECS::CompInit<PowerInput> {
 public:
   void init(PowerInput &, const json &, const ECS::EntityIDmap &) override;
 };

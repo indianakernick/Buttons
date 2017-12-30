@@ -9,10 +9,10 @@
 #ifndef transform_init_hpp
 #define transform_init_hpp
 
-#include "comp init.hpp"
 #include "transform component.hpp"
+#include <Simpleton/ECS/comp init.hpp>
 
-class TransformInit final : public CompInit<Transform> {
+class TransformInit final : public ECS::CompInit<Transform> {
 public:
   void init(Transform &, const json &) override;
 };

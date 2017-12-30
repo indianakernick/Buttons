@@ -9,10 +9,10 @@
 #ifndef key_init_hpp
 #define key_init_hpp
 
-#include "comp init.hpp"
 #include "key component.hpp"
+#include <Simpleton/ECS/comp init.hpp>
 
-class KeyInit final : public CompInit<Key> {
+class KeyInit final : public ECS::CompInit<Key> {
 public:
   void init(Key &, const json &);
 };

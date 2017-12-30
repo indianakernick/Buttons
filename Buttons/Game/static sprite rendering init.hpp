@@ -9,10 +9,10 @@
 #ifndef static_sprite_rendering_init_hpp
 #define static_sprite_rendering_init_hpp
 
-#include "comp init.hpp"
+#include <Simpleton/ECS/comp init.hpp>
 #include "static sprite rendering component.hpp"
 
-class StaticSpriteRenderingInit final : public CompInit<StaticSpriteRendering> {
+class StaticSpriteRenderingInit final : public ECS::CompInit<StaticSpriteRendering> {
 public:
   explicit StaticSpriteRenderingInit(const Unpack::Spritesheet &);
   

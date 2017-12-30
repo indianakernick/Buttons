@@ -9,10 +9,10 @@
 #ifndef text_init_hpp
 #define text_init_hpp
 
-#include "comp init.hpp"
 #include "text component.hpp"
+#include <Simpleton/ECS/comp init.hpp>
 
-class TextInit final : public CompInit<Text> {
+class TextInit final : public ECS::CompInit<Text> {
 public:
   void init(Text &, const json &) override;
 };

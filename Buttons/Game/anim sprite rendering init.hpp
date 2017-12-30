@@ -9,10 +9,10 @@
 #ifndef anim_sprite_rendering_init_hpp
 #define anim_sprite_rendering_init_hpp
 
-#include "comp init.hpp"
+#include <Simpleton/ECS/comp init.hpp>
 #include "anim sprite rendering component.hpp"
 
-class AnimSpriteRenderingInit final : public CompInit<AnimSpriteRendering> {
+class AnimSpriteRenderingInit final : public ECS::CompInit<AnimSpriteRendering> {
 public:
   explicit AnimSpriteRenderingInit(const Unpack::Spritesheet &);
   

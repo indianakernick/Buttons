@@ -9,10 +9,10 @@
 #ifndef animation_init_hpp
 #define animation_init_hpp
 
-#include "comp init.hpp"
 #include "animation component.hpp"
+#include <Simpleton/ECS/comp init.hpp>
 
-class AnimationInit final : public CompInit<Animation> {
+class AnimationInit final : public ECS::CompInit<Animation> {
 public:
   void init(Animation &, const json &) override;
 };

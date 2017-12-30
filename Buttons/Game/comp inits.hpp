@@ -10,9 +10,9 @@
 #define comp_inits_hpp
 
 #include <memory>
-#include "comp init.hpp"
 #include "component list.hpp"
 #include <Simpleton/Utils/tuple.hpp>
+#include <Simpleton/ECS/comp init.hpp>
 
 class CompInits {
 public:
@@ -57,7 +57,7 @@ public:
 private:
   template <typename Comp>
   struct InitPointer {
-    using type = std::unique_ptr<CompInit<Comp>>;
+    using type = std::unique_ptr<ECS::CompInit<Comp>>;
   };
   Utils::ListToTuple<Utils::TransformList<CompList, InitPointer>> inits;
   

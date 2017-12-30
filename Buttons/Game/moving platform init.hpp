@@ -9,10 +9,10 @@
 #ifndef moving_platform_init_hpp
 #define moving_platform_init_hpp
 
-#include "comp init.hpp"
+#include <Simpleton/ECS/comp init.hpp>
 #include "moving platform component.hpp"
 
-class MovingPlatformInit final : public CompInit<MovingPlatform> {
+class MovingPlatformInit final : public ECS::CompInit<MovingPlatform> {
 public:
   void init(MovingPlatform &, const json &) override;
 };
