@@ -1921,6 +1921,7 @@
 					"-Wpedantic",
 					"-Wno-documentation",
 					"-std=c++1z",
+					"-fvisibility=default",
 				);
 				OTHER_LDFLAGS = (
 					/usr/local/lib/libSurface.a,
@@ -1964,6 +1965,7 @@
 					"-Wpedantic",
 					"-Wno-documentation",
 					"-std=c++1z",
+					"-fvisibility=default",
 				);
 				OTHER_LDFLAGS = (
 					/usr/local/lib/libSurface.a,
