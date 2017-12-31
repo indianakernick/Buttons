@@ -16,5 +16,4 @@
 
 bool loadLevel(const std::string &, const ECS::CompInits<CompList> &, ECS::Registry &);
 
-
 #endif

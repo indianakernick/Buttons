@@ -55,6 +55,10 @@ void GameScreen::init(RenderingSystem &renderingSystem) {
   progress.setFilePath(SDL::getSaveDir("Indi Kernick", "Buttons") + "progress.txt");
   progress.readFile();
   levels.init(registry, compInits);
+  levels.levelPath([] (const ECS::Level level) {
+    const std::string levelStr = level == ECS::FINAL_LEVEL ? "final" : std::to_string(level);
+    return SDL::getResDir() + "level " + levelStr + ".json";
+  });
   if (!loadLevel(progress.getIncompleteLevel())) {
     loadFinalLevel();
   }
@@ -135,11 +139,6 @@ void GameScreen::render(const float aspect, const float delta) {
   }
 }
 
-void GameScreen::resetProgress() {
-  progress.reset();
-  loadLevel(0);
-}
-
 bool GameScreen::loadLevel(const ECS::Level level) {
   if (levels.loadLevel(level)) {
     camera.setZoom(0.0f);
@@ -151,7 +150,7 @@ bool GameScreen::loadLevel(const ECS::Level level) {
 }
 
 bool GameScreen::loadFinalLevel() {
-  return loadLevel(LevelManager::FINAL);
+  return loadLevel(ECS::FINAL_LEVEL);
 }
 
 bool GameScreen::loadNextLevel() {
@@ -234,7 +233,7 @@ bool GameScreen::typeLevelNumberKey(const SDL_Event &e) {
 bool GameScreen::nextLevelKey(const SDL_Event &e) {
   if (SDL::keyDown(e, SDL_SCANCODE_N)) {
     const ECS::Level current = levels.getLoaded();
-    if (current == LevelManager::NONE_LOADED) {
+    if (current == ECS::NULL_LEVEL) {
       loadLevel(0);
     } else if (progress.hasCompleted(current + 1)) {
       loadLevel(current + 1);
@@ -247,7 +246,7 @@ bool GameScreen::nextLevelKey(const SDL_Event &e) {
 bool GameScreen::prevLevelKey(const SDL_Event &e) {
   if (SDL::keyDown(e, SDL_SCANCODE_B)) {
     const ECS::Level current = levels.getLoaded();
-    if (current == LevelManager::NONE_LOADED) {
+    if (current == ECS::NULL_LEVEL) {
       // progress.getIncompleteLevel() returns the total number of levels when
       // the game has been completed. levels.loadLevel will return false if it
       // fails to load the level

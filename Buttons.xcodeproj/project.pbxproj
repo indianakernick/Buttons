@@ -36,7 +36,6 @@
 		454D04B51FE64FD100D3E560 /* SDL2.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 454D04B31FE64FCA00D3E560 /* SDL2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		456DF0C31FBD625C003B3FD1 /* moving platform component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0C11FBD625C003B3FD1 /* moving platform component.cpp */; };
 		456DF0C61FBD633C003B3FD1 /* moving platform system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0C41FBD633C003B3FD1 /* moving platform system.cpp */; };
-		456DF0C91FBEB610003B3FD1 /* level manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0C71FBEB610003B3FD1 /* level manager.cpp */; };
 		456DF0CD1FBFB519003B3FD1 /* physics init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456DF0CB1FBFB519003B3FD1 /* physics init.cpp */; };
 		45771B921FE74C7D00F533DA /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 45771B911FE74C6800F533DA /* sprites.atlas */; };
 		45771B931FE74C7D00F533DA /* sprites.png in Resources */ = {isa = PBXBuildFile; fileRef = 45771B901FE74C6700F533DA /* sprites.png */; };
@@ -309,8 +308,6 @@
 		456DF0C21FBD625C003B3FD1 /* moving platform component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "moving platform component.hpp"; sourceTree = "<group>"; };
 		456DF0C41FBD633C003B3FD1 /* moving platform system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "moving platform system.cpp"; sourceTree = "<group>"; };
 		456DF0C51FBD633C003B3FD1 /* moving platform system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "moving platform system.hpp"; sourceTree = "<group>"; };
-		456DF0C71FBEB610003B3FD1 /* level manager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "level manager.cpp"; sourceTree = "<group>"; };
-		456DF0C81FBEB610003B3FD1 /* level manager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "level manager.hpp"; sourceTree = "<group>"; };
 		456DF0CB1FBFB519003B3FD1 /* physics init.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "physics init.cpp"; sourceTree = "<group>"; };
 		456DF0CC1FBFB519003B3FD1 /* physics init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "physics init.hpp"; sourceTree = "<group>"; };
 		45771B8E1FE749E100F533DA /* sprite config.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "sprite config.yaml"; sourceTree = "<group>"; };
@@ -1458,8 +1455,6 @@
 		4583EE981FB1AA1C00AED27D /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				456DF0C71FBEB610003B3FD1 /* level manager.cpp */,
-				456DF0C81FBEB610003B3FD1 /* level manager.hpp */,
 				4584F44A1FD215340062B93E /* level file.cpp */,
 				4584F44B1FD215340062B93E /* level file.hpp */,
 			);
@@ -1754,7 +1749,6 @@
 				4520AD741FEB32FC00ECE3C1 /* static sprite rendering component.cpp in Sources */,
 				4583EE2E1FB18F7A00AED27D /* b2EdgeShape.cpp in Sources */,
 				450ED61E1FB80B0F008F2902 /* switch component.cpp in Sources */,
-				456DF0C91FBEB610003B3FD1 /* level manager.cpp in Sources */,
 				4584F4001FCBB7F50062B93E /* screen manager.cpp in Sources */,
 				4583EEAA1FB1B6E100AED27D /* physics transform system.cpp in Sources */,
 				45C5252F1FEC9B0C00A738E0 /* laser rendering component.cpp in Sources */,

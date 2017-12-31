@@ -10,7 +10,6 @@
 #define game_screen_hpp
 
 #include "screen.hpp"
-#include "level manager.hpp"
 #include "physics system.hpp"
 #include "component list.hpp"
 #include "input dispatcher.hpp"
@@ -18,6 +17,7 @@
 #include <Simpleton/ECS/comp inits.hpp>
 #include <Simpleton/Math/digit stack.hpp>
 #include <Simpleton/Camera 2D/camera.hpp>
+#include <Simpleton/ECS/level manager.hpp>
 #include <Simpleton/ECS/progress manager.hpp>
 
 extern "C" union SDL_Event;
@@ -33,15 +33,13 @@ public:
   void input(const SDL_Event &) override;
   void update(float) override;
   void render(float, float) override;
-  
-  void resetProgress();
 
 private:
   ECS::Registry registry;
   PhysicsSystem physics;
   RenderingSystem *rendering;
   ECS::CompInits<CompList> compInits;
-  LevelManager levels;
+  ECS::LevelManager<CompList> levels;
   ECS::ProgressManager progress;
   InputDispatcher inputDispatcher;
   Cam2D::Camera camera;
