@@ -1932,6 +1932,7 @@
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 				);
+				GCC_PREPROCESSOR_DEFINITIONS = DISABLE_OPENGL_ERROR_CHECKING;
 				HEADER_SEARCH_PATHS = (
 					/usr/local/Cellar/sdl2/2.0.7/include/,
 					/usr/local/include/,
