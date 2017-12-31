@@ -50,7 +50,7 @@ void GameScreen::init(RenderingSystem &renderingSystem) {
   compInits.construct<TextRenderingInit>(rendering->getSheet());
   compInits.construct<AnimSpriteRenderingInit>(rendering->getSheet());
   compInits.construct<StaticSpriteRenderingInit>(rendering->getSheet());
-  compInits.setDefaults();
+  compInits.constructDefaults();
   
   progress.setFilePath(SDL::getSaveDir("Indi Kernick", "Buttons") + "progress.txt");
   progress.readFile();
