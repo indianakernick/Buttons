@@ -310,7 +310,7 @@
 		456DF0C51FBD633C003B3FD1 /* moving platform system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "moving platform system.hpp"; sourceTree = "<group>"; };
 		456DF0CB1FBFB519003B3FD1 /* physics init.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "physics init.cpp"; sourceTree = "<group>"; };
 		456DF0CC1FBFB519003B3FD1 /* physics init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "physics init.hpp"; sourceTree = "<group>"; };
-		45771B8E1FE749E100F533DA /* sprite config.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "sprite config.yaml"; sourceTree = "<group>"; };
+		45771B8E1FE749E100F533DA /* sprite config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "sprite config.json"; sourceTree = "<group>"; };
 		45771B901FE74C6700F533DA /* sprites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sprites.png; sourceTree = "<group>"; };
 		45771B911FE74C6800F533DA /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = file; path = sprites.atlas; sourceTree = "<group>"; };
 		45771BC81FE7504D00F533DA /* exit 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "exit 1.png"; sourceTree = "<group>"; };
@@ -739,7 +739,7 @@
 		452E10921FB2F4550063114B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				45771B8E1FE749E100F533DA /* sprite config.yaml */,
+				45771B8E1FE749E100F533DA /* sprite config.json */,
 				45771B911FE74C6800F533DA /* sprites.atlas */,
 				45771B901FE74C6700F533DA /* sprites.png */,
 				4520AD6E1FE9F85C00ECE3C1 /* sprite shader.vert */,
@@ -1627,7 +1627,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "cd $PROJECT_DIR/Buttons/Resources\n\npacker --silent sprite\\ config.yaml";
+			shellScript = "cd $PROJECT_DIR/Buttons/Resources\n\npacker --silent sprite\\ config.json";
 		};
 		4584F4751FD4BF060062B93E /* Compile Levels */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1880,6 +1880,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1909,7 +1910,6 @@
 				);
 				OTHER_LDFLAGS = (
 					/usr/local/lib/libSurface.a,
-					/usr/local/lib/libUnpacker.a,
 					/usr/local/Cellar/glew/2.1.0/lib/libGLEW.a,
 					"/usr/local/lib/libSimpleton\\ Engine.a",
 				);
@@ -1924,6 +1924,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1954,7 +1955,6 @@
 				);
 				OTHER_LDFLAGS = (
 					/usr/local/lib/libSurface.a,
-					/usr/local/lib/libUnpacker.a,
 					/usr/local/Cellar/glew/2.1.0/lib/libGLEW.a,
 					"/usr/local/lib/libSimpleton\\ Engine.a",
 				);
