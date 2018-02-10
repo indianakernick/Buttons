@@ -312,7 +312,7 @@
 		456DF0CC1FBFB519003B3FD1 /* physics init.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "physics init.hpp"; sourceTree = "<group>"; };
 		45771B8E1FE749E100F533DA /* sprite config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "sprite config.json"; sourceTree = "<group>"; };
 		45771B901FE74C6700F533DA /* sprites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sprites.png; sourceTree = "<group>"; };
-		45771B911FE74C6800F533DA /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = file; path = sprites.atlas; sourceTree = "<group>"; };
+		45771B911FE74C6800F533DA /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = text; path = sprites.atlas; sourceTree = "<group>"; };
 		45771BC81FE7504D00F533DA /* exit 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "exit 1.png"; sourceTree = "<group>"; };
 		45771BCB1FE7504D00F533DA /* laser emitter 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "laser emitter 0.png"; sourceTree = "<group>"; };
 		45771BCC1FE7504D00F533DA /* laser emitter 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "laser emitter 4.png"; sourceTree = "<group>"; };
@@ -1911,7 +1911,6 @@
 				OTHER_LDFLAGS = (
 					/usr/local/lib/libSurface.a,
 					/usr/local/Cellar/glew/2.1.0/lib/libGLEW.a,
-					"/usr/local/lib/libSimpleton\\ Engine.a",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Indi-Kernick.Buttons";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1956,7 +1955,6 @@
 				OTHER_LDFLAGS = (
 					/usr/local/lib/libSurface.a,
 					/usr/local/Cellar/glew/2.1.0/lib/libGLEW.a,
-					"/usr/local/lib/libSimpleton\\ Engine.a",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Indi-Kernick.Buttons";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -45,7 +45,7 @@ void RenderingSystem::init() {
   texParams.setFilter(GL_NEAREST);
   glActiveTexture(GL_TEXTURE0);
   CHECK_OPENGL_ERROR();
-  texture = GL::makeTexture2D(glImage, texParams);
+  texture = GL::makeTexture2D(glImage, texParams, 0);
   
   vertArray = GL::makeVertexArray();
   
