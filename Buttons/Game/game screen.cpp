@@ -17,8 +17,6 @@
 #include <Simpleton/SDL/paths.hpp>
 #include <Simpleton/SDL/events.hpp>
 #include <Simpleton/Utils/member function.hpp>
-#include <Simpleton/Camera 2D/zoom to fit.hpp>
-#include <Simpleton/Camera 2D/constant speed.hpp>
 
 void GameScreen::enter() {
   reloadLevel();
@@ -29,8 +27,8 @@ void GameScreen::init(RenderingSystem &renderingSystem) {
   
   camera.setPos(LEVEL_SIZE / 2.0f);
   camera.transform.setOrigin(Cam2D::Origin::CENTER);
-  camera.targetZoom = std::make_unique<Cam2D::ZoomToFit>(LEVEL_SIZE);
-  camera.animateZoom = std::make_unique<Cam2D::ZoomConstantSpeed>(ZOOM_SPEED);
+  zoomToFit.setSize(LEVEL_SIZE);
+  zoomConstantSpeed.setSpeed(ZOOM_SPEED);
 
   physics.init(registry);
   
@@ -122,7 +120,12 @@ void GameScreen::update(const float delta) {
 class StartMenuScreen;
 
 void GameScreen::render(const float aspect, const float delta) {
-  camera.update(aspect, delta);
+  camera.animateProps(
+    camera.calcTargetProps({aspect, delta}, zoomToFit),
+    {aspect, delta},
+    zoomConstantSpeed
+  );
+  
   const glm::mat3 viewProj = camera.transform.toPixels();
   if constexpr (ENABLE_DEBUG_PHYSICS_RENDER) {
     physics.render();

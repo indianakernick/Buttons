@@ -12,6 +12,7 @@
 #include "screen.hpp"
 #include <Simpleton/ECS/registry.hpp>
 #include <Simpleton/Camera 2D/camera.hpp>
+#include <Simpleton/Camera 2D/zoom to fit.hpp>
 
 extern "C" union SDL_Event;
 
@@ -27,6 +28,7 @@ public:
 
 private:
   Cam2D::Camera camera;
+  Cam2D::ZoomToFit zoomToFit;
   RenderingSystem *rendering;
   ECS::Registry registry;
   bool startGame = false;

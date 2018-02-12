@@ -16,7 +16,6 @@
 #include "transform component.hpp"
 #include "animation component.hpp"
 #include "anim sprite rendering component.hpp"
-#include <Simpleton/Camera 2D/zoom to fit.hpp>
 
 void StartMenuScreen::init(RenderingSystem &renderingSystem) {
   rendering = &renderingSystem;
@@ -25,7 +24,7 @@ void StartMenuScreen::init(RenderingSystem &renderingSystem) {
 
   camera.setPos(scale / 2.0f);
   camera.transform.setOrigin(Cam2D::Origin::CENTER);
-  camera.targetZoom = std::make_unique<Cam2D::ZoomToFit>(scale);
+  zoomToFit.setSize(scale);
   
   const ECS::EntityID entity = registry.create();
   Animation &anim = registry.assign<Animation>(entity);
@@ -52,7 +51,10 @@ void StartMenuScreen::input(const SDL_Event &e) {
 void StartMenuScreen::update(const float) {}
 
 void StartMenuScreen::render(const float aspect, const float delta) {
-  camera.update(aspect, delta);
+  camera.animateProps(
+    camera.calcTargetProps({aspect, delta}, zoomToFit),
+    {aspect, delta}
+  );
   const glm::mat3 viewProj = camera.transform.toPixels();
   
   animationSystem(registry, delta);

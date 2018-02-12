@@ -19,6 +19,8 @@
 #include <Simpleton/Camera 2D/camera.hpp>
 #include <Simpleton/ECS/level manager.hpp>
 #include <Simpleton/ECS/progress manager.hpp>
+#include <Simpleton/Camera 2D/zoom to fit.hpp>
+#include <Simpleton/Camera 2D/constant speed.hpp>
 
 extern "C" union SDL_Event;
 
@@ -43,6 +45,8 @@ private:
   ECS::ProgressManager progress;
   InputDispatcher inputDispatcher;
   Cam2D::Camera camera;
+  Cam2D::ZoomToFit zoomToFit;
+  Cam2D::ZoomConstantSpeed zoomConstantSpeed;
   
   Math::DigitStack<ECS::Level> enteredLevel;
   bool choosingLevel = false;
