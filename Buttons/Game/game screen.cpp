@@ -120,11 +120,7 @@ void GameScreen::update(const float delta) {
 class StartMenuScreen;
 
 void GameScreen::render(const float aspect, const float delta) {
-  camera.animateProps(
-    camera.calcTargetProps({aspect, delta}, zoomToFit),
-    {aspect, delta},
-    zoomConstantSpeed
-  );
+  camera.update({aspect, delta}, zoomToFit, zoomConstantSpeed);
   
   const glm::mat3 viewProj = camera.transform.toPixels();
   if constexpr (ENABLE_DEBUG_PHYSICS_RENDER) {
