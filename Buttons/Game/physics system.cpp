@@ -79,20 +79,24 @@ void PhysicsSystem::render() {
   world->DrawDebugData();
 }
 
+bool PhysicsSystem::hasCollision(const ECS::EntityID entity) const {
+  return registry->valid(entity) && registry->has<Collision>(entity);
+}
+
 void PhysicsSystem::beginContact(const B2::CollisionPair pair) {
-  if (registry->has<Collision>(pair.entity.first)) {
+  if (hasCollision(pair.entity.first)) {
     registry->get<Collision>(pair.entity.first).collisionPairs.addPair(pair);
   }
-  if (registry->has<Collision>(pair.entity.second)) {
+  if (hasCollision(pair.entity.second)) {
     registry->get<Collision>(pair.entity.second).collisionPairs.addPair(pair);
   }
 }
 
 void PhysicsSystem::endContact(const B2::CollisionPair pair) {
-  if (registry->has<Collision>(pair.entity.first)) {
+  if (hasCollision(pair.entity.first)) {
     registry->get<Collision>(pair.entity.first).collisionPairs.remPair(pair);
   }
-  if (registry->has<Collision>(pair.entity.second)) {
+  if (hasCollision(pair.entity.second)) {
     registry->get<Collision>(pair.entity.second).collisionPairs.remPair(pair);
   }
 }

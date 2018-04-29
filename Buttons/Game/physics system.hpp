@@ -32,6 +32,7 @@ private:
   std::experimental::optional<b2World> world;
   std::experimental::optional<B2::ContactListener> contactListener;
   
+  bool hasCollision(ECS::EntityID) const;
   void beginContact(B2::CollisionPair);
   void endContact(B2::CollisionPair);
 };

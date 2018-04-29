@@ -11,58 +11,32 @@
 #include <SDL2/SDL.h>
 #include <Simpleton/SDL/error.hpp>
 
-void RenderingContext::init(SDL_Window *newWindow, const bool vsyncEnabled) {
-  vsync = vsyncEnabled;
-
+void RenderingContext::init(SDL_Window *newWindow, const bool vsync) {
   window = newWindow;
-  GL::ContextParams params;
-  params.vsync = vsync;
-  params.majorVersion = 4;
-  params.minorVersion = 1;
-  context = GL::makeContext(window, params);
-  
-  glEnable(GL_DEPTH_TEST);
-  
-  SDL_DisplayMode mode;
-  CHECK_SDL_ERROR(SDL_GetWindowDisplayMode(window, &mode));
-  if (mode.refresh_rate != 0) {
-    minFrameTime = 1000 / (mode.refresh_rate + 10);
+  if (vsync) {
+    context.initVSync(window);
+  } else {
+    context.init(window);
   }
+  glEnable(GL_DEPTH_TEST);
+  glEnable(GL_FRAMEBUFFER_SRGB);
 }
 
 void RenderingContext::quit() {
-  context = nullptr;
+  context.quit();
   window = nullptr;
 }
 
 void RenderingContext::preRender() {
-  glm::ivec2 size;
-  SDL_GetWindowSize(window, &size.x, &size.y);
-  glViewport(0, 0, size.x, size.y);
-  CHECK_OPENGL_ERROR();
-  
-  GL::clearFrame();
+  context.preRender();
 }
 
 void RenderingContext::postRender() {
-  if (vsync) {
-    const Uint32 start = SDL_GetTicks();
-    SDL_GL_SwapWindow(window);
-    const Uint32 end = SDL_GetTicks();
-    
-    const Uint32 swapTime = end - start;
-    if (swapTime < minFrameTime) {
-      SDL_Delay(minFrameTime - swapTime);
-    }
-  } else {
-    SDL_GL_SwapWindow(window);
-  }
+  context.postRender();
 }
 
 glm::ivec2 RenderingContext::getFrameSize() const {
-  glm::ivec2 size;
-  SDL_GL_GetDrawableSize(window, &size.x, &size.y);
-  return size;
+  return context.getFrameSize();
 }
 
 SDL_Window *RenderingContext::getWindow() const {
