@@ -11,6 +11,7 @@
 #include <fstream>
 #include <Simpleton/ECS/json.hpp>
 #include <Simpleton/SDL/paths.hpp>
+#include <Simpleton/Type List/get.hpp>
 #include <Simpleton/ECS/entity id map.hpp>
 
 namespace {
@@ -23,10 +24,10 @@ namespace {
   ) {
     auto obj = comps.get_ref<const json::object_t &>();
     for (auto &pair : obj) {
-      const bool gotComp = Utils::getByName<CompList>(
+      const bool gotComp = List::getByName<CompList>(
         pair.first,
         [id, &idMap, &registry, &compInits, &props = pair.second] (auto t) {
-          compInits.init(registry.assign<UTILS_TYPE(t)>(id), props, idMap, id);
+          compInits.init(registry.assign<LIST_TYPE(t)>(id), props, idMap, id);
         }
       );
       if (!gotComp) {

@@ -27,13 +27,13 @@
 #include "player input component.hpp"
 #include "laser detector component.hpp"
 #include "text rendering component.hpp"
+#include <Simpleton/Type List/type.hpp>
 #include "moving platform component.hpp"
-#include <Simpleton/Utils/type list.hpp>
 #include "laser rendering component.hpp"
 #include "anim sprite rendering component.hpp"
 #include "static sprite rendering component.hpp"
 
-using CompList = Utils::TypeList<
+using CompList = List::Type<
   PowerInput,
   PowerOutput,
   PhysicsBody,

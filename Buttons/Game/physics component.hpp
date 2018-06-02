@@ -20,6 +20,12 @@ struct PhysicsBody {
   PhysicsBody &operator=(PhysicsBody &&);
   ~PhysicsBody();
   
+  // EnTT clone function
+  PhysicsBody(const PhysicsBody &) {}
+  PhysicsBody &operator=(const PhysicsBody &) {
+    return *this;
+  }
+  
   b2Body *body = nullptr;
   glm::vec2 scale;
 };
