@@ -10,8 +10,8 @@
 #define physics_body_component_hpp
 
 #include <glm/vec2.hpp>
-#include <Simpleton/ECS/registry.hpp>
 #include <Box2D/Dynamics/b2Body.h>
+#include <Simpleton/ECS/registry.hpp>
 #include <Box2D/Dynamics/Joints/b2Joint.h>
 
 struct PhysicsBody {
@@ -19,12 +19,6 @@ struct PhysicsBody {
   PhysicsBody(PhysicsBody &&);
   PhysicsBody &operator=(PhysicsBody &&);
   ~PhysicsBody();
-  
-  // EnTT clone function
-  PhysicsBody(const PhysicsBody &) {}
-  PhysicsBody &operator=(const PhysicsBody &) {
-    return *this;
-  }
   
   b2Body *body = nullptr;
   glm::vec2 scale;

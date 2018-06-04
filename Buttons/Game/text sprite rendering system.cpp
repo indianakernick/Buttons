@@ -10,6 +10,7 @@
 
 #include "text component.hpp"
 #include "transform component.hpp"
+#define GLM_ENABLE_EXPERIMENTAL
 #include <glm/gtx/matrix_transform_2d.hpp>
 #include "text rendering component.hpp"
 
@@ -35,7 +36,12 @@ namespace {
       glyphWidth * text.size() - render.kern,
       render.scale.y
     };
-    world = world * glm::translate({}, -size / 2.0f);
+    static constexpr glm::mat3 I = {
+      {1, 0, 0},
+      {0, 1, 0},
+      {0, 0, 1}
+    };
+    world = world * glm::translate(I, -size / 2.0f);
     
     for (size_t i = 0; i != text.size(); ++i) {
       const uint8_t glyph = text[i];
