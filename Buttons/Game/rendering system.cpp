@@ -28,7 +28,7 @@ namespace {
   ///Byte size of a quad in a GL_ELEMENT_ARRAY_BUFFER
   constexpr size_t QUAD_ELEM_SIZE = sizeof(ElemType) * QUAD_INDICIES;
   
-  using Attribs = std::tuple<PosType, TexCoordType>;
+  using Attribs = List::Type<PosType, TexCoordType>;
 }
 
 void RenderingSystem::init() {
