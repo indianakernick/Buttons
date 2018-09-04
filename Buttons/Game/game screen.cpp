@@ -16,6 +16,7 @@
 #include "rendering system.hpp"
 #include <Simpleton/SDL/paths.hpp>
 #include <Simpleton/SDL/events.hpp>
+#include <Simpleton/Utils/profiler.hpp>
 #include <Simpleton/Utils/member function.hpp>
 
 void GameScreen::enter() {
@@ -88,6 +89,7 @@ void GameScreen::input(const SDL_Event &event) {
 }
 
 void GameScreen::update(const float delta) {
+  PROFILE(GameScreen::update);
   if (exitSystem(registry)) {
     progress.finishLevel(levels.getLoaded());
     loadNextLevel();
@@ -120,6 +122,7 @@ void GameScreen::update(const float delta) {
 class StartMenuScreen;
 
 void GameScreen::render(const float aspect, const float delta) {
+  PROFILE(GameScreen::render);
   camera.update({aspect, delta}, zoomToFit, zoomConstantSpeed);
   
   const glm::mat3 viewProj = camera.transform.toPixels();

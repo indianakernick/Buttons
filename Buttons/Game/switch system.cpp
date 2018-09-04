@@ -30,7 +30,7 @@ void switchSystem(ECS::Registry &registry) {
   for (const ECS::EntityID entity : view) {
     const B2::CollisionPairs &pairs = view.get<Collision>(entity).collisionPairs;
     const ECS::EntityID player = pairs.getHalfPair<B2::ObjT::PlayerBody>();
-    if (player != ECS::NULL_ENTITY && registry.get<PlayerInput>(player).action) {
+    if (player != entt::null && registry.get<PlayerInput>(player).action) {
       toggle(view.get<Activation>(entity).state);
     }
   }

@@ -15,6 +15,7 @@
 #include "animation system.hpp"
 #include "transform component.hpp"
 #include "animation component.hpp"
+#include <Simpleton/Utils/profiler.hpp>
 #include "anim sprite rendering component.hpp"
 
 void StartMenuScreen::init(RenderingSystem &renderingSystem) {
@@ -51,6 +52,7 @@ void StartMenuScreen::input(const SDL_Event &e) {
 void StartMenuScreen::update(const float) {}
 
 void StartMenuScreen::render(const float aspect, const float delta) {
+  PROFILE(StartMenuScreen::render);
   camera.update({aspect, delta}, zoomToFit);
   const glm::mat3 viewProj = camera.transform.toPixels();
   

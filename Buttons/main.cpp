@@ -8,8 +8,12 @@
 
 #include "app.hpp"
 
+#include <Simpleton/SDL/mainloop.hpp>
+#include <Simpleton/Utils/profiler.hpp>
+
 int main(int, char **) {
   App app;
-  app.mainloop();
+  SDL::runMainloop(&app);
+  PROFILER_INFO(stdout);
   return 0;
 }

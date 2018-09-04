@@ -13,43 +13,17 @@
 #include "window constants.hpp"
 #include "start menu screen.hpp"
 #include <Simpleton/Time/get.hpp>
+#include <Simpleton/Utils/profiler.hpp>
 
-void App::mainloop() {
-  init();
+bool App::mainloop(const uint64_t deltaNano) {
+  PROFILE(App::mainloop);
+  const float deltaSec = deltaNano / 1e9f;
   
-  //Time::Mainloop::fixedWithVarPrePost isn't perfect
+  bool ok = input(deltaSec);
+  ok = ok && update(deltaSec);
+  ok = ok && render(deltaSec);
   
-  //the application cannot control the mainloop properly so I'll have to
-  //find another way of implementing the interface to Time::Mainloop
-  
-  static const float step = 1.0f/60.0f;
-  static const uint32_t maxSteps = 16;
-  
-  Rep lag = 0;
-  Time::Point<Duration> last = Time::getPoint<Duration>();
-  bool ok = true;
-
-  while (ok) {
-    const Time::Point<Duration> now = Time::getPoint<Duration>();
-    const Duration elapsed = now - last;
-    last = now;
-    lag += elapsed.count();
-    
-    uint32_t numSteps = lag < 0 ? 0 : std::min(static_cast<uint32_t>(lag / step), maxSteps);
-    const Rep stepSize = step * numSteps;
-    lag -= stepSize;
-    
-    ok = input(stepSize);
-    
-    while (numSteps) {
-      ok = ok && update(step);
-      numSteps--;
-    }
-    
-    ok = ok && render(stepSize);
-  }
-  
-  quit();
+  return ok;
 }
 
 void App::init() {
@@ -75,6 +49,7 @@ void App::quit() {
 }
 
 bool App::input(float) {
+  PROFILE(App::input);
   SDL_Event e;
   while (SDL_PollEvent(&e)) {
     if (e.type == SDL_QUIT) {
@@ -87,11 +62,13 @@ bool App::input(float) {
 }
 
 bool App::update(const float delta) {
+  PROFILE(App::update);
   screens.update(delta);
   return true;
 }
 
 bool App::render(const float delta) {
+  PROFILE(App::render);
   renderingContext.preRender();
   const glm::ivec2 windowSize = window.size();
   const float aspect = static_cast<float>(windowSize.x) / windowSize.y;
