@@ -1893,6 +1893,11 @@
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					GLM_FORCE_SILENT_WARNINGS,
+					"DEBUG=1",
+					"$(inherited)",
+				);
 				HEADER_SEARCH_PATHS = (
 					/usr/local/Cellar/sdl2/2.0.7/include/,
 					/usr/local/include/,
@@ -1933,7 +1938,10 @@
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 				);
-				GCC_PREPROCESSOR_DEFINITIONS = DISABLE_OPENGL_ERROR_CHECKING;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					GLM_FORCE_SILENT_WARNINGS,
+					DISABLE_OPENGL_ERROR_CHECKING,
+				);
 				HEADER_SEARCH_PATHS = (
 					/usr/local/Cellar/sdl2/2.0.7/include/,
 					/usr/local/include/,

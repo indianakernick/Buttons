@@ -36,7 +36,7 @@ namespace {
       glyphWidth * text.size() - render.kern,
       render.scale.y
     };
-    static constexpr glm::mat3 I = {
+    static const glm::mat3 I = {
       {1, 0, 0},
       {0, 1, 0},
       {0, 0, 1}
